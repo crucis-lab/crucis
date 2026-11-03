@@ -40,7 +40,7 @@ funding are separate. Shared protocol/contract changes remain proposals to W5.
 | GIES | Native interventional output | Current support includes recorded imports; a fresh native execution route remains a prerequisite. Require correct intervention targets and compatible interventional samples. |
 
 Sources: inspected `harness/agents/`, `audit/systems/`, `audit/run.py`, and
-[scope correction](q1-empirical-study-funding-rebase-2026-11-01.md), sections 3-5.
+scope correction (archived research planning record), sections 3-5.
 This is a readiness inventory, not new native execution evidence. Native sanity
 checks use a suitable author example or equivalent documented input in the native
 environment. Freeze versions, dependency identity, actual model/backend, arguments
@@ -157,8 +157,8 @@ per-finding applicability/evidence table rather than a blanket "all audited" lab
 
 ## 7. Funding scenarios and tradeoffs
 
-The [budget ledger](q1-study-budget-2026-11-01.json) derives each system's historical
-proxy from its own known USD records in the [cost inventory](q1-multi-system-cost-inventory-2026-11-01.json).
+The budget ledger (archived research planning record) derives each system's historical
+proxy from its own known USD records in the cost inventory (archived research planning record).
 These are reported estimates, not invoices or current quotes. Vashishtha and
 PyWhy-LLM each have only ten cost-bearing records, covering five real and five
 swapped cases, with no neutral cost observations. Some metadata mix models;
