@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Domain/mapping/graph/quantity fidelity across real recorded paths (DLV-08/09)."""
 import copy
 import sys
@@ -10,12 +10,12 @@ from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from crucis.connections import Builder, WireError, known, number
-from crucis.connections.domains import directed_link, finite_domain, graph_body, mapped_graph, member, permutation
-from crucis.connections.evidence import capture_bytes
-from crucis.connections.model import contract, scope, source, unresolved
-from crucis.connections.semantics import validate
-from crucis.connections.legacy import echo, encode, import_record
+from crucis_causal.connections import Builder, WireError, known, number
+from crucis_causal.connections.domains import directed_link, finite_domain, graph_body, mapped_graph, member, permutation
+from crucis_causal.connections.evidence import capture_bytes
+from crucis_causal.connections.model import contract, scope, source, unresolved
+from crucis_causal.connections.semantics import validate
+from crucis_causal.connections.legacy import echo, encode, import_record
 
 
 def check_result(report,subject,kind):
@@ -115,8 +115,8 @@ class SemanticCases(unittest.TestCase):
         self.assertEqual(check_result(validate(b.package([g])),g,"graph_encoding"),"fail")
 
     def test_lossless_legacy_codec_keeps_fields_summary_drops(self):
-        from crucis.core.runs import RunRecord
-        from crucis.core.graph import Graph
+        from crucis_causal.core.runs import RunRecord
+        from crucis_causal.core.graph import Graph
         g=Graph.from_edges(2,[(0,1)]);rec=RunRecord("toy","item","real","ok",graph=g,
             confidence={(0,1):0.7},edge_source={(0,1):"llm"},variants={"S0":g},stages=[("S0",g)],
             notes={"file_read":"important-seed-name","replicates":[RunRecord("toy","item","real","host_error")]})
@@ -126,7 +126,7 @@ class SemanticCases(unittest.TestCase):
 
     @unittest.skipUnless((DATA_ROOT / "runs/ab06").is_dir() and (DATA_ROOT / "external/causalarena").is_dir(),"recorded sources absent")
     def test_real_method_and_name_hybrid_sources_import_without_running(self):
-        from crucis.core import adapter,battery
+        from crucis_causal.core import adapter,battery
         for name,bid,arm in (("pc","ca-semantic","released"),("causaliq","ca-ab06","real"),("matmcd","ca-ab06","real")):
             ad=adapter.get(name);bt=battery.get(bid);item=bt.items[0]
             with patch.object(ad,"run",side_effect=AssertionError("must not execute native system")):
@@ -138,8 +138,8 @@ class SemanticCases(unittest.TestCase):
 
     @unittest.skipUnless((DATA_ROOT / "runs/ab06/causaliq/apartment_heat_exposure_shading_ac/real/calls.jsonl").is_file(),"native response evidence absent")
     def test_native_probabilities_preserve_prompt_meaning_and_coordinates(self):
-        from crucis.connections.legacy import recorded
-        from crucis.connections.integrations.causaliq import attach_recorded_fields
+        from crucis_causal.connections.legacy import recorded
+        from crucis_causal.connections.integrations.causaliq import attach_recorded_fields
         imported=recorded("causaliq","ca-ab06",arm="real")
         path=DATA_ROOT / "runs/ab06/causaliq/apartment_heat_exposure_shading_ac/real"
         attach_recorded_fields(imported,path,allowed_root=DATA_ROOT)

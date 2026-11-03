@@ -1,4 +1,4 @@
-# Crucis
+# Crucis: Causal Discovery Auditing
 
 Crucis is an independent framework for auditing causal discovery systems and
 their claims. It preserves native evidence and declared uncertainty, supports
@@ -15,21 +15,20 @@ implemented support and empirical coverage are versioned separately.
 git clone https://github.com/crucis-lab/crucis.git
 cd crucis
 python -m pip install .
-python -m crucis --help
-python -m crucis systems
-python -m crucis.connections --help
-python -m crucis.experiments --help
+python -m crucis_causal --help
+python -m crucis_causal systems
+python -m crucis_causal.connections --help
+python -m crucis_causal.experiments --help
 ```
 
 Python 3.10 or newer, NumPy and jsonschema are required. Optional native PC/GES
 execution uses `pip install '.[classical]'`. LLM execution retains the existing
 explicit spending guards. Installation does not run an experiment.
 
-Install from this checkout. The PyPI name `crucis` already identifies an
-[unrelated coding-agent project](https://pypi.org/project/crucis/); a distinct
-distribution name is pending. Bare `pip install crucis` installs that project.
-The Crucis project name, Python import namespace and distribution name are
-separate naming decisions; no package-index release is configured here.
+Install from this checkout. The distribution is `crucis-causal`, the Python
+namespace is `crucis_causal`, and the command is `crucis-causal`. No package-index
+release has been published. Bare `pip install crucis` obtains an
+[unrelated coding-agent project](https://pypi.org/project/crucis/).
 
 ## Evidence and research
 
@@ -43,7 +42,7 @@ Do not infer scientific support from an installed adapter name alone.
 The `cc-research` repository retains the paper, frozen study results and
 interactive research presentation. Its November 6 checkpoint keeps its existing
 number sources. `provenance/extraction.json` records every copied source hash,
-including the research-derived helpers now owned under `crucis/_support/`.
+including the research-derived helpers now owned under `crucis_causal/_support/`.
 The four historical B5 modules remain in the research repository.
 
 ## Development
@@ -61,7 +60,7 @@ The current development gate records the actual standalone source identity and
 test outcomes:
 
 ```sh
-python -m crucis.dev.gates standalone --out ../crucis-check
+python -m crucis_causal.dev.gates standalone --out ../crucis-check
 ```
 
 Prior research-layout gate implementations are retained as historical records
@@ -77,12 +76,20 @@ this repository's validation hook through local Git configuration.
 
 ## Publication and attribution
 
-The project-wide license and copyright/citation statement are awaiting the
-maintainer's decision before the first push. Third-party source attribution and
-retained terms are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Original code and accompanying technical documentation are licensed under
+[Apache-2.0](LICENSE), copyright 2026 Uzair Gheewala. Software citation is in
+[CITATION.cff](CITATION.cff). Third-party source attribution and retained terms
+are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+The unpublished extraction history was cleaned before its first push to exclude
+eight correspondence/budget-planning files. An original-history backup is kept
+outside this repository. [Publication provenance](provenance/publication.json)
+records the commit mapping and the namespace move without altering captured
+source hashes or frozen research results. Historical development notes retain
+their original paths/commands; this README gives the current installation route.
 
 GitHub source history contains development/design records as well as runtime
-code and tests. Installed wheels exclude `crucis/docs/`; source distributions
+code and tests. Installed wheels exclude `crucis_causal/docs/`; source distributions
 retain only the two technical JSON examples needed by the offline tests, along
 with test fixtures and tooling. Research datasets, recorded runs, sealed battery
 seeds and credentials are not bundled. Excluded-data tests report explicit skips.

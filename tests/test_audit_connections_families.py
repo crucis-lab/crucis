@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Output subtypes and associations (DLV-08, DLV-09); synthetic conformance only."""
 import copy
 import sys
@@ -7,11 +7,11 @@ import uuid
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from crucis.connections import Builder, WireError, known, number
-from crucis.connections.domains import directed_link, finite_domain, graph_body, mapped_graph, member
-from crucis.connections.evidence import capture_bytes
-from crucis.connections.model import contract, reference, scope, source, unresolved
-from crucis.connections.semantics import validate
+from crucis_causal.connections import Builder, WireError, known, number
+from crucis_causal.connections.domains import directed_link, finite_domain, graph_body, mapped_graph, member
+from crucis_causal.connections.evidence import capture_bytes
+from crucis_causal.connections.model import contract, reference, scope, source, unresolved
+from crucis_causal.connections.semantics import validate
 
 
 def result(report,subject,name):return next(c.result for c in report.checks if c.subject==subject["target"] and c.contract=="s1."+name)

@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Bundle B4 (DLV-09): findings, reports, certificates and the sealed battery. The certificate is deterministic, every
 number in it has a derivation, verify catches a changed number and a changed raw file, a ranking across regimes is
 refused, the sealed seed store cannot sit in the shared folder, a second sealed read is refused; MATMCD end to end."""
@@ -12,9 +12,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from crucis.core import sealed  # noqa: E402
-from crucis.protocol import kinds as K, regimes as R  # noqa: E402
-from crucis.report import build, certificate as CERT  # noqa: E402
+from crucis_causal.core import sealed  # noqa: E402
+from crucis_causal.protocol import kinds as K, regimes as R  # noqa: E402
+from crucis_causal.report import build, certificate as CERT  # noqa: E402
 
 HAVE_DATA = (DATA_ROOT / "runs" / "ab06").is_dir() and (DATA_ROOT / "external" / "causalarena").is_dir()
 _CACHE = {}
@@ -22,7 +22,7 @@ _CACHE = {}
 
 def matmcd():
     if "r" not in _CACHE:
-        from crucis import run as RN
+        from crucis_causal import run as RN
         _CACHE["r"] = RN.audit(RN.AUDITS["matmcd"], "matmcd")
     return _CACHE["r"]
 
@@ -98,7 +98,7 @@ class TestCertificate(unittest.TestCase):
         self.assertTrue(all(f["path"] and f["sha256"] for r in a["body"]["runs"] for f in r["files"].values()))
 
     def test_verify_passes_and_catches_tampering(self):
-        from crucis import run as RN
+        from crucis_causal import run as RN
         recompute = lambda name, spec: RN.audit(RN.spec_from_json(spec), name)  # noqa: E731
         cert = CERT.make(matmcd(), "cmd")
         self.assertTrue(CERT.verify(cert, recompute)["pass"])
@@ -119,7 +119,7 @@ class TestCertificate(unittest.TestCase):
             self.assertIn("K04 | name_reliance | **fires**", md)
             self.assertIn("Typed gaps", md)
             rep = json.loads(Path(out["report"]).read_text(encoding="utf-8"))
-            from crucis.core.evidence import pointer_get
+            from crucis_causal.core.evidence import pointer_get
             cert = json.loads(Path(out["certificate"]).read_text(encoding="utf-8"))
             for p, rec in list(cert["body"]["numbers"].items())[:200]:
                 self.assertEqual(pointer_get(rep, p), rec["value"])       # every certified number is in report.json there

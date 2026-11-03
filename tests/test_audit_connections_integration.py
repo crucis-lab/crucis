@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """SC-1 whole-record goldens and release-boundary negatives (DLV-08/09)."""
 import copy
 import json
@@ -9,15 +9,15 @@ import tempfile
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
-from crucis.connections import Builder, WireError, dumps, known, loads, number
-from crucis.connections import api,core
-from crucis.connections.domains import directed_link,finite_domain,graph_body,member
-from crucis.connections.evidence import Resolver,capture_bytes,evidence_record
-from crucis.connections.history import accounting_total
-from crucis.connections.model import contract,scope,source,unknown_ref,unresolved
-from crucis.connections.schema import BODY_FIELDS,PAYLOAD_FIELDS,schema
-from crucis.connections.semantics import validate
-from crucis.connections.services import CaptureSink,ContractRegistry,IdentityService,RecordBuffer
+from crucis_causal.connections import Builder, WireError, dumps, known, loads, number
+from crucis_causal.connections import api,core
+from crucis_causal.connections.domains import directed_link,finite_domain,graph_body,member
+from crucis_causal.connections.evidence import Resolver,capture_bytes,evidence_record
+from crucis_causal.connections.history import accounting_total
+from crucis_causal.connections.model import contract,scope,source,unknown_ref,unresolved
+from crucis_causal.connections.schema import BODY_FIELDS,PAYLOAD_FIELDS,schema
+from crucis_causal.connections.semantics import validate
+from crucis_causal.connections.services import CaptureSink,ContractRegistry,IdentityService,RecordBuffer
 
 
 class IntegrationCases(unittest.TestCase):
@@ -25,7 +25,7 @@ class IntegrationCases(unittest.TestCase):
     def test_recorded_import_cli_selects_audit_and_publishes_its_receipt(self):
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/'import'
-            result=subprocess.run([sys.executable,'-B','-m','crucis.connections','import-recorded',
+            result=subprocess.run([sys.executable,'-B','-m','crucis_causal.connections','import-recorded',
                 'matmcd','--out',str(out)],cwd=ROOT,capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
             receipt=json.loads((out/'receipt.json').read_text(encoding='utf-8'))
@@ -50,7 +50,7 @@ class IntegrationCases(unittest.TestCase):
         self.assertEqual(kinds,set(PAYLOAD_FIELDS));self.assertEqual(bodies,set(BODY_FIELDS))
 
     def test_checked_in_schema_matches_generator_and_copies_cannot_change_validator(self):
-        self.assertEqual(loads((ROOT/'crucis/connections/sc1.schema.json').read_bytes()),schema())
+        self.assertEqual(loads((ROOT/'crucis_causal/connections/sc1.schema.json').read_bytes()),schema())
         edited=schema();edited['properties']['package_id']={'type':'integer'}
         p=self.goldens()[0]['package'];self.assertTrue(validate(p).ok)
 
@@ -75,7 +75,7 @@ class IntegrationCases(unittest.TestCase):
         domain=b.add('domain',p);validate(b.package([domain])).require(['s1.domain'],[domain['target']])
 
     def test_parameter_sample_cannot_claim_another_graphs_subject(self):
-        from crucis.connections.specimens import quantity
+        from crucis_causal.connections.specimens import quantity
         b=Builder();d=finite_domain(b,['A','B']);a=b.output('graph',graph_body(d,[]));z=b.output('graph',graph_body(d,[]))
         q=quantity(b,z,'0.5','coefficient');c=b.output('collection',{'collection_kind':'sample_bank','member_contracts':[contract('graph')],
             'members':[{'key':'one','object':a,'multiplicity':'1','associated':[{'role':'s1.parameters','target':q}]}],
@@ -83,7 +83,7 @@ class IntegrationCases(unittest.TestCase):
         with self.assertRaises(WireError):validate(b.package([c])).require(['s1.collection_members'],[c['target']])
 
     def test_exact_count_ratio_checks_the_result_and_not_only_denominator(self):
-        from crucis.connections.specimens import quantity
+        from crucis_causal.connections.specimens import quantity
         b=Builder();d=finite_domain(b,['X']);n=quantity(b,d,1,'count');denom=quantity(b,d,2,'count')
         basis=b.add('relation',{'relation_contract':contract('ratio_components'),'endpoints':[{'role':'s1.numerator','target':n},
             {'role':'s1.denominator','target':denom}],'parameters':[],'scope':scope(d),'source':source()})
@@ -95,7 +95,7 @@ class IntegrationCases(unittest.TestCase):
         validate(p).require(['s1.ratio_basis'],[q['target']])
 
     def test_mixed_member_contracts_are_alternatives_and_foreign_quantities_stay_unknown(self):
-        from crucis.connections.specimens import quantity
+        from crucis_causal.connections.specimens import quantity
         b=Builder();d=finite_domain(b,['X']);g=b.output('graph',graph_body(d,[]));q=quantity(b,d,'2.0','foreign_score')
         c=b.output('collection',{'collection_kind':'sequence','member_contracts':[contract('graph'),contract('quantity')],
             'members':[{'key':str(i),'object':obj,'multiplicity':'1','associated':[]} for i,obj in enumerate([g,q])],
@@ -105,14 +105,14 @@ class IntegrationCases(unittest.TestCase):
 
     def test_registered_route_does_not_give_recorded_adapter_an_invoke_path(self):
         from test_audit_connections_ports import setup,bind
-        from crucis.connections.ports import recorded_connection,attached_connection
+        from crucis_causal.connections.ports import recorded_connection,attached_connection
         b,s,sink=setup();reader=recorded_connection(b.producer,s)
         _,_,result=bind(b,s,reader,'direct');self.assertEqual(result.state,'rejected')
         observed=attached_connection(b.producer,s,lambda *args:None)
         self.assertIsNone(observed.invoke);self.assertEqual(observed.supported(),('describe','bind','observe'))
 
     def test_empty_graph_cannot_hide_mapping_twice(self):
-        from crucis.connections.domains import mapped_graph,permutation
+        from crucis_causal.connections.domains import mapped_graph,permutation
         b=Builder();target=finite_domain(b,['A','B']);payload=b.get(target)['payload'];payload['members']=list(reversed(payload['members']))
         native=b.add('domain',payload);mapping=permutation(b,native,target,[('1','1'),('0','0')])
         graph=b.output('graph',graph_body(native,[]));view=mapped_graph(b,b.package([graph]),graph,mapping)
@@ -135,8 +135,8 @@ class IntegrationCases(unittest.TestCase):
         self.assertFalse(any(c.contract=='s1.independent_trials' for c in report.checks))
 
     def test_malformed_native_numbers_and_file_declarations_preserve_legacy_evidence(self):
-        from crucis.core.runs import RunRecord
-        from crucis.connections.legacy import import_record,echo,encode
+        from crucis_causal.core.runs import RunRecord
+        from crucis_causal.connections.legacy import import_record,echo,encode
         for literal in ('unknown','1_0',' 1 '):
             with self.assertRaises(WireError):number(literal)
         record=RunRecord('fixture','i','real','failed',cost={'usd':'unknown'},files={'unfamiliar':'native declaration without a supported locator'})
@@ -156,15 +156,15 @@ class IntegrationCases(unittest.TestCase):
     def test_opt_in_cli_round_trip_and_no_in_repo_output(self):
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp);case=self.goldens()[0];package=out/'package.json';package.write_bytes(dumps(case['package']))
-            command=[sys.executable,'-B','-m','crucis.connections']
+            command=[sys.executable,'-B','-m','crucis_causal.connections']
             result=subprocess.run(command+['validate',str(package),'--out',str(out/'validation.json'),'--profile','evidence_foundation'],
                 cwd=ROOT,capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertTrue(loads((out/'validation.json').read_bytes())['required_claims_established'])
             result=subprocess.run(command+['validate',str(package),'--out',str(out/'quantity-validation.json'),'--require','quantity_value'],cwd=ROOT,capture_output=True,text=True)
             self.assertEqual(result.returncode,2);self.assertFalse(loads((out/'quantity-validation.json').read_bytes())['required_claims_established'])
-            result=subprocess.run(command+['schema','--out',str(ROOT/'crucis/connections/forbidden-runtime-output.json')],cwd=ROOT,capture_output=True,text=True)
-            self.assertEqual(result.returncode,2);self.assertFalse((ROOT/'crucis/connections/forbidden-runtime-output.json').exists())
+            result=subprocess.run(command+['schema','--out',str(ROOT/'crucis_causal/connections/forbidden-runtime-output.json')],cwd=ROOT,capture_output=True,text=True)
+            self.assertEqual(result.returncode,2);self.assertFalse((ROOT/'crucis_causal/connections/forbidden-runtime-output.json').exists())
 
 
 if __name__=='__main__':unittest.main()

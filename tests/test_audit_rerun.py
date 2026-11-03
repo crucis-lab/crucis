@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Bundle B5 (DLV-09, DLV-10): the existing audits through the package. One command writes the comparison table and a
 report + certificate per system; every stored number is reproduced within 0.001; certificates verify. Plus the live
 path for the data-only baselines: PC run live through the adapter and the harness's shuffle gives the stored AB-01 graph
@@ -20,9 +20,9 @@ HAVE_CL = importlib.util.find_spec("causallearn") is not None
 @unittest.skipUnless(HAVE_DATA, "recorded runs and CausalArena files are kept outside git")
 class TestRerun(unittest.TestCase):
     def test_one_command_reproduces_and_certifies(self):
-        from crucis import run as RN
-        from crucis.rerun import existing as E
-        from crucis.report import certificate as CERT
+        from crucis_causal import run as RN
+        from crucis_causal.rerun import existing as E
+        from crucis_causal.report import certificate as CERT
         with tempfile.TemporaryDirectory() as d:
             rc = E.main(d, ("B1", "B2", "B3"), reports=True)
             self.assertEqual(rc, 0)
@@ -40,7 +40,7 @@ class TestRerun(unittest.TestCase):
 @unittest.skipUnless(HAVE_DATA and HAVE_CL, "needs causal-learn (Uzair's machine or a container) and CausalArena files")
 class TestLiveBaseline(unittest.TestCase):
     def test_pc_live_equals_stored_row(self):
-        from crucis.core import adapter as A, battery as B, harness as H
+        from crucis_causal.core import adapter as A, battery as B, harness as H
         ad = A.get("pc")
         for item in B.ca_family("semantic").items[:2]:
             p, perm = H.present(item)

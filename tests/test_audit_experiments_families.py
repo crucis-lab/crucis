@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-D cross-family/materialization contracts and scientific limits (DLV-08/09)."""
 import copy
 from pathlib import Path
@@ -7,18 +7,18 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from test_audit_experiments_definitions import q
 from test_audit_experiments_services import draft,ac
-from crucis.experiments import core,ServiceError
-from crucis.experiments.model import source,scope,contract,known,unknown,number,reference
-from crucis.experiments.operations import get,parameter,assessment
-from crucis.experiments.families import inspect,values,entity_key,install
+from crucis_causal.experiments import core,ServiceError
+from crucis_causal.experiments.model import source,scope,contract,known,unknown,number,reference
+from crucis_causal.experiments.operations import get,parameter,assessment
+from crucis_causal.experiments.families import inspect,values,entity_key,install
 
 def with_payload(d,format_name,value):
-    from crucis.connections.model import Builder,contract as c1,known as k1,unresolved
-    from crucis.connections.evidence import capture_bytes
-    from crucis.connections.codec import dumps as s1bytes
-    from crucis.experiments.model import walk,digest,qualified,not_applicable
-    from crucis.experiments.resolver import parse_snapshot,ReadAccess
-    from crucis.experiments.writer import S2RecordWriter
+    from crucis_causal.connections.model import Builder,contract as c1,known as k1,unresolved
+    from crucis_causal.connections.evidence import capture_bytes
+    from crucis_causal.connections.codec import dumps as s1bytes
+    from crucis_causal.experiments.model import walk,digest,qualified,not_applicable
+    from crucis_causal.experiments.resolver import parse_snapshot,ReadAccess
+    from crucis_causal.experiments.writer import S2RecordWriter
     import json
     b=Builder('synthetic typed payload source');blob=capture_bytes(b,json.dumps(value).encode(),format_contract=c1('s2.payload.'+format_name))
     dependencies={}
@@ -39,7 +39,7 @@ def modified(d,original,updates):
 class FamilyCases(unittest.TestCase):
     def test_all_twenty_five_parameter_readers_register_exactly_without_native_imports(self):
         d=draft();install(d.read.registry,d.author)
-        from crucis.experiments.schema import catalog
+        from crucis_causal.experiments.schema import catalog
         self.assertEqual(len(d.read.registry._entries),25)
         for name in catalog()['parameter_schemas']:
             self.assertIsNotNone(d.read.registry.lookup(contract('s2.params.'+name)))
@@ -147,7 +147,7 @@ class FamilyCases(unittest.TestCase):
         self.assertEqual(p['outputs'],[]);self.assertTrue(p['gaps']);self.assertEqual(p['checks'],[])
 
     def test_recipe_predecessor_cycle_does_not_become_executable_order(self):
-        from crucis.experiments.information import transform_dependencies
+        from crucis_causal.experiments.information import transform_dependencies
         d=draft();ref=reference(d.identities.allocate(),'transform_spec')
         with d.records.begin(d.author,d.clock) as tx:
             tx.add('transform_spec',{'operation':contract('s2.identity_binding'),'inputs':[],'parameters':[],
@@ -156,12 +156,12 @@ class FamilyCases(unittest.TestCase):
         self.assertEqual(transform_dependencies(ref,d).result,'fail')
 
     def test_evaluator_channel_cannot_become_native_permission_by_presentation_label(self):
-        from crucis.connections.model import Builder,contract as c1,unknown_ref,unresolved
-        from crucis.connections.codec import dumps as s1bytes
-        from crucis.experiments.resolver import parse_snapshot,ReadAccess
-        from crucis.experiments.writer import S2RecordWriter
-        from crucis.experiments.information import check_information
-        from crucis.experiments.model import index,qualified
+        from crucis_causal.connections.model import Builder,contract as c1,unknown_ref,unresolved
+        from crucis_causal.connections.codec import dumps as s1bytes
+        from crucis_causal.experiments.resolver import parse_snapshot,ReadAccess
+        from crucis_causal.experiments.writer import S2RecordWriter
+        from crucis_causal.experiments.information import check_information
+        from crucis_causal.experiments.model import index,qualified
         d=draft();b=Builder('synthetic native metadata');policy=b.add('policy',{'policy_contract':c1('test_policy'),'parameters':[],'scope':scope(b.producer),'authority':unresolved(),'source':{'basis':'intrinsic','evidence':[],'procedure':unresolved(),'inputs':[]}})
         req=b.add('request',{'operation':c1('test_discovery'),'task_scope':scope(b.producer),'deliverables':[],'completion':c1('test_completion'),'completion_parameters':[],'presentation_policy':policy,'resource_policy':unresolved(),'recovery_policy':unresolved(),'route':'s1.recorded','source':{'basis':'intrinsic','evidence':[],'procedure':unresolved(),'inputs':[]}})
         attempt=b.add('attempt',{'request':req,'native_identity':unresolved(),'initial_state':unresolved(),'binding':unresolved(),'source':{'basis':'intrinsic','evidence':[],'procedure':unresolved(),'inputs':[]}})

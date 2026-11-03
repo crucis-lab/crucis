@@ -3,16 +3,18 @@ requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "crucis"
+name = "crucis-causal"
 version = "0.1.0.dev0"
 description = "A system-agnostic framework for auditing causal discovery systems and their claims"
 readme = "README.md"
 requires-python = ">=3.10"
-license-files = ["LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]
+license = "Apache-2.0"
+authors = [{name = "Uzair Gheewala"}]
+license-files = ["LICENSE", "NOTICE", "LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]
 dependencies = ["numpy>=1.26,<3", "jsonschema>=4.25,<5"]
 
 [project.scripts]
-crucis = "crucis.__main__:main"
+crucis-causal = "crucis_causal.__main__:main"
 
 [project.optional-dependencies]
 classical = ["causal-learn==0.1.4.8", "ges==1.1.0"]
@@ -26,7 +28,7 @@ Research = "https://github.com/uzairgheewala/cc-research"
 include-package-data = false
 
 [tool.setuptools.packages.find]
-include = ["crucis*"]
+include = ["crucis_causal*"]
 namespaces = false
 
 [tool.setuptools.package-data]

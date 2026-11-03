@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use Crucis, please cite this software and the original systems and datasets you evaluate."
+type: software
+title: "Crucis: Causal Discovery Auditing"
+authors:
+  - family-names: Gheewala
+    given-names: Uzair
+repository-code: "https://github.com/crucis-lab/crucis"
+url: "https://github.com/crucis-lab/crucis"
+version: "0.1.0.dev0"
+license: Apache-2.0
+abstract: "A system-agnostic framework for auditing causal-discovery systems and their claims."

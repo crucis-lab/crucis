@@ -1,0 +1,31 @@
+{
+  "tickets": [
+    "DLV-09",
+    "DLV-10",
+    "INF-06",
+    "BLD-11"
+  ],
+  "approved_date": "2026-11-03",
+  "brand": "Crucis: Causal Discovery Auditing",
+  "distribution": "crucis-causal",
+  "python_namespace": "crucis_causal",
+  "command": "crucis-causal",
+  "license": "Apache-2.0",
+  "original_code_copyright_holder": "Uzair Gheewala",
+  "original_private_head": "851ff85e93a24fa002f2df059b2b6cb450b5a798",
+  "cleaned_history_head": "e3995c78c98afa2b67985c401d11f729b5fed789",
+  "commit_map": "old                                      new\n17c09147c1debe8678bcb089b7a24b46c36c4f50 9f7cfdeeec317b3bc434fee63a5bdd35b045b3e5\n2f08db92c2a66ff1c3ebb1ecefeb4dfc4c51feb7 043570c93e300cbd37a362230ac19f3b92cbc7a4\n79fb7bdd434714565a14e2e1ab46ab9fc3f44afd 70c83034b1512a97c77835350bf98e37ef5e6553\n851ff85e93a24fa002f2df059b2b6cb450b5a798 e3995c78c98afa2b67985c401d11f729b5fed789\n",
+  "excluded_private_paths": [
+    "crucis/docs/q1-api-funding-budget-2026-11-01.json",
+    "crucis/docs/q1-api-funding-plan-2026-11-01.md",
+    "crucis/docs/q1-api-funding-reply-draft-2026-11-01.md",
+    "crucis/docs/q1-empirical-study-funding-rebase-2026-11-01.md",
+    "crucis/docs/q1-funding-email-sent-2026-11-01.md",
+    "crucis/docs/q1-funding-proposal-multisystem-2026-11-01.md",
+    "crucis/docs/q1-multi-system-cost-inventory-2026-11-01.json",
+    "crucis/docs/q1-study-budget-2026-11-01.json"
+  ],
+  "path_translation": "Historical extraction targets beginning crucis/ now live under crucis_causal/; original source hashes/paths are retained unchanged as historical evidence.",
+  "backup": "Original Git bundle and byte-preserved excluded documents kept outside this publishing repository; no backup refs are pushed.",
+  "scientific_protocol_change": false
+}

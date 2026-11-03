@@ -1,0 +1,17 @@
+name: Protocol, adapter or benchmark proposal
+description: Propose an extension with explicit semantics and validation evidence.
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Question and scope
+      description: Intended scientific task, system configuration, information regime and output semantics.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and compatibility
+      description: Evidence needed, proposed test cases, assumptions, limitations and effects on existing protocols/results.
+    validations:
+      required: true

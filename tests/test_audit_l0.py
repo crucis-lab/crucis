@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Bundle B1 (DLV-09): L0 metrics route to the research repository's scorers and agree with every other copy of the
 rule; MATMCD audited end to end (recorded) equals AB-06; the whole B1 rerun gate holds (<= 0.001)."""
 import random
@@ -11,10 +11,10 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from crucis.core.graph import Graph  # noqa: E402
-from crucis.metrics import l0  # noqa: E402
-from crucis._support import probe_io as PIO  # noqa: E402  (on sys.path through audit.core.paths)
-from crucis._support import causalarena_io as CA  # noqa: E402
+from crucis_causal.core.graph import Graph  # noqa: E402
+from crucis_causal.metrics import l0  # noqa: E402
+from crucis_causal._support import probe_io as PIO  # noqa: E402  (on sys.path through audit.core.paths)
+from crucis_causal._support import causalarena_io as CA  # noqa: E402
 
 HAVE_DATA = (DATA_ROOT / "runs" / "ab06").is_dir() and (DATA_ROOT / "external" / "causalarena").is_dir()
 
@@ -47,8 +47,8 @@ class TestRulesAgree(unittest.TestCase):
 class TestEndToEnd(unittest.TestCase):
     def test_matmcd_l0_equals_ab06(self):
         import json
-        from crucis.collect import collect, l0_table, score_all
-        from crucis.core import adapter as A, battery as B
+        from crucis_causal.collect import collect, l0_table, score_all
+        from crucis_causal.core import adapter as A, battery as B
         ref = json.loads((DATA_ROOT / "analysis" / "results" / "ab06" / "ab06.json").read_text())["agents"]["matmcd"]
         b = B.ca_ab06()
         recs = collect(A.get("matmcd"), b, ("real", "neutral", "swapped"))
@@ -60,7 +60,7 @@ class TestEndToEnd(unittest.TestCase):
             self.assertLessEqual(abs(t[arm]["dv1"]["coverage"] - ref[arm]["dv1_coverage"]), 0.001)
 
     def test_b1_gate(self):
-        from crucis.rerun import existing as E
+        from crucis_causal.rerun import existing as E
         t, _ = E.run(("B1",))
         s = t.summary("B1")
         self.assertTrue(s["pass"], [(r["audit"], r["system"], r["metric"], r["stored"], r["recomputed"]) for r in s["failed"]][:5])

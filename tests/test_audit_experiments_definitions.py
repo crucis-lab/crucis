@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-C case, membership, question/reference and resolution cases (DLV-08/09)."""
 import copy
 from pathlib import Path
@@ -7,10 +7,10 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from test_audit_experiments_wire import local,desc,package,record,context,MANIFEST,RAW
 from test_audit_experiments_services import draft,ac,claim,subject
-from crucis.experiments import core,ServiceError
-from crucis.experiments.contracts import inspect,install
-from crucis.experiments.model import qualified,reference,identity,source,scope,known,not_applicable,index,contract
-from crucis.experiments.operations import get
+from crucis_causal.experiments import core,ServiceError
+from crucis_causal.experiments.contracts import inspect,install
+from crucis_causal.experiments.model import qualified,reference,identity,source,scope,known,not_applicable,index,contract
+from crucis_causal.experiments.operations import get
 
 def q(name,alias):return qualified(local(name,alias),desc(name)['package_id'])
 
@@ -78,13 +78,13 @@ class DefinitionCases(unittest.TestCase):
             with d.records.begin(d.author,d.clock) as tx:tx.ingest([r]);tx.commit()
 
     def test_response_omission_scope_and_valid_order_alternatives(self):
-        from crucis.connections.model import Builder,contract as c1,known as k1
-        from crucis.connections.domains import finite_domain,directed_link,graph_body,member
-        from crucis.connections.codec import dumps as bytes1
-        from crucis.experiments.resolver import parse_snapshot,ReadAccess
-        from crucis.experiments.api import PlanReadContext
-        from crucis.experiments.services import FamilyRegistry
-        from crucis.experiments.responses import graph_adjacency,order_admissible
+        from crucis_causal.connections.model import Builder,contract as c1,known as k1
+        from crucis_causal.connections.domains import finite_domain,directed_link,graph_body,member
+        from crucis_causal.connections.codec import dumps as bytes1
+        from crucis_causal.experiments.resolver import parse_snapshot,ReadAccess
+        from crucis_causal.experiments.api import PlanReadContext
+        from crucis_causal.experiments.services import FamilyRegistry
+        from crucis_causal.experiments.responses import graph_adjacency,order_admissible
         b=Builder();dom=finite_domain(b,['A','B','C']);graph=b.output('graph',graph_body(dom,[directed_link(dom,0,2)],'dag'))
         openbody=graph_body(dom,[directed_link(dom,0,2)],'dag');openbody['omission']['within_coverage']='unreported'
         opened=b.output('graph',openbody)

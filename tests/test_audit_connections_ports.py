@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Optional ports, authority and consumer compatibility (DLV-08, DLV-09)."""
 from dataclasses import replace
 import copy
@@ -11,18 +11,18 @@ import uuid
 from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
-from crucis.connections import Builder, WireError, known
-from crucis.connections import api, core
-from crucis.connections.domains import directed_link, finite_domain, graph_body, permutation
-from crucis.connections.evidence import Resolver, capture_bytes, evidence_record
-from crucis.connections.legacy import echo, encode, import_record, project
-from crucis.connections.model import contract, not_applicable, scope, source, unknown_ref, unresolved
-from crucis.connections.ports import make_connection, prepared_connection, recorded_connection, supplied_connection, with_decoder
-from crucis.connections.semantics import validate
-from crucis.connections.services import IdentityService
-from crucis.connections.services import (ActionChannel,CaptureSink,ContractRegistry,HandleRegistry,MappingRegistry,
+from crucis_causal.connections import Builder, WireError, known
+from crucis_causal.connections import api, core
+from crucis_causal.connections.domains import directed_link, finite_domain, graph_body, permutation
+from crucis_causal.connections.evidence import Resolver, capture_bytes, evidence_record
+from crucis_causal.connections.legacy import echo, encode, import_record, project
+from crucis_causal.connections.model import contract, not_applicable, scope, source, unknown_ref, unresolved
+from crucis_causal.connections.ports import make_connection, prepared_connection, recorded_connection, supplied_connection, with_decoder
+from crucis_causal.connections.semantics import validate
+from crucis_causal.connections.services import IdentityService
+from crucis_causal.connections.services import (ActionChannel,CaptureSink,ContractRegistry,HandleRegistry,MappingRegistry,
     RecordBuffer,RuntimeAuthority,execution_binding,delivery_binding,cancellation_binding)
-from crucis.connections.store import PackageStore
+from crucis_causal.connections.store import PackageStore
 from test_audit_connections_history import request,attempt
 
 
@@ -112,8 +112,8 @@ class PortCases(unittest.TestCase):
         self.assertTrue(all(s.records.get(g)['record_type']=='s1.gap' for g in result.diagnostics))
 
     def test_all_statuses_and_nested_replicate_selection_echo_exactly(self):
-        from crucis.core.graph import Graph
-        from crucis.core.runs import RunRecord,STATUSES
+        from crucis_causal.core.graph import Graph
+        from crucis_causal.core.runs import RunRecord,STATUSES
         for status in STATUSES:
             rec=RunRecord('fixture','i','real',status,graph=Graph.from_edges(2,[(0,1)]) if status=='ok' else None,
                 confidence={(1,0):0.8},notes={'file_read':'seed-exact-path','replicates':[RunRecord('fixture','i','real','host_error')]})
@@ -122,7 +122,7 @@ class PortCases(unittest.TestCase):
             self.assertTrue(validate(imported['package']).ok)
 
     def test_historical_digest_mismatch_is_new_evidence_not_repinned_history(self):
-        from crucis.core.runs import RunRecord
+        from crucis_causal.core.runs import RunRecord
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'result.json';path.write_bytes(b'changed')
             rec=RunRecord('fixture','i','real','failed',files={'result':{'path':str(path),'sha256':hashlib.sha256(b'old').hexdigest()}})
@@ -131,8 +131,8 @@ class PortCases(unittest.TestCase):
             self.assertTrue(validate(imported['package']).ok)
 
     def test_core_import_occurrence_reuses_receipt_and_rejects_changed_value(self):
-        from crucis.core.graph import Graph
-        from crucis.core.runs import RunRecord
+        from crucis_causal.core.graph import Graph
+        from crucis_causal.core.runs import RunRecord
         with tempfile.TemporaryDirectory() as tmp:
             b,s,sink=setup(PackageStore(tmp));r,policy=request(b);d=finite_domain(b,['A','B'])
             labels=api.LegacyBinding(b.producer,'i','real',d,'original',unresolved(),unresolved(),contract('legacy_runrecord_codec'))
@@ -239,19 +239,19 @@ class PortCases(unittest.TestCase):
 
     def test_restricted_legacy_presentation_requires_unique_names(self):
         # Core permits duplicate display labels; the old route has a narrower prerequisite.
-        from crucis.core.harness import present
-        from crucis.core import battery
+        from crucis_causal.core.harness import present
+        from crucis_causal.core import battery
         self.assertTrue(callable(present))
         b,s,_=setup();d=finite_domain(b,['same','same'])
         self.assertEqual(len(b.get(d)['payload']['members']),2)
-        from crucis.connections.integrations.legacy_recorded import require_unique_names
+        from crucis_causal.connections.integrations.legacy_recorded import require_unique_names
         with self.assertRaises(WireError):require_unique_names(['same','same'])
 
     @unittest.skipUnless((DATA_ROOT / 'runs/ab06').is_dir(),'recorded sources absent')
     def test_all_eight_existing_adapters_remain_read_only_and_echo(self):
-        from crucis.core import adapter,battery
-        from crucis.run import AUDITS
-        from crucis.connections.integrations.legacy_recorded import connection
+        from crucis_causal.core import adapter,battery
+        from crucis_causal.run import AUDITS
+        from crucis_causal.connections.integrations.legacy_recorded import connection
         names=adapter.names();self.assertEqual(len(names),8)
         for name in names:
             spec=next(v for v in AUDITS.values() if v['system']==name);ad=adapter.get(name,**spec.get('adapter_kw',{}));bt=battery.get(spec['battery']);item=bt.items[0];arm=spec['arms'][0]

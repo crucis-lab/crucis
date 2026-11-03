@@ -12,3 +12,13 @@ dist/
 results/
 sealed/
 tests/last_run.json
+
+# Private correspondence/budget planning is archived outside this repository.
+/crucis_causal/docs/q1-api-funding-budget-2026-11-01.json
+/crucis_causal/docs/q1-api-funding-plan-2026-11-01.md
+/crucis_causal/docs/q1-api-funding-reply-draft-2026-11-01.md
+/crucis_causal/docs/q1-empirical-study-funding-rebase-2026-11-01.md
+/crucis_causal/docs/q1-funding-email-sent-2026-11-01.md
+/crucis_causal/docs/q1-funding-proposal-multisystem-2026-11-01.md
+/crucis_causal/docs/q1-multi-system-cost-inventory-2026-11-01.json
+/crucis_causal/docs/q1-study-budget-2026-11-01.json

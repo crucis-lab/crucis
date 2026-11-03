@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Evidence identity/publication failures and partial capture (DLV-08, DLV-09)."""
 import copy
 import hashlib
@@ -11,11 +11,11 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from crucis.connections import Builder, WireError, known
-from crucis.connections.evidence import Resolver, capture_bytes, capture_file, evidence_record, integrity_checks
-from crucis.connections.model import contract, reference, scope, source, unresolved
-from crucis.connections.store import IdentityConflict, PackageStore
-from crucis.connections.validation import validate_wire
+from crucis_causal.connections import Builder, WireError, known
+from crucis_causal.connections.evidence import Resolver, capture_bytes, capture_file, evidence_record, integrity_checks
+from crucis_causal.connections.model import contract, reference, scope, source, unresolved
+from crucis_causal.connections.store import IdentityConflict, PackageStore
+from crucis_causal.connections.validation import validate_wire
 
 
 def package(data=b'{"":7,"x":[1,2]}'):

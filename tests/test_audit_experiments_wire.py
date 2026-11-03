@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-A: accepted envelopes, strict bytes, pins and resolver negatives (DLV-08/09)."""
 import copy
 from dataclasses import replace
@@ -10,11 +10,11 @@ import unittest
 from types import SimpleNamespace
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from crucis.experiments import ReaderLimits,ServiceError,known,number
-from crucis.experiments import codec,core
-from crucis.experiments.model import digest,identity,reference
-from crucis.experiments.resolver import PlanResolver,ReadAccess,parse_snapshot
-from crucis.experiments.schema import catalog,schema
+from crucis_causal.experiments import ReaderLimits,ServiceError,known,number
+from crucis_causal.experiments import codec,core
+from crucis_causal.experiments.model import digest,identity,reference
+from crucis_causal.experiments.resolver import PlanResolver,ReadAccess,parse_snapshot
+from crucis_causal.experiments.schema import catalog,schema
 
 FIX=ROOT/'tests/audit_fixtures/sc2'
 LIMITS=ReaderLimits.standard()
@@ -55,7 +55,7 @@ class WireCases(unittest.TestCase):
 
     def test_all_eleven_typed_payload_formats_and_their_reference_contexts(self):
         found=set()
-        from crucis.experiments.model import not_applicable
+        from crucis_causal.experiments.model import not_applicable
         for d in MANIFEST['packages']:
             p=json.loads(RAW[d['path']]);ctx=context(d['path'][:-5])
             for r in p['records']:
@@ -67,7 +67,7 @@ class WireCases(unittest.TestCase):
         self.assertEqual(found,{p['contract']['name'] for p in catalog()['payload_contracts'].values()})
 
     def test_payload_fragment_and_unqualified_nested_reference_do_not_gain_full_contract(self):
-        from crucis.experiments.model import not_applicable
+        from crucis_causal.experiments.model import not_applicable
         ctx=context('A-s1-definitions');ref={'artifact':local('A-s1-definitions','coordinates'),'selector':known({'selector_type':'json_pointer','pointer':'/indices'})}
         with self.assertRaises(ServiceError):resolver().payload(ref,ctx.active_package,ctx.access,LIMITS)
         p=package('A-s1-definitions');p['package_id']=identity();r=record(p,'coordinates','A-s1-definitions')
@@ -160,7 +160,7 @@ class WireCases(unittest.TestCase):
         # Plan/trial cycles are present in the accepted goldens.
         p=package('A-s2-plan');codec.validate_package(p,LIMITS)
         q=copy.deepcopy(p);q['package_id']=identity()
-        from crucis.experiments.model import unknown
+        from crucis_causal.experiments.model import unknown
         p['external_packages'].append({'package_id':q['package_id'],'format':q['format'],'locator':unknown(),'expected_digest':unknown(),'access':'s2.supplied'})
         q['external_packages'].append({'package_id':p['package_id'],'format':p['format'],'locator':unknown(),'expected_digest':unknown(),'access':'s2.supplied'})
         r=PlanResolver([codec.dumps(p,LIMITS),codec.dumps(q,LIMITS)],limits=LIMITS)

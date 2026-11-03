@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Bundle B1 of the audit package (DLV-09): graph type, canonical hashing, batteries, regimes, the adapter interface and
 its conformance suite. NumPy only; tests that need data kept outside git (external/, runs/) skip when it is absent.
 
@@ -14,10 +14,10 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from crucis.core.graph import Graph  # noqa: E402
-from crucis.core import canon, adapter as A, battery as B, harness as H  # noqa: E402
-from crucis.core.runs import RunRecord  # noqa: E402
-from crucis.protocol import regimes as R, kinds as K  # noqa: E402
+from crucis_causal.core.graph import Graph  # noqa: E402
+from crucis_causal.core import canon, adapter as A, battery as B, harness as H  # noqa: E402
+from crucis_causal.core.runs import RunRecord  # noqa: E402
+from crucis_causal.protocol import regimes as R, kinds as K  # noqa: E402
 
 HAVE_CA = (DATA_ROOT / "external" / "causalarena" / "scm" / "semantic" / "data").is_dir()
 HAVE_AB06 = (DATA_ROOT / "runs" / "ab06").is_dir()
@@ -176,7 +176,7 @@ class Oracle(A.Adapter):
 @unittest.skipUnless(HAVE_CA, "CausalArena files are kept outside git")
 class TestConformance(unittest.TestCase):
     def test_planted_oracle_and_reversed(self):
-        from crucis.metrics import l0
+        from crucis_causal.metrics import l0
         b = B.ca_ab06()
         for item in b.items[:3]:
             tr = l0.truth(item, "real")

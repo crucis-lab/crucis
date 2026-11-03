@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-E explicit populations, missingness and evaluation selections (DLV-08/09)."""
 from pathlib import Path
 import sys
@@ -6,10 +6,10 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from test_audit_experiments_services import draft,ac
 from test_audit_experiments_definitions import q
-from crucis.experiments import core
-from crucis.experiments.model import contract,source,scope,index,known,unknown
-from crucis.experiments.operations import get,parameter,assessment
-from crucis.experiments.evaluation import install_metadata_descriptor
+from crucis_causal.experiments import core
+from crucis_causal.experiments.model import contract,source,scope,index,known,unknown
+from crucis_causal.experiments.operations import get,parameter,assessment
+from crucis_causal.experiments.evaluation import install_metadata_descriptor
 
 def proposal(d,comparison,units,entries):
     with d.records.begin(d.author,d.clock) as tx:

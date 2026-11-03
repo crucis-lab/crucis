@@ -15,8 +15,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_EXAMPLES = {
-    'crucis/docs/system-connections-sc1-example-2026-11-01.json',
-    'crucis/docs/subsystem2-review-traceability-2026-11-02.json',
+    'crucis_causal/docs/system-connections-sc1-example-2026-11-01.json',
+    'crucis_causal/docs/subsystem2-review-traceability-2026-11-02.json',
 }
 
 
@@ -25,7 +25,9 @@ def check_names(names, *, source):
         path = PurePosixPath(name)
         if path.is_absolute() or '..' in path.parts or '\\' in name:
             raise ValueError('Unsafe distribution path: ' + name)
-        if 'crucis/docs/' in name and (not source or name not in SOURCE_EXAMPLES):
+        if name.startswith('crucis/'):
+            raise ValueError('Old conflicting import namespace in distribution: ' + name)
+        if 'crucis_causal/docs/' in name and (not source or name not in SOURCE_EXAMPLES):
             raise ValueError('Development planning document in distribution: ' + name)
         if any(p in path.parts for p in ('external', 'runs', 'sealed', '.git', '__pycache__')):
             raise ValueError('Excluded material in distribution: ' + name)
@@ -45,13 +47,13 @@ class BlockResearch(importlib.abc.MetaPathFinder):
         if fullname.split('.')[0] in {'analysis','audit','harness','score','cc_graph','lineage','partial_stages','probe_io'}:
             raise ImportError('Research import forbidden: '+fullname)
 sys.meta_path.insert(0, BlockResearch())
-import crucis
-from crucis.connections.schema import schema as sc1
-from crucis.experiments.schema import schema as sc2
-from crucis.core.graph import Graph
-from crucis.core.adapter import names
-import crucis.systems
-module = pathlib.Path(crucis.__file__).resolve()
+import crucis_causal
+from crucis_causal.connections.schema import schema as sc1
+from crucis_causal.experiments.schema import schema as sc2
+from crucis_causal.core.graph import Graph
+from crucis_causal.core.adapter import names
+import crucis_causal.systems
+module = pathlib.Path(crucis_causal.__file__).resolve()
 assert not module.is_relative_to(checkout), 'Imported the source checkout'
 assert sc1() and sc2() and Graph.from_edges(2, [(0,1)]).n == 2
 assert len(names()) == 8
@@ -71,13 +73,16 @@ def run(dist_dir, installed_root=None):
     with zipfile.ZipFile(wheels[0]) as archive:
         wheel_names = [i.filename for i in archive.infolist() if not i.is_dir()]
         check_names(wheel_names, source=False)
-        for required in ('crucis/connections/sc1.schema.json','crucis/experiments/catalog.json'):
+        for required in ('crucis_causal/connections/sc1.schema.json','crucis_causal/experiments/catalog.json'):
             json.loads(archive.read(required))
         if not any(n.endswith('/licenses/LICENSES/NOTEARS-Apache-2.0.txt') for n in wheel_names):
             raise ValueError('Wheel is missing retained NOTEARS license')
         if not any(n.endswith('/licenses/THIRD_PARTY_NOTICES.md') for n in wheel_names):
             raise ValueError('Wheel is missing third-party attribution')
-        expected = {n:hashlib.sha256(archive.read(n)).hexdigest() for n in wheel_names if n.startswith('crucis/')}
+        for legal in ('LICENSE','NOTICE'):
+            if not any(n.endswith('/licenses/'+legal) for n in wheel_names):
+                raise ValueError('Wheel is missing project '+legal)
+        expected = {n:hashlib.sha256(archive.read(n)).hexdigest() for n in wheel_names if n.startswith('crucis_causal/')}
     with tarfile.open(sdists[0], 'r:gz') as archive:
         source_names = [str(PurePosixPath(m.name).relative_to(PurePosixPath(m.name).parts[0]))
                         for m in archive.getmembers() if m.isfile()]
@@ -93,7 +98,7 @@ def run(dist_dir, installed_root=None):
         probe = subprocess.run([sys.executable,'-I','-B','-c',PROBE,str(ROOT),installed_root,json.dumps(expected)],
                                cwd=scratch,capture_output=True,text=True,check=True)
         installed = json.loads(probe.stdout)
-        for module in ('crucis','crucis.connections','crucis.experiments'):
+        for module in ('crucis_causal','crucis_causal.connections','crucis_causal.experiments'):
             command = 'import sys,runpy; '
             if installed_root:
                 command += 'sys.path.insert(0,'+repr(installed_root)+'); '

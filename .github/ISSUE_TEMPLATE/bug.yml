@@ -1,0 +1,22 @@
+name: Bug or adapter problem
+description: Report a reproducible failure or a mismatch in preserved native evidence.
+body:
+  - type: textarea
+    id: version
+    attributes:
+      label: Version and environment
+      description: Commit or version, Python, OS, system/adapter and execution mode.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Commands, minimal input and observed versus expected behavior. Share public or synthetic evidence only.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Evidence and impact
+      description: Relevant receipt IDs, uncertainty, missing evidence and whether scientific outputs may be affected.

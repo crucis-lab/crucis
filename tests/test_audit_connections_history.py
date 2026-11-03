@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Episode/transport/state/replay acceptance cases (DLV-08, DLV-09)."""
 import copy
 import json
@@ -8,12 +8,12 @@ import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
-from crucis.connections import Builder, WireError, known, number
-from crucis.connections.evidence import capture_bytes
-from crucis.connections.history import (RecordedReplay, ReplayEntry, ReplayExhausted,
+from crucis_causal.connections import Builder, WireError, known, number
+from crucis_causal.connections.evidence import capture_bytes
+from crucis_causal.connections.history import (RecordedReplay, ReplayEntry, ReplayExhausted,
     accounting_total, native_action_count)
-from crucis.connections.model import contract, index, not_applicable, scope, source, unknown_ref, unresolved
-from crucis.connections.semantics import validate
+from crucis_causal.connections.model import contract, index, not_applicable, scope, source, unknown_ref, unresolved
+from crucis_causal.connections.semantics import validate
 
 
 def status(report, ref, check):
@@ -153,15 +153,15 @@ class HistoryCases(unittest.TestCase):
 
     @unittest.skipUnless((DATA_ROOT / 'runs').is_dir(),'recorded sources absent')
     def test_existing_causal_copilot_stage_reader_is_additive(self):
-        from crucis.core import adapter,battery
-        from crucis.connections.legacy import import_record,echo,encode
+        from crucis_causal.core import adapter,battery
+        from crucis_causal.connections.legacy import import_record,echo,encode
         ad=adapter.get('causal_copilot');bt=battery.get('q1s2');item=bt.items[0]
         rec=ad.recorded(item,'real');imported=import_record(rec,n=item.n)
         self.assertTrue(rec.stages,'the selected recorded Causal-Copilot case must actually exercise stages')
         self.assertTrue(validate(imported['package']).ok)
         self.assertEqual(encode(echo(imported['package'],imported['legacy_snapshot'])),encode(rec))
         if rec.stages:
-            from crucis.trace.stages import lineage
+            from crucis_causal.trace.stages import lineage
             self.assertEqual(lineage(echo(imported['package'],imported['legacy_snapshot']).stages),lineage(rec.stages))
 
 

@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-B transactional, registry and scoped-profile acceptance (DLV-08/09)."""
 import copy
 from dataclasses import replace
@@ -10,12 +10,12 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from test_audit_experiments_wire import resolver,context,local,desc,LIMITS
-from crucis.experiments import ServiceError,known,unknown
-from crucis.experiments import api,core
-from crucis.experiments.model import source,scope,contract,qualified,digest,identity
-from crucis.experiments.operations import atomic,assessment
-from crucis.experiments.writer import S2RecordWriter
-from crucis.experiments.services import IdentityService,OccurrenceStore,FamilyRegistry,AssessmentRegistry,ProjectionRegistry
+from crucis_causal.experiments import ServiceError,known,unknown
+from crucis_causal.experiments import api,core
+from crucis_causal.experiments.model import source,scope,contract,qualified,digest,identity
+from crucis_causal.experiments.operations import atomic,assessment
+from crucis_causal.experiments.writer import S2RecordWriter
+from crucis_causal.experiments.services import IdentityService,OccurrenceStore,FamilyRegistry,AssessmentRegistry,ProjectionRegistry
 
 def draft():
     c=context('A-s2-plan');w=S2RecordWriter(c.resolver,c.access,LIMITS);return w.context()
@@ -135,7 +135,7 @@ class ServiceCases(unittest.TestCase):
 
     def test_unknown_critical_extension_kept_without_interpretation_claim(self):
         d=draft()
-        from crucis.experiments.model import reference
+        from crucis_causal.experiments.model import reference
         with d.records.begin(d.author,d.clock) as tx:
             ref=tx.add('requirement',requirement(d));r=tx.get(ref);r['id']=identity();ref=reference(r['id'],'requirement')
             r['extensions']=[{'contract':contract('foreign.opaque'),'affects':[ref],'critical_for':['s2.interpret'],'payload':{'content_form':'inline_utf8','text':'opaque'}}]
@@ -145,7 +145,7 @@ class ServiceCases(unittest.TestCase):
         self.assertIn('s2.critical_extension_uninterpreted',{i.code for i in result.value.issues})
 
     def test_invalid_utc_clock_rolls_back_without_native_failure_attribution(self):
-        from crucis.experiments.services import ClockService
+        from crucis_causal.experiments.services import ClockService
         class BadClock(ClockService):
             def now(self):return {'time_type':'utc_instant','value':'not-a-time','precision':'second','clock':unknown(),'uncertainty_seconds':unknown()}
         d=draft();d.records.clock=BadClock();bad=replace(d,clock=d.records.clock)

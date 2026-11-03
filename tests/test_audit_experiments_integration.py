@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-I executable acceptance lineage and integration boundaries (DLV-08/09/10)."""
 import copy
 from dataclasses import replace
@@ -16,11 +16,11 @@ from test_audit_experiments_services import draft,ac,claim,subject
 from test_audit_experiments_definitions import q
 from test_audit_experiments_families import modified,with_payload
 from test_audit_experiments_evaluation import metadata_scope,proposal,entry
-from crucis.experiments import api,core,codec,known,unknown,ServiceError
-from crucis.experiments.model import contract,source,scope,reference,identity,qualified,number
-from crucis.experiments.operations import get,parameter
-from crucis.experiments.families import inspect,values
-from crucis.experiments.resolver import parse_snapshot,ReadAccess
+from crucis_causal.experiments import api,core,codec,known,unknown,ServiceError
+from crucis_causal.experiments.model import contract,source,scope,reference,identity,qualified,number
+from crucis_causal.experiments.operations import get,parameter
+from crucis_causal.experiments.families import inspect,values
+from crucis_causal.experiments.resolver import parse_snapshot,ReadAccess
 
 SPEC=json.loads((FIX/'negative-cases.json').read_text())
 NEGATIVES={r['id']:r for k in ('cases','additional_byte_cases','additional_composition_cases') for r in SPEC[k]}
@@ -42,7 +42,7 @@ def exercise(module,cls,method):
 
 class IntegrationCases(unittest.TestCase):
     def test_partial_profile_procedure_cannot_upgrade_its_pass_record_to_satisfied(self):
-        from crucis.experiments.operations import assessment
+        from crucis_causal.experiments.operations import assessment
         d=draft();family=contract('test.task_family');profile=contract('s2.bind_inputs_sources')
         d.read.registry.register(api.FamilyReader(family,d.author,contract('s2.task_definition'),contract('test.read'),
             lambda ref,ctx:api.PlanOp('completed',api.InterpretedValue(contract('test.read'),(ref,),(),()))))
@@ -69,9 +69,9 @@ class IntegrationCases(unittest.TestCase):
 
     def test_legacy_encoded_duplicate_keys_cannot_claim_lossless_echo(self):
         from test_audit_experiments_legacy import imported_context
-        from crucis.connections.model import Builder,contract as c1
-        from crucis.connections.codec import dumps
-        from crucis.connections.evidence import capture_bytes
+        from crucis_causal.connections.model import Builder,contract as c1
+        from crucis_causal.connections.codec import dumps
+        from crucis_causal.connections.evidence import capture_bytes
         with tempfile.TemporaryDirectory() as tmp:
             c,s,sc,_=imported_context(tmp);b=Builder()
             ambiguous={'legacy_type':'dict','entries':[['same','first'],['same','lost']]}
@@ -84,8 +84,8 @@ class IntegrationCases(unittest.TestCase):
 
     def test_injected_legacy_rejection_restores_staging_even_after_callback_commit(self):
         from test_audit_experiments_legacy import imported_context
-        from crucis.experiments.services import LegacyRegistry
-        from crucis.experiments.legacy import target
+        from crucis_causal.experiments.services import LegacyRegistry
+        from crucis_causal.experiments.legacy import target
         with tempfile.TemporaryDirectory() as tmp:
             c,s,sc,_=imported_context(tmp);before=c.draft.records.snapshot()
             def broken(*args):
@@ -101,7 +101,7 @@ class IntegrationCases(unittest.TestCase):
         p['extensions']=[{'contract':contract('foreign.package_meaning'),'affects':[p['roots'][0]],'critical_for':['s2.preserve'],
             'payload':{'content_form':'inline_utf8','text':'keep exact'}}]
         view=parse_snapshot(codec.dumps(p,LIMITS),LIMITS)
-        from crucis.experiments.writer import S2RecordWriter
+        from crucis_causal.experiments.writer import S2RecordWriter
         base=d.records.base.with_view(view);other=S2RecordWriter(base,ReadAccess(frozenset(base._views)),LIMITS).context()
         root=qualified(p['roots'][0],view.package_id);c=claim();c['scope']=scope(root)
         result=core.assess((root,),(c,),ac(other));self.assertFalse(result.value.satisfied)
@@ -109,7 +109,7 @@ class IntegrationCases(unittest.TestCase):
         self.assertIn(b'keep exact',view.source_bytes)
 
     def test_all_capability_and_composite_scopes_preserve_without_automatic_native_support(self):
-        cases=json.loads((ROOT/'crucis/docs/subsystem2-review-traceability-2026-11-02.json').read_text())['capability_cases']
+        cases=json.loads((ROOT/'crucis_causal/docs/subsystem2-review-traceability-2026-11-02.json').read_text())['capability_cases']
         self.assertEqual(len(cases),28)
         for case in cases:
             d=draft();roots=tuple(case['wire_responsibilities'])
@@ -122,9 +122,9 @@ class IntegrationCases(unittest.TestCase):
 
     def test_durable_import_rehydrates_record_closure_in_a_new_writer(self):
         from test_audit_experiments_legacy import imported_context
-        from crucis.experiments.writer import S2RecordWriter
-        from crucis.experiments.services import IdentityService,OccurrenceStore,LegacyRegistry
-        from crucis.experiments import legacy
+        from crucis_causal.experiments.writer import S2RecordWriter
+        from crucis_causal.experiments.services import IdentityService,OccurrenceStore,LegacyRegistry
+        from crucis_causal.experiments import legacy
         with tempfile.TemporaryDirectory() as tmp:
             c,s,sc,_=imported_context(tmp);fixed=c.draft.records.frozen([sc.bindings])
             c.draft.records.base=c.draft.records.base.with_view(fixed)
@@ -140,7 +140,7 @@ class IntegrationCases(unittest.TestCase):
             dd.records.frozen(again.value.roots)
 
     def test_unresolved_trial_extent_retains_six_known_slots_and_withholds_completeness(self):
-        from crucis.experiments.contracts import inspect as definition
+        from crucis_causal.experiments.contracts import inspect as definition
         p=mutation(NEGATIVES['N08']);codec.validate_package(p,LIMITS)
         plan=next(r for r in p['records'] if r['id']==local('A-s2-plan','plan')['target'])
         self.assertEqual(len(plan['payload']['trials']['members']),6)
@@ -149,7 +149,7 @@ class IntegrationCases(unittest.TestCase):
         p['package_id']=identity();view=parse_snapshot(codec.dumps(p,LIMITS),LIMITS);d=draft()
         # Changed existing record IDs are deliberately not merged into the same
         # resolver; this test is an independent source, avoiding identity masking.
-        from crucis.experiments.resolver import PlanResolver
+        from crucis_causal.experiments.resolver import PlanResolver
         r=PlanResolver([view.source_bytes,*[raw for name,raw in RAW.items() if name!='A-s2-plan.json' and json.loads(raw)['package_id'] in {x['package_id'] for x in p['external_packages']}]],limits=LIMITS)
         ctx=api.PlanReadContext(LIMITS,r,d.read.registry,ReadAccess(frozenset(r._views)),view.package_id)
         self.assertEqual(definition(local('A-s2-plan','plan'),ctx).result,'unknown')
@@ -179,7 +179,7 @@ class IntegrationCases(unittest.TestCase):
     def test_missing_particle_association_retains_all_native_member_occurrences(self):
         d=draft();ref=q('G-s2-receipts','weights');_,b=values(ref,d)
         data=d.read.resolver.payload(b['members']['value'],d.read.active_package,d.read.access,LIMITS)
-        from crucis.experiments.model import unknown_ref
+        from crucis_causal.experiments.model import unknown_ref
         data['members'][1]['parameter']=unknown_ref('s1.artifact_declaration','s2.not_recorded')
         other,blob=with_payload(d,'weighted_members',data);changed=modified(other,ref,{'members':known(blob)})
         result=inspect(changed,other,require_known=False)
@@ -188,9 +188,9 @@ class IntegrationCases(unittest.TestCase):
         self.assertEqual(len(retained['members']),4);self.assertNotEqual(retained['members'][0]['key'],retained['members'][1]['key'])
 
     def test_cyclic_derived_graph_does_not_erase_valid_native_collection(self):
-        from crucis.connections.model import Builder
-        from crucis.connections.domains import finite_domain,graph_body,directed_link
-        from crucis.connections.semantics import validate
+        from crucis_causal.connections.model import Builder
+        from crucis_causal.connections.domains import finite_domain,graph_body,directed_link
+        from crucis_causal.connections.semantics import validate
         b=Builder();dom=finite_domain(b,['A','B','C']);members=[]
         for edge in [(0,1),(1,2),(2,0)]:members.append(b.output('graph',graph_body(dom,[directed_link(dom,*edge)],'dag')))
         collection=b.output('collection',{'collection_kind':'sequence','member_contracts':[],
@@ -218,10 +218,10 @@ class IntegrationCases(unittest.TestCase):
         self.assertFalse(result.value.satisfied);self.assertIn('s2.critical_extension_uninterpreted',{i.code for i in result.value.issues})
 
     def test_completion_cardinality_unknown_order_and_graph_scope_are_conservative(self):
-        from crucis.connections.model import Builder,contract as c1
-        from crucis.connections.domains import finite_domain,member,graph_body
-        from crucis.connections.codec import dumps
-        from crucis.experiments.responses import graph_adjacency,order_admissible
+        from crucis_causal.connections.model import Builder,contract as c1
+        from crucis_causal.connections.domains import finite_domain,member,graph_body
+        from crucis_causal.connections.codec import dumps
+        from crucis_causal.experiments.responses import graph_adjacency,order_admissible
         b=Builder();dom=finite_domain(b,['A','B']);other=finite_domain(b,['A','B'])
         body=graph_body(dom,[],'dag');body['coverage']['domain']=other;g=b.output('graph',body)
         order=b.output('order',{'predicate':c1('foreign_order'),'domain':dom,'representation':'sequence',
@@ -233,16 +233,16 @@ class IntegrationCases(unittest.TestCase):
     @unittest.skipUnless((DATA_ROOT/'runs/ab06').is_dir(),'recorded sources absent')
     def test_cli_real_recorded_import_report_echo_and_deterministic_inspection(self):
         from test_audit_experiments_legacy import imported_context
-        from crucis.core import adapter,battery
-        from crucis.run import AUDITS
-        from crucis.connections.legacy import encode,decode
+        from crucis_causal.core import adapter,battery
+        from crucis_causal.run import AUDITS
+        from crucis_causal.connections.legacy import encode,decode
         spec=next(v for v in AUDITS.values() if v['system']=='matmcd');ad=adapter.get('matmcd',**spec.get('adapter_kw',{}))
         expected=ad.recorded(battery.get(spec['battery']).items[0],spec['arms'][0])
         with tempfile.TemporaryDirectory() as tmp:
             c,s,_,_=imported_context(Path(tmp)/'helper',expected);v=c.draft.records.base.lookup(s.captured_sources[0]['package_id'],c.draft.read.access,LIMITS)
             src=Path(tmp)/'source.json';src.write_bytes(v.source_bytes)
             def call(*args):
-                p=subprocess.run([sys.executable,'-B','-m','crucis.experiments',*map(str,args)],cwd=ROOT,capture_output=True,text=True)
+                p=subprocess.run([sys.executable,'-B','-m','crucis_causal.experiments',*map(str,args)],cwd=ROOT,capture_output=True,text=True)
                 self.assertEqual(p.returncode,0,p.stdout+p.stderr);return json.loads(p.stdout)
             self.assertEqual(call('inspect',src),call('inspect',src))
             out=Path(tmp)/'import';report=call('import',src,'--snapshot',s.captured_sources[0]['target'],'--occurrence',identity(),'--out',out,'--battery',spec['battery'])
@@ -251,9 +251,9 @@ class IntegrationCases(unittest.TestCase):
             echo=Path(tmp)/'echo';call('project',out/'package.json',*inputs,'--receipt',report['receipt']['target'],'--selection',report['selection']['target'],'--out',echo)
             self.assertEqual(encode(decode(json.loads((echo/'legacy.json').read_text())[0])),encode(expected))
             call('validate',out/'package.json',*inputs,'--out',Path(tmp)/'validate')
-            bad=subprocess.run([sys.executable,'-B','-m','crucis.experiments','run'],cwd=ROOT,capture_output=True)
+            bad=subprocess.run([sys.executable,'-B','-m','crucis_causal.experiments','run'],cwd=ROOT,capture_output=True)
             self.assertNotEqual(bad.returncode,0)
-            bad=subprocess.run([sys.executable,'-B','-m','crucis.experiments','validate',str(src),'--out',str(ROOT/'crucis')],cwd=ROOT,capture_output=True)
+            bad=subprocess.run([sys.executable,'-B','-m','crucis_causal.experiments','validate',str(src),'--out',str(ROOT/'crucis_causal')],cwd=ROOT,capture_output=True)
             self.assertNotEqual(bad.returncode,0)
 
 # Each accepted semantic failure mode is exercised using a functional fixture
@@ -350,12 +350,12 @@ def api_scenario(spec):
             view=parse_snapshot(RAW[args['s1_snapshot_file']],LIMITS)
             out=core.record_handoff(args['binding'],api.ProjectionOccurrence(**args['occurrence']),view,d)
         elif sid=='API13':
-            from crucis.experiments.evaluation import _foreign
+            from crucis_causal.experiments.evaluation import _foreign
             found=d.read.resolver.record(args['evidence_record'],d.read.active_package,d.read.access,LIMITS)
             p=_foreign(found.record['payload'],found.package_id,d)
             out=core.record_commitment(args['plan'],api.CommitmentEvidence(p['content'],p['event'],p['assurance'],tuple(p['exposure']['members'])),d)
         elif sid=='API14':
-            from crucis.experiments.evaluation import _foreign
+            from crucis_causal.experiments.evaluation import _foreign
             found=d.read.resolver.record(args['evidence_record'],d.read.active_package,d.read.access,LIMITS)
             p=_foreign(found.record['payload'],found.package_id,d)
             out=core.record_amendment(args['previous'],args['revised'],api.AmendmentEvidence(p['event'],p['affected'],p['reason'],p['explanation'],p['prior_observed']),d)

@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """Bundle B3 (DLV-09): L2. The recorder is observation-only (hooked output == unhooked output; hooks removed after an
 exception) and localises a crash to its stage; lineage classifies every change; the restricted unpickler runs no pickled
 code; Causal-Copilot's stages rebuilt from artifacts equal partial_stages.py, and the B3 gate holds."""
@@ -15,9 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tests"))
 
-from crucis.core.graph import Graph  # noqa: E402
-from crucis.trace import cc_stages, stages as S  # noqa: E402
-from crucis.trace.recorder import Recorder  # noqa: E402
+from crucis_causal.core.graph import Graph  # noqa: E402
+from crucis_causal.trace import cc_stages, stages as S  # noqa: E402
+from crucis_causal.trace.recorder import Recorder  # noqa: E402
 from audit_fixtures import toy_pipeline as TP  # noqa: E402
 
 HAVE_RUNS = ((DATA_ROOT / "runs" / "20261011T184856Z_s2_q011_r01_b3a03d" / "artifacts").is_dir()
@@ -130,7 +130,7 @@ class TestCausalCopilotStages(unittest.TestCase):
         self.assertTrue(tr["cycle_in_S3_pipeline_test"])
 
     def test_b3_gate(self):
-        from crucis.rerun import existing as E
+        from crucis_causal.rerun import existing as E
         t, _ = E.run(("B3",))
         s = t.summary("B3")
         self.assertTrue(s["pass"], [(r["audit"], r["system"], r["metric"], r["stored"], r["recomputed"]) for r in s["failed"]][:5])

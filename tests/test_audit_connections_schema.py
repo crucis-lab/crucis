@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """SC-1 structural encoding/reference obligations (DLV-08, DLV-09)."""
 import copy
 import json
@@ -8,13 +8,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from crucis.connections.codec import WireError, dumps, loads
-from crucis.connections.schema import PAYLOAD_FIELDS, schema
-from crucis.connections.validation import validate_wire
+from crucis_causal.connections.codec import WireError, dumps, loads
+from crucis_causal.connections.schema import PAYLOAD_FIELDS, schema
+from crucis_causal.connections.validation import validate_wire
 
 
 def specimen():
-    return loads((ROOT / "crucis/docs/system-connections-sc1-example-2026-11-01.json").read_bytes())
+    return loads((ROOT / "crucis_causal/docs/system-connections-sc1-example-2026-11-01.json").read_bytes())
 
 
 class SchemaConformance(unittest.TestCase):

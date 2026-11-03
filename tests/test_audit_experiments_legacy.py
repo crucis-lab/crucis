@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-H source scope, durable imports and compatibility losses (DLV-08/09/10)."""
 import copy
 from dataclasses import replace
@@ -11,18 +11,18 @@ from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from test_audit_experiments_services import draft
 from test_audit_experiments_wire import LIMITS
-from crucis.experiments import api,core,known,unknown
-from crucis.experiments.model import identity,qualified,contract,source
-from crucis.experiments.services import IdentityService,OccurrenceStore,LegacyRegistry
-from crucis.experiments.resolver import ReadAccess,parse_snapshot
-from crucis.experiments.operations import parameter
-from crucis.experiments import legacy
-from crucis.connections.model import Builder,contract as c1
-from crucis.connections.evidence import capture_bytes
-from crucis.connections.codec import dumps as s1bytes
-from crucis.connections.legacy import encode
-from crucis.core.runs import RunRecord
-from crucis.core.graph import Graph
+from crucis_causal.experiments import api,core,known,unknown
+from crucis_causal.experiments.model import identity,qualified,contract,source
+from crucis_causal.experiments.services import IdentityService,OccurrenceStore,LegacyRegistry
+from crucis_causal.experiments.resolver import ReadAccess,parse_snapshot
+from crucis_causal.experiments.operations import parameter
+from crucis_causal.experiments import legacy
+from crucis_causal.connections.model import Builder,contract as c1
+from crucis_causal.connections.evidence import capture_bytes
+from crucis_causal.connections.codec import dumps as s1bytes
+from crucis_causal.connections.legacy import encode
+from crucis_causal.core.runs import RunRecord
+from crucis_causal.core.graph import Graph
 
 def imported_context(tmp,value=None,fmt=None,kind='run_record'):
     value=value if value is not None else RunRecord('fixture','case','real','ok',graph=Graph.from_edges(2,[(0,1)]),
@@ -45,7 +45,7 @@ def imported_context(tmp,value=None,fmt=None,kind='run_record'):
 
 class LegacyCases(unittest.TestCase):
     def test_exact_echo_preserves_statuses_stages_confidence_cost_and_nested_occurrences(self):
-        from crucis.core.runs import STATUSES
+        from crucis_causal.core.runs import STATUSES
         with tempfile.TemporaryDirectory() as tmp:
             for status in STATUSES:
                 record=RunRecord('fixture','case','real',status,graph=Graph.from_edges(2,[(0,1)]) if status=='ok' else None,
@@ -81,12 +81,12 @@ class LegacyCases(unittest.TestCase):
     def test_no_implicit_file_capture_pickle_or_unsupported_version(self):
         with tempfile.TemporaryDirectory() as tmp:
             c,s,sc,_=imported_context(tmp)
-            with patch('crucis.connections.evidence.capture_file',side_effect=AssertionError('no file reads')):
+            with patch('crucis_causal.connections.evidence.capture_file',side_effect=AssertionError('no file reads')):
                 result=core.import_legacy(s,sc,c);self.assertEqual(result.state,'partial',result.diagnostics)
             before=c.draft.records.snapshot()
             for changed in [replace(s,legacy_contract=contract('foreign.pickle')),replace(s,captured_sources=(dict(s.captured_sources[0],binding='internal'),))]:
                 self.assertEqual(core.import_legacy(changed,sc,c).state,'rejected');self.assertEqual(before,c.draft.records.snapshot())
-            with self.assertRaises(ValueError):__import__('crucis.connections.legacy',fromlist=['decode']).decode({'legacy_type':'pickle','data':'unsafe'})
+            with self.assertRaises(ValueError):__import__('crucis_causal.connections.legacy',fromlist=['decode']).decode({'legacy_type':'pickle','data':'unsafe'})
 
     def test_incompatible_source_labels_and_unsupported_interpretations_reject_atomically(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -110,10 +110,10 @@ class LegacyCases(unittest.TestCase):
             self.assertEqual(core.import_legacy(s,sc,c).diagnostics[0].code,'s2.persistent_occurrence_store_required')
 
     def test_explicit_narrow_compatibility_view_calls_s1_and_reports_losses(self):
-        from crucis.connections import api as a1
-        from crucis.connections.domains import finite_domain,permutation,graph_body,directed_link
-        from crucis.connections.model import scope as sc1,unresolved
-        from crucis.experiments.model import scope
+        from crucis_causal.connections import api as a1
+        from crucis_causal.connections.domains import finite_domain,permutation,graph_body,directed_link
+        from crucis_causal.connections.model import scope as sc1,unresolved
+        from crucis_causal.experiments.model import scope
         with tempfile.TemporaryDirectory() as tmp:
             c,_,config,_=imported_context(tmp);b=Builder();dom=finite_domain(b,['A','B']);m=permutation(b,dom,dom,[('0','0'),('1','1')])
             graph=b.output('graph',graph_body(dom,[directed_link(dom,0,1)]));raw=capture_bytes(b,b'explicit reported status')
@@ -135,8 +135,8 @@ class LegacyCases(unittest.TestCase):
 
     @unittest.skipUnless((DATA_ROOT/'runs/ab06').is_dir(),'recorded sources absent')
     def test_all_eight_recorded_adapters_echo_through_s2_without_run(self):
-        from crucis.core import adapter,battery
-        from crucis.run import AUDITS
+        from crucis_causal.core import adapter,battery
+        from crucis_causal.run import AUDITS
         names=adapter.names();self.assertEqual(len(names),8)
         with tempfile.TemporaryDirectory() as tmp:
             for name in names:

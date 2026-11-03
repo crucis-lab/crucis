@@ -2,9 +2,10 @@
   "version": 1,
   "checks": [
     ["{python}", "-B", "tools/secret_scan.py"],
-    ["{python}", "-B", "tools/package_check.py"]
+    ["{python}", "-B", "tools/package_check.py"],
+    ["{python}", "-B", "tools/publication_check.py"]
   ],
   "full_checks": [
-    ["{python}", "-B", "-m", "crucis.dev.gates", "standalone", "--out", "{scratch}/conformance"]
+    ["{python}", "-B", "-m", "crucis_causal.dev.gates", "standalone", "--out", "{scratch}/conformance"]
   ]
 }

@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-F fixed bytes, amendments, adaptive choices and exposure (DLV-08/09)."""
 import copy
 import json
@@ -9,10 +9,10 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.i
 from test_audit_experiments_wire import package,desc,LIMITS,context
 from test_audit_experiments_services import draft
 from test_audit_experiments_definitions import q
-from crucis.experiments import core,api
-from crucis.experiments.model import contract,source,scope,index,known,unknown,number,reference,qualified,identity
-from crucis.experiments.operations import parameter,get
-from crucis.experiments.lifecycle import event_order,prospective_dependencies,record_decision,exposure_information
+from crucis_causal.experiments import core,api
+from crucis_causal.experiments.model import contract,source,scope,index,known,unknown,number,reference,qualified,identity
+from crucis_causal.experiments.operations import parameter,get
+from crucis_causal.experiments.lifecycle import event_order,prospective_dependencies,record_decision,exposure_information
 
 def event(d,subjects=()):
     with d.records.begin(d.author,d.clock) as tx:
@@ -61,9 +61,9 @@ class LifecycleCases(unittest.TestCase):
         self.assertEqual(event_order((ref,),d).result,'fail')
 
     def test_future_bytes_in_dependency_block_definition_even_without_direct_record_link(self):
-        from crucis.experiments.resolver import parse_snapshot,ReadAccess
-        from crucis.experiments.codec import dumps
-        from crucis.experiments.writer import S2RecordWriter
+        from crucis_causal.experiments.resolver import parse_snapshot,ReadAccess
+        from crucis_causal.experiments.codec import dumps
+        from crucis_causal.experiments.writer import S2RecordWriter
         d=draft();plan=q('A-s2-plan','plan');future=q('A-s1-trace','real1')
         self.assertEqual(prospective_dependencies(plan,(future,),d).result,'pass')
         p=package('A-s2-plan');p['package_id']=identity()
@@ -102,10 +102,10 @@ class LifecycleCases(unittest.TestCase):
         self.assertTrue(issues);self.assertFalse(any('grant' in r['record_type'] for r in d.records.snapshot().records))
 
     def test_negative_branch_and_evaluator_feedback_are_not_conflated(self):
-        from crucis.connections.model import Builder,contract as c1,unresolved
-        from crucis.connections.codec import dumps as s1bytes
-        from crucis.experiments.resolver import parse_snapshot,ReadAccess
-        from crucis.experiments.writer import S2RecordWriter
+        from crucis_causal.connections.model import Builder,contract as c1,unresolved
+        from crucis_causal.connections.codec import dumps as s1bytes
+        from crucis_causal.experiments.resolver import parse_snapshot,ReadAccess
+        from crucis_causal.experiments.writer import S2RecordWriter
         for scalar,foreign in [('-0.25',False),('0.25',True)]:
             d=draft();b=Builder('synthetic scalar response source')
             view=d.read.resolver.lookup(desc('C-s1-trace')['package_id'],d.read.access,LIMITS)

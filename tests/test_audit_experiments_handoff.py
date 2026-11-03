@@ -1,4 +1,4 @@
-from crucis.core.paths import ROOT as DATA_ROOT
+from crucis_causal.core.paths import ROOT as DATA_ROOT
 """S2-G exact projections, occurrence identity and snapshot chains (DLV-08/09)."""
 import copy
 import json
@@ -9,23 +9,23 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.i
 from test_audit_experiments_wire import resolver,LIMITS
 from test_audit_experiments_services import draft,ac
 from test_audit_experiments_definitions import q
-from crucis.experiments import api,core,ServiceError
-from crucis.experiments.model import contract,source,scope,index,known,unknown,not_applicable,qualified,reference,identity
-from crucis.experiments.operations import parameter,assessment,get
-from crucis.experiments.writer import S2RecordWriter
-from crucis.experiments.services import ProjectionRegistry
-from crucis.experiments.resolver import ReadAccess,parse_snapshot
-from crucis.experiments.handoff import compiler_context,install_projection,freeze_s1
+from crucis_causal.experiments import api,core,ServiceError
+from crucis_causal.experiments.model import contract,source,scope,index,known,unknown,not_applicable,qualified,reference,identity
+from crucis_causal.experiments.operations import parameter,assessment,get
+from crucis_causal.experiments.writer import S2RecordWriter
+from crucis_causal.experiments.services import ProjectionRegistry
+from crucis_causal.experiments.resolver import ReadAccess,parse_snapshot
+from crucis_causal.experiments.handoff import compiler_context,install_projection,freeze_s1
 
 def ready(cardinality=None):
     """Explicit synthetic metadata fixture; never launches a native method."""
-    from crucis.connections.model import Builder,contract as c1,source as src1
-    from crucis.connections.evidence import capture_bytes
-    from crucis.connections.domains import finite_domain
-    from crucis.connections.codec import dumps as s1bytes
-    from crucis.connections.services import RecordBuffer,IdentityService,ContractRegistry
-    from crucis.connections.api import RouteSpec
-    from crucis.experiments.completion import install as completion
+    from crucis_causal.connections.model import Builder,contract as c1,source as src1
+    from crucis_causal.connections.evidence import capture_bytes
+    from crucis_causal.connections.domains import finite_domain
+    from crucis_causal.connections.codec import dumps as s1bytes
+    from crucis_causal.connections.services import RecordBuffer,IdentityService,ContractRegistry
+    from crucis_causal.connections.api import RouteSpec
+    from crucis_causal.experiments.completion import install as completion
     b=Builder('S1 observer for synthetic no-execution fixture');native=reference(identity(),'s1.component');conf=reference(identity(),'s1.configuration')
     code=capture_bytes(b,b'Synthetic native metadata descriptor; not executed.',format_contract=c1('source_text'))
     settings=capture_bytes(b,b'{}',format_contract=c1('json'))

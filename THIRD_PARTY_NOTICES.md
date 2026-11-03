@@ -4,7 +4,7 @@ Tickets: DLV-09, DLV-10, INF-06
 
 ## NOTEARS reference implementation
 
-`crucis/_support/notears_linear.py` adapts the linear NOTEARS reference algorithm
+`crucis_causal/_support/notears_linear.py` adapts the linear NOTEARS reference algorithm
 by Xun Zheng and the NOTEARS authors. The scientific reference is Zheng, Aragam,
 Ravikumar and Xing, *DAGs with NO TEARS: Continuous Optimization for Structure
 Learning*, NeurIPS 2018.
@@ -29,7 +29,7 @@ numerical implementation or rebaseline historical results.
 
 Crucis was extracted from Uzair Gheewala's `cc-research` development tree.
 `provenance/extraction.json` records original paths and source-byte hashes,
-including the numerical/recording helpers under `crucis/_support/`. It explicitly
+including the numerical/recording helpers under `crucis_causal/_support/`. It explicitly
 distinguishes the older research HEAD from uncommitted work captured at extraction.
 
 System adapters and file-format readers are distinct from redistribution of the
@@ -45,5 +45,6 @@ their source trees are not bundled here. Installing a dependency or reading
 recorded evidence does not transfer its license to Crucis. The paper and research
 results remain in https://github.com/uzairgheewala/cc-research.
 
-The project-wide license and final copyright/citation statement are pending the
-maintainer's publication decision. This third-party notice does not decide them.
+Original framework code and accompanying technical documentation are licensed
+under Apache-2.0; see LICENSE, NOTICE and CITATION.cff. Third-party notices and
+the original source hashes above remain distinct from that original-work credit.
