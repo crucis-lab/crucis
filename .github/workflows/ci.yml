@@ -2,16 +2,56 @@ name: package
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
+concurrency:
+  group: package-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    name: package (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.10'
+          - os: ubuntu-latest
+            python: '3.12'
+          - os: windows-latest
+            python: '3.12'
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          python-version: '3.12'
-      - run: python -m pip install . build
-      - run: python -B tools/secret_scan.py
-      - run: python -B tools/package_check.py
-      - run: python -B tests/run_tests.py --out '${{ runner.temp }}/crucis-tests.json'
-      - run: python -m build
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build source distribution and wheel from that source distribution
+        run: |
+          python -m pip install build
+          python -m build
+      - name: Install built wheel and declared core dependencies
+        run: python -c "import pathlib, subprocess, sys; wheels=list(pathlib.Path('dist').glob('*.whl')); assert len(wheels)==1; subprocess.run([sys.executable,'-m','pip','install',str(wheels[0])],check=True)"
+      - name: Credential patterns and file-size limits
+        run: python -B tools/secret_scan.py
+      - name: Source integrity, schemas and CLI
+        run: python -B tools/package_check.py
+      - name: Offline tests with explicit skip receipts
+        run: python -B tests/run_tests.py --out '${{ runner.temp }}/crucis-checks/tests.json'
+      - name: Distribution contents and isolated installed-wheel checks
+        run: python -B tools/check_distribution.py --dist-dir dist --out '${{ runner.temp }}/crucis-checks/distribution.json'
+      - name: Record resolved environment
+        if: always()
+        run: python -c "import pathlib,subprocess,sys; p=pathlib.Path(r'${{ runner.temp }}')/'crucis-checks'; p.mkdir(parents=True,exist_ok=True); (p/'environment.txt').write_bytes(subprocess.check_output([sys.executable,'-m','pip','freeze']))"
+      - name: Preserve validation receipts
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: checks-${{ matrix.os }}-py${{ matrix.python }}
+          path: ${{ runner.temp }}/crucis-checks/
+          if-no-files-found: warn
+          retention-days: 7

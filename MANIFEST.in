@@ -1,0 +1,11 @@
+include README.md AGENTS.md .commit-policy.json THIRD_PARTY_NOTICES.md
+recursive-include LICENSES *.txt
+recursive-include crucis *.py *.json *.txt *.sha256
+prune crucis/docs
+include crucis/docs/system-connections-sc1-example-2026-11-01.json
+include crucis/docs/subsystem2-review-traceability-2026-11-02.json
+recursive-include tests *.py *.json
+recursive-include tools *.py *.md
+include tools/hooks/pre-commit
+exclude tests/last_run.json
+global-exclude __pycache__ *.py[cod]

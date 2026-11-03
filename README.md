@@ -12,6 +12,8 @@ implemented support and empirical coverage are versioned separately.
 ## Install and inspect
 
 ```sh
+git clone https://github.com/crucis-lab/crucis.git
+cd crucis
 python -m pip install .
 python -m crucis --help
 python -m crucis systems
@@ -22,6 +24,12 @@ python -m crucis.experiments --help
 Python 3.10 or newer, NumPy and jsonschema are required. Optional native PC/GES
 execution uses `pip install '.[classical]'`. LLM execution retains the existing
 explicit spending guards. Installation does not run an experiment.
+
+Install from this checkout. The PyPI name `crucis` already identifies an
+[unrelated coding-agent project](https://pypi.org/project/crucis/); a distinct
+distribution name is pending. Bare `pip install crucis` installs that project.
+The Crucis project name, Python import namespace and distribution name are
+separate naming decisions; no package-index release is configured here.
 
 ## Evidence and research
 
@@ -41,7 +49,8 @@ The four historical B5 modules remain in the research repository.
 ## Development
 
 ```sh
-python -m unittest discover -s tests -p 'test_audit_*.py'
+python -B tools/setup_repo.py
+python -B tests/run_tests.py --out ../crucis-test-report.json
 ```
 
 Data-dependent tests require the declared research evidence; a skip is not a
@@ -60,7 +69,26 @@ under `provenance/historical-gates/`. Their original bundle-acceptance claims
 are not recreated by this development check. Use installed dependencies rather
 than adding external source directories to the import path.
 
-Read `AGENTS.md` for the automatic local milestone commit policy. Public hosting,
-licensing, releases and the final GitHub owner are separate publication decisions.
+Read `AGENTS.md` for the automatic local milestone commit policy. The GitHub home
+is [crucis-lab/crucis](https://github.com/crucis-lab/crucis). Hosting code does not
+itself publish a package release or a benchmark result.
 Run `python -B tools/setup_repo.py` when starting in a new clone; it installs
 this repository's validation hook through local Git configuration.
+
+## Publication and attribution
+
+The project-wide license and copyright/citation statement are awaiting the
+maintainer's decision before the first push. Third-party source attribution and
+retained terms are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+GitHub source history contains development/design records as well as runtime
+code and tests. Installed wheels exclude `crucis/docs/`; source distributions
+retain only the two technical JSON examples needed by the offline tests, along
+with test fixtures and tooling. Research datasets, recorded runs, sealed battery
+seeds and credentials are not bundled. Excluded-data tests report explicit skips.
+
+CI is configured to test Python 3.10/3.12 on Linux and 3.12 on Windows, build both
+distribution formats, and inspect the installed wheel from an isolated working
+directory. It preserves test/skip receipts. Until the first push succeeds, these
+are configured remote checks, not completed GitHub validation. CI does not run
+paid model experiments, deploy a site or publish to a package index.

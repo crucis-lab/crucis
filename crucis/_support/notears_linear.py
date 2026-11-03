@@ -1,3 +1,6 @@
+# Adapted from Xun Zheng et al.'s NOTEARS reference (Apache-2.0).
+# Attribution, retained terms and local modifications: THIRD_PARTY_NOTICES.md
+# and the distribution's LICENSES/NOTEARS-Apache-2.0.txt.
 """Linear NOTEARS (Zheng, Aragam, Ravikumar, Xing, NeurIPS 2018), augmented-Lagrangian solver with L-BFGS-B.
 
 Re-implementation of the reference algorithm (github.com/xunzheng/notears, notears/linear.py, Apache-2.0) for BND-06, so the

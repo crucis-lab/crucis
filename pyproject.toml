@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,6 +8,7 @@ version = "0.1.0.dev0"
 description = "A system-agnostic framework for auditing causal discovery systems and their claims"
 readme = "README.md"
 requires-python = ">=3.10"
+license-files = ["LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]
 dependencies = ["numpy>=1.26,<3", "jsonschema>=4.25,<5"]
 
 [project.scripts]
@@ -16,8 +17,17 @@ crucis = "crucis.__main__:main"
 [project.optional-dependencies]
 classical = ["causal-learn==0.1.4.8", "ges==1.1.0"]
 
+[project.urls]
+Repository = "https://github.com/crucis-lab/crucis"
+Issues = "https://github.com/crucis-lab/crucis/issues"
+Research = "https://github.com/uzairgheewala/cc-research"
+
+[tool.setuptools]
+include-package-data = false
+
 [tool.setuptools.packages.find]
 include = ["crucis*"]
+namespaces = false
 
 [tool.setuptools.package-data]
 "*" = ["*.json", "*.txt", "*.sha256"]
