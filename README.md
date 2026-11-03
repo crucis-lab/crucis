@@ -48,5 +48,17 @@ Data-dependent tests require the declared research evidence; a skip is not a
 completed reproduction. The extraction verification receipt distinguishes
 offline package tests, data-backed compatibility, and installed-wheel checks.
 
+The current development gate records the actual standalone source identity and
+test outcomes:
+
+```sh
+python -m crucis.dev.gates standalone --out ../crucis-check
+```
+
+Prior research-layout gate implementations are retained as historical records
+under `provenance/historical-gates/`. Their original bundle-acceptance claims
+are not recreated by this development check. Use installed dependencies rather
+than adding external source directories to the import path.
+
 Read `AGENTS.md` for the automatic local milestone commit policy. Public hosting,
 licensing, releases and the final GitHub owner are separate publication decisions.

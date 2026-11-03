@@ -21,6 +21,18 @@ from crucis.connections.services import CaptureSink,ContractRegistry,IdentitySer
 
 
 class IntegrationCases(unittest.TestCase):
+    @unittest.skipUnless((DATA_ROOT/'runs/ab06').is_dir(),'recorded sources absent')
+    def test_recorded_import_cli_selects_audit_and_publishes_its_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp)/'import'
+            result=subprocess.run([sys.executable,'-B','-m','crucis.connections','import-recorded',
+                'matmcd','--out',str(out)],cwd=ROOT,capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+            receipt=json.loads((out/'receipt.json').read_text(encoding='utf-8'))
+            self.assertEqual(receipt['audit'],'matmcd')
+            self.assertFalse(receipt['native_execution'])
+            self.assertTrue((out/'package.json').exists())
+
     def goldens(self):return [loads(p.read_bytes()) for p in sorted((ROOT/'tests/audit_fixtures/sc1').glob('*.json'))]
 
     def test_complete_frozen_scenarios_and_all_record_body_types(self):

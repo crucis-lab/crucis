@@ -5,6 +5,6 @@
     ["{python}", "-B", "tools/package_check.py"]
   ],
   "full_checks": [
-    ["{python}", "-B", "tests/run_tests.py", "--out", "{scratch}/tests.json"]
+    ["{python}", "-B", "-m", "crucis.dev.gates", "standalone", "--out", "{scratch}/conformance"]
   ]
 }

@@ -28,7 +28,7 @@ def main(argv=None):
     describe=commands.add_parser('describe')
     check=commands.add_parser('validate');check.add_argument('package');check.add_argument('--out',required=True)
     check.add_argument('--require',action='append',default=[]);check.add_argument('--profile',action='append',default=[])
-    ingest=commands.add_parser('import-recorded');ingest.add_argument('crucis');ingest.add_argument('--item');ingest.add_argument('--arm');ingest.add_argument('--out',required=True)
+    ingest=commands.add_parser('import-recorded');ingest.add_argument('audit');ingest.add_argument('--item');ingest.add_argument('--arm');ingest.add_argument('--out',required=True)
     gate=commands.add_parser('gate');gate.add_argument('bundle');gate.add_argument('--out',required=True);gate.add_argument('--dependencies')
     args=parser.parse_args(argv)
     try:
