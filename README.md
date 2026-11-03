@@ -62,3 +62,5 @@ than adding external source directories to the import path.
 
 Read `AGENTS.md` for the automatic local milestone commit policy. Public hosting,
 licensing, releases and the final GitHub owner are separate publication decisions.
+Run `python -B tools/setup_repo.py` when starting in a new clone; it installs
+this repository's validation hook through local Git configuration.

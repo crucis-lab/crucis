@@ -8,7 +8,8 @@ focused fixes and useful documentation updates, and check for a ready milestone
 before ending a development turn. Local commits are authorized by repository
 AGENTS.md. A message draft alone does not complete this workflow.
 
-1. Inspect HEAD, status and the index before editing; distinguish pre-existing
+1. At the start of work in a clone, run python -B tools/setup_repo.py to ensure
+   the local validation hook is configured. Then inspect HEAD, status and the index before editing; distinguish pre-existing
    work from this milestone. Record the intended files and ticket IDs.
 2. Review the diff and stage explicit paths or hunks. If someone else has staged
    files, preserve them and resolve ownership before committing; never reset their
