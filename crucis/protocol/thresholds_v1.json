@@ -1,0 +1,23 @@
+{
+ "version": "1.0",
+ "registered_utc": "2026-10-31T05:00:00Z",
+ "interval": {"method": "scenario-cluster bootstrap, percentile", "B": 2000, "seed": 20261014, "level": 0.95,
+              "implementation": "score/paired.py cluster_bootstrap"},
+ "K01": {"fires_if": "failed >= 1", "min_executed": 1},
+ "K02": {"fires_if": "lo <= 0", "min_clusters": 5},
+ "K03": {"fires_if": "ratio >= 10", "min_systems": 3},
+ "K04": {"fires_if": "point >= 0.10", "min_pairs": 5, "metric": "dir_f1@expect",
+         "source": "P9, plans/ab06_prereg.json (hashed 2026-10-14): MIN_PAIRS_P9 = 5, loss >= 0.10"},
+ "K05": {"fires_if": "point >= 0.05 and lo > 0", "min_pairs": 5, "metric": "dir_f1@expect"},
+ "K06": {"fires_if": "abs(point) >= 0.05 and (lo > 0 or hi < 0)", "min_clusters": 5, "metric": "dir_f1@expect"},
+ "K07": {"fires_if": "point < 0", "min_items": 5, "metric": "dv1_precision",
+         "source": "P10, plans/ab06_prereg.json (hashed 2026-10-14): final below the agent's own data-only output"},
+ "K08": {"fires_if": "point >= 0.10 and lo > 0", "min_pairs": 5, "metric": "dir_f1@expect"},
+ "K09": {"fires_if": "point < 0.05", "min_pairs": 5, "metric": "dir_f1@expect"},
+ "K10": {"fires_if": "point <= -0.10 and hi < 0", "min_runs": 5, "metric": "adj_f1"},
+ "K11": {"fires_if": "data_only <= binom_q05(n, 0.5)", "min_decided": 20},
+ "K12": {"fires_if": "net > 0 and sign_p < 0.05", "min_flips": 10},
+ "K13": {"fires_if": "share > 0", "min_runs": 1, "applies_to": "systems that declare edge_source"},
+ "K14": {"fires_if": "ece > 0.05 or gap > 0.05", "min_claims": 100},
+ "K15": {"fires_if": "coverage >= 0.99 and precision < 0.90", "min_items": 5}
+}

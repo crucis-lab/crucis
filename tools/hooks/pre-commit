@@ -1,0 +1,20 @@
+#!/bin/sh
+# Validate the exact index in isolation. Quote Windows paths containing spaces.
+if [ -n "$MILESTONE_PYTHON" ]; then
+  exec "$MILESTONE_PYTHON" -B tools/commit_gate.py
+fi
+for candidate in .venv/Scripts/python.exe .venv/bin/python ../.tooling/venv/Scripts/python.exe ../.tooling/venv/bin/python; do
+  if [ -x "$candidate" ]; then
+    exec "$candidate" -B tools/commit_gate.py
+  fi
+done
+if command -v py >/dev/null 2>&1 && py -3 -c 'import sys' >/dev/null 2>&1; then
+  exec py -3 -B tools/commit_gate.py
+fi
+for candidate in python3 python; do
+  if command -v "$candidate" >/dev/null 2>&1 && "$candidate" -c 'import sys' >/dev/null 2>&1; then
+    exec "$candidate" -B tools/commit_gate.py
+  fi
+done
+echo 'pre-commit: no working Python; install the environment or set MILESTONE_PYTHON.' >&2
+exit 1

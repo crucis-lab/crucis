@@ -1,0 +1,2022 @@
+{
+  "format": {
+    "name": "s1.connection_package",
+    "version": "0.1.0-proposal.1"
+  },
+  "package_id": "238f4f36-d529-4026-a4b0-2c351c114af6",
+  "roots": [
+    {
+      "binding": "internal",
+      "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+      "target_type": "s1.component"
+    }
+  ],
+  "records": [
+    {
+      "id": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+      "record_type": "s1.component",
+      "contract": {
+        "name": "s1.component",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "name": "Synthetic design specimen author; not a native producer or implemented S2 reader",
+        "role": "s1.design_author",
+        "version": {
+          "state": "known",
+          "value": "0.1.0-proposal.1",
+          "basis": []
+        },
+        "implementation": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "configuration": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "8d92747a-48ca-405d-a7a6-d3c0bff315e2",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"scope\":\"Hypothetical captured 1000-row input/source/randomness and integrity evidence.\",\"actual_bytes_or_digest\":\"Not supplied; no generation performed.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "e46f8c54-d0b9-4d83-9101-7e8321cf13d4",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"identity\":\"Fictional exact realized case nominated for A.case_slot.\",\"evidence\":\"Hypothetical captured data/source bindings; actual bytes absent.\",\"domain_lineage\":\"A/B/C under the source; generation/dependence claims require evidence.\",\"history_extent_exposure\":\"First fictional realization, bounded capture and public-development role.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "6d1927cf-2052-4167-a051-0810e7351c1d",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"scope\":\"Exactly one member under A.selection; immutable fictional release.\",\"multiplicity\":\"One case; native repetitions live in trial slots.\",\"timing\":\"Later realized list is not claimed enumerated before generation.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "71430f1b-d236-4986-9431-50d10a176556",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"case\":\"Exact A.case\",\"role\":\"Public development under A.selection; no independent duplicate.\",\"basis\":\"Fictional realized source slot; actual source evidence still absent.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "10ce25f2-b3c4-4d01-a427-c6a80a2ffeeb",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"resolution\":\"Nominates case/collection under fixed slot/rule; checks are fictional branch assumptions, not real passes.\",\"actual_readiness\":\"Unestablished\",\"immutability\":\"Does not update A.plan\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "914d5f20-0574-4272-a5df-b6c30886a0df",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"handoff\":\"Future exact S2/S1 mapping to operation/scope/deliverable/policy/completion. No extra SC-1 fields.\",\"evidence\":\"No real native request/attempt or actual grant created.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "68721d61-9902-46fb-aa0b-25b5fd7e7fce",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"native_started_in_story\":true,\"lifecycle\":\"normal\",\"response_form\":\"satisfied\",\"condition_conformance\":\"conforming\",\"main_quality\":{\"state\":\"ready_in_story\",\"reason\":\"Fictional supported final graph; no actual reader evidence.\"},\"output_role\":\"final_graph\",\"canonical_illustrative_edges\":[[\"A\",\"C\"],[\"B\",\"C\"]],\"occurrences\":\"Distinct request/attempt/observation handoff required later; no production IDs.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "068b8ce6-7a43-4d0f-b07f-d462f0ac531e",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"native_started_in_story\":true,\"lifecycle\":\"native_failure\",\"response_form\":\"not_satisfied\",\"condition_conformance\":\"conforming\",\"main_quality\":{\"state\":\"unestablished\",\"reason\":\"No final; surviving stage is not final completion.\"},\"output_role\":\"surviving_stage\",\"canonical_illustrative_edges\":[[\"A\",\"C\"]],\"occurrences\":\"Distinct request/attempt/observation handoff required later; no production IDs.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "b9a9e948-bcd5-49bf-a4de-c6a0c2016368",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"native_started_in_story\":true,\"lifecycle\":\"normal\",\"response_form\":\"satisfied\",\"condition_conformance\":\"conforming\",\"main_quality\":{\"state\":\"unestablished\",\"reason\":\"Allowed abstention; no graph score.\"},\"output_role\":\"whole_query_abstention\",\"canonical_illustrative_edges\":[],\"occurrences\":\"Distinct request/attempt/observation handoff required later; no production IDs.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "b6c70189-95b4-4dfa-9ca2-15589e37ec2b",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"native_started_in_story\":true,\"lifecycle\":\"normal\",\"response_form\":\"satisfied\",\"condition_conformance\":\"conforming\",\"main_quality\":{\"state\":\"ready_in_story\",\"reason\":\"Closed graph denies B-C; poor quality is not an exclusion.\"},\"output_role\":\"final_graph\",\"canonical_illustrative_edges\":[[\"A\",\"C\"]],\"occurrences\":\"Distinct request/attempt/observation handoff required later; no production IDs.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "a241f77f-bfe8-4839-b55b-8edaab25757d",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"native_started_in_story\":true,\"lifecycle\":\"normal\",\"response_form\":\"satisfied\",\"condition_conformance\":\"nonconforming\",\"main_quality\":{\"state\":\"unestablished\",\"reason\":\"Actual values violate intended condition; intended comparison blocked.\"},\"output_role\":\"final_graph\",\"canonical_illustrative_edges\":[[\"C\",\"A\"]],\"occurrences\":\"Distinct request/attempt/observation handoff required later; no production IDs.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "e33fce65-98d0-4fe9-9cc1-19f549ab3e68",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"native_started_in_story\":false,\"lifecycle\":\"not_started\",\"response_form\":\"not_assessed\",\"condition_conformance\":\"not_observed\",\"main_quality\":{\"state\":\"unestablished\",\"reason\":\"Resource availability changed; not native failure.\"},\"output_role\":\"no_output\",\"canonical_illustrative_edges\":[],\"occurrences\":\"Distinct request/attempt/observation handoff required later; no production IDs.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "7451f839-ecc8-49fa-84fd-08712b91a696",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"intended_slots\":[\"A.trial.real1\",\"A.trial.real2\",\"A.trial.neutral1\",\"A.trial.neutral2\",\"A.trial.swapped1\",\"A.trial.swapped2\"],\"native_started_slots\":[\"A.trial.real1\",\"A.trial.real2\",\"A.trial.neutral1\",\"A.trial.neutral2\",\"A.trial.swapped1\"],\"conforming_final_quality\":[\"A.trace.real1\",\"A.trace.neutral2\"],\"available_quality_by_condition\":{\"real\":1,\"neutral\":1,\"swapped\":0},\"scope\":\"Case-level conditional available-repeat comparison only; no complete two-repeat mean or paired RNG assumption.\",\"measurement\":\"No actual metric result/interval computed.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "ed3aa825-c937-49e2-af3c-5e2b18ba410e",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"purpose\":\"Adverse later branch, not execution or passed validation.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "2e078be7-9af2-4cd1-87cd-f80a364800b1",
+      "record_type": "s1.output",
+      "contract": {
+        "name": "s1.output",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "output_type": "graph",
+        "native_producer": {
+          "binding": "internal",
+          "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+          "target_type": "s1.component"
+        },
+        "subjects": [],
+        "role": {
+          "state": "known",
+          "value": "s1.final_graph",
+          "basis": []
+        },
+        "designation": {
+          "state": "known",
+          "value": "s1.synthetic_design_output",
+          "basis": []
+        },
+        "body": {
+          "family": {
+            "name": "s1.dag",
+            "version": "0.1.0-proposal.1"
+          },
+          "domain": {
+            "binding": "external",
+            "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+            "target_type": "s1.domain",
+            "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+          },
+          "coverage": {
+            "pairing": "unordered",
+            "domain": {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            },
+            "include_same_node": false,
+            "pairs": [],
+            "extent": "all_in_domain"
+          },
+          "omission": {
+            "within_coverage": "asserted_absence",
+            "outside_coverage": "no_assertion"
+          },
+          "links": [
+            {
+              "key": "0",
+              "left": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "A"
+              },
+              "right": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "C"
+              },
+              "relation": {
+                "name": "s1.directed_edge",
+                "version": "0.1.0-proposal.1"
+              },
+              "endpoint_marks": [
+                "s1.tail",
+                "s1.arrow"
+              ],
+              "properties": [],
+              "quantities": []
+            },
+            {
+              "key": "1",
+              "left": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "B"
+              },
+              "right": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "C"
+              },
+              "relation": {
+                "name": "s1.directed_edge",
+                "version": "0.1.0-proposal.1"
+              },
+              "endpoint_marks": [
+                "s1.tail",
+                "s1.arrow"
+              ],
+              "properties": [],
+              "quantities": []
+            }
+          ],
+          "native_assertions": [],
+          "quantities": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        },
+        "relations": [],
+        "checks": []
+      },
+      "extensions": []
+    },
+    {
+      "id": "f474bf1b-e2b5-4b0e-9a64-78e6df53758b",
+      "record_type": "s1.output",
+      "contract": {
+        "name": "s1.output",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "output_type": "graph",
+        "native_producer": {
+          "binding": "internal",
+          "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+          "target_type": "s1.component"
+        },
+        "subjects": [],
+        "role": {
+          "state": "known",
+          "value": "s1.intermediate_stage",
+          "basis": []
+        },
+        "designation": {
+          "state": "known",
+          "value": "s1.synthetic_design_output",
+          "basis": []
+        },
+        "body": {
+          "family": {
+            "name": "s1.dag",
+            "version": "0.1.0-proposal.1"
+          },
+          "domain": {
+            "binding": "external",
+            "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+            "target_type": "s1.domain",
+            "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+          },
+          "coverage": {
+            "pairing": "unordered",
+            "domain": {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            },
+            "include_same_node": false,
+            "pairs": [],
+            "extent": "all_in_domain"
+          },
+          "omission": {
+            "within_coverage": "asserted_absence",
+            "outside_coverage": "no_assertion"
+          },
+          "links": [
+            {
+              "key": "0",
+              "left": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "A"
+              },
+              "right": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "C"
+              },
+              "relation": {
+                "name": "s1.directed_edge",
+                "version": "0.1.0-proposal.1"
+              },
+              "endpoint_marks": [
+                "s1.tail",
+                "s1.arrow"
+              ],
+              "properties": [],
+              "quantities": []
+            }
+          ],
+          "native_assertions": [],
+          "quantities": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        },
+        "relations": [],
+        "checks": []
+      },
+      "extensions": []
+    },
+    {
+      "id": "9049fa8b-7cb8-4ca1-86f1-6cbba300bc8c",
+      "record_type": "s1.proposition",
+      "contract": {
+        "name": "s1.proposition",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "predicate": {
+          "name": "s2.return_dag",
+          "version": "0.1.0-proposal.1"
+        },
+        "arguments": [],
+        "conditioning": [],
+        "scope": {
+          "subjects": [
+            {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            }
+          ],
+          "qualifiers": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "3c43c1da-2edc-4ef2-837f-3d3887303fe3",
+      "record_type": "s1.output",
+      "contract": {
+        "name": "s1.output",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "output_type": "abstention",
+        "native_producer": {
+          "binding": "internal",
+          "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+          "target_type": "s1.component"
+        },
+        "subjects": [],
+        "role": {
+          "state": "known",
+          "value": "s1.final_response",
+          "basis": []
+        },
+        "designation": {
+          "state": "known",
+          "value": "s1.synthetic_design_output",
+          "basis": []
+        },
+        "body": {
+          "query": {
+            "binding": "internal",
+            "target": "9049fa8b-7cb8-4ca1-86f1-6cbba300bc8c",
+            "target_type": "s1.proposition"
+          },
+          "reason": {
+            "state": "known",
+            "value": "s1.insufficient_evidence",
+            "basis": []
+          },
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "9049fa8b-7cb8-4ca1-86f1-6cbba300bc8c",
+                "target_type": "s1.proposition"
+              }
+            ],
+            "qualifiers": []
+          }
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        },
+        "relations": [],
+        "checks": []
+      },
+      "extensions": []
+    },
+    {
+      "id": "11695036-eeab-4ef4-8467-4fc102536b9b",
+      "record_type": "s1.output",
+      "contract": {
+        "name": "s1.output",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "output_type": "graph",
+        "native_producer": {
+          "binding": "internal",
+          "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+          "target_type": "s1.component"
+        },
+        "subjects": [],
+        "role": {
+          "state": "known",
+          "value": "s1.final_graph",
+          "basis": []
+        },
+        "designation": {
+          "state": "known",
+          "value": "s1.synthetic_design_output",
+          "basis": []
+        },
+        "body": {
+          "family": {
+            "name": "s1.dag",
+            "version": "0.1.0-proposal.1"
+          },
+          "domain": {
+            "binding": "external",
+            "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+            "target_type": "s1.domain",
+            "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+          },
+          "coverage": {
+            "pairing": "unordered",
+            "domain": {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            },
+            "include_same_node": false,
+            "pairs": [],
+            "extent": "all_in_domain"
+          },
+          "omission": {
+            "within_coverage": "asserted_absence",
+            "outside_coverage": "no_assertion"
+          },
+          "links": [
+            {
+              "key": "0",
+              "left": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "A"
+              },
+              "right": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "C"
+              },
+              "relation": {
+                "name": "s1.directed_edge",
+                "version": "0.1.0-proposal.1"
+              },
+              "endpoint_marks": [
+                "s1.tail",
+                "s1.arrow"
+              ],
+              "properties": [],
+              "quantities": []
+            }
+          ],
+          "native_assertions": [],
+          "quantities": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        },
+        "relations": [],
+        "checks": []
+      },
+      "extensions": []
+    },
+    {
+      "id": "920005da-5d17-459f-a126-2120b10dc591",
+      "record_type": "s1.output",
+      "contract": {
+        "name": "s1.output",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "output_type": "graph",
+        "native_producer": {
+          "binding": "internal",
+          "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+          "target_type": "s1.component"
+        },
+        "subjects": [],
+        "role": {
+          "state": "known",
+          "value": "s1.final_graph",
+          "basis": []
+        },
+        "designation": {
+          "state": "known",
+          "value": "s1.synthetic_design_output",
+          "basis": []
+        },
+        "body": {
+          "family": {
+            "name": "s1.dag",
+            "version": "0.1.0-proposal.1"
+          },
+          "domain": {
+            "binding": "external",
+            "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+            "target_type": "s1.domain",
+            "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+          },
+          "coverage": {
+            "pairing": "unordered",
+            "domain": {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            },
+            "include_same_node": false,
+            "pairs": [],
+            "extent": "all_in_domain"
+          },
+          "omission": {
+            "within_coverage": "asserted_absence",
+            "outside_coverage": "no_assertion"
+          },
+          "links": [
+            {
+              "key": "0",
+              "left": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "C"
+              },
+              "right": {
+                "domain": {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                },
+                "key": "A"
+              },
+              "relation": {
+                "name": "s1.directed_edge",
+                "version": "0.1.0-proposal.1"
+              },
+              "endpoint_marks": [
+                "s1.tail",
+                "s1.arrow"
+              ],
+              "properties": [],
+              "quantities": []
+            }
+          ],
+          "native_assertions": [],
+          "quantities": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        },
+        "relations": [],
+        "checks": []
+      },
+      "extensions": []
+    },
+    {
+      "id": "175272dc-37da-4b04-9f2b-08a31fa79ad4",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"real1\":\"normal_final\",\"real2\":\"failure_with_stage\",\"neutral1\":\"allowed_abstention\",\"neutral2\":\"normal_poor_final\",\"swapped1\":\"nonconforming_values\",\"swapped2\":\"unstarted_resource_gap\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "cc07cb8a-abbb-42bc-aac6-48e442349549",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    }
+  ],
+  "external_packages": [
+    {
+      "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30",
+      "locator": {
+        "state": "known",
+        "value": "A-s1-definitions.json",
+        "basis": []
+      },
+      "expected_digest": {
+        "state": "known",
+        "value": {
+          "algorithm": "sha256",
+          "value": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488",
+          "byte_length": "87058",
+          "scope": {
+            "kind": "full_content"
+          }
+        },
+        "basis": []
+      },
+      "access": "s1.supplied_design_snapshot"
+    }
+  ],
+  "extensions": []
+}

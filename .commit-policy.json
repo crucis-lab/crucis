@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "checks": [
+    ["{python}", "-B", "tools/secret_scan.py"],
+    ["{python}", "-B", "tools/package_check.py"]
+  ],
+  "full_checks": [
+    ["{python}", "-B", "tests/run_tests.py", "--out", "{scratch}/tests.json"]
+  ]
+}

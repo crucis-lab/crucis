@@ -1,0 +1,2 @@
+# DLV-08/09: reuse exact S1 structural-validation dependencies.
+-r ../connections/requirements.txt

@@ -1,0 +1,386 @@
+{
+  "format": {
+    "name": "s1.connection_package",
+    "version": "0.1.0-proposal.1"
+  },
+  "package_id": "ab8c1a65-b14b-4a0c-8bb3-f83a7bce9b7c",
+  "roots": [
+    {
+      "binding": "internal",
+      "target": "45b62356-6646-482a-811f-40f840f1298b",
+      "target_type": "s1.request"
+    }
+  ],
+  "records": [
+    {
+      "id": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+      "record_type": "s1.component",
+      "contract": {
+        "name": "s1.component",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "name": "Synthetic design specimen author; not a native producer or implemented S2 reader",
+        "role": "s1.design_author",
+        "version": {
+          "state": "known",
+          "value": "0.1.0-proposal.1",
+          "basis": []
+        },
+        "implementation": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "configuration": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "1708ea09-b2a9-4f45-b35f-0bf22ebcb216",
+      "record_type": "s1.policy",
+      "contract": {
+        "name": "s1.policy",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "policy_contract": {
+          "name": "s1.design_policy",
+          "version": "0.1.0-proposal.1"
+        },
+        "parameters": [],
+        "scope": {
+          "subjects": [
+            {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            }
+          ],
+          "qualifiers": []
+        },
+        "authority": {
+          "state": "unresolved",
+          "reasons": [
+            "s2.design_unestablished"
+          ],
+          "evidence": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "45b62356-6646-482a-811f-40f840f1298b",
+      "record_type": "s1.request",
+      "contract": {
+        "name": "s1.request",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "operation": {
+          "name": "s2.operation.discover",
+          "version": "0.1.0-proposal.1"
+        },
+        "task_scope": {
+          "subjects": [
+            {
+              "binding": "external",
+              "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+              "target_type": "s1.domain",
+              "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+            }
+          ],
+          "qualifiers": []
+        },
+        "deliverables": [
+          {
+            "role": "s1.final",
+            "contract": {
+              "name": "s2.response.dag",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "external",
+                  "target": "145106d8-24e2-4394-ab34-61d46c5cfa34",
+                  "target_type": "s1.domain",
+                  "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30"
+                }
+              ],
+              "qualifiers": []
+            },
+            "required": true,
+            "abstention": "allowed"
+          }
+        ],
+        "completion": {
+          "name": "s2.response_fulfillment",
+          "version": "0.1.0-proposal.1"
+        },
+        "completion_parameters": [],
+        "presentation_policy": {
+          "binding": "internal",
+          "target": "1708ea09-b2a9-4f45-b35f-0bf22ebcb216",
+          "target_type": "s1.policy"
+        },
+        "resource_policy": {
+          "state": "unresolved",
+          "reasons": [
+            "s2.design_unestablished"
+          ],
+          "evidence": []
+        },
+        "recovery_policy": {
+          "state": "unresolved",
+          "reasons": [
+            "s2.design_unestablished"
+          ],
+          "evidence": []
+        },
+        "route": "s1.recorded",
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "b85be165-f24f-4388-8583-9ad6799ce812",
+      "record_type": "s1.attempt",
+      "contract": {
+        "name": "s1.attempt",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "request": {
+          "binding": "internal",
+          "target": "45b62356-6646-482a-811f-40f840f1298b",
+          "target_type": "s1.request"
+        },
+        "native_identity": {
+          "state": "unresolved",
+          "reasons": [
+            "s2.design_unestablished"
+          ],
+          "evidence": []
+        },
+        "initial_state": {
+          "state": "unresolved",
+          "reasons": [
+            "s2.design_unestablished"
+          ],
+          "evidence": []
+        },
+        "binding": {
+          "state": "unresolved",
+          "reasons": [
+            "s2.design_unestablished"
+          ],
+          "evidence": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    }
+  ],
+  "external_packages": [
+    {
+      "package_id": "01989ec1-fd91-46bb-88b0-8a486da4dc30",
+      "locator": {
+        "state": "known",
+        "value": "A-s1-definitions.json",
+        "basis": []
+      },
+      "expected_digest": {
+        "state": "known",
+        "value": {
+          "algorithm": "sha256",
+          "value": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488",
+          "byte_length": "87058",
+          "scope": {
+            "kind": "full_content"
+          }
+        },
+        "basis": []
+      },
+      "access": "s1.supplied_design_snapshot"
+    }
+  ],
+  "extensions": []
+}

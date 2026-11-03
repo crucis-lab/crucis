@@ -1,0 +1,274 @@
+{
+  "format": {
+    "name": "s1.connection_package",
+    "version": "0.1.0-proposal.1"
+  },
+  "package_id": "009dd694-6f05-457c-b423-aa2c99737e5b",
+  "roots": [
+    {
+      "binding": "internal",
+      "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+      "target_type": "s1.component"
+    }
+  ],
+  "records": [
+    {
+      "id": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+      "record_type": "s1.component",
+      "contract": {
+        "name": "s1.component",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "name": "Synthetic design specimen author; not a native producer or implemented S2 reader",
+        "role": "s1.design_author",
+        "version": {
+          "state": "known",
+          "value": "0.1.0-proposal.1",
+          "basis": []
+        },
+        "implementation": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "configuration": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "0353e2b2-a151-40a2-9cb1-cb455ae28b12",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"party_A\":\"A scoped response is assumed in the hypothetical branch.\",\"party_B\":\"Unavailable; no raw data or second-party permission inferred.\",\"consequence\":\"Full two-site claim unestablished; one-site descriptive evidence remains scoped.\",\"aggregation\":\"No automatic global CI/truth claim.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "6e98de05-35d3-4cd5-9431-f393361cdcbd",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-03T02:06:32.322746Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s2.design_unestablished"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"party_A\":\"A scoped response is assumed in the hypothetical branch.\",\"party_B\":\"Unavailable; no raw data or second-party permission inferred.\",\"consequence\":\"Full two-site claim unestablished; one-site descriptive evidence remains scoped.\",\"aggregation\":\"No automatic global CI/truth claim.\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.design_source_account",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "not_applicable",
+          "rule": {
+            "name": "s2.not_applicable",
+            "version": "0.1.0-proposal.1"
+          },
+          "scope": []
+        },
+        "native_capture_extent": "s1.complete_for_design_source",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "148ebc53-65b7-4588-b1e3-e8e5e7ecec8e",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    }
+  ],
+  "external_packages": [
+    {
+      "package_id": "830f4be8-9f42-48ff-96af-0aa7a5c8e1c7",
+      "locator": {
+        "state": "known",
+        "value": "E-s1-definitions.json",
+        "basis": []
+      },
+      "expected_digest": {
+        "state": "known",
+        "value": {
+          "algorithm": "sha256",
+          "value": "6d89d00e60d8c4fe79b202e416f5b69c7e998b52eaf0fb4524656176e67e80d6",
+          "byte_length": "55901",
+          "scope": {
+            "kind": "full_content"
+          }
+        },
+        "basis": []
+      },
+      "access": "s1.supplied_design_snapshot"
+    }
+  ],
+  "extensions": []
+}

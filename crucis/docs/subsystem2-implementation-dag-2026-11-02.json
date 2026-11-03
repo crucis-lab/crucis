@@ -1,0 +1,437 @@
+{
+  "plan": "Subsystem 2 proposed implementation DAG",
+  "version": 1,
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "local_date": "2026-11-02",
+  "timezone": "America/Los_Angeles",
+  "status": "design review candidate; implementation not authorized",
+  "entry_gate": {
+    "design_acceptance": "pending Uzair review",
+    "implementation_go": "absent",
+    "required": [
+      "Record accepted design/specimen/catalog/DAG byte hashes outside their own subject files",
+      "Re-establish original source and approved S1 identity; diagnose mismatches to source lines",
+      "Establish current interpreter/dependencies, including exact S1 requirements",
+      "Verify unchanged legacy baseline expectations before starting S2-A",
+      "No hidden real sealed access or paid/native job in any check"
+    ]
+  },
+  "scope": {
+    "proposed_namespace": "audit/experiments/",
+    "tests": "tests/test_audit_experiments_*.py and explicit synthetic fixtures",
+    "runtime": "Opt-in scientific metadata and evidence binding only",
+    "forbidden": [
+      "git writes",
+      "API spend or native dispatch",
+      "cc.ps1 or queue",
+      "credentials or sibling .env access",
+      "real sealed seeds/stores/read ledgers",
+      "W1 paper edits",
+      "tracker/ticket/site/WAVE_STATE writes",
+      "B5 edits",
+      "shared analysis/score/harness edits",
+      "result folder moves",
+      "port_map publication",
+      "silent old-route replacement"
+    ]
+  },
+  "common_gates": {
+    "G01": "Meaningful positive/adverse tests appropriate to the changed contracts; no mirror-only tests",
+    "G02": "One real stored system audited end to end with free recorded evidence; identify exact source and receipt",
+    "G03": "1298 stored comparisons pass within 0.001; exact key/count/finding-kind/verdict parity; diagnose any mismatch",
+    "G04": "All 14 available stored certificates verify under existing applicable rules; no widened tolerance",
+    "G05": "Original/S1 source identity retained; declare all new implementation/test identity and code provenance",
+    "G06": "Outputs outside repo; named source/fixture hashes, invocation, interpreter/dependencies, time, failures and skips recorded",
+    "G07": "No effectful/native/paid calls, grant creation, implicit external retrieval or real protected-store access",
+    "G08": "Receipt explicitly passes all required gates; unavailable required checks block progression",
+    "G09": "Unrecognized contracts, incomplete evidence and unsupported native configurations preserve bytes and withhold affected claims"
+  },
+  "gate_receipt_contract": {
+    "required_fields": [
+      "bundle",
+      "candidate_baseline",
+      "predecessor_receipts",
+      "source_identity",
+      "environment",
+      "checks",
+      "artifacts",
+      "known_limits",
+      "passed"
+    ],
+    "artifact_policy": "Exact paths/hashes retained outside repository in _w2_checks; durable paper archival is an owner step",
+    "unlock_rule": "All predecessors passed, explicit build go active, all required local/common gates passed",
+    "failure_rule": "Retain failed attempt; diagnose and correct; rerun affected gate; no success fabricated from budget or elapsed time"
+  },
+  "bundles": [
+    {
+      "id": "S2-A",
+      "title": "Catalog, strict wire codec and offline reference resolver",
+      "depends_on": [],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free local checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "All 40 closed core kinds, 25 parameter schemas and 11 payload formats parse with exact types, roles and versions",
+        "Strict UTF-8, duplicate keys, invalid Unicode, nonfinite/raw numeric/Boolean ambiguities, unknown fields/kinds and unsupported versions handled as specified",
+        "Canonical bytes preserve lexical scientific values and ordered arrays; only declared package sets sorted",
+        "Received-byte integrity distinct from normalized/publication bytes; no self-digest or ID/content conflation",
+        "Supplied-package refs and structured-payload refs resolve under explicit anchors; restricted/unavailable dependencies remain scoped gaps",
+        "Identity conflicts, duplicate IDs, wrong kinds, dependency cycles and explicit reader limits have bounded adverse tests",
+        "No network/path search, untrusted handler import, native system import or implicit seed access"
+      ],
+      "artifacts": [
+        "wire/resolver test receipt",
+        "catalog and canonical specimen hashes",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-B",
+      "title": "Transactional services, exact registries and scoped profiles",
+      "depends_on": [
+        "S2-A"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free local checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "All injected-service protocols and the 16 entry-point contracts have exact runtime values and context scopes",
+        "Rejected operation discards additions; partial retains useful value and explicit diagnostics; completed false assessment is not a pass",
+        "Occurrence idempotence requires persistent explicit mapping; changed bound inputs reject; equal bytes in new occurrence do not merge",
+        "Actual S2 implementation producer/code identity; no borrowed S1-only source manifest",
+        "Exact registry registration with implementation and input/output contracts; no version fallback or automatic loading",
+        "Five scoped profiles independently satisfied/withheld; historical evaluation does not require new input materialization",
+        "Conflicting assessments, absent reader, insufficient evidence and known false evidence remain distinct"
+      ],
+      "artifacts": [
+        "service/profile conformance receipt",
+        "transaction adverse cases",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-C",
+      "title": "Cases, collections, tasks, references and response semantics",
+      "depends_on": [
+        "S2-B"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free local checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "A/B source identity, case slot/revision, explicit collection multiplicity, source-scoped aliases and lineage",
+        "Legitimate plan/trial and collection/member cycles accepted independently of recipe/time dependency DAGs",
+        "Complete versus partial/unreported coverage, explicit negatives/abstention and global/local/order alternatives preserved",
+        "Exact role/group cardinality, task scope, reference applicability and conflicting source assertions; no best-reference defaults",
+        "Historical original identity/population/mapping/exposure gaps retained without new native trial/request/attempt",
+        "Source accounts cannot satisfy scientific interpretation merely because a snapshot exists"
+      ],
+      "artifacts": [
+        "A/B composition receipt",
+        "task/reference adverse cases",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-D",
+      "title": "Information, transformations, randomization and family bindings",
+      "depends_on": [
+        "S2-C"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free local checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "Exact permitted native/evaluator channels and recipients; intended/delivered/access/use and reset/loaded state remain separate",
+        "Late source/materialization receipts under fixed selection and invariant rules; zero/multiple candidate handling; revised bind_run arguments",
+        "Transform checks bind provided inputs/maps/outputs/losses/fitted evidence; no actual source generation, transform execution or encoder fit",
+        "Temporal two-window/overlap/unit/lag eligibility; no iid flattening or negative boundary claim",
+        "Relational path/perspective/party identity and distributed access; no automatic row pooling/global CI/site-ID merge",
+        "Learned domain/encoder identity, calibration-set ambiguity and no best-score alignment",
+        "Weighted collection/parameter association/event meaning; equal graph occurrences remain distinct; invalid derived DAG does not erase native collection",
+        "Unknown intervention targets and proxy versus underlying domain; task-specific reference applicability",
+        "Native/source/transform/resampling randomness and explicit coupling; equal repeat key does not prove coupling"
+      ],
+      "artifacts": [
+        "A/C-H family-boundary receipt",
+        "materialization/adverse cases",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-E",
+      "title": "Comparison, repetition and analysis-population bindings",
+      "depends_on": [
+        "S2-D"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free local checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "Every intended unit retained with included/excluded/unmatched/unresolved/not-applicable disposition and evidence",
+        "A six-slot population preserves failure/stage, abstention, poor final, nonconforming and unstarted outcomes without invented scores",
+        "Direction, matching/cardinality, weights/dependence and missingness/uncertainty/multiplicity/stopping contracts exact",
+        "Scientific repetitions distinct from attempts/retries, windows, source cases, native particles and parameter draws",
+        "Explicit output/reference/mapping selections; no latest/best default or hidden source/reference substitution",
+        "Revised bind_evaluation retains inputs, alignments, interpretations and parameters",
+        "External S4 metric contracts bound with prerequisites; no duplicate measurement/statistical implementation"
+      ],
+      "artifacts": [
+        "population/selection conformance receipt",
+        "all missingness adverse cases",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-F",
+      "title": "Commitment, amendments, adaptive decisions and exposure accounts",
+      "depends_on": [
+        "S2-D"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free local checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "Definition package closure excludes future outcome bytes, including hidden trace content inside dependencies",
+        "Commitment pins earlier distinct snapshot bytes; original and amendment histories retained without self-digest",
+        "Claimed time, recorder creation time, observed event order, assurance and unknown original chronology distinct",
+        "C positive/negative adaptive branches use only permitted prior inputs; selected Y=1 not treated as delivered second action",
+        "Partial exposure survives crash; policy/admission/actual grants/consumption are separate records and owner prerequisites",
+        "Synthetic tests enforce declared limits without accessing real seeds/stores/read ledgers or changing existing policy",
+        "Prior trial origin retained under revised plan; explicit carry-forward compatibility and no retrospective preregistration"
+      ],
+      "artifacts": [
+        "commitment/adaptive/exposure receipt",
+        "P/P2 amendment adverse cases",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-G",
+      "title": "Exact S1 projection, handoff and immutable snapshot integration",
+      "depends_on": [
+        "S2-E",
+        "S2-F"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free recorded/metadata checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "Exact scientific/native operation pair, response and route projection registered independently from existing S1 native route support; differing operation names have explicit faithful translation",
+        "S1 request/deliverable/policy/presentation/completion fields only; unsupported cardinality/family withholds projection",
+        "Explicit S1 view/overlay for local recipient/request refs; persisted S2 evidence links externally qualify snapshot identities",
+        "Projection occurrence IDs fixed once; request reuse only exact compatible content; checkpoint restart new attempt and continuation link",
+        "Correct S2 compiler and S1 recorder source identity, not default borrowed implementation provenance",
+        "Separate P/M/R/H/O/E immutable snapshot construction; same record ID retains exact content, changed package set gets fresh publication ID",
+        "Only allowed presentations forwarded; references/inverse maps/private evaluation plans excluded by actual binding rules",
+        "No describe/bind metadata claim implies native invocation, delivery, restored state or runtime grants"
+      ],
+      "artifacts": [
+        "S1 projection/snapshot conformance receipt",
+        "supported and rejected bridge examples",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-H",
+      "title": "Source-scoped legacy imports and explicit compatibility projections",
+      "depends_on": [
+        "S2-G"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free recorded checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "Existing eight-adapter recorded examples preserve exact encoded legacy echo at its declared contract scope",
+        "Battery/item/source occurrence scope; reported cached hashes distinct from fresh capture bytes and original pins",
+        "n, cluster, family, arms, status, variants, stages, confidence, source labels, costs and replicates retain source meanings/gaps",
+        "Original task/identity/chronology/population unknowns not filled from current defaults",
+        "Repeated/rich outputs reject lossless projection into narrow legacy keys unless an explicit truly lossless view exists",
+        "Declared lossy view reports exact selection, lost guarantees and limits; no best/last repeat, graph repair or fake failure graph",
+        "No default CLI/adapter/result migration or modifications to shared scoring logic"
+      ],
+      "artifacts": [
+        "legacy import/echo/loss receipt",
+        "recorded adapter case inventory",
+        "common preservation receipts"
+      ]
+    },
+    {
+      "id": "S2-I",
+      "title": "Integrated opt-in interface and scoped release evidence",
+      "depends_on": [
+        "S2-H"
+      ],
+      "state": "not_started",
+      "runner": "Codex after explicit build go; free recorded/conformance checks only",
+      "advances": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "closes": [],
+      "common_gates": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "must_show": [
+        "All accepted positive wire specimens, 58 adverse specifications and 20 API scenarios converted to meaningful executed acceptance cases; no dropped failure mode",
+        "A-H and supported composite families demonstrate bounded profile outcomes; source-account preservation not reported as typed scientific support",
+        "Opt-in metadata CLI has deterministic inspection/validation/import/projection behavior with explicit output roots and no effectful run/spend/sealed-read command",
+        "Real recorded import/binding/report path demonstrated; no fresh-native-system validation claimed from it",
+        "All fresh and stored certificates verify; exact scientific-result parity and existing tolerance rules retained",
+        "Full appropriate suite, code/fixture identity stability, supported-feature/profile/mode matrix, gaps, skips and dependency receipts",
+        "Methodology/source/adoption notes and commit message prepared; no tracker mutation or git writes",
+        "Public adoption, durable W1/W5 paper pointers, sealed-production integration and paid empirical execution explicitly remain owner steps"
+      ],
+      "artifacts": [
+        "integrated release gate",
+        "implemented support matrix",
+        "methodology/source index",
+        "commit message and known limitations"
+      ]
+    }
+  ],
+  "candidate_review_sources": [
+    "audit/docs/subsystem2-contract-closure-2026-11-02.md",
+    "audit/docs/subsystem2-contract-catalog-2026-11-02.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/manifest.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/negative-cases.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/api-scenarios.json",
+    "audit/docs/subsystem2-final-design-review-2026-11-02.md",
+    "audit/docs/subsystem2-review-traceability-2026-11-02.json"
+  ]
+}

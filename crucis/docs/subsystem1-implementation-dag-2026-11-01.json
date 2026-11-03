@@ -1,0 +1,235 @@
+{
+  "plan": "Subsystem 1 implementation DAG",
+  "version": 1,
+  "tickets": [
+    "DLV-08",
+    "DLV-09"
+  ],
+  "status": "design and all subsystem-1 bundles authorized by Uzair in this chat",
+  "scope": {
+    "outside_bundles": [
+      "DLV-08",
+      "DLV-09"
+    ]
+  },
+  "milestones": [],
+  "bundles": [
+    {
+      "id": "S1-A",
+      "title": "Schema and primitives",
+      "depends_on": [],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    },
+    {
+      "id": "S1-B",
+      "title": "Evidence and publication",
+      "depends_on": [
+        "S1-A"
+      ],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    },
+    {
+      "id": "S1-C",
+      "title": "Domains graphs quantities",
+      "depends_on": [
+        "S1-B"
+      ],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    },
+    {
+      "id": "S1-D",
+      "title": "Additional output families",
+      "depends_on": [
+        "S1-C"
+      ],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    },
+    {
+      "id": "S1-E",
+      "title": "Interaction recovery accounting",
+      "depends_on": [
+        "S1-D"
+      ],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    },
+    {
+      "id": "S1-F",
+      "title": "Ports and legacy bridge",
+      "depends_on": [
+        "S1-E"
+      ],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    },
+    {
+      "id": "S1-G",
+      "title": "Integrated release candidate",
+      "depends_on": [
+        "S1-F"
+      ],
+      "runner": "Codex (free recorded/conformance checks only)",
+      "window": [
+        "2026-11-01",
+        "2026-11-01"
+      ],
+      "closes": [],
+      "advances": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "llm_cost": "none",
+      "approval_needed": false,
+      "must_show": [
+        "named positive and negative conformance cases",
+        "real stored audit end to end",
+        "1298 stored comparisons within 0.001; exact count/key/verdict parity",
+        "all 14 available stored certificates verify",
+        "current tests and output paths recorded; skips disclosed"
+      ]
+    }
+  ],
+  "typed_links": [
+    {
+      "from": "S1-A",
+      "relation": "advances",
+      "to": "DLV-09"
+    },
+    {
+      "from": "S1-B",
+      "relation": "advances",
+      "to": "DLV-09"
+    },
+    {
+      "from": "S1-C",
+      "relation": "advances",
+      "to": "DLV-09"
+    },
+    {
+      "from": "S1-D",
+      "relation": "advances",
+      "to": "DLV-09"
+    },
+    {
+      "from": "S1-E",
+      "relation": "advances",
+      "to": "DLV-09"
+    },
+    {
+      "from": "S1-F",
+      "relation": "advances",
+      "to": "DLV-09"
+    },
+    {
+      "from": "S1-G",
+      "relation": "advances",
+      "to": "DLV-09"
+    }
+  ]
+}

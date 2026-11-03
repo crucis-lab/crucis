@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crucis"
+version = "0.1.0.dev0"
+description = "A system-agnostic framework for auditing causal discovery systems and their claims"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26,<3", "jsonschema>=4.25,<5"]
+
+[project.scripts]
+crucis = "crucis.__main__:main"
+
+[project.optional-dependencies]
+classical = ["causal-learn==0.1.4.8", "ges==1.1.0"]
+
+[tool.setuptools.packages.find]
+include = ["crucis*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.txt", "*.sha256"]

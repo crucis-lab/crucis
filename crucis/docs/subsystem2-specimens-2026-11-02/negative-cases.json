@@ -1,0 +1,716 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09"
+  ],
+  "kind": "negative_design_specifications",
+  "status": "Expected future behaviors; no S2 validator has executed these cases",
+  "mutation_rule": "Never rewrite a baseline. Shape/reference tests operate on an isolated in-memory draft. Semantic tests mint new changed-record/package IDs and update dependency pins first so identity/integrity failures do not mask the intended scientific rule. Integrity tests deliberately retain stale pins. Ref qualifiers in mutations resolve against exact supplied baseline views. References to cloned changed identities are remapped through the new identity map, including intentional self/predecessor cycles; unchanged external baseline subjects retain their exact qualified identities.",
+  "cases": [
+    {
+      "id": "N01",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "plan",
+      "operation": "replace",
+      "path": "/records/13/contract/version",
+      "value": "9.0",
+      "expected": "reject",
+      "rule": "exact core contract version",
+      "layer": "structural"
+    },
+    {
+      "id": "N02",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "plan",
+      "operation": "replace",
+      "path": "/records/13/created_at",
+      "value": null,
+      "expected": "reject",
+      "rule": "explicit knowledge, no JSON null",
+      "layer": "structural"
+    },
+    {
+      "id": "N03",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "plan",
+      "operation": "replace",
+      "path": "/records/13/payload/trials/members/0/target_type",
+      "value": "s2.case_revision",
+      "expected": "reject",
+      "rule": "typed reference target mismatch",
+      "layer": "reference"
+    },
+    {
+      "id": "N04",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "response_group",
+      "operation": "replace",
+      "path": "/records/11/payload/bindings/0/role",
+      "value": "s2.param.not_roles",
+      "expected": "reject",
+      "rule": "exact schema role",
+      "layer": "parameter"
+    },
+    {
+      "id": "N05",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "response_group",
+      "operation": "replace",
+      "path": "/records/11/payload/bindings/1/value",
+      "value": {
+        "state": "known",
+        "value": true,
+        "basis": []
+      },
+      "expected": "reject",
+      "rule": "minimum requires integer Number, Boolean distinct",
+      "layer": "parameter"
+    },
+    {
+      "id": "N06",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "response_group",
+      "operation": "replace",
+      "path": "/records/11/payload/bindings/1/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "number_type": "integer",
+          "text": "-1"
+        },
+        "basis": []
+      },
+      "expected": "reject",
+      "rule": "cardinality nonnegative",
+      "layer": "semantic"
+    },
+    {
+      "id": "N07",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "response_group",
+      "operation": "replace",
+      "path": "/records/11/payload/bindings/2/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "number_type": "integer",
+          "text": "0"
+        },
+        "basis": []
+      },
+      "expected": "reject",
+      "rule": "finite maximum >= minimum",
+      "layer": "semantic"
+    },
+    {
+      "id": "N08",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "plan",
+      "operation": "replace",
+      "path": "/records/13/payload/trials/extent",
+      "value": "unresolved",
+      "expected": "preserve_withhold",
+      "rule": "trial enumeration uncertainty does not mean zero trials",
+      "layer": "semantic"
+    },
+    {
+      "id": "N09",
+      "base_package": "A-s2-receipts.json",
+      "record_alias": "population",
+      "operation": "replace",
+      "path": "/records/2/payload/entries/1/disposition",
+      "value": "included",
+      "expected": "reject_binding",
+      "rule": "failure has no final graph under final-only quality selection",
+      "layer": "semantic"
+    },
+    {
+      "id": "N10",
+      "base_package": "A-s2-receipts.json",
+      "record_alias": "population",
+      "operation": "replace",
+      "path": "/records/2/payload/entries/2/disposition",
+      "value": "included",
+      "expected": "reject_binding",
+      "rule": "abstention not a graph quality observation",
+      "layer": "semantic"
+    },
+    {
+      "id": "N11",
+      "base_package": "A-s2-receipts.json",
+      "record_alias": "population",
+      "operation": "replace",
+      "path": "/records/2/payload/entries/4/disposition",
+      "value": "included",
+      "expected": "reject_binding",
+      "rule": "nonconforming input cannot enter intended conforming contrast",
+      "layer": "semantic"
+    },
+    {
+      "id": "N12",
+      "base_package": "A-s2-receipts.json",
+      "record_alias": "population",
+      "operation": "replace",
+      "path": "/records/2/payload/entries/3/disposition",
+      "value": "excluded",
+      "expected": "reject_binding",
+      "rule": "poor quality alone is not a predeclared exclusion",
+      "layer": "semantic"
+    },
+    {
+      "id": "N13",
+      "base_package": "B-s2-plan.json",
+      "record_alias": "subject",
+      "operation": "replace",
+      "path": "/records/18/payload/native_subject",
+      "value": {
+        "state": "known",
+        "value": {
+          "binding": "unresolved",
+          "target_type": "s1.component",
+          "reason": "s2.design_unestablished",
+          "evidence": [],
+          "source_labels": []
+        },
+        "basis": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "known wrapper does not resolve unknown original native identity",
+      "layer": "semantic"
+    },
+    {
+      "id": "N14",
+      "base_package": "B-s2-plan.json",
+      "record_alias": "ref_left",
+      "operation": "replace",
+      "path": "/records/9/payload/coverage",
+      "value": {
+        "binding": "unresolved",
+        "target_type": "s2.coverage_spec",
+        "reason": "s2.unknown_coverage",
+        "evidence": [],
+        "source_labels": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "partial reference not complete all-pairs truth",
+      "layer": "semantic"
+    },
+    {
+      "id": "N15",
+      "base_package": "B-s2-receipts.json",
+      "record_alias": "evaluation",
+      "operation": "replace",
+      "path": "/records/4/payload/references",
+      "value": [],
+      "expected": "preserve_withhold",
+      "rule": "no best-score/default reference",
+      "layer": "semantic"
+    },
+    {
+      "id": "N16",
+      "base_package": "C-s2-receipts.json",
+      "record_alias": "selected_action",
+      "operation": "replace",
+      "path": "/records/32/payload/bindings/1/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "number_type": "integer",
+          "text": "-1"
+        },
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "0.25 nonnegative branch selects Y=1",
+      "layer": "semantic"
+    },
+    {
+      "id": "N17",
+      "base_package": "C-s2-receipts.json",
+      "record_alias": "selected_action",
+      "operation": "replace",
+      "path": "/records/32/payload/bindings/3/value",
+      "value": {
+        "state": "known",
+        "value": "delivered",
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "selected second action lacks delivery evidence",
+      "layer": "semantic"
+    },
+    {
+      "id": "N18",
+      "base_package": "C-s2-receipts.json",
+      "record_alias": "exposure",
+      "operation": "replace",
+      "path": "/records/39/payload/information",
+      "value": {
+        "members": [],
+        "extent": "complete_for_scope",
+        "scope": {
+          "subjects": [],
+          "qualifiers": []
+        },
+        "gaps": []
+      },
+      "expected": "reject_binding",
+      "rule": "first response exposure survives later crash",
+      "layer": "semantic"
+    },
+    {
+      "id": "N19",
+      "base_package": "C-s2-receipts.json",
+      "record_alias": "commitment_params",
+      "operation": "replace",
+      "path": "/records/11/payload/bindings/8/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "name": "s2.failure_resets_read_budget",
+          "version": "0.1.0-proposal.1"
+        },
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "owner consumption policy cannot be invented",
+      "layer": "semantic"
+    },
+    {
+      "id": "N20",
+      "base_package": "D-s2-plan.json",
+      "record_alias": "temporal",
+      "operation": "replace",
+      "path": "/records/16/payload/bindings/6/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "number_type": "integer",
+          "text": "-1000"
+        },
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "lag numeric conversion must carry unit/frame mapping",
+      "layer": "semantic"
+    },
+    {
+      "id": "N21",
+      "base_package": "D-s2-plan.json",
+      "record_alias": "temporal",
+      "operation": "replace",
+      "path": "/records/16/payload/bindings/7/value",
+      "value": {
+        "state": "unresolved",
+        "reasons": [
+          "s2.design_unestablished"
+        ],
+        "evidence": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "unestablished epoch limits temporal reference applicability",
+      "layer": "semantic"
+    },
+    {
+      "id": "N22",
+      "base_package": "D-s2-receipts.json",
+      "record_alias": "population",
+      "operation": "replace",
+      "path": "/records/16/payload/entries/1/unit",
+      "value": {
+        "binding": "external",
+        "target": "a136478e-a114-4307-abd6-e9b365dba3b8",
+        "target_type": "s2.case_revision",
+        "package_id": "e4d7a8d0-df2d-445a-89a6-323e1cf8f85f"
+      },
+      "expected": "reject_binding",
+      "rule": "two windows must not collapse by accidental unit identity",
+      "layer": "semantic"
+    },
+    {
+      "id": "N23",
+      "base_package": "E-s2-plan.json",
+      "record_alias": "relational",
+      "operation": "replace",
+      "path": "/records/9/payload/bindings/0/value",
+      "value": {
+        "state": "known",
+        "value": "Firm",
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "perspective changes scientific question",
+      "layer": "semantic"
+    },
+    {
+      "id": "N24",
+      "base_package": "E-s2-plan.json",
+      "record_alias": "distributed",
+      "operation": "replace",
+      "path": "/records/12/payload/bindings/7/value",
+      "value": {
+        "state": "known",
+        "value": [],
+        "basis": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "known no missing parties requires actual evidence; no two-site completion inferred",
+      "layer": "semantic"
+    },
+    {
+      "id": "N25",
+      "base_package": "F-s2-receipts.json",
+      "record_alias": "alignment",
+      "operation": "replace",
+      "path": "/records/14/payload/bindings/7/value",
+      "value": {
+        "state": "known",
+        "value": "unique",
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "two calibration-compatible mappings are not unique",
+      "layer": "semantic"
+    },
+    {
+      "id": "N26",
+      "base_package": "F-s2-receipts.json",
+      "record_alias": "alignment",
+      "operation": "replace",
+      "path": "/records/14/payload/bindings/4/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "name": "s2.best_reference_score",
+          "version": "0.1.0-proposal.1"
+        },
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "alignment cannot maximize evaluation score",
+      "layer": "semantic"
+    },
+    {
+      "id": "N27",
+      "base_package": "G-s2-plan.json",
+      "record_alias": "collection",
+      "operation": "replace",
+      "path": "/records/14/payload/bindings/2/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "name": "s2.exact_posterior",
+          "version": "0.1.0-proposal.1"
+        },
+        "basis": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "approximate native claim not upgraded by collection shape",
+      "layer": "semantic"
+    },
+    {
+      "id": "N28",
+      "base_package": "G-s2-receipts.json",
+      "record_alias": "population",
+      "operation": "replace",
+      "path": "/records/29/payload/entries/0/weight",
+      "value": {
+        "state": "known",
+        "value": {
+          "number_type": "integer",
+          "text": "4"
+        },
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "four particles do not create four independent datasets",
+      "layer": "semantic"
+    },
+    {
+      "id": "N29",
+      "base_package": "H-s2-plan.json",
+      "record_alias": "intervention",
+      "operation": "replace",
+      "path": "/records/18/payload/bindings/4/value",
+      "value": {
+        "state": "known",
+        "value": "active_environment",
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "task target cannot switch to improve agreement without changed binding",
+      "layer": "semantic"
+    },
+    {
+      "id": "N30",
+      "base_package": "H-s2-plan.json",
+      "record_alias": "measurement",
+      "operation": "replace",
+      "path": "/records/14/payload/bindings/1/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "binding": "external",
+          "target": "902e3113-2535-472b-ba86-86a3e3ddd205",
+          "target_type": "s1.domain",
+          "package_id": "bdae103a-ef02-4e75-90a9-057826811e17"
+        },
+        "basis": []
+      },
+      "expected": "reject_binding",
+      "rule": "proxy and underlying domain identity differ",
+      "layer": "semantic"
+    },
+    {
+      "id": "N31",
+      "base_package": "bridge-M-input-binding.json",
+      "record_alias": "resolution",
+      "operation": "replace",
+      "path": "/records/3/payload/entries/0/selected",
+      "value": {
+        "members": [],
+        "extent": "complete_for_scope",
+        "scope": {
+          "subjects": [],
+          "qualifiers": []
+        },
+        "gaps": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "zero selected values do not satisfy single-valued required slot",
+      "layer": "semantic"
+    },
+    {
+      "id": "N32",
+      "base_package": "bridge-H-handoff-and-amendment.json",
+      "record_alias": "handoff",
+      "operation": "replace",
+      "path": "/records/5/payload/request",
+      "value": {
+        "binding": "external",
+        "target": "b85be165-f24f-4388-8583-9ad6799ce812",
+        "target_type": "s1.attempt",
+        "package_id": "ab8c1a65-b14b-4a0c-8bb3-f83a7bce9b7c"
+      },
+      "expected": "reject",
+      "rule": "request slot cannot target attempt",
+      "layer": "reference"
+    },
+    {
+      "id": "N33",
+      "base_package": "bridge-H-handoff-and-amendment.json",
+      "record_alias": "amendment",
+      "operation": "replace",
+      "path": "/records/4/payload/previous",
+      "value": {
+        "binding": "external",
+        "target": "00e032c6-2e9e-43e2-8a2b-65aeeeef9e1c",
+        "target_type": "s2.plan_snapshot",
+        "package_id": "b81feeb3-e316-4615-8b8e-d6de952f2aa3"
+      },
+      "expected": "reject_binding",
+      "rule": "amendment must retain actual old/new snapshots",
+      "layer": "semantic"
+    },
+    {
+      "id": "N34",
+      "base_package": "A-s2-receipts.json",
+      "record_alias": "commitment",
+      "operation": "replace",
+      "path": "/records/23/payload/content/digest/value",
+      "value": "0000000000000000000000000000000000000000000000000000000000000000",
+      "expected": "reject_integrity",
+      "rule": "actual byte digest differs",
+      "layer": "integrity"
+    },
+    {
+      "id": "N35",
+      "base_package": "A-s2-receipts.json",
+      "record_alias": "commitment",
+      "operation": "replace",
+      "path": "/records/23/payload/content/package_id",
+      "value": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f",
+      "expected": "reject_integrity",
+      "rule": "receipt cannot hash its own subject snapshot",
+      "layer": "integrity"
+    },
+    {
+      "id": "N36",
+      "base_package": "schema-preservation-examples.json",
+      "record_alias": "schema.legacy",
+      "operation": "replace",
+      "path": "/records/7/payload/bindings/0/value",
+      "value": {
+        "state": "known",
+        "value": "same_filename_global_identity",
+        "basis": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "source aliases never prove cross-battery identity",
+      "layer": "semantic"
+    },
+    {
+      "id": "N37",
+      "base_package": "schema-preservation-examples.json",
+      "record_alias": "schema.randomization",
+      "operation": "replace",
+      "path": "/records/14/payload/bindings/0/value",
+      "value": {
+        "state": "known",
+        "value": "not_a_role",
+        "basis": []
+      },
+      "expected": "reject",
+      "rule": "closed enum",
+      "layer": "parameter"
+    },
+    {
+      "id": "N38",
+      "base_package": "schema-preservation-examples.json",
+      "record_alias": "schema.randomization",
+      "operation": "replace",
+      "path": "/records/14/payload/bindings/1/value",
+      "value": {
+        "state": "known",
+        "value": "generator-as-string",
+        "basis": []
+      },
+      "expected": "reject",
+      "rule": "generator must be exact Contract",
+      "layer": "parameter"
+    },
+    {
+      "id": "N39",
+      "base_package": "schema-preservation-examples.json",
+      "record_alias": "schema.quantity",
+      "operation": "replace",
+      "path": "/records/11/payload/bindings/3/value",
+      "value": {
+        "state": "known",
+        "value": {
+          "name": "probability",
+          "convention": {
+            "name": "s2.p_value",
+            "version": "0.1.0-proposal.1"
+          }
+        },
+        "basis": []
+      },
+      "expected": "preserve_withhold",
+      "rule": "unit label not quantity meaning",
+      "layer": "semantic"
+    },
+    {
+      "id": "N40",
+      "base_package": "A-s2-plan.json",
+      "record_alias": "transform",
+      "operation": "replace",
+      "path": "/records/32/payload/predecessors",
+      "value": [
+        {
+          "binding": "external",
+          "target": "e2169b32-3b67-4841-84a6-a49ad49ac6c2",
+          "target_type": "s2.transform_spec",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        }
+      ],
+      "expected": "reject_binding",
+      "rule": "transform predecessor cannot depend on itself",
+      "layer": "semantic"
+    }
+  ],
+  "additional_byte_cases": [
+    {
+      "id": "N41",
+      "utf8_text": "{\"x\":1,\"x\":2}",
+      "expected": "reject_duplicate_property"
+    },
+    {
+      "id": "N42",
+      "utf8_text": "{\"x\":NaN}",
+      "expected": "reject_nonstandard_number"
+    },
+    {
+      "id": "N43",
+      "hex_bytes": "ff",
+      "expected": "reject_invalid_utf8"
+    },
+    {
+      "id": "N44",
+      "utf8_text": "{\"x\":\"\\ud800\"}",
+      "expected": "reject_non_scalar_unicode"
+    }
+  ],
+  "additional_composition_cases": [
+    {
+      "id": "N45",
+      "rule": "same record ID and different bytes across snapshots",
+      "expected": "reject_identity_conflict"
+    },
+    {
+      "id": "N46",
+      "rule": "unknown critical family/extension",
+      "expected": "retain_raw_withhold_affected_profiles"
+    },
+    {
+      "id": "N47",
+      "rule": "private reference unavailable under supplied access",
+      "expected": "preserve_withhold_no_retrieval"
+    },
+    {
+      "id": "N48",
+      "rule": "all weighted member masses zero, negative or nonfinite",
+      "expected": "retain_native_withhold_normalized_probabilities"
+    },
+    {
+      "id": "N49",
+      "rule": "marginal threshold graph cyclic despite each member DAG",
+      "expected": "retain_collection_reject_derived_dag_claim"
+    },
+    {
+      "id": "N50",
+      "rule": "new definition snapshot depends on future outcome package",
+      "expected": "reject_prospective_claim"
+    },
+    {
+      "id": "N51",
+      "rule": "legacy repeated trials collide at (system,item,arm)",
+      "expected": "reject_lossless_or_require_declared_lossy_selection"
+    },
+    {
+      "id": "N52",
+      "rule": "retry/restart imported as independent scientific repetition",
+      "expected": "reject_independence_claim"
+    },
+    {
+      "id": "N53",
+      "rule": "restricted read authority encoded in JSON only",
+      "expected": "no_runtime_authority"
+    },
+    {
+      "id": "N54",
+      "rule": "reader limit exceeded or unsupported exact version",
+      "expected": "bounded_rejection_no_truncation_or_auto_install"
+    },
+    {
+      "id": "N55",
+      "rule": "failed staging operation after adding a record",
+      "expected": "reject_discard_all_uncommitted_additions"
+    },
+    {
+      "id": "N56",
+      "rule": "temporal first point outside lag eligibility treated as absent cause",
+      "expected": "reject_reference_applicability"
+    },
+    {
+      "id": "N57",
+      "rule": "site A employee 17 merged with site B employee 17 without linkage",
+      "expected": "reject_identity_merge"
+    },
+    {
+      "id": "N58",
+      "rule": "parameter association missing for equal-graph particles",
+      "expected": "preserve_gap_no_particle_merge"
+    }
+  ]
+}

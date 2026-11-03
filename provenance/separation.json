@@ -1,0 +1,44 @@
+{
+  "tickets": [
+    "DLV-09",
+    "DLV-10",
+    "INF-06",
+    "BLD-11"
+  ],
+  "date": "2026-11-03",
+  "standalone_repository": "../crucis",
+  "namespace": "crucis",
+  "evidence_env": "CRUCIS_DATA_ROOT",
+  "source_inventory": "docs/migrations/crucis-2026-11-03-source-inventory.json",
+  "moved_files": 299,
+  "backup_workspace_path": "_repo_migration/2026-11-03/stage2-before",
+  "checks": {
+    "offline": {
+      "receipt": "crucis-offline-tests-fixed.json",
+      "sha256": "cc95a625817efe20011dfc9f007b4b3ab49e0d74caf0cc2bf3aea8d880b246ee"
+    },
+    "data_backed": {
+      "receipt": "crucis-data-backed-final.json",
+      "sha256": "f6b4fbf91d76e3a2363e554906994b04d7740d55a7349ccad0a08226aaf7f94c"
+    },
+    "installed": {
+      "receipt": "installed_crucis_probe.json",
+      "sha256": "a1389da2eefa85f0cefc950b1e7e6e27b8f85471f4bd7218731d0cffba526bc1"
+    },
+    "certificates": {
+      "receipt": "stage2_certificates.json",
+      "sha256": "0adb40940d60456456da677841873acef60ceeb96dbe8c074107649bd3c56599"
+    }
+  },
+  "numerical_comparison": {
+    "compared": 1298,
+    "passed": 1298,
+    "max_abs_diff": 9.1483427284475e-05,
+    "pass": true,
+    "tolerance": 0.001
+  },
+  "historical_b5_and_audit_results_retained": true,
+  "checkpoint_inputs_preserved": true,
+  "initial_commit_hold": "lifted by verified cutover",
+  "remote_publication": false
+}

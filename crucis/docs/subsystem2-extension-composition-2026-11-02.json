@@ -1,0 +1,2869 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "local_date": "2026-11-02",
+  "kind": "extended_logical_design_review_registry",
+  "notation_status": "Review notation only, not SC-1/S2 wire schema or executable plan. No native or scientific validation.",
+  "evidence_status": "All subjects, data, domains, member graphs/weights, actors, grants and traces fictional; actual readiness/authority unestablished.",
+  "external_registries": {
+    "base": {
+      "document": "audit/docs/subsystem2-linked-experiment-examples-2026-11-02.json",
+      "sha256": "36f3af871720522877b9f5734db80dc8e38b10909743919989e730c02286de3a",
+      "resolution_scope": "Local parent design registry only, not arbitrary network retrieval."
+    }
+  },
+  "capability_source": {
+    "document": "audit/docs/system-connections-capability-map-2026-11-01.md",
+    "sha256": "978f321edbaefe062ef5cdd5339e667b755310749d4e10001540e0eae1363ac8"
+  },
+  "groups": [
+    {
+      "id": "D",
+      "variant": "X01",
+      "definition_root": "D.plan",
+      "hypothetical_trace_root": "D.trace"
+    },
+    {
+      "id": "E",
+      "variant": "X02",
+      "definition_root": "E.plan",
+      "hypothetical_trace_root": "E.trace"
+    },
+    {
+      "id": "F",
+      "variant": "X03",
+      "definition_root": "F.plan",
+      "hypothetical_trace_root": "F.trace"
+    },
+    {
+      "id": "G",
+      "variant": "X04",
+      "definition_root": "G.plan",
+      "hypothetical_trace_root": "G.trace",
+      "supplementary_definition_roots": [
+        "G.cycle_example"
+      ]
+    },
+    {
+      "id": "H",
+      "variant": "X05",
+      "definition_root": "H.plan",
+      "hypothetical_trace_root": "H.trace"
+    }
+  ],
+  "records": [
+    {
+      "id": "extension.foundation",
+      "conceptual_kind": "review_boundary",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "scope": "Five logical extensions only, not SC-1/S2 wire shapes or runnable plans.",
+        "actual_readiness": "Unestablished; no native data, requests, grants, restricted material or scientific outcomes.",
+        "reference_scope": "base:: points to the exact parent review artifact; resolution of a descriptor is not resolution of real evidence."
+      },
+      "links": [
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.boundary"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "extension.profiles",
+      "conceptual_kind": "proposed_profile_requirements",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "profiles": [
+          "preserve",
+          "interpret",
+          "bind_inputs_sources",
+          "bind_evaluation",
+          "commit_release_account"
+        ],
+        "status": "All S2 profiles are proposed/unbuilt; existing S1 evidence remains separate.",
+        "dependencies": "Evaluation needs applicable interpretation/evidence, not a fresh run; source-binding does not require central rows; authority never follows from profile conformance.",
+        "declaration": "Name exact family/feature contracts, subject/mode/environment, scope, implementation/procedure, validation evidence and limits."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        }
+      ]
+    },
+    {
+      "id": "extension.assessments",
+      "conceptual_kind": "assessment_requirements",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "scopes": [
+          "preservation",
+          "semantic interpretation",
+          "input/source materialization",
+          "native invocation",
+          "metric applicability",
+          "actual authority/disclosure"
+        ],
+        "limits": "Each assessment identifies input revisions, boundary/time, procedure, evidence and gaps; no global success flag.",
+        "composition": "Separate parts do not establish joined-family compatibility. Unknown domains/metadata remain explicit."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.population_policy"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "D.domain",
+      "conceptual_kind": "temporal_grouped_domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "participant": "subject-story-1",
+        "variables": [
+          "X",
+          "Y"
+        ],
+        "sample_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spacing": {
+          "value": 1,
+          "unit": "second"
+        },
+        "lag_target": {
+          "source_offset": -1,
+          "unit": "sample",
+          "duration_seconds": -1
+        },
+        "identity": "Base variable, trajectory/participant, time/frame and units remain attached."
+      },
+      "links": []
+    },
+    {
+      "id": "D.source",
+      "conceptual_kind": "temporal_source_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "mechanisms": "X_t=U_t; Y_t=0.7 X_(t-1)+V_t under declared stationary/innovation assumptions.",
+        "actual_data": "No trajectory generated or captured.",
+        "epoch": "Stationary template and absolute-time/online-state meanings are distinct."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.domain"
+        }
+      ]
+    },
+    {
+      "id": "D.slot0",
+      "conceptual_kind": "planned_window_slot",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "interval": [
+          0,
+          6
+        ],
+        "closure": "left_closed_right_open",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "eligible_child_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "boundary_rule": "Both lag parent and child must be within this window."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.domain"
+        }
+      ]
+    },
+    {
+      "id": "D.slot1",
+      "conceptual_kind": "planned_window_slot",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "interval": [
+          3,
+          9
+        ],
+        "closure": "left_closed_right_open",
+        "indices": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "eligible_child_indices": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "boundary_rule": "No negative causal claim for excluded first-point query."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.domain"
+        }
+      ]
+    },
+    {
+      "id": "D.cases",
+      "conceptual_kind": "collection_materialization_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "planned_windows": 2,
+        "realizations": "Later immutable source/window cases nominated by receipts, not actual records here.",
+        "overlap": "Same participant; shared source indices 3,4,5 and child-query indices 4,5.",
+        "selection": "Constructed overlapping windows, no independent/unseen participant claim."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.slot0"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.slot1"
+        }
+      ]
+    },
+    {
+      "id": "D.task",
+      "conceptual_kind": "temporal_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "target": "Lag-one direct structure under the declared source/window scope.",
+        "response": "Typed temporal graph/local claims with explicit endpoints and coverage; no static flattening.",
+        "family_limit": "Temporal partial/latent endpoint families need their own supported readers; no assumed universal DAG interpretation."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.domain"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.cases"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "D.reference",
+      "conceptual_kind": "temporal_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "target": "Stationary lag template X_(t-1)->Y_t only under applicable epoch/source assumptions.",
+        "coverage": "Defined eligible time-pair domain; outside-window context withheld unless explicitly permitted.",
+        "limits": "Stationarity and boundary applicability cannot be inferred from shape or time labels."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.slot0"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.slot1"
+        }
+      ]
+    },
+    {
+      "id": "D.conditions",
+      "conceptual_kind": "temporal_condition_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "changes": [
+          "Variable presentation order",
+          "Separate equivalent time-unit view"
+        ],
+        "fixed": "Participant/time identity, values/masks, task and source scope.",
+        "native_projection": "Only permitted source/time/context; evaluator reference/mapping not forwarded."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.reference"
+        }
+      ]
+    },
+    {
+      "id": "D.transforms",
+      "conceptual_kind": "temporal_transform_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "column_permutation": "Move all variable-bound content together.",
+        "unit_conversion": "seconds to milliseconds, including timestamps and lag durations; -1 second = -1000 milliseconds.",
+        "row_order": "If row order defines time, shuffle changes evidence; with explicit supported timestamps/grouping, a separately checked presentation-order probe may be possible.",
+        "unsupported": "A generic iid row sampler cannot decide temporal semantics."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.domain"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.reference"
+        }
+      ]
+    },
+    {
+      "id": "D.comparison",
+      "conceptual_kind": "temporal_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "matching": "Same underlying window/source when only presentation changes.",
+        "dependence": "Two overlapping cases, one participant, no independent-case count by ID.",
+        "analysis": "Temporal/subject dependence and eligible query boundary explicit; actual estimator/readiness unresolved.",
+        "missingness": "Absent timestamp, epoch, decoder or boundary evidence blocks affected measure, not preservation."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.reference"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.transforms"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "D.lifecycle",
+      "conceptual_kind": "temporal_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "binding": "Freeze source/window/coordinate rules, later bind actual source snapshots and native state epochs.",
+        "authority": "No actual grant/invocation or real participant data.",
+        "exposure": "Overlapping later window is not unseen independent evidence after earlier exposure."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        }
+      ]
+    },
+    {
+      "id": "D.plan",
+      "conceptual_kind": "fixed_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "variant": "X01",
+        "scope": "Grouped temporal windows and mapped representations; design only."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.profiles"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.transforms"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.lifecycle"
+        }
+      ]
+    },
+    {
+      "id": "D.trace",
+      "conceptual_kind": "hypothetical_temporal_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "window_count": 2,
+        "source_index_overlap": [
+          3,
+          4,
+          5
+        ],
+        "unique_time_points": 9,
+        "eligible_child_overlap": [
+          4,
+          5
+        ],
+        "first_point": "No in-window lag parent, outside eligibility rather than asserted absent effect.",
+        "negative_branch": "Missing coordinate/reference epoch prevents lag scoring; rows or windows not counted as independent participants."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.plan"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.reference"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "D.comparison"
+        }
+      ]
+    },
+    {
+      "id": "E.schema",
+      "conceptual_kind": "relational_domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "entity_types": [
+          "Employee",
+          "Firm"
+        ],
+        "relation": "Employee worksFor Firm",
+        "perspective": "Employee",
+        "variables": [
+          "Employee.productivity",
+          "Employee.worksFor.Firm.trainingBudget"
+        ],
+        "identity": "Relation path/perspective/cardinality and site namespace are scientific scope, not flat column aliases."
+      },
+      "links": []
+    },
+    {
+      "id": "E.sites",
+      "conceptual_kind": "partitioned_source_requirements",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "parties": [
+          "site-story-A",
+          "site-story-B"
+        ],
+        "local_identifier": "employee 17 is distinct across sites until supported linkage exists.",
+        "raw_access": "Raw records remain local; no central row artifact implied.",
+        "overlap": "Shared firms/employees across partitions may be unknown; multiple employees can share firm causes."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.schema"
+        }
+      ]
+    },
+    {
+      "id": "E.cases",
+      "conceptual_kind": "relational_collection_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "case_scope": "Declared site/entity/path population and source revisions.",
+        "membership": "Two intended party contributions with later actual receipts; no actual sampled employees.",
+        "selection": "Sampling/coverage and relation overlap need evidence; unknown source universe remains explicit."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.sites"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.schema"
+        }
+      ]
+    },
+    {
+      "id": "E.access",
+      "conceptual_kind": "remote_access_contract_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "interfaces": [
+          "Scoped CI query: exact variables/conditioning/test/answer/source/cache meaning",
+          "Sufficient statistics: axes, count meaning, centering/normalization/units and assumptions"
+        ],
+        "allowed": "Only specified party responses; not raw records or evaluator references.",
+        "aggregation": "Combining local answers into global inference requires a named justified procedure; no automatic pooling.",
+        "authority": "Required per party; actual permissions absent."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.sites"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.schema"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "E.task",
+      "conceptual_kind": "relational_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "question": "A defined direct relational-cause claim at Employee perspective, not an asserted real-world effect.",
+        "response": "Typed local/relational claims, explicit scope/omission/abstention.",
+        "limits": "No complete global graph or independent row interpretation inferred."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.schema"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.access"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "E.reference",
+      "conceptual_kind": "relational_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "claim": "Hypothetical documented trainingBudget-path relationship; partial annotation only.",
+        "label": "Scoped provenance/contested agreement as applicable, no exact flat-graph truth.",
+        "applicability": "Same path/perspective/entity/population/site context; no negatives from missing annotations."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.schema"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.cases"
+        }
+      ]
+    },
+    {
+      "id": "E.conditions",
+      "conceptual_kind": "distributed_information_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "change": "Rename declared presentation fields.",
+        "fixed": "Entity/relation identity, joins, party provenance and allowed query meaning.",
+        "disclosure": "Evaluator-only information remains private; native evidence limited to authorized messages/statistics.",
+        "other_condition": "Changing partitions/populations/access needs its own question, not an automatic label-only control."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.access"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.reference"
+        }
+      ]
+    },
+    {
+      "id": "E.transforms",
+      "conceptual_kind": "relational_transform_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "preservation": "Rename maps preserve path/cardinality/joins and party/domain identity.",
+        "invalid_equivalence": "Joining an employee to another firm changes evidence; no label-permutation claim.",
+        "statistics": "Bind derived sufficient statistics to actual population/procedure; counts do not automatically give independent sample size."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.schema"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.access"
+        }
+      ]
+    },
+    {
+      "id": "E.comparison",
+      "conceptual_kind": "distributed_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "target": "Scoped relational agreement/access coverage under declared population and information.",
+        "matching": "Actual entity/site/path source relationships; no central-table or same-local-ID merge.",
+        "dependence": "Shared firm/subject/site and unknown cross-site overlap retained.",
+        "missingness": "Missing party is planned-but-unavailable contribution, not completed two-site performance."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.reference"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.transforms"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "E.lifecycle",
+      "conceptual_kind": "distributed_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "timing": "Fixed perspective/party/aggregation/access rules, later authorized responses and population receipts.",
+        "authority": "Per-party source/operation/recipient grant is distinct from a plan descriptor.",
+        "history": "Partial messages and inaccessible raw references preserve their limits; no real endpoint queried."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.access"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        }
+      ]
+    },
+    {
+      "id": "E.plan",
+      "conceptual_kind": "fixed_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "variant": "X02",
+        "scope": "Relational perspective plus distributed remote evidence; no real persons/sites."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.profiles"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.transforms"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.lifecycle"
+        }
+      ]
+    },
+    {
+      "id": "E.trace",
+      "conceptual_kind": "hypothetical_distributed_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "party_A": "A scoped response is assumed in the hypothetical branch.",
+        "party_B": "Unavailable; no raw data or second-party permission inferred.",
+        "consequence": "Full two-site claim unestablished; one-site descriptive evidence remains scoped.",
+        "aggregation": "No automatic global CI/truth claim."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.plan"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.access"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "E.comparison"
+        }
+      ]
+    },
+    {
+      "id": "F.source",
+      "conceptual_kind": "image_source_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "evidence": "Hypothetical images/trajectories and source-factor descriptors, not data generated here.",
+        "roles": "Training/fitting, calibration and evaluation evidence have explicit selection/exposure.",
+        "reference": "Source-factor coverage/assumptions independently identified."
+      },
+      "links": []
+    },
+    {
+      "id": "F.encoders",
+      "conceptual_kind": "encoder_requirements",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "checkpoints": [
+          "encoder-story-E1",
+          "encoder-story-E2"
+        ],
+        "meaning": "Separate native model/domain identities even if both expose factor_0.",
+        "bindings": "Code/model/pretrained/training/init/fit policy and actual checkpoint identity required; no real hashes supplied.",
+        "observed_outputs": "A model returning observed-variable structure need not invent a learned domain."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.source"
+        }
+      ]
+    },
+    {
+      "id": "F.domains",
+      "conceptual_kind": "learned_domain_resolution_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "native": "Later factor/domain members bound to their own encoder snapshots.",
+        "candidate_keys": [
+          "z0",
+          "z1"
+        ],
+        "source_factors": [
+          "p",
+          "q"
+        ],
+        "warning": "Index/label or equal dimension proves no source/cross-model identity.",
+        "outside_example": "Entangled, many-to-one or changed dimension needs different relation/loss contract."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.encoders"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.source"
+        }
+      ]
+    },
+    {
+      "id": "F.cases",
+      "conceptual_kind": "learned_case_selection_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "case_scope": "Source evaluation episodes, distinct from native model-training repetitions.",
+        "calibration": "Separately selected calibration source and intervention-signature policy; not hidden evaluator feedback to native test.",
+        "membership": "Actual evidence/model-domain resolutions later link to the fixed source selection."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.domains"
+        }
+      ]
+    },
+    {
+      "id": "F.alignment_rule",
+      "conceptual_kind": "alignment_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "procedure": "Fixed interpretation of separately permitted calibration intervention signatures; exact supported reader/evidence still required.",
+        "timing": "Rule fixed before evaluation outcomes used in selection; actual latent domain/alignment can resolve after fitting.",
+        "selection": "No reference-graph-score maximization.",
+        "candidate_family": "Two permutations are a toy restricted hypothesis family, not a universal causal-identifiability result."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.domains"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "F.task",
+      "conceptual_kind": "learned_structure_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "native": "Preserve native learned graph/model domain.",
+        "evaluation": "Only a declared justified source or invariant target, separate from native output.",
+        "abstention_gap": "Unresolved alignment is an evaluator gap, not native abstention or wrong graph."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.domains"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.alignment_rule"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "F.reference",
+      "conceptual_kind": "learned_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "scope": "Source-factor assertions and coverage under source assumptions; not automatic latent-factor labels.",
+        "alignment": "Requires applicable derived relation; alternatives retain ambiguity.",
+        "options": [
+          "Declared invariant comparison",
+          "Labeled range/ambiguity analysis",
+          "Withhold unestablished source-graph measure"
+        ],
+        "oracle": "Best-match upper-bound diagnostic is separate, not standard recovery accuracy."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.alignment_rule"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.task"
+        }
+      ]
+    },
+    {
+      "id": "F.conditions",
+      "conceptual_kind": "learned_information_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "fixed": "Task, relevant source evidence and named training/checkpoint policies for the intended contrast.",
+        "varied": "A checkpoint/fit repeat is a declared subject-state difference, not source-variable equality.",
+        "evaluator": "Calibration/reference alignment kept out of native test unless separately permitted."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.encoders"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.alignment_rule"
+        }
+      ]
+    },
+    {
+      "id": "F.transforms",
+      "conceptual_kind": "learned_mapping_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "native_labels": "No factor_0 identity merge across encoders.",
+        "derived_alignment": "Explicit versioned procedure and candidate mapping/loss.",
+        "limits": "Invertible mixing need not preserve variable-level causal structure; no arbitrary bijection from shape."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.domains"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.reference"
+        }
+      ]
+    },
+    {
+      "id": "F.comparison",
+      "conceptual_kind": "learned_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "target": "Declared source/invariant claim or alignment uncertainty, not best-score relabeling.",
+        "matching": "Same source cases with separate encoder/domain/alignment bindings.",
+        "repetitions": "Model fits/native runs can create new domains without new datasets.",
+        "readiness": "Unknown interpretation can block aligned score while native evidence/provenance remains preservable."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.reference"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.transforms"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "F.lifecycle",
+      "conceptual_kind": "learned_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "late_binding": "Encoder/domain and calibration-derived mapping receipt after fitting under fixed rules.",
+        "timing": "Actual procedure-versus-outcome/exposure timeline required; no fictitious advance factor identities.",
+        "authority": "Calibration interventions/private references need their own applicable authority; none exists here."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.alignment_rule"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        }
+      ]
+    },
+    {
+      "id": "F.plan",
+      "conceptual_kind": "fixed_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "variant": "X03",
+        "scope": "Learned native domains and ambiguous evaluator alignment."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.profiles"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.transforms"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.lifecycle"
+        }
+      ]
+    },
+    {
+      "id": "F.trace",
+      "conceptual_kind": "hypothetical_alignment_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "candidates": [
+          {
+            "z0": "p",
+            "z1": "q"
+          },
+          {
+            "z0": "q",
+            "z1": "p"
+          }
+        ],
+        "status": "Two calibration-compatible candidates in the declared toy family, not proven actual alignment.",
+        "weights": "No probabilities assigned from candidate count.",
+        "consequence": "No unique source mapping or best-score choice; declared invariant/range may be possible only with its reader and scope."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.plan"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.alignment_rule"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "F.reference"
+        }
+      ]
+    },
+    {
+      "id": "G.domain",
+      "conceptual_kind": "graph_event_domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "variables": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "graph_family": "Directed acyclic graph per member in this toy example.",
+        "events": [
+          "X adjacent Y",
+          "X->Y",
+          "X->Y conditional on X adjacent Y"
+        ],
+        "meaning": "Event and direction/conditioning differ."
+      },
+      "links": []
+    },
+    {
+      "id": "G.source",
+      "conceptual_kind": "collection_source_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "case": "One hypothetical input dataset/request.",
+        "native": "Native procedure claims weighted approximate posterior samples; preserve the claim/model/configuration.",
+        "limits": "Bootstrap ensemble, heuristic and exact posterior are not equated by container shape."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.domain"
+        }
+      ]
+    },
+    {
+      "id": "G.cases",
+      "conceptual_kind": "collection_case_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "membership": "One input case; particles/parameters are returned objects, not dataset cases.",
+        "native_repeats": "Independent scientific/native repeats require their own identities and assumptions."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.source"
+        }
+      ]
+    },
+    {
+      "id": "G.collection_contract",
+      "conceptual_kind": "weighted_collection_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "members": "Stable keys, native graph/domain and associated parameter identities; duplicate graph content may remain distinct.",
+        "weights": "Named native mass/importance meaning, finite/nonnegative and positive-total prerequisites; normalization is a derived view.",
+        "samples": "Dependence/source approximation explicit; not independent truth labels."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.domain"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.source"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "G.task",
+      "conceptual_kind": "collection_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "response": "Preserve native collection and graph/parameter associations.",
+        "derived_outputs": "Explicitly selected marginals/thresholds/representatives are distinct objects, not replacements.",
+        "completion": "Correct capture of members does not prove posterior validity or calibration."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.collection_contract"
+        }
+      ]
+    },
+    {
+      "id": "G.reference",
+      "conceptual_kind": "event_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "coverage": "Partial hypothetical relation labels; no complete all-edge negative set assumed.",
+        "evaluation": "A declared event can be compared only under applicable reference; no all-edge calibration from one particle collection.",
+        "population": "One case/partial annotation does not establish probabilistic calibration."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.domain"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.task"
+        }
+      ]
+    },
+    {
+      "id": "G.conditions",
+      "conceptual_kind": "collection_information_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "native": "Keep declared input/model/inference and particle/weight scope.",
+        "evaluator": "Truth, threshold/representative evaluation and reference annotations are not hidden native selection information.",
+        "state": "Native chains/initializations/model samples retain provenance and dependence."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.reference"
+        }
+      ]
+    },
+    {
+      "id": "G.transforms",
+      "conceptual_kind": "collection_derivation_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "normalization": "Declared finite-measure rule with event semantics and evidence.",
+        "threshold": "If chosen, explicit >= versus > convention and graph family; no silent acyclic repair.",
+        "aggregation": "May derive graph-mass view but preserve equal-graph particles and their parameter/weight lineage.",
+        "selection": "No best-reference-score representative default."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.collection_contract"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.domain"
+        }
+      ]
+    },
+    {
+      "id": "G.comparison",
+      "conceptual_kind": "collection_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "target": "Native distribution/set or explicitly derived decision, with its own rule.",
+        "units": "One request's members do not become four experiments.",
+        "readiness": "Invalid derived DAG leaves native collection intact; partial truth limits measures.",
+        "quantities": "Probabilities, p-values, coefficients and heuristic confidence have different supported contracts."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.reference"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.transforms"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "G.lifecycle",
+      "conceptual_kind": "collection_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "binding": "Fix inference/derivation/event/selection procedures, later capture members/weights/parameters and population receipts.",
+        "authority": "No native request/grant or actual probability measurement here."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        }
+      ]
+    },
+    {
+      "id": "G.plan",
+      "conceptual_kind": "fixed_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "variant": "X04",
+        "scope": "Weighted returned graph collections, event confidence and derived views."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.profiles"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.task"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.transforms"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.lifecycle"
+        }
+      ]
+    },
+    {
+      "id": "G.members",
+      "conceptual_kind": "hypothetical_collection_output",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "members": [
+          {
+            "key": "g1",
+            "edges": [
+              [
+                "X",
+                "Y"
+              ],
+              [
+                "Y",
+                "Z"
+              ]
+            ],
+            "weight": "2",
+            "parameter": "theta1"
+          },
+          {
+            "key": "g2",
+            "edges": [
+              [
+                "X",
+                "Y"
+              ],
+              [
+                "Y",
+                "Z"
+              ]
+            ],
+            "weight": "1",
+            "parameter": "theta2"
+          },
+          {
+            "key": "g3",
+            "edges": [
+              [
+                "Y",
+                "X"
+              ],
+              [
+                "Y",
+                "Z"
+              ]
+            ],
+            "weight": "1",
+            "parameter": "theta3"
+          },
+          {
+            "key": "g4",
+            "edges": [
+              [
+                "Y",
+                "Z"
+              ]
+            ],
+            "weight": "2",
+            "parameter": "theta4"
+          }
+        ],
+        "scope": "Literal illustrative finite measure, not observed native posterior output.",
+        "parameter_payload_availability": "Not supplied. Theta labels preserve source-scoped association identities only; no parameter/model interpretation is established."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.plan"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.collection_contract"
+        }
+      ]
+    },
+    {
+      "id": "G.trace",
+      "conceptual_kind": "hypothetical_collection_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "total_mass": "6",
+        "adjacency_mass": "4/6",
+        "directed_mass": "3/6",
+        "conditional_orientation": "3/4",
+        "independent_datasets_added": 0,
+        "limits": "These are hypothetical event arithmetic, not calibration/actual model probabilities. Native g1/g2 remain distinct."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.plan"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.members"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.reference"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.transforms"
+        }
+      ]
+    },
+    {
+      "id": "G.cycle_example",
+      "conceptual_kind": "constructed_mathematical_example",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "members": [
+          {
+            "edges": [
+              [
+                "A",
+                "B"
+              ],
+              [
+                "B",
+                "C"
+              ]
+            ],
+            "weight": "1"
+          },
+          {
+            "edges": [
+              [
+                "B",
+                "C"
+              ],
+              [
+                "C",
+                "A"
+              ]
+            ],
+            "weight": "1"
+          },
+          {
+            "edges": [
+              [
+                "C",
+                "A"
+              ],
+              [
+                "A",
+                "B"
+              ]
+            ],
+            "weight": "1"
+          }
+        ],
+        "marginal_cycle_edges": "Each has mass 2/3; threshold >=1/2 yields a cycle even though each member is acyclic.",
+        "role": "Analytic counterexample, not an additional native request/observed dataset."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "G.transforms"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        }
+      ]
+    },
+    {
+      "id": "H.domain",
+      "conceptual_kind": "environment_measurement_domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "clean_variables": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "proxy_variable": "Y_star",
+        "relation": "Y_star=Y+E is a measurement relation, not identity by column label.",
+        "environment_scope": "Context and intervention metadata identify their roles, not pooled rows."
+      },
+      "links": []
+    },
+    {
+      "id": "H.source",
+      "conceptual_kind": "multi_environment_source_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "baseline_edges": [
+          [
+            "X",
+            "Y"
+          ],
+          [
+            "Y",
+            "Z"
+          ]
+        ],
+        "environments": [
+          {
+            "id": "e0",
+            "kind": "observational",
+            "targets_state": "known_empty"
+          },
+          {
+            "id": "e1",
+            "kind": "perfect_intervention",
+            "targets_state": "known",
+            "targets": [
+              "Y"
+            ]
+          },
+          {
+            "id": "e2",
+            "kind": "intervention",
+            "targets_state": "withheld_unknown"
+          }
+        ],
+        "actual_data": "No generated data/targets or actual protected material."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.domain"
+        }
+      ]
+    },
+    {
+      "id": "H.cases",
+      "conceptual_kind": "environment_case_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "case": "Multi-environment source evidence with per-environment sample/mask/weight identity.",
+        "membership": "Contexts remain distinct within source; no assumed independent cases per row/environment.",
+        "unknown_targets": "Unknown mask is not zeros or observational status."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.domain"
+        }
+      ]
+    },
+    {
+      "id": "H.task_baseline",
+      "conceptual_kind": "baseline_structure_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "question": "Recover clean baseline mechanism graph using declared multi-environment information.",
+        "reference": "Baseline source graph remains target; intervention input does not automatically cut the evaluated graph.",
+        "output": "Native semantics and clean-source binding must be supported."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.domain"
+        }
+      ]
+    },
+    {
+      "id": "H.task_active",
+      "conceptual_kind": "environment_structure_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "question": "Recover active e1 graph under declared perfect surgery, a different task.",
+        "reference": "Incoming X->Y cut; Y->Z retained under source model.",
+        "identifiability": "Reference existence is distinct from what finite intervention data can identify."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.domain"
+        }
+      ]
+    },
+    {
+      "id": "H.ref_baseline",
+      "conceptual_kind": "baseline_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "edges": [
+          [
+            "X",
+            "Y"
+          ],
+          [
+            "Y",
+            "Z"
+          ]
+        ],
+        "scope": "Clean baseline mechanisms under declared source model, exact-reference intent only if verified."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_baseline"
+        }
+      ]
+    },
+    {
+      "id": "H.ref_active",
+      "conceptual_kind": "active_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "edges": [
+          [
+            "Y",
+            "Z"
+          ]
+        ],
+        "scope": "e1 perfect intervention on Y only; soft/uncertain interventions need different semantics."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_active"
+        }
+      ]
+    },
+    {
+      "id": "H.ref_proxy",
+      "conceptual_kind": "proxy_reference_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "scope": "Observed proxy relations versus underlying clean source are different targets.",
+        "status": "Proxy/latent reference family may require derivation or remain unresolved.",
+        "interventions": "do(Y) is not automatically do(Y_star). No bijection from label equality."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.domain"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_baseline"
+        }
+      ]
+    },
+    {
+      "id": "H.conditions",
+      "conceptual_kind": "intervention_information_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "arms": "Observed-only and declared multi-environment/measurement conditions are explicit information changes.",
+        "targets": "e2 targets remain withheld unless a separate permitted target-oracle condition supplies them.",
+        "native": "A method requiring known targets is unready for unknown targets absent supported mode; no guessing or silent stage removal.",
+        "ranking": "Paired source-level control differs from same-regime identical-input ranking."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_baseline"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_active"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_proxy"
+        }
+      ]
+    },
+    {
+      "id": "H.transforms",
+      "conceptual_kind": "environment_measurement_transform_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "preserve": "Environment/sample identity and target/value/uncertainty metadata under sampling/coordinate maps.",
+        "noise": "New Y_star measurement binding, explicit law/scale/source and reference target; not unchanged variable identity.",
+        "limits": "No all-zero unknown-target mask, untracked pooling or universal truth inheritance."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.domain"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.source"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_proxy"
+        }
+      ]
+    },
+    {
+      "id": "H.comparison",
+      "conceptual_kind": "multi_environment_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "target": "Exact selected baseline/active/proxy question, never whichever scores best.",
+        "matching": "Common source bindings with actual environment/data/measurement differences declared.",
+        "dependence": "Repeats nested in source/environment/measurement realization; unknown shared state retained.",
+        "readiness": "Required unknown-target/measurement reader gap blocks affected comparison, not preservation."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_baseline"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_active"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_baseline"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_active"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_proxy"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.transforms"
+        },
+        {
+          "role": "uses_parent_review_requirement",
+          "target": "base::common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "H.lifecycle",
+      "conceptual_kind": "environment_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "binding": "Freeze task/target/visibility/proxy policy before evaluation; later actual target/measurement receipts remain separate.",
+        "authority": "No actual intervention/target-oracle release or native run authorized."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        }
+      ]
+    },
+    {
+      "id": "H.plan",
+      "conceptual_kind": "fixed_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "variant": "X05",
+        "scope": "Multi-environment baseline/active graph and changed-measurement targets."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.foundation"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.profiles"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "extension.assessments"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.cases"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_baseline"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.task_active"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.conditions"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.transforms"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.comparison"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.lifecycle"
+        }
+      ]
+    },
+    {
+      "id": "H.trace",
+      "conceptual_kind": "hypothetical_target_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "known_e1_target": "Y",
+        "e2_target": "Withheld/unknown, not empty.",
+        "observed_proxy": "Y_star has separate measurement domain.",
+        "consequence": "A known-target-only native route is not ready for e2. Proxy graph recovery requires applicable reference/reader; baseline and active references cannot substitute for each other."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.plan"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.reference_gap"
+        }
+      ]
+    },
+    {
+      "id": "H.reference_gap",
+      "conceptual_kind": "reference_readiness_gap",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design account; not native execution or validated support",
+      "account": {
+        "scope": "Unknown-target and proxy-specific interpretation/applicability; retain exact target/source reason.",
+        "actual_readiness": "Unestablished, no speculative graph, target or accuracy assigned."
+      },
+      "links": [
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.ref_proxy"
+        },
+        {
+          "role": "uses_local_review_requirement",
+          "target": "H.source"
+        }
+      ]
+    }
+  ],
+  "proposed_profiles": [
+    "preserve",
+    "interpret",
+    "bind_inputs_sources",
+    "bind_evaluation",
+    "commit_release_account"
+  ],
+  "candidate_contract_document": "audit/docs/subsystem2-family-profile-lifecycle-contract-2026-11-02.md",
+  "case_obligation_map": [
+    {
+      "id": "C01",
+      "name": "Current PC/GES [L05]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C02",
+      "name": "Current GIES [L05]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C03",
+      "name": "FCI [S02]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        },
+        {
+          "registry": "self",
+          "record": "D.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "No PAG-native integration or full endpoint evaluator established."
+    },
+    {
+      "id": "C04",
+      "name": "PC/MV-PC configuration [S01]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Missing-data/test/cache-specific scientific contracts still need their actual reader."
+    },
+    {
+      "id": "C05",
+      "name": "pcalg with Gaussian sufficient statistics [S03]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C06",
+      "name": "pcalg custom independence-test interface [S03]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C07",
+      "name": "pgmpy PC [S04]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Partial graph/knowledge restrictions need exact native semantics; no forced orientation."
+    },
+    {
+      "id": "C08",
+      "name": "MultiGroupDirectLiNGAM [S05]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "H.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C09",
+      "name": "NOTEARS [S09]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "G.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Native weighted coefficients are not probabilities; exact quantity reader still needed."
+    },
+    {
+      "id": "C10",
+      "name": "DCDI [S07]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C11",
+      "name": "JCI framework/implementation choice [S10]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C12",
+      "name": "PCMCI+ [S06]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C13",
+      "name": "LPCMCI [S06]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Temporal latent endpoint family remains a declared reader prerequisite."
+    },
+    {
+      "id": "C14",
+      "name": "J-PCMCI+ [S06]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C15",
+      "name": "DiBS [S08]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "G.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C16",
+      "name": "ANM/PNL interface [S19][S20]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "G.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Directional p-value/test meaning is not graph probability; no native ANM/PNL execution."
+    },
+    {
+      "id": "C17",
+      "name": "GLL local discovery [S18]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "C.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C18",
+      "name": "AVICI [S13]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "F.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C19",
+      "name": "CITRIS/iCITRIS [S12]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C20",
+      "name": "Relational causal discovery [S15]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C21",
+      "name": "Adaptive online experiment design [S14]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "C.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C22",
+      "name": "ExpertInLoop [S11]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "C.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C23",
+      "name": "FedCDI [S16]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C24",
+      "name": "CORAL discovery component [S17]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "base",
+          "record": "C.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C25",
+      "name": "Current PyWhy-LLM [L05]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C26",
+      "name": "Current causaliq [L05]",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "base",
+          "record": "A.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C27",
+      "name": "Current MATMCD/Vashishtha [L05]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    },
+    {
+      "id": "C28",
+      "name": "Current Causal-Copilot [L06]",
+      "review_scopes": [
+        {
+          "registry": "base",
+          "record": "A.plan"
+        }
+      ],
+      "status": "Obligation/scope mapping only; not native integration, complete subtype specification or measured coverage.",
+      "specific_gap": "Actual family readers, native bindings, scientific applicability and operational evidence remain required."
+    }
+  ],
+  "axis_obligation_map": [
+    {
+      "id": "A01",
+      "name": "Task and scope of the claim",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A02",
+      "name": "Variable universe and identity",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A03",
+      "name": "Form of evidence accepted",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A04",
+      "name": "Sampling organization and data schema",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A05",
+      "name": "Environments and intervention information",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "H.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A06",
+      "name": "Knowledge, restrictions and other information channels",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A07",
+      "name": "Assumptions and validity domain",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A08",
+      "name": "Computational access and pluggable components",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A09",
+      "name": "Interaction and authority to choose actions",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A10",
+      "name": "Lifecycle, persistent state and randomness",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A11",
+      "name": "Result objects and cardinality",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A12",
+      "name": "Graph and claim semantics",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A13",
+      "name": "Uncertainty, decisions and abstention",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A14",
+      "name": "Observability and provenance",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A15",
+      "name": "Native execution and transport",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A16",
+      "name": "Resources, termination, partial results and failure",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A17",
+      "name": "Identity, configuration and reproducibility",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "D.plan"
+        },
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "G.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    },
+    {
+      "id": "A18",
+      "name": "Evidence availability and access boundaries",
+      "review_scopes": [
+        {
+          "registry": "self",
+          "record": "E.plan"
+        },
+        {
+          "registry": "self",
+          "record": "F.plan"
+        },
+        {
+          "registry": "self",
+          "record": "H.plan"
+        }
+      ],
+      "status": "Cross-cutting obligation scope, not proof of transport, interpretation, authority, statistical validity or native support."
+    }
+  ],
+  "coverage_limit": "Five extensions and mappings do not exhaust the space of possible systems or establish any coverage percentage. Native subtype gaps remain explicit."
+}

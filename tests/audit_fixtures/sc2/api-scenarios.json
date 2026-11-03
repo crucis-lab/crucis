@@ -1,0 +1,580 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09"
+  ],
+  "kind": "candidate_api_design_scenarios",
+  "status": "Inputs described by exact snapshot refs; byte/service runtime arguments materialized by a future test harness. Not executed calls.",
+  "scenarios": [
+    {
+      "id": "API01",
+      "call": "read_package",
+      "arguments_specification": {
+        "data_file": "A-s2-plan.json"
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API02",
+      "call": "encode_package",
+      "arguments_specification": {
+        "view_file": "A-s2-plan.json"
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API03",
+      "call": "resolve",
+      "arguments_specification": {
+        "reference": {
+          "binding": "external",
+          "target": "8db8f6ba-2479-4754-8688-941ef71e0234",
+          "target_type": "s2.task_definition",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        }
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API04",
+      "call": "assess",
+      "arguments_specification": {
+        "roots": [
+          {
+            "binding": "external",
+            "target": "6b35230e-0654-4955-b263-d3aae84ba6cf",
+            "target_type": "s2.plan_snapshot",
+            "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+          }
+        ],
+        "profiles": [
+          {
+            "name": "s2.bind_evaluation",
+            "version": "0.1.0-proposal.1"
+          }
+        ]
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API05",
+      "call": "resolve_slots",
+      "arguments_specification": {
+        "requirements": [
+          {
+            "binding": "external",
+            "target": "16ce332a-b0d8-45bb-98c3-1ca6abbc101b",
+            "target_type": "s2.case_slot",
+            "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+          }
+        ],
+        "candidates": []
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "partial",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Scoped missing actual evidence retained"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API06",
+      "call": "record_materialization",
+      "arguments_specification": {
+        "spec": {
+          "binding": "external",
+          "target": "e2169b32-3b67-4841-84a6-a49ad49ac6c2",
+          "target_type": "s2.transform_spec",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "evidence": [],
+        "realized": {
+          "binding": "external",
+          "target": "944d55c9-c02b-41e5-a898-27236707a7e2",
+          "target_type": "s2.parameter_set",
+          "package_id": "cad95b0d-9405-46eb-a416-83a45ad2296b"
+        }
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "partial",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Scoped missing actual evidence retained"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API07",
+      "call": "bind_run",
+      "arguments_specification": {
+        "plan": {
+          "binding": "external",
+          "target": "6b35230e-0654-4955-b263-d3aae84ba6cf",
+          "target_type": "s2.plan_snapshot",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "trial": {
+          "binding": "external",
+          "target": "2f451b26-c9d0-4c94-9a2c-66c06d357622",
+          "target_type": "s2.trial_slot",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "resolution": {
+          "binding": "external",
+          "target": "c235b096-1ac5-40dd-8f76-dc4ed43a95be",
+          "target_type": "s2.resolution_receipt",
+          "package_id": "1d7078d9-a43e-469c-a4d2-b5e089cf0bac"
+        },
+        "materialization": [],
+        "assessments": [
+          {
+            "binding": "external",
+            "target": "802578db-3d86-440d-b26f-652ac5520100",
+            "target_type": "s2.assessment",
+            "package_id": "1d7078d9-a43e-469c-a4d2-b5e089cf0bac"
+          }
+        ]
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "partial",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Scoped missing actual evidence retained"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API08",
+      "call": "project_request",
+      "arguments_specification": {
+        "binding": {
+          "binding": "external",
+          "target": "e5bdf908-8dc6-47ad-bdac-4588bfeaf117",
+          "target_type": "s2.run_binding",
+          "package_id": "1d7078d9-a43e-469c-a4d2-b5e089cf0bac"
+        },
+        "occurrence": {
+          "request_id": "45b62356-6646-482a-811f-40f840f1298b",
+          "attempt_id": "b85be165-f24f-4388-8583-9ad6799ce812"
+        },
+        "recipient_view": "bridge-R-request-preview.json",
+        "recipient": {
+          "binding": "internal",
+          "target": "fcf0a95f-fbc4-4bb3-becc-56f9a878b6d3",
+          "target_type": "s1.component"
+        },
+        "route": {
+          "route_kind": "recorded",
+          "transport": {
+            "name": "s1.recorded",
+            "version": "0.1.0-proposal.1"
+          },
+          "operation": {
+            "name": "s2.operation.discover",
+            "version": "0.1.0-proposal.1"
+          },
+          "parameters": []
+        }
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "rejected",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "No exact supported native projection/legacy lossless view"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API09",
+      "call": "record_handoff",
+      "arguments_specification": {
+        "binding": {
+          "binding": "external",
+          "target": "e5bdf908-8dc6-47ad-bdac-4588bfeaf117",
+          "target_type": "s2.run_binding",
+          "package_id": "1d7078d9-a43e-469c-a4d2-b5e089cf0bac"
+        },
+        "occurrence": {
+          "request_id": "45b62356-6646-482a-811f-40f840f1298b",
+          "attempt_id": "b85be165-f24f-4388-8583-9ad6799ce812"
+        },
+        "s1_snapshot_file": "bridge-R-request-preview.json"
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API10",
+      "call": "link_evidence",
+      "arguments_specification": {
+        "subjects": [
+          {
+            "binding": "external",
+            "target": "aa5a8c5e-87cc-4a60-9d54-2617533f5368",
+            "target_type": "s2.case_revision",
+            "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+          }
+        ],
+        "s1_evidence": [
+          {
+            "binding": "external",
+            "target": "2e078be7-9af2-4cd1-87cd-f80a364800b1",
+            "target_type": "s1.output",
+            "package_id": "238f4f36-d529-4026-a4b0-2c351c114af6"
+          }
+        ]
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API11",
+      "call": "record_population",
+      "arguments_specification": {
+        "comparison": {
+          "binding": "external",
+          "target": "090cd91c-2acf-4a29-8973-d5ee126a02f2",
+          "target_type": "s2.comparison",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "evidence": [
+          {
+            "binding": "external",
+            "target": "c734ef9e-f8a4-4280-9e88-b93233877b82",
+            "target_type": "s2.evidence_link",
+            "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+          }
+        ]
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API12",
+      "call": "bind_evaluation",
+      "arguments_specification": {
+        "plan": {
+          "binding": "external",
+          "target": "6b35230e-0654-4955-b263-d3aae84ba6cf",
+          "target_type": "s2.plan_snapshot",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "comparison": {
+          "binding": "external",
+          "target": "090cd91c-2acf-4a29-8973-d5ee126a02f2",
+          "target_type": "s2.comparison",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "population": {
+          "binding": "external",
+          "target": "19761683-e107-4969-8f6b-5af7072ecdb2",
+          "target_type": "s2.analysis_population_receipt",
+          "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+        },
+        "references": [
+          {
+            "binding": "external",
+            "target": "8a99f04d-a2b6-4021-9838-2dc3aa80fe04",
+            "target_type": "s2.reference_definition",
+            "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+          }
+        ],
+        "inputs": [
+          {
+            "binding": "external",
+            "target": "c734ef9e-f8a4-4280-9e88-b93233877b82",
+            "target_type": "s2.evidence_link",
+            "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+          }
+        ],
+        "alignments": [],
+        "interpretations": [
+          {
+            "binding": "external",
+            "target": "50e09799-a991-47d3-8fb3-e49b2907510b",
+            "target_type": "s2.assessment",
+            "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+          }
+        ],
+        "parameters": [
+          {
+            "binding": "external",
+            "target": "a4e78889-77e0-433a-bd0c-a51d96300b8e",
+            "target_type": "s2.parameter_set",
+            "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+          }
+        ]
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "partial",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Scoped missing actual evidence retained"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API13",
+      "call": "record_commitment",
+      "arguments_specification": {
+        "plan": {
+          "binding": "external",
+          "target": "6b35230e-0654-4955-b263-d3aae84ba6cf",
+          "target_type": "s2.plan_snapshot",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "evidence_record": {
+          "binding": "external",
+          "target": "80f8fbd2-a3d6-4836-afa5-6d7b18cc9c80",
+          "target_type": "s2.commitment_receipt",
+          "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+        }
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API14",
+      "call": "record_amendment",
+      "arguments_specification": {
+        "previous": {
+          "binding": "external",
+          "target": "6b35230e-0654-4955-b263-d3aae84ba6cf",
+          "target_type": "s2.plan_snapshot",
+          "package_id": "084fa6d0-870f-46f7-8a18-a44d56e9e98a"
+        },
+        "revised": {
+          "binding": "external",
+          "target": "00e032c6-2e9e-43e2-8a2b-65aeeeef9e1c",
+          "target_type": "s2.plan_snapshot",
+          "package_id": "b81feeb3-e316-4615-8b8e-d6de952f2aa3"
+        },
+        "evidence_record": {
+          "binding": "external",
+          "target": "d27c6d37-d8ab-43b6-be82-38c842ede27c",
+          "target_type": "s2.amendment",
+          "package_id": "77b1cc07-347d-4fc9-97ee-0bfc8e61af0c"
+        }
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API15",
+      "call": "import_legacy",
+      "arguments_specification": {
+        "source_declaration": {
+          "binding": "external",
+          "target": "685ffa66-8f77-4ad6-b960-115af68ebcfc",
+          "target_type": "s1.artifact_declaration",
+          "package_id": "77254819-bfa6-4c1b-a1c8-369232dbd5b5"
+        },
+        "original_identity": "unresolved"
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "partial",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Scoped missing actual evidence retained"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API16",
+      "call": "project_legacy",
+      "arguments_specification": {
+        "bindings": [
+          {
+            "binding": "external",
+            "target": "ceb94d0b-a5d4-4b96-93a7-9f9a687fa41e",
+            "target_type": "s2.evaluation_binding",
+            "package_id": "a0ccd406-a8e4-49c6-8bfa-5cd3c50db39f"
+          }
+        ],
+        "require_lossless": true,
+        "selection": "no_selected_single_legacy_view"
+      },
+      "context": {
+        "active_package": "084fa6d0-870f-46f7-8a18-a44d56e9e98a",
+        "sources": "exact manifest snapshots only",
+        "procedures": "future installed exact metadata readers; no scientific metric/native effect procedure",
+        "execution_authority": "absent"
+      },
+      "expected": {
+        "operation_state": "rejected",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "No exact supported native projection/legacy lossless view"
+      },
+      "status": "scenario specification; no function called"
+    },
+    {
+      "id": "API17",
+      "call": "assess",
+      "variant": "known false predicate under installed checker",
+      "expected": {
+        "operation_state": "completed",
+        "assessment": "fail"
+      }
+    },
+    {
+      "id": "API18",
+      "call": "bind_run",
+      "variant": "missing required materialization; optional unrelated evidence cannot substitute",
+      "expected": {
+        "operation_state": "partial",
+        "runnable": "withheld"
+      }
+    },
+    {
+      "id": "API19",
+      "call": "project_request",
+      "variant": "Registered supported exact translation with different scientific/native operation contracts, known required input bindings and explicit S1 view",
+      "expected": {
+        "operation_state": "completed",
+        "runnable": "requires separate S1 binding and S3 authorization"
+      },
+      "scientific_operation": {
+        "name": "s2.operation.discover",
+        "version": "0.1.0-proposal.1"
+      },
+      "native_operation": {
+        "name": "native.demo.learn",
+        "version": "0.1.0-proposal.1"
+      }
+    },
+    {
+      "id": "API20",
+      "call": "import_legacy",
+      "variant": "same persistent import occurrence with changed captured inputs",
+      "expected": {
+        "operation_state": "rejected",
+        "additions": "empty"
+      }
+    }
+  ]
+}

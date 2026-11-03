@@ -1,0 +1,651 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "local_date": "2026-11-02",
+  "timezone": "America/Los_Angeles",
+  "status": "Approved S2 metadata scope implemented; all nine bundle gates passed; public adoption and tracker closure not asserted",
+  "accepted_baseline": {
+    "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\accepted-design.json",
+    "sha256": "c5e3cbd3b0e987ebd72e2e6b90752d53e4676533f9d3ba6209d732c8db941690"
+  },
+  "accepted_artifacts_verified": 53,
+  "bundle_receipts": [
+    {
+      "bundle": "S2-A",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-A\\run2\\gate.json",
+        "sha256": "a6930ca477d3d3aa7e9754b0f62664f639f555f2e10fd8def6cbb790911878b7"
+      },
+      "full_suite": {
+        "ran": 158,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T02:49:57Z"
+      },
+      "s2_tests": 18,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-B",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-B\\run1\\gate.json",
+        "sha256": "9b672676ecb01351f9520a2cba24803f0046c15aad03c7393e9e54e5510a6d0a"
+      },
+      "full_suite": {
+        "ran": 173,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T03:03:11Z"
+      },
+      "s2_tests": 33,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-C",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-C\\run1\\gate.json",
+        "sha256": "97b3aa6785b812ae60e0a7c2ac729953dbadcb7c43066fff33c2f540c12c7eb9"
+      },
+      "full_suite": {
+        "ran": 182,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T03:10:32Z"
+      },
+      "s2_tests": 42,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-D",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-D\\run1\\gate.json",
+        "sha256": "07382f6f4d793550c2db010fd1f0f40ce929e4030fc8eb39b3d3e87ad75619b9"
+      },
+      "full_suite": {
+        "ran": 198,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T03:26:44Z"
+      },
+      "s2_tests": 58,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-E",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-E\\run1\\gate.json",
+        "sha256": "b72fd700adb8ecf22129afdeb8f43d8800649a445728a97f67052fa0f73fa108"
+      },
+      "full_suite": {
+        "ran": 210,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T03:42:35Z"
+      },
+      "s2_tests": 70,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-F",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-F\\run1\\gate.json",
+        "sha256": "081fc02a7677957d4c768c84e6d540e77ca541cb86eede08185d4c327a34c03a"
+      },
+      "full_suite": {
+        "ran": 220,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T03:54:39Z"
+      },
+      "s2_tests": 80,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-G",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-G\\run1\\gate.json",
+        "sha256": "d0dd89cd911820aa4aff5964d7d5389367b952c7e76b54c91e2376e71a029273"
+      },
+      "full_suite": {
+        "ran": 230,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T04:26:29Z"
+      },
+      "s2_tests": 90,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-H",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-H\\run1\\gate.json",
+        "sha256": "12864796efbfb681c431ddb85d46b249cf793eed155b121ed80eecb064da1098"
+      },
+      "full_suite": {
+        "ran": 239,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T04:33:11Z"
+      },
+      "s2_tests": 99,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    },
+    {
+      "bundle": "S2-I",
+      "receipt": {
+        "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-I\\run3\\gate.json",
+        "sha256": "aba5c9e516405e612dba2025a00923cca7fa61b1c602c64e071e3a532f19605b"
+      },
+      "full_suite": {
+        "ran": 334,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "ok": true,
+        "pattern": "test_audit_*.py",
+        "python": "3.12.14",
+        "utc": "2026-11-03T05:01:42Z"
+      },
+      "s2_tests": 194,
+      "comparison": {
+        "compared": 1298,
+        "passed": 1298,
+        "max_abs_diff": 9.1483427284475e-05,
+        "pass": true,
+        "tolerance": 0.001
+      },
+      "certificates_verified": 28
+    }
+  ],
+  "latest_release": {
+    "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-I\\run3\\gate.json",
+    "sha256": "aba5c9e516405e612dba2025a00923cca7fa61b1c602c64e071e3a532f19605b"
+  },
+  "acceptance_ledger": {
+    "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-I\\run3\\acceptance-ledger.json",
+    "sha256": "f2f56ee8c737faca1438defd3107f9c1f9634e956de5a09aab1c91d223face91"
+  },
+  "acceptance_counts": {
+    "adverse": 58,
+    "api": 20,
+    "must_show": 66
+  },
+  "api_refinements": [
+    {
+      "id": "API09",
+      "call": "record_handoff",
+      "accepted_expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "implementation_refinement": {
+        "state": "rejected",
+        "reason": "Frozen preview has no verified compiler/run projection metadata; positive generated R/H is tested separately"
+      },
+      "executed_test": "test_audit_experiments_integration.APIAcceptance.test_API09",
+      "executed_and_passed": true
+    },
+    {
+      "id": "API11",
+      "call": "record_population",
+      "accepted_expected": {
+        "operation_state": "completed",
+        "real_native_or_scientific_profile": "unestablished",
+        "reason": "Metadata operation only; no stronger assertion"
+      },
+      "implementation_refinement": {
+        "state": "partial",
+        "reason": "Evidence link does not establish the intended six-slot population or sourced native trial/output associations"
+      },
+      "executed_test": "test_audit_experiments_integration.APIAcceptance.test_API11",
+      "executed_and_passed": true
+    }
+  ],
+  "source_identity": [
+    {
+      "path": "audit/experiments/__init__.py",
+      "sha256": "215693f013e731dd5c32af1d79f6ac4950cd79a62e767a634609b849ebf99d4e"
+    },
+    {
+      "path": "audit/experiments/__main__.py",
+      "sha256": "ef3bd653b9a5d02769d52dcd1444ec8cd86001ca4b176731940bf5eb1be9aacb"
+    },
+    {
+      "path": "audit/experiments/acceptance.py",
+      "sha256": "0d338a22f8327bfc9d52e2fbe80f8a82dec5be19f7ec2a0fc68280feb7faf83a"
+    },
+    {
+      "path": "audit/experiments/api.py",
+      "sha256": "df9102aba6ac73d2fc8f264ec1cce9d036b6abba9f7f4abee51ac30ce24e58ff"
+    },
+    {
+      "path": "audit/experiments/bindings.py",
+      "sha256": "b023d1d7dfee27f5acfdcdb1b02ffdba03267ef429c06454501f1efdd39c7e0e"
+    },
+    {
+      "path": "audit/experiments/catalog.json",
+      "sha256": "d3c3bf3897a77f3cda60c2209b317475b4f9d041d6b263f5c9ff22d9f7babd36"
+    },
+    {
+      "path": "audit/experiments/codec.py",
+      "sha256": "0fa23d5b1616a1bd6b6bbe7383d1f9f5e1b8081424689a6a822ab0496c65867c"
+    },
+    {
+      "path": "audit/experiments/completion.py",
+      "sha256": "122dc98f79ce0314aaad6432870490f7c7447d8bad639e1783e46b98f67c21ae"
+    },
+    {
+      "path": "audit/experiments/contracts.py",
+      "sha256": "196e589ee14790acb38a9b10e0c913b6ccbde068e325321cd86ee350f2d29e81"
+    },
+    {
+      "path": "audit/experiments/core.py",
+      "sha256": "8a806273e5e78c024f783d186f4b0c8b4c1bdc8c7fec7af7de6f02c972d90ea3"
+    },
+    {
+      "path": "audit/experiments/errors.py",
+      "sha256": "6535f6e0ed191da9e07a57ed7d6dab2783736887eee2851f7a54b08b38f46c3f"
+    },
+    {
+      "path": "audit/experiments/evaluation.py",
+      "sha256": "35bb63520900eb78a644fdfbec00b0048a3164a23e941252e83817c5c1cceee4"
+    },
+    {
+      "path": "audit/experiments/families.py",
+      "sha256": "07e5277a1c4ff8af2eb16ff3942a6ca8f2a816c9ae22c12ee12787ef2e41303d"
+    },
+    {
+      "path": "audit/experiments/gates.py",
+      "sha256": "70362e5c2d83fe4f75f3db0c193d3438d2792c5dfceb8a52d4a1c50774369575"
+    },
+    {
+      "path": "audit/experiments/handoff.py",
+      "sha256": "6de48eaff7c26d00e9239763727075090eab24aeb0e5eab5af76189117100a41"
+    },
+    {
+      "path": "audit/experiments/information.py",
+      "sha256": "b5c1078123fd9a30413ba4e2d2f3d03531efe33e08f92323999dcc331b243c3c"
+    },
+    {
+      "path": "audit/experiments/legacy.py",
+      "sha256": "8b94af09a335b1e77ea61469ff8946582abd27de79ba4fe4db904e5bf42ee8a9"
+    },
+    {
+      "path": "audit/experiments/lifecycle.py",
+      "sha256": "213d9cf02c1900920049861c01bc1cd24aa5adee0d61a309d6f61b7e4ce34e60"
+    },
+    {
+      "path": "audit/experiments/model.py",
+      "sha256": "eca2b03aabaed3ab6e5c746f93d29cd06be12412155326e92386699b5c236317"
+    },
+    {
+      "path": "audit/experiments/operations.py",
+      "sha256": "b64c4d0c0d7869f3f3d649ce876fa42ab06a4af367bc49319aba40a95a0aac36"
+    },
+    {
+      "path": "audit/experiments/payloads.py",
+      "sha256": "2726b43e716eca31dc69bd06da5b283d449ebc157f561b9ff0d791312f722435"
+    },
+    {
+      "path": "audit/experiments/profiles.py",
+      "sha256": "2449bea83e12c4fb0f1b8784009282cc1664d9bc7ae0194a171b7d59f3dbb397"
+    },
+    {
+      "path": "audit/experiments/requirements.txt",
+      "sha256": "0a4163122325f656c2b393128e34409a388da82e86250f69c9965dc80cfcb05d"
+    },
+    {
+      "path": "audit/experiments/resolver.py",
+      "sha256": "7b05f3f421ebfae337b864168171dcaaf36faa979f47ec163953e086427e3657"
+    },
+    {
+      "path": "audit/experiments/responses.py",
+      "sha256": "5526d78c1d7abfbc97cf7a7c993561ffb1e3a85e56231b9be368248899b82d44"
+    },
+    {
+      "path": "audit/experiments/schema.py",
+      "sha256": "37529b696b874a1c058be29715ccb5f3847e120a6beee8196624fb9114342a9b"
+    },
+    {
+      "path": "audit/experiments/selection.py",
+      "sha256": "0d27f487bf42bdf7d85f211d09ae31d0140fc26ec5a7ec7e9eb5d03a35263ce7"
+    },
+    {
+      "path": "audit/experiments/services.py",
+      "sha256": "40957fece0446f5ea95fe362827f765cee45b0e4dd57ce35484652e64f37a9fe"
+    },
+    {
+      "path": "audit/experiments/writer.py",
+      "sha256": "cc4f6fe96770b7e42e9b0016a5ddc60a6ede1c677e20399573671f9e021def79"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/A-s1-definitions.json",
+      "sha256": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/A-s1-trace.json",
+      "sha256": "21b3f035bed61a202c2c4adab24f88f7d8210d48cdc4f56cad96d363a8f3a297"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/A-s2-plan.json",
+      "sha256": "06318c2389fd501921fa95030acb16833896b83d5699c51bf780a5e115424509"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/A-s2-receipts.json",
+      "sha256": "63dfb5ceb6b149318eb0682d0a1433b6e9f75860c71b49e940acd9b430362133"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/api-scenarios.json",
+      "sha256": "68f5aa076dca46e497ea60b9e16ef295a13a0cec0e074bcc6f762de4bb892b1a"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/B-s1-definitions.json",
+      "sha256": "e80c80fb978402ae75c2a8408d0db771c0f4e3c89aac435b191339ca347be11f"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/B-s1-review-assessment-source.json",
+      "sha256": "21607b3548b3efdf90be0e72219e8c3f837782581465f8f99d05ecd45171a13c"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/B-s1-trace.json",
+      "sha256": "afffd0c4c272ee200dcdead44c476450b79221b0cfcb55ec4c79f17dfaf86fb4"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/B-s2-plan.json",
+      "sha256": "f657ff2c7bc3592103f7965d5bbb15704e0b0ff8f3694d395c1e3d9c696884e4"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/B-s2-receipts.json",
+      "sha256": "c3adfc16f72e86a8d42201dab6e12de5c0acb763c01d35738331a2e30437627e"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/bridge-H-handoff-and-amendment.json",
+      "sha256": "067edbfc09a33b4d4c734c8a359ae234ba1ae62095186a5f392fb22cf299f572"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/bridge-M-input-binding.json",
+      "sha256": "4c3f356bbe3d9acbdf5ff20eee9d2b667a05d93cc7906c50e4b770b3932acf42"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/bridge-P2-amended-plan.json",
+      "sha256": "eb124d656fb504cf5b56b681e41122e6b6e55842ef5293684c21f2585699d690"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/bridge-R-request-preview.json",
+      "sha256": "76a27da5ddaf0975d337df03933ea867d4f01f33da346d99fa763ae7e73383c6"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/C-s1-definitions.json",
+      "sha256": "4ddfc37580fbacbbaab933246287691b1873a9a32b64f0ba7f5f05b27751dc4d"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/C-s1-trace.json",
+      "sha256": "414599d950a99b6d9f899f12533b0f8a2a33a6689b64cb0d419f0569ddfbafb3"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/C-s2-plan.json",
+      "sha256": "364b26705e0c0c60e8ccda1d6efbbd7d81d0ae42be72ac10a6739718e31e1f64"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/C-s2-receipts.json",
+      "sha256": "cde6262635fd9e0fec51d4f002b35b22d30480eace44ebf6a9ecf07ab07196b3"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/D-s1-definitions.json",
+      "sha256": "d83acd8e424cb5eee36fa3876b7e6e4990ca9ea65bf7c4343988c375ed695809"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/D-s1-trace.json",
+      "sha256": "05305a7cacad6105241a9a30234761f6de6c1a87aadb764419c6a709ab21e24a"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/D-s2-plan.json",
+      "sha256": "5fedcaf5f95d1f9db3ac27de250c1adf5dd95094bc6ba6fa8a4d0b09be333bdc"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/D-s2-receipts.json",
+      "sha256": "35db96e3647bce069c2ad78dd86dc9fe5915b9e6c9965680cc160fc8487f0105"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/E-s1-definitions.json",
+      "sha256": "6d89d00e60d8c4fe79b202e416f5b69c7e998b52eaf0fb4524656176e67e80d6"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/E-s1-trace.json",
+      "sha256": "ff0243d003982a95878cdc04e71f01815fc15f6149771f4f9217fdb415a84bc8"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/E-s2-plan.json",
+      "sha256": "64f111c6eb500d95af952112acb90686ee5f45bba7e1e2543ecd6576d75eb01c"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/E-s2-receipts.json",
+      "sha256": "658416b0ba3479156782399cd3d249c87d22eb35326515a452b15ae518bc4926"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/F-s1-definitions.json",
+      "sha256": "04184b6965e61ba0cef40913b4c9a68a088324aa79f05add4a18934814c74c26"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/F-s1-trace.json",
+      "sha256": "15ba290a62928532f79a274487789fec621cf3361ce565309e5225172a59a746"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/F-s2-plan.json",
+      "sha256": "899d8f4bef29cfd5a87daa96fa281d069ff615ffdf214aa6512ed8c91e96f12b"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/F-s2-receipts.json",
+      "sha256": "a0fc0afb6225bcc8b5fdb97eeb8e5cce41c10ef25542e14e8114c6086a6a4927"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/G-s1-definitions.json",
+      "sha256": "51d8ea218ea04b9dcd8153efae4d170ff556698ad6240fa9390931ee3228261c"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/G-s1-trace.json",
+      "sha256": "5292585dd18547a5e604728e375983dfd49c20294e4a2d7fe162b3faba7d60b2"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/G-s2-plan.json",
+      "sha256": "e89d4e1120c06c94933a5c335b88b21e1c3e2ddf6936bf0a0440bcafc8f70f0e"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/G-s2-receipts.json",
+      "sha256": "ab53283be64b43e358b93f1d3afedd7142996318ff8fc464ea4e9540efda8be7"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/H-s1-definitions.json",
+      "sha256": "0068589b5bf900a27eaf3245aff5af57dc2d965757a6063653ab8fd59d521dde"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/H-s1-trace.json",
+      "sha256": "45f87d3861c667a372b1ad9b5d7b4d02546202ca7b80cadbbd1b99f22402a715"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/H-s2-plan.json",
+      "sha256": "e13c6d27dd8729b46379d83d79c9bccd72b6fa2546512ce229da10e712328038"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/H-s2-receipts.json",
+      "sha256": "3b0588d655d839e03ea56bfe0be7cc513d4e4e3dfd5b4c3c22ed14f3113bb045"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/manifest.json",
+      "sha256": "dc175d63de9de6ba5a66c92e687e0e4269173fbb6a6f5ccc0c000205a0d3766b"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/negative-cases.json",
+      "sha256": "5c5a2e88a24a068c6e8c870b111c7c74069389501e714cddfdee805e9c5846de"
+    },
+    {
+      "path": "tests/audit_fixtures/sc2/schema-preservation-examples.json",
+      "sha256": "4b049e55c285c06527c5fe92ecd3f77cff298fdde427334e2a66852df2735a6b"
+    },
+    {
+      "path": "tests/test_audit_experiments_definitions.py",
+      "sha256": "e2df72b40661d3c7159516b73561cd917ae1770d70cfbffaa9576dd6d84b66eb"
+    },
+    {
+      "path": "tests/test_audit_experiments_evaluation.py",
+      "sha256": "98ab0d23d4d2c74334bcaf4a74d8817b6ac4f989929c397a5207890d5722bc17"
+    },
+    {
+      "path": "tests/test_audit_experiments_families.py",
+      "sha256": "d5b0a99ba9fdfd82ac362019d4ae7e3aee27882f5c7318b18e66133698cfc92f"
+    },
+    {
+      "path": "tests/test_audit_experiments_handoff.py",
+      "sha256": "2a44242e65f0ec14f523b0dc433a85bf7e433c0503b25097074ebf194cc373ac"
+    },
+    {
+      "path": "tests/test_audit_experiments_integration.py",
+      "sha256": "72ca5101605850db1877cfdd7409e06d5f43687a49cfc390041e544d5fe89841"
+    },
+    {
+      "path": "tests/test_audit_experiments_legacy.py",
+      "sha256": "4f3ba46ac28a8a6396876812ef7b6e581fd53d2bb0af6557fec2930550a685fb"
+    },
+    {
+      "path": "tests/test_audit_experiments_lifecycle.py",
+      "sha256": "7eb96b12b31a2d38ff4cca9681bde384336e6a45fa14522b0c9460cb87f41c1d"
+    },
+    {
+      "path": "tests/test_audit_experiments_services.py",
+      "sha256": "856f9fd8768b8c8b6692bf70cef0f202a3685faf113807ffa85fbbe864e69d59"
+    },
+    {
+      "path": "tests/test_audit_experiments_wire.py",
+      "sha256": "84c09a560228f6bca357448d046bc96573b1eebb68671e83fcaed938d95de9f3"
+    }
+  ],
+  "preserved_original_and_s1": {
+    "legacy_files": 64,
+    "legacy_expected": "d615f61a2ce46862b9093ee7309374c825a5684dcf0d4561453a7d71444e42ae",
+    "legacy_observed": "d615f61a2ce46862b9093ee7309374c825a5684dcf0d4561453a7d71444e42ae",
+    "mismatches": [],
+    "legacy_pass": true,
+    "implementation_files": 44,
+    "implementation_manifest_sha256": "b23093ae21538dd36436c7544f00e3ae1df35255924cadda97d98afa51478256",
+    "compile": "pass",
+    "identity_scope": "new runtime, schema, dependency lock, baseline pins, tests, frozen fixtures; explanatory docs excluded"
+  },
+  "recorded_s2_path": {
+    "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\S2-I\\run3\\s2-recorded-matmcd\\report.json",
+    "sha256": "ad88598657bffa878de59ba6e69a32ba4a2c747ead8430605ff0ba36b9900639"
+  },
+  "scope_note": "audit/docs/subsystem2-implemented-scope-2026-11-02.md",
+  "methodology_map": "audit/docs/subsystem2-methodology-index-implementation-2026-11-02.md",
+  "implementation_log": "audit/docs/subsystem2-implementation-log-2026-11-02.md",
+  "usage": "audit/experiments/README.md",
+  "repository_ci": {
+    "state": "existing pin mismatch",
+    "log": {
+      "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\ci-check.log",
+      "sha256": "13f65ef73ef533406515872ea84e5837c8f29b0410c46b8c132c93c64bc1b5ec"
+    },
+    "diagnosis": {
+      "path": "C:\\Users\\uzair\\Documents\\UCSD\\Fall 2026\\DSC 180A\\_w2_checks\\2026-11-02_s2_build\\ci-export-diagnosis.json",
+      "sha256": "84dc4660783399adfbc339e8a789365e9f642f7b9ae9f3c4d762fd8eb22e5aec"
+    },
+    "owner_step": "Review and repin DLV-07; no change made here"
+  },
+  "known_limits": [
+    "One existing causal-learn native-PC test skip; see skip-inventory.json",
+    "Synthetic conformance and historical recorded compatibility are not fresh native-system validation",
+    "No new scientific metrics or S3 execution/authority implementation",
+    "Owner controls public adoption, ticket/paper/site updates, archival and git commit"
+  ]
+}

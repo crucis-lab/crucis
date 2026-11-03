@@ -1,0 +1,1971 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09"
+  ],
+  "id": "c1",
+  "title": "Reordered graph and failed optional probability",
+  "synthetic": true,
+  "fixture_identity_and_times": "fictional fixed values, not native occurrences",
+  "package": {
+    "format": {
+      "name": "s1.connection_package",
+      "version": "0.1.0-proposal.1"
+    },
+    "package_id": "7ba40d85-1e27-469a-84b7-3368f770a8ef",
+    "roots": [
+      {
+        "binding": "internal",
+        "target": "3d9bf2a2-1899-45b4-9b8c-b7fdf28883fb",
+        "target_type": "s1.connection_observation"
+      }
+    ],
+    "records": [
+      {
+        "id": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+        "record_type": "s1.component",
+        "contract": {
+          "name": "s1.component",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "name": "synthetic SC-1 composition observer",
+          "role": "s1.observer",
+          "version": {
+            "state": "known",
+            "value": "0.1.0-proposal.1",
+            "basis": []
+          },
+          "implementation": {
+            "state": "known",
+            "value": {
+              "artifact": {
+                "binding": "internal",
+                "target": "2eb197f8-46b0-4afe-bcdc-7b737927ba3b",
+                "target_type": "s1.artifact_snapshot"
+              },
+              "selector": {
+                "state": "known",
+                "value": {
+                  "selector_type": "json_pointer",
+                  "pointer": ""
+                },
+                "basis": []
+              }
+            },
+            "basis": []
+          },
+          "configuration": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "source": {
+            "basis": "intrinsic",
+            "evidence": [],
+            "procedure": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_observed"
+              ],
+              "evidence": []
+            },
+            "inputs": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "2eb197f8-46b0-4afe-bcdc-7b737927ba3b",
+        "record_type": "s1.artifact_snapshot",
+        "contract": {
+          "name": "s1.artifact_snapshot",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "content": {
+            "content_form": "inline_utf8",
+            "text": "{\"__init__.py\": \"26715e6c6c968a5be3f41a248b0819981fa323d549dea413cab37ae6b12ba97b\", \"__main__.py\": \"a762e3ddc5fcc1d68d820584736311e20687b0626733b5d42cadf7f60c02e977\", \"api.py\": \"e01c664da330562d51302ad6737dd6953b8994996a6cccb180de5c3a13d879aa\", \"codec.py\": \"06ab2500ee6f18475e646b4753f06ef2e63058da93cc8700a0d47ed053ccdfc5\", \"core.py\": \"cca14c28593d3e7006859815d647c9d35d5493171cffb315f6cd0868e0430c5b\", \"domains.py\": \"54e8269c6cc0106d73319b59f3069625ac441981fb72709f85a4199ba8a88f6c\", \"evidence.py\": \"3e85be64270be512cf8dc30c8838f9dae629bfbae5ed4320e3ea24d117503e26\", \"families.py\": \"2bb86145bb8314764581a130d51102f3704682d604392948bfbb603b2d6ad8bb\", \"gates.py\": \"63c270db5c5b7d13c003aebdcbf101ef45b8095d2120228de30d37b808b64b33\", \"history.py\": \"5ce454e336137aa4d592854d3e0ea387f171968bf9f2c72047309f4f277e1e1c\", \"integrations/__init__.py\": \"d88213fca72f2b4f18dbeb93ea34ce816a580edb9fc287665cc411d041c848b7\", \"integrations/causaliq.py\": \"6f3ff94b38b8d863cd5bd91d641655b0c7e752209d3ae437dc221a7175d1f55d\", \"integrations/legacy_recorded.py\": \"6990c1a4909483281983710c042cb7bf9a676c2d5a12a9f8c586e33a4f312663\", \"legacy.py\": \"022243a012727f21f30f11f2caf9f7f2a0ecfc39ce1ccf6846876f8015c75c73\", \"model.py\": \"41d0d9f01b1fc02c54adc9d21d3f29c7cf9d4c5f01d60571f9e36bd720b403f7\", \"ports.py\": \"ab457b6f5be4d8b77def5eabbe8a36913f856e71a9df5f15c39ab657ed2c5bdf\", \"requirements.txt\": \"2825aab043b047ad6231afd50f92e4a8218ea3d3615a2872a8d2f96bada99201\", \"sc1.schema.json\": \"6630aa8ae67dda918343b456e7854cf8b569133a6de6a382741ac88cf4c75497\", \"schema.py\": \"31d736bd51c95fa06c0417b01c390edd8567b91ae22c894398e7b93a2b4be11e\", \"semantics.py\": \"d89b0f2e0b23b6422e960e033a4a0fdf2289669381944795321080c615781a2a\", \"services.py\": \"297d17d711893148e0ebd647ccfc5bbcb653cd143f360bfca5ed214c5bf95b15\", \"specimens.py\": \"1647ef3e31eb8306c59cb3b0aa2eea491873d6c8b16aa11a213509bdb1d8bcb2\", \"store.py\": \"e57a9c43208419205d8cbe6664a8602eb4f85887d1868911eca76c1d1c6b10a4\", \"validation.py\": \"1457708882749aefde80eef017e43394be69ddf4f8d65c1ffeb716c01af6a975\"}"
+          },
+          "format": {
+            "state": "known",
+            "value": {
+              "name": "s1.code_identity_manifest",
+              "version": "0.1.0-proposal.1"
+            },
+            "basis": []
+          },
+          "capture_scope": {
+            "kind": "full_content"
+          },
+          "source_span": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "native_capture_extent": "s1.full_for_interface",
+          "locations": [],
+          "digest_claims": [],
+          "source": {
+            "basis": "intrinsic",
+            "evidence": [],
+            "procedure": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_observed"
+              ],
+              "evidence": []
+            },
+            "inputs": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "08c1c431-accb-480a-83ab-d29c70cc16e6",
+        "record_type": "s1.proposition",
+        "contract": {
+          "name": "s1.proposition",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "predicate": {
+            "name": "s1.native_property",
+            "version": "0.1.0-proposal.1"
+          },
+          "arguments": [
+            {
+              "role": "s1.subject",
+              "value": {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            },
+            {
+              "role": "s1.property",
+              "value": "s1.content_sha256"
+            },
+            {
+              "role": "s1.value",
+              "value": "52d03bb09fc5bd9324f11e40fad7ce69214508d56cd37a7a95854526b93bc0ad"
+            }
+          ],
+          "conditioning": [],
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "qualifiers": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "e52d6128-9a7c-4bc9-94ad-3f679ff44c09",
+        "record_type": "s1.observation",
+        "contract": {
+          "name": "s1.observation",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "subject": {
+            "binding": "internal",
+            "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+            "target_type": "s1.artifact_snapshot"
+          },
+          "proposition": {
+            "binding": "internal",
+            "target": "08c1c431-accb-480a-83ab-d29c70cc16e6",
+            "target_type": "s1.proposition"
+          },
+          "value": "52d03bb09fc5bd9324f11e40fad7ce69214508d56cd37a7a95854526b93bc0ad",
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "qualifiers": []
+          },
+          "source_time": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "capture_time": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "source": {
+            "basis": "observed",
+            "evidence": [],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          },
+          "event": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+        "record_type": "s1.artifact_snapshot",
+        "contract": {
+          "name": "s1.artifact_snapshot",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "content": {
+            "content_form": "inline_utf8",
+            "text": "{\"native\":\"synthetic fixture\"}"
+          },
+          "format": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.unsupported_semantics"
+            ],
+            "evidence": []
+          },
+          "capture_scope": {
+            "kind": "full_content"
+          },
+          "source_span": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "native_capture_extent": "s1.extent_unresolved",
+          "locations": [],
+          "digest_claims": [
+            {
+              "binding": "internal",
+              "target": "e52d6128-9a7c-4bc9-94ad-3f679ff44c09",
+              "target_type": "s1.observation"
+            }
+          ],
+          "source": {
+            "basis": "observed",
+            "evidence": [],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "283fc9cb-49ae-4a7a-9348-1eb053c0878b",
+        "record_type": "s1.variable",
+        "contract": {
+          "name": "s1.variable",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "namespace": {
+            "binding": "internal",
+            "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+            "target_type": "s1.component"
+          },
+          "meaning": {
+            "state": "known",
+            "value": "X",
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ]
+          },
+          "roles": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "value_space": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "source": {
+            "basis": "reported",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          },
+          "derivation": []
+        },
+        "extensions": []
+      },
+      {
+        "id": "54ce31e2-5709-42d4-8082-79ddff9a53a4",
+        "record_type": "s1.variable",
+        "contract": {
+          "name": "s1.variable",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "namespace": {
+            "binding": "internal",
+            "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+            "target_type": "s1.component"
+          },
+          "meaning": {
+            "state": "known",
+            "value": "Y",
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ]
+          },
+          "roles": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "value_space": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "source": {
+            "basis": "reported",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          },
+          "derivation": []
+        },
+        "extensions": []
+      },
+      {
+        "id": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+        "record_type": "s1.domain",
+        "contract": {
+          "name": "s1.domain",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "domain_kind": "finite",
+          "members": [
+            {
+              "key": "0",
+              "variable": {
+                "binding": "internal",
+                "target": "283fc9cb-49ae-4a7a-9348-1eb053c0878b",
+                "target_type": "s1.variable"
+              },
+              "coordinates": []
+            },
+            {
+              "key": "1",
+              "variable": {
+                "binding": "internal",
+                "target": "54ce31e2-5709-42d4-8082-79ddff9a53a4",
+                "target_type": "s1.variable"
+              },
+              "coordinates": []
+            }
+          ],
+          "coordinate_contract": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "extent": "s1.full_for_interface",
+          "source": {
+            "basis": "reported",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+        "record_type": "s1.domain",
+        "contract": {
+          "name": "s1.domain",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "domain_kind": "finite",
+          "members": [
+            {
+              "key": "1",
+              "variable": {
+                "binding": "internal",
+                "target": "54ce31e2-5709-42d4-8082-79ddff9a53a4",
+                "target_type": "s1.variable"
+              },
+              "coordinates": []
+            },
+            {
+              "key": "0",
+              "variable": {
+                "binding": "internal",
+                "target": "283fc9cb-49ae-4a7a-9348-1eb053c0878b",
+                "target_type": "s1.variable"
+              },
+              "coordinates": []
+            }
+          ],
+          "coordinate_contract": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "extent": "s1.full_for_interface",
+          "source": {
+            "basis": "reported",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+        "record_type": "s1.mapping",
+        "contract": {
+          "name": "s1.mapping",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "mapping_kind": "permutation",
+          "from": {
+            "binding": "internal",
+            "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+            "target_type": "s1.domain"
+          },
+          "to": {
+            "binding": "internal",
+            "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+            "target_type": "s1.domain"
+          },
+          "entries": [
+            {
+              "from": [
+                {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "1"
+                }
+              ],
+              "to": [
+                {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "1"
+                }
+              ],
+              "source": {
+                "basis": "observed",
+                "evidence": [
+                  {
+                    "binding": "internal",
+                    "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                    "target_type": "s1.artifact_snapshot"
+                  }
+                ],
+                "procedure": {
+                  "state": "known",
+                  "value": {
+                    "binding": "internal",
+                    "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                    "target_type": "s1.component"
+                  },
+                  "basis": []
+                },
+                "inputs": []
+              }
+            },
+            {
+              "from": [
+                {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "0"
+                }
+              ],
+              "to": [
+                {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "0"
+                }
+              ],
+              "source": {
+                "basis": "observed",
+                "evidence": [
+                  {
+                    "binding": "internal",
+                    "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                    "target_type": "s1.artifact_snapshot"
+                  }
+                ],
+                "procedure": {
+                  "state": "known",
+                  "value": {
+                    "binding": "internal",
+                    "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                    "target_type": "s1.component"
+                  },
+                  "basis": []
+                },
+                "inputs": []
+              }
+            }
+          ],
+          "procedure": {
+            "binding": "internal",
+            "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+            "target_type": "s1.component"
+          },
+          "purpose": "s1.coordinate_interpretation",
+          "coverage": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+                "target_type": "s1.domain"
+              },
+              {
+                "binding": "internal",
+                "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+                "target_type": "s1.domain"
+              }
+            ],
+            "qualifiers": []
+          },
+          "properties": [],
+          "checks": [],
+          "source": {
+            "basis": "observed",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "c1b93839-804b-434d-9a43-56eb46347bb5",
+        "record_type": "s1.output",
+        "contract": {
+          "name": "s1.output",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "output_type": "graph",
+          "native_producer": {
+            "binding": "unresolved",
+            "target_type": "s1.component",
+            "reason": "s1.unresolved_identity",
+            "evidence": [],
+            "source_labels": []
+          },
+          "subjects": [],
+          "role": {
+            "state": "known",
+            "value": "s1.native_answer",
+            "basis": []
+          },
+          "designation": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "body": {
+            "family": {
+              "name": "s1.dag",
+              "version": "0.1.0-proposal.1"
+            },
+            "domain": {
+              "binding": "internal",
+              "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+              "target_type": "s1.domain"
+            },
+            "coverage": {
+              "pairing": "ordered",
+              "domain": {
+                "binding": "internal",
+                "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+                "target_type": "s1.domain"
+              },
+              "include_same_node": false,
+              "pairs": [],
+              "extent": "all_in_domain"
+            },
+            "omission": {
+              "within_coverage": "asserted_absence",
+              "outside_coverage": "no_assertion"
+            },
+            "links": [
+              {
+                "key": "1->0",
+                "left": {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "1"
+                },
+                "right": {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "0"
+                },
+                "relation": {
+                  "name": "s1.direct_relation",
+                  "version": "0.1.0-proposal.1"
+                },
+                "endpoint_marks": [],
+                "properties": [],
+                "quantities": []
+              }
+            ],
+            "native_assertions": [],
+            "quantities": []
+          },
+          "source": {
+            "basis": "reconstructed",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          },
+          "relations": [],
+          "checks": []
+        },
+        "extensions": []
+      },
+      {
+        "id": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+        "record_type": "s1.output",
+        "contract": {
+          "name": "s1.output",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "output_type": "graph",
+          "native_producer": {
+            "binding": "unresolved",
+            "target_type": "s1.component",
+            "reason": "s1.unresolved_identity",
+            "evidence": [],
+            "source_labels": []
+          },
+          "subjects": [],
+          "role": {
+            "state": "known",
+            "value": "s1.standardized_interpretation",
+            "basis": []
+          },
+          "designation": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "body": {
+            "family": {
+              "name": "s1.dag",
+              "version": "0.1.0-proposal.1"
+            },
+            "domain": {
+              "binding": "internal",
+              "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+              "target_type": "s1.domain"
+            },
+            "coverage": {
+              "pairing": "ordered",
+              "domain": {
+                "binding": "internal",
+                "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+                "target_type": "s1.domain"
+              },
+              "include_same_node": false,
+              "pairs": [],
+              "extent": "all_in_domain"
+            },
+            "omission": {
+              "within_coverage": "asserted_absence",
+              "outside_coverage": "no_assertion"
+            },
+            "links": [
+              {
+                "key": "1->0",
+                "left": {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "1"
+                },
+                "right": {
+                  "domain": {
+                    "binding": "internal",
+                    "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+                    "target_type": "s1.domain"
+                  },
+                  "key": "0"
+                },
+                "relation": {
+                  "name": "s1.direct_relation",
+                  "version": "0.1.0-proposal.1"
+                },
+                "endpoint_marks": [],
+                "properties": [],
+                "quantities": []
+              }
+            ],
+            "native_assertions": [],
+            "quantities": []
+          },
+          "source": {
+            "basis": "derived",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+                "target_type": "s1.mapping"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": [
+              {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+                "target_type": "s1.mapping"
+              }
+            ]
+          },
+          "relations": [],
+          "checks": []
+        },
+        "extensions": []
+      },
+      {
+        "id": "95ca72c7-02c8-4434-8496-7b5bc355478d",
+        "record_type": "s1.relation",
+        "contract": {
+          "name": "s1.relation",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "relation_contract": {
+            "name": "s1.representation_of",
+            "version": "0.1.0-proposal.1"
+          },
+          "endpoints": [
+            {
+              "role": "s1.source",
+              "target": {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              }
+            },
+            {
+              "role": "s1.view",
+              "target": {
+                "binding": "internal",
+                "target": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+                "target_type": "s1.output"
+              }
+            }
+          ],
+          "parameters": [
+            {
+              "binding": "internal",
+              "target": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+              "target_type": "s1.mapping"
+            }
+          ],
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+                "target_type": "s1.output"
+              }
+            ],
+            "qualifiers": []
+          },
+          "source": {
+            "basis": "derived",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+                "target_type": "s1.mapping"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": [
+              {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+                "target_type": "s1.mapping"
+              }
+            ]
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "e82dc1c0-9e5e-4e94-817c-4715a1ac6a70",
+        "record_type": "s1.proposition",
+        "contract": {
+          "name": "s1.proposition",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "predicate": {
+            "name": "s1.native_property",
+            "version": "0.1.0-proposal.1"
+          },
+          "arguments": [
+            {
+              "role": "s1.subject",
+              "value": {
+                "binding": "internal",
+                "target": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+                "target_type": "s1.output"
+              }
+            },
+            {
+              "role": "s1.property",
+              "value": "s1.optional_score"
+            },
+            {
+              "role": "s1.value",
+              "value": true
+            }
+          ],
+          "conditioning": [],
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+                "target_type": "s1.output"
+              }
+            ],
+            "qualifiers": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "636720c5-3f56-412a-9e57-f4a51d38fb99",
+        "record_type": "s1.output",
+        "contract": {
+          "name": "s1.output",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "output_type": "quantity",
+          "native_producer": {
+            "binding": "unresolved",
+            "target_type": "s1.component",
+            "reason": "s1.unresolved_identity",
+            "evidence": [],
+            "source_labels": []
+          },
+          "subjects": [],
+          "role": {
+            "state": "known",
+            "value": "s1.native_answer",
+            "basis": []
+          },
+          "designation": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "body": {
+            "quantity_kind": "s1.probability",
+            "subject": {
+              "binding": "internal",
+              "target": "e82dc1c0-9e5e-4e94-817c-4715a1ac6a70",
+              "target_type": "s1.proposition"
+            },
+            "value": {
+              "state": "known",
+              "value": {
+                "number_type": "finite_decimal",
+                "text": "1.2"
+              },
+              "basis": [
+                {
+                  "binding": "internal",
+                  "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                  "target_type": "s1.artifact_snapshot"
+                }
+              ]
+            },
+            "units": {
+              "state": "known",
+              "value": {
+                "name": "dimensionless",
+                "convention": {
+                  "name": "s1.dimensionless",
+                  "version": "0.1.0-proposal.1"
+                }
+              },
+              "basis": []
+            },
+            "conditioning": [],
+            "basis": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_observed"
+              ],
+              "evidence": []
+            },
+            "procedure": {
+              "binding": "internal",
+              "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+              "target_type": "s1.component"
+            },
+            "associated_rule": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_observed"
+              ],
+              "evidence": []
+            }
+          },
+          "source": {
+            "basis": "reconstructed",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          },
+          "relations": [],
+          "checks": []
+        },
+        "extensions": []
+      },
+      {
+        "id": "6a568790-16b4-4613-b0f1-69acfcdd6d5f",
+        "record_type": "s1.proposition",
+        "contract": {
+          "name": "s1.proposition",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "predicate": {
+            "name": "s1.native_property",
+            "version": "0.1.0-proposal.1"
+          },
+          "arguments": [
+            {
+              "role": "s1.subject",
+              "value": {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            },
+            {
+              "role": "s1.property",
+              "value": "s1.content_captured"
+            },
+            {
+              "role": "s1.value",
+              "value": true
+            }
+          ],
+          "conditioning": [],
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "qualifiers": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "f2ec8b33-28fe-4754-b61c-4832498e0755",
+        "record_type": "s1.observation",
+        "contract": {
+          "name": "s1.observation",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "subject": {
+            "binding": "internal",
+            "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+            "target_type": "s1.artifact_snapshot"
+          },
+          "proposition": {
+            "binding": "internal",
+            "target": "6a568790-16b4-4613-b0f1-69acfcdd6d5f",
+            "target_type": "s1.proposition"
+          },
+          "value": true,
+          "scope": {
+            "subjects": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "qualifiers": []
+          },
+          "source_time": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "capture_time": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "source": {
+            "basis": "observed",
+            "evidence": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "procedure": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "inputs": []
+          },
+          "event": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          }
+        },
+        "extensions": []
+      },
+      {
+        "id": "3d9bf2a2-1899-45b4-9b8c-b7fdf28883fb",
+        "record_type": "s1.connection_observation",
+        "contract": {
+          "name": "s1.connection_observation",
+          "version": "0.1.0-proposal.1"
+        },
+        "producer": {
+          "binding": "internal",
+          "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+          "target_type": "s1.component"
+        },
+        "created_at": {
+          "state": "known",
+          "value": {
+            "time_type": "utc_instant",
+            "value": "2026-11-01T12:00:00.000000Z",
+            "precision": "fractional_second",
+            "clock": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "10ddafe9-d244-4fb4-a473-09479b5719ed",
+                "target_type": "s1.component"
+              },
+              "basis": []
+            },
+            "uncertainty_seconds": {
+              "state": "unresolved",
+              "reasons": [
+                "s1.not_computed"
+              ],
+              "evidence": []
+            }
+          },
+          "basis": []
+        },
+        "payload": {
+          "subjects": [
+            {
+              "binding": "internal",
+              "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+              "target_type": "s1.artifact_snapshot"
+            }
+          ],
+          "request": {
+            "binding": "unresolved",
+            "target_type": "s1.request",
+            "reason": "s1.unresolved_identity",
+            "evidence": [],
+            "source_labels": []
+          },
+          "native_subject": {
+            "binding": "unresolved",
+            "target_type": "s1.component",
+            "reason": "s1.unresolved_identity",
+            "evidence": [],
+            "source_labels": []
+          },
+          "information": {
+            "members": [],
+            "extent": "not_examined",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                  "target_type": "s1.artifact_snapshot"
+                }
+              ],
+              "qualifiers": []
+            },
+            "gaps": []
+          },
+          "observations": [
+            {
+              "binding": "internal",
+              "target": "f2ec8b33-28fe-4754-b61c-4832498e0755",
+              "target_type": "s1.observation"
+            }
+          ],
+          "gaps": [],
+          "outputs": {
+            "members": [
+              {
+                "binding": "internal",
+                "target": "c1b93839-804b-434d-9a43-56eb46347bb5",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+                "target_type": "s1.output"
+              },
+              {
+                "binding": "internal",
+                "target": "636720c5-3f56-412a-9e57-f4a51d38fb99",
+                "target_type": "s1.output"
+              }
+            ],
+            "extent": "complete_for_scope",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                  "target_type": "s1.artifact_snapshot"
+                }
+              ],
+              "qualifiers": []
+            },
+            "gaps": []
+          },
+          "artifacts": {
+            "members": [
+              {
+                "binding": "internal",
+                "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                "target_type": "s1.artifact_snapshot"
+              }
+            ],
+            "extent": "complete_for_scope",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "472f8efe-d889-4d12-af86-dae1d556b8f8",
+                  "target_type": "s1.artifact_snapshot"
+                }
+              ],
+              "qualifiers": []
+            },
+            "gaps": []
+          },
+          "context": [
+            {
+              "binding": "internal",
+              "target": "f1892421-8aba-4ffc-bb20-e0e8c82d93a5",
+              "target_type": "s1.domain"
+            },
+            {
+              "binding": "internal",
+              "target": "967b1eb7-fba2-455d-8b9e-051be1d25c9c",
+              "target_type": "s1.domain"
+            },
+            {
+              "binding": "internal",
+              "target": "3f837ffc-7ff5-417c-b8ec-ec40bcbb1d5f",
+              "target_type": "s1.mapping"
+            }
+          ],
+          "checks": []
+        },
+        "extensions": []
+      }
+    ],
+    "external_packages": [],
+    "extensions": []
+  },
+  "expectations": [
+    {
+      "subject": "f0450165-d07e-4caa-a941-45e9fc1d338f",
+      "contract": "s1.dag",
+      "result": "pass"
+    },
+    {
+      "subject": "636720c5-3f56-412a-9e57-f4a51d38fb99",
+      "contract": "s1.quantity_value",
+      "result": "fail"
+    },
+    {
+      "subject": "3d9bf2a2-1899-45b4-9b8c-b7fdf28883fb",
+      "contract": "s1.connection_minimum",
+      "result": "pass"
+    }
+  ],
+  "scientific_correctness": "not_assessed"
+}

@@ -1,0 +1,6839 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09"
+  ],
+  "purpose": "design_specimens_only",
+  "status": "hypothetical complete logical record set; not a frozen wire format, executable fixture, runtime result or certificate",
+  "namespace": "s1-composition-proposal-2026-11-01",
+  "id_convention": "readable local IDs for design review; opaque production ID syntax remains separate",
+  "reference_convention": "{target, target_type, binding:internal}; every such target is defined in records; record_type and subtype fields are distinct",
+  "scope": "subsystem 1 only",
+  "cases": [
+    {
+      "id": "c1",
+      "title": "Reordered graph with failed optional quantity",
+      "roots": [
+        {
+          "target": "c1:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Final graph can fulfill this request; optional probability remains uninterpreted; no scientific correctness claim.",
+      "check_expectations": [
+        {
+          "target": "c1:check-graph",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        },
+        {
+          "target": "c1:check-probability",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Understood historical graph; unknown execution; later missing/changed file",
+      "roots": [
+        {
+          "target": "c2:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        },
+        {
+          "target": "c2:later-record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Interpretation and original fulfillment remain separate. Later availability does not rewrite earlier capture or native history.",
+      "check_expectations": [
+        {
+          "target": "c2:check",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        },
+        {
+          "target": "c2:check-change",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "Graph/parameter sample bank and probability for an unselected candidate",
+      "roots": [
+        {
+          "target": "c3:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Preserve three draws and their pairings; no exact posterior or independence claim; quantity need not bind to an existing link.",
+      "check_expectations": [
+        {
+          "target": "c3:check-members",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        },
+        {
+          "target": "c3:check-candidate",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "title": "Temporal result with narrow query coverage",
+      "roots": [
+        {
+          "target": "c4:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Lag and coverage survive. Stationarity and any unqueried pair remain unasserted.",
+      "check_expectations": [
+        {
+          "target": "c4:check",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "title": "Learned-domain output with a separately derived reference alignment",
+      "roots": [
+        {
+          "target": "c5:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Native and reference domains remain distinct. Evidence access labels do not themselves prove execution isolation.",
+      "check_expectations": [
+        {
+          "target": "c5:check-domain",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "title": "Conflicting terminal evidence and distinct assessment bases",
+      "roots": [
+        {
+          "target": "c6:earlier-record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        },
+        {
+          "target": "c6:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        },
+        {
+          "target": "c6:published-basis",
+          "binding": "internal",
+          "target_type": "published_basis"
+        },
+        {
+          "target": "c6:current-pointer",
+          "binding": "internal",
+          "target_type": "selection_pointer"
+        }
+      ],
+      "expected_readout": "New evidence changes the current assessment without deleting the old basis. No native rerun occurs.",
+      "check_expectations": [
+        {
+          "target": "c6:check-conflict",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        },
+        {
+          "target": "c6:check-pin",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c7",
+      "title": "Parser correction on unchanged native evidence",
+      "roots": [
+        {
+          "target": "c7:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "New interpretation, same native evidence; no native rerun and no erasure of the old interpretation.",
+      "check_expectations": [
+        {
+          "target": "c7:old-check",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        },
+        {
+          "target": "c7:new-check",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c8",
+      "title": "Complete publication of deliberately partial evidence",
+      "roots": [
+        {
+          "target": "c8:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Published package completeness is scoped to its manifest, not to complete original evidence. Declaration lacks bytes and a computed digest.",
+      "check_expectations": [
+        {
+          "target": "c8:check",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    },
+    {
+      "id": "c9",
+      "title": "Local result with allowed abstention and a distinct ranking",
+      "roots": [
+        {
+          "target": "c9:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "expected_readout": "Finality and fulfillment are request-specific; local membership, predictive ranking and global graph structure are not interchangeable.",
+      "check_expectations": [
+        {
+          "target": "c9:check-local",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        },
+        {
+          "target": "c9:check-rank",
+          "binding": "internal",
+          "target_type": "check_expectation"
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "def:evidence",
+      "name": "s1.design.evidence",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-foundation-contract-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:domain",
+      "name": "s1.design.domain",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-domains-mappings-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:mapping",
+      "name": "s1.design.mapping",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-domains-mappings-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:graph",
+      "name": "s1.design.graph",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-output-subtypes-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:proposition",
+      "name": "s1.design.proposition",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-output-subtypes-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:quantity",
+      "name": "s1.design.quantity",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-output-subtypes-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:collection",
+      "name": "s1.design.collection",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-output-subtypes-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:model-reference",
+      "name": "s1.design.model-reference",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-output-subtypes-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:outcome",
+      "name": "s1.design.outcome",
+      "revision": "proposal-2026-11-01",
+      "definition_document": "system-connections-outcome-observations-design-2026-11-01.md",
+      "scope": "design-specimen semantics; not a frozen wire schema",
+      "record_type": "contract"
+    },
+    {
+      "id": "def:toy-native",
+      "name": "toy-native",
+      "version": "hypothetical-1",
+      "role": "native",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "toy-native"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "def:observer",
+      "name": "observer",
+      "version": "hypothetical-1",
+      "role": "observer_or_derived_producer",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "observer"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "def:decoder-1",
+      "name": "decoder-1",
+      "version": "hypothetical-1",
+      "role": "observer_or_derived_producer",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "decoder-1"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "def:decoder-2",
+      "name": "decoder-2",
+      "version": "hypothetical-1",
+      "role": "observer_or_derived_producer",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "decoder-2"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "def:mapping-rule",
+      "name": "mapping-rule",
+      "version": "hypothetical-1",
+      "role": "observer_or_derived_producer",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "mapping-rule"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "def:fulfillment-rule",
+      "name": "fulfillment-rule",
+      "version": "hypothetical-1",
+      "role": "observer_or_derived_producer",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "fulfillment-rule"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "def:alignment-rule",
+      "name": "alignment-rule",
+      "version": "hypothetical-1",
+      "role": "observer_or_derived_producer",
+      "implementation_identity": {
+        "state": "unresolved",
+        "reason": "not_implemented_design_component",
+        "scope": "alignment-rule"
+      },
+      "record_type": "component"
+    },
+    {
+      "id": "c1:var:age",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c1",
+      "meaning": {
+        "state": "known",
+        "value": "age"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c1:var:smoking",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c1",
+      "meaning": {
+        "state": "known",
+        "value": "smoking"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c1:var:outcome",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c1",
+      "meaning": {
+        "state": "known",
+        "value": "outcome"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c1:domain-source",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c1:domain-source",
+      "members": [
+        {
+          "key": "a",
+          "variable": {
+            "target": "c1:var:age",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "s",
+          "variable": {
+            "target": "c1:var:smoking",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "y",
+          "variable": {
+            "target": "c1:var:outcome",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c1:domain-native",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c1:domain-native",
+      "members": [
+        {
+          "key": "p0",
+          "variable": {
+            "target": "c1:var:outcome",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "p1",
+          "variable": {
+            "target": "c1:var:age",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "p2",
+          "variable": {
+            "target": "c1:var:smoking",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c1:input",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "presented_input",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"columns\":[\"V1\",\"V2\",\"V3\"],\"rows\":[[1,20,0],[0,40,1]]}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "23f28f06fe9ccead5cbb2258c2545cb36ce07e92977d0e35d0426d2bf2170ff9",
+          "byte_length": 55,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c1:request",
+      "operation": "discover_structure",
+      "domain": {
+        "target": "c1:domain-source",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "required_deliverables": [
+        {
+          "type": "graph",
+          "coverage": "all ordered distinct pairs in source domain"
+        }
+      ],
+      "optional_deliverables": [
+        {
+          "type": "quantity",
+          "kind": "probability"
+        }
+      ],
+      "completion_rule": "normal native completion and a final interpreted directed graph over the required domain",
+      "allowed_abstention": false,
+      "mode": "hypothetical_native_invocation",
+      "information_policy": "deliver only native view; inverse mapping retained by observer",
+      "resource_policy": {
+        "kind": "no_paid_calls"
+      },
+      "recovery_policy": "no recovery in this scenario",
+      "record_type": "request"
+    },
+    {
+      "id": "c1:attempt",
+      "request": {
+        "target": "c1:request",
+        "binding": "internal",
+        "target_type": "request"
+      },
+      "identity_basis": "hypothetical single launch",
+      "native_start": {
+        "state": "known",
+        "value": true
+      },
+      "native_subject": {
+        "target": "def:toy-native",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "record_type": "attempt"
+    },
+    {
+      "id": "c1:binding",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "payload": {
+        "target": "c1:input",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "domain": {
+        "target": "c1:domain-native",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "axis": {
+        "name": "variable",
+        "position_base": 0,
+        "keys": [
+          "p0",
+          "p1",
+          "p2"
+        ]
+      },
+      "shown_labels": [
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "recipient": {
+        "target": "def:toy-native",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "attempt": {
+        "target": "c1:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "delivery": "hypothetically observed",
+      "visible_to_native": [
+        "inline input content"
+      ],
+      "observer_only": "source labels and inverse map",
+      "record_type": "presentation_binding"
+    },
+    {
+      "id": "c1:mapping",
+      "contract": {
+        "target": "def:mapping",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "source": {
+        "target": "c1:domain-native",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "target": {
+        "target": "c1:domain-source",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "pairs": [
+        {
+          "from": "p0",
+          "to": "y"
+        },
+        {
+          "from": "p1",
+          "to": "a"
+        },
+        {
+          "from": "p2",
+          "to": "s"
+        }
+      ],
+      "coverage": "total on both listed finite domains",
+      "procedure": {
+        "target": "def:mapping-rule",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "basis": {
+        "target": "c1:binding",
+        "binding": "internal",
+        "target_type": "presentation_binding"
+      },
+      "property_claims": [
+        "bijective",
+        "identity_preserving"
+      ],
+      "verification": "expected bijection and linked-field checks; not executed",
+      "mapping_kind": "exact_coordinate_permutation",
+      "record_type": "mapping"
+    },
+    {
+      "id": "c1:response",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"final\":true,\"encoding\":\"zero_based_directed_source_target\",\"coverage\":\"all ordered distinct pairs\",\"omitted\":\"asserted_absence\",\"directed\":[[1,0]],\"edge_probability\":\"broken\",\"exit\":0}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "00059d2b14bc1558dbbb63911faf1d21f93705ec747963825caa34e01d8acdad",
+          "byte_length": 186,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c1:graph-native",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c1:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "producer": {
+        "target": "def:toy-native",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c1:domain-native",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c1:domain-native",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c1:domain-native",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "e1",
+            "source": {
+              "domain": {
+                "target": "c1:domain-native",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "p1"
+            },
+            "target": {
+              "domain": {
+                "target": "c1:domain-native",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "p0"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c1:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c1:graph-view",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c1:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "producer": {
+        "target": "def:mapping-rule",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "standardized_interpretation",
+      "scope": {
+        "target": "c1:domain-source",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c1:domain-source",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c1:domain-source",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "e1",
+            "source": {
+              "domain": {
+                "target": "c1:domain-source",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "a"
+            },
+            "target": {
+              "domain": {
+                "target": "c1:domain-source",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "y"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c1:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "representation_of": {
+        "target": "c1:graph-native",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "mapping": {
+        "target": "c1:mapping",
+        "binding": "internal",
+        "target_type": "mapping"
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c1:proposition",
+      "contract": {
+        "target": "def:proposition",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "predicate": "direct_relation",
+      "arguments": {
+        "cause": {
+          "domain": {
+            "target": "c1:domain-source",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "key": "a"
+        },
+        "effect": {
+          "domain": {
+            "target": "c1:domain-source",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "key": "y"
+        }
+      },
+      "conditioning": {
+        "state": "not_applicable",
+        "scope": "unconditional native probability claim"
+      },
+      "scope": "same hypothetical native procedure/domain",
+      "record_type": "proposition"
+    },
+    {
+      "id": "c1:bad-probability",
+      "native_type_claim": "edge probability",
+      "raw_value": "broken",
+      "subject": {
+        "target": "c1:proposition",
+        "binding": "internal",
+        "target_type": "proposition"
+      },
+      "evidence": [
+        {
+          "target": "c1:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "typed_interpretation": {
+        "state": "unresolved",
+        "reason": "interpretation_failed",
+        "scope": "probability decoding"
+      },
+      "role": "native_reported_optional_quantity",
+      "record_type": "reported_output",
+      "contract": {
+        "target": "def:evidence",
+        "target_type": "contract",
+        "binding": "internal"
+      },
+      "producer": {
+        "target": "def:toy-native",
+        "target_type": "component",
+        "binding": "internal"
+      },
+      "scope": {
+        "target": "c1:domain-source",
+        "target_type": "domain",
+        "binding": "internal"
+      },
+      "provenance": {
+        "basis": "hypothetical native field declaration",
+        "evidence": [
+          {
+            "target": "c1:response",
+            "target_type": "artifact",
+            "binding": "internal"
+          }
+        ]
+      },
+      "payload": {
+        "native_value": "broken"
+      }
+    },
+    {
+      "id": "c1:quantity-gap",
+      "reason": "interpretation_failed",
+      "subject": {
+        "target": "c1:bad-probability",
+        "binding": "internal",
+        "target_type": "reported_output"
+      },
+      "scope": "optional probability only",
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "record_type": "gap"
+    },
+    {
+      "id": "c1:termination",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c1:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "proposition": {
+        "predicate": "native_termination",
+        "value": "normal_completion"
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c1:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 1,
+      "order": 1,
+      "record_type": "observation"
+    },
+    {
+      "id": "c1:delivery",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c1:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "proposition": {
+        "predicate": "response_delivered",
+        "value": {
+          "object": {
+            "target": "c1:graph-native",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          "designation": "native final"
+        }
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c1:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 2,
+      "order": 2,
+      "record_type": "observation"
+    },
+    {
+      "id": "c1:assessment",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subject": {
+        "target": "c1:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "request": {
+        "target": "c1:request",
+        "binding": "internal",
+        "target_type": "request"
+      },
+      "procedure": {
+        "target": "def:fulfillment-rule",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "basis": [
+        {
+          "target": "c1:termination",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c1:delivery",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c1:graph-view",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c1:quantity-gap",
+          "binding": "internal",
+          "target_type": "gap"
+        }
+      ],
+      "facets": {
+        "execution": "normal completion evidenced in scenario",
+        "required_graph": "fulfilled under stated request",
+        "optional_probability": "interpretation failed"
+      },
+      "scientific_correctness": "not assessed",
+      "knowledge_cutoff": "exact basis references; not a wall-clock cutoff",
+      "record_type": "assessment"
+    },
+    {
+      "id": "c1:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c1:attempt",
+          "binding": "internal",
+          "target_type": "attempt"
+        }
+      ],
+      "request_binding": {
+        "state": "known",
+        "value": {
+          "target": "c1:request",
+          "binding": "internal",
+          "target_type": "request"
+        }
+      },
+      "system_binding": {
+        "state": "known",
+        "value": {
+          "target": "def:toy-native",
+          "binding": "internal",
+          "target_type": "component"
+        }
+      },
+      "information_binding": {
+        "state": "known",
+        "value": {
+          "target": "c1:binding",
+          "binding": "internal",
+          "target_type": "presentation_binding"
+        }
+      },
+      "observations": [
+        {
+          "target": "c1:termination",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c1:delivery",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [
+        {
+          "target": "c1:quantity-gap",
+          "binding": "internal",
+          "target_type": "gap"
+        }
+      ],
+      "outputs": {
+        "members": [
+          {
+            "target": "c1:graph-native",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c1:graph-view",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c1:bad-probability",
+            "binding": "internal",
+            "target_type": "reported_output"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c1:input",
+            "binding": "internal",
+            "target_type": "artifact"
+          },
+          {
+            "target": "c1:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [
+        {
+          "target": "c1:request",
+          "binding": "internal",
+          "target_type": "request"
+        },
+        {
+          "target": "c1:binding",
+          "binding": "internal",
+          "target_type": "presentation_binding"
+        },
+        {
+          "target": "c1:mapping",
+          "binding": "internal",
+          "target_type": "mapping"
+        },
+        {
+          "target": "c1:assessment",
+          "binding": "internal",
+          "target_type": "assessment"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c1:check-graph",
+      "subject": {
+        "target": "c1:graph-view",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "variable mapping, coverage, endpoint and source binding",
+      "expected": "satisfies stated directed-graph representation contract",
+      "inputs": [
+        {
+          "target": "c1:mapping",
+          "binding": "internal",
+          "target_type": "mapping"
+        },
+        {
+          "target": "c1:graph-native",
+          "binding": "internal",
+          "target_type": "output_object"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c1:check-probability",
+      "subject": {
+        "target": "c1:bad-probability",
+        "binding": "internal",
+        "target_type": "reported_output"
+      },
+      "check": "probability parse",
+      "expected": "fails; graph and required fulfillment not automatically rejected",
+      "inputs": [
+        {
+          "target": "c1:quantity-gap",
+          "binding": "internal",
+          "target_type": "gap"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c2:var:x",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c2",
+      "meaning": {
+        "state": "known",
+        "value": "x"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c2:var:y",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c2",
+      "meaning": {
+        "state": "known",
+        "value": "y"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c2:domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c2:domain",
+      "members": [
+        {
+          "key": "x",
+          "variable": {
+            "target": "c2:var:x",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "y",
+          "variable": {
+            "target": "c2:var:y",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c2:old-content",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"domain\":[\"x\",\"y\"],\"convention\":\"source_to_target\",\"directed\":[[\"x\",\"y\"]],\"coverage\":\"all ordered distinct pairs\",\"omitted\":\"asserted_absence\"}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "0861a93a35212c4b7343f002eba67c7d228ac9e2c07b21a7a757753ef0a1a45e",
+          "byte_length": 144,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c2:origin",
+      "native_request": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original request"
+      },
+      "native_attempt": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original execution"
+      },
+      "source": "historical content with no reliable occurrence identifier",
+      "record_type": "unresolved_association"
+    },
+    {
+      "id": "c2:graph",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c2:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "target": "def:decoder-1",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "standardized_interpretation",
+      "scope": {
+        "target": "c2:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c2:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c2:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "xy",
+            "source": {
+              "domain": {
+                "target": "c2:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x"
+            },
+            "target": {
+              "domain": {
+                "target": "c2:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "y"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c2:old-content",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "native_subject": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original software/producer"
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c2:capture",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c2:old-content",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "proposition": {
+        "predicate": "content_captured",
+        "value": "old content included in this scenario"
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c2:old-content",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c2:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c2:origin",
+          "binding": "internal",
+          "target_type": "unresolved_association"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "source request unless established by subject"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original native software/configuration"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original presentation unless linked"
+      },
+      "observations": [
+        {
+          "target": "c2:capture",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [
+          {
+            "target": "c2:graph",
+            "binding": "internal",
+            "target_type": "output_object"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c2:old-content",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c2:location",
+      "locator": "external://hypothetical-holder/result.json",
+      "access": "no automatic retrieval",
+      "content_association": {
+        "target": "c2:old-content",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "record_type": "location"
+    },
+    {
+      "id": "c2:later-retrieval",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c2:location",
+        "binding": "internal",
+        "target_type": "location"
+      },
+      "proposition": {
+        "predicate": "retrieval_outcome",
+        "value": "not_found_at_location"
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 1,
+      "order": 1,
+      "observation_scope": "one later access at this location; not original production",
+      "record_type": "observation"
+    },
+    {
+      "id": "c2:new-content",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"domain\":[\"x\",\"y\"],\"convention\":\"source_to_target\",\"directed\":[[\"y\",\"x\"]],\"coverage\":\"all ordered distinct pairs\",\"omitted\":\"asserted_absence\"}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "aaab4cf0d014ed7c149c3135946d87a4a303787c0a71ee9cf1480099432ed711",
+          "byte_length": 144,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c2:changed-location",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c2:location",
+        "binding": "internal",
+        "target_type": "location"
+      },
+      "proposition": {
+        "predicate": "later_content_at_same_location",
+        "value": {
+          "snapshot": {
+            "target": "c2:new-content",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        }
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c2:new-content",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 2,
+      "order": 2,
+      "record_type": "observation"
+    },
+    {
+      "id": "c2:later-record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c2:old-content",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "source request unless established by subject"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original native software/configuration"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original presentation unless linked"
+      },
+      "observations": [
+        {
+          "target": "c2:later-retrieval",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c2:changed-location",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [],
+        "extent": "not_examined",
+        "scope": "new content interpretation not requested"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c2:old-content",
+            "binding": "internal",
+            "target_type": "artifact"
+          },
+          {
+            "target": "c2:new-content",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [
+        {
+          "target": "c2:location",
+          "binding": "internal",
+          "target_type": "location"
+        },
+        {
+          "target": "c2:record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c2:check",
+      "subject": {
+        "target": "c2:graph",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "domain/source interpretation independent of original request",
+      "expected": "interpretable graph; original execution and fulfillment unresolved",
+      "inputs": [
+        {
+          "target": "c2:old-content",
+          "binding": "internal",
+          "target_type": "artifact"
+        },
+        {
+          "target": "c2:origin",
+          "binding": "internal",
+          "target_type": "unresolved_association"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c2:check-change",
+      "subject": {
+        "target": "c2:new-content",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "check": "same locator different bytes",
+      "expected": "new snapshot; not a correction or replacement of old output without provenance",
+      "inputs": [
+        {
+          "target": "c2:location",
+          "binding": "internal",
+          "target_type": "location"
+        },
+        {
+          "target": "c2:changed-location",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c3:var:x",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c3",
+      "meaning": {
+        "state": "known",
+        "value": "x"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c3:var:y",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c3",
+      "meaning": {
+        "state": "known",
+        "value": "y"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c3:domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c3:domain",
+      "members": [
+        {
+          "key": "x",
+          "variable": {
+            "target": "c3:var:x",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "y",
+          "variable": {
+            "target": "c3:var:y",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c3:samples",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"members\":[{\"key\":\"s1\",\"edges\":[[\"x\",\"y\"]],\"theta\":0.2},{\"key\":\"s2\",\"edges\":[[\"x\",\"y\"]],\"theta\":0.9},{\"key\":\"s3\",\"edges\":[],\"theta\":0}],\"graph_encoding\":\"directed_source_target\",\"graph_coverage\":\"all ordered distinct pairs in each declared member domain\",\"graph_omitted\":\"asserted_absence\",\"parameterization\":{\"model_family\":\"hypothetical_linear\",\"theta\":\"coefficient of x in the equation for y\",\"units\":\"dimensionless in this scenario\",\"graph_rule\":\"listed native topology; coefficient is a parameter, not confidence\"}}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "91086e4114678c400a69e5240906b9d0c22acb56f2991388362d2dca9f546e7d",
+          "byte_length": 521,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c3:origin",
+      "native_request": {
+        "state": "unresolved",
+        "reason": "not_recorded",
+        "scope": "request"
+      },
+      "native_attempt": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "source occurrence"
+      },
+      "record_type": "unresolved_association"
+    },
+    {
+      "id": "c3:g1",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c3:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "xy",
+            "source": {
+              "domain": {
+                "target": "c3:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x"
+            },
+            "target": {
+              "domain": {
+                "target": "c3:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "y"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "source_selector": {
+        "kind": "JSON-pointer",
+        "pointer": "/members/0/edges",
+        "container": {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:theta1",
+      "contract": {
+        "target": "def:quantity",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "quantity",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "quantity_kind": "model_parameter",
+        "value": {
+          "encoding": "decimal",
+          "text": "0.2"
+        },
+        "subject": {
+          "target": "c3:model1",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "units": {
+          "state": "known",
+          "value": "dimensionless in this scenario"
+        },
+        "basis": "native parameter value associated with this member",
+        "parameterization": "coefficient of x in the equation for y",
+        "associated_graph": {
+          "target": "c3:g1",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameter_domain": {
+          "cause": {
+            "domain": {
+              "target": "c3:domain",
+              "target_type": "domain",
+              "binding": "internal"
+            },
+            "key": "x"
+          },
+          "effect": {
+            "domain": {
+              "target": "c3:domain",
+              "target_type": "domain",
+              "binding": "internal"
+            },
+            "key": "y"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "source_selector": {
+        "kind": "JSON-pointer",
+        "pointer": "/members/0/theta",
+        "container": {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:g2",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c3:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "xy",
+            "source": {
+              "domain": {
+                "target": "c3:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x"
+            },
+            "target": {
+              "domain": {
+                "target": "c3:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "y"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "source_selector": {
+        "kind": "JSON-pointer",
+        "pointer": "/members/1/edges",
+        "container": {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:theta2",
+      "contract": {
+        "target": "def:quantity",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "quantity",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "quantity_kind": "model_parameter",
+        "value": {
+          "encoding": "decimal",
+          "text": "0.9"
+        },
+        "subject": {
+          "target": "c3:model2",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "units": {
+          "state": "known",
+          "value": "dimensionless in this scenario"
+        },
+        "basis": "native parameter value associated with this member",
+        "parameterization": "coefficient of x in the equation for y",
+        "associated_graph": {
+          "target": "c3:g2",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameter_domain": {
+          "cause": {
+            "domain": {
+              "target": "c3:domain",
+              "target_type": "domain",
+              "binding": "internal"
+            },
+            "key": "x"
+          },
+          "effect": {
+            "domain": {
+              "target": "c3:domain",
+              "target_type": "domain",
+              "binding": "internal"
+            },
+            "key": "y"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "source_selector": {
+        "kind": "JSON-pointer",
+        "pointer": "/members/1/theta",
+        "container": {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:g3",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c3:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": []
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "source_selector": {
+        "kind": "JSON-pointer",
+        "pointer": "/members/2/edges",
+        "container": {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:theta3",
+      "contract": {
+        "target": "def:quantity",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "quantity",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "quantity_kind": "model_parameter",
+        "value": {
+          "encoding": "decimal",
+          "text": "0.0"
+        },
+        "subject": {
+          "target": "c3:model3",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "units": {
+          "state": "known",
+          "value": "dimensionless in this scenario"
+        },
+        "basis": "native parameter value associated with this member",
+        "parameterization": "coefficient of x in the equation for y",
+        "associated_graph": {
+          "target": "c3:g3",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameter_domain": {
+          "cause": {
+            "domain": {
+              "target": "c3:domain",
+              "target_type": "domain",
+              "binding": "internal"
+            },
+            "key": "x"
+          },
+          "effect": {
+            "domain": {
+              "target": "c3:domain",
+              "target_type": "domain",
+              "binding": "internal"
+            },
+            "key": "y"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "source_selector": {
+        "kind": "JSON-pointer",
+        "pointer": "/members/2/theta",
+        "container": {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:collection",
+      "contract": {
+        "target": "def:collection",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "collection",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "collection_kind": "sample_bank",
+        "member_contracts": [
+          {
+            "target": "def:graph",
+            "binding": "internal",
+            "target_type": "contract"
+          }
+        ],
+        "members": [
+          {
+            "key": "s1",
+            "graph": {
+              "target": "c3:g1",
+              "binding": "internal",
+              "target_type": "output_object"
+            },
+            "parameters": {
+              "target": "c3:theta1",
+              "binding": "internal",
+              "target_type": "output_object"
+            },
+            "multiplicity": 1,
+            "model": {
+              "target": "c3:model1",
+              "target_type": "output_object",
+              "binding": "internal"
+            }
+          },
+          {
+            "key": "s2",
+            "graph": {
+              "target": "c3:g2",
+              "binding": "internal",
+              "target_type": "output_object"
+            },
+            "parameters": {
+              "target": "c3:theta2",
+              "binding": "internal",
+              "target_type": "output_object"
+            },
+            "multiplicity": 1,
+            "model": {
+              "target": "c3:model2",
+              "target_type": "output_object",
+              "binding": "internal"
+            }
+          },
+          {
+            "key": "s3",
+            "graph": {
+              "target": "c3:g3",
+              "binding": "internal",
+              "target_type": "output_object"
+            },
+            "parameters": {
+              "target": "c3:theta3",
+              "binding": "internal",
+              "target_type": "output_object"
+            },
+            "multiplicity": 1,
+            "model": {
+              "target": "c3:model3",
+              "target_type": "output_object",
+              "binding": "internal"
+            }
+          }
+        ],
+        "extent": {
+          "listed_members": 3,
+          "complete_for": "native members array in captured artifact",
+          "original_run_total": {
+            "state": "unresolved",
+            "reason": "not_recorded",
+            "scope": "additional samples outside this artifact"
+          }
+        },
+        "generation_basis": "hypothetical native samples; target law and independence unresolved",
+        "weight_semantics": "no native weights supplied; empirical equal-weight summary would be a derivation",
+        "member_order": {
+          "kind": "native_sequence",
+          "keys": [
+            "s1",
+            "s2",
+            "s3"
+          ]
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:candidate",
+      "contract": {
+        "target": "def:proposition",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "predicate": "direct_relation",
+      "arguments": {
+        "cause": {
+          "domain": {
+            "target": "c3:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "key": "y"
+        },
+        "effect": {
+          "domain": {
+            "target": "c3:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "key": "x"
+        }
+      },
+      "scope": "candidate proposition; no requirement that it appear as an edge",
+      "conditioning": {
+        "state": "not_applicable",
+        "scope": "unconditional"
+      },
+      "record_type": "proposition"
+    },
+    {
+      "id": "c3:quantity-response",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"candidate\":[\"y\",\"x\"],\"kind\":\"probability\",\"conditioning\":\"unconditional\",\"value\":\"0.1\"}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "dc781059dcf07ff900e9f2bbffa2a9c7d5b8d0d8c20aba5b567cfc5ae5e7fcf1",
+          "byte_length": 89,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c3:candidate-prob",
+      "contract": {
+        "target": "def:quantity",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "quantity",
+      "subject": {
+        "target": "c3:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c3:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c3:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "quantity_kind": "probability",
+        "subject": {
+          "target": "c3:candidate",
+          "binding": "internal",
+          "target_type": "proposition"
+        },
+        "value": {
+          "encoding": "decimal",
+          "text": "0.1"
+        },
+        "conditioning": "unconditional over declared candidate event",
+        "basis": "hypothetical native report",
+        "range_contract": "finite [0,1]"
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c3:quantity-response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c3:capture",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c3:samples",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "proposition": {
+        "predicate": "content_captured",
+        "value": "sample bank and quantity response"
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c3:samples",
+          "binding": "internal",
+          "target_type": "artifact"
+        },
+        {
+          "target": "c3:quantity-response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c3:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c3:origin",
+          "binding": "internal",
+          "target_type": "unresolved_association"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "source request unless established by subject"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original native software/configuration"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original presentation unless linked"
+      },
+      "observations": [
+        {
+          "target": "c3:capture",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [
+          {
+            "target": "c3:g1",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:g2",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:g3",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:theta1",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:theta2",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:theta3",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:collection",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:candidate-prob",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c3:model1",
+            "target_type": "output_object",
+            "binding": "internal"
+          },
+          {
+            "target": "c3:model2",
+            "target_type": "output_object",
+            "binding": "internal"
+          },
+          {
+            "target": "c3:model3",
+            "target_type": "output_object",
+            "binding": "internal"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c3:samples",
+            "binding": "internal",
+            "target_type": "artifact"
+          },
+          {
+            "target": "c3:quantity-response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c3:check-members",
+      "subject": {
+        "target": "c3:collection",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "member identity, multiplicity and pairing",
+      "expected": "g1 and g2 may have equal graphs but distinct sample occurrences and parameters",
+      "inputs": [
+        {
+          "target": "c3:g1",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c3:g2",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c3:g3",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c3:theta1",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c3:theta2",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c3:theta3",
+          "binding": "internal",
+          "target_type": "output_object"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c3:check-candidate",
+      "subject": {
+        "target": "c3:candidate-prob",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "probability subject resolution",
+      "expected": "candidate proposition resolves even though no returned graph contains y->x",
+      "inputs": [
+        {
+          "target": "c3:candidate",
+          "binding": "internal",
+          "target_type": "proposition"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c4:var:x",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c4",
+      "meaning": {
+        "state": "known",
+        "value": "x"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c4:var:y",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c4",
+      "meaning": {
+        "state": "known",
+        "value": "y"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c4:domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "relative_temporal",
+      "definition_scope": "c4",
+      "members": [
+        {
+          "key": "x_m1",
+          "variable": {
+            "target": "c4:var:x",
+            "binding": "internal",
+            "target_type": "variable"
+          },
+          "offset": -1
+        },
+        {
+          "key": "x_0",
+          "variable": {
+            "target": "c4:var:x",
+            "binding": "internal",
+            "target_type": "variable"
+          },
+          "offset": 0
+        },
+        {
+          "key": "y_0",
+          "variable": {
+            "target": "c4:var:y",
+            "binding": "internal",
+            "target_type": "variable"
+          },
+          "offset": 0
+        }
+      ],
+      "dimensions": {
+        "time": {
+          "reference": "target time",
+          "unit": "one sampling step",
+          "sign": "negative means past"
+        }
+      },
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed temporal coordinates"
+      },
+      "stationary_template_claim": {
+        "state": "unresolved",
+        "reason": "not_specified",
+        "scope": "native stationarity"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c4:response",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"edge\":[\"x@lag1\",\"x@lag0\"],\"endpoints\":[\"tail\",\"arrowhead\"],\"queried_pairs\":[[\"x@lag1\",\"x@lag0\"]],\"stationarity\":null,\"relation_meaning\":\"direct_relation\"}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "e463be0c4c11a40c6906cc186b61994363eeb6ba7d165f8693d97bb5ebc99b36",
+          "byte_length": 156,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c4:mapping",
+      "contract": {
+        "target": "def:mapping",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "source_convention": "native positive lag counts past steps",
+      "target": {
+        "target": "c4:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "pairs": [
+        {
+          "native_token": "x@lag1",
+          "target_key": "x_m1"
+        },
+        {
+          "native_token": "x@lag0",
+          "target_key": "x_0"
+        }
+      ],
+      "coverage": "queried members only; y_0 not queried",
+      "basis": {
+        "target": "c4:response",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "procedure": {
+        "target": "def:mapping-rule",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "mapping_kind": "native_encoding_decode",
+      "record_type": "mapping"
+    },
+    {
+      "id": "c4:origin",
+      "native_request": {
+        "state": "unresolved",
+        "reason": "not_recorded",
+        "scope": "original operation"
+      },
+      "native_attempt": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original occurrence"
+      },
+      "record_type": "unresolved_association"
+    },
+    {
+      "id": "c4:graph",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c4:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "target": "def:decoder-1",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "standardized_interpretation",
+      "scope": {
+        "target": "c4:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c4:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "explicit_pair_domain",
+          "domain": {
+            "target": "c4:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "pairs": [
+            {
+              "source": "x_m1",
+              "target": "x_0"
+            }
+          ],
+          "extent": "complete_for_listed_query_pairs"
+        },
+        "omission_rule": {
+          "within_coverage": "only_explicit_assertions",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "auto",
+            "source": {
+              "domain": {
+                "target": "c4:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x_m1"
+            },
+            "target": {
+              "domain": {
+                "target": "c4:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x_0"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c4:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "mapping": {
+        "target": "c4:mapping",
+        "binding": "internal",
+        "target_type": "mapping"
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c4:capture",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c4:response",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "proposition": {
+        "predicate": "content_captured",
+        "value": "one scoped temporal response"
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c4:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c4:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c4:origin",
+          "binding": "internal",
+          "target_type": "unresolved_association"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "source request unless established by subject"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original native software/configuration"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original presentation unless linked"
+      },
+      "observations": [
+        {
+          "target": "c4:capture",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [
+          {
+            "target": "c4:graph",
+            "binding": "internal",
+            "target_type": "output_object"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c4:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [
+        {
+          "target": "c4:mapping",
+          "binding": "internal",
+          "target_type": "mapping"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c4:check",
+      "subject": {
+        "target": "c4:graph",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "temporal identity and bounded coverage",
+      "expected": "x_m1 and x_0 are distinct nodes; no contemporaneous self-loop or assertion about y_0",
+      "inputs": [
+        {
+          "target": "c4:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        {
+          "target": "c4:mapping",
+          "binding": "internal",
+          "target_type": "mapping"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c5:response",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"encoder\":\"E1\",\"factors\":[\"z0\",\"z1\"],\"edges\":[[\"z0\",\"z1\"]],\"graph_encoding\":\"directed_source_target\",\"graph_coverage\":\"all ordered distinct pairs in each declared member domain\",\"graph_omitted\":\"asserted_absence\"}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "85397e5070d157e1d44996f38fcdcc058b1ee99a8712b04245d73bbd992bf059",
+          "byte_length": 214,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c5:encoder",
+      "contract": {
+        "target": "def:model-reference",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "model-reference",
+      "subject": {
+        "target": "c5:response",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "state": "not_applicable",
+        "scope": "no variable domain"
+      },
+      "payload": {
+        "role": "encoder_reference",
+        "input_domain": {
+          "state": "unresolved",
+          "reason": "not_specified",
+          "scope": "native input feature semantics"
+        },
+        "output_domain": {
+          "state": "known",
+          "value": {
+            "target": "c5:learned-domain",
+            "binding": "internal",
+            "target_type": "domain"
+          }
+        },
+        "artifact": {
+          "target": "c5:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        },
+        "reader": {
+          "state": "unresolved",
+          "reason": "unsupported_semantics",
+          "scope": "model internals"
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c5:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c5:var:z0",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": {
+        "target": "c5:encoder",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "meaning": {
+        "state": "unresolved",
+        "reason": "not_identified",
+        "scope": "real-world factor meaning"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "learned_representation"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real"
+        }
+      },
+      "provenance": {
+        "basis": "encoder-scoped factor definition",
+        "source": {
+          "target": "c5:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c5:var:z1",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": {
+        "target": "c5:encoder",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "meaning": {
+        "state": "unresolved",
+        "reason": "not_identified",
+        "scope": "real-world factor meaning"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "learned_representation"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real"
+        }
+      },
+      "provenance": {
+        "basis": "encoder-scoped factor definition",
+        "source": {
+          "target": "c5:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c5:learned-domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c5:learned-domain",
+      "members": [
+        {
+          "key": "z0",
+          "variable": {
+            "target": "c5:var:z0",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "z1",
+          "variable": {
+            "target": "c5:var:z1",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c5:var:truth_A",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c5",
+      "meaning": {
+        "state": "known",
+        "value": "truth_A"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c5:var:truth_B",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c5",
+      "meaning": {
+        "state": "known",
+        "value": "truth_B"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "measurement units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical scenario definition"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c5:reference-domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c5:reference-domain",
+      "members": [
+        {
+          "key": "A",
+          "variable": {
+            "target": "c5:var:truth_A",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "B",
+          "variable": {
+            "target": "c5:var:truth_B",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c5:reference",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "evaluator_only_reference",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"reference_variables\":[\"A\",\"B\"],\"alignment_evidence\":\"hypothetical reference-side matching data\"}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "cfad7a1fc9707228591fc8574b6b8fc9dc33851d5f1928f032f0d0bf11c3ffe2",
+          "byte_length": 98,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "access_role": "evaluator_only_for_this_import_and_alignment",
+      "record_type": "artifact"
+    },
+    {
+      "id": "c5:origin",
+      "native_request": {
+        "state": "unresolved",
+        "reason": "not_recorded",
+        "scope": "original task"
+      },
+      "native_attempt": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "native occurrence"
+      },
+      "record_type": "unresolved_association"
+    },
+    {
+      "id": "c5:graph",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c5:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_answer",
+      "scope": {
+        "target": "c5:learned-domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c5:learned-domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c5:learned-domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "z01",
+            "source": {
+              "domain": {
+                "target": "c5:learned-domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "z0"
+            },
+            "target": {
+              "domain": {
+                "target": "c5:learned-domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "z1"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c5:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c5:alignment",
+      "contract": {
+        "target": "def:mapping",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "source": {
+        "target": "c5:learned-domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "target": {
+        "target": "c5:reference-domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "purpose": "evaluation-derived only",
+      "pairs": [
+        {
+          "from": "z0",
+          "to": "A"
+        },
+        {
+          "from": "z1",
+          "to": "B"
+        }
+      ],
+      "procedure": {
+        "target": "def:alignment-rule",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "basis": [
+        {
+          "target": "c5:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        },
+        {
+          "target": "c5:reference",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "information_boundary": "no native invocation occurs during this import/alignment; original native presentation remains unknown; evaluator-only reference must not be forwarded by later bindings",
+      "claim": "chosen scenario correspondence, not native identity or universal equivalence",
+      "mapping_kind": "evaluator_alignment",
+      "record_type": "mapping"
+    },
+    {
+      "id": "c5:aligned-view",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c5:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "target": "def:alignment-rule",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "derived_evaluation_view",
+      "scope": {
+        "target": "c5:reference-domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c5:reference-domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c5:reference-domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "z01",
+            "source": {
+              "domain": {
+                "target": "c5:reference-domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "A"
+            },
+            "target": {
+              "domain": {
+                "target": "c5:reference-domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "B"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c5:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "derived_from": [
+        {
+          "target": "c5:graph",
+          "binding": "internal",
+          "target_type": "output_object"
+        }
+      ],
+      "mapping": {
+        "target": "c5:alignment",
+        "binding": "internal",
+        "target_type": "mapping"
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c5:capture",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c5:response",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "proposition": {
+        "predicate": "content_captured",
+        "value": "learned-domain output"
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c5:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c5:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c5:origin",
+          "binding": "internal",
+          "target_type": "unresolved_association"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "source request unless established by subject"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original native software/configuration"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original native inputs; added alignment reference is evaluator-only in this processing operation"
+      },
+      "observations": [
+        {
+          "target": "c5:capture",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [
+          {
+            "target": "c5:encoder",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c5:graph",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c5:aligned-view",
+            "binding": "internal",
+            "target_type": "output_object"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c5:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          },
+          {
+            "target": "c5:reference",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [
+        {
+          "target": "c5:alignment",
+          "binding": "internal",
+          "target_type": "mapping"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c5:check-domain",
+      "subject": {
+        "target": "c5:aligned-view",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "domain identity and information boundary",
+      "expected": "native graph stays encoder-scoped; aligned graph is a separate derived view; original native access to similar information is not established",
+      "inputs": [
+        {
+          "target": "c5:graph",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        {
+          "target": "c5:alignment",
+          "binding": "internal",
+          "target_type": "mapping"
+        },
+        {
+          "target": "c5:reference",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c6:request",
+      "operation": "native_operation",
+      "required_deliverables": [],
+      "completion_rule": "the established terminal process-exit event",
+      "mode": "hypothetical_native_invocation",
+      "information_policy": "no presented payload in this example",
+      "resource_policy": {
+        "kind": "no_paid_calls"
+      },
+      "recovery_policy": "none",
+      "record_type": "request"
+    },
+    {
+      "id": "c6:attempt",
+      "request": {
+        "target": "c6:request",
+        "binding": "internal",
+        "target_type": "request"
+      },
+      "identity_basis": "one hypothetical process identity",
+      "native_start": {
+        "state": "known",
+        "value": true
+      },
+      "record_type": "attempt"
+    },
+    {
+      "id": "c6:source1",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"process\":\"P\",\"terminal_exit\":0}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "e379a1d71d2bec0bf1ed2da296fb20e128a085c99d2081738ee258d71bb21af6",
+          "byte_length": 33,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c6:source2",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic content constructed for this design scenario; no actual native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined content",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "hypothetical scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"process\":\"P\",\"terminal_exit\":1}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "d167e18afa9aa3adf522a625013eefa677f65776d5654b2238d6b92cb1821b23",
+          "byte_length": 33,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c6:obs1",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c6:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "proposition": {
+        "predicate": "terminal_exit_code",
+        "value": 0
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c6:source1",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "scope": "same final process-exit event P",
+      "record_type": "observation",
+      "event": {
+        "target": "c6:terminal-event",
+        "target_type": "event_identity",
+        "binding": "internal"
+      }
+    },
+    {
+      "id": "c6:obs2",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c6:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "proposition": {
+        "predicate": "terminal_exit_code",
+        "value": 1
+      },
+      "basis": "hypothetical directly observed event",
+      "evidence": [
+        {
+          "target": "c6:source2",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "scope": "same final process-exit event P",
+      "record_type": "observation",
+      "event": {
+        "target": "c6:terminal-event",
+        "target_type": "event_identity",
+        "binding": "internal"
+      }
+    },
+    {
+      "id": "c6:assessment1",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subject": {
+        "target": "c6:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "request": {
+        "target": "c6:request",
+        "binding": "internal",
+        "target_type": "request"
+      },
+      "procedure": {
+        "target": "def:decoder-1",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "basis": [
+        {
+          "target": "c6:obs1",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "facets": {
+        "terminal_exit": {
+          "state": "known",
+          "value": 0
+        }
+      },
+      "knowledge_cutoff": "only source1 was considered",
+      "record_type": "assessment"
+    },
+    {
+      "id": "c6:assessment2",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subject": {
+        "target": "c6:attempt",
+        "binding": "internal",
+        "target_type": "attempt"
+      },
+      "request": {
+        "target": "c6:request",
+        "binding": "internal",
+        "target_type": "request"
+      },
+      "procedure": {
+        "target": "def:decoder-2",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "basis": [
+        {
+          "target": "c6:obs1",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c6:obs2",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "facets": {
+        "terminal_exit": {
+          "state": "unresolved",
+          "reason": "conflicting_evidence",
+          "scope": "same terminal event"
+        }
+      },
+      "relationship": {
+        "kind": "new_evidence_assessment",
+        "previous": {
+          "target": "c6:assessment1",
+          "binding": "internal",
+          "target_type": "assessment"
+        }
+      },
+      "knowledge_cutoff": "exact input set includes both sources",
+      "record_type": "assessment"
+    },
+    {
+      "id": "c6:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c6:attempt",
+          "binding": "internal",
+          "target_type": "attempt"
+        }
+      ],
+      "request_binding": {
+        "state": "known",
+        "value": {
+          "target": "c6:request",
+          "binding": "internal",
+          "target_type": "request"
+        }
+      },
+      "system_binding": {
+        "state": "known",
+        "value": {
+          "target": "def:toy-native",
+          "binding": "internal",
+          "target_type": "component"
+        }
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original presentation unless linked"
+      },
+      "observations": [
+        {
+          "target": "c6:obs1",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c6:obs2",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c6:source1",
+            "binding": "internal",
+            "target_type": "artifact"
+          },
+          {
+            "target": "c6:source2",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [
+        {
+          "target": "c6:request",
+          "binding": "internal",
+          "target_type": "request"
+        },
+        {
+          "target": "c6:assessment1",
+          "binding": "internal",
+          "target_type": "assessment"
+        },
+        {
+          "target": "c6:assessment2",
+          "binding": "internal",
+          "target_type": "assessment"
+        },
+        {
+          "target": "c6:earlier-record",
+          "binding": "internal",
+          "target_type": "connection_record"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c6:published-basis",
+      "purpose": "hypothetical earlier downstream publication",
+      "assessment": {
+        "target": "c6:assessment1",
+        "binding": "internal",
+        "target_type": "assessment"
+      },
+      "source_record": {
+        "target": "c6:earlier-record",
+        "binding": "internal",
+        "target_type": "connection_record"
+      },
+      "warning": "later conflict does not silently rewrite this basis",
+      "record_type": "published_basis"
+    },
+    {
+      "id": "c6:current-pointer",
+      "kind_of_selection": "current outcome assessment",
+      "selected": {
+        "target": "c6:assessment2",
+        "binding": "internal",
+        "target_type": "assessment"
+      },
+      "selection_policy": "include newly discovered conflicting evidence; do not prefer latest source",
+      "record_type": "selection_pointer"
+    },
+    {
+      "id": "c6:check-conflict",
+      "subject": {
+        "target": "c6:assessment2",
+        "binding": "internal",
+        "target_type": "assessment"
+      },
+      "check": "scope and contradiction",
+      "expected": "preserve both exit observations and unresolved assessment; no latest-wins",
+      "inputs": [
+        {
+          "target": "c6:obs1",
+          "binding": "internal",
+          "target_type": "observation"
+        },
+        {
+          "target": "c6:obs2",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c6:check-pin",
+      "subject": {
+        "target": "c6:published-basis",
+        "binding": "internal",
+        "target_type": "published_basis"
+      },
+      "check": "immutable assessment basis",
+      "expected": "earlier basis remains pinned; current pointer is not a replacement for that basis",
+      "inputs": [
+        {
+          "target": "c6:assessment1",
+          "binding": "internal",
+          "target_type": "assessment"
+        },
+        {
+          "target": "c6:assessment2",
+          "binding": "internal",
+          "target_type": "assessment"
+        },
+        {
+          "target": "c6:current-pointer",
+          "binding": "internal",
+          "target_type": "selection_pointer"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c6:earlier-record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c6:attempt",
+          "binding": "internal",
+          "target_type": "attempt"
+        }
+      ],
+      "request_binding": {
+        "state": "known",
+        "value": {
+          "target": "c6:request",
+          "binding": "internal",
+          "target_type": "request"
+        }
+      },
+      "system_binding": {
+        "state": "known",
+        "value": {
+          "target": "def:toy-native",
+          "binding": "internal",
+          "target_type": "component"
+        }
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "original presentation unless linked"
+      },
+      "observations": [
+        {
+          "target": "c6:obs1",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects indexed from specified scenario evidence; not all native internals"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c6:source1",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed evidence inputs; original run completeness not asserted"
+      },
+      "context": [
+        {
+          "target": "c6:request",
+          "binding": "internal",
+          "target_type": "request"
+        },
+        {
+          "target": "c6:assessment1",
+          "binding": "internal",
+          "target_type": "assessment"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c7:var:x",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c7",
+      "meaning": {
+        "state": "known",
+        "value": "x"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c7:var:y",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c7",
+      "meaning": {
+        "state": "known",
+        "value": "y"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c7:domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c7:domain",
+      "members": [
+        {
+          "key": "x",
+          "variable": {
+            "target": "c7:var:x",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "y",
+          "variable": {
+            "target": "c7:var:y",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c7:matrix",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic scenario content; no native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined source",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "design scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"variables\":[\"x\",\"y\"],\"convention\":\"row_source_column_target\",\"coverage\":\"all ordered distinct pairs\",\"omitted\":\"asserted_absence\",\"matrix\":[[0,1],[0,0]]}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "00424efd35b9c64145d1e6a116c85135159c26eaa9efa9530be14e22c7d59167",
+          "byte_length": 155,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c7:old-view",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c7:matrix",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "producer": {
+        "target": "def:decoder-1",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "older_interpretation",
+      "scope": {
+        "target": "c7:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c7:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c7:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "edge",
+            "source": {
+              "domain": {
+                "target": "c7:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "y"
+            },
+            "target": {
+              "domain": {
+                "target": "c7:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "derived native-matrix interpretation",
+        "evidence": [
+          {
+            "target": "c7:matrix",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "preservation_claim": "earlier decoder claimed correct translation; now disputed",
+      "record_type": "output_object"
+    },
+    {
+      "id": "c7:corrected-view",
+      "contract": {
+        "target": "def:graph",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "graph",
+      "subject": {
+        "target": "c7:matrix",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "producer": {
+        "target": "def:decoder-2",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "role": "corrected_interpretation",
+      "scope": {
+        "target": "c7:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "domain": {
+          "target": "c7:domain",
+          "binding": "internal",
+          "target_type": "domain"
+        },
+        "graph_semantics": {
+          "family": "directed_relation",
+          "version": "design-1",
+          "relation_predicate": "direct_relation",
+          "reciprocal_links": "allowed",
+          "same_node_self_links": "disallowed",
+          "asserted_causal_correctness": "not_checked"
+        },
+        "coverage": {
+          "kind": "ordered_pairs",
+          "domain": {
+            "target": "c7:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "include_same_node": false,
+          "extent": "all_pairs_in_declared_domain"
+        },
+        "omission_rule": {
+          "within_coverage": "asserted_absence",
+          "outside_coverage": "no_assertion"
+        },
+        "links": [
+          {
+            "key": "edge",
+            "source": {
+              "domain": {
+                "target": "c7:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "x"
+            },
+            "target": {
+              "domain": {
+                "target": "c7:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "y"
+            },
+            "relation": "direct_relation"
+          }
+        ]
+      },
+      "provenance": {
+        "basis": "derived native-matrix interpretation",
+        "evidence": [
+          {
+            "target": "c7:matrix",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "correction": {
+        "kind": "interpretation_correction",
+        "previous": {
+          "target": "c7:old-view",
+          "binding": "internal",
+          "target_type": "output_object"
+        },
+        "scope": "matrix direction convention",
+        "reason": "older decoder reversed the stated source-to-target convention",
+        "basis": [
+          {
+            "target": "c7:matrix",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "representation_of": {
+        "target": "c7:matrix",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c7:capture",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c7:matrix",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "proposition": {
+        "predicate": "content_captured",
+        "value": "one unchanged matrix snapshot"
+      },
+      "basis": "hypothetical scenario observation",
+      "evidence": [
+        {
+          "target": "c7:matrix",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c7:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c7:matrix",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "original request"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "not_established",
+        "scope": "native version"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "native presentation"
+      },
+      "observations": [
+        {
+          "target": "c7:capture",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [
+          {
+            "target": "c7:old-view",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c7:corrected-view",
+            "binding": "internal",
+            "target_type": "output_object"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects extracted within listed artifact scope"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c7:matrix",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed available source inputs, not full native history"
+      },
+      "context": [],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c7:old-check",
+      "subject": {
+        "target": "c7:old-view",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "source convention preservation",
+      "expected": "fails although output graph syntax is legal",
+      "inputs": [
+        {
+          "target": "c7:matrix",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c7:new-check",
+      "subject": {
+        "target": "c7:corrected-view",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "source convention preservation",
+      "expected": "satisfies the declared matrix-direction mapping; not causal truth",
+      "inputs": [
+        {
+          "target": "c7:matrix",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c8:prefix",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic scenario content; no native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined source",
+        "scope": "captured prefix only; remainder unobserved",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "design scenario"
+        },
+        "completeness": "partial_for_native_stream"
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"edges\":[[\"x\",",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "3260c6ae8cfc469e098fd65710fb1aa41210088cde9a136f70a6def3347eef36",
+          "byte_length": 15,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c8:declared-full",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "reported_declaration",
+      "source_role": "native_response",
+      "origin": "hypothetical service declaration",
+      "representation": {
+        "format": "reported JSON response",
+        "content": {
+          "state": "unresolved",
+          "reason": "not_retrieved",
+          "scope": "full response"
+        },
+        "content_form": "not_retrieved"
+      },
+      "locations": [
+        {
+          "kind": "external_descriptor",
+          "locator": "external://hypothetical-holder/full-response",
+          "automatic_access": false
+        }
+      ],
+      "digest_claims": [],
+      "availability": {
+        "state": "unresolved",
+        "reason": "not_retrieved",
+        "scope": "full response; declaration does not prove capture"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c8:capture",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c8:prefix",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "proposition": {
+        "predicate": "partial_content_captured",
+        "value": "truncated response prefix"
+      },
+      "basis": "hypothetical scenario observation",
+      "evidence": [
+        {
+          "target": "c8:prefix",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c8:gap",
+      "reason": "incomplete_capture",
+      "subject": {
+        "target": "c8:declared-full",
+        "binding": "internal",
+        "target_type": "artifact"
+      },
+      "scope": "native response beyond captured prefix",
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "record_type": "gap"
+    },
+    {
+      "id": "c8:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c8:prefix",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "request_binding": {
+        "state": "unresolved",
+        "reason": "not_supplied",
+        "scope": "original request"
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "not_established",
+        "scope": "native version"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "native presentation"
+      },
+      "observations": [
+        {
+          "target": "c8:capture",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [
+        {
+          "target": "c8:gap",
+          "binding": "internal",
+          "target_type": "gap"
+        }
+      ],
+      "outputs": {
+        "members": [],
+        "extent": "not_examined",
+        "scope": "no complete native object decoded from partial prefix"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c8:prefix",
+            "binding": "internal",
+            "target_type": "artifact"
+          },
+          {
+            "target": "c8:declared-full",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed available source inputs, not full native history"
+      },
+      "context": [],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c8:check",
+      "subject": {
+        "target": "c8:record",
+        "binding": "internal",
+        "target_type": "connection_record"
+      },
+      "check": "publication closure versus capture completeness",
+      "expected": "all internal records present and package may publish as partial; no complete response/graph interpretation or fulfillment claim",
+      "inputs": [
+        {
+          "target": "c8:prefix",
+          "binding": "internal",
+          "target_type": "artifact"
+        },
+        {
+          "target": "c8:declared-full",
+          "binding": "internal",
+          "target_type": "artifact"
+        },
+        {
+          "target": "c8:gap",
+          "binding": "internal",
+          "target_type": "gap"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c9:var:A",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c9",
+      "meaning": {
+        "state": "known",
+        "value": "A"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c9:var:B",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c9",
+      "meaning": {
+        "state": "known",
+        "value": "B"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c9:var:C",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c9",
+      "meaning": {
+        "state": "known",
+        "value": "C"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c9:var:D",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c9",
+      "meaning": {
+        "state": "known",
+        "value": "D"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c9:var:Y",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "definition_scope": "c9",
+      "meaning": {
+        "state": "known",
+        "value": "Y"
+      },
+      "roles": {
+        "state": "known",
+        "value": [
+          "observed_measurement"
+        ]
+      },
+      "value_space": {
+        "state": "known",
+        "value": {
+          "kind": "real",
+          "units": {
+            "state": "unresolved",
+            "reason": "not_specified",
+            "scope": "units"
+          }
+        }
+      },
+      "provenance": {
+        "basis": "hypothetical source schema"
+      },
+      "record_type": "variable"
+    },
+    {
+      "id": "c9:domain",
+      "contract": {
+        "target": "def:domain",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "subtype": "finite_named",
+      "definition_scope": "c9:domain",
+      "members": [
+        {
+          "key": "A",
+          "variable": {
+            "target": "c9:var:A",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "B",
+          "variable": {
+            "target": "c9:var:B",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "C",
+          "variable": {
+            "target": "c9:var:C",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "D",
+          "variable": {
+            "target": "c9:var:D",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        },
+        {
+          "key": "Y",
+          "variable": {
+            "target": "c9:var:Y",
+            "binding": "internal",
+            "target_type": "variable"
+          }
+        }
+      ],
+      "extent": {
+        "kind": "explicit_finite",
+        "complete_for": "listed domain"
+      },
+      "coordinates": {
+        "state": "not_applicable",
+        "scope": "static variables"
+      },
+      "record_type": "domain"
+    },
+    {
+      "id": "c9:request",
+      "operation": "parents_of_Y",
+      "domain": {
+        "target": "c9:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "candidates": [
+        "A",
+        "B",
+        "C"
+      ],
+      "target": "Y",
+      "required_deliverables": [
+        {
+          "type": "local_membership",
+          "allow_per_candidate_abstention": true
+        }
+      ],
+      "completion_rule": "final response resolves every candidate by assertion, denial or explicit abstention",
+      "mode": "hypothetical_import_of_known_request",
+      "information_policy": "original delivered inputs unknown",
+      "resource_policy": {
+        "state": "unresolved",
+        "reason": "not_recorded",
+        "scope": "original limits"
+      },
+      "recovery_policy": {
+        "state": "unresolved",
+        "reason": "not_recorded",
+        "scope": "original recovery"
+      },
+      "record_type": "request"
+    },
+    {
+      "id": "c9:response",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "artifact_state": "captured_snapshot",
+      "source_role": "native_response",
+      "origin": "synthetic scenario content; no native execution",
+      "capture": {
+        "producer": {
+          "target": "def:observer",
+          "binding": "internal",
+          "target_type": "component"
+        },
+        "interface": "scenario-defined source",
+        "scope": "entire inline content",
+        "event_time": {
+          "state": "unresolved",
+          "reason": "no_actual_event",
+          "scope": "design scenario"
+        }
+      },
+      "representation": {
+        "format": "text",
+        "encoding": "UTF-8",
+        "content_text": "{\"query\":\"parents_of_Y\",\"candidates\":[\"A\",\"B\",\"C\"],\"decisions\":{\"A\":\"assert\",\"B\":\"abstain\",\"C\":\"deny\"},\"final\":true,\"ranking\":{\"kind\":\"predictive_score_rank\",\"higher_group_is_better\":true,\"groups\":[[\"A\",\"B\"],[\"C\"]],\"unranked\":[\"D\"]}}",
+        "content_form": "inline_utf8_text"
+      },
+      "locations": [],
+      "digest_claims": [
+        {
+          "algorithm": "sha256",
+          "value": "67580c3381432516415431dfa7f7eb30eb601abff649f73733d3ff8250844e1a",
+          "byte_length": 233,
+          "scope": "UTF-8 encoding of the synthetic representation.content_text only",
+          "basis": "computed by PowerShell/.NET design-document inspection; not a native artifact verification",
+          "actual_native_execution": false
+        }
+      ],
+      "availability": {
+        "state": "known",
+        "value": "included_inline_in_design_document"
+      },
+      "record_type": "artifact"
+    },
+    {
+      "id": "c9:origin",
+      "native_request": {
+        "state": "known",
+        "value": {
+          "target": "c9:request",
+          "binding": "internal",
+          "target_type": "request"
+        }
+      },
+      "native_attempt": {
+        "state": "unresolved",
+        "reason": "unresolved_identity",
+        "scope": "original native occurrence"
+      },
+      "record_type": "unresolved_association"
+    },
+    {
+      "id": "c9:local",
+      "contract": {
+        "target": "def:proposition",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "local_membership",
+      "subject": {
+        "target": "c9:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_final_answer",
+      "scope": {
+        "target": "c9:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "predicate": "is_parent_of_target",
+        "target": {
+          "domain": {
+            "target": "c9:domain",
+            "binding": "internal",
+            "target_type": "domain"
+          },
+          "key": "Y"
+        },
+        "candidate_domain": [
+          {
+            "domain": {
+              "target": "c9:domain",
+              "binding": "internal",
+              "target_type": "domain"
+            },
+            "key": "A"
+          },
+          {
+            "domain": {
+              "target": "c9:domain",
+              "binding": "internal",
+              "target_type": "domain"
+            },
+            "key": "B"
+          },
+          {
+            "domain": {
+              "target": "c9:domain",
+              "binding": "internal",
+              "target_type": "domain"
+            },
+            "key": "C"
+          }
+        ],
+        "decisions": [
+          {
+            "member": {
+              "domain": {
+                "target": "c9:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "A"
+            },
+            "decision": "assert"
+          },
+          {
+            "member": {
+              "domain": {
+                "target": "c9:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "B"
+            },
+            "decision": "abstain"
+          },
+          {
+            "member": {
+              "domain": {
+                "target": "c9:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "C"
+            },
+            "decision": "deny"
+          }
+        ],
+        "coverage": "all listed candidates have an explicit decision",
+        "omission_rule": "outside candidate domain has no assertion"
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c9:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c9:ranking",
+      "contract": {
+        "target": "def:proposition",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "object_type": "ranking",
+      "subject": {
+        "target": "c9:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native producer; source artifact and current observer remain identified"
+      },
+      "role": "native_supporting_output",
+      "scope": {
+        "target": "c9:domain",
+        "binding": "internal",
+        "target_type": "domain"
+      },
+      "payload": {
+        "meaning": "predictive score rank, not causal precedence",
+        "groups": [
+          [
+            {
+              "domain": {
+                "target": "c9:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "A"
+            },
+            {
+              "domain": {
+                "target": "c9:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "B"
+            }
+          ],
+          [
+            {
+              "domain": {
+                "target": "c9:domain",
+                "binding": "internal",
+                "target_type": "domain"
+              },
+              "key": "C"
+            }
+          ]
+        ],
+        "direction": "earlier group ranks higher",
+        "ties": "within-group tie",
+        "unranked": [
+          {
+            "domain": {
+              "target": "c9:domain",
+              "binding": "internal",
+              "target_type": "domain"
+            },
+            "key": "D"
+          }
+        ],
+        "excluded": [
+          {
+            "domain": {
+              "target": "c9:domain",
+              "binding": "internal",
+              "target_type": "domain"
+            },
+            "key": "Y"
+          }
+        ],
+        "coverage": "A/B/C ranked, D explicitly unranked, Y excluded"
+      },
+      "provenance": {
+        "basis": "hypothetical native response",
+        "evidence": [
+          {
+            "target": "c9:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ]
+      },
+      "record_type": "output_object"
+    },
+    {
+      "id": "c9:delivery",
+      "contract": {
+        "target": "def:outcome",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "subject": {
+        "target": "c9:origin",
+        "binding": "internal",
+        "target_type": "unresolved_association"
+      },
+      "proposition": {
+        "predicate": "response_delivered",
+        "value": {
+          "object": {
+            "target": "c9:local",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          "designation": "final"
+        }
+      },
+      "basis": "hypothetical scenario observation",
+      "evidence": [
+        {
+          "target": "c9:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "source_time": {
+        "state": "unresolved",
+        "reason": "no_actual_timestamp",
+        "scope": "design scenario"
+      },
+      "observation_order": 0,
+      "record_type": "observation"
+    },
+    {
+      "id": "c9:record",
+      "contract": {
+        "target": "def:evidence",
+        "binding": "internal",
+        "target_type": "contract"
+      },
+      "producer": {
+        "target": "def:observer",
+        "binding": "internal",
+        "target_type": "component"
+      },
+      "created_time": {
+        "state": "unresolved",
+        "reason": "no_actual_event",
+        "scope": "design specimen"
+      },
+      "subjects": [
+        {
+          "target": "c9:origin",
+          "binding": "internal",
+          "target_type": "unresolved_association"
+        }
+      ],
+      "request_binding": {
+        "state": "known",
+        "value": {
+          "target": "c9:request",
+          "binding": "internal",
+          "target_type": "request"
+        }
+      },
+      "system_binding": {
+        "state": "unresolved",
+        "reason": "not_established",
+        "scope": "native version"
+      },
+      "information_binding": {
+        "state": "unresolved",
+        "reason": "not_observed",
+        "scope": "native presentation"
+      },
+      "observations": [
+        {
+          "target": "c9:delivery",
+          "binding": "internal",
+          "target_type": "observation"
+        }
+      ],
+      "gaps": [],
+      "outputs": {
+        "members": [
+          {
+            "target": "c9:local",
+            "binding": "internal",
+            "target_type": "output_object"
+          },
+          {
+            "target": "c9:ranking",
+            "binding": "internal",
+            "target_type": "output_object"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "objects extracted within listed artifact scope"
+      },
+      "artifacts": {
+        "members": [
+          {
+            "target": "c9:response",
+            "binding": "internal",
+            "target_type": "artifact"
+          }
+        ],
+        "extent": "enumeration_complete_for_scope",
+        "scope": "listed available source inputs, not full native history"
+      },
+      "context": [
+        {
+          "target": "c9:request",
+          "binding": "internal",
+          "target_type": "request"
+        }
+      ],
+      "actual_conformance_results": [],
+      "expected_checks": [],
+      "record_type": "connection_record"
+    },
+    {
+      "id": "c9:check-local",
+      "subject": {
+        "target": "c9:local",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "candidate coverage and abstention",
+      "expected": "response can satisfy stated request despite B abstention; D and pairwise graph relations unasserted",
+      "inputs": [
+        {
+          "target": "c9:request",
+          "binding": "internal",
+          "target_type": "request"
+        },
+        {
+          "target": "c9:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c9:check-rank",
+      "subject": {
+        "target": "c9:ranking",
+        "binding": "internal",
+        "target_type": "output_object"
+      },
+      "check": "ties, unranked scope and predicate",
+      "expected": "preserve A/B tie; D unranked; no causal-order or direct-edge inference",
+      "inputs": [
+        {
+          "target": "c9:response",
+          "binding": "internal",
+          "target_type": "artifact"
+        }
+      ],
+      "execution_state": "not_executed; design expectation only",
+      "record_type": "check_expectation"
+    },
+    {
+      "id": "c3:model1",
+      "record_type": "output_object",
+      "contract": {
+        "target": "def:model-reference",
+        "target_type": "contract",
+        "binding": "internal"
+      },
+      "object_type": "model-reference",
+      "subject": {
+        "target": "c3:origin",
+        "target_type": "unresolved_association",
+        "binding": "internal"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native model producer"
+      },
+      "role": "native_associated_model_descriptor",
+      "scope": {
+        "target": "c3:domain",
+        "target_type": "domain",
+        "binding": "internal"
+      },
+      "payload": {
+        "role": "linear_model_reference",
+        "domain": {
+          "target": "c3:domain",
+          "target_type": "domain",
+          "binding": "internal"
+        },
+        "graph": {
+          "target": "c3:g1",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameters": {
+          "target": "c3:theta1",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameterization": "theta is the coefficient of x in the equation for y",
+        "units": "dimensionless in this hypothetical model",
+        "callable_execution": "not established",
+        "model_internals": "only the explicitly described parameter association is interpreted"
+      },
+      "provenance": {
+        "basis": "hypothetical source parameterization",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "target_type": "artifact",
+            "binding": "internal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c3:model2",
+      "record_type": "output_object",
+      "contract": {
+        "target": "def:model-reference",
+        "target_type": "contract",
+        "binding": "internal"
+      },
+      "object_type": "model-reference",
+      "subject": {
+        "target": "c3:origin",
+        "target_type": "unresolved_association",
+        "binding": "internal"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native model producer"
+      },
+      "role": "native_associated_model_descriptor",
+      "scope": {
+        "target": "c3:domain",
+        "target_type": "domain",
+        "binding": "internal"
+      },
+      "payload": {
+        "role": "linear_model_reference",
+        "domain": {
+          "target": "c3:domain",
+          "target_type": "domain",
+          "binding": "internal"
+        },
+        "graph": {
+          "target": "c3:g2",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameters": {
+          "target": "c3:theta2",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameterization": "theta is the coefficient of x in the equation for y",
+        "units": "dimensionless in this hypothetical model",
+        "callable_execution": "not established",
+        "model_internals": "only the explicitly described parameter association is interpreted"
+      },
+      "provenance": {
+        "basis": "hypothetical source parameterization",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "target_type": "artifact",
+            "binding": "internal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c3:model3",
+      "record_type": "output_object",
+      "contract": {
+        "target": "def:model-reference",
+        "target_type": "contract",
+        "binding": "internal"
+      },
+      "object_type": "model-reference",
+      "subject": {
+        "target": "c3:origin",
+        "target_type": "unresolved_association",
+        "binding": "internal"
+      },
+      "producer": {
+        "binding": "unresolved",
+        "target_type": "component",
+        "reason": "unresolved_identity",
+        "scope": "original native model producer"
+      },
+      "role": "native_associated_model_descriptor",
+      "scope": {
+        "target": "c3:domain",
+        "target_type": "domain",
+        "binding": "internal"
+      },
+      "payload": {
+        "role": "linear_model_reference",
+        "domain": {
+          "target": "c3:domain",
+          "target_type": "domain",
+          "binding": "internal"
+        },
+        "graph": {
+          "target": "c3:g3",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameters": {
+          "target": "c3:theta3",
+          "target_type": "output_object",
+          "binding": "internal"
+        },
+        "parameterization": "theta is the coefficient of x in the equation for y",
+        "units": "dimensionless in this hypothetical model",
+        "callable_execution": "not established",
+        "model_internals": "only the explicitly described parameter association is interpreted"
+      },
+      "provenance": {
+        "basis": "hypothetical source parameterization",
+        "evidence": [
+          {
+            "target": "c3:samples",
+            "target_type": "artifact",
+            "binding": "internal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "c6:terminal-event",
+      "record_type": "event_identity",
+      "subject": {
+        "target": "c6:attempt",
+        "target_type": "attempt",
+        "binding": "internal"
+      },
+      "event_kind": "terminal_process_exit",
+      "native_process_id": "P",
+      "identity_basis": "same single terminal process-exit event in this hypothetical scenario; not timestamp matching"
+    }
+  ],
+  "expected_checks": [
+    {
+      "target": "c1:check-graph",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c1:check-probability",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c2:check",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c2:check-change",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c3:check-members",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c3:check-candidate",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c4:check",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c5:check-domain",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c6:check-conflict",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c6:check-pin",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c7:old-check",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c7:new-check",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c8:check",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c9:check-local",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    },
+    {
+      "target": "c9:check-rank",
+      "binding": "internal",
+      "target_type": "check_expectation"
+    }
+  ],
+  "nonclaims": [
+    "No native causal-discovery execution occurred.",
+    "No interpretation or scientific conformance checker was implemented or run.",
+    "Inline hashes, when present, bind synthetic content only.",
+    "All check_expectation entries are predictions of the proposed contract, not test results."
+  ],
+  "metadata_notes": [
+    "Native format coverage and omission semantics are explicit source content in graph cases.",
+    "All cases are hypothetical; source facts and assessment expectations are not runtime observations.",
+    "Internal reference cycles such as model-domain associations are permitted; derivation/continuation ancestry is checked separately.",
+    "Missing optional contracts are not declarations that the entire native system lacks them.",
+    "Original producer identity is separate from importer/decoder identity; unidentified historical native producers use unresolved typed references.",
+    "Coverage and omission are structured expressions, not prose to be parsed. Record order is not execution order; native member ordering is explicit."
+  ],
+  "serialization_notes": {
+    "reserved_record_fields": [
+      "id",
+      "record_type"
+    ],
+    "reference_fields": [
+      "target",
+      "target_type",
+      "binding"
+    ],
+    "mapping_subtype_field": "mapping_kind",
+    "native_payload_boundary": "native keys remain inside evidence content or namespaced extensions; never merged over reserved envelope fields"
+  }
+}

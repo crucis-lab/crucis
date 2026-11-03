@@ -1,0 +1,277 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "kind": "methodology_reference_index",
+  "version": 1,
+  "local_date": "2026-11-01",
+  "last_updated_local_date": "2026-11-02",
+  "timezone": "America/Los_Angeles",
+  "status": {
+    "subsystem_1": "approved-scope implementation gates passed; opt-in; public adoption separate",
+    "subsystem_2": "Final review and nine-bundle DAG candidates prepared; 40 core kinds, 25 parameter schemas, 11 payload formats and 16 metadata entry points; 38 synthetic wire packages, 58 adverse specifications, 20 API scenarios; Z01-Z24 closure proposed; one-off documentation consistency is not product/native/scientific validation; acceptance, build go and public adoption pending"
+  },
+  "documentation": [
+    "audit/docs/methodology-reference-index-2026-11-01.md",
+    "audit/docs/subsystem2-structure-design-2026-11-01.md",
+    "audit/docs/subsystem1-release-review-2026-11-01.md",
+    "audit/docs/subsystem1-implemented-support-2026-11-01.md",
+    "audit/docs/subsystem1-trace-incident-2026-11-01.md",
+    "audit/docs/q1-empirical-study-funding-rebase-2026-11-01.md",
+    "audit/docs/q1-multi-system-cost-inventory-2026-11-01.json",
+    "audit/docs/q1-study-matrix-2026-11-01.md",
+    "audit/docs/q1-study-budget-2026-11-01.json",
+    "audit/docs/q1-funding-proposal-multisystem-2026-11-01.md",
+    "audit/docs/q1-funding-email-sent-2026-11-01.md",
+    "audit/docs/subsystem2-case-collection-design-2026-11-01.md",
+    "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+    "audit/docs/subsystem2-case-worked-examples-2026-11-02.md",
+    "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+    "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+    "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+    "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+    "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+    "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+    "audit/docs/subsystem2-design-rebase-2026-11-02.md",
+    "audit/docs/subsystem2-linked-experiment-examples-2026-11-02.md",
+    "audit/docs/subsystem2-linked-experiment-examples-2026-11-02.json",
+    "audit/docs/subsystem2-composition-closure-review-2026-11-02.md",
+    "audit/docs/subsystem2-extension-composition-2026-11-02.md",
+    "audit/docs/subsystem2-extension-composition-2026-11-02.json",
+    "audit/docs/subsystem2-family-profile-lifecycle-contract-2026-11-02.md",
+    "audit/docs/subsystem2-serialization-candidate-2026-11-02.md",
+    "audit/docs/subsystem2-interface-legacy-candidate-2026-11-02.md",
+    "audit/docs/subsystem2-contract-closure-2026-11-02.md",
+    "audit/docs/subsystem2-contract-catalog-2026-11-02.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/manifest.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/negative-cases.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/api-scenarios.json",
+    "audit/docs/subsystem2-final-design-review-2026-11-02.md",
+    "audit/docs/subsystem2-implementation-dag-2026-11-02.json",
+    "audit/docs/subsystem2-review-traceability-2026-11-02.json",
+    "audit/docs/subsystem2-specimens-2026-11-02/README.md"
+  ],
+  "artifacts": [
+    {
+      "id": "final_gate",
+      "path": "../_w2_checks/2026-11-01_s1_build/S1-G/gate-run2/gate.json",
+      "path_basis": "relative to cc-research root",
+      "sha256": "b6c16ea5f857fa886ab758d34f68fcffde1f3a8ff18c94a30079dc0c832efa37",
+      "availability": "inspected; external retention required"
+    },
+    {
+      "id": "final_tests",
+      "path": "../_w2_checks/2026-11-01_s1_build/S1-G/gate-run2/tests.json",
+      "path_basis": "relative to cc-research root",
+      "sha256": "302bd2f0cb378cce94786b75ddfe63482d239833b291048abe358bc8d4278179",
+      "availability": "inspected; external retention required"
+    },
+    {
+      "id": "baseline_tests",
+      "path": "../_w2_checks/2026-10-31_codex/tests_audit_windows.json",
+      "path_basis": "relative to cc-research root",
+      "sha256": "3140a55208edd9019e0d6761598d52521a99544abd46bf399819239fc3038aef",
+      "availability": "inspected; external retention required"
+    },
+    {
+      "id": "comparisons",
+      "path": "../_w2_checks/2026-11-01_s1_build/S1-G/gate-run2/rerun/comparison.json",
+      "path_basis": "relative to cc-research root",
+      "sha256": "ed189aee8f418342b645d7714de97f93cf90896b5bf6761f8362c891ba9075a3",
+      "availability": "inspected; external retention required"
+    },
+    {
+      "id": "implementation_manifest",
+      "path": "../_w2_checks/2026-11-01_s1_build/S1-G/gate-run2/implementation.sha256",
+      "path_basis": "relative to cc-research root",
+      "sha256": "eeacaddc7665404c7c3dd673ee87f8ea7e2436cef35c55b9dcacb496e7d169a6",
+      "availability": "inspected; external retention required"
+    },
+    {
+      "id": "source_check",
+      "path": "../_w2_checks/2026-11-01_s1_build/S1-G/final-source-check.json",
+      "path_basis": "relative to cc-research root",
+      "sha256": "c9ee1cebba210031e6f07d9f41fbaf30606d950368e214e53b13064be1c4d422",
+      "availability": "inspected; external retention required"
+    }
+  ],
+  "claims": [
+    {
+      "id": "s1_suite_run",
+      "evidence_type": "executed_engineering_validation",
+      "artifact": "final_gate",
+      "pointer": "/tests",
+      "readout": {
+        "ran": 140,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      },
+      "derivation": "139 passes = 140 run minus 1 skipped, with zero failures/errors",
+      "limit": "native PC dependency skip; no scientific accuracy claim"
+    },
+    {
+      "id": "s1_additional_tests",
+      "evidence_type": "derived_engineering_count",
+      "artifacts": [
+        "final_tests",
+        "baseline_tests"
+      ],
+      "pointers": [
+        "/ran",
+        "/ran"
+      ],
+      "derivation": "140 - 55 = 85 added tests; original files unchanged; all added tests pass"
+    },
+    {
+      "id": "s1_legacy_comparisons",
+      "evidence_type": "recomputed_recorded_results",
+      "artifact": "comparisons",
+      "pointer": "/summary/all",
+      "limit": "1298 existing comparisons; compatibility, not a new native scientific experiment"
+    },
+    {
+      "id": "s1_certificates",
+      "evidence_type": "executed_certificate_verification",
+      "artifact": "final_gate",
+      "pointer": "/certificates",
+      "derivation": "14 stored and 14 fresh entries, each pass; same 14 audits",
+      "limit": "fresh same-host 1e-9; stored cross-host 0.001"
+    },
+    {
+      "id": "s1_new_package_paths",
+      "evidence_type": "recorded_import_publication_validation",
+      "artifact": "final_gate",
+      "pointer": "/new_connection_paths",
+      "limit": "four selected paths; no new production native execution"
+    },
+    {
+      "id": "s1_source_identity",
+      "evidence_type": "computed_integrity",
+      "artifact": "final_gate",
+      "pointer": "/source_identity",
+      "limit": "declared 64 original files and 44 new runtime/test files, not every workspace file"
+    }
+  ],
+  "subsystem_2_source_inspection": [
+    {
+      "path": "audit/core/battery.py",
+      "sha256": "afd357e3d7c9db648bc7727aa25d57028bf2c9627da967e6bd2113d225d88c72",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/core/harness.py",
+      "sha256": "3c2da8e76af7c7235c993e65fd70eaad999a305fdd271562a2124f9d08e5e8f2",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/core/sealed.py",
+      "sha256": "5f9fe9ea944e14202d3bd076be0e2b62dcf49c1e0d9e571c3896c1c0ae5329ac",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/controls/transforms.py",
+      "sha256": "b1c5fecb66eff2c3e84c8b076a70ba1b9ae180fb2f4db2309ebe45f35f0c2106",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/controls/l1.py",
+      "sha256": "0f45094c78e9ae8f6abc69f280229a7ca1db72ab5d78decf8d998b89dc0e4253",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/controls/effects.py",
+      "sha256": "d1b46e8dddcc847497852976470cc85691e4c070aae19fee03672ac8cc143dd8",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/protocol/regimes.py",
+      "sha256": "29790d835f28a5481e7c303243679f1b3a30a9ec21f47877b2d4a7504638021f",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/protocol/tiers.py",
+      "sha256": "4fe39721b420bf44acaf14273c29a9692633fb5ad48e32c0e7dbda9dd213b251",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/collect.py",
+      "sha256": "4da07b7f64d6d54a3e16d0a437fcb4cd994043d2e8181610c09cdcb8d249997f",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/run.py",
+      "sha256": "026b0c4bb0534721f91ae0dbef82609007f4edafde08b4b7e4e1d371f2d03f0f",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/__main__.py",
+      "sha256": "124b66bda83d392dfe1eeaa9ec7f81a3d9c15b4d12da6a9845a9900db207e14e",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "audit/PROTOCOL.md",
+      "sha256": "80cd80b9adec9f49ed97c6acc79e33ad71b91403c0dbf593f7d784fcfcaf77bd",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "tests/test_audit_core.py",
+      "sha256": "54be46e9d695e65056f316f569e38926b55362fa142d7e8d4223679890aa9e1f",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "tests/test_audit_controls.py",
+      "sha256": "63ba96889430d0f009a48a7772851c3e6ba835f2b9570bf2e1a99c36bdc9f0cd",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    },
+    {
+      "path": "tests/test_audit_report.py",
+      "sha256": "33ef2761b60d90c56206af6c1d99549e0d62e6d67223454988f0c8e88a722ce9",
+      "evidence_type": "source_inspection_during_design",
+      "runtime_rerun": false
+    }
+  ],
+  "proposal_relations": [
+    {
+      "subject": "subsystem_2_design",
+      "relation": "uses_contract",
+      "object": "subsystem_1_sc1"
+    },
+    {
+      "subject": "subsystem_2_design",
+      "relation": "defines_intent_for",
+      "object": "subsystem_3_execution"
+    },
+    {
+      "subject": "subsystem_2_design",
+      "relation": "binds_analysis_contracts_for",
+      "object": "subsystem_4_measurement"
+    }
+  ],
+  "paper_boundary": "Source map only. Durable tracked sources, paper pointers/locks, labels and public adoption remain W1/W5 owner steps. A digest cannot replace a missing artifact.",
+  "this_pass": {
+    "runtime_changes": false,
+    "new_tests": false,
+    "test_reruns": false,
+    "real_sealed_access": false,
+    "api_spend": false,
+    "tracker_writes": false,
+    "git_writes": false
+  }
+}

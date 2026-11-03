@@ -1,0 +1,2273 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "origin_repository": "https://github.com/uzairgheewala/cc-research",
+  "origin_head": "cf536c12df7fad928a3c7e76b51f2d441cf7efb8",
+  "note": "Source hashes describe uncommitted work at extraction, not files present in origin_head. Extracted hashes precede portability fixes; Git records the final implementation.",
+  "files": [
+    {
+      "source": "audit/collect.py",
+      "target": "crucis/collect.py",
+      "source_sha256": "4da07b7f64d6d54a3e16d0a437fcb4cd994043d2e8181610c09cdcb8d249997f",
+      "bytes": 2087,
+      "extracted_sha256": "2e70a01fb9d76e440e772b007d6fb998a973e710d22a37b6e15b372f2f773419"
+    },
+    {
+      "source": "audit/findings.py",
+      "target": "crucis/findings.py",
+      "source_sha256": "d296fc63d1d2ba818775b7c45f159421d94ec890a84f2606c08bc4bdc98f6129",
+      "bytes": 14785,
+      "extracted_sha256": "fd2fa2ba1428368a0b26f0e408e8d19022f43f5cfeb24fc63ddc116a6b8e5cde"
+    },
+    {
+      "source": "audit/PROTOCOL.md",
+      "target": "crucis/PROTOCOL.md",
+      "source_sha256": "80cd80b9adec9f49ed97c6acc79e33ad71b91403c0dbf593f7d784fcfcaf77bd",
+      "bytes": 11666,
+      "extracted_sha256": "80cd80b9adec9f49ed97c6acc79e33ad71b91403c0dbf593f7d784fcfcaf77bd"
+    },
+    {
+      "source": "audit/README.md",
+      "target": "crucis/README.md",
+      "source_sha256": "3b22db4a3fc60ca8eecc48b69b76f68b35cb9d7afd13caf2ae769d9efb6fc6b9",
+      "bytes": 3570,
+      "extracted_sha256": "3b22db4a3fc60ca8eecc48b69b76f68b35cb9d7afd13caf2ae769d9efb6fc6b9"
+    },
+    {
+      "source": "audit/run.py",
+      "target": "crucis/run.py",
+      "source_sha256": "026b0c4bb0534721f91ae0dbef82609007f4edafde08b4b7e4e1d371f2d03f0f",
+      "bytes": 6486,
+      "extracted_sha256": "a0725383a5a747545e15b5af89612d1ca09c40e9d915de9656eedc37d8ace196"
+    },
+    {
+      "source": "audit/__init__.py",
+      "target": "crucis/__init__.py",
+      "source_sha256": "768e55f809f890b66be2d7d61bbb12056d6892036e4eefe58589bf1e0bcb6335",
+      "bytes": 1107,
+      "extracted_sha256": "31281ff2971ac7cc1d1cc953b84cc4a398c1ffd2d357180186d509913643cb57"
+    },
+    {
+      "source": "audit/__main__.py",
+      "target": "crucis/__main__.py",
+      "source_sha256": "124b66bda83d392dfe1eeaa9ec7f81a3d9c15b4d12da6a9845a9900db207e14e",
+      "bytes": 3486,
+      "extracted_sha256": "979d968955cde1907d790edb89cca189af0d6cfd4bc41a8aad237d64d64f2a06"
+    },
+    {
+      "source": "audit/connections/api.py",
+      "target": "crucis/connections/api.py",
+      "source_sha256": "e01c664da330562d51302ad6737dd6953b8994996a6cccb180de5c3a13d879aa",
+      "bytes": 8135,
+      "extracted_sha256": "65af1e3b9101a595e4f7ee6b0dffa06ff3a04f661316daf18ab81963a90fd46e"
+    },
+    {
+      "source": "audit/connections/codec.py",
+      "target": "crucis/connections/codec.py",
+      "source_sha256": "06ab2500ee6f18475e646b4753f06ef2e63058da93cc8700a0d47ed053ccdfc5",
+      "bytes": 1963,
+      "extracted_sha256": "2c6d7c92f9a5a5ea8ae4ab21e89ef09af8eae5e9b6afc33123e19828da14e0cf"
+    },
+    {
+      "source": "audit/connections/core.py",
+      "target": "crucis/connections/core.py",
+      "source_sha256": "b613ed91b7b70c4de272a36f255ab13924a82dcda5f50a1ce05e194615866f59",
+      "bytes": 11456,
+      "extracted_sha256": "83063ebc548970a38738cb4c88309b9721bff7ff39e515f67b15ae3e5c87ad60"
+    },
+    {
+      "source": "audit/connections/domains.py",
+      "target": "crucis/connections/domains.py",
+      "source_sha256": "177753f0dbe2be03b016709bc31f231d43b5ee3fc6de65fc77d0519eb2281e1c",
+      "bytes": 7679,
+      "extracted_sha256": "9563a6e0ae3bbae7361ac9b9b249e97200832584e8bcd9bae7069a6b2667899c"
+    },
+    {
+      "source": "audit/connections/evidence.py",
+      "target": "crucis/connections/evidence.py",
+      "source_sha256": "3e85be64270be512cf8dc30c8838f9dae629bfbae5ed4320e3ea24d117503e26",
+      "bytes": 10814,
+      "extracted_sha256": "927b38bc259520f52189139070dce1759a99ee56bf9e413d2fb4cc09a60d0821"
+    },
+    {
+      "source": "audit/connections/families.py",
+      "target": "crucis/connections/families.py",
+      "source_sha256": "dbd05f97ff4da90d1bd468c21ca2dadfdf6f6b647efb52f9bcecdeefa5510b1f",
+      "bytes": 13838,
+      "extracted_sha256": "9c196cf4649852756b01acfd83a4a2fd4a5b77ee1617c579ffe7cb0917dab28b"
+    },
+    {
+      "source": "audit/connections/gates.py",
+      "target": "crucis/connections/gates.py",
+      "source_sha256": "21c9b252ebaa4d17d91d7fafc0769bef2a4eed3f300fe942feef33f658ef77d0",
+      "bytes": 9434,
+      "extracted_sha256": "d75d2e4f8630bcb7a585faa657486431387ea8da0628cd23deda8623cb10bafd"
+    },
+    {
+      "source": "audit/connections/history.py",
+      "target": "crucis/connections/history.py",
+      "source_sha256": "58d9396b90450e805dd21073cf53967ca1aadd423c0a31a6fcd8106e51601f27",
+      "bytes": 13518,
+      "extracted_sha256": "2ac6940fd92e8a83abc71978999db0c6866eb09bc4ddc51941988ca123f2df5c"
+    },
+    {
+      "source": "audit/connections/legacy-baseline.sha256",
+      "target": "crucis/connections/legacy-baseline.sha256",
+      "source_sha256": "46eb8a2ee1da72185897a5ec3b5c0588b2f57317abcc029968c2237ef9959813",
+      "bytes": 5761,
+      "extracted_sha256": "46eb8a2ee1da72185897a5ec3b5c0588b2f57317abcc029968c2237ef9959813"
+    },
+    {
+      "source": "audit/connections/legacy.py",
+      "target": "crucis/connections/legacy.py",
+      "source_sha256": "439095c74ece65e97139cc3312ba24e2411b66d80e745d24e14df3f19f3d13d2",
+      "bytes": 17729,
+      "extracted_sha256": "e105eeb0807bd33495c78ffbdefd637d9dc87d50e15fa80d57a890dd5ee81744"
+    },
+    {
+      "source": "audit/connections/model.py",
+      "target": "crucis/connections/model.py",
+      "source_sha256": "9f5e07a58e97b6c878c24923bd41c20f052e6c6fe09814ad83906aae3b6f083a",
+      "bytes": 6564,
+      "extracted_sha256": "7fc6f31b77aec41cf514b8dbdf7346c4d90d819186d6fafed6f0366da2ef3071"
+    },
+    {
+      "source": "audit/connections/ports.py",
+      "target": "crucis/connections/ports.py",
+      "source_sha256": "52cd5b7ecdd7cebea5b3143870200b10712695f26e2d5ab3f20dbc923ae37904",
+      "bytes": 15291,
+      "extracted_sha256": "f96f7d5e0b761833c3249ecfccc3530b97646bee1f5c274c259412efeb81b98b"
+    },
+    {
+      "source": "audit/connections/README.md",
+      "target": "crucis/connections/README.md",
+      "source_sha256": "dfea0ec992e9a41fea62860f4935879ec05efcf175086f9c2e81d34e12217390",
+      "bytes": 11657,
+      "extracted_sha256": "dfea0ec992e9a41fea62860f4935879ec05efcf175086f9c2e81d34e12217390"
+    },
+    {
+      "source": "audit/connections/requirements.txt",
+      "target": "crucis/connections/requirements.txt",
+      "source_sha256": "c21189b0c18ab3957239a7ee599d87546e698c1768ff8d762010215946a940ff",
+      "bytes": 213,
+      "extracted_sha256": "c21189b0c18ab3957239a7ee599d87546e698c1768ff8d762010215946a940ff"
+    },
+    {
+      "source": "audit/connections/sc1.schema.json",
+      "target": "crucis/connections/sc1.schema.json",
+      "source_sha256": "6630aa8ae67dda918343b456e7854cf8b569133a6de6a382741ac88cf4c75497",
+      "bytes": 868091,
+      "extracted_sha256": "6630aa8ae67dda918343b456e7854cf8b569133a6de6a382741ac88cf4c75497"
+    },
+    {
+      "source": "audit/connections/schema.py",
+      "target": "crucis/connections/schema.py",
+      "source_sha256": "31d736bd51c95fa06c0417b01c390edd8567b91ae22c894398e7b93a2b4be11e",
+      "bytes": 22999,
+      "extracted_sha256": "0edc3efa8a77af1c9d9b948b3ad0bee5315a78ef16db0eff74c969fc2cf7ba4b"
+    },
+    {
+      "source": "audit/connections/semantics.py",
+      "target": "crucis/connections/semantics.py",
+      "source_sha256": "1ff754c011efd5240ed9f67bc82cb4f7756c58d264f326e2d1a09b319d3d2f3a",
+      "bytes": 14286,
+      "extracted_sha256": "1d0184451938e9d5cd8c60d598a825041daed7acdd4f7e1b6e7e8e966dc3bef7"
+    },
+    {
+      "source": "audit/connections/services.py",
+      "target": "crucis/connections/services.py",
+      "source_sha256": "82065385355de0f041f10c24b5c898520904e7681d7dcb75f52842005890f202",
+      "bytes": 5917,
+      "extracted_sha256": "0e46d041d07cdd4413bec67f7e902e767ab48be0018d20cde22944d7cb1e4345"
+    },
+    {
+      "source": "audit/connections/specimens.py",
+      "target": "crucis/connections/specimens.py",
+      "source_sha256": "2fc47814a705410954d9a1da1e2b76e463b073b13bbc5a9d693c19f8c6be7adb",
+      "bytes": 25409,
+      "extracted_sha256": "341a4cc4d0f634f351b4c156d8ca0561b30d91818b19edb92c96638af73636af"
+    },
+    {
+      "source": "audit/connections/store.py",
+      "target": "crucis/connections/store.py",
+      "source_sha256": "e57a9c43208419205d8cbe6664a8602eb4f85887d1868911eca76c1d1c6b10a4",
+      "bytes": 5629,
+      "extracted_sha256": "4e371d472ce3e7bf0c63b27ad09c48fe8ff7c97efc7e7ef2c5aefb9a4bf13219"
+    },
+    {
+      "source": "audit/connections/validation.py",
+      "target": "crucis/connections/validation.py",
+      "source_sha256": "1457708882749aefde80eef017e43394be69ddf4f8d65c1ffeb716c01af6a975",
+      "bytes": 7440,
+      "extracted_sha256": "e1271444e5bc8abb22ef1fbe48f56d8a6e4213e31d4f1a0dba9bd98ad4f41760"
+    },
+    {
+      "source": "audit/connections/__init__.py",
+      "target": "crucis/connections/__init__.py",
+      "source_sha256": "26715e6c6c968a5be3f41a248b0819981fa323d549dea413cab37ae6b12ba97b",
+      "bytes": 475,
+      "extracted_sha256": "7d6a75fc1f913e8cd21ac4f65993bdf504298a61292a76e847dfc4cc7d543404"
+    },
+    {
+      "source": "audit/connections/__main__.py",
+      "target": "crucis/connections/__main__.py",
+      "source_sha256": "16b65feb8779e93cdb91bf76997bc88bcd9a289ad847a6e737c4cde7fcab5c11",
+      "bytes": 5071,
+      "extracted_sha256": "939cf104034a1e8c038a8f05ff16f3ababb87d7709a87eef0d42b25b6bcf0dd8"
+    },
+    {
+      "source": "audit/controls/effects.py",
+      "target": "crucis/controls/effects.py",
+      "source_sha256": "d1b46e8dddcc847497852976470cc85691e4c070aae19fee03672ac8cc143dd8",
+      "bytes": 3534,
+      "extracted_sha256": "bc9fd934a085ecc10b21d82f147dc150f4145d77044ce0755c5f87e7c4813179"
+    },
+    {
+      "source": "audit/controls/l1.py",
+      "target": "crucis/controls/l1.py",
+      "source_sha256": "0f45094c78e9ae8f6abc69f280229a7ca1db72ab5d78decf8d998b89dc0e4253",
+      "bytes": 4792,
+      "extracted_sha256": "4088cded98ea19f295acff215e7692cf25f58553457405e13f5a82a022062ffe"
+    },
+    {
+      "source": "audit/controls/transforms.py",
+      "target": "crucis/controls/transforms.py",
+      "source_sha256": "b1c5fecb66eff2c3e84c8b076a70ba1b9ae180fb2f4db2309ebe45f35f0c2106",
+      "bytes": 5041,
+      "extracted_sha256": "46844dff6e0e1049674cb940622ff734bd44138f8b0184953241d4f40fbcdb39"
+    },
+    {
+      "source": "audit/controls/__init__.py",
+      "target": "crucis/controls/__init__.py",
+      "source_sha256": "fbc867e923f29f3b5583924de4d0328fbb0ddf3b9caabad29db1636984f067ef",
+      "bytes": 21,
+      "extracted_sha256": "585912d91645eaea364e1c826dfcb6ed21c668bb1deaf4d0d6ded8b72ec7713c"
+    },
+    {
+      "source": "audit/core/adapter.py",
+      "target": "crucis/core/adapter.py",
+      "source_sha256": "bdbbc83f4354b4fbe020135fe1c73f9a49117e8741a01e570c249e3cc75c87dd",
+      "bytes": 4171,
+      "extracted_sha256": "e3aa2f355992207766459d59ac7f77f9ae7e49139a2b149d0d3cc9d65259a3c9"
+    },
+    {
+      "source": "audit/core/battery.py",
+      "target": "crucis/core/battery.py",
+      "source_sha256": "afd357e3d7c9db648bc7727aa25d57028bf2c9627da967e6bd2113d225d88c72",
+      "bytes": 6948,
+      "extracted_sha256": "d627980de18ba2f268ca4fbfb157c2138388d156d46fa8feb38071410d6ef947"
+    },
+    {
+      "source": "audit/core/canon.py",
+      "target": "crucis/core/canon.py",
+      "source_sha256": "6796311cf3d0b6396088e6b18dbe69225929da112e29a6b7fe5e9ff648bd6d3e",
+      "bytes": 1417,
+      "extracted_sha256": "c910cf322ba76ed49cfce7bc888e8381b5da4c2019009435f20afc3c19317693"
+    },
+    {
+      "source": "audit/core/evidence.py",
+      "target": "crucis/core/evidence.py",
+      "source_sha256": "fcaf41b12647aced3bc27025afa6a29672c2cc8fd29409c8e9e0dbc81cdab31d",
+      "bytes": 1531,
+      "extracted_sha256": "af879c4358f523744f357f6edaad277d929dd1e415d244e37f8faf0e40445978"
+    },
+    {
+      "source": "audit/core/graph.py",
+      "target": "crucis/core/graph.py",
+      "source_sha256": "f12746b630dcb6955a7f48f14506517e24b70c6e26976cda69a3810838dc6a3e",
+      "bytes": 6712,
+      "extracted_sha256": "b39e2d514b5ba58296c6dbbaada52fd7c17192ea826e9e179193378440d12042"
+    },
+    {
+      "source": "audit/core/harness.py",
+      "target": "crucis/core/harness.py",
+      "source_sha256": "3c2da8e76af7c7235c993e65fd70eaad999a305fdd271562a2124f9d08e5e8f2",
+      "bytes": 2642,
+      "extracted_sha256": "9003a180b06a21aeb69c9ff5d8c5fb91d1e6bb5f449d0941a176da0b58b07a5e"
+    },
+    {
+      "source": "audit/core/paths.py",
+      "target": "crucis/core/paths.py",
+      "source_sha256": "545729b70e0f147e283cda913730375e45956efad320f56da7e02702305a0c7b",
+      "bytes": 1102,
+      "extracted_sha256": "d0e9053d870c149ec5dbb7d77185761be081d527806a43edc1bc3fa136555392"
+    },
+    {
+      "source": "audit/core/runs.py",
+      "target": "crucis/core/runs.py",
+      "source_sha256": "8bc6115a83b95dd47cefa0ed5c030bf9ffb5bcf103ec6ad81ae693b8d961aaca",
+      "bytes": 3024,
+      "extracted_sha256": "f0432d0846aca7e5882af2785d6c1f2d7e7013fcf6fc3112e897664f1c41cc56"
+    },
+    {
+      "source": "audit/core/sealed.py",
+      "target": "crucis/core/sealed.py",
+      "source_sha256": "5f9fe9ea944e14202d3bd076be0e2b62dcf49c1e0d9e571c3896c1c0ae5329ac",
+      "bytes": 7169,
+      "extracted_sha256": "9609309c8b77c620b88ba794b75897c22532b6c3d69b9f9f2bd433a67ef56b2d"
+    },
+    {
+      "source": "audit/core/__init__.py",
+      "target": "crucis/core/__init__.py",
+      "source_sha256": "1cb4d60f51aa9254b6c26c72b41f33d8c18b7791acf1eba7cf639be35c18a18c",
+      "bytes": 124,
+      "extracted_sha256": "de5e8b52e1cbcfab46e2b45d95169690ba3146c1e4487f63d6ac62cece4ed895"
+    },
+    {
+      "source": "audit/docs/CODEX_KICKOFF.md",
+      "target": "crucis/docs/CODEX_KICKOFF.md",
+      "source_sha256": "bdfc0b76d079c04d3c1e6977e975c6c20f149fad9aa37c3dad0b581e28e1454e",
+      "bytes": 7562,
+      "extracted_sha256": "bdfc0b76d079c04d3c1e6977e975c6c20f149fad9aa37c3dad0b581e28e1454e"
+    },
+    {
+      "source": "audit/docs/methodology-reference-index-2026-11-01.json",
+      "target": "crucis/docs/methodology-reference-index-2026-11-01.json",
+      "source_sha256": "b9d8ffd3ef1c4d8fbcfc5c7b5138baebb8d3dea361803438fb229346b4cc0a66",
+      "bytes": 11573,
+      "extracted_sha256": "b9d8ffd3ef1c4d8fbcfc5c7b5138baebb8d3dea361803438fb229346b4cc0a66"
+    },
+    {
+      "source": "audit/docs/methodology-reference-index-2026-11-01.md",
+      "target": "crucis/docs/methodology-reference-index-2026-11-01.md",
+      "source_sha256": "a91e6e3539401e22e1c2fed8802aa47fce216ac5519b4669934aa040511dad9a",
+      "bytes": 10062,
+      "extracted_sha256": "a91e6e3539401e22e1c2fed8802aa47fce216ac5519b4669934aa040511dad9a"
+    },
+    {
+      "source": "audit/docs/q1-api-funding-budget-2026-11-01.json",
+      "target": "crucis/docs/q1-api-funding-budget-2026-11-01.json",
+      "source_sha256": "e4e13335be6bc5063b84d5aa1b4e5b59119229561f885b5528912a3b74dd12c8",
+      "bytes": 3913,
+      "extracted_sha256": "e4e13335be6bc5063b84d5aa1b4e5b59119229561f885b5528912a3b74dd12c8"
+    },
+    {
+      "source": "audit/docs/q1-api-funding-plan-2026-11-01.md",
+      "target": "crucis/docs/q1-api-funding-plan-2026-11-01.md",
+      "source_sha256": "9c40337fabb2bdf956819e75a53d27b6dfa362c560b3026d3eb87ffd529cee77",
+      "bytes": 8371,
+      "extracted_sha256": "9c40337fabb2bdf956819e75a53d27b6dfa362c560b3026d3eb87ffd529cee77"
+    },
+    {
+      "source": "audit/docs/q1-api-funding-reply-draft-2026-11-01.md",
+      "target": "crucis/docs/q1-api-funding-reply-draft-2026-11-01.md",
+      "source_sha256": "a5257666c7306294667ca5b70edb83a9ee8d012a64e541ab2f911d4ba6f81342",
+      "bytes": 2432,
+      "extracted_sha256": "a5257666c7306294667ca5b70edb83a9ee8d012a64e541ab2f911d4ba6f81342"
+    },
+    {
+      "source": "audit/docs/q1-empirical-study-funding-rebase-2026-11-01.md",
+      "target": "crucis/docs/q1-empirical-study-funding-rebase-2026-11-01.md",
+      "source_sha256": "2ec71dcb6690b7f7a0fb6f4d2c313e70733d550a8b23f0e9d7b7daeac89802b5",
+      "bytes": 11168,
+      "extracted_sha256": "2ec71dcb6690b7f7a0fb6f4d2c313e70733d550a8b23f0e9d7b7daeac89802b5"
+    },
+    {
+      "source": "audit/docs/q1-funding-email-sent-2026-11-01.md",
+      "target": "crucis/docs/q1-funding-email-sent-2026-11-01.md",
+      "source_sha256": "2a22fd3aeeaa6f822a6bbda642f74c4bbc9ce6a9c5baf0c5bccea3f557f805b4",
+      "bytes": 3024,
+      "extracted_sha256": "2a22fd3aeeaa6f822a6bbda642f74c4bbc9ce6a9c5baf0c5bccea3f557f805b4"
+    },
+    {
+      "source": "audit/docs/q1-funding-proposal-multisystem-2026-11-01.md",
+      "target": "crucis/docs/q1-funding-proposal-multisystem-2026-11-01.md",
+      "source_sha256": "574f431e7bcb4594a23cffa6bfa04510dba391ec5bb85d7b89d7e8d7e125d5d3",
+      "bytes": 4216,
+      "extracted_sha256": "574f431e7bcb4594a23cffa6bfa04510dba391ec5bb85d7b89d7e8d7e125d5d3"
+    },
+    {
+      "source": "audit/docs/q1-multi-system-cost-inventory-2026-11-01.json",
+      "target": "crucis/docs/q1-multi-system-cost-inventory-2026-11-01.json",
+      "source_sha256": "1b03b0adf7aed28622fe5c016d02cd18a11649135c479b6511c86c411494dda2",
+      "bytes": 8454,
+      "extracted_sha256": "1b03b0adf7aed28622fe5c016d02cd18a11649135c479b6511c86c411494dda2"
+    },
+    {
+      "source": "audit/docs/q1-study-budget-2026-11-01.json",
+      "target": "crucis/docs/q1-study-budget-2026-11-01.json",
+      "source_sha256": "e7b422c2f49cb8037958debf48e60ad44ecc9741ffd044fd0536c7584f9ebd22",
+      "bytes": 13731,
+      "extracted_sha256": "e7b422c2f49cb8037958debf48e60ad44ecc9741ffd044fd0536c7584f9ebd22"
+    },
+    {
+      "source": "audit/docs/q1-study-matrix-2026-11-01.md",
+      "target": "crucis/docs/q1-study-matrix-2026-11-01.md",
+      "source_sha256": "e24b6f1f9c719e55ec3f0d16b5b8f8ee75bd57d1afe3751b0f5e28139610a634",
+      "bytes": 16927,
+      "extracted_sha256": "e24b6f1f9c719e55ec3f0d16b5b8f8ee75bd57d1afe3751b0f5e28139610a634"
+    },
+    {
+      "source": "audit/docs/STATE.md",
+      "target": "crucis/docs/STATE.md",
+      "source_sha256": "23c8f25e02e588e018b6f816dc52584cc1865e9c8b864263ebf4698c2ab2c998",
+      "bytes": 8573,
+      "extracted_sha256": "23c8f25e02e588e018b6f816dc52584cc1865e9c8b864263ebf4698c2ab2c998"
+    },
+    {
+      "source": "audit/docs/subsystem1-implementation-dag-2026-11-01.json",
+      "target": "crucis/docs/subsystem1-implementation-dag-2026-11-01.json",
+      "source_sha256": "2c23972afb5baf0c7b5c9e7966f7848ddd101dc812661e27da2df771cb91747e",
+      "bytes": 6014,
+      "extracted_sha256": "2c23972afb5baf0c7b5c9e7966f7848ddd101dc812661e27da2df771cb91747e"
+    },
+    {
+      "source": "audit/docs/subsystem1-implementation-log-2026-11-01.md",
+      "target": "crucis/docs/subsystem1-implementation-log-2026-11-01.md",
+      "source_sha256": "2eb10c947ed6b2aa6e750a304bd52d3bf544215c74eea295466aa98fc315c622",
+      "bytes": 6117,
+      "extracted_sha256": "2eb10c947ed6b2aa6e750a304bd52d3bf544215c74eea295466aa98fc315c622"
+    },
+    {
+      "source": "audit/docs/subsystem1-implemented-support-2026-11-01.md",
+      "target": "crucis/docs/subsystem1-implemented-support-2026-11-01.md",
+      "source_sha256": "b72a419546e68ef1a57f8991fad517afa3eb2448a591083737e83019cd512d91",
+      "bytes": 9946,
+      "extracted_sha256": "b72a419546e68ef1a57f8991fad517afa3eb2448a591083737e83019cd512d91"
+    },
+    {
+      "source": "audit/docs/subsystem1-release-review-2026-11-01.md",
+      "target": "crucis/docs/subsystem1-release-review-2026-11-01.md",
+      "source_sha256": "22ffd41f4f6066c0021e5ee2174bc1696d6436b4271315d22cdfc481891c8fee",
+      "bytes": 6203,
+      "extracted_sha256": "22ffd41f4f6066c0021e5ee2174bc1696d6436b4271315d22cdfc481891c8fee"
+    },
+    {
+      "source": "audit/docs/subsystem1-trace-incident-2026-11-01.md",
+      "target": "crucis/docs/subsystem1-trace-incident-2026-11-01.md",
+      "source_sha256": "03949d1d3ed94fea51a6629471287c3989cfde7c4de4ec6c67e695b84aa1a4b5",
+      "bytes": 2670,
+      "extracted_sha256": "03949d1d3ed94fea51a6629471287c3989cfde7c4de4ec6c67e695b84aa1a4b5"
+    },
+    {
+      "source": "audit/docs/subsystem2-case-collection-design-2026-11-01.md",
+      "target": "crucis/docs/subsystem2-case-collection-design-2026-11-01.md",
+      "source_sha256": "b46732c783b36c4d5accd034bb06aa2c6b9c887fae1b4608b9bdb06d17b19062",
+      "bytes": 13576,
+      "extracted_sha256": "b46732c783b36c4d5accd034bb06aa2c6b9c887fae1b4608b9bdb06d17b19062"
+    },
+    {
+      "source": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_sha256": "77cebd2c3f0672dd6c7a258721e7c6fef99fbcbd69d914a9c83199b7e5c671ac",
+      "bytes": 17729,
+      "extracted_sha256": "77cebd2c3f0672dd6c7a258721e7c6fef99fbcbd69d914a9c83199b7e5c671ac"
+    },
+    {
+      "source": "audit/docs/subsystem2-case-worked-examples-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-case-worked-examples-2026-11-02.md",
+      "source_sha256": "6581ddf5c97e44144816008ec067b22c809e91575e82b863379474b6a3e90af5",
+      "bytes": 14181,
+      "extracted_sha256": "6581ddf5c97e44144816008ec067b22c809e91575e82b863379474b6a3e90af5"
+    },
+    {
+      "source": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_sha256": "8ee10f8f6918f274711368a07cc93a1b4690dbfd722bd21722d7595a18978108",
+      "bytes": 23374,
+      "extracted_sha256": "8ee10f8f6918f274711368a07cc93a1b4690dbfd722bd21722d7595a18978108"
+    },
+    {
+      "source": "audit/docs/subsystem2-composition-closure-review-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-composition-closure-review-2026-11-02.md",
+      "source_sha256": "f3296abd1d8675ef9ebd1fe5b22566581b397d253c2605adf2ce79ac018ea3a0",
+      "bytes": 9470,
+      "extracted_sha256": "f3296abd1d8675ef9ebd1fe5b22566581b397d253c2605adf2ce79ac018ea3a0"
+    },
+    {
+      "source": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_sha256": "1438b7ccbca9fcdadf319b3e91cf305ddb4d5fd522c501c8fb43d7eaa0424a27",
+      "bytes": 22682,
+      "extracted_sha256": "1438b7ccbca9fcdadf319b3e91cf305ddb4d5fd522c501c8fb43d7eaa0424a27"
+    },
+    {
+      "source": "audit/docs/subsystem2-contract-catalog-2026-11-02.json",
+      "target": "crucis/docs/subsystem2-contract-catalog-2026-11-02.json",
+      "source_sha256": "d3c3bf3897a77f3cda60c2209b317475b4f9d041d6b263f5c9ff22d9f7babd36",
+      "bytes": 93644,
+      "extracted_sha256": "d3c3bf3897a77f3cda60c2209b317475b4f9d041d6b263f5c9ff22d9f7babd36"
+    },
+    {
+      "source": "audit/docs/subsystem2-contract-closure-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-contract-closure-2026-11-02.md",
+      "source_sha256": "51e35d8b9fef5eccb34d6d13d2090e22377faeaf9e7284c4ffac08c8be0d2411",
+      "bytes": 19393,
+      "extracted_sha256": "51e35d8b9fef5eccb34d6d13d2090e22377faeaf9e7284c4ffac08c8be0d2411"
+    },
+    {
+      "source": "audit/docs/subsystem2-design-rebase-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-design-rebase-2026-11-02.md",
+      "source_sha256": "083547b2fa987445096eb53cf71ccbfe75643618be13911ac54918eeb30310f9",
+      "bytes": 9182,
+      "extracted_sha256": "083547b2fa987445096eb53cf71ccbfe75643618be13911ac54918eeb30310f9"
+    },
+    {
+      "source": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_sha256": "ce5f62d665869450e602e662e41161f07e839b33173a319da220fa0915c05eca",
+      "bytes": 24586,
+      "extracted_sha256": "ce5f62d665869450e602e662e41161f07e839b33173a319da220fa0915c05eca"
+    },
+    {
+      "source": "audit/docs/subsystem2-extension-composition-2026-11-02.json",
+      "target": "crucis/docs/subsystem2-extension-composition-2026-11-02.json",
+      "source_sha256": "ba90b3eb21669a050406e307571f1c187809d9b622c4af9702e3323a6936324e",
+      "bytes": 93281,
+      "extracted_sha256": "ba90b3eb21669a050406e307571f1c187809d9b622c4af9702e3323a6936324e"
+    },
+    {
+      "source": "audit/docs/subsystem2-extension-composition-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-extension-composition-2026-11-02.md",
+      "source_sha256": "a6fb188a17563d52e0a42e72db96ac545088993cfdc5c6ff9f6fd797b9d503b3",
+      "bytes": 16685,
+      "extracted_sha256": "a6fb188a17563d52e0a42e72db96ac545088993cfdc5c6ff9f6fd797b9d503b3"
+    },
+    {
+      "source": "audit/docs/subsystem2-family-profile-lifecycle-contract-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-family-profile-lifecycle-contract-2026-11-02.md",
+      "source_sha256": "4e9a86ab1b931a144832106e3e01f3bcb8ad2175aef38622f68d446847fe2a58",
+      "bytes": 13229,
+      "extracted_sha256": "4e9a86ab1b931a144832106e3e01f3bcb8ad2175aef38622f68d446847fe2a58"
+    },
+    {
+      "source": "audit/docs/subsystem2-final-design-review-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-final-design-review-2026-11-02.md",
+      "source_sha256": "9c96f08e7cbd1761cd30e9e48765e5b60ac1b164d2e1cc0c2ed4b4580895d0d3",
+      "bytes": 15654,
+      "extracted_sha256": "9c96f08e7cbd1761cd30e9e48765e5b60ac1b164d2e1cc0c2ed4b4580895d0d3"
+    },
+    {
+      "source": "audit/docs/subsystem2-implementation-dag-2026-11-02.json",
+      "target": "crucis/docs/subsystem2-implementation-dag-2026-11-02.json",
+      "source_sha256": "26dc02c3d0fadebb4e41ce34d622b747b17463c10ea7aeb2b26db5c07bb17ff9",
+      "bytes": 19077,
+      "extracted_sha256": "26dc02c3d0fadebb4e41ce34d622b747b17463c10ea7aeb2b26db5c07bb17ff9"
+    },
+    {
+      "source": "audit/docs/subsystem2-implementation-log-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-implementation-log-2026-11-02.md",
+      "source_sha256": "e657e87ba918d4fd4ce5e26b9302764b4395f5110495e645a600bb78c4f9c1f8",
+      "bytes": 13390,
+      "extracted_sha256": "e657e87ba918d4fd4ce5e26b9302764b4395f5110495e645a600bb78c4f9c1f8"
+    },
+    {
+      "source": "audit/docs/subsystem2-implemented-scope-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-implemented-scope-2026-11-02.md",
+      "source_sha256": "46435074319a9788cd262f897a2e272581787a4de5044d96686fa061a32bca18",
+      "bytes": 6705,
+      "extracted_sha256": "46435074319a9788cd262f897a2e272581787a4de5044d96686fa061a32bca18"
+    },
+    {
+      "source": "audit/docs/subsystem2-interface-legacy-candidate-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-interface-legacy-candidate-2026-11-02.md",
+      "source_sha256": "05d4da5ca86524e8f816fd560ac141560fd1502566e6d808094f6fc74cc68698",
+      "bytes": 29107,
+      "extracted_sha256": "05d4da5ca86524e8f816fd560ac141560fd1502566e6d808094f6fc74cc68698"
+    },
+    {
+      "source": "audit/docs/subsystem2-linked-experiment-examples-2026-11-02.json",
+      "target": "crucis/docs/subsystem2-linked-experiment-examples-2026-11-02.json",
+      "source_sha256": "36f3af871720522877b9f5734db80dc8e38b10909743919989e730c02286de3a",
+      "bytes": 143648,
+      "extracted_sha256": "36f3af871720522877b9f5734db80dc8e38b10909743919989e730c02286de3a"
+    },
+    {
+      "source": "audit/docs/subsystem2-linked-experiment-examples-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-linked-experiment-examples-2026-11-02.md",
+      "source_sha256": "6a7a7ca8e121e9c53bf657a7210c4d02e796920f8d3da6b7399e24feaff01657",
+      "bytes": 14801,
+      "extracted_sha256": "6a7a7ca8e121e9c53bf657a7210c4d02e796920f8d3da6b7399e24feaff01657"
+    },
+    {
+      "source": "audit/docs/subsystem2-methodology-index-implementation-2026-11-02.json",
+      "target": "crucis/docs/subsystem2-methodology-index-implementation-2026-11-02.json",
+      "source_sha256": "d1b0346bf378884d16d940c7216c1950853643dfbda9f186eba1598aea17084d",
+      "bytes": 23910,
+      "extracted_sha256": "d1b0346bf378884d16d940c7216c1950853643dfbda9f186eba1598aea17084d"
+    },
+    {
+      "source": "audit/docs/subsystem2-methodology-index-implementation-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-methodology-index-implementation-2026-11-02.md",
+      "source_sha256": "e4bbee94ab8f39f1e8301baf20c0f697432980571b126154398748dae9b168f8",
+      "bytes": 6755,
+      "extracted_sha256": "e4bbee94ab8f39f1e8301baf20c0f697432980571b126154398748dae9b168f8"
+    },
+    {
+      "source": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_sha256": "e3f5bb7a9aaccaf84970f1611d4dbe181409dc7c88cc4df772255fa76cce12f7",
+      "bytes": 20305,
+      "extracted_sha256": "e3f5bb7a9aaccaf84970f1611d4dbe181409dc7c88cc4df772255fa76cce12f7"
+    },
+    {
+      "source": "audit/docs/subsystem2-review-traceability-2026-11-02.json",
+      "target": "crucis/docs/subsystem2-review-traceability-2026-11-02.json",
+      "source_sha256": "bc7a792ebab1c49978b55e0cc8abcb0c49f4b73e430ea59b49dffa9292492d38",
+      "bytes": 230621,
+      "extracted_sha256": "bc7a792ebab1c49978b55e0cc8abcb0c49f4b73e430ea59b49dffa9292492d38"
+    },
+    {
+      "source": "audit/docs/subsystem2-serialization-candidate-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-serialization-candidate-2026-11-02.md",
+      "source_sha256": "b47265c939b72d00ccf8bba4b6f10e062f0b30ae6391635b93a436e6164dbc53",
+      "bytes": 29454,
+      "extracted_sha256": "b47265c939b72d00ccf8bba4b6f10e062f0b30ae6391635b93a436e6164dbc53"
+    },
+    {
+      "source": "audit/docs/subsystem2-structure-design-2026-11-01.md",
+      "target": "crucis/docs/subsystem2-structure-design-2026-11-01.md",
+      "source_sha256": "f45032385c4e48e31681fba57516e4ab67ef52aa9f04af03e5fa943952d1df47",
+      "bytes": 16917,
+      "extracted_sha256": "f45032385c4e48e31681fba57516e4ab67ef52aa9f04af03e5fa943952d1df47"
+    },
+    {
+      "source": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_sha256": "d4ce305bfb93c3d5dc59acc7e1a11be05bf080f86d5707e36cfad912a8f30427",
+      "bytes": 16142,
+      "extracted_sha256": "d4ce305bfb93c3d5dc59acc7e1a11be05bf080f86d5707e36cfad912a8f30427"
+    },
+    {
+      "source": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "target": "crucis/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_sha256": "2f0f039dc5adfc2e1068146e8750d1393c22565208ffe30eb66274fae66118fa",
+      "bytes": 24960,
+      "extracted_sha256": "2f0f039dc5adfc2e1068146e8750d1393c22565208ffe30eb66274fae66118fa"
+    },
+    {
+      "source": "audit/docs/subsystem3-structure-design-2026-11-03.md",
+      "target": "crucis/docs/subsystem3-structure-design-2026-11-03.md",
+      "source_sha256": "02b95b7b8c4c3e57ec6a3868915afddea93280a6da1f06a03591d283e800677e",
+      "bytes": 17159,
+      "extracted_sha256": "02b95b7b8c4c3e57ec6a3868915afddea93280a6da1f06a03591d283e800677e"
+    },
+    {
+      "source": "audit/docs/system-connections-api-legacy-2026-11-01.md",
+      "target": "crucis/docs/system-connections-api-legacy-2026-11-01.md",
+      "source_sha256": "cba4378f285eaacaa5460e9035317bc2d0b966cf0dd2c1e0b53ef39813eec469",
+      "bytes": 23779,
+      "extracted_sha256": "cba4378f285eaacaa5460e9035317bc2d0b966cf0dd2c1e0b53ef39813eec469"
+    },
+    {
+      "source": "audit/docs/system-connections-artifact-evidence-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-artifact-evidence-design-2026-11-01.md",
+      "source_sha256": "5276701e37ff0984204e601534983b77ae62efb352f6a18dee04c0119ceb807b",
+      "bytes": 18398,
+      "extracted_sha256": "5276701e37ff0984204e601534983b77ae62efb352f6a18dee04c0119ceb807b"
+    },
+    {
+      "source": "audit/docs/system-connections-capability-map-2026-11-01.md",
+      "target": "crucis/docs/system-connections-capability-map-2026-11-01.md",
+      "source_sha256": "978f321edbaefe062ef5cdd5339e667b755310749d4e10001540e0eae1363ac8",
+      "bytes": 48316,
+      "extracted_sha256": "978f321edbaefe062ef5cdd5339e667b755310749d4e10001540e0eae1363ac8"
+    },
+    {
+      "source": "audit/docs/system-connections-composition-records-2026-11-01.json",
+      "target": "crucis/docs/system-connections-composition-records-2026-11-01.json",
+      "source_sha256": "3e8aba7b692577773535abc13c16fe0f3b3526008e19958e1b6105603de7017d",
+      "bytes": 190372,
+      "extracted_sha256": "3e8aba7b692577773535abc13c16fe0f3b3526008e19958e1b6105603de7017d"
+    },
+    {
+      "source": "audit/docs/system-connections-composition-review-2026-11-01.md",
+      "target": "crucis/docs/system-connections-composition-review-2026-11-01.md",
+      "source_sha256": "d88a0f9388d7a8bc0763125cc21f00f644290e4e695ce20a12b2cf55bb1b34dd",
+      "bytes": 17976,
+      "extracted_sha256": "d88a0f9388d7a8bc0763125cc21f00f644290e4e695ce20a12b2cf55bb1b34dd"
+    },
+    {
+      "source": "audit/docs/system-connections-contract-outline-2026-11-01.md",
+      "target": "crucis/docs/system-connections-contract-outline-2026-11-01.md",
+      "source_sha256": "5b51d0bcf59cb418bd836709a7aec0c8a3b1a3906aebab01009d3b632a717a38",
+      "bytes": 30583,
+      "extracted_sha256": "5b51d0bcf59cb418bd836709a7aec0c8a3b1a3906aebab01009d3b632a717a38"
+    },
+    {
+      "source": "audit/docs/system-connections-design-2026-10-31.md",
+      "target": "crucis/docs/system-connections-design-2026-10-31.md",
+      "source_sha256": "8793655b97dbc080815290fa232e9d5ebcf95a6a68761b4c194febd0ef0bbe98",
+      "bytes": 7399,
+      "extracted_sha256": "8793655b97dbc080815290fa232e9d5ebcf95a6a68761b4c194febd0ef0bbe98"
+    },
+    {
+      "source": "audit/docs/system-connections-domains-mappings-2026-11-01.md",
+      "target": "crucis/docs/system-connections-domains-mappings-2026-11-01.md",
+      "source_sha256": "d0add17fc01900ed12fd7aa4d62fa8142a3b25805961fd91d6728f6c81c9d767",
+      "bytes": 18963,
+      "extracted_sha256": "d0add17fc01900ed12fd7aa4d62fa8142a3b25805961fd91d6728f6c81c9d767"
+    },
+    {
+      "source": "audit/docs/system-connections-final-review-plan-2026-11-01.md",
+      "target": "crucis/docs/system-connections-final-review-plan-2026-11-01.md",
+      "source_sha256": "c0197f2d98c00b86ef01ac866f68236a0b9bab87d1749c535cb327d550c85bfb",
+      "bytes": 18311,
+      "extracted_sha256": "c0197f2d98c00b86ef01ac866f68236a0b9bab87d1749c535cb327d550c85bfb"
+    },
+    {
+      "source": "audit/docs/system-connections-foundation-contract-2026-11-01.md",
+      "target": "crucis/docs/system-connections-foundation-contract-2026-11-01.md",
+      "source_sha256": "a807087762ba0b9f9b5d6bd6c765f7c4c07b76fd4cc1d277af57efbe2eb2006f",
+      "bytes": 31511,
+      "extracted_sha256": "a807087762ba0b9f9b5d6bd6c765f7c4c07b76fd4cc1d277af57efbe2eb2006f"
+    },
+    {
+      "source": "audit/docs/system-connections-identity-request-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-identity-request-design-2026-11-01.md",
+      "source_sha256": "25cd11a59c3359fd70f6205168c8cd863aef6a5fc4f622ba0dc9003723e5389d",
+      "bytes": 23244,
+      "extracted_sha256": "25cd11a59c3359fd70f6205168c8cd863aef6a5fc4f622ba0dc9003723e5389d"
+    },
+    {
+      "source": "audit/docs/system-connections-interaction-recovery-2026-11-01.md",
+      "target": "crucis/docs/system-connections-interaction-recovery-2026-11-01.md",
+      "source_sha256": "524ba4d29dd2e9e318358e652bb60314b5fad4dba3fd0136865c1a4ea3fc8a14",
+      "bytes": 13040,
+      "extracted_sha256": "524ba4d29dd2e9e318358e652bb60314b5fad4dba3fd0136865c1a4ea3fc8a14"
+    },
+    {
+      "source": "audit/docs/system-connections-outcome-cases-2026-11-01.md",
+      "target": "crucis/docs/system-connections-outcome-cases-2026-11-01.md",
+      "source_sha256": "89c92d43358e1b8ea70c46c802c2d33d6d0768c806a5626790be6e7001f568c8",
+      "bytes": 20632,
+      "extracted_sha256": "89c92d43358e1b8ea70c46c802c2d33d6d0768c806a5626790be6e7001f568c8"
+    },
+    {
+      "source": "audit/docs/system-connections-outcome-observations-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-outcome-observations-design-2026-11-01.md",
+      "source_sha256": "ea6381a82009bcc8ab7d5ac54ac06217a12cae94576f41663b2e84487d3122c6",
+      "bytes": 19278,
+      "extracted_sha256": "ea6381a82009bcc8ab7d5ac54ac06217a12cae94576f41663b2e84487d3122c6"
+    },
+    {
+      "source": "audit/docs/system-connections-output-index-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-output-index-design-2026-11-01.md",
+      "source_sha256": "86a594cd7d77f1cebf388329b02c6f3550f5fcc70d1e528852b22e4f68a08c43",
+      "bytes": 20802,
+      "extracted_sha256": "86a594cd7d77f1cebf388329b02c6f3550f5fcc70d1e528852b22e4f68a08c43"
+    },
+    {
+      "source": "audit/docs/system-connections-output-subtypes-2026-11-01.md",
+      "target": "crucis/docs/system-connections-output-subtypes-2026-11-01.md",
+      "source_sha256": "cb2d400dd874cd1b3b5a1847438aec94c094d240212b759674a5ae3c9628d576",
+      "bytes": 26303,
+      "extracted_sha256": "cb2d400dd874cd1b3b5a1847438aec94c094d240212b759674a5ae3c9628d576"
+    },
+    {
+      "source": "audit/docs/system-connections-principles-2026-11-01.md",
+      "target": "crucis/docs/system-connections-principles-2026-11-01.md",
+      "source_sha256": "52efff58bddd56583680aab0f6594ae19d69ee8c11553fe259b2e63ea9ab84bc",
+      "bytes": 6101,
+      "extracted_sha256": "52efff58bddd56583680aab0f6594ae19d69ee8c11553fe259b2e63ea9ab84bc"
+    },
+    {
+      "source": "audit/docs/system-connections-relationships-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-relationships-design-2026-11-01.md",
+      "source_sha256": "e65da5e5e1c4ddc5017a7def2d92c078833995ffe51a147846c8ea0e0d7333cf",
+      "bytes": 13782,
+      "extracted_sha256": "e65da5e5e1c4ddc5017a7def2d92c078833995ffe51a147846c8ea0e0d7333cf"
+    },
+    {
+      "source": "audit/docs/system-connections-result-record-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-result-record-design-2026-11-01.md",
+      "source_sha256": "416be55e474d9a2a3052fcece2b7b366fc80d5057835d2d3fa8a4cc523f4b3fb",
+      "bytes": 30849,
+      "extracted_sha256": "416be55e474d9a2a3052fcece2b7b366fc80d5057835d2d3fa8a4cc523f4b3fb"
+    },
+    {
+      "source": "audit/docs/system-connections-sc1-example-2026-11-01.json",
+      "target": "crucis/docs/system-connections-sc1-example-2026-11-01.json",
+      "source_sha256": "ff95c92b3173adf774be2b9ef02f00919122204b01f72baa1fe1416f5a74befa",
+      "bytes": 15759,
+      "extracted_sha256": "ff95c92b3173adf774be2b9ef02f00919122204b01f72baa1fe1416f5a74befa"
+    },
+    {
+      "source": "audit/docs/system-connections-serialization-2026-11-01.md",
+      "target": "crucis/docs/system-connections-serialization-2026-11-01.md",
+      "source_sha256": "74a6d60ec52695e7ea279f947b509061baefcb99d2fe44a0e717864bff7cb1ae",
+      "bytes": 31073,
+      "extracted_sha256": "74a6d60ec52695e7ea279f947b509061baefcb99d2fe44a0e717864bff7cb1ae"
+    },
+    {
+      "source": "audit/docs/system-connections-system-information-design-2026-11-01.md",
+      "target": "crucis/docs/system-connections-system-information-design-2026-11-01.md",
+      "source_sha256": "6cf0dbdef6e2ec6123f405b98dfec1b8020b317b3f76b71bafc57b51e060f19e",
+      "bytes": 22250,
+      "extracted_sha256": "6cf0dbdef6e2ec6123f405b98dfec1b8020b317b3f76b71bafc57b51e060f19e"
+    },
+    {
+      "source": "audit/docs/w2-design-iteration-2026-10-31.md",
+      "target": "crucis/docs/w2-design-iteration-2026-10-31.md",
+      "source_sha256": "558134f5791b556c44cb35116660b815596da310e57a147a99155f1dd717c01d",
+      "bytes": 18428,
+      "extracted_sha256": "558134f5791b556c44cb35116660b815596da310e57a147a99155f1dd717c01d"
+    },
+    {
+      "source": "audit/docs/w2-design-rebase-2026-11-01.md",
+      "target": "crucis/docs/w2-design-rebase-2026-11-01.md",
+      "source_sha256": "e7fe5d412c0e55f26118bda3160629831e0f211f3cb3f05b66642e9bb075949a",
+      "bytes": 16927,
+      "extracted_sha256": "e7fe5d412c0e55f26118bda3160629831e0f211f3cb3f05b66642e9bb075949a"
+    },
+    {
+      "source": "audit/experiments/acceptance.py",
+      "target": "crucis/experiments/acceptance.py",
+      "source_sha256": "0d338a22f8327bfc9d52e2fbe80f8a82dec5be19f7ec2a0fc68280feb7faf83a",
+      "bytes": 9895,
+      "extracted_sha256": "a30abd8ee7735a22fdca0a56ca4205baced63807fffe8cfcf3098d6baf0c0e89"
+    },
+    {
+      "source": "audit/experiments/api.py",
+      "target": "crucis/experiments/api.py",
+      "source_sha256": "df9102aba6ac73d2fc8f264ec1cce9d036b6abba9f7f4abee51ac30ce24e58ff",
+      "bytes": 6510,
+      "extracted_sha256": "c61a5ef6ae22035fa02d2bf2b5a82008eb02da8bbb5f541bf92ad3e5fdd72ff3"
+    },
+    {
+      "source": "audit/experiments/bindings.py",
+      "target": "crucis/experiments/bindings.py",
+      "source_sha256": "b023d1d7dfee27f5acfdcdb1b02ffdba03267ef429c06454501f1efdd39c7e0e",
+      "bytes": 7263,
+      "extracted_sha256": "c3f062812b6aa55c7e534cb91d312cf5f58ea703913ee881ee1cd0363d9f7d68"
+    },
+    {
+      "source": "audit/experiments/catalog.json",
+      "target": "crucis/experiments/catalog.json",
+      "source_sha256": "d3c3bf3897a77f3cda60c2209b317475b4f9d041d6b263f5c9ff22d9f7babd36",
+      "bytes": 93644,
+      "extracted_sha256": "d3c3bf3897a77f3cda60c2209b317475b4f9d041d6b263f5c9ff22d9f7babd36"
+    },
+    {
+      "source": "audit/experiments/codec.py",
+      "target": "crucis/experiments/codec.py",
+      "source_sha256": "0fa23d5b1616a1bd6b6bbe7383d1f9f5e1b8081424689a6a822ab0496c65867c",
+      "bytes": 6473,
+      "extracted_sha256": "aa54e9686f5b4d5737d2991cbd78effa3adb0314a74d518ab76a065bd4f20e06"
+    },
+    {
+      "source": "audit/experiments/completion.py",
+      "target": "crucis/experiments/completion.py",
+      "source_sha256": "122dc98f79ce0314aaad6432870490f7c7447d8bad639e1783e46b98f67c21ae",
+      "bytes": 2739,
+      "extracted_sha256": "d1ff32d10f7329057a45fa4a3d5d914a332ad9d4b62b9be1a3c8be4457d5833b"
+    },
+    {
+      "source": "audit/experiments/contracts.py",
+      "target": "crucis/experiments/contracts.py",
+      "source_sha256": "196e589ee14790acb38a9b10e0c913b6ccbde068e325321cd86ee350f2d29e81",
+      "bytes": 5810,
+      "extracted_sha256": "4209f97b1a30597258faf5cfb6fdf043782e653fbf8473603ce81f107345d80e"
+    },
+    {
+      "source": "audit/experiments/core.py",
+      "target": "crucis/experiments/core.py",
+      "source_sha256": "8a806273e5e78c024f783d186f4b0c8b4c1bdc8c7fec7af7de6f02c972d90ea3",
+      "bytes": 1180,
+      "extracted_sha256": "2ecb2f8363859d485f6a6c550fc5fe61135729f6785e75e028419c3f215fb826"
+    },
+    {
+      "source": "audit/experiments/errors.py",
+      "target": "crucis/experiments/errors.py",
+      "source_sha256": "6535f6e0ed191da9e07a57ed7d6dab2783736887eee2851f7a54b08b38f46c3f",
+      "bytes": 289,
+      "extracted_sha256": "76f29fd37cb675e33dd11463e4390bacc13e013a39d42037d04639a3a20a37b4"
+    },
+    {
+      "source": "audit/experiments/evaluation.py",
+      "target": "crucis/experiments/evaluation.py",
+      "source_sha256": "35bb63520900eb78a644fdfbec00b0048a3164a23e941252e83817c5c1cceee4",
+      "bytes": 15761,
+      "extracted_sha256": "cc656ea567fc622de622407cf7562151d151dddcb911174ef40f6a07c8e075db"
+    },
+    {
+      "source": "audit/experiments/families.py",
+      "target": "crucis/experiments/families.py",
+      "source_sha256": "07e5277a1c4ff8af2eb16ff3942a6ca8f2a816c9ae22c12ee12787ef2e41303d",
+      "bytes": 12411,
+      "extracted_sha256": "63591d100c605f973d68f125003036e5afa0e53c4d578ad14174cb781b0a85ab"
+    },
+    {
+      "source": "audit/experiments/gates.py",
+      "target": "crucis/experiments/gates.py",
+      "source_sha256": "70362e5c2d83fe4f75f3db0c193d3438d2792c5dfceb8a52d4a1c50774369575",
+      "bytes": 5271,
+      "extracted_sha256": "56ccc4b326d0c9af63b741e5464cd896f39f5ea0fed67650576ef689b457cf66"
+    },
+    {
+      "source": "audit/experiments/handoff.py",
+      "target": "crucis/experiments/handoff.py",
+      "source_sha256": "6de48eaff7c26d00e9239763727075090eab24aeb0e5eab5af76189117100a41",
+      "bytes": 27279,
+      "extracted_sha256": "4da17ef2fe77c17a6a28b874a37218363ac11fccc0abe62494c2a46e3590a04f"
+    },
+    {
+      "source": "audit/experiments/information.py",
+      "target": "crucis/experiments/information.py",
+      "source_sha256": "b5c1078123fd9a30413ba4e2d2f3d03531efe33e08f92323999dcc331b243c3c",
+      "bytes": 3209,
+      "extracted_sha256": "c5912c106378c7667a184c262d06fca276ed140a82f0be1f4c302093af8c5e96"
+    },
+    {
+      "source": "audit/experiments/legacy.py",
+      "target": "crucis/experiments/legacy.py",
+      "source_sha256": "8b94af09a335b1e77ea61469ff8946582abd27de79ba4fe4db904e5bf42ee8a9",
+      "bytes": 12920,
+      "extracted_sha256": "1857a40beaa9273c6a3087b55bcbc90ac487ed35e6660d82d16cb843cc505e56"
+    },
+    {
+      "source": "audit/experiments/lifecycle.py",
+      "target": "crucis/experiments/lifecycle.py",
+      "source_sha256": "213d9cf02c1900920049861c01bc1cd24aa5adee0d61a309d6f61b7e4ce34e60",
+      "bytes": 11209,
+      "extracted_sha256": "91b34b1259ace59422958a70605a48f2ac87110b97d6c7ef37d201ded3cfb0d3"
+    },
+    {
+      "source": "audit/experiments/model.py",
+      "target": "crucis/experiments/model.py",
+      "source_sha256": "eca2b03aabaed3ab6e5c746f93d29cd06be12412155326e92386699b5c236317",
+      "bytes": 3147,
+      "extracted_sha256": "9e3359b877afe7d1f0a6ddc7e0d19fcb6cd146273a17eba9c820c6e56399a802"
+    },
+    {
+      "source": "audit/experiments/operations.py",
+      "target": "crucis/experiments/operations.py",
+      "source_sha256": "b64c4d0c0d7869f3f3d649ce876fa42ab06a4af367bc49319aba40a95a0aac36",
+      "bytes": 2758,
+      "extracted_sha256": "2ab04fa05a38d0347b89942300ee3c9a9e45889bf3a9804030ab0d69c5f3a6c6"
+    },
+    {
+      "source": "audit/experiments/payloads.py",
+      "target": "crucis/experiments/payloads.py",
+      "source_sha256": "2726b43e716eca31dc69bd06da5b283d449ebc157f561b9ff0d791312f722435",
+      "bytes": 2303,
+      "extracted_sha256": "5d35ed59793c9c241d9cb3be5f06a6524a0948e75e3b321c285eb4388c305a2d"
+    },
+    {
+      "source": "audit/experiments/profiles.py",
+      "target": "crucis/experiments/profiles.py",
+      "source_sha256": "2449bea83e12c4fb0f1b8784009282cc1664d9bc7ae0194a171b7d59f3dbb397",
+      "bytes": 6996,
+      "extracted_sha256": "841c1c2a7898bd3335a9f3604d4f41b1cd97f8e233f5518ddd3fe3d01f170851"
+    },
+    {
+      "source": "audit/experiments/README.md",
+      "target": "crucis/experiments/README.md",
+      "source_sha256": "0d93690580b054f713a8c07164607111181fc392b5d6b8bbf78e4a14464a73fc",
+      "bytes": 5204,
+      "extracted_sha256": "0d93690580b054f713a8c07164607111181fc392b5d6b8bbf78e4a14464a73fc"
+    },
+    {
+      "source": "audit/experiments/requirements.txt",
+      "target": "crucis/experiments/requirements.txt",
+      "source_sha256": "0a4163122325f656c2b393128e34409a388da82e86250f69c9965dc80cfcb05d",
+      "bytes": 99,
+      "extracted_sha256": "0a4163122325f656c2b393128e34409a388da82e86250f69c9965dc80cfcb05d"
+    },
+    {
+      "source": "audit/experiments/resolver.py",
+      "target": "crucis/experiments/resolver.py",
+      "source_sha256": "7b05f3f421ebfae337b864168171dcaaf36faa979f47ec163953e086427e3657",
+      "bytes": 8084,
+      "extracted_sha256": "ce57556f389243f4c83dfe6609590a90a077c6f5c0488f0a26888b3c1dc80d1c"
+    },
+    {
+      "source": "audit/experiments/responses.py",
+      "target": "crucis/experiments/responses.py",
+      "source_sha256": "5526d78c1d7abfbc97cf7a7c993561ffb1e3a85e56231b9be368248899b82d44",
+      "bytes": 4403,
+      "extracted_sha256": "9c6008208d52f64dcedaf80fe5ed25ed1c1c75fa512990080ce45eb14605bdc1"
+    },
+    {
+      "source": "audit/experiments/schema.py",
+      "target": "crucis/experiments/schema.py",
+      "source_sha256": "37529b696b874a1c058be29715ccb5f3847e120a6beee8196624fb9114342a9b",
+      "bytes": 6374,
+      "extracted_sha256": "8331d43e184bdf5498271afe22d76b18ea49877abf118932bd953980e880afa6"
+    },
+    {
+      "source": "audit/experiments/selection.py",
+      "target": "crucis/experiments/selection.py",
+      "source_sha256": "0d27f487bf42bdf7d85f211d09ae31d0140fc26ec5a7ec7e9eb5d03a35263ce7",
+      "bytes": 3330,
+      "extracted_sha256": "80948fd0b687689133ef409ba7d438c7c965b5d7a27d453f02ccf788271356ad"
+    },
+    {
+      "source": "audit/experiments/services.py",
+      "target": "crucis/experiments/services.py",
+      "source_sha256": "40957fece0446f5ea95fe362827f765cee45b0e4dd57ce35484652e64f37a9fe",
+      "bytes": 4200,
+      "extracted_sha256": "0dd4525d0e2044605d487d56378e4d17bd429274ffc2a0332a52a3f70376b5b7"
+    },
+    {
+      "source": "audit/experiments/writer.py",
+      "target": "crucis/experiments/writer.py",
+      "source_sha256": "cc4f6fe96770b7e42e9b0016a5ddc60a6ede1c677e20399573671f9e021def79",
+      "bytes": 9683,
+      "extracted_sha256": "cc95b75e25cef977bddd996e41a4a1c9f41ce3f9a96f9b3a4eeeb0b7306d81b5"
+    },
+    {
+      "source": "audit/experiments/__init__.py",
+      "target": "crucis/experiments/__init__.py",
+      "source_sha256": "215693f013e731dd5c32af1d79f6ac4950cd79a62e767a634609b849ebf99d4e",
+      "bytes": 412,
+      "extracted_sha256": "b1cf285b2fddc9fc492d13a6b4cc1d1059d443d81cbfce6153a1f4f7b30db556"
+    },
+    {
+      "source": "audit/experiments/__main__.py",
+      "target": "crucis/experiments/__main__.py",
+      "source_sha256": "ef3bd653b9a5d02769d52dcd1444ec8cd86001ca4b176731940bf5eb1be9aacb",
+      "bytes": 8397,
+      "extracted_sha256": "db379ac0a2d3b25e400f9a30ce50e67a85524305acaae94d2319a4440da04dcb"
+    },
+    {
+      "source": "audit/metrics/l0.py",
+      "target": "crucis/metrics/l0.py",
+      "source_sha256": "42dfde97e51414dae1fd422c4cdaaa6783fa9e953091cb3b7776981d25d4791a",
+      "bytes": 5992,
+      "extracted_sha256": "4274e2989cf3d99a374427d7d64c32abb73dd0758844c05d137ce0307555fd67"
+    },
+    {
+      "source": "audit/metrics/__init__.py",
+      "target": "crucis/metrics/__init__.py",
+      "source_sha256": "8438fd4bf8f9bb45469e8611bf91e500b028f1d1f4329522f2aae415fe7f4383",
+      "bytes": 20,
+      "extracted_sha256": "e18609ee99d07addd792834a5c33e6e968fbeabfbe26e655814b68e41a29c80f"
+    },
+    {
+      "source": "audit/protocol/kinds.py",
+      "target": "crucis/protocol/kinds.py",
+      "source_sha256": "8462219b5d34f3a998efa2ce4d7043990291f98440df85a62f236d05cbc1ae2f",
+      "bytes": 5316,
+      "extracted_sha256": "045d3f8d1b36b90382ac3cf79f4af3b5cca75c120b1e62f1178ce03b356bff9b"
+    },
+    {
+      "source": "audit/protocol/regimes.py",
+      "target": "crucis/protocol/regimes.py",
+      "source_sha256": "29790d835f28a5481e7c303243679f1b3a30a9ec21f47877b2d4a7504638021f",
+      "bytes": 1851,
+      "extracted_sha256": "e109c65a84dd27d19f4caa346915fc00113dc505a27a9b936f7a9d7c5b11203b"
+    },
+    {
+      "source": "audit/protocol/thresholds_v1.json",
+      "target": "crucis/protocol/thresholds_v1.json",
+      "source_sha256": "8da19b52aa102a33399df71dc339a576f1848c2115ec742ca9f3d346021d95a5",
+      "bytes": 1642,
+      "extracted_sha256": "8da19b52aa102a33399df71dc339a576f1848c2115ec742ca9f3d346021d95a5"
+    },
+    {
+      "source": "audit/protocol/tiers.py",
+      "target": "crucis/protocol/tiers.py",
+      "source_sha256": "4fe39721b420bf44acaf14273c29a9692633fb5ad48e32c0e7dbda9dd213b251",
+      "bytes": 520,
+      "extracted_sha256": "4fafe7b30a77aae388e455d69ce1bbdfc58c007b8d254002217f23b8e4242c58"
+    },
+    {
+      "source": "audit/protocol/__init__.py",
+      "target": "crucis/protocol/__init__.py",
+      "source_sha256": "d1f4f3c254ae52204afff8b96c5921f9f91d03e8d21d49adc60a18ba955c69e3",
+      "bytes": 108,
+      "extracted_sha256": "19b707f5f2057b0f6fb384ba69b5e75b624dd65b1b82dd478efd7e733841bb23"
+    },
+    {
+      "source": "audit/report/build.py",
+      "target": "crucis/report/build.py",
+      "source_sha256": "d322dccf8dafbe3e5766d74e8e117ebb9c69f5b4ff3cf8e066deaeb95bb0768d",
+      "bytes": 6440,
+      "extracted_sha256": "1be2264cae06887fcc09ee76f6731746a91b30af965fadf911426e526c935f99"
+    },
+    {
+      "source": "audit/report/certificate.py",
+      "target": "crucis/report/certificate.py",
+      "source_sha256": "612674b144c85f6ab69e4d12588c498830acd6bbd274228f0e4472c47a3311b5",
+      "bytes": 5337,
+      "extracted_sha256": "a22ea5fd23f444c5325e13210059035fa87153f1fe3aebaf7d76182b8bd72b66"
+    },
+    {
+      "source": "audit/report/__init__.py",
+      "target": "crucis/report/__init__.py",
+      "source_sha256": "ed9c92f1f61ce82569b002346f5832c522abf6072529271c6a59e7d65dac453e",
+      "bytes": 19,
+      "extracted_sha256": "1997359b8ba4f3f36f2a1370eeaa54b9a6f0ee7f46960fbb11aff1268168d630"
+    },
+    {
+      "source": "audit/rerun/existing.py",
+      "target": "crucis/rerun/existing.py",
+      "source_sha256": "12be0de5e69126fd12a5d6caf476fc6522f683da561dbaf0a606648569fc1760",
+      "bytes": 22395,
+      "extracted_sha256": "05920105d97fb0383c192b7642431acb9c94ec7691a1aa673ec27a74095a721f"
+    },
+    {
+      "source": "audit/rerun/table.py",
+      "target": "crucis/rerun/table.py",
+      "source_sha256": "6c298dcf0a70e17f13543a9ba4c6d4c2fb54f057cf10d9a024dcbfc3cedfa372",
+      "bytes": 2960,
+      "extracted_sha256": "980e238f50ee1c7ec9067eaff231553dd4eb2a9bd363a398b1d702302504c6a8"
+    },
+    {
+      "source": "audit/rerun/__init__.py",
+      "target": "crucis/rerun/__init__.py",
+      "source_sha256": "0e24b40b364dca4585a79cb7494f616818f6eb6d19b8760fcde29a9301841471",
+      "bytes": 18,
+      "extracted_sha256": "3d22fc7c27041062623c2a1945c16f194f9a3865f70019830f9a7ccab3afe5a0"
+    },
+    {
+      "source": "audit/systems/causaliq.py",
+      "target": "crucis/systems/causaliq.py",
+      "source_sha256": "7d506149abe03bee7284ddfcbde0f2be48575ae402230e08059d78556e6bdac8",
+      "bytes": 924,
+      "extracted_sha256": "722fb6b1808de9c1db6fa498f06d8c1570f62f4f2205376c71d0d58ea0a88b6c"
+    },
+    {
+      "source": "audit/systems/causal_copilot.py",
+      "target": "crucis/systems/causal_copilot.py",
+      "source_sha256": "878db870ba98a42eae5054aa3419de0d83bd81613de57784ab052cc553fcf5e0",
+      "bytes": 8024,
+      "extracted_sha256": "6d4e970e0dbbb76fa694d121ab60e02afc7f4cd307602fc7f31235f657136859"
+    },
+    {
+      "source": "audit/systems/ges.py",
+      "target": "crucis/systems/ges.py",
+      "source_sha256": "6dd880889b213302ce94c0e3c8c265430f6f45b30a473085872930cb328772da",
+      "bytes": 987,
+      "extracted_sha256": "cdb08b5b45615fb3e5d51dba87691ce74e4e7a16c56d84a1ea056838b859f929"
+    },
+    {
+      "source": "audit/systems/gies.py",
+      "target": "crucis/systems/gies.py",
+      "source_sha256": "f67b27d37cfb92b3670c591c80565f8a24219700b359919d73f74b529bbc9efc",
+      "bytes": 704,
+      "extracted_sha256": "7ec5bee5a0818d2b88f285aefef80842ca63adcc645f71a6ea4b0b63280d78b6"
+    },
+    {
+      "source": "audit/systems/matmcd.py",
+      "target": "crucis/systems/matmcd.py",
+      "source_sha256": "628d703e8e1ab92bc1b6cb969f73058a372741d3054c3abf3ff9ff01871f2be8",
+      "bytes": 896,
+      "extracted_sha256": "d1376f8460452c1577c8af191ddb4229aba3ba25821f4c1bc104a9aed03efbf7"
+    },
+    {
+      "source": "audit/systems/pc.py",
+      "target": "crucis/systems/pc.py",
+      "source_sha256": "4fea1d318cfa14d2cf22ace30a73c12fff68b95bde16825c9a18885a30fe93f4",
+      "bytes": 1130,
+      "extracted_sha256": "fcfaea5774dfe013633f261cb312f176747a8f28b476a3b44b7c7547352e60ad"
+    },
+    {
+      "source": "audit/systems/pywhyllm.py",
+      "target": "crucis/systems/pywhyllm.py",
+      "source_sha256": "a2a4c378d1cd6f02aac95738959763b64e838f9acb2897d083d0ecd9a328ceb5",
+      "bytes": 814,
+      "extracted_sha256": "de80f31041b32aedec61de0f7899497dfb46a49bafc47658f1f4329d0ac7eb5b"
+    },
+    {
+      "source": "audit/systems/vashishtha.py",
+      "target": "crucis/systems/vashishtha.py",
+      "source_sha256": "b0784c782199e95f68a85093c710b3b22adb590ad974dbb5d2c75683431222f1",
+      "bytes": 945,
+      "extracted_sha256": "7fdb4359ab21e99d854efa178125bdd4c6714b66e9558e2a244f32947b561906"
+    },
+    {
+      "source": "audit/systems/_methods.py",
+      "target": "crucis/systems/_methods.py",
+      "source_sha256": "bec2eb276ad8487c6617cb20e179e911bb3566db25b4fda2589b51ffc6e12e2e",
+      "bytes": 4250,
+      "extracted_sha256": "c0097ef647496b838c1d4fcc32284df9280fe23c226b4a4f109d320b8cdca261"
+    },
+    {
+      "source": "audit/systems/_probe.py",
+      "target": "crucis/systems/_probe.py",
+      "source_sha256": "8abbf45143f0221661e63e699a2bf4e32b0c750a071257e717a2cbd638b6bbd9",
+      "bytes": 4289,
+      "extracted_sha256": "a1eb152860cd3c19580041af2f031a6d2cd432c6f4017e946ffaf0fab9b71a69"
+    },
+    {
+      "source": "audit/systems/__init__.py",
+      "target": "crucis/systems/__init__.py",
+      "source_sha256": "9999b77b477e57758ab063951555371cee0bd77fce6ad9bdb063561347b4fe1f",
+      "bytes": 200,
+      "extracted_sha256": "eaec1229954616ed7f4b55d1671201d6b517c6b2f5fb5cffbd6eafc012c51c0e"
+    },
+    {
+      "source": "audit/trace/cc_stages.py",
+      "target": "crucis/trace/cc_stages.py",
+      "source_sha256": "4966897631bff703cbffb47a8661c5b5ed9071870499e1767c6481ab599c1316",
+      "bytes": 5296,
+      "extracted_sha256": "d53af916480bece493c620e9dd65d1f9f495e3e11721cc24f063e552208ec4cb"
+    },
+    {
+      "source": "audit/trace/recorder.py",
+      "target": "crucis/trace/recorder.py",
+      "source_sha256": "e5674ebd92b516f4a1c0410fc8330d2cc735eddfd0b36fb6966b9a984f1816bb",
+      "bytes": 4122,
+      "extracted_sha256": "aec25a2ecb71c7aae5c8eaa0a96584c0756e4185cbbb845fd536f43e10de356f"
+    },
+    {
+      "source": "audit/trace/stages.py",
+      "target": "crucis/trace/stages.py",
+      "source_sha256": "e383fb2755cd06070bc6a7ea931b380103c0fca8b10213a6b575f6979fc1a114",
+      "bytes": 3716,
+      "extracted_sha256": "85397e56111f80c9992e4fee1be45cfbae897e2dbe561e879facac5056953499"
+    },
+    {
+      "source": "audit/trace/__init__.py",
+      "target": "crucis/trace/__init__.py",
+      "source_sha256": "12679f5b33fb40068dff1825e380196f796f7dc033a3ce5a527116c8c768807c",
+      "bytes": 18,
+      "extracted_sha256": "f15fc74547693250589a5be05013144b67504f37b09c6cab379a9174375a47f7"
+    },
+    {
+      "source": "audit/connections/integrations/causaliq.py",
+      "target": "crucis/connections/integrations/causaliq.py",
+      "source_sha256": "4a2b54393e3beed8e283c256dd55f8d0c256e1f295a210bcd3b7087b1aed350e",
+      "bytes": 5838,
+      "extracted_sha256": "7de0c4701b514243a346ef522cfee198528206aada573c2aa99ecc27f175a0f5"
+    },
+    {
+      "source": "audit/connections/integrations/legacy_recorded.py",
+      "target": "crucis/connections/integrations/legacy_recorded.py",
+      "source_sha256": "ee1304c22ac1a1a0ecc9a08fedd948c3ea0644fb92f24428a208c1b8a188d774",
+      "bytes": 2189,
+      "extracted_sha256": "bd84c6a86857ba819cc9a9beafdc6a80f4111e09c316673d265fb39dc5818b1f"
+    },
+    {
+      "source": "audit/connections/integrations/__init__.py",
+      "target": "crucis/connections/integrations/__init__.py",
+      "source_sha256": "d88213fca72f2b4f18dbeb93ea34ce816a580edb9fc287665cc411d041c848b7",
+      "bytes": 89,
+      "extracted_sha256": "9fec2fb8cd736b35137983e58c82cb8c6a29bb2f60e4b149b1c094d14235f13f"
+    },
+    {
+      "source": "audit/docs/checks/rebase_facts.py",
+      "target": "crucis/docs/checks/rebase_facts.py",
+      "source_sha256": "4452dbd23e59135cb6380332d2c7d6d5ee9f74db039572601091c5754f119e98",
+      "bytes": 5995,
+      "extracted_sha256": "48d5cff67bcc5d7d42b197dc01ca2ebe33ac98524be1d9ec6029a0329372ae02"
+    },
+    {
+      "source": "audit/docs/project/audit-package-build-2026-10-31.md",
+      "target": "crucis/docs/project/audit-package-build-2026-10-31.md",
+      "source_sha256": "631598789fb8847259f891bfedc6e5a4e9497dde864fad19f71af6727cb6994b",
+      "bytes": 9836,
+      "extracted_sha256": "631598789fb8847259f891bfedc6e5a4e9497dde864fad19f71af6727cb6994b"
+    },
+    {
+      "source": "audit/docs/project/audit-package-design-2026-10-30.md",
+      "target": "crucis/docs/project/audit-package-design-2026-10-30.md",
+      "source_sha256": "9343d04702f5bf767b2d2a77c676076edc6171e2bfe3124d8268af721ffb0fec",
+      "bytes": 24937,
+      "extracted_sha256": "9343d04702f5bf767b2d2a77c676076edc6171e2bfe3124d8268af721ffb0fec"
+    },
+    {
+      "source": "audit/docs/project/program-v3-excerpts.md",
+      "target": "crucis/docs/project/program-v3-excerpts.md",
+      "source_sha256": "50358ac604cd4fa2afc48fa854ec26cd67842f7e7cabbbf5da0e2c497253e41f",
+      "bytes": 9662,
+      "extracted_sha256": "50358ac604cd4fa2afc48fa854ec26cd67842f7e7cabbbf5da0e2c497253e41f"
+    },
+    {
+      "source": "audit/docs/project/q1-checkpoint-2026-10-31.md",
+      "target": "crucis/docs/project/q1-checkpoint-2026-10-31.md",
+      "source_sha256": "ca3f73b6efaf1dab02f1eb36337a1d8521a9808228e97ae096445b2dee136e5a",
+      "bytes": 11045,
+      "extracted_sha256": "ca3f73b6efaf1dab02f1eb36337a1d8521a9808228e97ae096445b2dee136e5a"
+    },
+    {
+      "source": "audit/docs/project/w2-rebase-2026-10-31.md",
+      "target": "crucis/docs/project/w2-rebase-2026-10-31.md",
+      "source_sha256": "a09891059614be08bb178a800cffb1973295a109b26c1a50314759648d459d6a",
+      "bytes": 17444,
+      "extracted_sha256": "a09891059614be08bb178a800cffb1973295a109b26c1a50314759648d459d6a"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/A-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/A-s1-definitions.json",
+      "source_sha256": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488",
+      "bytes": 87058,
+      "extracted_sha256": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/A-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/A-s1-trace.json",
+      "source_sha256": "21b3f035bed61a202c2c4adab24f88f7d8210d48cdc4f56cad96d363a8f3a297",
+      "bytes": 60644,
+      "extracted_sha256": "21b3f035bed61a202c2c4adab24f88f7d8210d48cdc4f56cad96d363a8f3a297"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/A-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/A-s2-plan.json",
+      "source_sha256": "06318c2389fd501921fa95030acb16833896b83d5699c51bf780a5e115424509",
+      "bytes": 57498,
+      "extracted_sha256": "06318c2389fd501921fa95030acb16833896b83d5699c51bf780a5e115424509"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/A-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/A-s2-receipts.json",
+      "source_sha256": "63dfb5ceb6b149318eb0682d0a1433b6e9f75860c71b49e940acd9b430362133",
+      "bytes": 91105,
+      "extracted_sha256": "63dfb5ceb6b149318eb0682d0a1433b6e9f75860c71b49e940acd9b430362133"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/api-scenarios.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/api-scenarios.json",
+      "source_sha256": "68f5aa076dca46e497ea60b9e16ef295a13a0cec0e074bcc6f762de4bb892b1a",
+      "bytes": 21352,
+      "extracted_sha256": "68f5aa076dca46e497ea60b9e16ef295a13a0cec0e074bcc6f762de4bb892b1a"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/B-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/B-s1-definitions.json",
+      "source_sha256": "e80c80fb978402ae75c2a8408d0db771c0f4e3c89aac435b191339ca347be11f",
+      "bytes": 80263,
+      "extracted_sha256": "e80c80fb978402ae75c2a8408d0db771c0f4e3c89aac435b191339ca347be11f"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/B-s1-review-assessment-source.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/B-s1-review-assessment-source.json",
+      "source_sha256": "21607b3548b3efdf90be0e72219e8c3f837782581465f8f99d05ecd45171a13c",
+      "bytes": 4865,
+      "extracted_sha256": "21607b3548b3efdf90be0e72219e8c3f837782581465f8f99d05ecd45171a13c"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/B-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/B-s1-trace.json",
+      "source_sha256": "afffd0c4c272ee200dcdead44c476450b79221b0cfcb55ec4c79f17dfaf86fb4",
+      "bytes": 6641,
+      "extracted_sha256": "afffd0c4c272ee200dcdead44c476450b79221b0cfcb55ec4c79f17dfaf86fb4"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/B-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/B-s2-plan.json",
+      "source_sha256": "f657ff2c7bc3592103f7965d5bbb15704e0b0ff8f3694d395c1e3d9c696884e4",
+      "bytes": 44023,
+      "extracted_sha256": "f657ff2c7bc3592103f7965d5bbb15704e0b0ff8f3694d395c1e3d9c696884e4"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/B-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/B-s2-receipts.json",
+      "source_sha256": "c3adfc16f72e86a8d42201dab6e12de5c0acb763c01d35738331a2e30437627e",
+      "bytes": 60454,
+      "extracted_sha256": "c3adfc16f72e86a8d42201dab6e12de5c0acb763c01d35738331a2e30437627e"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/bridge-H-handoff-and-amendment.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/bridge-H-handoff-and-amendment.json",
+      "source_sha256": "067edbfc09a33b4d4c734c8a359ae234ba1ae62095186a5f392fb22cf299f572",
+      "bytes": 12624,
+      "extracted_sha256": "067edbfc09a33b4d4c734c8a359ae234ba1ae62095186a5f392fb22cf299f572"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/bridge-M-input-binding.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/bridge-M-input-binding.json",
+      "source_sha256": "4c3f356bbe3d9acbdf5ff20eee9d2b667a05d93cc7906c50e4b770b3932acf42",
+      "bytes": 9827,
+      "extracted_sha256": "4c3f356bbe3d9acbdf5ff20eee9d2b667a05d93cc7906c50e4b770b3932acf42"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/bridge-P2-amended-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/bridge-P2-amended-plan.json",
+      "source_sha256": "eb124d656fb504cf5b56b681e41122e6b6e55842ef5293684c21f2585699d690",
+      "bytes": 6801,
+      "extracted_sha256": "eb124d656fb504cf5b56b681e41122e6b6e55842ef5293684c21f2585699d690"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/bridge-R-request-preview.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/bridge-R-request-preview.json",
+      "source_sha256": "76a27da5ddaf0975d337df03933ea867d4f01f33da346d99fa763ae7e73383c6",
+      "bytes": 10330,
+      "extracted_sha256": "76a27da5ddaf0975d337df03933ea867d4f01f33da346d99fa763ae7e73383c6"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/C-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/C-s1-definitions.json",
+      "source_sha256": "4ddfc37580fbacbbaab933246287691b1873a9a32b64f0ba7f5f05b27751dc4d",
+      "bytes": 64765,
+      "extracted_sha256": "4ddfc37580fbacbbaab933246287691b1873a9a32b64f0ba7f5f05b27751dc4d"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/C-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/C-s1-trace.json",
+      "source_sha256": "414599d950a99b6d9f899f12533b0f8a2a33a6689b64cb0d419f0569ddfbafb3",
+      "bytes": 24764,
+      "extracted_sha256": "414599d950a99b6d9f899f12533b0f8a2a33a6689b64cb0d419f0569ddfbafb3"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/C-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/C-s2-plan.json",
+      "source_sha256": "364b26705e0c0c60e8ccda1d6efbbd7d81d0ae42be72ac10a6739718e31e1f64",
+      "bytes": 43320,
+      "extracted_sha256": "364b26705e0c0c60e8ccda1d6efbbd7d81d0ae42be72ac10a6739718e31e1f64"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/C-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/C-s2-receipts.json",
+      "source_sha256": "cde6262635fd9e0fec51d4f002b35b22d30480eace44ebf6a9ecf07ab07196b3",
+      "bytes": 71802,
+      "extracted_sha256": "cde6262635fd9e0fec51d4f002b35b22d30480eace44ebf6a9ecf07ab07196b3"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/D-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/D-s1-definitions.json",
+      "source_sha256": "d83acd8e424cb5eee36fa3876b7e6e4990ca9ea65bf7c4343988c375ed695809",
+      "bytes": 58380,
+      "extracted_sha256": "d83acd8e424cb5eee36fa3876b7e6e4990ca9ea65bf7c4343988c375ed695809"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/D-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/D-s1-trace.json",
+      "source_sha256": "05305a7cacad6105241a9a30234761f6de6c1a87aadb764419c6a709ab21e24a",
+      "bytes": 7949,
+      "extracted_sha256": "05305a7cacad6105241a9a30234761f6de6c1a87aadb764419c6a709ab21e24a"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/D-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/D-s2-plan.json",
+      "source_sha256": "5fedcaf5f95d1f9db3ac27de250c1adf5dd95094bc6ba6fa8a4d0b09be333bdc",
+      "bytes": 50653,
+      "extracted_sha256": "5fedcaf5f95d1f9db3ac27de250c1adf5dd95094bc6ba6fa8a4d0b09be333bdc"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/D-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/D-s2-receipts.json",
+      "source_sha256": "35db96e3647bce069c2ad78dd86dc9fe5915b9e6c9965680cc160fc8487f0105",
+      "bytes": 59575,
+      "extracted_sha256": "35db96e3647bce069c2ad78dd86dc9fe5915b9e6c9965680cc160fc8487f0105"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/E-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/E-s1-definitions.json",
+      "source_sha256": "6d89d00e60d8c4fe79b202e416f5b69c7e998b52eaf0fb4524656176e67e80d6",
+      "bytes": 55901,
+      "extracted_sha256": "6d89d00e60d8c4fe79b202e416f5b69c7e998b52eaf0fb4524656176e67e80d6"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/E-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/E-s1-trace.json",
+      "source_sha256": "ff0243d003982a95878cdc04e71f01815fc15f6149771f4f9217fdb415a84bc8",
+      "bytes": 7867,
+      "extracted_sha256": "ff0243d003982a95878cdc04e71f01815fc15f6149771f4f9217fdb415a84bc8"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/E-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/E-s2-plan.json",
+      "source_sha256": "64f111c6eb500d95af952112acb90686ee5f45bba7e1e2543ecd6576d75eb01c",
+      "bytes": 49390,
+      "extracted_sha256": "64f111c6eb500d95af952112acb90686ee5f45bba7e1e2543ecd6576d75eb01c"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/E-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/E-s2-receipts.json",
+      "source_sha256": "658416b0ba3479156782399cd3d249c87d22eb35326515a452b15ae518bc4926",
+      "bytes": 51271,
+      "extracted_sha256": "658416b0ba3479156782399cd3d249c87d22eb35326515a452b15ae518bc4926"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/F-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/F-s1-definitions.json",
+      "source_sha256": "04184b6965e61ba0cef40913b4c9a68a088324aa79f05add4a18934814c74c26",
+      "bytes": 70801,
+      "extracted_sha256": "04184b6965e61ba0cef40913b4c9a68a088324aa79f05add4a18934814c74c26"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/F-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/F-s1-trace.json",
+      "source_sha256": "15ba290a62928532f79a274487789fec621cf3361ce565309e5225172a59a746",
+      "bytes": 26158,
+      "extracted_sha256": "15ba290a62928532f79a274487789fec621cf3361ce565309e5225172a59a746"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/F-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/F-s2-plan.json",
+      "source_sha256": "899d8f4bef29cfd5a87daa96fa281d069ff615ffdf214aa6512ed8c91e96f12b",
+      "bytes": 45209,
+      "extracted_sha256": "899d8f4bef29cfd5a87daa96fa281d069ff615ffdf214aa6512ed8c91e96f12b"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/F-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/F-s2-receipts.json",
+      "source_sha256": "a0fc0afb6225bcc8b5fdb97eeb8e5cce41c10ef25542e14e8114c6086a6a4927",
+      "bytes": 56011,
+      "extracted_sha256": "a0fc0afb6225bcc8b5fdb97eeb8e5cce41c10ef25542e14e8114c6086a6a4927"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/G-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/G-s1-definitions.json",
+      "source_sha256": "51d8ea218ea04b9dcd8153efae4d170ff556698ad6240fa9390931ee3228261c",
+      "bytes": 60088,
+      "extracted_sha256": "51d8ea218ea04b9dcd8153efae4d170ff556698ad6240fa9390931ee3228261c"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/G-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/G-s1-trace.json",
+      "source_sha256": "5292585dd18547a5e604728e375983dfd49c20294e4a2d7fe162b3faba7d60b2",
+      "bytes": 59246,
+      "extracted_sha256": "5292585dd18547a5e604728e375983dfd49c20294e4a2d7fe162b3faba7d60b2"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/G-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/G-s2-plan.json",
+      "source_sha256": "e89d4e1120c06c94933a5c335b88b21e1c3e2ddf6936bf0a0440bcafc8f70f0e",
+      "bytes": 45099,
+      "extracted_sha256": "e89d4e1120c06c94933a5c335b88b21e1c3e2ddf6936bf0a0440bcafc8f70f0e"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/G-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/G-s2-receipts.json",
+      "source_sha256": "ab53283be64b43e358b93f1d3afedd7142996318ff8fc464ea4e9540efda8be7",
+      "bytes": 56831,
+      "extracted_sha256": "ab53283be64b43e358b93f1d3afedd7142996318ff8fc464ea4e9540efda8be7"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/H-s1-definitions.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/H-s1-definitions.json",
+      "source_sha256": "0068589b5bf900a27eaf3245aff5af57dc2d965757a6063653ab8fd59d521dde",
+      "bytes": 82781,
+      "extracted_sha256": "0068589b5bf900a27eaf3245aff5af57dc2d965757a6063653ab8fd59d521dde"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/H-s1-trace.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/H-s1-trace.json",
+      "source_sha256": "45f87d3861c667a372b1ad9b5d7b4d02546202ca7b80cadbbd1b99f22402a715",
+      "bytes": 7919,
+      "extracted_sha256": "45f87d3861c667a372b1ad9b5d7b4d02546202ca7b80cadbbd1b99f22402a715"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/H-s2-plan.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/H-s2-plan.json",
+      "source_sha256": "e13c6d27dd8729b46379d83d79c9bccd72b6fa2546512ce229da10e712328038",
+      "bytes": 49611,
+      "extracted_sha256": "e13c6d27dd8729b46379d83d79c9bccd72b6fa2546512ce229da10e712328038"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/H-s2-receipts.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/H-s2-receipts.json",
+      "source_sha256": "3b0588d655d839e03ea56bfe0be7cc513d4e4e3dfd5b4c3c22ed14f3113bb045",
+      "bytes": 56313,
+      "extracted_sha256": "3b0588d655d839e03ea56bfe0be7cc513d4e4e3dfd5b4c3c22ed14f3113bb045"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/manifest.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/manifest.json",
+      "source_sha256": "dc175d63de9de6ba5a66c92e687e0e4269173fbb6a6f5ccc0c000205a0d3766b",
+      "bytes": 314726,
+      "extracted_sha256": "dc175d63de9de6ba5a66c92e687e0e4269173fbb6a6f5ccc0c000205a0d3766b"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/negative-cases.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/negative-cases.json",
+      "source_sha256": "5c5a2e88a24a068c6e8c870b111c7c74069389501e714cddfdee805e9c5846de",
+      "bytes": 22177,
+      "extracted_sha256": "5c5a2e88a24a068c6e8c870b111c7c74069389501e714cddfdee805e9c5846de"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/README.md",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/README.md",
+      "source_sha256": "9af2573d0f8f65bf253396b97fc9e6e154101b58e9d63762c5c25ebdc13e05a1",
+      "bytes": 3170,
+      "extracted_sha256": "9af2573d0f8f65bf253396b97fc9e6e154101b58e9d63762c5c25ebdc13e05a1"
+    },
+    {
+      "source": "audit/docs/subsystem2-specimens-2026-11-02/schema-preservation-examples.json",
+      "target": "crucis/docs/subsystem2-specimens-2026-11-02/schema-preservation-examples.json",
+      "source_sha256": "4b049e55c285c06527c5fe92ecd3f77cff298fdde427334e2a66852df2735a6b",
+      "bytes": 53342,
+      "extracted_sha256": "4b049e55c285c06527c5fe92ecd3f77cff298fdde427334e2a66852df2735a6b"
+    },
+    {
+      "source": "tests/test_audit_connections_evidence.py",
+      "target": "tests/test_audit_connections_evidence.py",
+      "source_sha256": "5223b9eec247c9f9c83d9f95ab1c748b8ef5607527463f35898f6bd73b6f35ab",
+      "bytes": 6840,
+      "extracted_sha256": "929952a665aca21326e6ef44f823409edaf9620abd91b658222fe5bfb39f30c2"
+    },
+    {
+      "source": "tests/test_audit_connections_families.py",
+      "target": "tests/test_audit_connections_families.py",
+      "source_sha256": "e9b648da7698df875c98d22559d28ef43614e9f98c2999604d58ec5d2e7b8072",
+      "bytes": 9351,
+      "extracted_sha256": "327526a46c4a4539c5ec5fe30590c8787c9521eb5873e740079ec12cba315f79"
+    },
+    {
+      "source": "tests/test_audit_connections_history.py",
+      "target": "tests/test_audit_connections_history.py",
+      "source_sha256": "cb31a138d3e7a89f84b26fc7d9bb084545faa28f1edf40631ab8aac8617da403",
+      "bytes": 11845,
+      "extracted_sha256": "6a680b70732a4962bf5d05be7de66aa108fdc002f722bfea8ce9cebca4a2a5fe"
+    },
+    {
+      "source": "tests/test_audit_connections_integration.py",
+      "target": "tests/test_audit_connections_integration.py",
+      "source_sha256": "7e7e7e1c828c56036bfe7456512dee9f4cae44933b6108ec3808b3e3b18ca7d5",
+      "bytes": 12293,
+      "extracted_sha256": "f5608c0399541f2d216a2ef2c27c15f3c98557d7ee0150b0d08728071ee616ca"
+    },
+    {
+      "source": "tests/test_audit_connections_ports.py",
+      "target": "tests/test_audit_connections_ports.py",
+      "source_sha256": "37e02cef761d83caeb54544df15ab4c0def74d1a487ab8e8f2b21165912184a9",
+      "bytes": 21267,
+      "extracted_sha256": "bce3be18e8b8d65c912ff7f33b06c4bf3af61a7b95fe8580679e5b76d434027a"
+    },
+    {
+      "source": "tests/test_audit_connections_schema.py",
+      "target": "tests/test_audit_connections_schema.py",
+      "source_sha256": "5943e310d73b4e6a354f688d11daf19b5821e827971923d6c151f52af7ffed9e",
+      "bytes": 3750,
+      "extracted_sha256": "d0b59207f4ae47726f86121682e6827ec6300def198e3a75b205489b9c1a5b52"
+    },
+    {
+      "source": "tests/test_audit_connections_semantics.py",
+      "target": "tests/test_audit_connections_semantics.py",
+      "source_sha256": "a76832749ad630da8bae0925fe18e1720c9c32322b4d1ef0eeaaee46fb97ee99",
+      "bytes": 10205,
+      "extracted_sha256": "46c6eb752db84a746bd828a27bd9a9a22a07f656c0b033e10029544941c801b4"
+    },
+    {
+      "source": "tests/test_audit_controls.py",
+      "target": "tests/test_audit_controls.py",
+      "source_sha256": "63ba96889430d0f009a48a7772851c3e6ba835f2b9570bf2e1a99c36bdc9f0cd",
+      "bytes": 5898,
+      "extracted_sha256": "7e3d51d11535725282c01c7054c9427b95aaf6ba140388fa5e36d1bdea530547"
+    },
+    {
+      "source": "tests/test_audit_core.py",
+      "target": "tests/test_audit_core.py",
+      "source_sha256": "54be46e9d695e65056f316f569e38926b55362fa142d7e8d4223679890aa9e1f",
+      "bytes": 10424,
+      "extracted_sha256": "a7f3fb767834908f1abfb01eeff4f1ab57ebf26f5948402aab951d8a4819dd78"
+    },
+    {
+      "source": "tests/test_audit_experiments_definitions.py",
+      "target": "tests/test_audit_experiments_definitions.py",
+      "source_sha256": "e2df72b40661d3c7159516b73561cd917ae1770d70cfbffaa9576dd6d84b66eb",
+      "bytes": 7583,
+      "extracted_sha256": "5bc400e8756e1ba88bfcad71f40515a789cc84098d971e7a7c398c6fe82718ee"
+    },
+    {
+      "source": "tests/test_audit_experiments_evaluation.py",
+      "target": "tests/test_audit_experiments_evaluation.py",
+      "source_sha256": "98ab0d23d4d2c74334bcaf4a74d8817b6ac4f989929c397a5207890d5722bc17",
+      "bytes": 9713,
+      "extracted_sha256": "d036830dcffeed3119366be6291951cbf8d045bf3c6913ead6bf6cd3437d68e9"
+    },
+    {
+      "source": "tests/test_audit_experiments_families.py",
+      "target": "tests/test_audit_experiments_families.py",
+      "source_sha256": "d5b0a99ba9fdfd82ac362019d4ae7e3aee27882f5c7318b18e66133698cfc92f",
+      "bytes": 13939,
+      "extracted_sha256": "f4c98b4cbe70c597981cf10a9f8bcee1c6a7faa4df5a74adb7e0c7e9d2f7c521"
+    },
+    {
+      "source": "tests/test_audit_experiments_handoff.py",
+      "target": "tests/test_audit_experiments_handoff.py",
+      "source_sha256": "2a44242e65f0ec14f523b0dc433a85bf7e433c0503b25097074ebf194cc373ac",
+      "bytes": 15374,
+      "extracted_sha256": "a892f8c9fb4aacd6741e975905a14b27968f993638877514e99db8300e2c9dfd"
+    },
+    {
+      "source": "tests/test_audit_experiments_integration.py",
+      "target": "tests/test_audit_experiments_integration.py",
+      "source_sha256": "72ca5101605850db1877cfdd7409e06d5f43687a49cfc390041e544d5fe89841",
+      "bytes": 30192,
+      "extracted_sha256": "5ef4de3d04a2c00a27546b86311e2fff5c337f77ddc207f31898e5a995ffddde"
+    },
+    {
+      "source": "tests/test_audit_experiments_legacy.py",
+      "target": "tests/test_audit_experiments_legacy.py",
+      "source_sha256": "4f3ba46ac28a8a6396876812ef7b6e581fd53d2bb0af6557fec2930550a685fb",
+      "bytes": 12000,
+      "extracted_sha256": "e0194417b798332a450369a750def67aa2714a70c53cf9f25702c9775f82bce3"
+    },
+    {
+      "source": "tests/test_audit_experiments_lifecycle.py",
+      "target": "tests/test_audit_experiments_lifecycle.py",
+      "source_sha256": "7eb96b12b31a2d38ff4cca9681bde384336e6a45fa14522b0c9460cb87f41c1d",
+      "bytes": 9472,
+      "extracted_sha256": "5f10b846c5e04de187f705bae17b6639fe160ddc8903cc0a950fa430afe46364"
+    },
+    {
+      "source": "tests/test_audit_experiments_services.py",
+      "target": "tests/test_audit_experiments_services.py",
+      "source_sha256": "856f9fd8768b8c8b6692bf70cef0f202a3685faf113807ffa85fbbe864e69d59",
+      "bytes": 10847,
+      "extracted_sha256": "2841e27232a6bc258c8634ddc32d4188b3e25362db5e720530714e9a998c12e0"
+    },
+    {
+      "source": "tests/test_audit_experiments_wire.py",
+      "target": "tests/test_audit_experiments_wire.py",
+      "source_sha256": "84c09a560228f6bca357448d046bc96573b1eebb68671e83fcaed938d95de9f3",
+      "bytes": 11172,
+      "extracted_sha256": "09ca5fea66545b6c23476cf19eadac8cc457c2068d4dde3cac9dc967307b8441"
+    },
+    {
+      "source": "tests/test_audit_l0.py",
+      "target": "tests/test_audit_l0.py",
+      "source_sha256": "1fb158236a698cfbb1d862a0413665fee417125502413da648447afeaeceeec0",
+      "bytes": 3371,
+      "extracted_sha256": "cb20fed883a6ff5f00c7beae230461d16104dc792e3015c801e0fc5e070b4d8c"
+    },
+    {
+      "source": "tests/test_audit_report.py",
+      "target": "tests/test_audit_report.py",
+      "source_sha256": "33ef2761b60d90c56206af6c1d99549e0d62e6d67223454988f0c8e88a722ce9",
+      "bytes": 6477,
+      "extracted_sha256": "de2b8b301e446ef15e424e19b9c9219566f698276017ddb5b57f9c045bbae874"
+    },
+    {
+      "source": "tests/test_audit_rerun.py",
+      "target": "tests/test_audit_rerun.py",
+      "source_sha256": "cbe59fb77d809c8e4b36e95c4f239f05635a18dcc6aeb9b2f7d5293aad9821b1",
+      "bytes": 2580,
+      "extracted_sha256": "fc572714a106cb706e8bd687af9667bc22add8d847628ed4cec08e93c6c73012"
+    },
+    {
+      "source": "tests/test_audit_trace.py",
+      "target": "tests/test_audit_trace.py",
+      "source_sha256": "78e40c4d06e54d6e66962a206ea5a21cf486b59fd53216e8e76c257058f55f34",
+      "bytes": 6178,
+      "extracted_sha256": "b68a0b71182fbe0595d32768dcfe03996f86f113e75451f08755c4284b279320"
+    },
+    {
+      "source": "tests/audit_fixtures/s1_native_fixture.py",
+      "target": "tests/audit_fixtures/s1_native_fixture.py",
+      "source_sha256": "d09f8f6abb4a9225e3ce88b8d787bab646f435afbfc6b5fe1155959502997237",
+      "bytes": 1722,
+      "extracted_sha256": "07255877689f40037f75e9e826e321b374fd41fbf32a3f004ebfce036b185c59"
+    },
+    {
+      "source": "tests/audit_fixtures/toy_pipeline.py",
+      "target": "tests/audit_fixtures/toy_pipeline.py",
+      "source_sha256": "3c0c05f3137d875b29e4911449a528b3235282751e5cfcb62f6000c8ba77190c",
+      "bytes": 700,
+      "extracted_sha256": "99bab45c144a714ac9017b831aa63a5066c84c87be1c3f9dd0ed3c26c006017b"
+    },
+    {
+      "source": "tests/audit_fixtures/__init__.py",
+      "target": "tests/audit_fixtures/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "extracted_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c1.json",
+      "target": "tests/audit_fixtures/sc1/c1.json",
+      "source_sha256": "df4354aae8b4993c741913e96578bdaa2f9acc272354e32caec1a4e1cd86febd",
+      "bytes": 60618,
+      "extracted_sha256": "df4354aae8b4993c741913e96578bdaa2f9acc272354e32caec1a4e1cd86febd"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c2.json",
+      "target": "tests/audit_fixtures/sc1/c2.json",
+      "source_sha256": "e0611e10456ea1db3fd834bd9c36692a14ce97df8767bdb171a6d89621345316",
+      "bytes": 62910,
+      "extracted_sha256": "e0611e10456ea1db3fd834bd9c36692a14ce97df8767bdb171a6d89621345316"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c3.json",
+      "target": "tests/audit_fixtures/sc1/c3.json",
+      "source_sha256": "93edbf57c54e142c1c9ae173e37589b748f90d32dde71134c1b17a37ff0b98e9",
+      "bytes": 68494,
+      "extracted_sha256": "93edbf57c54e142c1c9ae173e37589b748f90d32dde71134c1b17a37ff0b98e9"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c4.json",
+      "target": "tests/audit_fixtures/sc1/c4.json",
+      "source_sha256": "ba15b864ccea935bd11cdb9208e7edc92e47b10be2621cca7cec4945ffed437f",
+      "bytes": 38445,
+      "extracted_sha256": "ba15b864ccea935bd11cdb9208e7edc92e47b10be2621cca7cec4945ffed437f"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c5.json",
+      "target": "tests/audit_fixtures/sc1/c5.json",
+      "source_sha256": "e3f276f55921f7b3718a4cd99cf0aebe86613b8fafb207e85bb08db26d342ad3",
+      "bytes": 66387,
+      "extracted_sha256": "e3f276f55921f7b3718a4cd99cf0aebe86613b8fafb207e85bb08db26d342ad3"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c6.json",
+      "target": "tests/audit_fixtures/sc1/c6.json",
+      "source_sha256": "2af7e283e8760585236ec3c958e00b32830b3a2a5eeaee7d0ade95c6b8e1edfd",
+      "bytes": 38621,
+      "extracted_sha256": "2af7e283e8760585236ec3c958e00b32830b3a2a5eeaee7d0ade95c6b8e1edfd"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c7.json",
+      "target": "tests/audit_fixtures/sc1/c7.json",
+      "source_sha256": "7ce6470d3ca11f6273b350bfae27c560ba35face74558d62273e79e3fd468edc",
+      "bytes": 44734,
+      "extracted_sha256": "7ce6470d3ca11f6273b350bfae27c560ba35face74558d62273e79e3fd468edc"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c8.json",
+      "target": "tests/audit_fixtures/sc1/c8.json",
+      "source_sha256": "e2fdb1425b9767eca40e559f73ca8f8ccc124aa2775fdfe55b814281a9812ae1",
+      "bytes": 37231,
+      "extracted_sha256": "e2fdb1425b9767eca40e559f73ca8f8ccc124aa2775fdfe55b814281a9812ae1"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/c9.json",
+      "target": "tests/audit_fixtures/sc1/c9.json",
+      "source_sha256": "0388bd830de8ab0947745086711b8f6729845d0f959f977795391344d2bc8f44",
+      "bytes": 49811,
+      "extracted_sha256": "0388bd830de8ab0947745086711b8f6729845d0f959f977795391344d2bc8f44"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/h1.json",
+      "target": "tests/audit_fixtures/sc1/h1.json",
+      "source_sha256": "4046eaaa939dde780fb22e01cb7de080d02ab6a2fadd369b92378fc5c175de00",
+      "bytes": 145315,
+      "extracted_sha256": "4046eaaa939dde780fb22e01cb7de080d02ab6a2fadd369b92378fc5c175de00"
+    },
+    {
+      "source": "tests/audit_fixtures/sc1/o1.json",
+      "target": "tests/audit_fixtures/sc1/o1.json",
+      "source_sha256": "a063217ad1f3b472f9f379a07a59368a4e79cb2101202486f296fadda99e4154",
+      "bytes": 77710,
+      "extracted_sha256": "a063217ad1f3b472f9f379a07a59368a4e79cb2101202486f296fadda99e4154"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/A-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/A-s1-definitions.json",
+      "source_sha256": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488",
+      "bytes": 87058,
+      "extracted_sha256": "d61febe35e1df5955d543bca7cbd3b8eccad48301841369fbf24b6ac8222b488"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/A-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/A-s1-trace.json",
+      "source_sha256": "21b3f035bed61a202c2c4adab24f88f7d8210d48cdc4f56cad96d363a8f3a297",
+      "bytes": 60644,
+      "extracted_sha256": "21b3f035bed61a202c2c4adab24f88f7d8210d48cdc4f56cad96d363a8f3a297"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/A-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/A-s2-plan.json",
+      "source_sha256": "06318c2389fd501921fa95030acb16833896b83d5699c51bf780a5e115424509",
+      "bytes": 57498,
+      "extracted_sha256": "06318c2389fd501921fa95030acb16833896b83d5699c51bf780a5e115424509"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/A-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/A-s2-receipts.json",
+      "source_sha256": "63dfb5ceb6b149318eb0682d0a1433b6e9f75860c71b49e940acd9b430362133",
+      "bytes": 91105,
+      "extracted_sha256": "63dfb5ceb6b149318eb0682d0a1433b6e9f75860c71b49e940acd9b430362133"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/api-scenarios.json",
+      "target": "tests/audit_fixtures/sc2/api-scenarios.json",
+      "source_sha256": "68f5aa076dca46e497ea60b9e16ef295a13a0cec0e074bcc6f762de4bb892b1a",
+      "bytes": 21352,
+      "extracted_sha256": "68f5aa076dca46e497ea60b9e16ef295a13a0cec0e074bcc6f762de4bb892b1a"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/B-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/B-s1-definitions.json",
+      "source_sha256": "e80c80fb978402ae75c2a8408d0db771c0f4e3c89aac435b191339ca347be11f",
+      "bytes": 80263,
+      "extracted_sha256": "e80c80fb978402ae75c2a8408d0db771c0f4e3c89aac435b191339ca347be11f"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/B-s1-review-assessment-source.json",
+      "target": "tests/audit_fixtures/sc2/B-s1-review-assessment-source.json",
+      "source_sha256": "21607b3548b3efdf90be0e72219e8c3f837782581465f8f99d05ecd45171a13c",
+      "bytes": 4865,
+      "extracted_sha256": "21607b3548b3efdf90be0e72219e8c3f837782581465f8f99d05ecd45171a13c"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/B-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/B-s1-trace.json",
+      "source_sha256": "afffd0c4c272ee200dcdead44c476450b79221b0cfcb55ec4c79f17dfaf86fb4",
+      "bytes": 6641,
+      "extracted_sha256": "afffd0c4c272ee200dcdead44c476450b79221b0cfcb55ec4c79f17dfaf86fb4"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/B-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/B-s2-plan.json",
+      "source_sha256": "f657ff2c7bc3592103f7965d5bbb15704e0b0ff8f3694d395c1e3d9c696884e4",
+      "bytes": 44023,
+      "extracted_sha256": "f657ff2c7bc3592103f7965d5bbb15704e0b0ff8f3694d395c1e3d9c696884e4"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/B-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/B-s2-receipts.json",
+      "source_sha256": "c3adfc16f72e86a8d42201dab6e12de5c0acb763c01d35738331a2e30437627e",
+      "bytes": 60454,
+      "extracted_sha256": "c3adfc16f72e86a8d42201dab6e12de5c0acb763c01d35738331a2e30437627e"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/bridge-H-handoff-and-amendment.json",
+      "target": "tests/audit_fixtures/sc2/bridge-H-handoff-and-amendment.json",
+      "source_sha256": "067edbfc09a33b4d4c734c8a359ae234ba1ae62095186a5f392fb22cf299f572",
+      "bytes": 12624,
+      "extracted_sha256": "067edbfc09a33b4d4c734c8a359ae234ba1ae62095186a5f392fb22cf299f572"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/bridge-M-input-binding.json",
+      "target": "tests/audit_fixtures/sc2/bridge-M-input-binding.json",
+      "source_sha256": "4c3f356bbe3d9acbdf5ff20eee9d2b667a05d93cc7906c50e4b770b3932acf42",
+      "bytes": 9827,
+      "extracted_sha256": "4c3f356bbe3d9acbdf5ff20eee9d2b667a05d93cc7906c50e4b770b3932acf42"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/bridge-P2-amended-plan.json",
+      "target": "tests/audit_fixtures/sc2/bridge-P2-amended-plan.json",
+      "source_sha256": "eb124d656fb504cf5b56b681e41122e6b6e55842ef5293684c21f2585699d690",
+      "bytes": 6801,
+      "extracted_sha256": "eb124d656fb504cf5b56b681e41122e6b6e55842ef5293684c21f2585699d690"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/bridge-R-request-preview.json",
+      "target": "tests/audit_fixtures/sc2/bridge-R-request-preview.json",
+      "source_sha256": "76a27da5ddaf0975d337df03933ea867d4f01f33da346d99fa763ae7e73383c6",
+      "bytes": 10330,
+      "extracted_sha256": "76a27da5ddaf0975d337df03933ea867d4f01f33da346d99fa763ae7e73383c6"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/C-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/C-s1-definitions.json",
+      "source_sha256": "4ddfc37580fbacbbaab933246287691b1873a9a32b64f0ba7f5f05b27751dc4d",
+      "bytes": 64765,
+      "extracted_sha256": "4ddfc37580fbacbbaab933246287691b1873a9a32b64f0ba7f5f05b27751dc4d"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/C-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/C-s1-trace.json",
+      "source_sha256": "414599d950a99b6d9f899f12533b0f8a2a33a6689b64cb0d419f0569ddfbafb3",
+      "bytes": 24764,
+      "extracted_sha256": "414599d950a99b6d9f899f12533b0f8a2a33a6689b64cb0d419f0569ddfbafb3"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/C-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/C-s2-plan.json",
+      "source_sha256": "364b26705e0c0c60e8ccda1d6efbbd7d81d0ae42be72ac10a6739718e31e1f64",
+      "bytes": 43320,
+      "extracted_sha256": "364b26705e0c0c60e8ccda1d6efbbd7d81d0ae42be72ac10a6739718e31e1f64"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/C-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/C-s2-receipts.json",
+      "source_sha256": "cde6262635fd9e0fec51d4f002b35b22d30480eace44ebf6a9ecf07ab07196b3",
+      "bytes": 71802,
+      "extracted_sha256": "cde6262635fd9e0fec51d4f002b35b22d30480eace44ebf6a9ecf07ab07196b3"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/D-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/D-s1-definitions.json",
+      "source_sha256": "d83acd8e424cb5eee36fa3876b7e6e4990ca9ea65bf7c4343988c375ed695809",
+      "bytes": 58380,
+      "extracted_sha256": "d83acd8e424cb5eee36fa3876b7e6e4990ca9ea65bf7c4343988c375ed695809"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/D-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/D-s1-trace.json",
+      "source_sha256": "05305a7cacad6105241a9a30234761f6de6c1a87aadb764419c6a709ab21e24a",
+      "bytes": 7949,
+      "extracted_sha256": "05305a7cacad6105241a9a30234761f6de6c1a87aadb764419c6a709ab21e24a"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/D-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/D-s2-plan.json",
+      "source_sha256": "5fedcaf5f95d1f9db3ac27de250c1adf5dd95094bc6ba6fa8a4d0b09be333bdc",
+      "bytes": 50653,
+      "extracted_sha256": "5fedcaf5f95d1f9db3ac27de250c1adf5dd95094bc6ba6fa8a4d0b09be333bdc"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/D-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/D-s2-receipts.json",
+      "source_sha256": "35db96e3647bce069c2ad78dd86dc9fe5915b9e6c9965680cc160fc8487f0105",
+      "bytes": 59575,
+      "extracted_sha256": "35db96e3647bce069c2ad78dd86dc9fe5915b9e6c9965680cc160fc8487f0105"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/E-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/E-s1-definitions.json",
+      "source_sha256": "6d89d00e60d8c4fe79b202e416f5b69c7e998b52eaf0fb4524656176e67e80d6",
+      "bytes": 55901,
+      "extracted_sha256": "6d89d00e60d8c4fe79b202e416f5b69c7e998b52eaf0fb4524656176e67e80d6"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/E-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/E-s1-trace.json",
+      "source_sha256": "ff0243d003982a95878cdc04e71f01815fc15f6149771f4f9217fdb415a84bc8",
+      "bytes": 7867,
+      "extracted_sha256": "ff0243d003982a95878cdc04e71f01815fc15f6149771f4f9217fdb415a84bc8"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/E-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/E-s2-plan.json",
+      "source_sha256": "64f111c6eb500d95af952112acb90686ee5f45bba7e1e2543ecd6576d75eb01c",
+      "bytes": 49390,
+      "extracted_sha256": "64f111c6eb500d95af952112acb90686ee5f45bba7e1e2543ecd6576d75eb01c"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/E-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/E-s2-receipts.json",
+      "source_sha256": "658416b0ba3479156782399cd3d249c87d22eb35326515a452b15ae518bc4926",
+      "bytes": 51271,
+      "extracted_sha256": "658416b0ba3479156782399cd3d249c87d22eb35326515a452b15ae518bc4926"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/F-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/F-s1-definitions.json",
+      "source_sha256": "04184b6965e61ba0cef40913b4c9a68a088324aa79f05add4a18934814c74c26",
+      "bytes": 70801,
+      "extracted_sha256": "04184b6965e61ba0cef40913b4c9a68a088324aa79f05add4a18934814c74c26"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/F-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/F-s1-trace.json",
+      "source_sha256": "15ba290a62928532f79a274487789fec621cf3361ce565309e5225172a59a746",
+      "bytes": 26158,
+      "extracted_sha256": "15ba290a62928532f79a274487789fec621cf3361ce565309e5225172a59a746"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/F-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/F-s2-plan.json",
+      "source_sha256": "899d8f4bef29cfd5a87daa96fa281d069ff615ffdf214aa6512ed8c91e96f12b",
+      "bytes": 45209,
+      "extracted_sha256": "899d8f4bef29cfd5a87daa96fa281d069ff615ffdf214aa6512ed8c91e96f12b"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/F-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/F-s2-receipts.json",
+      "source_sha256": "a0fc0afb6225bcc8b5fdb97eeb8e5cce41c10ef25542e14e8114c6086a6a4927",
+      "bytes": 56011,
+      "extracted_sha256": "a0fc0afb6225bcc8b5fdb97eeb8e5cce41c10ef25542e14e8114c6086a6a4927"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/G-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/G-s1-definitions.json",
+      "source_sha256": "51d8ea218ea04b9dcd8153efae4d170ff556698ad6240fa9390931ee3228261c",
+      "bytes": 60088,
+      "extracted_sha256": "51d8ea218ea04b9dcd8153efae4d170ff556698ad6240fa9390931ee3228261c"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/G-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/G-s1-trace.json",
+      "source_sha256": "5292585dd18547a5e604728e375983dfd49c20294e4a2d7fe162b3faba7d60b2",
+      "bytes": 59246,
+      "extracted_sha256": "5292585dd18547a5e604728e375983dfd49c20294e4a2d7fe162b3faba7d60b2"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/G-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/G-s2-plan.json",
+      "source_sha256": "e89d4e1120c06c94933a5c335b88b21e1c3e2ddf6936bf0a0440bcafc8f70f0e",
+      "bytes": 45099,
+      "extracted_sha256": "e89d4e1120c06c94933a5c335b88b21e1c3e2ddf6936bf0a0440bcafc8f70f0e"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/G-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/G-s2-receipts.json",
+      "source_sha256": "ab53283be64b43e358b93f1d3afedd7142996318ff8fc464ea4e9540efda8be7",
+      "bytes": 56831,
+      "extracted_sha256": "ab53283be64b43e358b93f1d3afedd7142996318ff8fc464ea4e9540efda8be7"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/H-s1-definitions.json",
+      "target": "tests/audit_fixtures/sc2/H-s1-definitions.json",
+      "source_sha256": "0068589b5bf900a27eaf3245aff5af57dc2d965757a6063653ab8fd59d521dde",
+      "bytes": 82781,
+      "extracted_sha256": "0068589b5bf900a27eaf3245aff5af57dc2d965757a6063653ab8fd59d521dde"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/H-s1-trace.json",
+      "target": "tests/audit_fixtures/sc2/H-s1-trace.json",
+      "source_sha256": "45f87d3861c667a372b1ad9b5d7b4d02546202ca7b80cadbbd1b99f22402a715",
+      "bytes": 7919,
+      "extracted_sha256": "45f87d3861c667a372b1ad9b5d7b4d02546202ca7b80cadbbd1b99f22402a715"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/H-s2-plan.json",
+      "target": "tests/audit_fixtures/sc2/H-s2-plan.json",
+      "source_sha256": "e13c6d27dd8729b46379d83d79c9bccd72b6fa2546512ce229da10e712328038",
+      "bytes": 49611,
+      "extracted_sha256": "e13c6d27dd8729b46379d83d79c9bccd72b6fa2546512ce229da10e712328038"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/H-s2-receipts.json",
+      "target": "tests/audit_fixtures/sc2/H-s2-receipts.json",
+      "source_sha256": "3b0588d655d839e03ea56bfe0be7cc513d4e4e3dfd5b4c3c22ed14f3113bb045",
+      "bytes": 56313,
+      "extracted_sha256": "3b0588d655d839e03ea56bfe0be7cc513d4e4e3dfd5b4c3c22ed14f3113bb045"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/manifest.json",
+      "target": "tests/audit_fixtures/sc2/manifest.json",
+      "source_sha256": "dc175d63de9de6ba5a66c92e687e0e4269173fbb6a6f5ccc0c000205a0d3766b",
+      "bytes": 314726,
+      "extracted_sha256": "dc175d63de9de6ba5a66c92e687e0e4269173fbb6a6f5ccc0c000205a0d3766b"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/negative-cases.json",
+      "target": "tests/audit_fixtures/sc2/negative-cases.json",
+      "source_sha256": "5c5a2e88a24a068c6e8c870b111c7c74069389501e714cddfdee805e9c5846de",
+      "bytes": 22177,
+      "extracted_sha256": "5c5a2e88a24a068c6e8c870b111c7c74069389501e714cddfdee805e9c5846de"
+    },
+    {
+      "source": "tests/audit_fixtures/sc2/schema-preservation-examples.json",
+      "target": "tests/audit_fixtures/sc2/schema-preservation-examples.json",
+      "source_sha256": "4b049e55c285c06527c5fe92ecd3f77cff298fdde427334e2a66852df2735a6b",
+      "bytes": 53342,
+      "extracted_sha256": "4b049e55c285c06527c5fe92ecd3f77cff298fdde427334e2a66852df2735a6b"
+    },
+    {
+      "source": "analysis/b2_generator.py",
+      "target": "crucis/_support/b2_generator.py",
+      "source_sha256": "c5a9029d7e609f2e81b33158b9ba538cd946905f0923ec03414326d56ed8bb99",
+      "bytes": 20653,
+      "extracted_sha256": "bb4f0215014024a385149101ba78408177f47e42ba90260a6ca773881850684c"
+    },
+    {
+      "source": "analysis/causalarena_io.py",
+      "target": "crucis/_support/causalarena_io.py",
+      "source_sha256": "39f416b38e7916394963a2d643425e37eca539b454ab82e4502939f12fc5b087",
+      "bytes": 3242,
+      "extracted_sha256": "e32fda070fda24ad83708afa7c44a58e7c687f19afef5ec509a5397e51a6b0de"
+    },
+    {
+      "source": "analysis/causalarena_load.py",
+      "target": "crucis/_support/causalarena_load.py",
+      "source_sha256": "0e2d5d32d1bbb4c3c621d38ed49f4da216948c99cc4c258424b4403184e3abc9",
+      "bytes": 1767,
+      "extracted_sha256": "eb2b5a5ad12686082b14e566aab5e1ce408fe7c37b6be6b427b0abf94b7aed99"
+    },
+    {
+      "source": "analysis/causalarena_methods.py",
+      "target": "crucis/_support/causalarena_methods.py",
+      "source_sha256": "603110fd7e53bfbae70473301cfe1a80f28af657495d3092a112d71675f2f44f",
+      "bytes": 12511,
+      "extracted_sha256": "6731f2b082c6c072dcd5ae74d340bcf659ee9a8e0c74f4065c721bf063a79c23"
+    },
+    {
+      "source": "analysis/cc_graph.py",
+      "target": "crucis/_support/cc_graph.py",
+      "source_sha256": "5044b42fa5b4eea21470911d11de493d29a454bdd4e9e76f65551db8b0b2fd13",
+      "bytes": 6947,
+      "extracted_sha256": "cd5733d5f36921ccc6982441ddbc39cea275d01467a63ae8d3a21b01077d7886"
+    },
+    {
+      "source": "analysis/jobkit.py",
+      "target": "crucis/_support/jobkit.py",
+      "source_sha256": "2971bd7c6e325efcd3a0fe98ea29626023d6a40e112e336009813f25c8b68cc7",
+      "bytes": 3072,
+      "extracted_sha256": "987e373533ef9bd8f23f364412a4d34c332be4a0feebd03a93e68fb026001853"
+    },
+    {
+      "source": "analysis/lineage.py",
+      "target": "crucis/_support/lineage.py",
+      "source_sha256": "09f72b442231ea22f25243d40fe339da27acf37d704aff53ddaeb96c2068ca38",
+      "bytes": 18953,
+      "extracted_sha256": "a1e3af855817f27ae31a6a70eb85f3d0f923fd04c27af098a03ae4927a92eb3a"
+    },
+    {
+      "source": "analysis/notears_linear.py",
+      "target": "crucis/_support/notears_linear.py",
+      "source_sha256": "50ef8341f91d8960fcd6ab062542c0b757037a906ba13e41f7a47da0071c7eac",
+      "bytes": 2335,
+      "extracted_sha256": "cb5780b45e37ebbc5315d93fdc94775f363a8252c17aa036deceff61a87b8100"
+    },
+    {
+      "source": "analysis/partial_stages.py",
+      "target": "crucis/_support/partial_stages.py",
+      "source_sha256": "3203752bbea93c0bfca16de9f927b8cb4556308de8de7fb1716e45fdc4131688",
+      "bytes": 12461,
+      "extracted_sha256": "142f6f19f1b3782ebb9d1b4f1a56de15e29aef703f52f8f52598fadd8b3dda68"
+    },
+    {
+      "source": "harness/probe_io.py",
+      "target": "crucis/_support/probe_io.py",
+      "source_sha256": "45559af04b84455dc81519823642c2c540fe5c334a5e61389354aebbbb7facd0",
+      "bytes": 3950,
+      "extracted_sha256": "5bae61eb2eae5bee0a03d9e89e3a72c64f6bd87e875d3d3f6cd2be98b7366f47"
+    },
+    {
+      "source": "analysis/score_record.py",
+      "target": "crucis/_support/score_record.py",
+      "source_sha256": "5e4b98d68820325cbf2b630e8fadf7fd7a105412ca100b88f4242cf8840d02ba",
+      "bytes": 5978,
+      "extracted_sha256": "ba0c6b81cda51ea22f1d88f46a056938430d4126d261742bc8b2a6f6496c23f3"
+    },
+    {
+      "source": "analysis/sortability_audit.py",
+      "target": "crucis/_support/sortability_audit.py",
+      "source_sha256": "6faaccdceb38a8724dc03cac1fdb5545a5d9d1e3d0c6b74b0214859d23df6896",
+      "bytes": 3865,
+      "extracted_sha256": "cf06fbb5b1d9587fb1cca2b40d6487d38afe1692029458233497abdb13fe740c"
+    },
+    {
+      "source": "analysis/stability.py",
+      "target": "crucis/_support/stability.py",
+      "source_sha256": "8f2101ae077e43579b98ba875e9a3721163b765eb9e42b371ea8ec826c6fe7cd",
+      "bytes": 34063,
+      "extracted_sha256": "cd8a726ef0545d5191ef20b3dc0a684d5cc18968c9a8ae3dd778f58be679ff80"
+    },
+    {
+      "source": "score/baselines.py",
+      "target": "crucis/_support/score/baselines.py",
+      "source_sha256": "67e0f3d90b86adc7fe6975443b63420aecc1e3029c9b13f231deebf6251433cb",
+      "bytes": 4160,
+      "extracted_sha256": "c7c3e7e2172d17aa29c975899bb9f5c6f79b045e466d0ace48765185c0764a5f"
+    },
+    {
+      "source": "score/bench.py",
+      "target": "crucis/_support/score/bench.py",
+      "source_sha256": "50c49f295fa984aa766a6b6e4f7efc3e5f00e351905bfea0104090232e93deb4",
+      "bytes": 3067,
+      "extracted_sha256": "789989fd721698c26c59cc7cef28eb3d64ca813fde4f922b443012fdd8748a4f"
+    },
+    {
+      "source": "score/calib.py",
+      "target": "crucis/_support/score/calib.py",
+      "source_sha256": "ce1790e8226ec32020c7a6d1ba37f71c660dd35b9115c63314734dfc9bb26f5f",
+      "bytes": 2115,
+      "extracted_sha256": "9f8446771e63276d61c114e4d34012aeff9b83bfcbd5820de731ef7937935e67"
+    },
+    {
+      "source": "score/dv.py",
+      "target": "crucis/_support/score/dv.py",
+      "source_sha256": "85b1869c495dcf6f27b4e1fffa5bb31de39f3d6aedf795e53d0826d3fdf9db20",
+      "bytes": 3490,
+      "extracted_sha256": "34bebb7d861dfc42c7dc1ab51456ea4f485e23426ef27a784a9b60d78b92f32c"
+    },
+    {
+      "source": "score/graph.py",
+      "target": "crucis/_support/score/graph.py",
+      "source_sha256": "6622fe62485de250fe26d1107273495a6cf343cd3996bc72f90776c0d7c399a7",
+      "bytes": 4521,
+      "extracted_sha256": "124d080f7a1ce5119a202b592e5dd11057c91272b0694eb0ae0ccd4634c23bcb"
+    },
+    {
+      "source": "score/paired.py",
+      "target": "crucis/_support/score/paired.py",
+      "source_sha256": "33bd212d7b50ab392128bb4ddd2efec0a87701b15e2cfff3f86d640b615f161e",
+      "bytes": 2034,
+      "extracted_sha256": "e654696a385bfb839cf60ac92abae41afe4fde388e0a5008951e2878cc34f44b"
+    },
+    {
+      "source": "score/rca.py",
+      "target": "crucis/_support/score/rca.py",
+      "source_sha256": "de2a54607f3149080e48d5e94b24758ecaf3f02282d34e6cc9ef69d665d93c3d",
+      "bytes": 854,
+      "extracted_sha256": "33b14d6ddec022e9fbf4ecbcb38f3f9ad6ed92647c389b91869a9c8a730f7aa9"
+    },
+    {
+      "source": "score/repro.py",
+      "target": "crucis/_support/score/repro.py",
+      "source_sha256": "64c29ba8aa90ea04cee506452d1d789ad8f0a02b11e9eb3e2f0f2b08d070871b",
+      "bytes": 5679,
+      "extracted_sha256": "d34a2c96a96743d50791061e530fa06f0e5decf485d2a5117fdde9fffd115d9a"
+    },
+    {
+      "source": "score/__init__.py",
+      "target": "crucis/_support/score/__init__.py",
+      "source_sha256": "76bf1ebf10051de0427ba42457830c5af9ed99d7598ffb9d884daff5cec67b21",
+      "bytes": 910,
+      "extracted_sha256": "6573301a7efb3c503b3f69b45e12f55d92cf24a9b33d868f6ef780d991ed62e0"
+    }
+  ]
+}

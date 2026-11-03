@@ -1,0 +1,17 @@
+name: package
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install . build
+      - run: python -B tools/secret_scan.py
+      - run: python -B tools/package_check.py
+      - run: python -B tests/run_tests.py --out '${{ runner.temp }}/crucis-tests.json'
+      - run: python -m build

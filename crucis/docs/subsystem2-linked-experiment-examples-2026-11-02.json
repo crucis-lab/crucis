@@ -1,0 +1,4418 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "local_date": "2026-11-02",
+  "kind": "logical_design_review_registry",
+  "notation_status": "Not SC-1, not S2 wire candidate or runnable plan. Aliases/shapes are review notation only.",
+  "evidence_status": "All experiments, subjects, actors, native inputs/outputs, grants and traces fictional. Actual operational readiness and authority unestablished.",
+  "phases": {
+    "definition": "Fixed conceptual requirements; may reference declared prior evidence, not future trace.",
+    "prior_evidence": "Explicitly earlier recovered material; chronology/exposure limits retained.",
+    "illustrative_trace": "Counterfactual later branch, not executed experiment."
+  },
+  "groups": [
+    {
+      "id": "A",
+      "definition_root": "A.plan",
+      "hypothetical_trace_root": "A.trace"
+    },
+    {
+      "id": "B",
+      "definition_root": "B.plan",
+      "hypothetical_trace_root": "B.trace"
+    },
+    {
+      "id": "C",
+      "definition_root": "C.plan",
+      "hypothetical_trace_root": "C.trace"
+    }
+  ],
+  "records": [
+    {
+      "id": "common.boundary",
+      "conceptual_kind": "review_boundary",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "notation": "Review registry only: not SC-1, not an S2 schema candidate, executable plan, real commitment or conformance fixture.",
+        "actual_authority": "Absent. Current scope is design/documentation only.",
+        "actual_evidence": "No real native inputs, outputs, hashes, grants, timestamps, episodes or restricted material. Source-document hashes below are actual document hashes.",
+        "resolution": "A locally resolved evidence-gap/requirement is not resolved external evidence. Only links arrays are review references."
+      },
+      "links": []
+    },
+    {
+      "id": "common.response_policy",
+      "conceptual_kind": "semantic_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "Reference support, response commitment, capture and task fulfillment are distinct.",
+        "omission": "Explicit scoped closed versus open semantics; outside-scope unreported; exceptions preserve abstention/uncertainty.",
+        "alternatives": "Declared admissibility differs from compatibility. Orders, sequences, ranking ties, local claims and collections retain their meanings.",
+        "gaps": "No invented negative decisions, graph, abstention or posterior probability from missing evidence.",
+        "joint_validity": "Check meaningful consistency without silently repairing outputs or selecting a favorable candidate."
+      },
+      "links": [
+        {
+          "role": "references_review_boundary",
+          "target": "common.boundary"
+        }
+      ]
+    },
+    {
+      "id": "common.adjacency_measure",
+      "conceptual_kind": "hypothetical_measurement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "definition": "Correctly matched adjacency decisions divided by three unordered non-self pairs over A/B/C.",
+        "prerequisites": "Complete graph semantics, canonical mapping, applicable complete reference and condition conformance.",
+        "implementation": "No metric registered or implemented; actual S4 reader/contract still required.",
+        "claim": "No real accuracy/agreement value or interval is emitted."
+      },
+      "links": [
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "common.population_policy",
+      "conceptual_kind": "population_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "accounting": "Preserve intended, ready, native-started, response-form, conformance, captured, reference-covered and analysis-included scopes separately.",
+        "missingness": "No assigned graph score for absent graph, abstention or native failure; conditional means retain their actual population.",
+        "selection": "No best stage/reference/output or latest association substituted. Trials, native collections, retries and datasets retain distinct identities.",
+        "inference": "No population uncertainty claim from these miniature fictional cases."
+      },
+      "links": [
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "common.authority_boundary",
+      "conceptual_kind": "authority_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "rules": "Readiness, authority, admission, disclosure, access and influence are separate claims. Actual applicable authority is absent from all specimens.",
+        "projection": "Native inputs are an explicitly allowed projection, never the full evaluator plan.",
+        "limits": "Existing one-version and five-total logged reads per battery remain unchanged; no real ledger/capacity queried.",
+        "reuse": "Existing applicable authority may be reused within scope; this registry does not create it."
+      },
+      "links": [
+        {
+          "role": "references_review_boundary",
+          "target": "common.boundary"
+        }
+      ]
+    },
+    {
+      "id": "A.domain",
+      "conceptual_kind": "domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "members": [
+          "A",
+          "B",
+          "C"
+        ],
+        "identity": "Source-scoped observed variables, distinct from presentation labels/positions.",
+        "adjacency_universe": [
+          "A-B",
+          "A-C",
+          "B-C"
+        ]
+      },
+      "links": []
+    },
+    {
+      "id": "A.source",
+      "conceptual_kind": "source_specification",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "mechanisms": "A=U_A, B=U_B, C=A+B+U_C; independent standard-normal exogenous variables in a fictional model.",
+        "generating_edges": [
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "sample": "One intended 1000-row realization. Actual implementation, randomness and capture are not supplied."
+      },
+      "links": [
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        }
+      ]
+    },
+    {
+      "id": "A.case_slot",
+      "conceptual_kind": "planned_case_slot",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "One intended realization. It is not an empirical case or captured dataset.",
+        "late_binding": "A later resolution receipt nominates an actual immutable case and artifacts; no editable latest pointer."
+      },
+      "links": [
+        {
+          "role": "references_source_specification",
+          "target": "A.source"
+        },
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        }
+      ]
+    },
+    {
+      "id": "A.selection",
+      "conceptual_kind": "selection_rule",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "count": 1,
+        "purpose": "Deliberately constructed public-development source, not random mechanism sampling.",
+        "timing": "Committed rule precedes materialization/native outcomes; actual event evidence is not present."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_source_specification",
+          "target": "A.source"
+        }
+      ]
+    },
+    {
+      "id": "A.subject",
+      "conceptual_kind": "subject_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "identity": "Hypothetical DAG-returning native method/configuration; not a real audited system.",
+        "requirements": "Complete DAG or explicit whole-query abstention; scoped reset/repetition contract.",
+        "gaps": "Actual native code/model/dependencies/support/independence unestablished."
+      },
+      "links": [
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "A.reference",
+      "conceptual_kind": "reference",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "edges": [
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "coverage": {
+          "present": [
+            "A-C",
+            "B-C"
+          ],
+          "absent": [
+            "A-B"
+          ],
+          "extent": "Complete fictional adjacency reference"
+        },
+        "basis": "Declared source; exact simulated-reference intent depends on actual materialization verification.",
+        "disclosure": "Evaluator only. No actual T1 result emitted."
+      },
+      "links": [
+        {
+          "role": "references_source_specification",
+          "target": "A.source"
+        },
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        }
+      ]
+    },
+    {
+      "id": "A.task_graph",
+      "conceptual_kind": "task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "operation": "Return complete DAG over A/B/C or explicit allowed whole-query abstention.",
+        "omission": "Missing adjacency in a declared complete graph denies it; missing bytes do not.",
+        "completion": "Response form, native lifecycle, condition fidelity and correctness have distinct assessments.",
+        "role": "Final object; a surviving intermediate stage is not silently final."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.task_order",
+      "conceptual_kind": "separate_order_example",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "question": "Any topological sequence compatible with source fork.",
+        "constraints": [
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "valid": [
+          [
+            "A",
+            "B",
+            "C"
+          ],
+          [
+            "B",
+            "A",
+            "C"
+          ]
+        ],
+        "invalid": [
+          "A",
+          "C",
+          "B"
+        ],
+        "count": "Semantic examples only, zero extra native trials."
+      },
+      "links": [
+        {
+          "role": "references_reference",
+          "target": "A.reference"
+        },
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.conditions",
+      "conceptual_kind": "condition_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "arms": [
+          "real",
+          "neutral",
+          "swapped"
+        ],
+        "maps": {
+          "real": {
+            "A": "rainfall",
+            "B": "sprinkler",
+            "C": "wetness"
+          },
+          "neutral": {
+            "A": "V03",
+            "B": "V01",
+            "C": "V02"
+          },
+          "swapped": {
+            "A": "sprinkler",
+            "B": "wetness",
+            "C": "rainfall"
+          }
+        },
+        "fixed": [
+          "source values/rows/masks",
+          "column permutation",
+          "retained weather-domain context",
+          "task",
+          "native configuration",
+          "declared state/repetition policy"
+        ],
+        "claim": "Incremental label-field contrast, no knowledge-free claim.",
+        "projection": "Only permitted values/labels/context/task; no reference, original semantic map or inverse evaluator map."
+      },
+      "links": [
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "A.transforms",
+      "conceptual_kind": "transform_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "shown_order": [
+          "C",
+          "A",
+          "B"
+        ],
+        "shown_to_canonical": [
+          2,
+          0,
+          1
+        ],
+        "canonical_to_shown": [
+          1,
+          2,
+          0
+        ],
+        "recipe": "Source-scoped labels and fixed permutation; actual supported metadata move together.",
+        "checks": "Bijection/inverse plus mapped values/masks/labels and applicable metadata/reference checks.",
+        "randomness": "Shared nuisance permutation, separately requested native repeats; no bitwise/native RNG coupling assumed.",
+        "receipts": "Actual source/derived snapshot, algorithm/parameters/maps and scoped checks required later."
+      },
+      "links": [
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        },
+        {
+          "role": "references_reference",
+          "target": "A.reference"
+        }
+      ]
+    },
+    {
+      "id": "A.comparison",
+      "conceptual_kind": "comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "target": "Study delivery/definite-output coverage and conforming available-final-graph quality, reported separately.",
+        "direction": "Real minus neutral; swapped contrasts only when their required evidence exists.",
+        "matching": "Case/dataset/task/reference level; equal repeat index is not native coupling.",
+        "weighting": "One-case available-repeat summaries are conditional. No complete-two-repeat mean, invented missing score or population inference.",
+        "selection": "First attempt; main quality uses final graphs only. Stage analysis separately named.",
+        "missingness": "Every slot remains; abstention/failure/nonconforming/resource gaps retain reasons.",
+        "implementation": "Actual S4 reader, analysis and uncertainty contracts remain required."
+      },
+      "links": [
+        {
+          "role": "references_selection_rule",
+          "target": "A.selection"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_reference",
+          "target": "A.reference"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        },
+        {
+          "role": "references_population_policy",
+          "target": "common.population_policy"
+        },
+        {
+          "role": "references_hypothetical_measurement",
+          "target": "common.adjacency_measure"
+        }
+      ]
+    },
+    {
+      "id": "A.lifecycle",
+      "conceptual_kind": "lifecycle_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "order": [
+          "Fix definitions and known development exposure",
+          "Record commitment evidence",
+          "Materialize case under rule",
+          "Assess readiness and applicable authority",
+          "Invoke and capture",
+          "Bind actual analysis populations"
+        ],
+        "history": "Fictional event order; no native UTC times or real commitment evidence.",
+        "amendments": "New snapshots/bindings preserve intended slots; no outcome-informed rewriting."
+      },
+      "links": [
+        {
+          "role": "references_comparison",
+          "target": "A.comparison"
+        },
+        {
+          "role": "references_selection_rule",
+          "target": "A.selection"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "A.trial.real1",
+      "conceptual_kind": "planned_trial",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "condition": "real",
+        "native_repeat": 1,
+        "source": "Same planned case slot; not a new dataset.",
+        "attempt_policy": "First attempt; no automatic replacement repeat."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        }
+      ]
+    },
+    {
+      "id": "A.trial.real2",
+      "conceptual_kind": "planned_trial",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "condition": "real",
+        "native_repeat": 2,
+        "source": "Same planned case slot; not a new dataset.",
+        "attempt_policy": "First attempt; no automatic replacement repeat."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        }
+      ]
+    },
+    {
+      "id": "A.trial.neutral1",
+      "conceptual_kind": "planned_trial",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "condition": "neutral",
+        "native_repeat": 1,
+        "source": "Same planned case slot; not a new dataset.",
+        "attempt_policy": "First attempt; no automatic replacement repeat."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        }
+      ]
+    },
+    {
+      "id": "A.trial.neutral2",
+      "conceptual_kind": "planned_trial",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "condition": "neutral",
+        "native_repeat": 2,
+        "source": "Same planned case slot; not a new dataset.",
+        "attempt_policy": "First attempt; no automatic replacement repeat."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        }
+      ]
+    },
+    {
+      "id": "A.trial.swapped1",
+      "conceptual_kind": "planned_trial",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "condition": "swapped",
+        "native_repeat": 1,
+        "source": "Same planned case slot; not a new dataset.",
+        "attempt_policy": "First attempt; no automatic replacement repeat."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        }
+      ]
+    },
+    {
+      "id": "A.trial.swapped2",
+      "conceptual_kind": "planned_trial",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "condition": "swapped",
+        "native_repeat": 2,
+        "source": "Same planned case slot; not a new dataset.",
+        "attempt_policy": "First attempt; no automatic replacement repeat."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_task",
+          "target": "A.task_graph"
+        },
+        {
+          "role": "references_condition_policy",
+          "target": "A.conditions"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        }
+      ]
+    },
+    {
+      "id": "A.plan",
+      "conceptual_kind": "fixed_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "One scenario, one intended dataset, three conditions, two native repeats.",
+        "planned_trials": 6,
+        "status": "Design only, no real commitment/authority or execution.",
+        "future_values": "Later realizations refer back to requirements; no future traces in definition dependency closure."
+      },
+      "links": [
+        {
+          "role": "references_selection_rule",
+          "target": "A.selection"
+        },
+        {
+          "role": "references_comparison",
+          "target": "A.comparison"
+        },
+        {
+          "role": "references_lifecycle_policy",
+          "target": "A.lifecycle"
+        },
+        {
+          "role": "references_separate_order_example",
+          "target": "A.task_order"
+        },
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.real1"
+        },
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.real2"
+        },
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.neutral1"
+        },
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.neutral2"
+        },
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.swapped1"
+        },
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.swapped2"
+        }
+      ]
+    },
+    {
+      "id": "A.data_snapshot",
+      "conceptual_kind": "materialization_assumption",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "Hypothetical captured 1000-row input/source/randomness and integrity evidence.",
+        "actual_bytes_or_digest": "Not supplied; no generation performed."
+      },
+      "links": [
+        {
+          "role": "references_source_specification",
+          "target": "A.source"
+        }
+      ]
+    },
+    {
+      "id": "A.case",
+      "conceptual_kind": "realized_case_revision",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "identity": "Fictional exact realized case nominated for A.case_slot.",
+        "evidence": "Hypothetical captured data/source bindings; actual bytes absent.",
+        "domain_lineage": "A/B/C under the source; generation/dependence claims require evidence.",
+        "history_extent_exposure": "First fictional realization, bounded capture and public-development role."
+      },
+      "links": [
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_materialization_assumption",
+          "target": "A.data_snapshot"
+        },
+        {
+          "role": "references_domain",
+          "target": "A.domain"
+        }
+      ]
+    },
+    {
+      "id": "A.collection",
+      "conceptual_kind": "realized_collection",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "Exactly one member under A.selection; immutable fictional release.",
+        "multiplicity": "One case; native repetitions live in trial slots.",
+        "timing": "Later realized list is not claimed enumerated before generation."
+      },
+      "links": [
+        {
+          "role": "references_selection_rule",
+          "target": "A.selection"
+        },
+        {
+          "role": "references_membership",
+          "target": "A.membership"
+        }
+      ]
+    },
+    {
+      "id": "A.membership",
+      "conceptual_kind": "membership",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "case": "Exact A.case",
+        "role": "Public development under A.selection; no independent duplicate.",
+        "basis": "Fictional realized source slot; actual source evidence still absent."
+      },
+      "links": [
+        {
+          "role": "references_realized_collection",
+          "target": "A.collection"
+        },
+        {
+          "role": "references_realized_case_revision",
+          "target": "A.case"
+        },
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_selection_rule",
+          "target": "A.selection"
+        }
+      ]
+    },
+    {
+      "id": "A.materialization",
+      "conceptual_kind": "resolution_receipt",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "resolution": "Nominates case/collection under fixed slot/rule; checks are fictional branch assumptions, not real passes.",
+        "actual_readiness": "Unestablished",
+        "immutability": "Does not update A.plan"
+      },
+      "links": [
+        {
+          "role": "references_fixed_definition_root",
+          "target": "A.plan"
+        },
+        {
+          "role": "references_planned_case_slot",
+          "target": "A.case_slot"
+        },
+        {
+          "role": "references_realized_case_revision",
+          "target": "A.case"
+        },
+        {
+          "role": "references_realized_collection",
+          "target": "A.collection"
+        },
+        {
+          "role": "references_transform_policy",
+          "target": "A.transforms"
+        }
+      ]
+    },
+    {
+      "id": "A.run_binding",
+      "conceptual_kind": "run_binding",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "handoff": "Future exact S2/S1 mapping to operation/scope/deliverable/policy/completion. No extra SC-1 fields.",
+        "evidence": "No real native request/attempt or actual grant created."
+      },
+      "links": [
+        {
+          "role": "references_fixed_definition_root",
+          "target": "A.plan"
+        },
+        {
+          "role": "references_resolution_receipt",
+          "target": "A.materialization"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "A.subject"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "A.trace.real1",
+      "conceptual_kind": "hypothetical_trial_observation",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_started_in_story": true,
+        "lifecycle": "normal",
+        "response_form": "satisfied",
+        "condition_conformance": "conforming",
+        "main_quality": {
+          "state": "ready_in_story",
+          "reason": "Fictional supported final graph; no actual reader evidence."
+        },
+        "output_role": "final_graph",
+        "canonical_illustrative_edges": [
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ],
+        "occurrences": "Distinct request/attempt/observation handoff required later; no production IDs."
+      },
+      "links": [
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.real1"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.trace.real2",
+      "conceptual_kind": "hypothetical_trial_observation",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_started_in_story": true,
+        "lifecycle": "native_failure",
+        "response_form": "not_satisfied",
+        "condition_conformance": "conforming",
+        "main_quality": {
+          "state": "unestablished",
+          "reason": "No final; surviving stage is not final completion."
+        },
+        "output_role": "surviving_stage",
+        "canonical_illustrative_edges": [
+          [
+            "A",
+            "C"
+          ]
+        ],
+        "occurrences": "Distinct request/attempt/observation handoff required later; no production IDs."
+      },
+      "links": [
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.real2"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.trace.neutral1",
+      "conceptual_kind": "hypothetical_trial_observation",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_started_in_story": true,
+        "lifecycle": "normal",
+        "response_form": "satisfied",
+        "condition_conformance": "conforming",
+        "main_quality": {
+          "state": "unestablished",
+          "reason": "Allowed abstention; no graph score."
+        },
+        "output_role": "whole_query_abstention",
+        "canonical_illustrative_edges": [],
+        "occurrences": "Distinct request/attempt/observation handoff required later; no production IDs."
+      },
+      "links": [
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.neutral1"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.trace.neutral2",
+      "conceptual_kind": "hypothetical_trial_observation",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_started_in_story": true,
+        "lifecycle": "normal",
+        "response_form": "satisfied",
+        "condition_conformance": "conforming",
+        "main_quality": {
+          "state": "ready_in_story",
+          "reason": "Closed graph denies B-C; poor quality is not an exclusion."
+        },
+        "output_role": "final_graph",
+        "canonical_illustrative_edges": [
+          [
+            "A",
+            "C"
+          ]
+        ],
+        "occurrences": "Distinct request/attempt/observation handoff required later; no production IDs."
+      },
+      "links": [
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.neutral2"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.trace.swapped1",
+      "conceptual_kind": "hypothetical_trial_observation",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_started_in_story": true,
+        "lifecycle": "normal",
+        "response_form": "satisfied",
+        "condition_conformance": "nonconforming",
+        "main_quality": {
+          "state": "unestablished",
+          "reason": "Actual values violate intended condition; intended comparison blocked."
+        },
+        "output_role": "final_graph",
+        "canonical_illustrative_edges": [
+          [
+            "C",
+            "A"
+          ]
+        ],
+        "occurrences": "Distinct request/attempt/observation handoff required later; no production IDs."
+      },
+      "links": [
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.swapped1"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.trace.swapped2",
+      "conceptual_kind": "hypothetical_trial_observation",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_started_in_story": false,
+        "lifecycle": "not_started",
+        "response_form": "not_assessed",
+        "condition_conformance": "not_observed",
+        "main_quality": {
+          "state": "unestablished",
+          "reason": "Resource availability changed; not native failure."
+        },
+        "output_role": "no_output",
+        "canonical_illustrative_edges": [],
+        "occurrences": "Distinct request/attempt/observation handoff required later; no production IDs."
+      },
+      "links": [
+        {
+          "role": "references_planned_trial",
+          "target": "A.trial.swapped2"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "A.population",
+      "conceptual_kind": "population_receipt",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "intended_slots": [
+          "A.trial.real1",
+          "A.trial.real2",
+          "A.trial.neutral1",
+          "A.trial.neutral2",
+          "A.trial.swapped1",
+          "A.trial.swapped2"
+        ],
+        "native_started_slots": [
+          "A.trial.real1",
+          "A.trial.real2",
+          "A.trial.neutral1",
+          "A.trial.neutral2",
+          "A.trial.swapped1"
+        ],
+        "conforming_final_quality": [
+          "A.trace.real1",
+          "A.trace.neutral2"
+        ],
+        "available_quality_by_condition": {
+          "real": 1,
+          "neutral": 1,
+          "swapped": 0
+        },
+        "scope": "Case-level conditional available-repeat comparison only; no complete two-repeat mean or paired RNG assumption.",
+        "measurement": "No actual metric result/interval computed."
+      },
+      "links": [
+        {
+          "role": "references_fixed_definition_root",
+          "target": "A.plan"
+        },
+        {
+          "role": "references_comparison",
+          "target": "A.comparison"
+        },
+        {
+          "role": "references_resolution_receipt",
+          "target": "A.materialization"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.real1"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.real2"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.neutral1"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.neutral2"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.swapped1"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.swapped2"
+        }
+      ]
+    },
+    {
+      "id": "A.trace",
+      "conceptual_kind": "hypothetical_trace_root",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "purpose": "Adverse later branch, not execution or passed validation."
+      },
+      "links": [
+        {
+          "role": "references_resolution_receipt",
+          "target": "A.materialization"
+        },
+        {
+          "role": "references_run_binding",
+          "target": "A.run_binding"
+        },
+        {
+          "role": "references_population_receipt",
+          "target": "A.population"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.real1"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.real2"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.neutral1"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.neutral2"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.swapped1"
+        },
+        {
+          "role": "references_hypothetical_trial_observation",
+          "target": "A.trace.swapped2"
+        }
+      ]
+    },
+    {
+      "id": "B.original_history_gap",
+      "conceptual_kind": "evidence_gap",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "unresolved": [
+          "original case/request/attempt",
+          "original task/fulfillment",
+          "selection/population",
+          "native producer/configuration",
+          "source chronology",
+          "prior exposure"
+        ],
+        "basis": "Absent from the hypothetical recovered evidence; current authoring cannot fill it."
+      },
+      "links": []
+    },
+    {
+      "id": "B.mapping_gap",
+      "conceptual_kind": "evidence_gap",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "unresolved": [
+          "graph-axis variable mapping",
+          "complete/open native omission semantics",
+          "original input/presentation transformation"
+        ],
+        "basis": "Shape or similar filenames insufficient; no default identity mapping."
+      },
+      "links": []
+    },
+    {
+      "id": "B.domain",
+      "conceptual_kind": "candidate_domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "members": [
+          "u",
+          "v",
+          "w"
+        ],
+        "meaning": "Current candidate reference domain; graph-axis identity remains unresolved."
+      },
+      "links": [
+        {
+          "role": "references_evidence_gap",
+          "target": "B.mapping_gap"
+        }
+      ]
+    },
+    {
+      "id": "B.case",
+      "conceptual_kind": "reconstructed_case",
+      "review_phase": "prior_evidence",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "boundary": "Bounded fictional recovered CSV and graph, not original cohort.",
+        "evidence": "Source-scoped recovery declarations; no actual bytes/digests.",
+        "meaning_lineage": "Candidate domain and unresolved mapping; no inferred independence.",
+        "history_exposure": "Known reconstruction role, original identities/time/exposure unresolved."
+      },
+      "links": [
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.mapping_gap"
+        },
+        {
+          "role": "references_candidate_domain",
+          "target": "B.domain"
+        }
+      ]
+    },
+    {
+      "id": "B.collection",
+      "conceptual_kind": "reconstructed_collection",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "One current reconstructed member, complete only for recovered scope.",
+        "selection": "Current recovery rule, unknown original sampling rationale.",
+        "multiplicity": "No original repeat or matched cross-system identity invented."
+      },
+      "links": [
+        {
+          "role": "references_membership",
+          "target": "B.membership"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        }
+      ]
+    },
+    {
+      "id": "B.membership",
+      "conceptual_kind": "membership",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "role": "Historical reconstruction of exact current case.",
+        "basis": "Current bounded recovery, not original random sampling.",
+        "original_association": "Explicit gap"
+      },
+      "links": [
+        {
+          "role": "references_reconstructed_collection",
+          "target": "B.collection"
+        },
+        {
+          "role": "references_reconstructed_case",
+          "target": "B.case"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        }
+      ]
+    },
+    {
+      "id": "B.subject",
+      "conceptual_kind": "subject_association",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "native_identity": "Unresolved",
+        "known_role": "Current reconstruction/evaluation author, not original native producer.",
+        "support": "No original capability/configuration inferred."
+      },
+      "links": [
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        }
+      ]
+    },
+    {
+      "id": "B.ref_left",
+      "conceptual_kind": "reference",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "proposition": "u is direct parent of v",
+        "value": true,
+        "coverage": "Only this claim; other pairs unresolved.",
+        "tier_intent": "T2 contested agreement",
+        "source": "Fictional document L; applicability still requires evidence.",
+        "visibility": "Evaluator"
+      },
+      "links": [
+        {
+          "role": "references_candidate_domain",
+          "target": "B.domain"
+        }
+      ]
+    },
+    {
+      "id": "B.ref_right",
+      "conceptual_kind": "reference",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "proposition": "u is direct parent of v",
+        "value": false,
+        "coverage": "Only explicit negation, not complete graph.",
+        "tier_intent": "T2 contested agreement",
+        "source": "Fictional document R; same-context conflict applicability still requires evidence.",
+        "visibility": "Evaluator"
+      },
+      "links": [
+        {
+          "role": "references_candidate_domain",
+          "target": "B.domain"
+        }
+      ]
+    },
+    {
+      "id": "B.references",
+      "conceptual_kind": "reference_rule",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "selection": "Keep both with provenance; report separately after alignment/applicability. No best-score selection.",
+        "conflict": "No invented exact truth, probability or averaged graph.",
+        "amendments": "New evaluation/reference binding preserves older versions/timing."
+      },
+      "links": [
+        {
+          "role": "references_reference",
+          "target": "B.ref_left"
+        },
+        {
+          "role": "references_reference",
+          "target": "B.ref_right"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.mapping_gap"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "B.task",
+      "conceptual_kind": "retrospective_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "question": "What supported agreement statements apply to surviving output?",
+        "scope": "Recovered graph; not original fulfillment or population performance.",
+        "measurement": "Only reference-covered propositions with established native mapping/omission meaning.",
+        "native_request": "No discovery request or attempt is fabricated."
+      },
+      "links": [
+        {
+          "role": "references_reconstructed_case",
+          "target": "B.case"
+        },
+        {
+          "role": "references_reference_rule",
+          "target": "B.references"
+        },
+        {
+          "role": "references_subject_association",
+          "target": "B.subject"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "B.conditions",
+      "conceptual_kind": "historical_condition_account",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "known": "Current evaluator scope",
+        "unresolved": "Original offered inputs/context/knowledge/state/information policy.",
+        "limits": "No paired condition effect or isolation claim."
+      },
+      "links": [
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        },
+        {
+          "role": "references_retrospective_task",
+          "target": "B.task"
+        }
+      ]
+    },
+    {
+      "id": "B.transforms",
+      "conceptual_kind": "historical_transform_account",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "known": "Preservation intends no new source alteration.",
+        "unresolved": "Original recipes, RNG, values/axes and mappings.",
+        "resolution": "New interpretation receipt if evidence found; never silently assume identity."
+      },
+      "links": [
+        {
+          "role": "references_evidence_gap",
+          "target": "B.mapping_gap"
+        },
+        {
+          "role": "references_historical_condition_account",
+          "target": "B.conditions"
+        }
+      ]
+    },
+    {
+      "id": "B.comparison",
+      "conceptual_kind": "retrospective_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "target": "Descriptive agreement stratified by the two reference sources.",
+        "population": "One recovered occurrence in bounded current reconstruction; original denominator unknown.",
+        "readiness": "Blocked by mapping, omission and applicability gaps.",
+        "missingness": "No zero score, exact accuracy or all-pairs specificity.",
+        "repetitions": "No original repeats/independence or completion inferred."
+      },
+      "links": [
+        {
+          "role": "references_retrospective_task",
+          "target": "B.task"
+        },
+        {
+          "role": "references_reconstructed_collection",
+          "target": "B.collection"
+        },
+        {
+          "role": "references_reference_rule",
+          "target": "B.references"
+        },
+        {
+          "role": "references_historical_transform_account",
+          "target": "B.transforms"
+        },
+        {
+          "role": "references_population_policy",
+          "target": "common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "B.lifecycle",
+      "conceptual_kind": "retrospective_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "timing": "Current reconstruction follows recovered output in the fictional scenario; original chronology unknown.",
+        "commitment": "Current snapshot is not original preregistration.",
+        "amendment": "Later mapping/reference corrections create new bindings; gaps/history retained.",
+        "authority": "No native re-execution or restricted release."
+      },
+      "links": [
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        },
+        {
+          "role": "references_retrospective_comparison",
+          "target": "B.comparison"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "B.plan",
+      "conceptual_kind": "retrospective_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "status": "Complete account of an unscoreable reconstruction.",
+        "prior_evidence": "May depend on explicitly prior imported material; not prospective confirmation."
+      },
+      "links": [
+        {
+          "role": "references_reconstructed_collection",
+          "target": "B.collection"
+        },
+        {
+          "role": "references_retrospective_task",
+          "target": "B.task"
+        },
+        {
+          "role": "references_retrospective_comparison",
+          "target": "B.comparison"
+        },
+        {
+          "role": "references_retrospective_lifecycle",
+          "target": "B.lifecycle"
+        },
+        {
+          "role": "references_historical_condition_account",
+          "target": "B.conditions"
+        },
+        {
+          "role": "references_historical_transform_account",
+          "target": "B.transforms"
+        }
+      ]
+    },
+    {
+      "id": "B.trace",
+      "conceptual_kind": "hypothetical_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "preservation": "Accounts/gaps can resolve locally; actual artifact capture not performed.",
+        "agreement_readiness": "Unestablished mapping/omission/reference applicability.",
+        "unsupported": [
+          "original fulfillment",
+          "random population",
+          "preregistration",
+          "paired effect",
+          "exact accuracy"
+        ]
+      },
+      "links": [
+        {
+          "role": "references_retrospective_definition_root",
+          "target": "B.plan"
+        },
+        {
+          "role": "references_reconstructed_case",
+          "target": "B.case"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.mapping_gap"
+        },
+        {
+          "role": "references_evidence_gap",
+          "target": "B.original_history_gap"
+        }
+      ]
+    },
+    {
+      "id": "C.domain",
+      "conceptual_kind": "local_domain",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "observed": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "target": "Z",
+        "candidate_parents": [
+          "X",
+          "Y"
+        ],
+        "predicate": "Direct parent, distinct from ancestry or association."
+      },
+      "links": []
+    },
+    {
+      "id": "C.source",
+      "conceptual_kind": "interactive_source_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "interface": "Fictional simulator revision; no real URL/service.",
+        "actions": "Set permitted X/Y value, receive typed mean-Z summary.",
+        "state": "Later actual episode/state binding; exact reset/stability/reference applicability not assumed."
+      },
+      "links": [
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        }
+      ]
+    },
+    {
+      "id": "C.case_slot",
+      "conceptual_kind": "planned_episode_slot",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "One bounded episode later nominated by a source resolution receipt; not pre-existing rows."
+      },
+      "links": [
+        {
+          "role": "references_interactive_source_requirement",
+          "target": "C.source"
+        },
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        }
+      ]
+    },
+    {
+      "id": "C.selection",
+      "conceptual_kind": "selection_rule",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "population": "One bounded episode specification; not representative sampling.",
+        "membership": "Later realized episode; no pre-enumeration of response samples.",
+        "dependence": "Shared source/history never implies independent reset."
+      },
+      "links": [
+        {
+          "role": "references_planned_episode_slot",
+          "target": "C.case_slot"
+        },
+        {
+          "role": "references_interactive_source_requirement",
+          "target": "C.source"
+        }
+      ]
+    },
+    {
+      "id": "C.subject",
+      "conceptual_kind": "subject_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "identity": "Hypothetical adaptive local-query method/configuration.",
+        "responses": "Scoped parent assert/deny/abstain, no global negatives.",
+        "readiness": "Actual support/state/isolation unestablished."
+      },
+      "links": [
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "C.reference",
+      "conceptual_kind": "restricted_reference_descriptor",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "content": "No real parent labels, location, seed, digest, battery hash or ledger.",
+        "applicability": "Authorized evaluator must establish same-episode/domain/state meaning and coverage.",
+        "actual_resolution": "Unestablished",
+        "actual_authority": "Absent"
+      },
+      "links": [
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        },
+        {
+          "role": "references_planned_episode_slot",
+          "target": "C.case_slot"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "C.task",
+      "conceptual_kind": "interactive_task",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "question": "Direct parents of Z among X/Y under bounded actions.",
+        "response": "Scoped decisions/allowed abstention; no final output is not abstention.",
+        "primary": "Operation/response coverage and contract behavior at the observed interface.",
+        "secondary": "Parent quality requires separately established private reference and semantics."
+      },
+      "links": [
+        {
+          "role": "references_planned_episode_slot",
+          "target": "C.case_slot"
+        },
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        },
+        {
+          "role": "references_restricted_reference_descriptor",
+          "target": "C.reference"
+        },
+        {
+          "role": "references_semantic_policy",
+          "target": "common.response_policy"
+        }
+      ]
+    },
+    {
+      "id": "C.conditions",
+      "conceptual_kind": "interactive_information_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "allowed": "Specified source questions/responses.",
+        "evaluator_only": "Reference, metric feedback and restricted source information.",
+        "state": "Actual episode/history/reset visibility limits retained.",
+        "projection": "Only permitted native action/response payloads, never full plan."
+      },
+      "links": [
+        {
+          "role": "references_interactive_task",
+          "target": "C.task"
+        },
+        {
+          "role": "references_interactive_source_requirement",
+          "target": "C.source"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "C.subject"
+        },
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        }
+      ]
+    },
+    {
+      "id": "C.transforms",
+      "conceptual_kind": "interactive_binding",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "batch_transform": "Not applicable to interactive-source specimen.",
+        "required": "Bind actions/responses to domain/episode and preserve actual messages and visibility.",
+        "receipts": "Later action, response, state and selection evidence.",
+        "limits": "No fictitious iid sampler/permutation requirement."
+      },
+      "links": [
+        {
+          "role": "references_interactive_information_policy",
+          "target": "C.conditions"
+        },
+        {
+          "role": "references_interactive_source_requirement",
+          "target": "C.source"
+        },
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        }
+      ]
+    },
+    {
+      "id": "C.adaptive_rule",
+      "conceptual_kind": "bounded_decision_policy",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "max_rounds": 2,
+        "first_action": {
+          "target": "X",
+          "value": 0
+        },
+        "next_rule": "If first permitted mean-Z >= 0 choose Y=1, otherwise Y=-1.",
+        "inputs": "Native-permitted source response only; no evaluation score.",
+        "stop": "Within two actions and declared failure/resource limits.",
+        "validity": "Illustration, not optimal-design or implementation claim."
+      },
+      "links": [
+        {
+          "role": "references_interactive_information_policy",
+          "target": "C.conditions"
+        },
+        {
+          "role": "references_interactive_source_requirement",
+          "target": "C.source"
+        }
+      ]
+    },
+    {
+      "id": "C.authority_requirement",
+      "conceptual_kind": "controlled_release_requirement",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "admission": "Applicable scoped grant and source/read eligibility/capacity precede compliant release.",
+        "actual_grant": "Not supplied or queried.",
+        "consumption": "Partial-exposure/failure read consequence requires adopted owner rule, not absence of report.",
+        "legacy": "One-version/five-total battery limits unchanged; no identity reset.",
+        "projection": "Full authorized private and public summaries have distinct scope."
+      },
+      "links": [
+        {
+          "role": "references_authority_policy",
+          "target": "common.authority_boundary"
+        },
+        {
+          "role": "references_restricted_reference_descriptor",
+          "target": "C.reference"
+        },
+        {
+          "role": "references_interactive_information_policy",
+          "target": "C.conditions"
+        }
+      ]
+    },
+    {
+      "id": "C.comparison",
+      "conceptual_kind": "contract_comparison",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "target": "Observed action/branch/response behavior versus bounded declared policy; completion separate from quality.",
+        "population": "One episode trace; no population-policy effect/interval.",
+        "matching": "No identical observations claim; a multi-policy study needs separate episode design.",
+        "missingness": "Missing parents not empty set or zero accuracy.",
+        "selection": "No reference-informed action/output selection."
+      },
+      "links": [
+        {
+          "role": "references_interactive_task",
+          "target": "C.task"
+        },
+        {
+          "role": "references_bounded_decision_policy",
+          "target": "C.adaptive_rule"
+        },
+        {
+          "role": "references_interactive_binding",
+          "target": "C.transforms"
+        },
+        {
+          "role": "references_restricted_reference_descriptor",
+          "target": "C.reference"
+        },
+        {
+          "role": "references_population_policy",
+          "target": "common.population_policy"
+        }
+      ]
+    },
+    {
+      "id": "C.lifecycle",
+      "conceptual_kind": "adaptive_lifecycle",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "timing": "Policy before fictional responses; decisions cite actual permitted inputs.",
+        "authority": "Real compliant admission unestablished.",
+        "exposure": "Partial delivery/failure remains; no automatic fresh read or blindness.",
+        "amendments": "Unhandled branch is gap/amendment, fixed plan unchanged."
+      },
+      "links": [
+        {
+          "role": "references_controlled_release_requirement",
+          "target": "C.authority_requirement"
+        },
+        {
+          "role": "references_selection_rule",
+          "target": "C.selection"
+        },
+        {
+          "role": "references_contract_comparison",
+          "target": "C.comparison"
+        }
+      ]
+    },
+    {
+      "id": "C.plan",
+      "conceptual_kind": "adaptive_definition_root",
+      "review_phase": "definition",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "One later-bound episode/local task/two-round rule.",
+        "status": "No actual source, grant or resolved reference.",
+        "future": "Responses and decisions are append-only later evidence."
+      },
+      "links": [
+        {
+          "role": "references_selection_rule",
+          "target": "C.selection"
+        },
+        {
+          "role": "references_interactive_task",
+          "target": "C.task"
+        },
+        {
+          "role": "references_subject_requirement",
+          "target": "C.subject"
+        },
+        {
+          "role": "references_interactive_information_policy",
+          "target": "C.conditions"
+        },
+        {
+          "role": "references_interactive_binding",
+          "target": "C.transforms"
+        },
+        {
+          "role": "references_contract_comparison",
+          "target": "C.comparison"
+        },
+        {
+          "role": "references_adaptive_lifecycle",
+          "target": "C.lifecycle"
+        },
+        {
+          "role": "references_controlled_release_requirement",
+          "target": "C.authority_requirement"
+        }
+      ]
+    },
+    {
+      "id": "C.case",
+      "conceptual_kind": "realized_episode",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "episode_alias": "episode-story-1, fictional source namespace.",
+        "bindings": "Later captured source/episode/state evidence, not real native IDs.",
+        "limits": "Reset and reference applicability unestablished."
+      },
+      "links": [
+        {
+          "role": "references_planned_episode_slot",
+          "target": "C.case_slot"
+        },
+        {
+          "role": "references_interactive_source_requirement",
+          "target": "C.source"
+        },
+        {
+          "role": "references_local_domain",
+          "target": "C.domain"
+        }
+      ]
+    },
+    {
+      "id": "C.collection",
+      "conceptual_kind": "episode_collection",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "scope": "One realized episode under fixed selection; prior exposure retained."
+      },
+      "links": [
+        {
+          "role": "references_selection_rule",
+          "target": "C.selection"
+        },
+        {
+          "role": "references_episode_membership",
+          "target": "C.membership"
+        }
+      ]
+    },
+    {
+      "id": "C.membership",
+      "conceptual_kind": "episode_membership",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "role": "Controlled-evaluation episode in hypothetical branch.",
+        "basis": "Fixed rule, not evidence of actual read authority/isolation."
+      },
+      "links": [
+        {
+          "role": "references_episode_collection",
+          "target": "C.collection"
+        },
+        {
+          "role": "references_realized_episode",
+          "target": "C.case"
+        },
+        {
+          "role": "references_planned_episode_slot",
+          "target": "C.case_slot"
+        },
+        {
+          "role": "references_selection_rule",
+          "target": "C.selection"
+        }
+      ]
+    },
+    {
+      "id": "C.response1",
+      "conceptual_kind": "hypothetical_response",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "action": {
+          "target": "X",
+          "value": 0
+        },
+        "mean_Z": "0.25",
+        "delivery": "Fictional first response delivered before failure.",
+        "evidence": "No actual service output or real restricted data."
+      },
+      "links": [
+        {
+          "role": "references_adaptive_definition_root",
+          "target": "C.plan"
+        },
+        {
+          "role": "references_realized_episode",
+          "target": "C.case"
+        },
+        {
+          "role": "references_interactive_information_policy",
+          "target": "C.conditions"
+        },
+        {
+          "role": "references_bounded_decision_policy",
+          "target": "C.adaptive_rule"
+        }
+      ]
+    },
+    {
+      "id": "C.decision1",
+      "conceptual_kind": "decision_receipt",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "input": "0.25",
+        "selected_next_action": {
+          "target": "Y",
+          "value": 1
+        },
+        "branch": "Nonnegative",
+        "selected_not_executed": "Second action selected, not delivered before crash.",
+        "visibility": "Only permitted source summary, no evaluator score."
+      },
+      "links": [
+        {
+          "role": "references_bounded_decision_policy",
+          "target": "C.adaptive_rule"
+        },
+        {
+          "role": "references_hypothetical_response",
+          "target": "C.response1"
+        }
+      ]
+    },
+    {
+      "id": "C.exposure",
+      "conceptual_kind": "partial_exposure_assessment",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "in_story": "First response delivered before crash.",
+        "admission": "No production authorization/read eligibility evidence; not a claim compliant S3 admitted this branch.",
+        "consumption": "Owner-policy consequence unresolved, no automatic new read.",
+        "projection": "Any real release follows recipient policy; these values are fictional."
+      },
+      "links": [
+        {
+          "role": "references_hypothetical_response",
+          "target": "C.response1"
+        },
+        {
+          "role": "references_controlled_release_requirement",
+          "target": "C.authority_requirement"
+        },
+        {
+          "role": "references_adaptive_lifecycle",
+          "target": "C.lifecycle"
+        }
+      ]
+    },
+    {
+      "id": "C.trace",
+      "conceptual_kind": "hypothetical_trace_root",
+      "review_phase": "illustrative_trace",
+      "evidence_status": "Fictional design definition or hypothetical branch; no real execution evidence",
+      "account": {
+        "observed_rounds": 1,
+        "selected_unexecuted_rounds": 1,
+        "failure": "Crash after first response, no final parent answer.",
+        "quality": "No resolved parent accuracy, invented abstention or empty set.",
+        "limits": "No real admission, fresh episode, isolated confirmation or population effect."
+      },
+      "links": [
+        {
+          "role": "references_adaptive_definition_root",
+          "target": "C.plan"
+        },
+        {
+          "role": "references_realized_episode",
+          "target": "C.case"
+        },
+        {
+          "role": "references_episode_collection",
+          "target": "C.collection"
+        },
+        {
+          "role": "references_hypothetical_response",
+          "target": "C.response1"
+        },
+        {
+          "role": "references_decision_receipt",
+          "target": "C.decision1"
+        },
+        {
+          "role": "references_partial_exposure_assessment",
+          "target": "C.exposure"
+        },
+        {
+          "role": "references_contract_comparison",
+          "target": "C.comparison"
+        }
+      ]
+    }
+  ],
+  "obligation_map": [
+    {
+      "key": "case.C1",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C1",
+      "source_obligation": "Stable local case identity and exact immutable revision; source-scoped aliases or unresolved source association",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "case.C2",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C2",
+      "source_obligation": "Evidence-situation boundary: what entities, scope, source state or bounded access situation this case denotes",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "case.C3",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C3",
+      "source_obligation": "Evidence bindings by role, including exact artifact/snapshot references or explicitly limited source descriptors and selectors",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "case.C4",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C4",
+      "source_obligation": "Applicable domain/schema contracts, coordinate/identity mappings and their established interpretation or gaps",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "case.C5",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C5",
+      "source_obligation": "Origin and known lineage/overlap relations, with scope and basis; explicitly bounded knowledge when lineage is incomplete",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "case.C6",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C6",
+      "source_obligation": "Definition/revision history, change reason and affected scope; no silently mutable prior revision",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "case.C7",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "C7",
+      "source_obligation": "Scoped evidence inventory/extent, availability/access observations, exposure provenance and limitations",
+      "account_refs": [
+        {
+          "record": "A.case",
+          "path": "/account"
+        },
+        {
+          "record": "B.case",
+          "path": "/account"
+        },
+        {
+          "record": "C.case",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "release.R1",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "R1",
+      "source_obligation": "Collection identity, exact immutable release and authoring provenance",
+      "account_refs": [
+        {
+          "record": "A.collection",
+          "path": "/account"
+        },
+        {
+          "record": "B.collection",
+          "path": "/account"
+        },
+        {
+          "record": "C.collection",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "release.R2",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "R2",
+      "source_obligation": "Declared collection purpose/scope and explicit enumeration extent",
+      "account_refs": [
+        {
+          "record": "A.collection",
+          "path": "/account"
+        },
+        {
+          "record": "B.collection",
+          "path": "/account"
+        },
+        {
+          "record": "C.collection",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "release.R3",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "R3",
+      "source_obligation": "Exact member entries or authorized restricted references/commitments, pinned to case revisions",
+      "account_refs": [
+        {
+          "record": "A.collection",
+          "path": "/account"
+        },
+        {
+          "record": "B.collection",
+          "path": "/account"
+        },
+        {
+          "record": "C.collection",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "release.R4",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "R4",
+      "source_obligation": "Source-pool identity, inclusion/exclusion/selection procedure and its timing/basis, or scoped reconstruction gaps",
+      "account_refs": [
+        {
+          "record": "A.collection",
+          "path": "/account"
+        },
+        {
+          "record": "B.collection",
+          "path": "/account"
+        },
+        {
+          "record": "C.collection",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "release.R5",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "R5",
+      "source_obligation": "Ordered/unordered, duplicate and selection-slot semantics, plus relevant selection strata; do not infer analysis weights or independence",
+      "account_refs": [
+        {
+          "record": "A.collection",
+          "path": "/account"
+        },
+        {
+          "record": "B.collection",
+          "path": "/account"
+        },
+        {
+          "record": "C.collection",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "release.R6",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "R6",
+      "source_obligation": "Release history and scoped disclosure/access/exposure evidence, including limits",
+      "account_refs": [
+        {
+          "record": "A.collection",
+          "path": "/account"
+        },
+        {
+          "record": "B.collection",
+          "path": "/account"
+        },
+        {
+          "record": "C.collection",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "membership.M1",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "M1",
+      "source_obligation": "Entry identity and containing release, using a packaging/reference convention that avoids circular identity definitions",
+      "account_refs": [
+        {
+          "record": "A.membership",
+          "path": "/account"
+        },
+        {
+          "record": "B.membership",
+          "path": "/account"
+        },
+        {
+          "record": "C.membership",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "membership.M2",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "M2",
+      "source_obligation": "Exact case revision, or explicit unresolved association in a preservation/reconstruction record",
+      "account_refs": [
+        {
+          "record": "A.membership",
+          "path": "/account"
+        },
+        {
+          "record": "B.membership",
+          "path": "/account"
+        },
+        {
+          "record": "C.membership",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "membership.M3",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "M3",
+      "source_obligation": "Inclusion role in this collection and source selection event/rule, or an honest historical gap",
+      "account_refs": [
+        {
+          "record": "A.membership",
+          "path": "/account"
+        },
+        {
+          "record": "B.membership",
+          "path": "/account"
+        },
+        {
+          "record": "C.membership",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "membership.M4",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "M4",
+      "source_obligation": "Applicable declared stratum/slot/multiplicity and links to earlier selections or source reuse",
+      "account_refs": [
+        {
+          "record": "A.membership",
+          "path": "/account"
+        },
+        {
+          "record": "B.membership",
+          "path": "/account"
+        },
+        {
+          "record": "C.membership",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "membership.M5",
+      "source_document": "audit/docs/subsystem2-case-membership-minimum-2026-11-02.md",
+      "source_table_id": "M5",
+      "source_obligation": "Basis for membership and selection claims, with extent/timing and corrections retained",
+      "account_refs": [
+        {
+          "record": "A.membership",
+          "path": "/account"
+        },
+        {
+          "record": "B.membership",
+          "path": "/account"
+        },
+        {
+          "record": "C.membership",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q01",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q01",
+      "source_obligation": "Identity/version, authoring provenance and asserted/reconstructed timing",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q02",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q02",
+      "source_obligation": "Scientific operation/question and proposition meaning",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q03",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q03",
+      "source_obligation": "Exact case/source revision, variable/domain/target scope and relevant time/environment context",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q04",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q04",
+      "source_obligation": "Required/optional native response families, object roles, cardinality, units and coverage semantics",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q05",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q05",
+      "source_obligation": "Referenced allowed information, actions/state and scientific resource constraints",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q06",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q06",
+      "source_obligation": "Completion, partial-output, abstention and missing-deliverable rules",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q07",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q07",
+      "source_obligation": "Applicability prerequisites and scoped scientific assumptions, including requested identifiability target",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "task.Q08",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "Q08",
+      "source_obligation": "Evaluation intents/rule references, amendment history and known gaps",
+      "account_refs": [
+        {
+          "record": "A.task_graph",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "B.task",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F01",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F01",
+      "source_obligation": "Stable identity/exact revision, author/source provenance, creation and source-event timing as known",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F02",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F02",
+      "source_obligation": "Assertion/quantity/structure type and exact scientific meaning",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F03",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F03",
+      "source_obligation": "Applicable case/source revision, domain, population, environment, time/state and conditions",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F04",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F04",
+      "source_obligation": "Basis and derivation procedure/inputs, assumptions and existing truth-tier association where applicable",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F05",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F05",
+      "source_obligation": "Coverage and completeness, positive/negative support, uncertainty, conflicts and known gaps",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F06",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F06",
+      "source_obligation": "Payload/evidence bindings, availability/integrity scope and domain/alignment references",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F07",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F07",
+      "source_obligation": "Disclosure/access policy and relevant exposure/independence evidence",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "reference.F08",
+      "source_document": "audit/docs/subsystem2-task-reference-design-2026-11-02.md",
+      "source_table_id": "F08",
+      "source_obligation": "Revision/conflict history, correction rationale and resulting claim limitations",
+      "account_refs": [
+        {
+          "record": "A.reference",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_left",
+          "path": "/account"
+        },
+        {
+          "record": "B.ref_right",
+          "path": "/account"
+        },
+        {
+          "record": "C.reference",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S01",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S01",
+      "source_obligation": "Bind proposition meaning and scope before comparing",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S02",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S02",
+      "source_obligation": "Keep reference support independent of response commitment",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S03",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S03",
+      "source_obligation": "Omission defaults require scoped native/reference contracts",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S04",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S04",
+      "source_obligation": "Explicit exceptions and outside-scope regions stay visible",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S05",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S05",
+      "source_obligation": "Capture/interpretation gaps do not fabricate decisions",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S06",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S06",
+      "source_obligation": "Partial structure preserves each established component",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S07",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S07",
+      "source_obligation": "Local answers imply no global completion",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S08",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S08",
+      "source_obligation": "Orders retain predicate, representation and closure meaning",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S09",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S09",
+      "source_obligation": "Compatibility, complete correctness and fulfillment are separate",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S10",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S10",
+      "source_obligation": "Preserve inconsistency and distinguish alternative hypotheses",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S11",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S11",
+      "source_obligation": "Abstention and answer/reference coverage have explicit units and denominators",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "response.S12",
+      "source_document": "audit/docs/subsystem2-reference-response-semantics-2026-11-02.md",
+      "source_table_id": "S12",
+      "source_obligation": "Sets/probabilities/decision rules keep their native meaning and selection basis",
+      "account_refs": [
+        {
+          "record": "common.response_policy",
+          "path": "/account"
+        },
+        {
+          "record": "A.task_order",
+          "path": "/account"
+        },
+        {
+          "record": "A.trace",
+          "path": "/account"
+        },
+        {
+          "record": "B.references",
+          "path": "/account"
+        },
+        {
+          "record": "C.task",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I01",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I01",
+      "source_obligation": "Stable identity/exact version, authoring/commitment timing, parent/contrast links and known gaps",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I02",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I02",
+      "source_obligation": "Scientific purpose, applicable cases/tasks and the factor levels being varied",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I03",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I03",
+      "source_obligation": "Declared fixed properties and equality/invariant meanings with checkable procedure references",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I04",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I04",
+      "source_obligation": "Typed input/channel inventory with recipients, content/source scopes, boundary/transport and applicable disclosure policy",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I05",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I05",
+      "source_obligation": "Allowed, denied, required or unresolved information/actions within explicit scope, including evaluator-only material",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I06",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I06",
+      "source_obligation": "Exact presentation/transform recipes, domain mappings and selected native-mode bindings",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I07",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I07",
+      "source_obligation": "State/reset/cache/history policy and randomization/resource rule references",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I08",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I08",
+      "source_obligation": "Prerequisites and enforcement/observation requirements, with explicit support limits",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I09",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I09",
+      "source_obligation": "Delivery/access/use evidence requirements and its expected capture/interpretation scope",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "condition.I10",
+      "source_document": "audit/docs/subsystem2-conditions-information-design-2026-11-02.md",
+      "source_table_id": "I10",
+      "source_obligation": "Planned handling of unavailable, contradictory, nonconforming or unverified conditions and analysis-population links",
+      "account_refs": [
+        {
+          "record": "A.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "B.conditions",
+          "path": "/account"
+        },
+        {
+          "record": "C.conditions",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T01",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T01",
+      "source_obligation": "Identity/exact contract revision, purpose, authoring timing and condition/task bindings",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T02",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T02",
+      "source_obligation": "Exact source snapshots/domains/selectors and applicability prerequisites",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T03",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T03",
+      "source_obligation": "Procedure/implementation/dependency identity, parameters and fitted-state provenance where applicable",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T04",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T04",
+      "source_obligation": "Declared changes and preserved properties, with explicit equality/predicate meanings",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T05",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T05",
+      "source_obligation": "Randomness roles, source/stream identity, sampling law and explicit cross-condition coupling",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T06",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T06",
+      "source_obligation": "Derived domain/representation identities, mappings, losses and membership/overlap lineage",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T07",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T07",
+      "source_obligation": "Reference applicability target, mapping/derivation procedure and limitations",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T08",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T08",
+      "source_obligation": "Ordered composition/dependency bindings and constraints",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T09",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T09",
+      "source_obligation": "Actual realization receipt: inputs, outputs, selected indices/maps/random parameters and evidence availability",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T10",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T10",
+      "source_obligation": "Preservation/applicability check procedure, actual result, scope, evidence and expected values",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T11",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T11",
+      "source_obligation": "Information/disclosure boundaries and actual presentation handoff",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "transform.T12",
+      "source_document": "audit/docs/subsystem2-transformations-randomization-design-2026-11-02.md",
+      "source_table_id": "T12",
+      "source_obligation": "Failure/amendment history and links to intended trials/populations",
+      "account_refs": [
+        {
+          "record": "A.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "B.transforms",
+          "path": "/account"
+        },
+        {
+          "record": "C.transforms",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C01",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C01",
+      "source_obligation": "Identity/version, author, temporal/commitment basis and amendment history",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C02",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C02",
+      "source_obligation": "Scientific target/contrast, direction, units, permitted label and metric/rule versions",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C03",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C03",
+      "source_obligation": "Intended population and selection rule, cases/source releases and condition/system/configuration bindings",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C04",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C04",
+      "source_obligation": "Task/output/reference applicability, information regime, domain/alignment and native/derived roles",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C05",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C05",
+      "source_obligation": "Trial/repetition/draw/attempt identities and planned multiplicities",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C06",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C06",
+      "source_obligation": "Matching keys, requirements, cardinalities and permitted coupling; explicit unmatched cases",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C07",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C07",
+      "source_obligation": "Nesting/overlap/dependence relationships, analysis units and weighting/aggregation order",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C08",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C08",
+      "source_obligation": "Eligibility/readiness rules and timing/basis, distinct from observed output/score availability",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C09",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C09",
+      "source_obligation": "Outcome/coverage populations and scoped reasons for gaps/nonconformance",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C10",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C10",
+      "source_obligation": "Missingness/abstention/recovery handling and any identification/utility/sensitivity assumptions",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C11",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C11",
+      "source_obligation": "Uncertainty, multiplicity, sensitivity and stopping-rule references with applicable support limits",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "comparison.C12",
+      "source_document": "audit/docs/subsystem2-comparisons-repetitions-missingness-2026-11-02.md",
+      "source_table_id": "C12",
+      "source_obligation": "Evidence/resolution/selection receipts and actual included/excluded/unmatched identities",
+      "account_refs": [
+        {
+          "record": "A.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "B.comparison",
+          "path": "/account"
+        },
+        {
+          "record": "C.comparison",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L01",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L01",
+      "source_obligation": "Plan/release identity, exact content/version, authoring provenance and related earlier definitions",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L02",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L02",
+      "source_obligation": "Scoped eligibility/readiness rules, assessment procedure, evidence, boundary/time and gaps",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L03",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L03",
+      "source_obligation": "Binding schedule: which fields are fixed when, and which are generated/resolved later by a bounded rule",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L04",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L04",
+      "source_obligation": "Exact reference closure for case/collection/task/condition/transform/comparison/subject contracts",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L05",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L05",
+      "source_obligation": "Commitment event and chronology evidence, prior-exposure scope and assurance limits",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L06",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L06",
+      "source_obligation": "Applicable actors/authority scopes for specification, amendment, execution and disclosure",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L07",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L07",
+      "source_obligation": "Controlled information/material release, recipient/purpose scope, exposure evidence and limits",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L08",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L08",
+      "source_obligation": "Amendments: old/new bindings, reason, timing, already observed information and affected analyses",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L09",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L09",
+      "source_obligation": "Adaptive policy identity, allowed inputs/actions, decision procedure and stopping/resource bounds, with actual decision evidence",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L10",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L10",
+      "source_obligation": "Actual materialization/admission/disclosure/execution receipts and partial-failure/recovery accounting",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L11",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L11",
+      "source_obligation": "Scientific claim labels and public/private evidence projections under adopted contracts",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    },
+    {
+      "key": "lifecycle.L12",
+      "source_document": "audit/docs/subsystem2-eligibility-commitment-release-2026-11-02.md",
+      "source_table_id": "L12",
+      "source_obligation": "Staleness, nonconformance, revocation/supersession and population/report impact",
+      "account_refs": [
+        {
+          "record": "A.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "B.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "C.lifecycle",
+          "path": "/account"
+        },
+        {
+          "record": "common.authority_boundary",
+          "path": "/account"
+        }
+      ],
+      "review_status": "Named rule/account/gap ownership only, not proof of completeness or passed tests."
+    }
+  ],
+  "real_source_document_hashes": {
+    "subsystem2-case-membership-minimum-2026-11-02.md": "77cebd2c3f0672dd6c7a258721e7c6fef99fbcbd69d914a9c83199b7e5c671ac",
+    "subsystem2-task-reference-design-2026-11-02.md": "d4ce305bfb93c3d5dc59acc7e1a11be05bf080f86d5707e36cfad912a8f30427",
+    "subsystem2-reference-response-semantics-2026-11-02.md": "e3f5bb7a9aaccaf84970f1611d4dbe181409dc7c88cc4df772255fa76cce12f7",
+    "subsystem2-conditions-information-design-2026-11-02.md": "1438b7ccbca9fcdadf319b3e91cf305ddb4d5fd522c501c8fb43d7eaa0424a27",
+    "subsystem2-transformations-randomization-design-2026-11-02.md": "2f0f039dc5adfc2e1068146e8750d1393c22565208ffe30eb66274fae66118fa",
+    "subsystem2-comparisons-repetitions-missingness-2026-11-02.md": "8ee10f8f6918f274711368a07cc93a1b4690dbfd722bd21722d7595a18978108",
+    "subsystem2-eligibility-commitment-release-2026-11-02.md": "ce5f62d665869450e602e662e41161f07e839b33173a319da220fa0915c05eca"
+  },
+  "source_documents": [
+    "audit/docs/subsystem2-linked-experiment-examples-2026-11-02.md",
+    "audit/docs/subsystem2-composition-closure-review-2026-11-02.md"
+  ]
+}

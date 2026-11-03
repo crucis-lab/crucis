@@ -1,0 +1,3433 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "kind": "declarative_sc2_design_catalog",
+  "version": "0.1.0-proposal.1",
+  "status": "candidate; not installed schema or implementation",
+  "core_payloads": {
+    "s2.component": {
+      "name": "String",
+      "role": "Code",
+      "version": "K(String)",
+      "implementation": "K(PayloadRef)",
+      "configuration": "K(Ref(parameter_set))",
+      "source": "Source"
+    },
+    "s2.parameter_set": {
+      "schema": "Contract",
+      "bindings": "ParameterBinding[]",
+      "source": "Source"
+    },
+    "s2.requirement": {
+      "predicate": "Contract",
+      "subjects": "Ref[]",
+      "parameters": "Ref(parameter_set)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.relation": {
+      "relation_contract": "Contract",
+      "endpoints": "Endpoint[]",
+      "parameters": "Ref(parameter_set)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.source_definition": {
+      "source_kind": "Contract",
+      "domain": "K(Ref(s1.domain))",
+      "evidence": "IndexList(Ref(s1.artifact_snapshot|s1.artifact_declaration))",
+      "access": "K(Ref(parameter_set))",
+      "population": "Ref(parameter_set)",
+      "assumptions": "Ref(requirement)[]",
+      "lineage": "Ref(relation)[]",
+      "source": "Source"
+    },
+    "s2.case_revision": {
+      "case_key": "ScopedKey",
+      "prior": "K(Ref(case_revision))",
+      "origin_time": "K(Time)",
+      "aliases": "NativeIdentity[]",
+      "scope": "Scope",
+      "domains": "IndexList(Ref(s1.domain))",
+      "evidence": "IndexList(Ref(s1.artifact_snapshot|s1.artifact_declaration))",
+      "definitions": "Ref(source_definition)[]",
+      "relations": "Ref(relation)[]",
+      "exposure": "IndexList(Ref(exposure_receipt))",
+      "limitations": "Ref(diagnostic)[]",
+      "source": "Source"
+    },
+    "s2.case_slot": {
+      "requirement": "Ref(requirement)",
+      "sources": "Ref(source_definition)[]",
+      "domain_requirements": "Ref(requirement)[]",
+      "resolution_rule": "Contract",
+      "parameters": "Ref(parameter_set)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.selection_rule": {
+      "rule": "Contract",
+      "population": "Ref(parameter_set)",
+      "inputs": "Ref[]",
+      "parameters": "Ref(parameter_set)[]",
+      "randomization": "K(Ref(randomization_spec))",
+      "stopping": "K(Ref(requirement))",
+      "source": "Source"
+    },
+    "s2.collection_release": {
+      "collection_key": "ScopedKey",
+      "previous": "K(Ref(collection_release))",
+      "membership": "IndexList(Ref(membership))",
+      "selection": "K(Ref(selection_rule))",
+      "ordering": "ordered|unordered",
+      "multiplicity": "unique_case_revisions|explicit_slots",
+      "scope": "Scope",
+      "exposure": "IndexList(Ref(exposure_receipt))",
+      "source": "Source"
+    },
+    "s2.membership": {
+      "collection": "Ref(collection_release)",
+      "case": "Ref(case_revision)",
+      "selection_slot": "K(Ref(case_slot))",
+      "role": "Code",
+      "basis": "Ref[]",
+      "source": "Source"
+    },
+    "s2.coverage_spec": {
+      "domain": "K(Ref(s1.domain))",
+      "predicate": "Contract",
+      "parameters": "Ref(parameter_set)[]",
+      "extent": "complete_for_scope|partial_for_scope|not_examined|unresolved",
+      "omission": "Contract",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.response_contract": {
+      "deliverables": "Deliverable[]",
+      "coverage": "Ref(coverage_spec)",
+      "fulfillment_rule": "Contract",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.task_definition": {
+      "operation": "Contract",
+      "scope": "Scope",
+      "response": "Ref(response_contract)",
+      "completion": "Contract",
+      "completion_parameters": "Ref(parameter_set)[]",
+      "assumptions": "Ref(requirement)[]",
+      "source": "Source"
+    },
+    "s2.task_binding": {
+      "definition": "Ref(task_definition)",
+      "cases": "Ref(case_slot|case_revision|resolution_receipt)[]",
+      "domains": "Ref(s1.domain|s1.mapping)[]",
+      "targets": "Ref(parameter_set)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.reference_definition": {
+      "reference_kind": "Contract",
+      "assertions": "K(Ref(s1.output|s1.artifact_snapshot|s1.artifact_declaration))",
+      "domain": "K(Ref(s1.domain))",
+      "applicability": "Ref(requirement)[]",
+      "coverage": "Ref(coverage_spec)",
+      "tier": "K(Tier)",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.channel_binding": {
+      "information": "Contract",
+      "recipient": "K(Ref(component|s1.component))",
+      "domain": "K(Ref(s1.domain))",
+      "payload_requirement": "K(Ref(requirement))",
+      "disposition": "permitted|required|forbidden|unresolved",
+      "parameters": "Ref(parameter_set)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.information_policy": {
+      "channels": "IndexList(Ref(channel_binding))",
+      "state_policy": "K(Ref(parameter_set))",
+      "constraints": "Ref(requirement)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.condition": {
+      "condition_key": "ScopedKey",
+      "applies_to": "Scope",
+      "varies": "Ref(requirement)[]",
+      "preserves": "Ref(requirement)[]",
+      "information": "Ref(information_policy)",
+      "transforms": "Ref(transform_spec)[]",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.randomization_spec": {
+      "role": "Code",
+      "procedure": "Contract",
+      "parameters": "Ref(parameter_set)[]",
+      "coupling": "K(Ref(relation|parameter_set))",
+      "source": "Source"
+    },
+    "s2.transform_spec": {
+      "operation": "Contract",
+      "inputs": "Ref(requirement)[]",
+      "parameters": "Ref(parameter_set)[]",
+      "preserves": "Ref(requirement)[]",
+      "produces": "Ref(requirement)[]",
+      "randomness": "Ref(randomization_spec)[]",
+      "predecessors": "Ref(transform_spec)[]",
+      "reference_rule": "Contract",
+      "source": "Source"
+    },
+    "s2.comparison": {
+      "tasks": "Ref(task_binding)[]",
+      "conditions": "Ref(condition)[]",
+      "target": "Ref(parameter_set)",
+      "measures": "Contract[]",
+      "analysis_rule": "Contract",
+      "population_rule": "Contract",
+      "matching": "Ref(parameter_set)",
+      "dependence": "Ref(parameter_set)",
+      "missingness": "Ref(parameter_set)",
+      "uncertainty": "Ref(parameter_set)",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.subject_binding": {
+      "native_subject": "K(Ref(s1.component))",
+      "configuration": "K(Ref(s1.configuration))",
+      "support": "K(Ref(parameter_set|s1.artifact_snapshot|s1.output))",
+      "requirements": "Ref(requirement)[]",
+      "parameters": "Ref(parameter_set)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.trial_slot": {
+      "origin_plan": "Ref(plan_snapshot)",
+      "case_requirement": "Ref(case_slot|case_revision|resolution_receipt)",
+      "task": "Ref(task_binding)",
+      "condition": "Ref(condition)",
+      "subject": "Ref(subject_binding)",
+      "repeat_key": "ScopedKey",
+      "randomness": "Ref(randomization_spec)[]",
+      "source": "Source"
+    },
+    "s2.plan_snapshot": {
+      "purpose": "Contract",
+      "definitions": "Ref[]",
+      "collections": "Ref(case_slot|selection_rule|collection_release)[]",
+      "tasks": "Ref(task_binding)[]",
+      "conditions": "Ref(condition)[]",
+      "subjects": "Ref(subject_binding)[]",
+      "comparisons": "Ref(comparison)[]",
+      "trials": "IndexList(Ref(trial_slot))",
+      "resolution_requirements": "Ref(requirement)[]",
+      "commitment_requirements": "Ref(requirement)[]",
+      "prior_evidence": "IndexList(Ref)",
+      "limitations": "Ref(diagnostic)[]",
+      "source": "Source"
+    },
+    "s2.resolution_receipt": {
+      "entries": "ResolutionEntry[]",
+      "candidates": "IndexList(Ref)",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.materialization_receipt": {
+      "transform": "Ref(transform_spec)",
+      "sources": "Ref[]",
+      "outputs": "Ref(case_revision|s1.artifact_snapshot|s1.domain|s1.mapping|s1.output)[]",
+      "randomness": "Ref(resolution_receipt)[]",
+      "checks": "Ref(assessment|s1.check)[]",
+      "gaps": "Ref(diagnostic)[]",
+      "scope": "Scope",
+      "source": "Source"
+    },
+    "s2.run_binding": {
+      "plan": "Ref(plan_snapshot)",
+      "trial": "Ref(trial_slot)",
+      "resolutions": "Ref(resolution_receipt)[]",
+      "materialization": "IndexList(Ref(materialization_receipt))",
+      "subject": "Ref(subject_binding)",
+      "assessments": "Ref(assessment)[]",
+      "source": "Source"
+    },
+    "s2.request_binding_receipt": {
+      "run": "Ref(run_binding)",
+      "request": "Ref(s1.request)",
+      "attempt": "Ref(s1.attempt)",
+      "projection": "Ref(parameter_set)",
+      "checks": "Ref(assessment|s1.check)[]",
+      "source": "Source"
+    },
+    "s2.evidence_link": {
+      "subjects": "Ref[]",
+      "native_evidence": "IndexList(Ref(s1.connection_observation|s1.observation|s1.assessment|s1.output|s1.artifact_snapshot|s1.artifact_declaration|s1.event|s1.check|s1.gap|s1.action_request|s1.action_response|s1.transmission|s1.import_receipt))",
+      "source": "Source"
+    },
+    "s2.analysis_population_receipt": {
+      "comparison": "Ref(comparison)",
+      "intended": "IndexList(Ref(trial_slot|membership|case_revision|evidence_link))",
+      "entries": "PopulationEntry[]",
+      "rule": "Contract",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.evaluation_binding": {
+      "plan": "Ref(plan_snapshot)",
+      "comparison": "Ref(comparison)",
+      "inputs": "Ref(evidence_link|s1.output|s1.connection_observation)[]",
+      "references": "Ref(reference_definition)[]",
+      "alignments": "Ref(s1.mapping|materialization_receipt|resolution_receipt)[]",
+      "interpretations": "Ref(assessment|s1.check)[]",
+      "population": "Ref(analysis_population_receipt)",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.assessment": {
+      "claim": "Contract",
+      "subjects": "Ref[]",
+      "inputs": "Ref[]",
+      "procedure": "Ref(component|s1.component)",
+      "scope": "Scope",
+      "result": "pass|fail|unknown|not_checked",
+      "diagnostics": "Ref(diagnostic)[]",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.lifecycle_event": {
+      "event_contract": "Contract",
+      "subjects": "Ref[]",
+      "parameters": "Ref(parameter_set)[]",
+      "predecessors": "Ref(lifecycle_event|s1.event)[]",
+      "claimed_time": "K(Time)",
+      "observed_time": "K(Time)",
+      "source": "Source"
+    },
+    "s2.commitment_receipt": {
+      "plan": "Ref(plan_snapshot)",
+      "content": "ContentBinding",
+      "event": "Ref(lifecycle_event|s1.event)",
+      "assurance": "Ref(parameter_set)",
+      "exposure": "IndexList(Ref(exposure_receipt))",
+      "source": "Source"
+    },
+    "s2.amendment": {
+      "previous": "Ref(plan_snapshot)",
+      "revised": "Ref(plan_snapshot)",
+      "affected": "Scope",
+      "reason": "Code",
+      "explanation": "Ref(parameter_set|s1.artifact_snapshot)",
+      "event": "Ref(lifecycle_event|s1.event)",
+      "prior_observed": "IndexList(Ref)",
+      "source": "Source"
+    },
+    "s2.decision_receipt": {
+      "policy": "Ref(selection_rule|requirement|parameter_set)",
+      "information": "IndexList(Ref)",
+      "chosen": "IndexList(Ref)",
+      "rule": "Contract",
+      "event": "Ref(lifecycle_event|s1.event)",
+      "parameters": "Ref(parameter_set)[]",
+      "source": "Source"
+    },
+    "s2.exposure_receipt": {
+      "subjects": "Ref[]",
+      "recipients": "IndexList(Ref(component|s1.component))",
+      "information": "IndexList(Ref)",
+      "event": "Ref(lifecycle_event|s1.event)",
+      "policy": "Ref(information_policy|s1.policy)",
+      "scope": "Scope",
+      "assessment": "K(Ref(assessment))",
+      "source": "Source"
+    },
+    "s2.support_declaration": {
+      "profiles": "ProfileClaim[]",
+      "subject": "Scope",
+      "source": "Source"
+    },
+    "s2.import_receipt": {
+      "import_occurrence": "ID",
+      "sources": "Ref(s1.artifact_snapshot|s1.artifact_declaration|s1.import_receipt)[]",
+      "reader": "Ref(component|s1.component)",
+      "configuration": "K(Ref(parameter_set))",
+      "original_identity": "K(NativeIdentity)",
+      "interpretations": "Ref[]",
+      "gaps": "Ref(diagnostic)[]",
+      "source": "Source"
+    },
+    "s2.diagnostic": {
+      "subjects": "Ref[]",
+      "reasons": "Code[]",
+      "scope": "Scope",
+      "source": "Source"
+    }
+  },
+  "parameter_value": "String|Boolean|Number|Unit|Time|Contract|Digest|Ref|Ref[]|PayloadRef|NativeIdentity",
+  "parameter_schemas": {
+    "population": {
+      "contract": {
+        "name": "s2.params.population",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "frame": {
+          "role": "s2.param.frame",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "selection": {
+          "role": "s2.param.selection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "unit": {
+          "role": "s2.param.unit",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "grouping": {
+          "role": "s2.param.grouping",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "strata": {
+          "role": "s2.param.strata",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "extent": {
+          "role": "s2.param.extent",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "complete_for_scope",
+            "partial_for_scope",
+            "not_examined",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "limits": {
+          "role": "s2.param.limits",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "P01: enumeration scope and multiplicity explicit",
+        "P02: source identity is not independence",
+        "P03: incomplete original population stays unknown"
+      ]
+    },
+    "access": {
+      "contract": {
+        "name": "s2.params.access",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "mode": {
+          "role": "s2.param.mode",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "snapshot",
+            "statistics",
+            "query",
+            "partitioned",
+            "model",
+            "stream",
+            "native_extension"
+          ],
+          "constraints": []
+        },
+        "source_version": {
+          "role": "s2.param.source_version",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "operations": {
+          "role": "s2.param.operations",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "arguments": {
+          "role": "s2.param.arguments",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "responses": {
+          "role": "s2.param.responses",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "parties": {
+          "role": "s2.param.parties",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "authority_requirements": {
+          "role": "s2.param.authority_requirements",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "scope": {
+          "role": "s2.param.scope",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "A01: no central raw rows inferred",
+        "A02: actual authority separate",
+        "A03: installed source contract required"
+      ]
+    },
+    "task": {
+      "contract": {
+        "name": "s2.params.task",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "target": {
+          "role": "s2.param.target",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "question": {
+          "role": "s2.param.question",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "response_groups": {
+          "role": "s2.param.response_groups",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "admissibility": {
+          "role": "s2.param.admissibility",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "abstention": {
+          "role": "s2.param.abstention",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "allowed",
+            "forbidden"
+          ],
+          "constraints": []
+        },
+        "selection": {
+          "role": "s2.param.selection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "Q01: predicate and target distinct",
+        "Q02: alternatives do not authorize best-reference selection"
+      ]
+    },
+    "coverage": {
+      "contract": {
+        "name": "s2.params.coverage",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "domain": {
+          "role": "s2.param.domain",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "predicate": {
+          "role": "s2.param.predicate",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "positive": {
+          "role": "s2.param.positive",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "negative": {
+          "role": "s2.param.negative",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "unknown": {
+          "role": "s2.param.unknown",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "omission": {
+          "role": "s2.param.omission",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "asserted_absence",
+            "unreported",
+            "explicit_only",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "applicability": {
+          "role": "s2.param.applicability",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "tier": {
+          "role": "s2.param.tier",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "F01: coverage scopes disjoint or conflict explicit",
+        "F02: outside scope no assertion",
+        "F03: existing tier semantics unchanged"
+      ]
+    },
+    "temporal": {
+      "contract": {
+        "name": "s2.params.temporal",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "subject": {
+          "role": "s2.param.subject",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "trajectory": {
+          "role": "s2.param.trajectory",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "frame": {
+          "role": "s2.param.frame",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "unit": {
+          "role": "s2.param.unit",
+          "type": "Unit",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "coordinates": {
+          "role": "s2.param.coordinates",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "windows": {
+          "role": "s2.param.windows",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "lag": {
+          "role": "s2.param.lag",
+          "type": "Number",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": [
+            "finite_when_known"
+          ]
+        },
+        "epoch": {
+          "role": "s2.param.epoch",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "stationarity": {
+          "role": "s2.param.stationarity",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "boundary": {
+          "role": "s2.param.boundary",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "T01: half-open bounds and lag eligibility",
+        "T02: overlap/dependence not iid count",
+        "T03: units/epoch mapping applies to source and reference"
+      ]
+    },
+    "relational": {
+      "contract": {
+        "name": "s2.params.relational",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "perspective": {
+          "role": "s2.param.perspective",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "entity_schema": {
+          "role": "s2.param.entity_schema",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "paths": {
+          "role": "s2.param.paths",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "cardinality": {
+          "role": "s2.param.cardinality",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "identity_namespace": {
+          "role": "s2.param.identity_namespace",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "joins": {
+          "role": "s2.param.joins",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "population": {
+          "role": "s2.param.population",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "R01: scoped entity IDs",
+        "R02: path/perspective preserved",
+        "R03: shared entities imply dependence"
+      ]
+    },
+    "distributed": {
+      "contract": {
+        "name": "s2.params.distributed",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "parties": {
+          "role": "s2.param.parties",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "contributions": {
+          "role": "s2.param.contributions",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "access": {
+          "role": "s2.param.access",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "aggregation": {
+          "role": "s2.param.aggregation",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "overlap": {
+          "role": "s2.param.overlap",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "count_meaning": {
+          "role": "s2.param.count_meaning",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "normalization": {
+          "role": "s2.param.normalization",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "missing_parties": {
+          "role": "s2.param.missing_parties",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "D01: party availability scoped",
+        "D02: local CI is not global CI",
+        "D03: aggregation needs supported assumptions"
+      ]
+    },
+    "learned": {
+      "contract": {
+        "name": "s2.params.learned",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "encoder": {
+          "role": "s2.param.encoder",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "native_domain": {
+          "role": "s2.param.native_domain",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "source_domain": {
+          "role": "s2.param.source_domain",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "training": {
+          "role": "s2.param.training",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "calibration": {
+          "role": "s2.param.calibration",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "evaluation": {
+          "role": "s2.param.evaluation",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "fit_policy": {
+          "role": "s2.param.fit_policy",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "initialization": {
+          "role": "s2.param.initialization",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "L01: each encoder/domain identity distinct",
+        "L02: fit repeat not new dataset",
+        "L03: no shape-based source mapping"
+      ]
+    },
+    "alignment": {
+      "contract": {
+        "name": "s2.params.alignment",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "procedure": {
+          "role": "s2.param.procedure",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "source_domain": {
+          "role": "s2.param.source_domain",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "target_domain": {
+          "role": "s2.param.target_domain",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "candidates": {
+          "role": "s2.param.candidates",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "selection": {
+          "role": "s2.param.selection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "calibration": {
+          "role": "s2.param.calibration",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "losses": {
+          "role": "s2.param.losses",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "ambiguity": {
+          "role": "s2.param.ambiguity",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "unique",
+            "set_valued",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "timing": {
+          "role": "s2.param.timing",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "L04: outcome-independent calibration procedure",
+        "L05: no candidate-count probabilities",
+        "L06: source score withheld unless invariant or declared range"
+      ]
+    },
+    "collection": {
+      "contract": {
+        "name": "s2.params.collection",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "members": {
+          "role": "s2.param.members",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "member_contract": {
+          "role": "s2.param.member_contract",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "weight_meaning": {
+          "role": "s2.param.weight_meaning",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "normalization": {
+          "role": "s2.param.normalization",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "dependence": {
+          "role": "s2.param.dependence",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "parameter_associations": {
+          "role": "s2.param.parameter_associations",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "derived_selection": {
+          "role": "s2.param.derived_selection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "G01: positive finite total for probability normalization",
+        "G02: equal graphs retain particle identities",
+        "G03: derived graph need not preserve DAG"
+      ]
+    },
+    "quantity": {
+      "contract": {
+        "name": "s2.params.quantity",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "event": {
+          "role": "s2.param.event",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "conditioning": {
+          "role": "s2.param.conditioning",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "meaning": {
+          "role": "s2.param.meaning",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "unit": {
+          "role": "s2.param.unit",
+          "type": "Unit",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "measure": {
+          "role": "s2.param.measure",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "normalization": {
+          "role": "s2.param.normalization",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "uncertainty": {
+          "role": "s2.param.uncertainty",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "G04: conditional orientation distinct from directed/adjacency event",
+        "G05: probabilities/p-values/coefficients not interchangeable"
+      ]
+    },
+    "intervention": {
+      "contract": {
+        "name": "s2.params.intervention",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "environments": {
+          "role": "s2.param.environments",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "target_domain": {
+          "role": "s2.param.target_domain",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "target_kind": {
+          "role": "s2.param.target_kind",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "target_disclosure": {
+          "role": "s2.param.target_disclosure",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "known",
+            "withheld",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "task_target": {
+          "role": "s2.param.task_target",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "baseline",
+            "active_environment",
+            "proxy",
+            "latent",
+            "native_extension"
+          ],
+          "constraints": []
+        },
+        "baseline_reference": {
+          "role": "s2.param.baseline_reference",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "active_reference": {
+          "role": "s2.param.active_reference",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "H01: unknown mask not empty",
+        "H02: perfect and soft interventions distinct",
+        "H03: baseline/active references not substituted"
+      ]
+    },
+    "measurement": {
+      "contract": {
+        "name": "s2.params.measurement",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "underlying": {
+          "role": "s2.param.underlying",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "observed": {
+          "role": "s2.param.observed",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "law": {
+          "role": "s2.param.law",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "scale": {
+          "role": "s2.param.scale",
+          "type": "Number",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": [
+            "finite_nonnegative_when_known"
+          ]
+        },
+        "noise_source": {
+          "role": "s2.param.noise_source",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "reference_rule": {
+          "role": "s2.param.reference_rule",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "losses": {
+          "role": "s2.param.losses",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "H04: proxy not identity",
+        "H05: do underlying not do proxy",
+        "H06: no inherited truth without derivation"
+      ]
+    },
+    "randomization": {
+      "contract": {
+        "name": "s2.params.randomization",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "role": {
+          "role": "s2.param.role",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "source",
+            "transform",
+            "native",
+            "resampling",
+            "adaptive"
+          ],
+          "constraints": []
+        },
+        "generator": {
+          "role": "s2.param.generator",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "parameters": {
+          "role": "s2.param.parameters",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "realization": {
+          "role": "s2.param.realization",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "coupling": {
+          "role": "s2.param.coupling",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "shared_realization",
+            "independent_by_design",
+            "uncoupled",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "coupled_to": {
+          "role": "s2.param.coupled_to",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "stream_key": {
+          "role": "s2.param.stream_key",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "N01: repeated index not proof of coupling",
+        "N02: seeds/draws only supplied authorized metadata",
+        "N03: independence is an assumption requiring basis"
+      ]
+    },
+    "transform": {
+      "contract": {
+        "name": "s2.params.transform",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "operation": {
+          "role": "s2.param.operation",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "inputs": {
+          "role": "s2.param.inputs",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "outputs": {
+          "role": "s2.param.outputs",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "maps": {
+          "role": "s2.param.maps",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "preservation": {
+          "role": "s2.param.preservation",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "losses": {
+          "role": "s2.param.losses",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "fitted_inputs": {
+          "role": "s2.param.fitted_inputs",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "reference_rule": {
+          "role": "s2.param.reference_rule",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "order": {
+          "role": "s2.param.order",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "X01: exact input/output identity",
+        "X02: checks under declared equality/tolerance",
+        "X03: fitted leakage and composition tracked"
+      ]
+    },
+    "comparison": {
+      "contract": {
+        "name": "s2.params.comparison",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "estimand": {
+          "role": "s2.param.estimand",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "direction": {
+          "role": "s2.param.direction",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "matching": {
+          "role": "s2.param.matching",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "cardinality": {
+          "role": "s2.param.cardinality",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "units": {
+          "role": "s2.param.units",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "weights": {
+          "role": "s2.param.weights",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "dependence": {
+          "role": "s2.param.dependence",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "missingness": {
+          "role": "s2.param.missingness",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "output_selection": {
+          "role": "s2.param.output_selection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "reference_selection": {
+          "role": "s2.param.reference_selection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "uncertainty": {
+          "role": "s2.param.uncertainty",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "multiplicity": {
+          "role": "s2.param.multiplicity",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "stopping": {
+          "role": "s2.param.stopping",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "C01: exact intended and observed population",
+        "C02: no default independent repeats",
+        "C03: no invented score for absent output",
+        "C04: utility and conditional quality distinct"
+      ]
+    },
+    "commitment": {
+      "contract": {
+        "name": "s2.params.commitment",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "fixed": {
+          "role": "s2.param.fixed",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "later_bound": {
+          "role": "s2.param.later_bound",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "cutoff": {
+          "role": "s2.param.cutoff",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "assurance": {
+          "role": "s2.param.assurance",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "local_snapshot",
+            "external_attestation",
+            "reported",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "exposure": {
+          "role": "s2.param.exposure",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "actors": {
+          "role": "s2.param.actors",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "authority": {
+          "role": "s2.param.authority",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "admission": {
+          "role": "s2.param.admission",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "consumption": {
+          "role": "s2.param.consumption",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "amendments": {
+          "role": "s2.param.amendments",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "K01: subject bytes precede receipt",
+        "K02: original preregistration not inferred",
+        "K03: owner read limits unchanged",
+        "K04: failure can still expose information"
+      ]
+    },
+    "native_handoff": {
+      "contract": {
+        "name": "s2.params.native_handoff",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "recipient": {
+          "role": "s2.param.recipient",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "operation": {
+          "role": "s2.param.operation",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "response": {
+          "role": "s2.param.response",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "route": {
+          "role": "s2.param.route",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "recorded",
+            "direct",
+            "prepared_command",
+            "attached_job",
+            "recorded_response_replay"
+          ],
+          "constraints": []
+        },
+        "transport": {
+          "role": "s2.param.transport",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "configuration": {
+          "role": "s2.param.configuration",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "support": {
+          "role": "s2.param.support",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "completion": {
+          "role": "s2.param.completion",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "completion_parameters": {
+          "role": "s2.param.completion_parameters",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "presentation_policy": {
+          "role": "s2.param.presentation_policy",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "resource_policy": {
+          "role": "s2.param.resource_policy",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "recovery_policy": {
+          "role": "s2.param.recovery_policy",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "B01: installed exact projection and S1 route required",
+        "B02: native payload allowed projection only",
+        "B03: no grant from metadata"
+      ]
+    },
+    "legacy": {
+      "contract": {
+        "name": "s2.params.legacy",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "battery": {
+          "role": "s2.param.battery",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "version": {
+          "role": "s2.param.version",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "manifest": {
+          "role": "s2.param.manifest",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "item": {
+          "role": "s2.param.item",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "arm": {
+          "role": "s2.param.arm",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "status": {
+          "role": "s2.param.status",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "coordinate": {
+          "role": "s2.param.coordinate",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "reported_hash": {
+          "role": "s2.param.reported_hash",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "original_identity": {
+          "role": "s2.param.original_identity",
+          "type": "NativeIdentity",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "original_time": {
+          "role": "s2.param.original_time",
+          "type": "Time",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "losses": {
+          "role": "s2.param.losses",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "projection": {
+          "role": "s2.param.projection",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "Y01: source-scoped aliases",
+        "Y02: n is variable count in inspected builders",
+        "Y03: replicates may be retries",
+        "Y04: narrow score key requires explicit selection"
+      ]
+    },
+    "state": {
+      "contract": {
+        "name": "s2.params.state",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "scope": {
+          "role": "s2.param.scope",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "reset": {
+          "role": "s2.param.reset",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "loaded": {
+          "role": "s2.param.loaded",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "reuse": {
+          "role": "s2.param.reuse",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "visibility": {
+          "role": "s2.param.visibility",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "history": {
+          "role": "s2.param.history",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "independence": {
+          "role": "s2.param.independence",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "S01: requested reset distinct from observed reset",
+        "S02: resume native attempt versus checkpoint restart",
+        "S03: unobserved state remains unknown"
+      ]
+    },
+    "selection": {
+      "contract": {
+        "name": "s2.params.selection",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "pool": {
+          "role": "s2.param.pool",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "rule": {
+          "role": "s2.param.rule",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "count": {
+          "role": "s2.param.count",
+          "type": "Number",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": [
+            "nonnegative_integer_when_known"
+          ]
+        },
+        "replacement": {
+          "role": "s2.param.replacement",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "without_replacement",
+            "with_replacement",
+            "constructed",
+            "unresolved"
+          ],
+          "constraints": []
+        },
+        "ordering": {
+          "role": "s2.param.ordering",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "ordered",
+            "unordered"
+          ],
+          "constraints": []
+        },
+        "stopping": {
+          "role": "s2.param.stopping",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "randomization": {
+          "role": "s2.param.randomization",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "adaptive_rule": {
+          "role": "s2.param.adaptive_rule",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "P04: count not native attempt count",
+        "P05: adaptive branch limited to permitted prior evidence"
+      ]
+    },
+    "resolution": {
+      "contract": {
+        "name": "s2.params.resolution",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "requirements": {
+          "role": "s2.param.requirements",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "candidates": {
+          "role": "s2.param.candidates",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "selected": {
+          "role": "s2.param.selected",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "rule": {
+          "role": "s2.param.rule",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "cardinality": {
+          "role": "s2.param.cardinality",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "compatibility": {
+          "role": "s2.param.compatibility",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "J01: zero/multiple candidates preserved",
+        "J02: one selected value for required single-valued role",
+        "J03: no last/best fallback"
+      ]
+    },
+    "response_group": {
+      "contract": {
+        "name": "s2.params.response_group",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "roles": {
+          "role": "s2.param.roles",
+          "type": "PayloadRef",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "minimum": {
+          "role": "s2.param.minimum",
+          "type": "Number",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": [
+            "nonnegative_integer_when_known"
+          ]
+        },
+        "maximum": {
+          "role": "s2.param.maximum",
+          "type": "Number",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": [
+            "nonnegative_integer_when_known"
+          ]
+        },
+        "maximum_kind": {
+          "role": "s2.param.maximum_kind",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "finite",
+            "unbounded"
+          ],
+          "constraints": []
+        },
+        "fulfillment": {
+          "role": "s2.param.fulfillment",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "alternatives": {
+          "role": "s2.param.alternatives",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "abstention": {
+          "role": "s2.param.abstention",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "allowed",
+            "forbidden"
+          ],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "Q03: group cardinality not a required Boolean",
+        "Q04: abstention is explicit response",
+        "Q05: stage not silently final"
+      ]
+    },
+    "assessment_context": {
+      "contract": {
+        "name": "s2.params.assessment_context",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "boundary": {
+          "role": "s2.param.boundary",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "cutoff": {
+          "role": "s2.param.cutoff",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "claimed_time": {
+          "role": "s2.param.claimed_time",
+          "type": "Time",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "observed_time": {
+          "role": "s2.param.observed_time",
+          "type": "Time",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "revises": {
+          "role": "s2.param.revises",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "conflicts": {
+          "role": "s2.param.conflicts",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "limits": {
+          "role": "s2.param.limits",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "claim_scope": {
+          "role": "s2.param.claim_scope",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "Z01: no latest-wins assessment",
+        "Z02: false versus unknown versus no procedure distinct",
+        "Z03: creation time not original event time"
+      ]
+    },
+    "action": {
+      "contract": {
+        "name": "s2.params.action",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "target": {
+          "role": "s2.param.target",
+          "type": "Ref",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "value": {
+          "role": "s2.param.value",
+          "type": "Number",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "operation": {
+          "role": "s2.param.operation",
+          "type": "Contract",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        },
+        "state": {
+          "role": "s2.param.state",
+          "type": "String",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [
+            "selected",
+            "delivered",
+            "observed"
+          ],
+          "constraints": []
+        },
+        "source_input": {
+          "role": "s2.param.source_input",
+          "type": "Ref[]",
+          "occurs": "exactly_once",
+          "knowledge": [
+            "known",
+            "unresolved",
+            "not_applicable"
+          ],
+          "enum": [],
+          "constraints": []
+        }
+      },
+      "additional_bindings": false,
+      "checks": [
+        "I01: selected action is not delivery",
+        "I02: actual branch input and target/value retained"
+      ]
+    }
+  },
+  "payload_contracts": {
+    "string_list": {
+      "contract": {
+        "name": "s2.payload.string_list",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "items": "String[]"
+      }
+    },
+    "coordinates": {
+      "contract": {
+        "name": "s2.payload.coordinates",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "domain": "Ref",
+        "unit": "Unit",
+        "indices": "Index[]",
+        "origin": "K(Time)"
+      }
+    },
+    "windows": {
+      "contract": {
+        "name": "s2.payload.windows",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "windows": "Window[]"
+      }
+    },
+    "adjacency_pairs": {
+      "contract": {
+        "name": "s2.payload.adjacency_pairs",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "domain": "Ref",
+        "pairs": "Edge[]",
+        "extent": "complete_for_scope|partial_for_scope",
+        "omission": "asserted_absence|explicit_only|unreported"
+      }
+    },
+    "label_map": {
+      "contract": {
+        "name": "s2.payload.label_map",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "domain": "Ref",
+        "entries": "LabelEntry[]",
+        "shown_order": "String[]"
+      }
+    },
+    "weighted_members": {
+      "contract": {
+        "name": "s2.payload.weighted_members",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "members": "WeightedMember[]",
+        "weight_meaning": "Contract"
+      }
+    },
+    "environment_targets": {
+      "contract": {
+        "name": "s2.payload.environment_targets",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "environments": "Environment[]"
+      }
+    },
+    "relational_paths": {
+      "contract": {
+        "name": "s2.payload.relational_paths",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "perspective": "String",
+        "paths": "PathEntry[]"
+      }
+    },
+    "adaptive_rule": {
+      "contract": {
+        "name": "s2.payload.adaptive_rule",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "max_rounds": "Index",
+        "first": "Action",
+        "threshold": "Number",
+        "nonnegative": "Action",
+        "negative": "Action"
+      }
+    },
+    "native_report": {
+      "contract": {
+        "name": "s2.payload.native_report",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "report_contract": "Contract",
+        "source": "Ref",
+        "snapshot": "PayloadRef"
+      }
+    },
+    "role_cardinality": {
+      "contract": {
+        "name": "s2.payload.role_cardinality",
+        "version": "0.1.0-proposal.1"
+      },
+      "fields": {
+        "roles": "RoleCount[]"
+      }
+    }
+  },
+  "auxiliary_payload_shapes": {
+    "Window": {
+      "key": "String",
+      "subject": "Ref",
+      "start": "Index",
+      "end_exclusive": "Index",
+      "eligible_children": "Index[]"
+    },
+    "Edge": {
+      "from": "String",
+      "to": "String"
+    },
+    "LabelEntry": {
+      "key": "String",
+      "label": "String"
+    },
+    "WeightedMember": {
+      "key": "String",
+      "object": "Ref",
+      "weight": "Number",
+      "parameter": "Ref"
+    },
+    "Environment": {
+      "key": "String",
+      "kind": "Contract",
+      "targets": "K(Ref[])",
+      "samples": "K(Ref)",
+      "reference_target": "Contract"
+    },
+    "PathEntry": {
+      "key": "String",
+      "segments": "String[]",
+      "cardinality": "Contract"
+    },
+    "Action": {
+      "target": "String",
+      "value": "Number"
+    },
+    "RoleCount": {
+      "role": "String",
+      "minimum": "Index",
+      "maximum": "K(Index)"
+    }
+  },
+  "profiles": {
+    "preserve": {
+      "name": "s2.preserve",
+      "version": "0.1.0-proposal.1"
+    },
+    "interpret": {
+      "name": "s2.interpret",
+      "version": "0.1.0-proposal.1"
+    },
+    "bind_inputs_sources": {
+      "name": "s2.bind_inputs_sources",
+      "version": "0.1.0-proposal.1"
+    },
+    "bind_evaluation": {
+      "name": "s2.bind_evaluation",
+      "version": "0.1.0-proposal.1"
+    },
+    "commit_release_account": {
+      "name": "s2.commit_release_account",
+      "version": "0.1.0-proposal.1"
+    }
+  },
+  "precedence": "Contract closure note supersedes the earlier candidate at Z01-Z24; exact catalog names and fields are proposals."
+}
