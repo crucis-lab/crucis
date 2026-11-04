@@ -6250,5 +6250,12 @@
     "real_native_backends": "No new real scientific native campaign or universal integration claim",
     "remote_publication": "Local commits do not authorize push, merge, package/site release or communication"
   },
-  "paper_boundary": "Technical methodology account only; no change to frozen Q1 evidence, thresholds, populations, labels, certificates or paper contract"
+  "paper_boundary": "Technical methodology account only; no change to frozen Q1 evidence, thresholds, populations, labels, certificates or paper contract",
+  "release_account": {
+    "implemented_scope": "crucis_causal/docs/subsystem3-implemented-scope-2026-11-04.md",
+    "release_review": "crucis_causal/docs/subsystem3-release-review-2026-11-04.md",
+    "traceability": "crucis_causal/docs/subsystem3-release-traceability-2026-11-04.json",
+    "receipt_root": "<external-build-root>",
+    "completion_rule": "Final S3-B13 gate/commit receipt is external; no self-hash claim"
+  }
 }

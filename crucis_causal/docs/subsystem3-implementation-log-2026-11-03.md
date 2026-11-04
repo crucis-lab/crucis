@@ -881,3 +881,25 @@ and commit B13's implemented scope, methodology and release account. Offline
 completion, historical parity, host matrix and real native integration remain
 separate claims. No remote publication, scientific campaign or paper mutation is
 part of this authorization.
+
+## B13 final acceptance and qualification (2026-11-04)
+
+R01 reconciled all 106 planned obligations, 30 inherited negative boundaries and
+all required predecessor acceptance/recovery triplets against the unchanged accepted
+baseline. B12 predecessor is `704433af9fc55111b9bd17c12d72bc101dc758b1`. The final integrated target
+passed 118 tests without skips; both B12 full gates passed 453
+tests with 0 failures/errors and 26 old availability skips. B13's
+current full staged-tree gate and enabled-hook receipt control its own completion.
+
+The once-after-integration legacy rerun passed 1,298 comparisons at unchanged 0.001
+tolerance; 14 stored and 14 fresh certificates verified. Isolated installed-wheel
+checks passed with research imports blocked. The dated implemented-scope,
+release-review and typed release-traceability account preserve exact claims and
+limits, source/test/receipt links and prior commits without exposing private
+bootstrap controls. No S1/S2/scientific rebaseline, remote publication or campaign.
+
+## Where we're going after B13
+
+Review the implemented S3 foundation and begin the next subsystem's design when
+requested. Fresh remote CI, scientific native integrations and broader scientific
+interaction/recovery conditions remain separately scoped and unclaimed.

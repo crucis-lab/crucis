@@ -1,0 +1,3012 @@
+{
+  "kind": "crucis.s3.release_traceability",
+  "date": "2026-11-04",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "accepted_baseline": "crucis_causal/docs/subsystem3-accepted-baseline-2026-11-03.json",
+  "planned_cases": 106,
+  "inherited_negative_boundaries": [
+    {
+      "source_case": "NR01",
+      "boundary": "altered dependency byte pin",
+      "primary_bundle": "S3-B01",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_duplicate_identity_wrong_pin_type_version_and_root",
+      "line": 137,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR02",
+      "boundary": "internal wrong target type",
+      "primary_bundle": "S3-B01",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_inherited_negatives_and_critical_extensions_never_use_latest",
+      "line": 289,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR03",
+      "boundary": "same-ID different-content dependency",
+      "primary_bundle": "S3-B04",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_bridge.py",
+      "test": "test_owned_deltas_require_exact_frozen_namespace_and_content",
+      "line": 240,
+      "source_sha256": "2dc2384ab02a338420ce72a2c2f514e0d99b8d4f166483a23c29dca4af458b46",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR04",
+      "boundary": "late receipt in earlier decision basis",
+      "primary_bundle": "S3-B09",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_interaction.py",
+      "test": "test_later_information_cannot_enter_old_frontier_or_replace_frozen_choice",
+      "line": 74,
+      "source_sha256": "9c54e49d97b5e57620f0146f3fd612d4442308850b4f72cbdd56d34eefc2fdf4",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR05",
+      "boundary": "stale writer/receiver epoch",
+      "primary_bundle": "S3-B06",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_dispatch.py",
+      "test": "test_receiver_fences_delayed_old_epoch_and_preserves_previously_accepted_work",
+      "line": 106,
+      "source_sha256": "227fa0a79600d8074b8e1a4497252b513b6b5643b580c644fc4cffa7c73e9578",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR06",
+      "boundary": "uncertain lookup treated as no effect",
+      "primary_bundle": "S3-B07",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_dispatch.py",
+      "test": "test_negative_before_delayed_acceptance_is_not_closure_and_duplicates_are_retained",
+      "line": 129,
+      "source_sha256": "227fa0a79600d8074b8e1a4497252b513b6b5643b580c644fc4cffa7c73e9578",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR07",
+      "boundary": "zero-action native delivery",
+      "primary_bundle": "S3-B09",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_interaction.py",
+      "test": "test_two_same_text_actions_fixed_sources_freeze_then_deliver_one",
+      "line": 95,
+      "source_sha256": "9c54e49d97b5e57620f0146f3fd612d4442308850b4f72cbdd56d34eefc2fdf4",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR08",
+      "boundary": "checkpoint restart reusing predecessor identity",
+      "primary_bundle": "S3-B10",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_recovery.py",
+      "test": "test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate",
+      "line": 66,
+      "source_sha256": "c17e260527a6ba8ca6bbc937b5a73be03ce7029752a772dc42101edc432c9e65",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR09",
+      "boundary": "ambiguous incarnation key",
+      "primary_bundle": "S3-B07",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_dispatch.py",
+      "test": "test_actual_connection_registry_never_uses_only_literal_reused_ID",
+      "line": 290,
+      "source_sha256": "227fa0a79600d8074b8e1a4497252b513b6b5643b580c644fc4cffa7c73e9578",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR10",
+      "boundary": "unverified S2 run binding treated as ready",
+      "primary_bundle": "S3-B04",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_bridge.py",
+      "test": "test_scientific_match_requires_exact_run_and_NA_never_authorizes_checkpoint_restart",
+      "line": 160,
+      "source_sha256": "2dc2384ab02a338420ce72a2c2f514e0d99b8d4f166483a23c29dca4af458b46",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR11",
+      "boundary": "native public artifact padded with private S3 metadata",
+      "primary_bundle": "S3-B11",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_publication.py",
+      "test": "test_historical_L_native_export_is_exactly_611_bytes_two_entities_without_new_metadata",
+      "line": 153,
+      "source_sha256": "aae92aabaa56512f14ae933af52e190d33915f6bd8a5f0773230718a5f563f1b",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR12",
+      "boundary": "refreeze used to reconcile old publication",
+      "primary_bundle": "S3-B11",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_publication.py",
+      "test": "test_lost_manifest_commit_reply_reconciles_exact_bytes_and_key_after_reopen",
+      "line": 36,
+      "source_sha256": "aae92aabaa56512f14ae933af52e190d33915f6bd8a5f0773230718a5f563f1b",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR13",
+      "boundary": "value-CAS presented as revision CAS",
+      "primary_bundle": "S3-B11",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_publication.py",
+      "test": "test_revision_CAS_rejects_ABA_even_when_selection_bytes_match_again",
+      "line": 70,
+      "source_sha256": "aae92aabaa56512f14ae933af52e190d33915f6bd8a5f0773230718a5f563f1b",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR14",
+      "boundary": "unknown RNG promoted to exact continuity",
+      "primary_bundle": "S3-B10",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_recovery.py",
+      "test": "test_native_handle_expiry_wrong_components_and_unknown_stop_hold_without_new_job",
+      "line": 100,
+      "source_sha256": "c17e260527a6ba8ca6bbc937b5a73be03ce7029752a772dc42101edc432c9e65",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR15",
+      "boundary": "ACK advanced before capture commit",
+      "primary_bundle": "S3-B08",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_collection.py",
+      "test": "test_unknown_capture_commit_requires_actual_reconciliation_before_ack",
+      "line": 147,
+      "source_sha256": "0f7e3c07418e11d7431c7ed07abfe46c0962ce9618acd1edf4240126f640b7f3",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "NR16",
+      "boundary": "unresolved owner reserve treated as admission",
+      "primary_bundle": "S3-B03",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics",
+      "test_source": "tests\\test_audit_execution_owners.py",
+      "test": "test_A01_partial_and_unresolved_owner_group_never_becomes_live_admission",
+      "line": 119,
+      "source_sha256": "508f4fa387e63c43d6a9eecbe3bda5f0f043f015ab18840322978bf25ac7af72",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N01",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "duplicate property, invalid UTF-8, nonstandard JSON number, surrogate",
+      "required_result": "reject transport; preserve raw capture if permitted",
+      "primary_bundle": "S3-B01",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_raw_null_numbers_duplicates_unicode_and_depth",
+      "line": 103,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N02",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "core unknown field, missing required field, structural null or bare number",
+      "required_result": "reject structural conformance; do not report native algorithm failure",
+      "primary_bundle": "S3-B01",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_all_38_missing_required_fields_fail_closed",
+      "line": 93,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N03",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "known value wrapping unresolved Ref",
+      "required_result": "reject ambiguous reference layering",
+      "primary_bundle": "S3-B01",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_knowledge_axes_conflicts_and_later_assessments",
+      "line": 115,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N04",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "internal s1 reference or external same-ID fallback",
+      "required_result": "reject wrong binding or withhold unresolved external dependency",
+      "primary_bundle": "S3-B04",
+      "test_source": "tests\\test_audit_execution_bridge.py",
+      "test": "test_owned_deltas_require_exact_frozen_namespace_and_content",
+      "line": 240,
+      "source_sha256": "2dc2384ab02a338420ce72a2c2f514e0d99b8d4f166483a23c29dca4af458b46",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N05",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "unexamined index containing members; empty index presented as native absence",
+      "required_result": "reject shape or withhold unsupported negative claim",
+      "primary_bundle": "S3-B01",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_knowledge_axes_conflicts_and_later_assessments",
+      "line": 115,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N06",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "Q2 empty selection presented as abstention/delivery",
+      "required_result": "preserve held decision; withhold delivery claim",
+      "primary_bundle": "S3-B09",
+      "test_source": "tests\\test_audit_execution_interaction.py",
+      "test": "test_two_same_text_actions_fixed_sources_freeze_then_deliver_one",
+      "line": 95,
+      "source_sha256": "9c54e49d97b5e57620f0146f3fd612d4442308850b4f72cbdd56d34eefc2fdf4",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N07",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "checkpoint native restart reuses A1; owner reconnect invents A2",
+      "required_result": "reject incompatible recovery claim",
+      "primary_bundle": "S3-B10",
+      "test_source": "tests\\test_audit_execution_recovery.py",
+      "test": "test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate",
+      "line": 66,
+      "source_sha256": "c17e260527a6ba8ca6bbc937b5a73be03ce7029752a772dc42101edc432c9e65",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N08",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "position18 interpreted as gap-free replay after native incarnation changed",
+      "required_result": "withhold replay/attachment without matching source contract/evidence",
+      "primary_bundle": "S3-B08",
+      "test_source": "tests\\test_audit_execution_collection.py",
+      "test": "test_source_alias_filter_generation_and_consumer_cannot_inherit_cursor",
+      "line": 123,
+      "source_sha256": "0f7e3c07418e11d7431c7ed07abfe46c0962ce9618acd1edf4240126f640b7f3",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N09",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "bill3+replacement5+bill4 summed to12",
+      "required_result": "withhold incorrect aggregate; declared replacement yields9",
+      "primary_bundle": "S3-B03",
+      "test_source": "tests\\test_audit_execution_owners.py",
+      "test": "test_A01_replacement_5_plus_disjoint_4_is_9_unknowns_and_facets_separate",
+      "line": 215,
+      "source_sha256": "508f4fa387e63c43d6a9eecbe3bda5f0f043f015ab18840322978bf25ac7af72",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N10",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "newer evidence silently changes early frontier/result; conflicting record replaced",
+      "required_result": "reject identity mutation; preserve new assessment and its actual cutoff",
+      "primary_bundle": "S3-B02",
+      "test_source": "tests\\test_audit_execution_journal.py",
+      "test": "test_J01_exact_replay_changed_binding_old_cutoff_and_reopen",
+      "line": 130,
+      "source_sha256": "9563dad5070b77c7c7fb2792ebd7748ba20efbd55c7f3937713cde3cc10b3485",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N11",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "public attestation exports private frontier or claims public raw verification",
+      "required_result": "deny projection/strong assurance; preserve weaker permitted statement",
+      "primary_bundle": "S3-B11",
+      "test_source": "tests\\test_audit_execution_publication.py",
+      "test": "test_all_metadata_permissions_embedded_refs_and_opaque_assurance_are_checked",
+      "line": 116,
+      "source_sha256": "aae92aabaa56512f14ae933af52e190d33915f6bd8a5f0773230718a5f563f1b",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N12",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "unknown version/core kind or unsupported critical extension accepted through latest handler",
+      "required_result": "preserve opaque bytes; withhold conformance/affected operations",
+      "primary_bundle": "S3-B01",
+      "test_source": "tests\\test_audit_execution_wire.py",
+      "test": "test_W02_inherited_negatives_and_critical_extensions_never_use_latest",
+      "line": 289,
+      "source_sha256": "ca2af6c97883b24584484e2a483cc5f2e48e288ced26f5a66911ef754bcb551a",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N13",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "same package includes its own whole-package digest receipt",
+      "required_result": "reject circular subject pin; place receipt outside hashed subject",
+      "primary_bundle": "S3-B11",
+      "test_source": "tests\\test_audit_execution_publication.py",
+      "test": "test_all_metadata_permissions_embedded_refs_and_opaque_assurance_are_checked",
+      "line": 116,
+      "source_sha256": "aae92aabaa56512f14ae933af52e190d33915f6bd8a5f0773230718a5f563f1b",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    },
+    {
+      "source_case": "N14",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "missing operation role grammar treated as permissive Ref target acceptance",
+      "required_result": "withhold affected effect/claim until exact contract is supplied",
+      "primary_bundle": "S3-B06",
+      "test_source": "tests\\test_audit_execution_coordinator.py",
+      "test": "test_changed_prepared_binding_and_unavailable_rule_or_preparer_hold",
+      "line": 574,
+      "source_sha256": "e9cfefde6dc1cdd6c203ac42aa3d34f7534f75de7b3a35b949137965251e509d",
+      "current_qualification_receipt": "S3-B12/case-final1/cases.jsonl",
+      "current_qualification_commit": "704433af9fc55111b9bd17c12d72bc101dc758b1"
+    }
+  ],
+  "executed_predecessor_cases": {
+    "D00": [
+      {
+        "bundle": "S3-B00",
+        "tests": [
+          "fixed_baseline_D00"
+        ],
+        "execution_receipt": "S3-B00/tests.json"
+      }
+    ],
+    "X10": [
+      {
+        "bundle": "S3-B01",
+        "tests": [
+          "test_audit_execution_wire.WireCases.test_X10_failed_partial_native_bytes_preserved_without_output_repair"
+        ],
+        "execution_receipt": "S3-B01\\case-final\\cases.jsonl"
+      }
+    ],
+    "W01": [
+      {
+        "bundle": "S3-B01",
+        "tests": [
+          "test_audit_execution_wire.WireCases.test_W01_38_fixed_specimens_pins_and_complete_closure"
+        ],
+        "execution_receipt": "S3-B01\\case-final\\cases.jsonl"
+      }
+    ],
+    "W02": [
+      {
+        "bundle": "S3-B01",
+        "tests": [
+          "test_audit_execution_wire.WireCases.test_W02_31_operations_exact_keys_missingness_and_cardinality",
+          "test_audit_execution_wire.WireCases.test_W02_all_18_families_and_77_roles",
+          "test_audit_execution_wire.WireCases.test_W02_all_38_missing_required_fields_fail_closed",
+          "test_audit_execution_wire.WireCases.test_W02_duplicate_identity_wrong_pin_type_version_and_root",
+          "test_audit_execution_wire.WireCases.test_W02_inherited_negatives_and_critical_extensions_never_use_latest",
+          "test_audit_execution_wire.WireCases.test_W02_knowledge_axes_conflicts_and_later_assessments",
+          "test_audit_execution_wire.WireCases.test_W02_payload_context_is_not_artifact_host",
+          "test_audit_execution_wire.WireCases.test_W02_raw_null_numbers_duplicates_unicode_and_depth",
+          "test_audit_execution_wire.WireCases.test_W02_reference_budget_is_for_the_complete_traversal",
+          "test_audit_execution_wire.WireCases.test_W02_temporal_numeric_range_and_base64_forms"
+        ],
+        "execution_receipt": "S3-B01\\case-final\\cases.jsonl"
+      }
+    ],
+    "M01": [
+      {
+        "bundle": "S3-B01",
+        "tests": [
+          "test_audit_execution_wire.WireCases.test_M01_pure_declarations_preparation_registry_and_48_signatures",
+          "test_audit_execution_wire.WireCases.test_M01_registered_descriptors_resist_caller_mutation",
+          "test_audit_execution_wire.WireCases.test_M01_runtime_objects_do_not_serialize_or_forge_access"
+        ],
+        "execution_receipt": "S3-B01\\case-final\\cases.jsonl"
+      }
+    ],
+    "F01": [
+      {
+        "bundle": "S3-B02",
+        "tests": [
+          "test_audit_execution_journal.JournalCases.test_F01_capture_process_death_preserves_atomic_bytes_identity_and_cursor",
+          "test_audit_execution_journal.JournalCases.test_F01_kill_before_and_after_commit_then_fresh_process_reconciliation"
+        ],
+        "execution_receipt": "S3-B02\\case-final\\cases.jsonl"
+      }
+    ],
+    "J01": [
+      {
+        "bundle": "S3-B02",
+        "tests": [
+          "test_audit_execution_journal.JournalCases.test_F01_capture_process_death_preserves_atomic_bytes_identity_and_cursor",
+          "test_audit_execution_journal.JournalCases.test_J01_actual_profile_and_changed_artifact_is_never_repaired",
+          "test_audit_execution_journal.JournalCases.test_J01_durable_claim_has_one_live_permit_and_no_replay_permit",
+          "test_audit_execution_journal.JournalCases.test_J01_exact_replay_changed_binding_old_cutoff_and_reopen",
+          "test_audit_execution_journal.JournalCases.test_J01_prepare_process_death_never_resurrects_committed_permit",
+          "test_audit_execution_journal.JournalCases.test_J01_raw_capture_replay_and_fault_do_not_advance_past_retained_bytes",
+          "test_audit_execution_journal.JournalCases.test_J01_two_actual_writers_have_one_expected_revision_winner",
+          "test_audit_execution_journal.JournalCases.test_J01_uncertain_commit_mints_no_permit_and_takeover_fences_old_writer"
+        ],
+        "execution_receipt": "S3-B02\\case-final\\cases.jsonl"
+      }
+    ],
+    "F02": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_F02_interruption_before_receiver_keeps_original_request_key_and_no_hold"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "F03": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_F03_lost_renew_settle_release_replies_reconcile_same_request_without_extra_effect",
+          "test_audit_execution_owners.OwnerCases.test_OP16_exact_lost_reserve_reply_reconciles_one_hold_and_unknown_stays_unknown"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP15P": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP15_actual_hold_dedup_changed_request_and_capacity"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP15H": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP15_actual_hold_dedup_changed_request_and_capacity"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP16P": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP16_exact_lost_reserve_reply_reconciles_one_hold_and_unknown_stays_unknown"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP16H": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP16_exact_lost_reserve_reply_reconciles_one_hold_and_unknown_stays_unknown",
+          "test_audit_execution_owners.OwnerCases.test_exact_replay_binds_evidence_and_unknown_query_retains_capacity"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP17P": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_F03_lost_renew_settle_release_replies_reconcile_same_request_without_extra_effect",
+          "test_audit_execution_owners.OwnerCases.test_OP17_renew_and_OP19_release_do_not_reset_budget_or_native_history"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP17H": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP17_renew_and_OP19_release_do_not_reset_budget_or_native_history"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP18P": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_F03_lost_renew_settle_release_replies_reconcile_same_request_without_extra_effect",
+          "test_audit_execution_owners.OwnerCases.test_OP18_settlement_replaces_interim_bill_and_preserves_missing_evidence"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP18H": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP18_settlement_replaces_interim_bill_and_preserves_missing_evidence",
+          "test_audit_execution_owners.OwnerCases.test_exact_replay_binds_evidence_and_unknown_query_retains_capacity"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP19P": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_F03_lost_renew_settle_release_replies_reconcile_same_request_without_extra_effect",
+          "test_audit_execution_owners.OwnerCases.test_OP17_renew_and_OP19_release_do_not_reset_budget_or_native_history"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP19H": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP17_renew_and_OP19_release_do_not_reset_budget_or_native_history"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP20P": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP20_authorize_live_binding_forgery_expiry_and_epoch"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP20H": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_OP20_authorize_live_binding_forgery_expiry_and_epoch"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "A01": [
+      {
+        "bundle": "S3-B03",
+        "tests": [
+          "test_audit_execution_owners.OwnerCases.test_A01_control_budget_persists_across_fresh_owner_context",
+          "test_audit_execution_owners.OwnerCases.test_A01_partial_and_unresolved_owner_group_never_becomes_live_admission",
+          "test_audit_execution_owners.OwnerCases.test_A01_replacement_5_plus_disjoint_4_is_9_unknowns_and_facets_separate",
+          "test_audit_execution_owners.OwnerCases.test_OP15_actual_hold_dedup_changed_request_and_capacity",
+          "test_audit_execution_owners.OwnerCases.test_OP18_settlement_replaces_interim_bill_and_preserves_missing_evidence",
+          "test_audit_execution_owners.OwnerCases.test_OP20_authorize_live_binding_forgery_expiry_and_epoch",
+          "test_audit_execution_owners.OwnerCases.test_exact_replay_binds_evidence_and_unknown_query_retains_capacity"
+        ],
+        "execution_receipt": "S3-B03\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP27P": [
+      {
+        "bundle": "S3-B04",
+        "tests": [
+          "test_audit_execution_bridge.BridgeCases.test_OP27_actual_store_replay_preserves_unknown_origin_and_changed_key_conflicts",
+          "test_audit_execution_bridge.BridgeCases.test_OP27_exact_typed_backend_holds_missingness_before_any_import_write",
+          "test_audit_execution_bridge.BridgeCases.test_incarnation_bridge_raw_coordinates_and_rejected_S1_return_remain_honest"
+        ],
+        "execution_receipt": "S3-B04\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP27H": [
+      {
+        "bundle": "S3-B04",
+        "tests": [
+          "test_audit_execution_bridge.BridgeCases.test_OP27_actual_store_replay_preserves_unknown_origin_and_changed_key_conflicts",
+          "test_audit_execution_bridge.BridgeCases.test_OP27_exact_typed_backend_holds_missingness_before_any_import_write",
+          "test_audit_execution_bridge.BridgeCases.test_incarnation_bridge_raw_coordinates_and_rejected_S1_return_remain_honest"
+        ],
+        "execution_receipt": "S3-B04\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP28P": [
+      {
+        "bundle": "S3-B04",
+        "tests": [
+          "test_audit_execution_bridge.BridgeCases.test_OP28_actual_pure_reader_preserves_native_order_and_failed_decode_retains_bytes"
+        ],
+        "execution_receipt": "S3-B04\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP28H": [
+      {
+        "bundle": "S3-B04",
+        "tests": [
+          "test_audit_execution_bridge.BridgeCases.test_OP28_actual_pure_reader_preserves_native_order_and_failed_decode_retains_bytes"
+        ],
+        "execution_receipt": "S3-B04\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP30P": [
+      {
+        "bundle": "S3-B04",
+        "tests": [
+          "test_audit_execution_bridge.BridgeCases.test_OP30_actual_S2_compiler_freezes_R_and_replay_reuses_exact_R_and_handoff",
+          "test_audit_execution_bridge.BridgeCases.test_new_checkpoint_revision_explicitly_permits_narrow_mode_without_claiming_loading",
+          "test_audit_execution_bridge.BridgeCases.test_owned_deltas_require_exact_frozen_namespace_and_content",
+          "test_audit_execution_bridge.BridgeCases.test_scientific_match_requires_exact_run_and_NA_never_authorizes_checkpoint_restart",
+          "test_audit_execution_bridge.BridgeCases.test_working_scope_preserves_all_records_and_detects_subsequent_changes"
+        ],
+        "execution_receipt": "S3-B04\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP30H": [
+      {
+        "bundle": "S3-B04",
+        "tests": [
+          "test_audit_execution_bridge.BridgeCases.test_OP30_changed_occurrence_or_request_holds_without_new_native_or_scientific_record",
+          "test_audit_execution_bridge.BridgeCases.test_new_checkpoint_revision_explicitly_permits_narrow_mode_without_claiming_loading",
+          "test_audit_execution_bridge.BridgeCases.test_owned_deltas_require_exact_frozen_namespace_and_content",
+          "test_audit_execution_bridge.BridgeCases.test_scientific_match_requires_exact_run_and_NA_never_authorizes_checkpoint_restart",
+          "test_audit_execution_bridge.BridgeCases.test_working_scope_preserves_all_records_and_detects_subsequent_changes"
+        ],
+        "execution_receipt": "S3-B04\\case-final\\cases.jsonl"
+      }
+    ],
+    "X01": [
+      {
+        "bundle": "S3-B05",
+        "tests": [
+          "test_audit_execution_inputs.InputCustodyCases.test_actual_fitting_uses_declared_calibration_and_missing_subset_does_not_default_to_target",
+          "test_audit_execution_inputs.InputCustodyCases.test_failed_preservation_is_partial_materialization_not_repaired_or_redrawn",
+          "test_audit_execution_inputs.InputCustodyCases.test_realization_uses_actual_owner_and_durable_permit_then_returns_S2_materialization"
+        ],
+        "execution_receipt": "S3-B05\\case-final\\cases.jsonl"
+      }
+    ],
+    "X12": [
+      {
+        "bundle": "S3-B05",
+        "tests": [
+          "test_audit_execution_inputs.InputCustodyCases.test_runtime_slots_are_not_serialized_and_redaction_never_claims_original_bytes"
+        ],
+        "execution_receipt": "S3-B05\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP01P": [
+      {
+        "bundle": "S3-B05",
+        "tests": [
+          "test_audit_execution_inputs.InputCustodyCases.test_actual_fitting_uses_declared_calibration_and_missing_subset_does_not_default_to_target",
+          "test_audit_execution_inputs.InputCustodyCases.test_realization_uses_actual_owner_and_durable_permit_then_returns_S2_materialization"
+        ],
+        "execution_receipt": "S3-B05\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP01H": [
+      {
+        "bundle": "S3-B05",
+        "tests": [
+          "test_audit_execution_inputs.InputCustodyCases.test_actual_fitting_uses_declared_calibration_and_missing_subset_does_not_default_to_target",
+          "test_audit_execution_inputs.InputCustodyCases.test_failed_preservation_is_partial_materialization_not_repaired_or_redrawn",
+          "test_audit_execution_inputs.InputCustodyCases.test_realization_uses_actual_owner_and_durable_permit_then_returns_S2_materialization"
+        ],
+        "execution_receipt": "S3-B05\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP02P": [
+      {
+        "bundle": "S3-B05",
+        "tests": [
+          "test_audit_execution_inputs.InputCustodyCases.test_endpoint_reference_stages_without_materializing_answers_or_restoring_grants_from_metadata",
+          "test_audit_execution_inputs.InputCustodyCases.test_guarded_stage_only_exposes_selected_archive_members_and_spends_permit_once"
+        ],
+        "execution_receipt": "S3-B05\\case-final\\cases.jsonl"
+      }
+    ],
+    "OP02H": [
+      {
+        "bundle": "S3-B05",
+        "tests": [
+          "test_audit_execution_inputs.InputCustodyCases.test_changed_staged_file_holds_activation_without_repinning_or_resetting_consumption",
+          "test_audit_execution_inputs.InputCustodyCases.test_endpoint_reference_stages_without_materializing_answers_or_restoring_grants_from_metadata",
+          "test_audit_execution_inputs.InputCustodyCases.test_guarded_partial_stage_retains_possible_effect_and_no_coherent_handle",
+          "test_audit_execution_inputs.InputCustodyCases.test_guarded_stage_only_exposes_selected_archive_members_and_spends_permit_once",
+          "test_audit_execution_inputs.InputCustodyCases.test_unsupported_stability_is_held_by_pure_prepare_and_before_any_transfer"
+        ],
+        "execution_receipt": "S3-B05\\case-final\\cases.jsonl"
+      }
+    ],
+    "F04": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_complete_exact_admission_plan_precedes_any_owner_RPC",
+          "test_audit_execution_coordinator.CoordinatorCases.test_partial_owners_and_missing_participant_cannot_forward_or_release",
+          "test_audit_execution_coordinator.CoordinatorCases.test_process_death_and_fresh_coordinator_reuse_original_group_and_D"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "F05": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_durable_intent_before_entry_never_resends_after_lost_reply",
+          "test_audit_execution_coordinator.CoordinatorCases.test_process_death_and_fresh_coordinator_reuse_original_group_and_D"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "F17": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_clock_becomes_uncertain_after_D_commit_retains_same_D_and_reason",
+          "test_audit_execution_coordinator.CoordinatorCases.test_owner_expiry_and_unknown_clock_hold_native_entry"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "F18": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_copied_spent_and_forged_tokens_cannot_enter_native_and_changed_receipt_holds",
+          "test_audit_execution_coordinator.CoordinatorCases.test_lost_admit_and_issue_replies_reconcile_original_occurrences",
+          "test_audit_execution_coordinator.CoordinatorCases.test_process_death_and_fresh_coordinator_reuse_original_group_and_D"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "X03": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_partial_owners_and_missing_participant_cannot_forward_or_release"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "X11": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_fixed_probe_records_real_effect_usage_exposure_and_scientific_relabel_holds"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "T01": [
+      {
+        "bundle": "S3-B06",
+        "tests": [
+          "test_audit_execution_coordinator.CoordinatorCases.test_changed_prepared_binding_and_unavailable_rule_or_preparer_hold",
+          "test_audit_execution_coordinator.CoordinatorCases.test_clock_becomes_uncertain_after_D_commit_retains_same_D_and_reason",
+          "test_audit_execution_coordinator.CoordinatorCases.test_complete_exact_admission_plan_precedes_any_owner_RPC",
+          "test_audit_execution_coordinator.CoordinatorCases.test_immutable_validation_cache_does_not_cache_access_or_widen_limits",
+          "test_audit_execution_coordinator.CoordinatorCases.test_owner_expiry_and_unknown_clock_hold_native_entry",
+          "test_audit_execution_coordinator.CoordinatorCases.test_pure_plan_open_replay_and_original_frontier",
+          "test_audit_execution_coordinator.CoordinatorCases.test_unknown_admission_critical_extension_holds_but_unrequested_claim_bytes_survive"
+        ],
+        "execution_receipt": "S3-B06\\case-final3\\cases.jsonl"
+      }
+    ],
+    "F06": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_common_pipeline_lost_ack_preserves_unknown_then_exact_lookup",
+          "test_audit_execution_dispatch.DispatchCases.test_independent_receiver_lost_reply_keeps_one_job_and_exact_D_replay",
+          "test_audit_execution_dispatch.DispatchCases.test_killed_coordinator_cold_recovery_keeps_provider_job_and_original_unknown_D"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F07": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_receiver_fences_delayed_old_epoch_and_preserves_previously_accepted_work"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X06": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_unknown_origin_attach_has_no_fabricated_R_A_or_trial"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X08": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_actual_connection_registry_never_uses_only_literal_reused_ID"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP03P": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_actual_S1_function_and_shell_false_process_keep_native_guards_and_frozen_R",
+          "test_audit_execution_dispatch.DispatchCases.test_real_coordinator_launch_lookup_and_attach_never_relaunch"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP03H": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_actual_S1_function_and_shell_false_process_keep_native_guards_and_frozen_R",
+          "test_audit_execution_dispatch.DispatchCases.test_missing_or_wrong_native_prerequisites_do_not_forward_and_unknown_lookup_stays_unknown",
+          "test_audit_execution_dispatch.DispatchCases.test_receiver_fences_delayed_old_epoch_and_preserves_previously_accepted_work"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP04P": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_common_pipeline_lost_ack_preserves_unknown_then_exact_lookup",
+          "test_audit_execution_dispatch.DispatchCases.test_negative_before_delayed_acceptance_is_not_closure_and_duplicates_are_retained",
+          "test_audit_execution_dispatch.DispatchCases.test_real_coordinator_launch_lookup_and_attach_never_relaunch",
+          "test_audit_execution_dispatch.DispatchCases.test_receiver_fences_delayed_old_epoch_and_preserves_previously_accepted_work"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP04H": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_missing_or_wrong_native_prerequisites_do_not_forward_and_unknown_lookup_stays_unknown",
+          "test_audit_execution_dispatch.DispatchCases.test_negative_before_delayed_acceptance_is_not_closure_and_duplicates_are_retained"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP05P": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_real_coordinator_launch_lookup_and_attach_never_relaunch",
+          "test_audit_execution_dispatch.DispatchCases.test_unknown_origin_attach_has_no_fabricated_R_A_or_trial"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP05H": [
+      {
+        "bundle": "S3-B07",
+        "tests": [
+          "test_audit_execution_dispatch.DispatchCases.test_actual_connection_registry_never_uses_only_literal_reused_ID",
+          "test_audit_execution_dispatch.DispatchCases.test_missing_or_wrong_native_prerequisites_do_not_forward_and_unknown_lookup_stays_unknown"
+        ],
+        "execution_receipt": "S3-B07\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F08": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_raw_write_flush_and_space_faults_preserve_bytes_without_cursor_or_ack"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F09": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_capture_committed_before_reply_recovers_original_batch_before_ack",
+          "test_audit_execution_collection.CollectionCases.test_lost_ack_reply_replays_original_D_without_another_source_ack",
+          "test_audit_execution_collection.CollectionCases.test_unknown_capture_commit_requires_actual_reconciliation_before_ack"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F19": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_raw_write_flush_and_space_faults_preserve_bytes_without_cursor_or_ack"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X02": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_capture_three_occurrences_two_native_events_then_separate_ack",
+          "test_audit_execution_collection.CollectionCases.test_source_alias_filter_generation_and_consumer_cannot_inherit_cursor"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP06P": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_capture_committed_before_reply_recovers_original_batch_before_ack",
+          "test_audit_execution_collection.CollectionCases.test_capture_three_occurrences_two_native_events_then_separate_ack",
+          "test_audit_execution_collection.CollectionCases.test_private_resolver_indexes_never_accept_mutated_return_or_denied_access"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP06H": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_lost_ack_reply_replays_original_D_without_another_source_ack",
+          "test_audit_execution_collection.CollectionCases.test_raw_write_flush_and_space_faults_preserve_bytes_without_cursor_or_ack",
+          "test_audit_execution_collection.CollectionCases.test_source_alias_filter_generation_and_consumer_cannot_inherit_cursor",
+          "test_audit_execution_collection.CollectionCases.test_unsupported_consuming_profile_bounds_and_forged_capture_receipt_hold"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP07P": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_capture_committed_before_reply_recovers_original_batch_before_ack",
+          "test_audit_execution_collection.CollectionCases.test_capture_three_occurrences_two_native_events_then_separate_ack",
+          "test_audit_execution_collection.CollectionCases.test_lost_ack_reply_replays_original_D_without_another_source_ack",
+          "test_audit_execution_collection.CollectionCases.test_unknown_capture_commit_requires_actual_reconciliation_before_ack"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP07H": [
+      {
+        "bundle": "S3-B08",
+        "tests": [
+          "test_audit_execution_collection.CollectionCases.test_raw_write_flush_and_space_faults_preserve_bytes_without_cursor_or_ack",
+          "test_audit_execution_collection.CollectionCases.test_source_alias_filter_generation_and_consumer_cannot_inherit_cursor",
+          "test_audit_execution_collection.CollectionCases.test_unknown_capture_commit_requires_actual_reconciliation_before_ack",
+          "test_audit_execution_collection.CollectionCases.test_unsupported_consuming_profile_bounds_and_forged_capture_receipt_hold"
+        ],
+        "execution_receipt": "S3-B08\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F10": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_lost_selection_commit_reply_reconciles_original_choice_before_send"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F11": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_lost_native_delivery_reply_reuses_original_G_D_and_receipt_lookup"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X07": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_composite_is_one_physical_message_and_native_all_or_none"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP08P": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_two_same_text_actions_fixed_sources_freeze_then_deliver_one"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP08H": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_wrong_provider_missing_source_and_changed_delivery_choice_hold"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP09P": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_two_same_text_actions_fixed_sources_freeze_then_deliver_one"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP09H": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_wrong_provider_missing_source_and_changed_delivery_choice_hold"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP10P": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_composite_is_one_physical_message_and_native_all_or_none",
+          "test_audit_execution_interaction.InteractionCases.test_lost_native_delivery_reply_reuses_original_G_D_and_receipt_lookup",
+          "test_audit_execution_interaction.InteractionCases.test_lost_selection_commit_reply_reconciles_original_choice_before_send",
+          "test_audit_execution_interaction.InteractionCases.test_two_same_text_actions_fixed_sources_freeze_then_deliver_one"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP10H": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_composite_is_one_physical_message_and_native_all_or_none",
+          "test_audit_execution_interaction.InteractionCases.test_later_information_cannot_enter_old_frontier_or_replace_frozen_choice",
+          "test_audit_execution_interaction.InteractionCases.test_wrong_provider_missing_source_and_changed_delivery_choice_hold"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP11P": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_lost_native_delivery_reply_reuses_original_G_D_and_receipt_lookup",
+          "test_audit_execution_interaction.InteractionCases.test_two_same_text_actions_fixed_sources_freeze_then_deliver_one"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP11H": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_wrong_provider_missing_source_and_changed_delivery_choice_hold"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP29P": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_lost_selection_commit_reply_reconciles_original_choice_before_send",
+          "test_audit_execution_interaction.InteractionCases.test_two_same_text_actions_fixed_sources_freeze_then_deliver_one"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP29H": [
+      {
+        "bundle": "S3-B09",
+        "tests": [
+          "test_audit_execution_interaction.InteractionCases.test_later_information_cannot_enter_old_frontier_or_replace_frozen_choice",
+          "test_audit_execution_interaction.InteractionCases.test_two_same_text_actions_fixed_sources_freeze_then_deliver_one",
+          "test_audit_execution_interaction.InteractionCases.test_wrong_provider_missing_source_and_changed_delivery_choice_hold"
+        ],
+        "execution_receipt": "S3-B09\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F12": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F13": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F20": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_owner_settlement_and_release_reply_loss_keep_same_request_and_total_nine"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X04": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_native_handle_expiry_wrong_components_and_unknown_stop_hold_without_new_job",
+          "test_audit_execution_recovery.RecoveryCases.test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP12P": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP12H": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_native_handle_expiry_wrong_components_and_unknown_stop_hold_without_new_job"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP13P": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_native_reference_loader_actual_loading_and_wrong_quiescence",
+          "test_audit_execution_recovery.RecoveryCases.test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP13H": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_native_handle_expiry_wrong_components_and_unknown_stop_hold_without_new_job"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP14P": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_native_reference_loader_actual_loading_and_wrong_quiescence",
+          "test_audit_execution_recovery.RecoveryCases.test_process_death_stop_ack_restart_acceptance_and_load_receipt_stay_separate"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP14H": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_native_handle_expiry_wrong_components_and_unknown_stop_hold_without_new_job"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP31P": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_close_collection_preserves_obligations_and_does_not_stop_native"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP31H": [
+      {
+        "bundle": "S3-B10",
+        "tests": [
+          "test_audit_execution_recovery.RecoveryCases.test_close_collection_preserves_obligations_and_does_not_stop_native"
+        ],
+        "execution_receipt": "S3-B10\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F14": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_interrupted_staging_does_not_expose_committed_root",
+          "test_audit_execution_publication.PublicationCases.test_lost_manifest_commit_reply_reconciles_exact_bytes_and_key_after_reopen"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F15": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_revision_CAS_rejects_ABA_even_when_selection_bytes_match_again"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "F16": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X09": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_all_metadata_permissions_embedded_refs_and_opaque_assurance_are_checked",
+          "test_audit_execution_publication.PublicationCases.test_historical_L_native_export_is_exactly_611_bytes_two_entities_without_new_metadata"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP21P": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_lost_manifest_commit_reply_reconciles_exact_bytes_and_key_after_reopen"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP21H": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_all_metadata_permissions_embedded_refs_and_opaque_assurance_are_checked",
+          "test_audit_execution_publication.PublicationCases.test_interrupted_staging_does_not_expose_committed_root",
+          "test_audit_execution_publication.PublicationCases.test_lost_manifest_commit_reply_reconciles_exact_bytes_and_key_after_reopen"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP22P": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_lost_manifest_commit_reply_reconciles_exact_bytes_and_key_after_reopen"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP22H": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_lost_manifest_commit_reply_reconciles_exact_bytes_and_key_after_reopen"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP23P": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_revision_CAS_rejects_ABA_even_when_selection_bytes_match_again"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP23H": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_revision_CAS_rejects_ABA_even_when_selection_bytes_match_again"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP24P": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP24H": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP25P": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP25H": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP26P": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "OP26H": [
+      {
+        "bundle": "S3-B11",
+        "tests": [
+          "test_audit_execution_publication.PublicationCases.test_copy_revoke_delete_interruption_keeps_pins_other_copy_and_exposure_obligation"
+        ],
+        "execution_receipt": "S3-B11\\case-final1\\cases.jsonl"
+      }
+    ],
+    "X05": [
+      {
+        "bundle": "S3-B12",
+        "tests": [
+          "test_audit_execution_integration.IntegrationCases.test_admitted_import_keeps_unknown_origin_and_cli_has_no_live_bootstrap"
+        ],
+        "execution_receipt": "S3-B12\\case-final1\\cases.jsonl"
+      }
+    ],
+    "E01": [
+      {
+        "bundle": "S3-B12",
+        "tests": [
+          "test_audit_execution_integration.IntegrationCases.test_local_function_native_graph_mapping_meter_and_cold_history"
+        ],
+        "execution_receipt": "S3-B12\\case-final1\\cases.jsonl"
+      }
+    ],
+    "E02": [
+      {
+        "bundle": "S3-B12",
+        "tests": [
+          "test_audit_execution_integration.IntegrationCases.test_remote_lost_ack_same_owner_capture_three_events_two_and_cold_ack"
+        ],
+        "execution_receipt": "S3-B12\\case-final1\\cases.jsonl"
+      }
+    ],
+    "E03": [
+      {
+        "bundle": "S3-B12",
+        "tests": [
+          "test_audit_execution_integration.IntegrationCases.test_unknown_origin_interactive_two_questions_one_delivery_cold_lookup"
+        ],
+        "execution_receipt": "S3-B12\\case-final1\\cases.jsonl"
+      }
+    ],
+    "E04": [
+      {
+        "bundle": "S3-B12",
+        "tests": [
+          "test_audit_execution_integration.IntegrationCases.test_checkpoint_R2_both_sources_partial_state_and_unchanged_original_NA"
+        ],
+        "execution_receipt": "S3-B12\\case-final1\\cases.jsonl"
+      }
+    ]
+  },
+  "bundle_receipts": [
+    {
+      "bundle": "S3-B00",
+      "commit": "b9b316bda8560781f3c734584c9ef2170052cc3e",
+      "tree": "8dc9e5fdbc08b9694e16565a36609815d40b90a4",
+      "receipts": [
+        {
+          "path": "S3-B00\\accepted-inputs.json",
+          "sha256": "938c27a50170503864548bb6fc7e86999db16468d110714967fcf24880925d71"
+        },
+        {
+          "path": "S3-B00\\tests.json",
+          "sha256": "6eabf9ac812db03e6eb4928a447acb74ac0e64311810aecbc3ff0b9684b7c338"
+        },
+        {
+          "path": "S3-B00\\gate.json",
+          "sha256": "9f4b20cb0a99e6fffc1cc8ca3758a5d6d8cf834bf7614a61e8641d42cc94aca8"
+        },
+        {
+          "path": "S3-B00\\source-before-after.json",
+          "sha256": "1ed9c73c078409fd1748237ec0b6454f68118ce7e4b53a93f42851a4fc8a6c55"
+        },
+        {
+          "path": "S3-B00\\support-claims.json",
+          "sha256": "4daab935937de9ebdb9f1f6eef43f2c807e4a1f7802ea318c554ce5a7703c1a2"
+        },
+        {
+          "path": "S3-B00\\commit.json",
+          "sha256": "2fe17ffa1edea02573246e3453f3dac35a9f1da9a86e5103efb6e2a89ada90e7"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B01",
+      "commit": "78d33b3094cebb4a78563ac9383f860e5b0e522a",
+      "tree": "65edc5499a7c98c3b85b4633fdead13f5243fcfc",
+      "receipts": [
+        {
+          "path": "S3-B01\\accepted-inputs.json",
+          "sha256": "e41449a4f117d836db285c7c0411236a74ca8e73cd5bff31960a0f400fde94f5"
+        },
+        {
+          "path": "S3-B01\\tests.json",
+          "sha256": "5e74f1e6bdc3526df08abb7b3b53ce6dfa7b7970d96e49f2d5d197d4230a16a1"
+        },
+        {
+          "path": "S3-B01\\gate.json",
+          "sha256": "29b5ea78afdc1260a6c1042e243c831a7e5ac7dd57a483bad14a48514704c618"
+        },
+        {
+          "path": "S3-B01\\source-before-after.json",
+          "sha256": "19593292c1a396739b67e776c2f82bae443a8c87af1c7b557c20dd564b61df3d"
+        },
+        {
+          "path": "S3-B01\\support-claims.json",
+          "sha256": "85e1669c08ae458a161496c7c829cec99a1e7ce991ba83b61b6bc78226b74e63"
+        },
+        {
+          "path": "S3-B01\\commit.json",
+          "sha256": "bedfaece5de7b4c5952a85827d69b3bb877f46e4d3d3451d0def66ec48060d56"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B02",
+      "commit": "91c150c2e757e86909c3aff61af5135e3df7d8ff",
+      "tree": "4a3ea24b08e455cf2d7208f94abe5647fbfda8ef",
+      "receipts": [
+        {
+          "path": "S3-B02\\accepted-inputs.json",
+          "sha256": "c45b351c6af898b7fb7c516bd3e35e5ae65a23530e4aecf192a54fb76e5c4cb9"
+        },
+        {
+          "path": "S3-B02\\tests.json",
+          "sha256": "e5478803f69fe1ecf1a86f18fd21bab1ebdc9ac8e8ad9ed09cc5637a76b454ae"
+        },
+        {
+          "path": "S3-B02\\gate.json",
+          "sha256": "da16747364e8c324650050c51312d7e45e1cc52ebd581c879e4ead543df3cae3"
+        },
+        {
+          "path": "S3-B02\\source-before-after.json",
+          "sha256": "f9b25df3833ab249fe3018b379b3e3df58b3658d432b8a3896f2152e748f21a6"
+        },
+        {
+          "path": "S3-B02\\support-claims.json",
+          "sha256": "4e3613e50c5bc42732bca6c26f1696c125ab5f83438d0b8fde4ee07b6fa4ce02"
+        },
+        {
+          "path": "S3-B02\\commit.json",
+          "sha256": "d3934e6f456f1c571a8dc286edaef22cf19e8ac711f2e1a5c677ebc5f5ef736d"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B03",
+      "commit": "78de55c2b16a60aa464c656fd92f17c061c7c40f",
+      "tree": "4911f8ddfe7e00c035257c42cb805da7a56b1ac3",
+      "receipts": [
+        {
+          "path": "S3-B03\\accepted-inputs.json",
+          "sha256": "d481d6959021447c095c79ac6cf0033666f5541f2fd6081fa21d9c59c509359e"
+        },
+        {
+          "path": "S3-B03\\tests.json",
+          "sha256": "c4be157c407c86ca0a5a0dbc0602100a3407053a77194a3b9e57b98736f2b1ac"
+        },
+        {
+          "path": "S3-B03\\gate.json",
+          "sha256": "1f16514ff100e3ca4878ebf4c9af64fdc4f38a02da08b9c34fba4c45c95da99d"
+        },
+        {
+          "path": "S3-B03\\source-before-after.json",
+          "sha256": "3e9e52a18da30406ccdf2d567f46bd7d70fa27ef5f11fbabb480c1a492ecc065"
+        },
+        {
+          "path": "S3-B03\\support-claims.json",
+          "sha256": "9f46143685195ce5fb04effe87df442c48d49c0437f18864550af0a5eca85421"
+        },
+        {
+          "path": "S3-B03\\commit.json",
+          "sha256": "02c9cfd6499f6b94041900a20dc1509645627768e56ee76ddc7f4bdc04f2b01d"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B04",
+      "commit": "6b68d33d96b09f993a4bdcb92a8e5d94edc026fa",
+      "tree": "f157a86be2b0e46944ac35b29ad1611d0a0e55f5",
+      "receipts": [
+        {
+          "path": "S3-B04\\accepted-inputs.json",
+          "sha256": "0cd08eaa269a2c07bdf4893f31e97ba5df1065d2e35c385acccf98a058f5799d"
+        },
+        {
+          "path": "S3-B04\\tests.json",
+          "sha256": "3008009f8175be7c8d25ecc6394fa0419c628c3e14330f398ad300838a63b801"
+        },
+        {
+          "path": "S3-B04\\gate.json",
+          "sha256": "32871ee01d8d0bdac3b241427463bc9c7b35270af80b8fb8136c24ca468de416"
+        },
+        {
+          "path": "S3-B04\\source-before-after.json",
+          "sha256": "3cd772de4552f77c225cb0ef1f79725e127ff1842cd6c8a006c779e2541da8b0"
+        },
+        {
+          "path": "S3-B04\\support-claims.json",
+          "sha256": "95cfe7c5a747e6fac9e2e5914cea48ea69d932afa02a79fb2de0b902e190b2fb"
+        },
+        {
+          "path": "S3-B04\\commit.json",
+          "sha256": "1615c19bdc553da19f632a204280269f9a5d04f750168fc74fb056a2ddea9c43"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B05",
+      "commit": "222834deec4c8b58a5360389ab0f2ff4edc1d5d3",
+      "tree": "52b1001ebf8ec92e55c345a80f0330d8faeea90a",
+      "receipts": [
+        {
+          "path": "S3-B05\\accepted-inputs.json",
+          "sha256": "ed9d21b292b4ff429b8b906a98699dd1a06fc5f085c82a255f4bdd7cdda54ba5"
+        },
+        {
+          "path": "S3-B05\\tests.json",
+          "sha256": "f53c6dbdd56daac086e4e69e3a343589b9844b9c0d803bade53113ad0e10a80a"
+        },
+        {
+          "path": "S3-B05\\gate.json",
+          "sha256": "3cde617efac0e99fc7f1c932d517fbab6e4078da7ab19e98c71fb5636b978698"
+        },
+        {
+          "path": "S3-B05\\source-before-after.json",
+          "sha256": "89a7138d890af0981d32642155e619ca17eceba36157e25f0f22927681b9fb5c"
+        },
+        {
+          "path": "S3-B05\\support-claims.json",
+          "sha256": "9db4aafa0ca09d6ac0bd92b3035b1fa3d48f01dc1c1a354c3be0a794980d0d0d"
+        },
+        {
+          "path": "S3-B05\\commit.json",
+          "sha256": "1d0b664c8659ed78e97ee1ccb6f5449eadd4567f25701df0543cd415205670e0"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B06",
+      "commit": "0e84b278fbd27f6e50cea9a71673d2a07afb694d",
+      "tree": "251b2a4b70b73fc20f91ce394874b9eb8f7f90e4",
+      "receipts": [
+        {
+          "path": "S3-B06\\accepted-inputs.json",
+          "sha256": "a689105114b302260ba4532f796ede109f9c2e63d822da7e19698df1dd5424b0"
+        },
+        {
+          "path": "S3-B06\\tests.json",
+          "sha256": "4585c2eedff998820dd3e005f2ce23e031770a2d0e016f560fc10ce34a64d776"
+        },
+        {
+          "path": "S3-B06\\gate.json",
+          "sha256": "9cefc68560cc5112cba334fa33358780dc9ffcfb1779b526b762b5779d79e293"
+        },
+        {
+          "path": "S3-B06\\source-before-after.json",
+          "sha256": "3d89a5114ca00c4a478bac6754da4b6ace1bea2c7dfea393ee1a12d896aa6069"
+        },
+        {
+          "path": "S3-B06\\support-claims.json",
+          "sha256": "db0fea7bac298458f00d7cd624e8c9a7d2fd19a17dff79af7dabf8c15d2aeb6f"
+        },
+        {
+          "path": "S3-B06\\commit.json",
+          "sha256": "167377af7660e6edf03222d2a602655cbbaaceef6968839f31ef41bb3f2dfecb"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B07",
+      "commit": "dcc3c180a3a94109c925b3864c308c97388fbbae",
+      "tree": "2dc231fe295f571c29e9862fffe6b15157f5eda7",
+      "receipts": [
+        {
+          "path": "S3-B07\\accepted-inputs.json",
+          "sha256": "f9227e645ca9dada4d504278bebd2e4557c4ea3fe0ab6ef8201cb6aff8471811"
+        },
+        {
+          "path": "S3-B07\\tests.json",
+          "sha256": "755c98183be05290da54a1e04d9b5b3557439a1ba154eab74fca267993a381d5"
+        },
+        {
+          "path": "S3-B07\\gate.json",
+          "sha256": "0b95be848e104193f19328081188015b6e9ecd89459963c1b6df178b87a43a36"
+        },
+        {
+          "path": "S3-B07\\source-before-after.json",
+          "sha256": "f31aac91f29183d11ebaa8b019f354ac56333f279929e461bee44fee72e758f2"
+        },
+        {
+          "path": "S3-B07\\support-claims.json",
+          "sha256": "d7e9366c096a75ed2b9061800d1c64630d07d23a0d1ae251a6c8a72c563c5737"
+        },
+        {
+          "path": "S3-B07\\commit.json",
+          "sha256": "a074c0337634c0d915fc78972e7ba67b32c781332ba2d336e7f32528eee59b0b"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B08",
+      "commit": "8ee184a71a2d5353c0cbbc0db556eb38a29a4cf5",
+      "tree": "efaab950d77aa796c98451cf8e618cda99f40f89",
+      "receipts": [
+        {
+          "path": "S3-B08\\accepted-inputs.json",
+          "sha256": "b2eb43470622b2e65108996586021cb397818fd011e430dfb9a09123a4577153"
+        },
+        {
+          "path": "S3-B08\\tests.json",
+          "sha256": "b71d4166a664fef77b0fe541dfbc3b19164eff7a9ecfbc88ceca344114c6bf14"
+        },
+        {
+          "path": "S3-B08\\gate.json",
+          "sha256": "ebfceaad1b199781a66139a38da7d9abc5c9a250078d84290f32944db77f19d7"
+        },
+        {
+          "path": "S3-B08\\source-before-after.json",
+          "sha256": "13c23d7815912bcca0a716f2b847e610eb39c6739da009ebb851452b1d6f77fd"
+        },
+        {
+          "path": "S3-B08\\support-claims.json",
+          "sha256": "133716f2547dd02a2d853f0c424f4bd6c802305932a9d77f90bb5e3f5081afcb"
+        },
+        {
+          "path": "S3-B08\\commit.json",
+          "sha256": "bac39b5e8dca01061d666f7e1982350302fedfcd285032106207ca8e882484f0"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B09",
+      "commit": "3f1bb357dca34a629b5a067b3ff585eee30cc5db",
+      "tree": "a5ece6bdf52320663d6bba6edcdc39ae320d24be",
+      "receipts": [
+        {
+          "path": "S3-B09\\accepted-inputs.json",
+          "sha256": "f1c6db13e2a9ffd8423e1640120f1a36143a46bd610cfea47ed7953ea961c81f"
+        },
+        {
+          "path": "S3-B09\\tests.json",
+          "sha256": "be071be6dbfecc6eb57cd102f93b356a8fb5a86c7cd728cad7fcfc0d5c5de0f4"
+        },
+        {
+          "path": "S3-B09\\gate.json",
+          "sha256": "d7d24fd200b87b04ad9701f344ada8b8a15c60390c367a2a14d252ca72e37dfe"
+        },
+        {
+          "path": "S3-B09\\source-before-after.json",
+          "sha256": "9ca86859721bf52ce7c6359793302137698e0d98e35f7020498b4f87f96bebe4"
+        },
+        {
+          "path": "S3-B09\\support-claims.json",
+          "sha256": "806fd9cad2ad395c74dcaaa5b54582d9b31a58bda02454c5d25361217c5dee66"
+        },
+        {
+          "path": "S3-B09\\commit.json",
+          "sha256": "7e7ef5f5f04e3111e534671b81f2c9c55fc971a3734cb2321d274a6b4e10b9dc"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B10",
+      "commit": "a9d2b47477a68c1c447607de3e887b2cfeaeed71",
+      "tree": "ca207c6915fd061a0dc2b2725f7a348e39a56c4a",
+      "receipts": [
+        {
+          "path": "S3-B10\\accepted-inputs.json",
+          "sha256": "fefd7d008510791bdd03bd5319c1f6dcc24ebd2322b423a628581170d7f7dddd"
+        },
+        {
+          "path": "S3-B10\\tests.json",
+          "sha256": "27cebee678409afa782d55d37b1d9d22559ae9ff44e4aa4773dd913dde8b1e12"
+        },
+        {
+          "path": "S3-B10\\gate.json",
+          "sha256": "693cfa9acf57984b697dc830960a4c53cceda1d1cb8781c7d4acb845f1304949"
+        },
+        {
+          "path": "S3-B10\\source-before-after.json",
+          "sha256": "6ce518d00ae5435214bae1deb517d251ea8fb846e5091215401f41d3ed9efd57"
+        },
+        {
+          "path": "S3-B10\\support-claims.json",
+          "sha256": "5a41a94e0966b439d2c0d0b3b69a32b512fe75903b4277d326af9eb7c54b4a84"
+        },
+        {
+          "path": "S3-B10\\commit.json",
+          "sha256": "ef1a7419783794c077f53e19521427f21575694649bf39ccb37a66ca099456da"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B11",
+      "commit": "914e1438a2d3f3eb589e4946dd519a95ec940f67",
+      "tree": "e71e871611818c2233cafbf22d09de29793d621c",
+      "receipts": [
+        {
+          "path": "S3-B11\\accepted-inputs.json",
+          "sha256": "61460ef366cd96879cad5ea2249fd2d9abb4039acf5ef22168beafa1c0b8c43e"
+        },
+        {
+          "path": "S3-B11\\tests.json",
+          "sha256": "8948c4f5853919f1abf61dd39fa513235b9953ef5f094a9ae2385e4445c0bc3c"
+        },
+        {
+          "path": "S3-B11\\gate.json",
+          "sha256": "4d20118840a7e7b5e8d0bdb3b1716ff4b59ee8e1f63d6211d74d6dd83e58c86d"
+        },
+        {
+          "path": "S3-B11\\source-before-after.json",
+          "sha256": "7052c4a864be28a028b45c3fa64b230ab42ee7f27e55aa93b28251e59db5e640"
+        },
+        {
+          "path": "S3-B11\\support-claims.json",
+          "sha256": "a9566064d3fa4f454aaaec198a18e0dfff4269792ac885d3fb1f8fb64add752d"
+        },
+        {
+          "path": "S3-B11\\commit.json",
+          "sha256": "c7749dacb77e8dc4aaeee88c06b58e6a51081d1306291b26131ec45377539927"
+        }
+      ]
+    },
+    {
+      "bundle": "S3-B12",
+      "commit": "704433af9fc55111b9bd17c12d72bc101dc758b1",
+      "tree": "63f788a2e19e2d023f16ff0ea9923f558f3593f5",
+      "receipts": [
+        {
+          "path": "S3-B12\\accepted-inputs.json",
+          "sha256": "f3a030fbe45df06109847912aa983ce23bedb5b6afb5a6c022bc34843f15fe2e"
+        },
+        {
+          "path": "S3-B12\\tests.json",
+          "sha256": "2d2d5938b911c7d5689d52a4ef8429845c0b75a97035dcdf3f4bad45b43a2362"
+        },
+        {
+          "path": "S3-B12\\gate.json",
+          "sha256": "1ac97de2d00b1158d62fafe49fcc418843082a5a23f3a63937371dac50d53ce0"
+        },
+        {
+          "path": "S3-B12\\source-before-after.json",
+          "sha256": "45a8169aa0d319c3327e077975aef338d152b12387a17c64de55e0bc1a2b3f26"
+        },
+        {
+          "path": "S3-B12\\support-claims.json",
+          "sha256": "68f22e2cc75548ba199845bb936d2fdf7553f44429d84687a5ed490e29202028"
+        },
+        {
+          "path": "S3-B12\\commit.json",
+          "sha256": "df10c9e799a124ddac6db0b4dd77ff4f6531d015ee6b83edf589c68e5043e1dc"
+        }
+      ]
+    }
+  ],
+  "current_integration_case_ids": [
+    "A01",
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "F08",
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16",
+    "F17",
+    "F18",
+    "F19",
+    "F20",
+    "J01",
+    "M01",
+    "OP01H",
+    "OP01P",
+    "OP02H",
+    "OP02P",
+    "OP03H",
+    "OP03P",
+    "OP04H",
+    "OP04P",
+    "OP05H",
+    "OP05P",
+    "OP06H",
+    "OP06P",
+    "OP07H",
+    "OP07P",
+    "OP08H",
+    "OP08P",
+    "OP09H",
+    "OP09P",
+    "OP10H",
+    "OP10P",
+    "OP11H",
+    "OP11P",
+    "OP12H",
+    "OP12P",
+    "OP13H",
+    "OP13P",
+    "OP14H",
+    "OP14P",
+    "OP15H",
+    "OP15P",
+    "OP16H",
+    "OP16P",
+    "OP17H",
+    "OP17P",
+    "OP18H",
+    "OP18P",
+    "OP19H",
+    "OP19P",
+    "OP20H",
+    "OP20P",
+    "OP21H",
+    "OP21P",
+    "OP22H",
+    "OP22P",
+    "OP23H",
+    "OP23P",
+    "OP24H",
+    "OP24P",
+    "OP25H",
+    "OP25P",
+    "OP26H",
+    "OP26P",
+    "OP27H",
+    "OP27P",
+    "OP28H",
+    "OP28P",
+    "OP29H",
+    "OP29P",
+    "OP30H",
+    "OP30P",
+    "OP31H",
+    "OP31P",
+    "T01",
+    "W01",
+    "W02",
+    "X01",
+    "X02",
+    "X03",
+    "X04",
+    "X05",
+    "X06",
+    "X07",
+    "X08",
+    "X09",
+    "X10",
+    "X11",
+    "X12"
+  ],
+  "current_integration_execution_receipt": "S3-B12/case-final1/cases.jsonl",
+  "fault_receipt_pins": [
+    {
+      "case": "F01",
+      "variant": "append_after_journal_commit",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\append_after_journal_commit\\receiver-oracle.json",
+          "sha256": "60a376ac88c0ffdb2808a37664a5c8de977853fbbebb253de3d738ea5701cefb"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\append_after_journal_commit\\history-prefix.json",
+          "sha256": "7e51362caa48e38ced6e8f5edce9b6c03c706eb5b19d59330ec1ee4e5d55770a"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\append_after_journal_commit\\recovered-view.json",
+          "sha256": "9dcf4272c5adf21e0d70b30b590e0cc687e7cb4bbb74447134e5d5d39b7ad8ea"
+        }
+      ]
+    },
+    {
+      "case": "F01",
+      "variant": "append_before_journal_commit",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\append_before_journal_commit\\receiver-oracle.json",
+          "sha256": "7e72e6f7ea0b616de7e250385121f829594132bc0dd20c76b0ecfa84f1e3a75f"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\append_before_journal_commit\\history-prefix.json",
+          "sha256": "6677dd2f2c726ab35a7b99042eeb81c983d1575403b60a71941c5d08438577d3"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\append_before_journal_commit\\recovered-view.json",
+          "sha256": "55ed46bd342f7ef45c3208b3dad6ab13cd0f41af306e2ef0c75e2e21a1831db2"
+        }
+      ]
+    },
+    {
+      "case": "F01",
+      "variant": "capture_after_journal_commit",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\capture_after_journal_commit\\receiver-oracle.json",
+          "sha256": "35af24524f48faed8d54ad9611463438e38fbd0ece9530dab30c0665a50e484a"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\capture_after_journal_commit\\history-prefix.json",
+          "sha256": "50c8094865898d3530fa54ffbfc31c3c190e3c8cb21411c0f626daa796744577"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\capture_after_journal_commit\\recovered-view.json",
+          "sha256": "9d8629ebba434df7519fef7d0eeb26992f888f02b5a7189b3cacc7afc81aeb29"
+        }
+      ]
+    },
+    {
+      "case": "F01",
+      "variant": "capture_before_journal_commit",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\capture_before_journal_commit\\receiver-oracle.json",
+          "sha256": "39c6c8574736975cea90b4cc0101ad33c612bb5ae1e2a7f6408bba51b7051d08"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\capture_before_journal_commit\\history-prefix.json",
+          "sha256": "ca8192d73435051930ac9f10a14c6dbd2c7e52dc851918daac83b53e0361ef66"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F01\\capture_before_journal_commit\\recovered-view.json",
+          "sha256": "0ef8bc8f344e9366d914d609617922b92a3c13f378ef6ae7cfc8a68b63807821"
+        }
+      ]
+    },
+    {
+      "case": "F02",
+      "variant": "intent_before_receiver",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F02\\intent_before_receiver\\receiver-oracle.json",
+          "sha256": "050152c5fab13df9770d9ace06b03e0bdb3f4869e94096beedb3992564a70270"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F02\\intent_before_receiver\\history-prefix.json",
+          "sha256": "66d0da7999f7332bc9db1fcbae60742c635c7c890963cfbabeca85481fa3ccaa"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F02\\intent_before_receiver\\recovered-view.json",
+          "sha256": "79c28d0df055c03fbbce7c0b50d60a4f56253f3873918a8b9be8d54b7de62632"
+        }
+      ]
+    },
+    {
+      "case": "F03",
+      "variant": "release_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\release_reply_lost\\receiver-oracle.json",
+          "sha256": "9425855455280287c157cc48a344bfb41fafdfa7f7bce1e7b9a5847b12f7a0a3"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\release_reply_lost\\history-prefix.json",
+          "sha256": "61674a76c77c06bf200ec048521659d6d450d4147cdbee87de374fdd4d3e8060"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\release_reply_lost\\recovered-view.json",
+          "sha256": "e4122f7fbac742af53a0d643e11eb5343b65fbf7d34a0aa272fdf28f0338da9c"
+        }
+      ]
+    },
+    {
+      "case": "F03",
+      "variant": "renew_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\renew_reply_lost\\receiver-oracle.json",
+          "sha256": "9425855455280287c157cc48a344bfb41fafdfa7f7bce1e7b9a5847b12f7a0a3"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\renew_reply_lost\\history-prefix.json",
+          "sha256": "bdeb91e9629a37562fff6651fa58907344fc8278c16149efa79d9902601c3364"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\renew_reply_lost\\recovered-view.json",
+          "sha256": "756865c4f17fed69d24d539e22fc0443950a0e1a96110b193c52f798e616ffa7"
+        }
+      ]
+    },
+    {
+      "case": "F03",
+      "variant": "reserve_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\reserve_reply_lost\\receiver-oracle.json",
+          "sha256": "98f29306b9e0671245e8c934df00b3ceb6e5a6a4cb0e7529fcc3b527f6577f6a"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\reserve_reply_lost\\history-prefix.json",
+          "sha256": "c453fa12c5a41f054c7d170c2e91adee9696a12b5fc9bd839e9e9790ad9e5c93"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\reserve_reply_lost\\recovered-view.json",
+          "sha256": "b252b35df532f0595ef853998248e37c8600c42d5197daa005473b3fbd804d63"
+        }
+      ]
+    },
+    {
+      "case": "F03",
+      "variant": "settle_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\settle_reply_lost\\receiver-oracle.json",
+          "sha256": "0c8a924c751551b55c48bfb068c7f1600464ebe66ee970f006f589fb3075210e"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\settle_reply_lost\\history-prefix.json",
+          "sha256": "8a7407742a20e57ff785dbc204c24960ff499c769734f75e1f9d9099bb976b3a"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F03\\settle_reply_lost\\recovered-view.json",
+          "sha256": "854b1daaa842d7d5fb06f85286574194876e6ab9bc473c5c83a3a7f5926a264f"
+        }
+      ]
+    },
+    {
+      "case": "F04",
+      "variant": "after_owner_0",
+      "receipts": [
+        {
+          "path": "S3-B06\\case-final3\\faults\\F04\\after_owner_0\\receiver-oracle.json",
+          "sha256": "127febb6e147f8ccf724dbe461bf2d92cdd695e3a25ea5bb8cf958b682c67f98"
+        },
+        {
+          "path": "S3-B06\\case-final3\\faults\\F04\\after_owner_0\\history-prefix.json",
+          "sha256": "fbbb8420ac25058b6d32d1f386303c4a67b91a179699b3f3a7c52a869cd05511"
+        },
+        {
+          "path": "S3-B06\\case-final3\\faults\\F04\\after_owner_0\\recovered-view.json",
+          "sha256": "19f0dc17e918f925a79d46305e1ee1ecc64c185e2625d7abb1e181a06a0bc33f"
+        }
+      ]
+    },
+    {
+      "case": "F04",
+      "variant": "after_owner_0",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F04\\after_owner_0\\receiver-oracle.json",
+          "sha256": "127febb6e147f8ccf724dbe461bf2d92cdd695e3a25ea5bb8cf958b682c67f98"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F04\\after_owner_0\\history-prefix.json",
+          "sha256": "67b37def3abf889086082da90750072baa9588632c4636971f95c96368dc466f"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F04\\after_owner_0\\recovered-view.json",
+          "sha256": "978d8a1067424e9cf14610c2794b1d3ae1ecc718959a529b895024f54c133fea"
+        }
+      ]
+    },
+    {
+      "case": "F05",
+      "variant": "after_issue_intent",
+      "receipts": [
+        {
+          "path": "S3-B06\\case-final3\\faults\\F05\\after_issue_intent\\receiver-oracle.json",
+          "sha256": "df12210d20f353484593824af20c5e582cf0d3135c12a1e577b4a685c59150f9"
+        },
+        {
+          "path": "S3-B06\\case-final3\\faults\\F05\\after_issue_intent\\history-prefix.json",
+          "sha256": "2c0f4bfac6a25a528612d0b0ec740ab45a15cf31a76c33c5a2ea4103908b2f45"
+        },
+        {
+          "path": "S3-B06\\case-final3\\faults\\F05\\after_issue_intent\\recovered-view.json",
+          "sha256": "c0deaf6a7a6f4b54330ae571f9e5fa12d3209e2ef7ae9eef7e8f324de58f8255"
+        }
+      ]
+    },
+    {
+      "case": "F05",
+      "variant": "after_issue_intent",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F05\\after_issue_intent\\receiver-oracle.json",
+          "sha256": "df12210d20f353484593824af20c5e582cf0d3135c12a1e577b4a685c59150f9"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F05\\after_issue_intent\\history-prefix.json",
+          "sha256": "e4e420152ece9153bbf55d83fd3680f39442004fa67000373ed66300b6b85d86"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F05\\after_issue_intent\\recovered-view.json",
+          "sha256": "d5b2936e1d33a60a6c2b41316a28b755ab0ab67268661c89eeeaa2ec51c10faf"
+        }
+      ]
+    },
+    {
+      "case": "F17",
+      "variant": "clock_unknown_after_intent",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F17\\clock_unknown_after_intent\\receiver-oracle.json",
+          "sha256": "a047228ff1739d83ce48e572e85b67375869ce2b5940a9fca15b5b6e72701acd"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F17\\clock_unknown_after_intent\\history-prefix.json",
+          "sha256": "d3fbd78692ac34f9ab63613fa642e7cd4cf4bf1af64865db600350927d38adc7"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F17\\clock_unknown_after_intent\\recovered-view.json",
+          "sha256": "0dd7655967688e45079ef8feef595128fd6dc365126f8f07989bc8428cd1a764"
+        }
+      ]
+    },
+    {
+      "case": "F17",
+      "variant": "owner_expired",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F17\\owner_expired\\receiver-oracle.json",
+          "sha256": "d9a8c20b44c215aeae69501ab183e4549d580f2cfa690ad3d4c6e7c090ed3a46"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F17\\owner_expired\\history-prefix.json",
+          "sha256": "1f5c734530ba17f4e344736b9d037a7c3cdde829853a3e65d8c234842380a9f6"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F17\\owner_expired\\recovered-view.json",
+          "sha256": "3dcfc14a13090f4b1785332b0c1575ec9d38204361acbb22a21a4a6ddaf15ba4"
+        }
+      ]
+    },
+    {
+      "case": "F18",
+      "variant": "admit_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\admit_reply_lost\\receiver-oracle.json",
+          "sha256": "c7500c3446ffb9ab3807544d9767b5bb792c77a4b5873dec8f56d9ef8b696dfe"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\admit_reply_lost\\history-prefix.json",
+          "sha256": "16887837b519cd103d8e4320d218e67a8c3f40d48f6b87e4dc2eb026a6de1eee"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\admit_reply_lost\\recovered-view.json",
+          "sha256": "a0e658070ee379a39f48f2fda8e902d50171754e65f3e9e1c1cdf0a59cbf7a5f"
+        }
+      ]
+    },
+    {
+      "case": "F18",
+      "variant": "forged_or_copied_token",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\forged_or_copied_token\\receiver-oracle.json",
+          "sha256": "d44898c23cf85475c375e9924ab5995de3bcbb8e23e778f85de45c122d74c18a"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\forged_or_copied_token\\history-prefix.json",
+          "sha256": "6b4fd9beb4cd1cd61b7c9f00a5e0b3e2e8b8a9825804dd0e0be76df2cba437d8"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\forged_or_copied_token\\recovered-view.json",
+          "sha256": "a4a49709cf2d4f7f96f7d88084939d268fe12d45001070aa567dcc8ceee6fe15"
+        }
+      ]
+    },
+    {
+      "case": "F18",
+      "variant": "issue_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\issue_reply_lost\\receiver-oracle.json",
+          "sha256": "c7500c3446ffb9ab3807544d9767b5bb792c77a4b5873dec8f56d9ef8b696dfe"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\issue_reply_lost\\history-prefix.json",
+          "sha256": "dfbb6bb0dc8f4161ead14fd4b4e40cbcb7cfeb78aa8f6a99c020a2ca03a6923f"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\issue_reply_lost\\recovered-view.json",
+          "sha256": "5ff41377fb8991b13dfe4fdd4c47fe9cc8d397e206c422ef0f9cd3300b40d7ea"
+        }
+      ]
+    },
+    {
+      "case": "F18",
+      "variant": "same_D_receipt_replayed",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\same_D_receipt_replayed\\receiver-oracle.json",
+          "sha256": "c7500c3446ffb9ab3807544d9767b5bb792c77a4b5873dec8f56d9ef8b696dfe"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\same_D_receipt_replayed\\history-prefix.json",
+          "sha256": "dfbb6bb0dc8f4161ead14fd4b4e40cbcb7cfeb78aa8f6a99c020a2ca03a6923f"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F18\\same_D_receipt_replayed\\recovered-view.json",
+          "sha256": "5ff41377fb8991b13dfe4fdd4c47fe9cc8d397e206c422ef0f9cd3300b40d7ea"
+        }
+      ]
+    },
+    {
+      "case": "F06",
+      "variant": "coordinator_death_after_lost_native_ack",
+      "receipts": [
+        {
+          "path": "S3-B07\\case-final1\\faults\\F06\\coordinator_death_after_lost_native_ack\\receiver-oracle.json",
+          "sha256": "e15f6614f5d706118a9d9fcabb928f21300c0d60c3fdcf1a98c1042122452a4d"
+        },
+        {
+          "path": "S3-B07\\case-final1\\faults\\F06\\coordinator_death_after_lost_native_ack\\history-prefix.json",
+          "sha256": "393ee08806215dd12c7ec51576a20ebffea7f18ed97ba39bb630307e31e36eab"
+        },
+        {
+          "path": "S3-B07\\case-final1\\faults\\F06\\coordinator_death_after_lost_native_ack\\recovered-view.json",
+          "sha256": "ec29439efdaead702fd920165b2a1f7622b90dc3de94f2dfb29e3a1eaa07d9f2"
+        }
+      ]
+    },
+    {
+      "case": "F06",
+      "variant": "coordinator_death_after_lost_native_ack",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\coordinator_death_after_lost_native_ack\\receiver-oracle.json",
+          "sha256": "e75dea03de5feac5ab0ce220bbd963e3bc6ddd5cdb5abb1f3062d24cb4385e3c"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\coordinator_death_after_lost_native_ack\\history-prefix.json",
+          "sha256": "ff503029223cd4bfd0d07cd0181450e23595c1e33aa1c9ef618992133db45695"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\coordinator_death_after_lost_native_ack\\recovered-view.json",
+          "sha256": "0011b7463e836bcb53d807c1d7b4a075cc0b125e97dabc85b87d039a65a41d2a"
+        }
+      ]
+    },
+    {
+      "case": "F06",
+      "variant": "negative_lookup_before_delayed_original_arrives",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\negative_lookup_before_delayed_original_arrives\\receiver-oracle.json",
+          "sha256": "6b9cfbd88822b92413173ee39b83fb9330314cb160ac2b5e9dee410ec0ec1524"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\negative_lookup_before_delayed_original_arrives\\history-prefix.json",
+          "sha256": "cb12869bb813bfd211f81a2caf0280ed40a192670d9c04b348f1c30e20c5c0ba"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\negative_lookup_before_delayed_original_arrives\\recovered-view.json",
+          "sha256": "dc86498f1224a1faf522a67cdc33b3aaef25559dd0498329529e71f3777f836e"
+        }
+      ]
+    },
+    {
+      "case": "F06",
+      "variant": "provider_accepted_reply_lost",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\provider_accepted_reply_lost\\receiver-oracle.json",
+          "sha256": "abc47685d8e5b1032e64835d44589a9148064f2de928601bab96f4db3df28af8"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\provider_accepted_reply_lost\\history-prefix.json",
+          "sha256": "d8fd5fd50ca60524cda82fa3febe2c59f6b392ea4eee6647bf608a5381cc1781"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F06\\provider_accepted_reply_lost\\recovered-view.json",
+          "sha256": "be71f984d45956f09074ee950d459628adb335279f2b3cd3a2e510b99a2cd5b4"
+        }
+      ]
+    },
+    {
+      "case": "F07",
+      "variant": "delayed_request_epoch_takeover",
+      "receipts": [
+        {
+          "path": "S3-B07\\case-final1\\faults\\F07\\delayed_request_epoch_takeover\\receiver-oracle.json",
+          "sha256": "256d941bc22d364a9c273c2e5b5f49f37811e738c9a753ba70744f8c8271f640"
+        },
+        {
+          "path": "S3-B07\\case-final1\\faults\\F07\\delayed_request_epoch_takeover\\history-prefix.json",
+          "sha256": "9b2fd0e5caab16b371fbf4b706450073253f91084eb801eb2555a45b084f2d18"
+        },
+        {
+          "path": "S3-B07\\case-final1\\faults\\F07\\delayed_request_epoch_takeover\\recovered-view.json",
+          "sha256": "89cd54db5d5301573736d1a593615907b8ec7554a0d4087ed4220bae8c677445"
+        }
+      ]
+    },
+    {
+      "case": "F07",
+      "variant": "delayed_request_epoch_takeover",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F07\\delayed_request_epoch_takeover\\receiver-oracle.json",
+          "sha256": "9bb8b7d3660ed5e689b1b2dc9285df84e4ea44a370d95c651e69d84489695f2e"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F07\\delayed_request_epoch_takeover\\history-prefix.json",
+          "sha256": "d0d78618e72a45bcef474ef0e9057be25dec96ab412d1277472a145f08e4f535"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F07\\delayed_request_epoch_takeover\\recovered-view.json",
+          "sha256": "d3d411402bc7846e479998770332ddb970e9b8a857d7d6cc21a59f5cc02ff24f"
+        }
+      ]
+    },
+    {
+      "case": "F08",
+      "variant": "artifact_before_flush",
+      "receipts": [
+        {
+          "path": "S3-B08\\case-final1\\faults\\F08\\artifact_before_flush\\receiver-oracle.json",
+          "sha256": "f8af11f6af560dfa975d22e2574a3c61a3bd39a1fa4523969ae4ba7d2e1b3715"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F08\\artifact_before_flush\\history-prefix.json",
+          "sha256": "fe0acaf7438fe3a79f468ac5a487d1c2637e6e8f61a52e614db38402ae765e3a"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F08\\artifact_before_flush\\recovered-view.json",
+          "sha256": "4ee0b119bd5f9a9ebdb6c1259bdae7386b53ab442c592ba6f7c7a3f1281ab48f"
+        }
+      ]
+    },
+    {
+      "case": "F08",
+      "variant": "artifact_before_flush",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F08\\artifact_before_flush\\receiver-oracle.json",
+          "sha256": "7f5e92c6bac7b42511a9e10505e73911ebb00772eadcc3570c3c5af16fa43ca1"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F08\\artifact_before_flush\\history-prefix.json",
+          "sha256": "7505587fda5bea6df75ab5605c5455104e7286a30fcd46f887106c3caec9e4f3"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F08\\artifact_before_flush\\recovered-view.json",
+          "sha256": "4ee0b119bd5f9a9ebdb6c1259bdae7386b53ab442c592ba6f7c7a3f1281ab48f"
+        }
+      ]
+    },
+    {
+      "case": "F09",
+      "variant": "ack_reply_loss_same_D_recovery",
+      "receipts": [
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\ack_reply_loss_same_D_recovery\\receiver-oracle.json",
+          "sha256": "41c324f7be0a9563130998509c02182ffd7c7b6e8c28d32406feb6debde11f2e"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\ack_reply_loss_same_D_recovery\\history-prefix.json",
+          "sha256": "24c680f193f2e4612f70271baaa1345729f7362f0ef9ae394f0ed5bdb57f79fb"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\ack_reply_loss_same_D_recovery\\recovered-view.json",
+          "sha256": "73f843d3e33c311f58d69499f95ea6aa8c4382cbdfcea505b89980eeacf653d3"
+        }
+      ]
+    },
+    {
+      "case": "F09",
+      "variant": "capture_commit_before_ack",
+      "receipts": [
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\capture_commit_before_ack\\receiver-oracle.json",
+          "sha256": "1c2d157308ea6cca0a6dbb1946f66e962917bdb4f528875dcf67f47f0060bfd8"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\capture_commit_before_ack\\history-prefix.json",
+          "sha256": "25962bb2723944993bd3c0ac97b7984bdbb28f6a6dfd86f26278f6d3649cf747"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\capture_commit_before_ack\\recovered-view.json",
+          "sha256": "82c9f7531a896c98cf554abdb939555ab29d50ca3b9b0436c6b519c546c9ab15"
+        }
+      ]
+    },
+    {
+      "case": "F09",
+      "variant": "unknown_capture_commit_reconciled",
+      "receipts": [
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\unknown_capture_commit_reconciled\\receiver-oracle.json",
+          "sha256": "e5d1449945af592af32311f85b7a4397e67af4cb3826901f4f3cb28f396799ed"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\unknown_capture_commit_reconciled\\history-prefix.json",
+          "sha256": "6f754d1f07f7d0e06f5198b6b5a66e5893d02c2d0fc4b878533a7a2c213e952d"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F09\\unknown_capture_commit_reconciled\\recovered-view.json",
+          "sha256": "8b90a65a2116a6d19d56609fa77301ac967c9199ef58ca9b10c9dd713d30fa80"
+        }
+      ]
+    },
+    {
+      "case": "F09",
+      "variant": "ack_reply_loss_same_D_recovery",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\ack_reply_loss_same_D_recovery\\receiver-oracle.json",
+          "sha256": "b7cab8f22de0a76c4c975871cde5ae9cab19394daa050b08c11fdfa544b34ae6"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\ack_reply_loss_same_D_recovery\\history-prefix.json",
+          "sha256": "bc9bb71ca159188bbb5c89632d0026a73a31d42ce3b38a5690746a538c301e98"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\ack_reply_loss_same_D_recovery\\recovered-view.json",
+          "sha256": "585afb9d872b6d266812c21f29031886f02e75e30911ea6f55ee0f5343c83cf6"
+        }
+      ]
+    },
+    {
+      "case": "F09",
+      "variant": "capture_commit_before_ack",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\capture_commit_before_ack\\receiver-oracle.json",
+          "sha256": "ff474979cb72d457aa5ce56143ced2d1c9ec3dec6a0234d57bb903dd76101b62"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\capture_commit_before_ack\\history-prefix.json",
+          "sha256": "887c05e521c59de4e20483e4e9f42a19b4f6d229699e2b898c981cea842cf7b7"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\capture_commit_before_ack\\recovered-view.json",
+          "sha256": "eccd40980969a471ceaa86e5f8b7b9cf64ff18624c40b6c4177de0ddfb7e101d"
+        }
+      ]
+    },
+    {
+      "case": "F09",
+      "variant": "unknown_capture_commit_reconciled",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\unknown_capture_commit_reconciled\\receiver-oracle.json",
+          "sha256": "1dfb0d5d68269f1a25d6a249992843bad1466c81726d6481eb40a80aa2aaed7b"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\unknown_capture_commit_reconciled\\history-prefix.json",
+          "sha256": "7dacc207da7e293304800ddb739df7745d33718d59a2aa79bc43305ef079ee15"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F09\\unknown_capture_commit_reconciled\\recovered-view.json",
+          "sha256": "0aaff835d1580bbe02ed32aac87a4915fa695e345ed977b9313f671a0df6e01d"
+        }
+      ]
+    },
+    {
+      "case": "F19",
+      "variant": "artifact_after_flush",
+      "receipts": [
+        {
+          "path": "S3-B08\\case-final1\\faults\\F19\\artifact_after_flush\\receiver-oracle.json",
+          "sha256": "5c84a4b3fb5a9187b66c5383d75c2b7bbfa4f02e34c6e76128d13b19ac865638"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F19\\artifact_after_flush\\history-prefix.json",
+          "sha256": "066121b9fa88242cd37e3e1520f1fa8f5a043f44bb8a08246b960b8d84a1b284"
+        },
+        {
+          "path": "S3-B08\\case-final1\\faults\\F19\\artifact_after_flush\\recovered-view.json",
+          "sha256": "4ee0b119bd5f9a9ebdb6c1259bdae7386b53ab442c592ba6f7c7a3f1281ab48f"
+        }
+      ]
+    },
+    {
+      "case": "F19",
+      "variant": "artifact_after_flush",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F19\\artifact_after_flush\\receiver-oracle.json",
+          "sha256": "a9104a4029ffffdc03c3377c29edd50c80023bb719001dcc886b500dcb6534c7"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F19\\artifact_after_flush\\history-prefix.json",
+          "sha256": "c9618ca2a55f89414b69c2745cfec70104a1a3bb7253c5ad65aae6c30ec5fdb3"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F19\\artifact_after_flush\\recovered-view.json",
+          "sha256": "4ee0b119bd5f9a9ebdb6c1259bdae7386b53ab442c592ba6f7c7a3f1281ab48f"
+        }
+      ]
+    },
+    {
+      "case": "F10",
+      "variant": "selection_commit_reply_loss",
+      "receipts": [
+        {
+          "path": "S3-B09\\case-final1\\faults\\F10\\selection_commit_reply_loss\\receiver-oracle.json",
+          "sha256": "0a392f9b5417c7bcf027010ade08c3f8f86d5a908cc646bb3a849a95096967a0"
+        },
+        {
+          "path": "S3-B09\\case-final1\\faults\\F10\\selection_commit_reply_loss\\history-prefix.json",
+          "sha256": "9dba6c0d4e891d87f473bdf6a7de104caca79af958869452f3d580226425fa70"
+        },
+        {
+          "path": "S3-B09\\case-final1\\faults\\F10\\selection_commit_reply_loss\\recovered-view.json",
+          "sha256": "f122a5e3f4dca639ad9204c99daa7512272c1531fab010105b5a89a3f3623317"
+        }
+      ]
+    },
+    {
+      "case": "F10",
+      "variant": "selection_commit_reply_loss",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F10\\selection_commit_reply_loss\\receiver-oracle.json",
+          "sha256": "321453be27d5aab101d44724842e2d0ca07eb97f452ab205e2a7cd2b46effbf1"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F10\\selection_commit_reply_loss\\history-prefix.json",
+          "sha256": "7f80902a1f939ba7aa58f2448a28abfb5a5475aa7ffce58f5f6f6f88f1599935"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F10\\selection_commit_reply_loss\\recovered-view.json",
+          "sha256": "e0e631fad392cef3d2e46161f5a1f5b0618e2fc1f49526c4516ad1e7082caa48"
+        }
+      ]
+    },
+    {
+      "case": "F11",
+      "variant": "delivery_commit_before_reply",
+      "receipts": [
+        {
+          "path": "S3-B09\\case-final1\\faults\\F11\\delivery_commit_before_reply\\receiver-oracle.json",
+          "sha256": "fc483c38a8105b9e55b88b43f2d2be6880395a2d44879f3bff0706b805bf143a"
+        },
+        {
+          "path": "S3-B09\\case-final1\\faults\\F11\\delivery_commit_before_reply\\history-prefix.json",
+          "sha256": "55d04621fce58b4a1b01be7299839c7ce7427ffab9334e2da8c77c55389133cb"
+        },
+        {
+          "path": "S3-B09\\case-final1\\faults\\F11\\delivery_commit_before_reply\\recovered-view.json",
+          "sha256": "43203354781afac0b808ef297349620af9e842df1b1a70ac247386aeb3400dfe"
+        }
+      ]
+    },
+    {
+      "case": "F11",
+      "variant": "delivery_commit_before_reply",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F11\\delivery_commit_before_reply\\receiver-oracle.json",
+          "sha256": "b1d2011da6be17d4863145b053b8dc3334a5232fde1e5f4dbeb9af37ac78ddad"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F11\\delivery_commit_before_reply\\history-prefix.json",
+          "sha256": "5d602da7e496b44518b2e461aa8f2e1d90d515c9e49c9908ce271a088b6ac04b"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F11\\delivery_commit_before_reply\\recovered-view.json",
+          "sha256": "ec1ec71aa62b5b592a8a773954e34aac1f9e953b145dd2bb7501b6e7ba64d5fc"
+        }
+      ]
+    },
+    {
+      "case": "F12",
+      "variant": "killed_after_stop_ack",
+      "receipts": [
+        {
+          "path": "S3-B10\\case-final1\\faults\\F12\\killed_after_stop_ack\\receiver-oracle.json",
+          "sha256": "02ef07ce29b59cd5c68263519b65fc933c0f5e81a2ed42dd134294a47cdac69c"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F12\\killed_after_stop_ack\\history-prefix.json",
+          "sha256": "90448dc7aa9e51388a26b85c1171a7d19a75bd179626120b6961bc7f8b293f7f"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F12\\killed_after_stop_ack\\recovered-view.json",
+          "sha256": "4eb0ca25766d15eaa1013178864431f910e835454e9c92284312a5eacaf9dc19"
+        }
+      ]
+    },
+    {
+      "case": "F12",
+      "variant": "killed_after_stop_ack",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F12\\killed_after_stop_ack\\receiver-oracle.json",
+          "sha256": "48212dfead60bd2341bf48b8e71d2610fe1cdca97096b7e3292aba0c29a0029a"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F12\\killed_after_stop_ack\\history-prefix.json",
+          "sha256": "5920f4cc60d27bf95bf4cec6b265c2e003f33550581dd1d654119bdf21d0f00b"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F12\\killed_after_stop_ack\\recovered-view.json",
+          "sha256": "4eb0ca25766d15eaa1013178864431f910e835454e9c92284312a5eacaf9dc19"
+        }
+      ]
+    },
+    {
+      "case": "F13",
+      "variant": "killed_after_load_before_local_receipt",
+      "receipts": [
+        {
+          "path": "S3-B10\\case-final1\\faults\\F13\\killed_after_load_before_local_receipt\\receiver-oracle.json",
+          "sha256": "047185d62a78b263566f549646384f98d75cd12ed259a97f9e37a86d1843a863"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F13\\killed_after_load_before_local_receipt\\history-prefix.json",
+          "sha256": "7abcb5d51914d19c57bd5866273929296c0d0223ccb69c78dc1e43c64c3028b9"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F13\\killed_after_load_before_local_receipt\\recovered-view.json",
+          "sha256": "cb01fcc5f20210204eff42a47a89ceff2426dd774281567f66357fac7159a11d"
+        }
+      ]
+    },
+    {
+      "case": "F13",
+      "variant": "killed_after_restart_acceptance",
+      "receipts": [
+        {
+          "path": "S3-B10\\case-final1\\faults\\F13\\killed_after_restart_acceptance\\receiver-oracle.json",
+          "sha256": "fcbe2ac6d7dce42142d0d8bef9084449dedc2b5a649a58d468b91fc972cb7d9c"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F13\\killed_after_restart_acceptance\\history-prefix.json",
+          "sha256": "d3a29a6fd7ea1be929cfedb18e2c30da6f67632dd864578169a9f85b655ae581"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F13\\killed_after_restart_acceptance\\recovered-view.json",
+          "sha256": "84140411f6594d37795a5fe180b6619c9ddde6a6af05e52a62be4aab5750d483"
+        }
+      ]
+    },
+    {
+      "case": "F13",
+      "variant": "killed_after_load_before_local_receipt",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F13\\killed_after_load_before_local_receipt\\receiver-oracle.json",
+          "sha256": "625fee67c97f7c7f7031c3292377a19429ab3130c44e8a485a3974a8f9178f15"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F13\\killed_after_load_before_local_receipt\\history-prefix.json",
+          "sha256": "4adeaf1ad757804c62a9f876ac8db5ac0e7330dedf57fa6e25e144a4c6772d21"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F13\\killed_after_load_before_local_receipt\\recovered-view.json",
+          "sha256": "cb01fcc5f20210204eff42a47a89ceff2426dd774281567f66357fac7159a11d"
+        }
+      ]
+    },
+    {
+      "case": "F13",
+      "variant": "killed_after_restart_acceptance",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F13\\killed_after_restart_acceptance\\receiver-oracle.json",
+          "sha256": "d390aee78fb2c1745ba552d78cf37d1635c55930d59f308f83d4e5d351f48ea0"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F13\\killed_after_restart_acceptance\\history-prefix.json",
+          "sha256": "1959782213e7844bfd431d1d4e438ec9c6d41a786e771ec6a056e91e693a5d5c"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F13\\killed_after_restart_acceptance\\recovered-view.json",
+          "sha256": "84140411f6594d37795a5fe180b6619c9ddde6a6af05e52a62be4aab5750d483"
+        }
+      ]
+    },
+    {
+      "case": "F20",
+      "variant": "actual_owner_commit_reply_loss",
+      "receipts": [
+        {
+          "path": "S3-B10\\case-final1\\faults\\F20\\actual_owner_commit_reply_loss\\receiver-oracle.json",
+          "sha256": "2b8c338d65cbe5927b0509bb20e133b239e67ebf77e362b4e7acabc4f2f9917e"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F20\\actual_owner_commit_reply_loss\\history-prefix.json",
+          "sha256": "7df377b9e156fa2af00198ead9f28f05909b572b082cf52ed56c56bcaaba0a47"
+        },
+        {
+          "path": "S3-B10\\case-final1\\faults\\F20\\actual_owner_commit_reply_loss\\recovered-view.json",
+          "sha256": "040ce86faa08577777b3cbe491a3776814aab21155bba69f790d0cd81c2812e3"
+        }
+      ]
+    },
+    {
+      "case": "F20",
+      "variant": "actual_owner_commit_reply_loss",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F20\\actual_owner_commit_reply_loss\\receiver-oracle.json",
+          "sha256": "d977d3f8e589313f47c4eca770784dcc4cc6d60bcbe5c32f154d1c88e4b70b13"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F20\\actual_owner_commit_reply_loss\\history-prefix.json",
+          "sha256": "8fb4b201acc58eb2cb71ade06da55f9fae67068bdcf51b47a5a4b39c061f57a3"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F20\\actual_owner_commit_reply_loss\\recovered-view.json",
+          "sha256": "040ce86faa08577777b3cbe491a3776814aab21155bba69f790d0cd81c2812e3"
+        }
+      ]
+    },
+    {
+      "case": "F14",
+      "variant": "manifest_committed_before_ack",
+      "receipts": [
+        {
+          "path": "S3-B11\\case-final1\\faults\\F14\\manifest_committed_before_ack\\receiver-oracle.json",
+          "sha256": "a7b25285e5e78858e6dadf8ae2ecf6234464ce24b33e8e376a537f6dccf57a60"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F14\\manifest_committed_before_ack\\history-prefix.json",
+          "sha256": "7e57a62101299a4caaf87bd1700e4dd7e6790548db88db1122f9d0298c316ae9"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F14\\manifest_committed_before_ack\\recovered-view.json",
+          "sha256": "2c0ee1f99b61e57448494b8eb3f269bc589eff9315d9c015b86d13b2805abf21"
+        }
+      ]
+    },
+    {
+      "case": "F14",
+      "variant": "stage_without_manifest",
+      "receipts": [
+        {
+          "path": "S3-B11\\case-final1\\faults\\F14\\stage_without_manifest\\receiver-oracle.json",
+          "sha256": "f9a0c9803674c34e6e5e3384dac0a84574e0536d5ba83fce80d63e7843b6211d"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F14\\stage_without_manifest\\history-prefix.json",
+          "sha256": "12d878ddd980381e78e9362aa083efc0a68288731aded7014916fcdf89c9349d"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F14\\stage_without_manifest\\recovered-view.json",
+          "sha256": "522f43fcadf60ff78193ea7abf2d999c3a719c7c41032bb1f4c0ac3d6282a2fb"
+        }
+      ]
+    },
+    {
+      "case": "F14",
+      "variant": "manifest_committed_before_ack",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F14\\manifest_committed_before_ack\\receiver-oracle.json",
+          "sha256": "46c1af355731cd130bf6d0a473b746c0caeb911bb86b8ae7911ddb24bc921baa"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F14\\manifest_committed_before_ack\\history-prefix.json",
+          "sha256": "67e4e9586b6d555b7cc9cbfab0a58bd09894b59fb9dcc7989e0d3afe1849f72d"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F14\\manifest_committed_before_ack\\recovered-view.json",
+          "sha256": "4c519575499be97243929a9f65ec9669355e9d1b025e134a15c4c3877e2a16d1"
+        }
+      ]
+    },
+    {
+      "case": "F14",
+      "variant": "stage_without_manifest",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F14\\stage_without_manifest\\receiver-oracle.json",
+          "sha256": "f9a0c9803674c34e6e5e3384dac0a84574e0536d5ba83fce80d63e7843b6211d"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F14\\stage_without_manifest\\history-prefix.json",
+          "sha256": "836b04fae0df4da39e517d2ff5397ea13a6a66a490b7239342e4462312e74356"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F14\\stage_without_manifest\\recovered-view.json",
+          "sha256": "522f43fcadf60ff78193ea7abf2d999c3a719c7c41032bb1f4c0ac3d6282a2fb"
+        }
+      ]
+    },
+    {
+      "case": "F15",
+      "variant": "A_B_A_stale_revision",
+      "receipts": [
+        {
+          "path": "S3-B11\\case-final1\\faults\\F15\\A_B_A_stale_revision\\receiver-oracle.json",
+          "sha256": "58c90fa80dc55a32a053a6da9639de1a41ffc00f65a3ed5312f1dce455996b6e"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F15\\A_B_A_stale_revision\\history-prefix.json",
+          "sha256": "29599c79933318c9f5d8b47c41ad1f58e1d5b9101b7389a9458aa9dfe833cf98"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F15\\A_B_A_stale_revision\\recovered-view.json",
+          "sha256": "8aa722c950df622208143c7c3b055bc3b72c33fb8bd21117ffeefc965ee1fca5"
+        }
+      ]
+    },
+    {
+      "case": "F15",
+      "variant": "A_B_A_stale_revision",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F15\\A_B_A_stale_revision\\receiver-oracle.json",
+          "sha256": "3af0ea819a568cb8e06c8850a4eb5a170015f826d5c91c023d6230d117f6b77c"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F15\\A_B_A_stale_revision\\history-prefix.json",
+          "sha256": "087df8421490189c4bfe75fb36695b692cd593f156fa09e252f0f5a1f4e21f02"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F15\\A_B_A_stale_revision\\recovered-view.json",
+          "sha256": "8aa722c950df622208143c7c3b055bc3b72c33fb8bd21117ffeefc965ee1fca5"
+        }
+      ]
+    },
+    {
+      "case": "F16",
+      "variant": "delete_commit_before_reply",
+      "receipts": [
+        {
+          "path": "S3-B11\\case-final1\\faults\\F16\\delete_commit_before_reply\\receiver-oracle.json",
+          "sha256": "bb964653d5089388e03d0291cbb2474e09f956bb0cf4a788ffa11a47b3428300"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F16\\delete_commit_before_reply\\history-prefix.json",
+          "sha256": "d54575262526bd8f0dd36f7de32f8fbf7060339b6e674635cfa7c591303d2bda"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F16\\delete_commit_before_reply\\recovered-view.json",
+          "sha256": "0d13519499cdb49293de6b02422b8014e7660c79ab482f0366c75ae18e42ee43"
+        }
+      ]
+    },
+    {
+      "case": "F16",
+      "variant": "revoke_commit_before_reply",
+      "receipts": [
+        {
+          "path": "S3-B11\\case-final1\\faults\\F16\\revoke_commit_before_reply\\receiver-oracle.json",
+          "sha256": "00e11f2c58ff7c5071e25ced481c16f4229ec4c4a4207cfcd48080e7ef5e0c1b"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F16\\revoke_commit_before_reply\\history-prefix.json",
+          "sha256": "752804eeb58b019a2d449a31982141f9239782e4687242b892941bf9629ab421"
+        },
+        {
+          "path": "S3-B11\\case-final1\\faults\\F16\\revoke_commit_before_reply\\recovered-view.json",
+          "sha256": "0d13519499cdb49293de6b02422b8014e7660c79ab482f0366c75ae18e42ee43"
+        }
+      ]
+    },
+    {
+      "case": "F16",
+      "variant": "delete_commit_before_reply",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F16\\delete_commit_before_reply\\receiver-oracle.json",
+          "sha256": "bfb2ad895e89485120b4957f79aee793243d7da86bdff5797c264ee3c2ee0247"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F16\\delete_commit_before_reply\\history-prefix.json",
+          "sha256": "8342cf8151f56e6d10ad9309d4c88e8638d45ce08eb99959cff45b62efc737f6"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F16\\delete_commit_before_reply\\recovered-view.json",
+          "sha256": "0d13519499cdb49293de6b02422b8014e7660c79ab482f0366c75ae18e42ee43"
+        }
+      ]
+    },
+    {
+      "case": "F16",
+      "variant": "revoke_commit_before_reply",
+      "receipts": [
+        {
+          "path": "S3-B12\\case-final1\\faults\\F16\\revoke_commit_before_reply\\receiver-oracle.json",
+          "sha256": "ed78bb773e838102176e2190eb5d2b8304a95cd08d0d41dcb1e19a22dcafdc40"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F16\\revoke_commit_before_reply\\history-prefix.json",
+          "sha256": "1bc9cbb88d1fb8edd1da3241fdf6ec3e4651ae77df4a4f060ed09b5c66c09973"
+        },
+        {
+          "path": "S3-B12\\case-final1\\faults\\F16\\revoke_commit_before_reply\\recovered-view.json",
+          "sha256": "0d13519499cdb49293de6b02422b8014e7660c79ab482f0366c75ae18e42ee43"
+        }
+      ]
+    }
+  ],
+  "qualification": {
+    "legacy_parity": {
+      "compared": 1298,
+      "passed": 1298,
+      "max_abs_diff": 9.1483427284475e-05,
+      "pass": true,
+      "tolerance": 0.001
+    },
+    "certificates": {
+      "stored": 14,
+      "fresh": 14,
+      "verified": 28
+    },
+    "distribution": {
+      "wheel": {
+        "file": "crucis_causal-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "3cd64f394a69a0115bfc27d280b721fd82ed7150b785093ba4a751089af28d9a",
+        "files": 168
+      },
+      "sdist": {
+        "file": "crucis_causal-0.1.0.dev0.tar.gz",
+        "sha256": "b9924b915f8afff901b5020327c23e67915f5d227befa070477ada0f6f07194f",
+        "files": 335
+      },
+      "isolated_cli": "pass"
+    },
+    "host": "Windows Python3.12 only; current Linux/remote matrix unrun",
+    "native_scientific_campaign": "not run",
+    "remote_publication": false
+  },
+  "R01_receipt_sha256": "43b5486868cc0dae83ec0de0d669be9e5ae420452d287b41963760ad890e220e",
+  "own_completion": "Require external S3-B13/gate.json and commit.json; this record does not hash or certify its own future commit"
+}
