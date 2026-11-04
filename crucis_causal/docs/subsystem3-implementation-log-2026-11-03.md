@@ -681,3 +681,82 @@ B12's four scoped fixture profiles, read-only interface, installed-wheel checks
 and methodology/support index, followed by B13's complete acceptance and the
 separate recorded-parity/certificate qualification. Remote CI, publication and
 new real native campaigns retain their separate authorization boundaries.
+
+## B11 implementation: immutable publication and audience/copy closure (2026-11-04)
+
+Tickets: DLV-08, DLV-09; related DLV-10. The actual B10 predecessor receipt
+controls this bundle's start and exact parent. Original accepted contracts,
+oracles, S1/S2 definitions, legacy scientific results and paper sources remain
+unchanged. Required source-stable acceptance and both full gate receipts outside
+the checkout control completion; development runs are not substituted for them.
+
+`projection.py` implements pure audience closure over exact supplied packages.
+An installed pinned policy must permit every record, including producers,
+diagnostics, provenance and dependency metadata. Required dependency/record sets
+must match exactly, preventing additional unexamined dependencies from being
+staged under a nominal allowance. The root audience must match the requested
+audience. Supported payload interpreters traverse actual embedded references in
+their pinned reference contexts. Opaque bytes can be retained under exact byte
+permission, while stronger requested content assurances remain held. There is
+no default public-data classifier, hidden fetch or permission from a label.
+
+The historical L allowance remains exactly its original611-byte native JSON
+array, with two named entities and no new S3 metadata. The test stages and reads
+those exact native bytes independently of any S3 root. Permission for that blob
+does not authorize a new public account or its private lineage.
+
+`publication.py` implements the six exact Storage ports against a supplied local
+store, actual journal permit and current owner grants. Pure registered preparation
+and explicit storage routing reuse the coordinator's durable admission/issue
+pipeline; the core does not import a store from metadata or require a particular
+backend class. Public methods retain their accepted signatures. The qualified
+backend uses checked SQLite DELETE/FULL and immutable flushed artifact bytes.
+Owner/code profile, publication correlation, package/digest and audience closure
+cannot be replaced under an old identity. Publication commits a manifest; staged
+bytes without that manifest remain orphans, not a complete published root.
+
+Publication and verification receipts remain outside the subject's hashed bytes.
+Development testing found a real recovery failure: a lost publication reply left
+an external commit receipt depending on an earlier journal snapshot absent from
+the next account head's dependency list. The store now retains and flushes the
+receipt's exact private dependencies with the manifest transaction. Its private
+receipt projection is distinct from the subject's requested public audience.
+A fresh lookup can return a closed commit receipt without refreezing the subject,
+exposing private lineage under the subject allowance or regenerating a permit.
+The failing and corrected development receipts remain available externally.
+
+Revision CAS is implemented at the actual pointer owner. A→B→A advances the
+revision to3; an old revision1 update conflicts even when the current value is A.
+An arbitrary alleged commit receipt cannot select a package: its exact stored
+publication receipt must match. Value equality is never promoted to revision CAS.
+
+Owned copy provisioning, lookup, application-access revocation and physical
+named-copy unlinking are separately scoped. The original artifact identity,
+publication history and other-copy obligations survive. Reusing a closed copy ID
+cannot recreate it implicitly. Revocation applies to this store's access path;
+unlinking one owned path is not global erasure or a reversal of prior disclosure.
+Actual retention rules, copy identities, owner scope, current access and source
+digests are checked. Interrupted operations preserve possible effects and the
+independent copy oracle; they do not report zero effects or erase outstanding
+liabilities because a reply was lost.
+
+F14 covers staged bytes without a manifest and manifest commit before ACK, then
+fresh issuer reconciliation of the original C/G/D and exact package. F15 checks
+actual pointer ABA/revision conflict. F16 loses revoke/delete replies after real
+local commit, reopens issuers, checks unchanged pins and remaining physical copies,
+and separately exercises positive scoped receipts. X09 checks denied metadata,
+dependency closure, opaque content assurance and the exact L export. Development
+run3 passed all6 tests with no skips; final source-stable bundle receipts and
+F14/F15/F16 oracle/history/recovered-view triplets qualify the committed source.
+
+These are local cooperative-store mechanisms. There is no remote dissemination,
+whole-host/power-loss guarantee, hostile isolation, external cryptographic
+authentication or global copy-erasure claim. No scientific protocol or source
+population is changed.
+
+## Where we're going after B11
+
+Finish B12's integrated local, remote, unknown-origin interaction and explicit
+checkpoint profiles, exact interface/support mapping and installed distribution
+isolation. Then complete B13's mandatory case/fault reconciliation, final gates,
+methodology/release account and separate legacy parity/certificate qualification.

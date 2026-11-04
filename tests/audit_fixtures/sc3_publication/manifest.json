@@ -1,0 +1,23 @@
+{
+  "source": "crucis_causal/docs/subsystem3-complete-package-review-2026-11-03.json#/native_public_artifacts/0",
+  "source_sha256": "71b6f5624fa9e8e2b813026a44398d5fc09690227443697cc496fa94204f6fc6",
+  "kind": "Fixed native public byte artifact, not an S3 package or new scientific evidence",
+  "format": {
+    "name": "s3.fixture.original_native_public_entities",
+    "version": "0.1.0-proposal.2"
+  },
+  "digest": {
+    "algorithm": "sha256",
+    "value": "e2c895d43484abc660c355e9e0cdb76183aec483991b826e052c595746e8d296",
+    "byte_length": "611",
+    "scope": {
+      "kind": "full_content"
+    }
+  },
+  "members": [
+    "L.public_statement",
+    "L.public_summary"
+  ],
+  "added_S3_metadata": false,
+  "scope": "Exactly the original public611 bytes; no permission for private lineage or a new S3 root"
+}

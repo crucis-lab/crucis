@@ -109,7 +109,8 @@ class _Services:
 
 
 class Coordinator:
-    def __init__(self, rules=(), *, collector=None, recovery_intents=None, recovery_policies=None):
+    def __init__(self, rules=(), *, collector=None, recovery_intents=None, recovery_policies=None, audience_policies=None):
+        self.audience_policies = audience_policies
         self.recovery_intents = recovery_intents
         self.recovery_policies = recovery_policies
         self.collector = collector
@@ -290,7 +291,7 @@ class Coordinator:
             payload = relocate({'operation': request.operation, 'roles': list(request.roles), 'parameters': list(request.parameters)}, view.package_id)
             validate_binding(payload, admission=True)
             row = operation(request.operation)
-            if row['pure'] or not row['port'].startswith('Driver.'):
+            if row['pure'] or not row['port'].startswith(('Driver.', 'Storage.')):
                 raise ExecutionError('s3.operation_requires_own_pure_or_service_port')
             descriptor = context.registry.drivers.lookup(request.operation)
             requirement_record, _ = resolver.record(root['requirements'], view.package_id)
@@ -594,7 +595,13 @@ class Coordinator:
                 if self.collector is None: raise ExecutionError('s3.capture_handler_unavailable')
                 self.collector.acknowledgement(exact, token.value, context.journal, services.journal_context, read)
             forwarded = True
-            result = callable_value(prepared.driver.method)(exact, native_context, admission.live_grants, token.value, services.sink)
+            from .schema import operation
+            if operation(binding.record['payload']['operation'])['port'].startswith('Storage.'):
+                handler = getattr(context.storage, 'issue_prepared', None)
+                if not callable(handler): raise ExecutionError('s3.supplied_storage_handler_required')
+                result = handler(exact, native_context, admission.live_grants, token.value, services.sink)
+            else:
+                result = callable_value(prepared.driver.method)(exact, native_context, admission.live_grants, token.value, services.sink)
             if not isinstance(result, api.CallResult): raise ExecutionError('s3.driver_return_contract')
             observed = result
             from .native_results import result_evidence
@@ -725,3 +732,8 @@ class Coordinator:
         from .recovery import RecoveryPolicies
         policies = self.recovery_policies if isinstance(self.recovery_policies, RecoveryPolicies) else RecoveryPolicies()
         return policies.plan(view, goal, context)
+
+    def freeze(self, view, audience, claims, context):
+        from .projection import AudiencePolicies
+        policies = self.audience_policies if isinstance(self.audience_policies, AudiencePolicies) else AudiencePolicies()
+        return policies.freeze(view, audience, claims, context)
