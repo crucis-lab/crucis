@@ -1,0 +1,3055 @@
+{
+  "kind": "s3_documentary_requirement_overlay_and_scoped_support_matrix",
+  "local_date": "2026-11-03",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "status": "MS01-MS12_recommendations_pending_review",
+  "based_on_commit": "0174e3655ad0dd98a0db35835ba2a10a5dcd16c2",
+  "wire_specimen": false,
+  "executed_acceptance_evidence": false,
+  "all_case_values_hypothetical": true,
+  "outline": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
+  "source_examples": {
+    "path": "crucis_causal/docs/subsystem3-contract-examples-2026-11-03.json",
+    "sha256": "de5473970db55c47cf1ad60d0e3a0f89418033258c0d57da650acb6454b5ad1f",
+    "entities": 117,
+    "unchanged": true
+  },
+  "interpretation": "Documentary vocabulary only. Proposed annotations fill omissions in the earlier schematic cases; they are not newly observed native facts, frozen SC-3 field names, or proof of full wire conformance.",
+  "judgments": [
+    "preservable_full_account",
+    "admissible_exact_operation",
+    "supported_scoped_claim"
+  ],
+  "minimum_obligations": [
+    {
+      "id": "M01",
+      "meaning": "Structural contract",
+      "required": "Exactly one identified structural contract/revision for interpreting this view",
+      "knowledge": "Exact contract required for a conformance claim; unknown source format can instead remain raw evidence"
+    },
+    {
+      "id": "M02",
+      "meaning": "View role",
+      "required": "Exactly one declared role: full account view for this minimum",
+      "knowledge": "A derived projection names its different role/scope; not disguised as a full view"
+    },
+    {
+      "id": "M03",
+      "meaning": "Account identity",
+      "required": "Exactly one stable commission/account reference",
+      "knowledge": "Identity established; source/native grounding within its target can remain unknown"
+    },
+    {
+      "id": "M04",
+      "meaning": "View identity",
+      "required": "Exactly one immutable view identity, distinguishable in role from the stable account",
+      "knowledge": "New content/cutoff gets new immutable identity; exact encoding follows later"
+    },
+    {
+      "id": "M05",
+      "meaning": "Recorder/provenance",
+      "required": "Exactly one recorder/component reference and explicit provenance basis; record-time knowledge and procedure/context reference",
+      "knowledge": "Recorder identity and basis supplied; original native author/time or implementation assurance may remain unresolved"
+    },
+    {
+      "id": "M06",
+      "meaning": "Fixed target/purpose",
+      "required": "Exactly one commissioned target definition with preparation/execution/observation purpose, exact scope and version relationships",
+      "knowledge": "Requested target is described; final S2 binding, original launch or native ID are conditional rather than invented"
+    },
+    {
+      "id": "M07",
+      "meaning": "Audience/context",
+      "required": "Exactly one intended view audience/purpose/disclosure scope, with policy/authority references or explicit unknowns",
+      "knowledge": "Stated intended scope required; an authority claim needs actual owner evidence, not this declaration"
+    },
+    {
+      "id": "M08",
+      "meaning": "Evidence frontier",
+      "required": "Exactly one scoped basis/frontier descriptor identifying this view's admitted local evidence/record set or positions",
+      "knowledge": "Local scope/basis explicit; native time, global completeness and external source positions can remain unknown"
+    },
+    {
+      "id": "M09",
+      "meaning": "Requirement context",
+      "required": "Exactly one requirement-catalog/claim context, requested-claim index and applicability/assessment coverage",
+      "knowledge": "Catalog and claimed scope explicit; unexamined/unknown applicability and withheld claims remain visible"
+    },
+    {
+      "id": "M10",
+      "meaning": "Activity index",
+      "required": "Exactly one scoped index of locally recorded activities/associations, with 0..n members",
+      "knowledge": "Empty/complete only for the named local scope; not a negative claim about all native work"
+    },
+    {
+      "id": "M11",
+      "meaning": "Evidence index",
+      "required": "Exactly one scoped index of captured/reported evidence, artifacts, outputs and dependencies, with 0..n members",
+      "knowledge": "Unavailable, declared-only and unexamined evidence distinguished from known absence"
+    },
+    {
+      "id": "M12",
+      "meaning": "Assessment index",
+      "required": "Exactly one scoped index of assessments, with 0..n members",
+      "knowledge": "No members means no completed assessment in that scope, not every predicate false"
+    },
+    {
+      "id": "M13",
+      "meaning": "Disposition",
+      "required": "Exactly one scoped coordinator disposition or explicit no-selection/unresolved disposition",
+      "knowledge": "Intended next operations can be empty; no serialized decision creates permission"
+    },
+    {
+      "id": "M14",
+      "meaning": "Obligation index",
+      "required": "Exactly one scoped index of unresolved/tracked effects and owner/resource/exposure/stop/cleanup/publication obligations, with 0..n members",
+      "knowledge": "Unknown owner/liability is recorded; empty local scope does not discharge external effects"
+    },
+    {
+      "id": "M15",
+      "meaning": "Collection index",
+      "required": "Exactly one scoped index of collection periods/closure views, with 0..n members",
+      "knowledge": "Can be empty at bootstrap; an actual collection/claim triggers the applicable period/source requirements"
+    }
+  ],
+  "conditional_families": [
+    {
+      "id": "C01",
+      "meaning": "Scientific binding",
+      "trigger": "S2 intent is used, or scientific membership/conformance is claimed",
+      "required": "Exact applicable intent/task/condition/source/trial references and timing; final binding 0..n while prospectively unresolved, required exact applicable binding before the native effect that depends on it"
+    },
+    {
+      "id": "C02",
+      "meaning": "Source/transform realization",
+      "trigger": "A recipe/provider/fitted/generated input is intended, attempted or reported",
+      "required": "Spec/procedure/inputs, resolved parameters and actual output/check/gap indices; randomness/fitted-state/domain/reference evidence where applicable; 0 outputs permitted after failed/unattempted realization"
+    },
+    {
+      "id": "C03",
+      "meaning": "Presentation/staging",
+      "trigger": "Native inputs are prepared, made reachable, transferred or claimed",
+      "required": "Exact content/selector/encoding/domain roles, intended/actual audience/endpoint, stable-use guarantee, staged-member/transfer extent and disclosure gaps; no final B required for independently admitted prospective staging"
+    },
+    {
+      "id": "C04",
+      "meaning": "Effect/admission",
+      "trigger": "A controlled effect command is planned/issued, or a native/owner effect is observed",
+      "required": "Exact command if commissioned here, target/operation/dependencies, evidence cutoff, authority/requirements/reservations, transmissions/receipts/uncertainty; observed unknown original intent remains unknown rather than reconstructed as prospective"
+    },
+    {
+      "id": "C05",
+      "meaning": "Native association/attachment",
+      "trigger": "Native work is invoked/reported/targeted, or lookup/attachment/control requires identity",
+      "required": "Scoped episode/candidate inventory and association evidence; launch may precede assigned N; local external-ID non-applicability justified; existing-target control needs adequate identity; 0..n runtime connections as supported"
+    },
+    {
+      "id": "C06",
+      "meaning": "Ownership/concurrency",
+      "trigger": "Shared writer/effect ownership, takeover, competing consumers or exclusion/revocation is relevant",
+      "required": "Actual owner/context scope, validity and sender/receiver enforcement or limits; current authority separate from historical native work"
+    },
+    {
+      "id": "C07",
+      "meaning": "Collection/progress",
+      "trigger": "Observation/capture starts, resumes, closes, or coverage/replay is claimed",
+      "required": "Period/scope/bounds/frontier and per-source/episode/protocol/filter/generation; fetched/captured/interpreted/acknowledged progress as applicable; no fabricated cursor for a one-shot/noncursor source"
+    },
+    {
+      "id": "C08",
+      "meaning": "Artifacts/interpretation",
+      "trigger": "Captured/reported material or derived output/interpretation exists or is claimed",
+      "required": "Exact content identity or declared-only gap, extent/availability/format/selector and output role/domain/coverage; procedure/version/basis for derived interpretation; partial bytes are not an invented full answer"
+    },
+    {
+      "id": "C09",
+      "meaning": "Native action",
+      "trigger": "Native action/question is observed or targeted",
+      "required": "Session/episode/action correlation, typed arguments/content/source scope and pending validity; text equality alone cannot establish identity; unknown original attempt remains explicit"
+    },
+    {
+      "id": "C10",
+      "meaning": "Native-action decision/provider",
+      "trigger": "A native-action response decision is evaluated/selected, or a planned response choice depends on required information",
+      "required": "Permitted rule/provider and exact information frontier, selected-index/cardinality and gaps; failed/held choice can have no selected member, not a fabricated V2; coordinator dispositions and S2 output selection retain their own C04/C01/C08 requirements"
+    },
+    {
+      "id": "C11",
+      "meaning": "Delivery",
+      "trigger": "A response/abstention is intended, transmitted, observed or reconciled",
+      "required": "Exact correlated action(s), response bundle, recipient/endpoint and applicable validity/authority/resource/exposure, command/transmission/receipt scope; successful delivery is distinct from selection/access/use"
+    },
+    {
+      "id": "C12",
+      "meaning": "Recovery/state",
+      "trigger": "Coordinator recovery/reconnection, native retry/restart/restore/continuation or continuity claim occurs",
+      "required": "Actual recovery kind/policy and request/association relations; predecessor/successor attempt roles only when applicable; checkpoint/component/load evidence where used, unknown state, overlap eligibility and all retained attempts; reconnection does not invent a successor native attempt"
+    },
+    {
+      "id": "C13",
+      "meaning": "Stopping/control",
+      "trigger": "Native termination/stop is assessed/reported/controlled or escalation is proposed",
+      "required": "Exact target/component/descendant scope, requested versus acknowledged/observed outcome, applicable policy/authority and bounds; assessing unknown stop does not require a fictitious cancellation command"
+    },
+    {
+      "id": "C14",
+      "meaning": "Resources",
+      "trigger": "Resource policy, capacity/reservation, usage/billing/limit/settlement is relevant",
+      "required": "Kind/units/owner/member/time scope, quantities or explicit unknowns, measurement/aggregation/revision/finality, remaining liability and control overhead; no universal all-resource meter required"
+    },
+    {
+      "id": "C15",
+      "meaning": "Information/exposure",
+      "trigger": "Information constraints, disclosure/access/use or allowance history is relevant",
+      "required": "Permitted source/recipient/purpose, actual/possible extent, owner scope/holds/policy consumption and carryover; unrestricted/no-count dimensions need actual scoped non-applicability"
+    },
+    {
+      "id": "C16",
+      "meaning": "Publication/projection",
+      "trigger": "A frozen package/projection/commit or assurance claim is prepared/published",
+      "required": "Exact view/dependencies/subject identity, actual allowed serialized membership, external verification/commit receipt, cutoff/claims and missing commit/availability; derived public view need not export full account identity"
+    },
+    {
+      "id": "C17",
+      "meaning": "Current pointer",
+      "trigger": "Mutable selection/pointer is requested, changed, observed or claimed",
+      "required": "Named purpose/selection, actual owner operation/precondition, current/revision evidence and uncertainty; stronger no-missed-update claim needs actual revision enforcement"
+    },
+    {
+      "id": "C18",
+      "meaning": "Availability/retention/cleanup",
+      "trigger": "Retrieval/retention/access changes or cleanup/erasure claims occur",
+      "required": "Pinned content versus new locator/availability evidence, ownership/retention rights, actual revoke/delete outcomes and remaining copies/obligations; no silent historical deletion or allowance reset"
+    }
+  ],
+  "applicability_rules": {
+    "applies": "Payload or explicit scoped missingness required; dependent operation/claim withheld when necessary facts are missing.",
+    "does_not_apply": "Scoped basis permits omission; not the same as unknown.",
+    "unknown_or_unexamined": "Coverage retained; no dependent guarantee without established applicability.",
+    "visible_trigger": "Cannot be waived by generic unexamined coverage.",
+    "family_vs_suboperation": "A family may apply for an assessment while an effectful suboperation such as cancellation, resend or cleanup was not requested."
+  },
+  "support_axes": [
+    {
+      "axis": "Representation",
+      "question": "Can the exact semantics be preserved/interpreted under the named contracts?",
+      "non_inference": "No driver, authority or successful native execution follows"
+    },
+    {
+      "axis": "Mechanism",
+      "question": "Is the exact driver/provider/owner/backend implementation supplied?",
+      "non_inference": "An advertised callable alone does not prove its behavioral guarantee"
+    },
+    {
+      "axis": "Readiness",
+      "question": "Are actual version/input/environment/dependency conditions established now?",
+      "non_inference": "Unavailability here does not erase representability or imply native failure"
+    },
+    {
+      "axis": "Authority",
+      "question": "Do actual relevant owners permit this exact current effect?",
+      "non_inference": "Declaration/test pass cannot mint runtime rights"
+    },
+    {
+      "axis": "Enforcement",
+      "question": "Does the real boundary enforce the requested guarantee in this scope?",
+      "non_inference": "A cap, path label or local generation number does not prove it"
+    },
+    {
+      "axis": "Tests",
+      "question": "Which exact cases/versions/environments passed, failed, skipped or were not run?",
+      "non_inference": "Skips and synthetic fixtures do not become native integration passes"
+    },
+    {
+      "axis": "Native evidence",
+      "question": "Which actual native observations/receipts support this guarantee under what conditions?",
+      "non_inference": "One receipt/configuration does not establish universal system support"
+    },
+    {
+      "axis": "Coverage/limits",
+      "question": "What was not examined, is unresolved, unsupported or outside scope?",
+      "non_inference": "Not requested and not applicable are different from unknown/unsupported"
+    }
+  ],
+  "capability_catalog": [
+    {
+      "id": "CAP01",
+      "meaning": "Account preservation",
+      "qualified_guarantee": "Full-view/projection shape, identity and reference semantics",
+      "conditional_families": [
+        "C01",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C16"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/model.py",
+        "crucis_causal/connections/schema.py",
+        "crucis_causal/connections/codec.py"
+      ],
+      "existing_foundation_limit": "Existing S1 record identity/shape/encoding; no S3 account schema.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP02",
+      "meaning": "Scientific handoff",
+      "qualified_guarantee": "Exact S2 intent/binding/selection and partial-population handoff",
+      "conditional_families": [
+        "C01",
+        "C08"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/experiments/bindings.py",
+        "crucis_causal/experiments/handoff.py",
+        "crucis_causal/experiments/evaluation.py"
+      ],
+      "existing_foundation_limit": "Existing S2 binding, projection/handoff and evaluation scope; no S3 coordinator.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP03",
+      "meaning": "Realization",
+      "qualified_guarantee": "Admitted source/transform/fitting procedure and actual evidence",
+      "conditional_families": [
+        "C02"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/experiments/bindings.py",
+        "crucis_causal/experiments/information.py"
+      ],
+      "existing_foundation_limit": "Records supplied realization/check evidence and information constraints; does not execute transformations.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP04",
+      "meaning": "Presentation",
+      "qualified_guarantee": "Faithful encoding, permitted recipient view and applicable stable-use boundary",
+      "conditional_families": [
+        "C03",
+        "C15"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/evidence.py",
+        "crucis_causal/experiments/information.py",
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing artifact capture/access, information checks and explicit supplied route boundaries; no general staging/isolation manager.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP05",
+      "meaning": "Effect admission",
+      "qualified_guarantee": "Actual owner decisions/reservations/validity for the exact operation",
+      "conditional_families": [
+        "C04",
+        "C06",
+        "C14",
+        "C15"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/api.py",
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing supplied authority/guard checks; no durable multi-owner S3 admission/reservation service.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP06",
+      "meaning": "Native invocation",
+      "qualified_guarantee": "Explicit admitted driver dispatch with boundary/acceptance evidence",
+      "conditional_families": [
+        "C04",
+        "C05"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing explicitly supplied invocation executor; no new S3 dispatch journal.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP07",
+      "meaning": "Native identity",
+      "qualified_guarantee": "Adequate existing episode/incarnation association, distinct from launch identity still unknown",
+      "conditional_families": [
+        "C05"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/model.py",
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing episode/attempt/association semantics and checks; no general provider lookup.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP08",
+      "meaning": "Native reconciliation",
+      "qualified_guarantee": "Scoped positive/negative lookup; idempotent retransmission is a separately stated subguarantee, never inferred",
+      "conditional_families": [
+        "C04",
+        "C05",
+        "C12"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/history.py",
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing scoped transport/receipt checks and fixture behavior; no generic provider reconciliation/idempotency implementation.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP09",
+      "meaning": "Attachment",
+      "qualified_guarantee": "Supported connection to established work without hidden launch/reset",
+      "conditional_families": [
+        "C05",
+        "C06",
+        "C12"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing explicit attached connection; does not establish post-crash discovery, owner takeover or every native adapter.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP10",
+      "meaning": "Ownership",
+      "qualified_guarantee": "Current writer/effect/consumer ownership and actual receiver exclusion where requested",
+      "conditional_families": [
+        "C06"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/api.py",
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing handles/context/authority boundaries; no durable distributed fencing service.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP11",
+      "meaning": "Capture/replay",
+      "qualified_guarantee": "Durable permitted capture/frontier and exact source replay/acknowledgement scope",
+      "conditional_families": [
+        "C07",
+        "C08"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/evidence.py",
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing evidence/history/progress representation; no new atomic S3 journal/capture/ack protocol.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP12",
+      "meaning": "Interpretation",
+      "qualified_guarantee": "Explicit decoding/domain/coverage semantics with preserved raw evidence and partialness",
+      "conditional_families": [
+        "C08"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/api.py",
+        "crucis_causal/connections/validation.py",
+        "crucis_causal/connections/codec.py"
+      ],
+      "existing_foundation_limit": "Existing exact registries, scoped interpretation/validation/encoding; does not install an unknown contract.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP13",
+      "meaning": "Decision",
+      "qualified_guarantee": "Supported permitted procedure/input frontier, including unavailable information and fallback rules",
+      "conditional_families": [
+        "C09",
+        "C10",
+        "C15"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing explicit recorded replay provider; no general S3 native-action decision coordinator.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP14",
+      "meaning": "Delivery",
+      "qualified_guarantee": "Exact action/response/recipient validity and actual transmission/reconciliation evidence",
+      "conditional_families": [
+        "C04",
+        "C09",
+        "C10",
+        "C11",
+        "C14",
+        "C15"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/ports.py",
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing guarded supplied delivery and transport/receipt checks; no general joint-action or lost-ack recovery service.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP15",
+      "meaning": "Restoration",
+      "qualified_guarantee": "Successor/state/component load and only the continuity scope actually established",
+      "conditional_families": [
+        "C12"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing restart/recovery validation and optional native fixture; no generic S3 checkpoint driver.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP16",
+      "meaning": "Stopping",
+      "qualified_guarantee": "Actual cancellation/escalation/observed stop scope, independent from collection closure",
+      "conditional_families": [
+        "C04",
+        "C05",
+        "C13"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/ports.py",
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing supplied cancel port and stop/ack distinction; no general S3 descendant termination guarantee.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP17",
+      "meaning": "Accounting",
+      "qualified_guarantee": "Typed owner-scoped metering/revisions/bounds/settlement, not one universal sum",
+      "conditional_families": [
+        "C14"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/history.py"
+      ],
+      "existing_foundation_limit": "Existing scoped resource accounting checks; no owner-side hard-cap enforcement or billing backend.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP18",
+      "meaning": "Exposure",
+      "qualified_guarantee": "Actual information custody/history/consumption and uncertainty, independent from money",
+      "conditional_families": [
+        "C15"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/experiments/information.py",
+        "crucis_causal/connections/ports.py"
+      ],
+      "existing_foundation_limit": "Existing information-policy checks and explicit supplied boundaries; no actual global access/use monitor.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP19",
+      "meaning": "Publication",
+      "qualified_guarantee": "Exact commit/projection/dependencies/claim assurance with no implied remote dissemination",
+      "conditional_families": [
+        "C07",
+        "C08",
+        "C16"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/store.py",
+        "crucis_causal/experiments/writer.py",
+        "crucis_causal/connections/evidence.py"
+      ],
+      "existing_foundation_limit": "Existing immutable package/writer/evidence operations; no S3 account publication/projection coordinator.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    },
+    {
+      "id": "CAP20",
+      "meaning": "Pointer/retention operations",
+      "qualified_guarantee": "Explicit optional pointer, relocation/retention/revoke/delete guarantees, evaluated as separate named suboperations",
+      "conditional_families": [
+        "C17",
+        "C18"
+      ],
+      "existing_foundation_refs": [
+        "crucis_causal/connections/store.py",
+        "crucis_causal/connections/evidence.py"
+      ],
+      "existing_foundation_limit": "Existing current-selection and artifact availability primitives; no blanket revision-CAS, retention or erasure assurance.",
+      "new_S3_mechanism": "unimplemented",
+      "new_S3_acceptance": "not_run",
+      "new_S3_native_evidence": "unestablished"
+    }
+  ],
+  "claim_compositions": [
+    {
+      "claim": "Base preservation",
+      "required_predicate": "M01-M15 and applicable conditional presence/missingness/reference rules",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Admitted operation(op)",
+      "required_predicate": "Exact operation's scientific/readiness/authority/resource/exposure/validity/receiver requirements are established",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Resumed capture(source)",
+      "required_predicate": "Actual durable evidence/frontier plus the requested replay/retention/ack semantics; no global exactly-once assumption",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Attachment(episode)",
+      "required_predicate": "Adequate native identity and current supported ownership/attachment, with no hidden launch",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Delivery(action)",
+      "required_predicate": "Exact permitted choice and correlated native delivery evidence; single-effect retransmission needs its own receiver guarantee",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Restoration(component scope)",
+      "required_predicate": "Actual available/loaded/evidenced components match that exact required scope; full hidden-state claims are not inherited",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Hard bound(resource scope)",
+      "required_predicate": "Actual owner capacity/enforcement covers every effect in the stated bound; estimates remain distinct",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Audience publication(view, claims)",
+      "required_predicate": "Actual permitted serialized closure, exact commit/dependency pins and adequate evidence for each requested check",
+      "status": "proposed_composition_not_adopted_public_profile"
+    },
+    {
+      "claim": "Scientific handoff(scope)",
+      "required_predicate": "Exact S2 intent, actual attempts/evidence/missingness/selection and cutoff preserved; eligible final response is an additional S2-specific question",
+      "status": "proposed_composition_not_adopted_public_profile"
+    }
+  ],
+  "cases": [
+    {
+      "case": "L",
+      "proposed_annotations": {
+        "structural_context": {
+          "contract": "This dated minimum-record design candidate",
+          "revision_basis": {
+            "path": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
+            "sha256": "4c4338f76da6e5b13d432db7621c3c58929857dd02020e0fc1b3a242af36cb6b"
+          },
+          "live_SC3_version": null
+        },
+        "view_role": "full_account_view_for_authorized_operator",
+        "immutable_view_identity": "documentary.L.final_view",
+        "recorder": {
+          "component": "hypothetical narrative recorder",
+          "basis": "authored documentary overlay of pinned semantic trace, not native recording",
+          "native_time": "unestablished"
+        },
+        "audience": {
+          "scope": "authorized operator/evaluator of hypothetical full account",
+          "authority": "story assumptions only; no real grant",
+          "public_projection": "separate role when present"
+        },
+        "frontier": {
+          "basis": "pinned source trace plus explicitly proposed metadata overlay",
+          "through_local_story_position": "l07",
+          "global_native_completeness": "not claimed"
+        },
+        "requirements": {
+          "catalog": "M01-M15/C01-C18 in this dated design candidate",
+          "requested_claims": "claim_assessments below",
+          "applicability": "conditional_coverage below"
+        },
+        "index_extent": {
+          "subject": "L.E",
+          "membership": "only listed source entities and declared annotations",
+          "scope": "authored main trace through local frontier; not all native history",
+          "gaps": "per-family/claim gaps retained"
+        },
+        "collection_period": {
+          "id": "documentary.L.period1",
+          "kind": "proposed period annotation, not an original native receipt",
+          "scope": "one main-account collection period with per-source subscopes",
+          "closure_source_ref": "L.close",
+          "interim_publication_implies_closure": false,
+          "source_rules": "One-shot local output; no cursor."
+        },
+        "disposition_scope": "closed bounded collection; no next native effect selected"
+      },
+      "annotation_status": "proposed_not_observed",
+      "minimum_bindings": [
+        {
+          "requirement": "M01",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M02",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "view_role"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M03",
+          "source_refs": [
+            "L.E"
+          ],
+          "proposed_annotation_keys": [],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M04",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "immutable_view_identity"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M05",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "recorder"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M06",
+          "source_refs": [
+            "L.E",
+            "L.intent"
+          ],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M07",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "audience"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M08",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "frontier"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M09",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "requirements"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M10",
+          "source_refs": [
+            "L.R",
+            "L.A",
+            "L.realize",
+            "L.C"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M11",
+          "source_refs": [
+            "L.source",
+            "L.input",
+            "L.map",
+            "L.output",
+            "L.private",
+            "L.public",
+            "L.projection_receipt"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M12",
+          "source_refs": [
+            "L.check",
+            "L.fulfillment"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M13",
+          "source_refs": [
+            "L.admit",
+            "L.hold",
+            "L.settlement",
+            "L.other"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "disposition_scope"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M14",
+          "source_refs": [
+            "L.admit",
+            "L.hold",
+            "L.settlement",
+            "L.other"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M15",
+          "source_refs": [
+            "L.close"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "collection_period"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        }
+      ],
+      "conditional_coverage": [
+        {
+          "family": "C01",
+          "applicability": "applies",
+          "source_refs": [
+            "L.intent",
+            "L.B",
+            "L.R"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C02",
+          "applicability": "applies",
+          "source_refs": [
+            "L.recipe",
+            "L.realize",
+            "L.check"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C03",
+          "applicability": "applies",
+          "source_refs": [
+            "L.input",
+            "L.map",
+            "L.admit"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C04",
+          "applicability": "applies",
+          "source_refs": [
+            "L.realize",
+            "L.admit",
+            "L.C"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C05",
+          "applicability": "applies",
+          "source_refs": [
+            "L.A",
+            "L.C"
+          ],
+          "basis": "Trusted local invocation association; external provider identity not supplied or needed by this route. No post-crash attachment claim.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C06",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No shared-writer takeover/competing consumer/exclusion guarantee requested in this trusted serial main trace. Exact operation authority still falls under C04.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C07",
+          "applicability": "applies",
+          "source_refs": [
+            "L.output",
+            "L.close"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C08",
+          "applicability": "applies",
+          "source_refs": [
+            "L.output",
+            "L.interpret"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C09",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action/question interaction in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C10",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action response selection/provider in this main trace; scientific output selection and coordinator disposition retain C01/C08/C04 requirements.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C11",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action response/abstention delivery in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C12",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No recovery/reconnection/restart/continuity claim in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C13",
+          "applicability": "applies",
+          "source_refs": [
+            "L.close"
+          ],
+          "basis": "Local boundary/closure evidence only; do not infer OS descendant termination.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C14",
+          "applicability": "applies",
+          "source_refs": [
+            "L.hold",
+            "L.settlement",
+            "L.other"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C15",
+          "applicability": "applies",
+          "source_refs": [
+            "L.input",
+            "L.map",
+            "L.public"
+          ],
+          "basis": "Trusted supplied argument and private evaluator mapping; no OS-wide blindness. Public projection carries weaker assurance.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C16",
+          "applicability": "applies",
+          "source_refs": [
+            "L.private",
+            "L.public",
+            "L.projection_receipt"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C17",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No mutable current pointer requested, observed or changed; immutable publication does not require it.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C18",
+          "applicability": "applies",
+          "source_refs": [
+            "L.output",
+            "L.private",
+            "L.public"
+          ],
+          "basis": "Availability/pinned artifacts apply; no deletion, revocation or retention-change operation requested.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        }
+      ],
+      "capability_demands": [
+        {
+          "capability": "CAP01",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Full-view/projection shape, identity and reference semantics",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP02",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact S2 intent/binding/selection and partial-population handoff",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP03",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Admitted source/transform/fitting procedure and actual evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP04",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Faithful encoding, permitted recipient view and applicable stable-use boundary",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP05",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual owner decisions/reservations/validity for the exact operation",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP06",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit admitted driver dispatch with boundary/acceptance evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP07",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Local invocation correlation only; external provider-ID/attachment guarantee not requested.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP08",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Scoped positive/negative lookup; idempotent retransmission is a separately stated subguarantee, never inferred",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP09",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Supported connection to established work without hidden launch/reset",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP10",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Current writer/effect/consumer ownership and actual receiver exclusion where requested",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP11",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "One-shot capture without cursor or resumed replay.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP12",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit decoding/domain/coverage semantics with preserved raw evidence and partialness",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP13",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Supported permitted procedure/input frontier, including unavailable information and fallback rules",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP14",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Exact action/response/recipient validity and actual transmission/reconciliation evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP15",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Successor/state/component load and only the continuity scope actually established",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP16",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Local completion assessment; no cancellation operation.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP17",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Typed owner-scoped metering/revisions/bounds/settlement, not one universal sum",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP18",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual information custody/history/consumption and uncertainty, independent from money",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP19",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact commit/projection/dependencies/claim assurance with no implied remote dissemination",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP20",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Artifact availability/pins only; pointer/delete/revoke not requested.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        }
+      ],
+      "uses_mutable_current_pointer": false,
+      "causal_correctness": "unassessed",
+      "claim_assessments": {
+        "base_preservation": "Compatible semantic overlay; exact wire conformance not yet defined/tested.",
+        "scientific_handoff": "Preserve actual main-trace evidence/missingness and fixed selection; not native scientific eligibility proof.",
+        "actual_native_execution": "No real execution; story facts only.",
+        "stronger_withheld": [
+          "OS-wide blindness/isolation",
+          "provider reconnection",
+          "public raw-map verification"
+        ]
+      }
+    },
+    {
+      "case": "R",
+      "proposed_annotations": {
+        "structural_context": {
+          "contract": "This dated minimum-record design candidate",
+          "revision_basis": {
+            "path": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
+            "sha256": "4c4338f76da6e5b13d432db7621c3c58929857dd02020e0fc1b3a242af36cb6b"
+          },
+          "live_SC3_version": null
+        },
+        "view_role": "full_account_view_for_authorized_operator",
+        "immutable_view_identity": "documentary.R.final_view",
+        "recorder": {
+          "component": "hypothetical narrative recorder",
+          "basis": "authored documentary overlay of pinned semantic trace, not native recording",
+          "native_time": "unestablished"
+        },
+        "audience": {
+          "scope": "authorized operator/evaluator of hypothetical full account",
+          "authority": "story assumptions only; no real grant",
+          "public_projection": "separate role when present"
+        },
+        "frontier": {
+          "basis": "pinned source trace plus explicitly proposed metadata overlay",
+          "through_local_story_position": "r08",
+          "global_native_completeness": "not claimed"
+        },
+        "requirements": {
+          "catalog": "M01-M15/C01-C18 in this dated design candidate",
+          "requested_claims": "claim_assessments below",
+          "applicability": "conditional_coverage below"
+        },
+        "index_extent": {
+          "subject": "R.E",
+          "membership": "only listed source entities and declared annotations",
+          "scope": "authored main trace through local frontier; not all native history",
+          "gaps": "per-family/claim gaps retained"
+        },
+        "collection_period": {
+          "id": "documentary.R.period1",
+          "kind": "proposed period annotation, not an original native receipt",
+          "scope": "one main-account collection period with per-source subscopes",
+          "closure_source_ref": "R.close",
+          "interim_publication_implies_closure": false,
+          "source_rules": "Native source N42, window after16; durable capture18 only."
+        },
+        "disposition_scope": "closed collection at final cutoff; no resubmission"
+      },
+      "annotation_status": "proposed_not_observed",
+      "minimum_bindings": [
+        {
+          "requirement": "M01",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M02",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "view_role"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M03",
+          "source_refs": [
+            "R.E"
+          ],
+          "proposed_annotation_keys": [],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M04",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "immutable_view_identity"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M05",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "recorder"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M06",
+          "source_refs": [
+            "R.E",
+            "R.intent"
+          ],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M07",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "audience"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M08",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "frontier"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M09",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "requirements"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M10",
+          "source_refs": [
+            "R.R",
+            "R.A",
+            "R.C",
+            "R.N",
+            "R.assoc",
+            "R.W1",
+            "R.W2",
+            "R.connection"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M11",
+          "source_refs": [
+            "R.gap",
+            "R.lookup",
+            "R.o18cb",
+            "R.o17poll",
+            "R.o18poll",
+            "R.capture",
+            "R.output",
+            "R.P1",
+            "R.P2",
+            "R.P3"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M12",
+          "source_refs": [
+            "R.assess"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M13",
+          "source_refs": [
+            "R.hold",
+            "R.settle",
+            "R.other"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "disposition_scope"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M14",
+          "source_refs": [
+            "R.hold",
+            "R.settle",
+            "R.other"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M15",
+          "source_refs": [
+            "R.close"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "collection_period"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        }
+      ],
+      "conditional_coverage": [
+        {
+          "family": "C01",
+          "applicability": "applies",
+          "source_refs": [
+            "R.intent",
+            "R.B",
+            "R.R"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C02",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "Pre-existing supplied input/source evidence; no separate auditor recipe/fitting/generation procedure intended in this main trace. Oracle evidence lookup in I belongs to C10/C15, not an invented source-generation effect.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C03",
+          "applicability": "applies",
+          "source_refs": [
+            "R.input",
+            "R.B"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C04",
+          "applicability": "applies",
+          "source_refs": [
+            "R.C",
+            "R.W1",
+            "R.W2",
+            "R.hold"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C05",
+          "applicability": "applies",
+          "source_refs": [
+            "R.N",
+            "R.lookup",
+            "R.assoc",
+            "R.connection"
+          ],
+          "basis": "Native ID initially unassigned/unknown; later lookup establishes N42 before attachment. No resend authorized by request hash.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C06",
+          "applicability": "applies",
+          "source_refs": [
+            "R.W1",
+            "R.W2"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C07",
+          "applicability": "applies",
+          "source_refs": [
+            "R.e17",
+            "R.e18",
+            "R.o18cb",
+            "R.o17poll",
+            "R.o18poll",
+            "R.capture",
+            "R.close"
+          ],
+          "basis": "Three captures associated to two native events. Window after16 only; durable capture18 not global completeness.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C08",
+          "applicability": "applies",
+          "source_refs": [
+            "R.output",
+            "R.assess"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C09",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action/question interaction in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C10",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action response selection/provider in this main trace; scientific output selection and coordinator disposition retain C01/C08/C04 requirements.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C11",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action response/abstention delivery in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C12",
+          "applicability": "applies",
+          "source_refs": [
+            "R.W2",
+            "R.lookup",
+            "R.connection"
+          ],
+          "basis": "Coordinator takeover/reconnection to same A/N, not a new native attempt.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C13",
+          "applicability": "applies",
+          "source_refs": [
+            "R.assess",
+            "R.close"
+          ],
+          "basis": "Final story assessment does not grant cancellation permission.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C14",
+          "applicability": "applies",
+          "source_refs": [
+            "R.hold",
+            "R.settle",
+            "R.other"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C15",
+          "applicability": "applies",
+          "source_refs": [
+            "R.input",
+            "R.B"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C16",
+          "applicability": "applies",
+          "source_refs": [
+            "R.P1",
+            "R.P2",
+            "R.P3"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C17",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No mutable current pointer requested, observed or changed; immutable publication does not require it.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C18",
+          "applicability": "applies",
+          "source_refs": [
+            "R.output",
+            "R.P3"
+          ],
+          "basis": "Availability applies; no cleanup/delete operation requested.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        }
+      ],
+      "capability_demands": [
+        {
+          "capability": "CAP01",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Full-view/projection shape, identity and reference semantics",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP02",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact S2 intent/binding/selection and partial-population handoff",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP03",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Admitted source/transform/fitting procedure and actual evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP04",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Faithful encoding, permitted recipient view and applicable stable-use boundary",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP05",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual owner decisions/reservations/validity for the exact operation",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP06",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit admitted driver dispatch with boundary/acceptance evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP07",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Adequate existing episode/incarnation association, distinct from launch identity still unknown",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP08",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Lookup/reconciliation required; idempotent retransmission not requested or inferred.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP09",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Attach to established N42 under current owner; no hidden launch.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP10",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Current writer/effect/consumer ownership and actual receiver exclusion where requested",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP11",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Scoped durable capture18 and event associations; no earlier full-history claim.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP12",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit decoding/domain/coverage semantics with preserved raw evidence and partialness",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP13",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Supported permitted procedure/input frontier, including unavailable information and fallback rules",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP14",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Exact action/response/recipient validity and actual transmission/reconciliation evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP15",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Successor/state/component load and only the continuity scope actually established",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP16",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Observe scoped termination, not a requested cancellation operation.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP17",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Typed owner-scoped metering/revisions/bounds/settlement, not one universal sum",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP18",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual information custody/history/consumption and uncertainty, independent from money",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP19",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact commit/projection/dependencies/claim assurance with no implied remote dissemination",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP20",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Availability/pins only; mutable pointer/delete/revoke not requested.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        }
+      ],
+      "uses_mutable_current_pointer": false,
+      "causal_correctness": "unassessed",
+      "claim_assessments": {
+        "base_preservation": "Compatible semantic overlay; exact wire conformance not yet defined/tested.",
+        "scientific_handoff": "Preserve actual main-trace evidence/missingness and fixed selection; not native scientific eligibility proof.",
+        "actual_native_execution": "No real execution; story facts only.",
+        "stronger_withheld": [
+          "safe automatic resend",
+          "complete pre-window native history",
+          "P1 later knowledge"
+        ]
+      }
+    },
+    {
+      "case": "I",
+      "proposed_annotations": {
+        "structural_context": {
+          "contract": "This dated minimum-record design candidate",
+          "revision_basis": {
+            "path": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
+            "sha256": "4c4338f76da6e5b13d432db7621c3c58929857dd02020e0fc1b3a242af36cb6b"
+          },
+          "live_SC3_version": null
+        },
+        "view_role": "full_account_view_for_authorized_operator",
+        "immutable_view_identity": "documentary.I.final_view",
+        "recorder": {
+          "component": "hypothetical narrative recorder",
+          "basis": "authored documentary overlay of pinned semantic trace, not native recording",
+          "native_time": "unestablished"
+        },
+        "audience": {
+          "scope": "authorized operator/evaluator of hypothetical full account",
+          "authority": "story assumptions only; no real grant",
+          "public_projection": "separate role when present"
+        },
+        "frontier": {
+          "basis": "pinned source trace plus explicitly proposed metadata overlay",
+          "through_local_story_position": "i08",
+          "global_native_completeness": "not claimed"
+        },
+        "requirements": {
+          "catalog": "M01-M15/C01-C18 in this dated design candidate",
+          "requested_claims": "claim_assessments below",
+          "applicability": "conditional_coverage below"
+        },
+        "index_extent": {
+          "subject": "I.E",
+          "membership": "only listed source entities and declared annotations",
+          "scope": "authored main trace through local frontier; not all native history",
+          "gaps": "per-family/claim gaps retained"
+        },
+        "collection_period": {
+          "id": "documentary.I.period1",
+          "kind": "proposed period annotation, not an original native receipt",
+          "scope": "one main-account collection period with per-source subscopes",
+          "closure_source_ref": "I.close",
+          "interim_publication_implies_closure": false,
+          "source_rules": "Session/action and delivery receipt observations; no universal stream cursor."
+        },
+        "disposition_scope": "closed bounded collection, Q2 selection/send held, stop unresolved"
+      },
+      "annotation_status": "proposed_not_observed",
+      "minimum_bindings": [
+        {
+          "requirement": "M01",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M02",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "view_role"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M03",
+          "source_refs": [
+            "I.E"
+          ],
+          "proposed_annotation_keys": [],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M04",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "immutable_view_identity"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M05",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "recorder"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M06",
+          "source_refs": [
+            "I.E",
+            "I.intent"
+          ],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M07",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "audience"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M08",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "frontier"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M09",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "requirements"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M10",
+          "source_refs": [
+            "I.R",
+            "I.A",
+            "I.N",
+            "I.assoc",
+            "I.C",
+            "I.Q1",
+            "I.Q2",
+            "I.takeover",
+            "I.deliver1"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M11",
+          "source_refs": [
+            "I.q1cb",
+            "I.q1poll",
+            "I.source",
+            "I.receipt1",
+            "I.source_gap",
+            "I.partial",
+            "I.P1",
+            "I.P2",
+            "I.input",
+            "I.accept"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M12",
+          "source_refs": [
+            "I.assess"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M13",
+          "source_refs": [
+            "I.decision1",
+            "I.V1",
+            "I.H1",
+            "I.exposure",
+            "I.other",
+            "I.Q2"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "disposition_scope"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M14",
+          "source_refs": [
+            "I.decision1",
+            "I.V1",
+            "I.H1",
+            "I.exposure",
+            "I.other",
+            "I.Q2"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M15",
+          "source_refs": [
+            "I.close"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "collection_period"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        }
+      ],
+      "conditional_coverage": [
+        {
+          "family": "C01",
+          "applicability": "applies",
+          "source_refs": [
+            "I.intent",
+            "I.B",
+            "I.R"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C02",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "Pre-existing supplied input/source evidence; no separate auditor recipe/fitting/generation procedure intended in this main trace. Oracle evidence lookup in I belongs to C10/C15, not an invented source-generation effect.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C03",
+          "applicability": "applies",
+          "source_refs": [
+            "I.input",
+            "I.B"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C04",
+          "applicability": "applies",
+          "source_refs": [
+            "I.C",
+            "I.accept",
+            "I.deliver1",
+            "I.H1"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C05",
+          "applicability": "applies",
+          "source_refs": [
+            "I.N",
+            "I.assoc",
+            "I.accept"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C06",
+          "applicability": "applies",
+          "source_refs": [
+            "I.takeover"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C07",
+          "applicability": "applies",
+          "source_refs": [
+            "I.q1cb",
+            "I.q1poll",
+            "I.partial",
+            "I.close"
+          ],
+          "basis": "Callback/poll Q1 duplication has correlation evidence; no universal stream replay/cursor guarantee.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C08",
+          "applicability": "applies",
+          "source_refs": [
+            "I.partial",
+            "I.assess"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C09",
+          "applicability": "applies",
+          "source_refs": [
+            "I.Q1",
+            "I.Q2"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C10",
+          "applicability": "applies",
+          "source_refs": [
+            "I.source",
+            "I.decision1",
+            "I.V1",
+            "I.source_gap"
+          ],
+          "basis": "Q1 fixed source and V1 selected. Q2 required source unavailable; selected Q2 member count zero, no invented V2/fallback.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C11",
+          "applicability": "applies",
+          "source_refs": [
+            "I.deliver1",
+            "I.receipt1",
+            "I.Q1",
+            "I.Q2"
+          ],
+          "basis": "Q1 receipt supports delivery, not native use; Q2 never selected/sent. Lost acknowledgement remains unknown at P1 cutoff.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C12",
+          "applicability": "applies",
+          "source_refs": [
+            "I.takeover",
+            "I.receipt1"
+          ],
+          "basis": "Coordinator takeover and receipt reconciliation, not native checkpoint restart.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C13",
+          "applicability": "applies",
+          "source_refs": [
+            "I.assess",
+            "I.close"
+          ],
+          "basis": "Native stop remains unknown at close; no fictitious cancellation command or termination proof.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C14",
+          "applicability": "applies",
+          "source_refs": [
+            "I.H1",
+            "I.exposure",
+            "I.other"
+          ],
+          "basis": "One policy exposure unit consumed; other resource types unmeasured, no universal monetary total.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C15",
+          "applicability": "applies",
+          "source_refs": [
+            "I.source",
+            "I.H1",
+            "I.exposure",
+            "I.source_gap"
+          ],
+          "basis": "One of two answer-policy units consumed, remaining one, native use unknown; Q2 source gap prevents selection.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C16",
+          "applicability": "applies",
+          "source_refs": [
+            "I.P1",
+            "I.P2"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C17",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No mutable current pointer requested, observed or changed; immutable publication does not require it.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C18",
+          "applicability": "applies",
+          "source_refs": [
+            "I.partial",
+            "I.P2"
+          ],
+          "basis": "Partial-output availability applies; no erasure claim or allowance reset.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        }
+      ],
+      "capability_demands": [
+        {
+          "capability": "CAP01",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Full-view/projection shape, identity and reference semantics",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP02",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact S2 intent/binding/selection and partial-population handoff",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP03",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Admitted source/transform/fitting procedure and actual evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP04",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Faithful encoding, permitted recipient view and applicable stable-use boundary",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP05",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual owner decisions/reservations/validity for the exact operation",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP06",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit admitted driver dispatch with boundary/acceptance evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP07",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Adequate existing episode/incarnation association, distinct from launch identity still unknown",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP08",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Q1 delivery-receipt reconciliation; no retransmission.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP09",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Supported connection to established work without hidden launch/reset",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP10",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Current writer/effect/consumer ownership and actual receiver exclusion where requested",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP11",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Durable observations/action correlation, not a universal cursor/replay guarantee.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP12",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit decoding/domain/coverage semantics with preserved raw evidence and partialness",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP13",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Q1 procedure/source present; Q2 dependency unavailable, choice held. Not a proven absence of mechanism.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP14",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Q1 single transmission and later receipt; no Q2 delivery.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP15",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Successor/state/component load and only the continuity scope actually established",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP16",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Stop knowledge assessed unknown; cancel operation not requested, mechanism support not established by this absence.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP17",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Typed owner-scoped metering/revisions/bounds/settlement, not one universal sum",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP18",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual information custody/history/consumption and uncertainty, independent from money",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP19",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact commit/projection/dependencies/claim assurance with no implied remote dissemination",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP20",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Partial-output availability only; pointer/delete/revoke not requested.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        }
+      ],
+      "uses_mutable_current_pointer": false,
+      "causal_correctness": "unassessed",
+      "claim_assessments": {
+        "base_preservation": "Compatible semantic overlay; exact wire conformance not yet defined/tested.",
+        "scientific_handoff": "Preserve actual main-trace evidence/missingness and fixed selection; not native scientific eligibility proof.",
+        "actual_native_execution": "No real execution; story facts only.",
+        "stronger_withheld": [
+          "Q2 selection/delivery",
+          "final response fulfillment",
+          "native termination",
+          "native use of V1",
+          "all-resource monetary total"
+        ]
+      }
+    },
+    {
+      "case": "K",
+      "proposed_annotations": {
+        "structural_context": {
+          "contract": "This dated minimum-record design candidate",
+          "revision_basis": {
+            "path": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
+            "sha256": "4c4338f76da6e5b13d432db7621c3c58929857dd02020e0fc1b3a242af36cb6b"
+          },
+          "live_SC3_version": null
+        },
+        "view_role": "full_account_view_for_authorized_operator",
+        "immutable_view_identity": "documentary.K.final_view",
+        "recorder": {
+          "component": "hypothetical narrative recorder",
+          "basis": "authored documentary overlay of pinned semantic trace, not native recording",
+          "native_time": "unestablished"
+        },
+        "audience": {
+          "scope": "authorized operator/evaluator of hypothetical full account",
+          "authority": "story assumptions only; no real grant",
+          "public_projection": "separate role when present"
+        },
+        "frontier": {
+          "basis": "pinned source trace plus explicitly proposed metadata overlay",
+          "through_local_story_position": "k07",
+          "global_native_completeness": "not claimed"
+        },
+        "requirements": {
+          "catalog": "M01-M15/C01-C18 in this dated design candidate",
+          "requested_claims": "claim_assessments below",
+          "applicability": "conditional_coverage below"
+        },
+        "index_extent": {
+          "subject": "K.E",
+          "membership": "only listed source entities and declared annotations",
+          "scope": "authored main trace through local frontier; not all native history",
+          "gaps": "per-family/claim gaps retained"
+        },
+        "collection_period": {
+          "id": "documentary.K.period1",
+          "kind": "proposed period annotation, not an original native receipt",
+          "scope": "one main-account collection period with per-source subscopes",
+          "closure_source_ref": "K.close",
+          "interim_publication_implies_closure": false,
+          "source_rules": "Distinct N1/N2 source identities; no copied position. Native stop/publication alone does not close this period."
+        },
+        "disposition_scope": "closed collection after allowed partial restart; fixed selection, final scoped settlement"
+      },
+      "annotation_status": "proposed_not_observed",
+      "minimum_bindings": [
+        {
+          "requirement": "M01",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M02",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "view_role"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M03",
+          "source_refs": [
+            "K.E"
+          ],
+          "proposed_annotation_keys": [],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M04",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "immutable_view_identity"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M05",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "recorder"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M06",
+          "source_refs": [
+            "K.E",
+            "K.intent"
+          ],
+          "proposed_annotation_keys": [
+            "structural_context"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M07",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "audience"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M08",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "frontier"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M09",
+          "source_refs": [],
+          "proposed_annotation_keys": [
+            "requirements"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M10",
+          "source_refs": [
+            "K.R",
+            "K.A1",
+            "K.A2",
+            "K.N1",
+            "K.N2",
+            "K.assoc1",
+            "K.assoc2",
+            "K.C1",
+            "K.C2",
+            "K.recovery"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M11",
+          "source_refs": [
+            "K.G1",
+            "K.state",
+            "K.load",
+            "K.G2",
+            "K.stop1",
+            "K.stop2",
+            "K.bill1partial",
+            "K.bill1final",
+            "K.bill2final",
+            "K.P1",
+            "K.P2",
+            "K.P3",
+            "K.input",
+            "K.accept1",
+            "K.accept2"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M12",
+          "source_refs": [
+            "K.assess"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M13",
+          "source_refs": [
+            "K.H1",
+            "K.H2",
+            "K.settle",
+            "K.other"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "disposition_scope"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M14",
+          "source_refs": [
+            "K.H1",
+            "K.H2",
+            "K.settle",
+            "K.other"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        },
+        {
+          "requirement": "M15",
+          "source_refs": [
+            "K.close"
+          ],
+          "proposed_annotation_keys": [
+            "index_extent",
+            "collection_period"
+          ],
+          "finding": "semantic_binding_with_explicit_proposed_annotations_not_wire_conformance"
+        }
+      ],
+      "conditional_coverage": [
+        {
+          "family": "C01",
+          "applicability": "applies",
+          "source_refs": [
+            "K.intent",
+            "K.B",
+            "K.R",
+            "K.assess"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C02",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "Pre-existing supplied input/source evidence; no separate auditor recipe/fitting/generation procedure intended in this main trace. Oracle evidence lookup in I belongs to C10/C15, not an invented source-generation effect.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C03",
+          "applicability": "applies",
+          "source_refs": [
+            "K.input",
+            "K.B"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C04",
+          "applicability": "applies",
+          "source_refs": [
+            "K.C1",
+            "K.C2",
+            "K.H1",
+            "K.H2"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C05",
+          "applicability": "applies",
+          "source_refs": [
+            "K.N1",
+            "K.N2",
+            "K.assoc1",
+            "K.assoc2"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C06",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No shared-writer takeover/competing consumer/exclusion guarantee requested in this trusted serial main trace. Exact operation authority still falls under C04.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C07",
+          "applicability": "applies",
+          "source_refs": [
+            "K.G1",
+            "K.G2",
+            "K.close"
+          ],
+          "basis": "One collection period with separate native N1/N2 source subscopes; no copied cursor or new scientific repetition.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C08",
+          "applicability": "applies",
+          "source_refs": [
+            "K.G1",
+            "K.G2",
+            "K.assess"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C09",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action/question interaction in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C10",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action response selection/provider in this main trace; scientific output selection and coordinator disposition retain C01/C08/C04 requirements.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C11",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No native-action response/abstention delivery in this main trace.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C12",
+          "applicability": "applies",
+          "source_refs": [
+            "K.state",
+            "K.load",
+            "K.recovery",
+            "K.A1",
+            "K.A2"
+          ],
+          "basis": "Partial model/optimizer restoration is allowed by fixed policy; RNG/history unknown, full exact continuation withheld.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C13",
+          "applicability": "applies",
+          "source_refs": [
+            "K.stop1",
+            "K.stop2"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C14",
+          "applicability": "applies",
+          "source_refs": [
+            "K.bill1partial",
+            "K.bill1final",
+            "K.bill2final",
+            "K.settle",
+            "K.other"
+          ],
+          "basis": "Final A1 bill5 revises interim3, A2 bill4; 9 charged and11 free of20, not12 charged.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C15",
+          "applicability": "applies",
+          "source_refs": [
+            "K.input",
+            "K.recovery"
+          ],
+          "basis": "Fixed input/exposure history carried across both attempts; no budget reset by restart.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C16",
+          "applicability": "applies",
+          "source_refs": [
+            "K.P1",
+            "K.P2",
+            "K.P3"
+          ],
+          "basis": "Main-trace intent/activity/evidence triggers this family; exact source facts remain scoped and hypothetical.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        },
+        {
+          "family": "C17",
+          "applicability": "does_not_apply_in_main_trace",
+          "source_refs": [],
+          "basis": "No mutable current pointer requested, observed or changed; immutable publication does not require it.",
+          "missingness_rule": "Scoped omission, not unknown or universal unsupported claim."
+        },
+        {
+          "family": "C18",
+          "applicability": "applies",
+          "source_refs": [
+            "K.state",
+            "K.G1",
+            "K.G2",
+            "K.P3"
+          ],
+          "basis": "Checkpoint/output availability applies; no deletion/erasure operation requested.",
+          "missingness_rule": "Known gaps hold only dependent claims/effects; no fabricated native evidence."
+        }
+      ],
+      "capability_demands": [
+        {
+          "capability": "CAP01",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Full-view/projection shape, identity and reference semantics",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP02",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact S2 intent/binding/selection and partial-population handoff",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP03",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Admitted source/transform/fitting procedure and actual evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP04",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Faithful encoding, permitted recipient view and applicable stable-use boundary",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP05",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual owner decisions/reservations/validity for the exact operation",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP06",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit admitted driver dispatch with boundary/acceptance evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP07",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Separate established N1/N2 incarnations and attempt associations.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP08",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Scoped positive/negative lookup; idempotent retransmission is a separately stated subguarantee, never inferred",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP09",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Supported connection to established work without hidden launch/reset",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP10",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Current writer/effect/consumer ownership and actual receiver exclusion where requested",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP11",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Separate source subscopes; native stream cursor replay not requested.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP12",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Explicit decoding/domain/coverage semantics with preserved raw evidence and partialness",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP13",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Supported permitted procedure/input frontier, including unavailable information and fallback rules",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP14",
+          "demand": "not_requested_in_main_trace",
+          "scope": "Exact action/response/recipient validity and actual transmission/reconciliation evidence",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP15",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual model/optimizer loading claimed in story; exact RNG/history unestablished.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP16",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Predecessor non-overlap and both observed stop scopes, no blanket descendant guarantee.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP17",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Typed owner-scoped metering/revisions/bounds/settlement, not one universal sum",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP18",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Actual information custody/history/consumption and uncertainty, independent from money",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP19",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Exact commit/projection/dependencies/claim assurance with no implied remote dissemination",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        },
+        {
+          "capability": "CAP20",
+          "demand": "scoped_requirement_or_assessment",
+          "scope": "Checkpoint/output availability only; pointer/delete/revoke not requested.",
+          "actual_S3_mechanism": "unimplemented",
+          "actual_S3_acceptance": "not_run",
+          "actual_S3_native_evidence": "unestablished",
+          "story_basis": "hypothetical authored trace only; not a capability test"
+        }
+      ],
+      "uses_mutable_current_pointer": false,
+      "causal_correctness": "unassessed",
+      "claim_assessments": {
+        "base_preservation": "Compatible semantic overlay; exact wire conformance not yet defined/tested.",
+        "scientific_handoff": "Preserve actual main-trace evidence/missingness and fixed selection; not native scientific eligibility proof.",
+        "actual_native_execution": "No real execution; story facts only.",
+        "stronger_withheld": [
+          "full RNG/history continuity",
+          "second independent trial",
+          "best-score selection"
+        ]
+      }
+    }
+  ],
+  "existing_foundation_policy": "Only existing source/test anchors in the methodology index are implementation evidence, for their narrower S1/S2 scopes. Every new S3 mechanism is unimplemented here; no native S3 receipt or acceptance run is established.",
+  "catalog_limits": [
+    "Not a ranked universal support ladder.",
+    "Dynamic/federated/composite/unknown-origin cases require additional scoped profiles and evidence.",
+    "No causal-correctness conclusion.",
+    "Resource kinds/units/owners remain separate.",
+    "Actual versioned public profile names and wire encoding remain open."
+  ],
+  "projection_boundary": {
+    "case": "L",
+    "source_refs": [
+      "L.public",
+      "L.public_summary",
+      "L.public_statement",
+      "L.projection_receipt"
+    ],
+    "public_serialized_entities": [
+      "L.public_summary",
+      "L.public_statement"
+    ],
+    "private_lineage": [
+      "L.projection_receipt",
+      "L.fulfillment",
+      "L.map"
+    ],
+    "full_account_minimum_applied_to_public_projection": false,
+    "scope": "Derived audience view; no exported full account identity or raw-map assurance assumed."
+  }
+}
