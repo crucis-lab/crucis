@@ -564,9 +564,8 @@ class Coordinator:
             result = callable_value(prepared.driver.method)(exact, native_context, admission.live_grants, token.value, services.sink)
             if not isinstance(result, api.CallResult): raise ExecutionError('s3.driver_return_contract')
             observed = result
-            evidence = result.value.evidence if isinstance(result.value, (api.NativeStart, api.NativeConnection, api.LookupResult)) else result.value
-            if not isinstance(evidence, api.DriverEvidence):
-                evidence = api.DriverEvidence(prepared.binding, result.records, index(), index(), index(), ())
+            from .native_results import result_evidence
+            evidence = result_evidence(result, prepared.binding, read)
             retained = self._save_issue(admission, context, services, token.value, result, evidence, read)
             self._fault(services, 'before_issue_reply')
             return retained
@@ -609,6 +608,8 @@ class Coordinator:
         if token is None: return api.rejected(code)
         effects = observed.effects if observed is not None else (api.EffectBoundary(token.command,
             'may_have_crossed' if forwarded else 'not_crossed', unknown('s3.receiver_acceptance_unestablished'), (), token.transmission),)
+        if evidence is None and observed is not None and isinstance(observed.records, api.RecordDelta):
+            evidence = api.DriverEvidence(admission.prepared.binding, observed.records, index(extent='unresolved'), index(extent='unresolved'), index(), ())
         if evidence is not None:
             return api.CallResult('partial', api.IssueReceipt(token.command, token, evidence, effects, token.transmission, admission.admission_occurrence),
                 records=evidence.records, issues=(api.Issue(code, scope(token.command), ()),), effects=effects)

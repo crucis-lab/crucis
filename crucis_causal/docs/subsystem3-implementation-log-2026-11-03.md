@@ -380,3 +380,52 @@ After its actual validated local commit, build B07's dispatch/attachment drivers
 independent persistent native fixture service. Then continue B08–B13 in dependency
 order, keeping raw capture, interaction, recovery/settlement, publication and final
 qualification independently tested and explicitly scoped.
+
+## S3-B07: explicit dispatch, native identity and attachment
+
+B06 committed as 0e84b278fbd27f6e50cea9a71673d2a07afb694d. Its final
+73-test S3 suite and both408-test full gates passed;26 pre-existing availability
+skips remain separate. Earlier pre-correction receipts are retained externally.
+
+B07 adds supplied native mechanics and explicit return projection, an actual
+runtime connection registry, and a guarded S1 invocation bridge. Metadata never
+imports a driver or chooses an executable/credential. Invocation prepares exact
+input bytes and consumes the coordinator's issuer permit plus current owner grants.
+S1 function/process bindings additionally consume the original S1 authority.
+The process test uses explicit argv and shell=False, retaining literal shell syntax.
+Fresh frozen S1 evidence preserves original R and distinct result snapshots.
+
+The independent synthetic HTTP fixture owns a durable SQLite job ledger outside
+the coordinator's lifetime. Transport/authentication objects are supplied directly;
+tokens are runtime-only and omitted from packets/evidence. Same exact D replays its
+original receiver result; a new D under the same C can create another job. Request
+hashes and negative listings confer no provider idempotency. Delayed acceptance and
+duplicate jobs/charges remain visible. Receiver epoch checks occur at acceptance;
+takeover rejects delayed old requests while retaining previously accepted work.
+
+Lookup preserves actual classification, query binding, paths, time/retention scope,
+completeness and late-acceptance closure separately. Reconnection uses full native
+authority/namespace/ID/incarnation and actual opaque handles. Unknown-origin attach
+can observe supported existing work without inventing R/A or a scientific trial.
+Reused literal IDs cannot authorize access to another incarnation. Attach does not
+launch work. Persisted evidence does not restore live handles.
+
+An acknowledged process-kill barrier after a lost receiver reply leaves exactly one
+provider job. A fresh coordinator opens the original journal/owner allocation and
+same G/D, obtains no executable replay permit, then performs separately admitted
+lookup. History/oracle/recovered-view receipts are saved for F06/F07 externally.
+
+Development failures are preserved: the B00 originals lacked a live S2 handoff,
+so the helper now records a new handoff for the unchanged original R/A/run using
+actual S2 APIs and retains its writer dependencies. Pure native preparation now
+compares exact pinned semantic bytes rather than process-local read-capability
+object identity. The cold worker's missing own-source import root was diagnosed
+at its import line and corrected without adding research paths. NativeStart's
+accepted knowledge wrapper is now respected by the earlier coordinator probe.
+
+Final tests.json/gate.json/commit.json determine completion. This qualifies trusted
+local function/process guards and the explicitly scripted service, not any real
+third-party provider, hostile-code isolation, scientific discovery quality or
+distributed exactly-once execution. Observation/interaction/recovery/publication
+remain the next dependency-gated bundles. Frozen B00 oracles and contract pins are
+unchanged.

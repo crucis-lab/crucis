@@ -181,7 +181,7 @@ class ProbeDriver(DeclaredDriver):
         records = api.RecordDelta(view.records, (), (*context.read.views, store, view))
         evidence = api.DriverEvidence(request.binding and reference(request.binding.record['id'], 'operation_binding', request.binding.context['package_id']), records,
             index([qualified(subject, view.package_id)]), index(), index(), ())
-        return api.CallResult('completed', api.NativeStart(attempt, qualified(subject, view.package_id), None, evidence), records=records,
+        return api.CallResult('completed', api.NativeStart(attempt, known(qualified(subject, view.package_id)), None, evidence), records=records,
             effects=(replace(entry.effect, boundary='crossed', acceptance=known(True)),))
 
 
