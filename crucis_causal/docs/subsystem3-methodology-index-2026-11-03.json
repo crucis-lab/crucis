@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 identity/account/admission/input/dispatch/observation directions affirmed with exact details open; recovery/stopping/accounting recommendations pending review; no S3 implementation or schema freeze",
+  "status": "S3 identity/account/admission/input/dispatch/observation/recovery directions affirmed with exact details open; evidence publication/reconciliation recommendations pending review; no S3 implementation or schema freeze",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -245,6 +245,21 @@
       "path": "crucis_causal/connections/schema.py",
       "sha256": "0edc3efa8a77af1c9d9b948b3ad0bee5315a78ef16db0eff74c969fc2cf7ba4b",
       "scope": "Existing closed S1 NativeIdentity/runtime-related record shapes at design base f209d063; no new incarnation field or S3 wire extension adopted"
+    },
+    {
+      "path": "crucis_causal/connections/validation.py",
+      "sha256": "e1271444e5bc8abb22ef1fbe48f56d8a6e4213e31d4f1a0dba9bd98ad4f41760",
+      "scope": "Existing wire/reference and scoped integrity prerequisites, not native truth or full audience enforcement; source at design base f42d7b21"
+    },
+    {
+      "path": "crucis_causal/connections/codec.py",
+      "sha256": "2c6d7c92f9a5a5ea8ae4ab21e89ef09af8eae5e9b6afc33123e19828da14e0cf",
+      "scope": "Existing S1 serialization contract, not source authenticity or trusted time; source at design base f42d7b21"
+    },
+    {
+      "path": "crucis_causal/experiments/codec.py",
+      "sha256": "aa54e9686f5b4d5737d2991cbd78effa3adb0314a74d518ab76a065bd4f20e06",
+      "scope": "Existing S2 canonical record/package encoding distinct from received raw snapshot byte identity; source at design base f42d7b21"
     }
   ],
   "existing_scoped_test_anchors": [
@@ -287,7 +302,9 @@
       "methods": [
         "test_frozen_R_and_later_O_have_distinct_package_id_and_unchanged_copied_records",
         "test_handoff_pins_exact_R_request_attempt_and_run_identity",
-        "test_projection_same_occurrence_is_idempotent_without_refreshing_timestamps"
+        "test_projection_same_occurrence_is_idempotent_without_refreshing_timestamps",
+        "test_changed_request_or_presentation_cannot_reuse_the_occurrence_or_handoff",
+        "test_external_evidence_links_are_qualified_and_historical_imports_do_not_gain_attempts"
       ],
       "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
     },
@@ -295,7 +312,8 @@
       "path": "tests/test_audit_experiments_services.py",
       "sha256": "57583c4efb393b8952317842d6bd17c88dca8c12e1b3de47b7446e1f9f3e0540",
       "methods": [
-        "test_known_false_predicate_completes_operation_without_passing_profile"
+        "test_known_false_predicate_completes_operation_without_passing_profile",
+        "test_commit_has_immutable_occurrence_and_distinct_frozen_package_identity"
       ],
       "claim_limit": "Existing primitive scope only; no S3 minimum-account or closure acceptance case is implemented"
     },
@@ -359,6 +377,18 @@
         "test_random_repeat_key_does_not_establish_shared_native_randomness"
       ],
       "claim_limit": "Existing supplied-metadata/typed-family fixtures, not actual transformation, raw-data custody, native channel observation or S3 enforcement"
+    },
+    {
+      "path": "tests/test_audit_experiments_wire.py",
+      "sha256": "c62319af47494a860f391c0ea3ed7c78990064ee40ded4f4b8825b2836040637",
+      "methods": [
+        "test_pretty_received_bytes_digest_not_canonical_digest",
+        "test_scope_access_no_locator_fetch_and_explicit_anchor",
+        "test_external_digest_changed_not_reported_as_valid",
+        "test_record_identity_conflict_even_when_packages_differ",
+        "test_views_cannot_mutate_resolver_state"
+      ],
+      "claim_limit": "Existing supplied-byte metadata/access/identity fixtures only; no S3 audience projection, remote ACL, external assurance or distributed publication claim"
     }
   ],
   "prior_evidence": [
@@ -406,8 +436,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review evidence-dependent recovery choices, scoped stopping and cumulative resource/exposure examples; then immutable evidence publication/reconciliation, followed by full S3 contract reconciliation, exact interfaces/profiles and build planning without implementation yet.",
-  "current_design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+  "next_design": "Review partial/corrected/restricted-audience packages, exact commit recovery and pointer limits; then consolidate all seven S3 responsibilities with complete worked records and resolve remaining contracts before serialization/interfaces, support profiles, final design review or build bundles. No implementation yet.",
+  "current_design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -569,6 +599,27 @@
         "RC11",
         "RC12"
       ],
+      "status": "direction_affirmed_details_open",
+      "commit": "f42d7b214f1c8bc6d487f22494f105d8e62ff8b5"
+    },
+    {
+      "subject": "immutable evidence publication and reconciliation",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "based_on_commit": "f42d7b214f1c8bc6d487f22494f105d8e62ff8b5",
+      "proposal_ids": [
+        "EP01",
+        "EP02",
+        "EP03",
+        "EP04",
+        "EP05",
+        "EP06",
+        "EP07",
+        "EP08",
+        "EP09",
+        "EP10",
+        "EP11",
+        "EP12"
+      ],
       "status": "recommendations_pending_review"
     }
   ],
@@ -723,7 +774,13 @@
     "S1 recovery/state_load checks represent and check supplied continuation/load evidence; they do not operate restoration drivers, admit retries or establish actual complete hidden-state continuity",
     "S1 cancellation checks distinguish acknowledged requests from supplied native-stop evidence; no generic escalation or descendant-termination protocol is implemented",
     "S1 accounting_total supports selected unrevised disjoint compatible nonnegative quantities, rejects inclusive overlap and s1.duration sums, and is not a generic metering/settlement ledger",
-    "S2 preserves fixed trial intent, supplied recovery lineage/exposure and missingness; it does not automatically retry, choose last/best outputs or reset budgets"
+    "S2 preserves fixed trial intent, supplied recovery lineage/exposure and missingness; it does not automatically retry, choose last/best outputs or reset budgets",
+    "S1/S2 roots do not automatically project away other staged records; current package writers/stores do not implement complete audience-specific redaction or transitive disclosure enforcement",
+    "PackageStore writes immutable records before its manifest; per-file atomic/fsync/conflict checks do not establish all-or-none multi-file/multi-store commit, universal power-loss durability or adversarial tamper protection",
+    "PackageStore.select_current compares expected_previous selected value and emits a generation; it does not check an expected generation and cannot detect every A-to-B-to-A intervening update",
+    "S2 frozen allocates a fresh package identity per freeze while copied records remain unchanged; it is not a same-bytes retry of an earlier publication operation",
+    "Expected byte digests and local timestamps do not themselves establish source authenticity, historical existence time, complete coverage or causal correctness",
+    "Existing resolver access is supplied metadata/read scope, not native/runtime publication authority or an automatic remote retrieval/retention service"
   ],
   "account_direction_affirmation": {
     "scope": "User affirmed the minimum-account/knowledge/closure explanation and requested admission, authority, resources and exposure next",
@@ -1659,122 +1716,134 @@
     {
       "id": "RC01",
       "subject": "Evidence-dependent recovery with exact trigger, policy and cutoff",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC02",
       "subject": "Bounded waiting and separate scientific/observer/owner/native clocks",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC03",
       "subject": "Transmission retry distinct from retry of an ended native episode",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC04",
       "subject": "Reconnect established native work or reinterpret retained evidence without hidden launch",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC05",
       "subject": "New checkpoint successor with scoped observed restoration and overlap eligibility",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC06",
       "subject": "Separately admitted cancellation and explicit escalation",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC07",
       "subject": "Separate observer, native/descendant and obligation closure",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC08",
       "subject": "Typed scoped metering with explicit revision and aggregation semantics",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC09",
       "subject": "Cumulative attempt budgets with explicit recovery/control overhead",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC10",
       "subject": "Persistent actual/possible exposure and owner settlement across recovery",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC11",
       "subject": "Versioned owner-evidenced settlement and accepted responsibility transfer",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     },
     {
       "id": "RC12",
       "subject": "Faithful S2 intent/population/output handoff and truthful recovery support",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact recovery/owner/stop/accounting protocol or implementation approval"
     }
   ],
   "recovery_accounting_examples": [
@@ -1866,5 +1935,197 @@
     "Cumulative trial/account/owner envelopes and separate control overhead",
     "Exposure history, unknown liabilities and owner settlement/release/accepted handoff",
     "Exact recovery receipts, S2 handoff, support profiles and core/driver/owner interfaces"
+  ],
+  "recovery_accounting_direction_affirmation": {
+    "basis": "User affirmed preceding recovery/stopping/accounting explanation and requested immutable publication/reconciliation",
+    "preceding_design_commit": "f42d7b214f1c8bc6d487f22494f105d8e62ff8b5",
+    "scope": "Evidence-dependent wait/retry/reconnect/restart/cancel/close, partial continuity, stop scopes and cumulative resources/exposure; exact contracts remain open",
+    "not_implied": [
+      "Exact schema/API freeze",
+      "S3 implementation approval",
+      "Production policy changes",
+      "Native execution or paid campaign authorization",
+      "Remote evidence publication or other external dissemination"
+    ]
+  },
+  "evidence_publication_recommendations": [
+    {
+      "id": "EP01",
+      "subject": "Structurally valid partial immutable views with exact scope and pending obligations",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP02",
+      "subject": "Distinct package/record/artifact/publication identities and external exact-byte receipts",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP03",
+      "subject": "Evidence frontiers separate from native event, commit and analysis times",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP04",
+      "subject": "New explicit corrections/disputes preserving original observations and interpretations",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP05",
+      "subject": "Scoped verification dimensions and actual trust mechanisms",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP06",
+      "subject": "Audience-specific projection over actual records/artifacts/dependencies",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP07",
+      "subject": "Owner-admitted dissemination with audience/retention/exposure effects",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP08",
+      "subject": "Exact commit reconciliation after interruption under actual backend guarantees",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP09",
+      "subject": "Mutable current selection separate from pinned views and exact CAS preconditions",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP10",
+      "subject": "Compatible branch reconciliation without duplicate counts or favorable selection",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP11",
+      "subject": "Immutable content pins with new availability/relocation/retention evidence",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    },
+    {
+      "id": "EP12",
+      "subject": "Source-linked scientific handoff with truthful support and ownership boundaries",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+    }
+  ],
+  "evidence_publication_examples": [
+    {
+      "example": "A",
+      "case": "P1 preserves unknown acceptance, partial evidence and pending obligations at c1"
+    },
+    {
+      "example": "B",
+      "case": "P2 learns at c2 that acceptance occurred before c1 without changing earlier knowledge"
+    },
+    {
+      "example": "C",
+      "case": "Later decoder or job-association correction gets new interpretation/assessment identity"
+    },
+    {
+      "example": "D",
+      "case": "Private, approved reviewer and public views have different evidence/verification scope"
+    },
+    {
+      "example": "E",
+      "case": "Manifest committed but acknowledgement lost; reconcile exact bytes without native rerun"
+    },
+    {
+      "example": "F",
+      "case": "Concurrent P2/P3 branches and named current pointer with value-CAS limits"
+    },
+    {
+      "example": "G",
+      "case": "Artifact becomes unavailable or changes at the same locator without historical repinning"
+    }
+  ],
+  "publication_verification_dimensions": [
+    "Wire structure and required reference validity",
+    "Byte integrity against an established expected pin",
+    "Actual source/authorship/time assurance under supported mechanisms",
+    "Evidence frontier, coverage and knowledge scope",
+    "Actual audience authority/enforcement and retention",
+    "Interpretation and S2 scientific applicability without automatic paper adoption"
+  ],
+  "publication_identity_distinctions": [
+    "Logical package snapshot identity and exact manifest bytes/digest",
+    "Record identity/content/producer/time under exact codec",
+    "Artifact content identity versus present availability/locator",
+    "Scientific occurrence versus publication operation/retry",
+    "New corrected/derived/audience view versus unchanged copied records",
+    "Mutable current pointer versus exact pinned analysis basis"
+  ],
+  "evidence_publication_open_contracts": [
+    "Exact scoped S3 snapshot envelope and pinned S1/S2 dependency/commit relationships",
+    "Publication-operation identity, exact serialization and external subject/report pins",
+    "Journal/native/analysis cutoffs and versioned correction/dispute/branch reconciliation",
+    "Actual audience projections including dependency/metadata disclosure and permitted provenance",
+    "Publication/dissemination authority, exposure consequences and destination enforcement",
+    "Backend commit/durability/receipt/lost-acknowledgement profiles without universal atomicity",
+    "Current-pointer purpose, value versus revision CAS and operation reconciliation",
+    "Artifact availability/relocation/retention and honest audience-specific assurance",
+    "Source/time trust mechanisms, validation claim matrix and scientific handoff",
+    "Complete S3 examples, remaining identity/cardinality/owner/cursor/handle/decision interfaces and final design review before bundles"
   ]
 }
