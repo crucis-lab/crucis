@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 identity/account/admission/lifecycle/input/dispatch directions affirmed with exact details open; observation/collection/interaction recommendations pending review; no S3 implementation or schema freeze",
+  "status": "S3 identity/account/admission/input/dispatch/observation directions affirmed with exact details open; recovery/stopping/accounting recommendations pending review; no S3 implementation or schema freeze",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -406,8 +406,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review observation/capture progress, event identity/order/gaps and action/response examples; then consolidate recovery, stopping and actual resource/exposure accounting before publication/reconciliation, full S3 review, exact interfaces or build bundles.",
-  "current_design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+  "next_design": "Review evidence-dependent recovery choices, scoped stopping and cumulative resource/exposure examples; then immutable evidence publication/reconciliation, followed by full S3 contract reconciliation, exact interfaces/profiles and build planning without implementation yet.",
+  "current_design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -547,6 +547,27 @@
         "OC10",
         "OC11",
         "OC12"
+      ],
+      "status": "direction_affirmed_details_open",
+      "commit": "587f60ea561b6364293f597d40e9e2239f307377"
+    },
+    {
+      "subject": "recovery, stopping and resource/exposure accounting",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "based_on_commit": "587f60ea561b6364293f597d40e9e2239f307377",
+      "proposal_ids": [
+        "RC01",
+        "RC02",
+        "RC03",
+        "RC04",
+        "RC05",
+        "RC06",
+        "RC07",
+        "RC08",
+        "RC09",
+        "RC10",
+        "RC11",
+        "RC12"
       ],
       "status": "recommendations_pending_review"
     }
@@ -698,7 +719,11 @@
     "S1 observe wrappers bound returned record count and serialized record bytes; deadline, driver duration, sink size, source cursor validity and native completeness are not established by those checks",
     "S1 event ordering and immutable record checks do not themselves correlate duplicate native events across transports or adjudicate all temporal/gap semantics",
     "S2 record_decision retains/checks a particular supplied threshold-action policy and exposure basis; no generic policy engine, automatic response delivery or distributed decision claim is supplied",
-    "A one-use in-memory delivery grant and local decision record do not establish receiver idempotency or exactly one native response across coordinator restarts"
+    "A one-use in-memory delivery grant and local decision record do not establish receiver idempotency or exactly one native response across coordinator restarts",
+    "S1 recovery/state_load checks represent and check supplied continuation/load evidence; they do not operate restoration drivers, admit retries or establish actual complete hidden-state continuity",
+    "S1 cancellation checks distinguish acknowledged requests from supplied native-stop evidence; no generic escalation or descendant-termination protocol is implemented",
+    "S1 accounting_total supports selected unrevised disjoint compatible nonnegative quantities, rejects inclusive overlap and s1.duration sums, and is not a generic metering/settlement ledger",
+    "S2 preserves fixed trial intent, supplied recovery lineage/exposure and missingness; it does not automatically retry, choose last/best outputs or reset budgets"
   ],
   "account_direction_affirmation": {
     "scope": "User affirmed the minimum-account/knowledge/closure explanation and requested admission, authority, resources and exposure next",
@@ -1436,122 +1461,134 @@
     {
       "id": "OC01",
       "subject": "Source/protocol/scope-bound cursors and independent stream positions",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC02",
       "subject": "Separate fetched, durable capture, interpretation and source acknowledgement progress",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC03",
       "subject": "Preserve captures and associate evidenced native occurrences",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC04",
       "subject": "Native partial order, conflicts and knowledge cutoffs",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC05",
       "subject": "Scoped gap/coverage evidence with later partial repair",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC06",
       "subject": "Actual bounded observation/backpressure and scoped exhaustion",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC07",
       "subject": "Captured extent and explicit partial/intermediate output roles",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC08",
       "subject": "Versioned decoding with separate observer/native attribution",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC09",
       "subject": "Exact action correlation and fixed permitted decision basis",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC10",
       "subject": "Current exact delivery authority, validity and explicit abstention",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC11",
       "subject": "Coordinated decision ownership and actual receiver guarantees",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     },
     {
       "id": "OC12",
       "subject": "Bounded closure with pending obligations and faithful S2 handoff",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact cursor/capture/decision/delivery protocol or implementation approval"
     }
   ],
   "observation_interaction_examples": [
@@ -1606,5 +1643,228 @@
     "Generic action/decision-provider inputs, cutoffs, permitted fallbacks and source effects",
     "Durable decision ownership, response validity and receiver delivery guarantees",
     "Collection closure/follow-up and exact support/receipt/interface profiles"
+  ],
+  "observation_interaction_direction_affirmation": {
+    "basis": "User affirmed preceding observation/collection/interaction explanation and requested recovery, stopping and resource/exposure accounting",
+    "preceding_design_commit": "587f60ea561b6364293f597d40e9e2239f307377",
+    "scope": "Scoped cursors and capture progress, event identity/order/gaps, partial outputs, authorized decision/delivery and pending-obligation closure; exact contracts remain open",
+    "not_implied": [
+      "Exact schema/API freeze",
+      "S3 implementation approval",
+      "Production policy changes",
+      "Native execution or paid campaign authorization"
+    ]
+  },
+  "recovery_accounting_recommendations": [
+    {
+      "id": "RC01",
+      "subject": "Evidence-dependent recovery with exact trigger, policy and cutoff",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC02",
+      "subject": "Bounded waiting and separate scientific/observer/owner/native clocks",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC03",
+      "subject": "Transmission retry distinct from retry of an ended native episode",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC04",
+      "subject": "Reconnect established native work or reinterpret retained evidence without hidden launch",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC05",
+      "subject": "New checkpoint successor with scoped observed restoration and overlap eligibility",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC06",
+      "subject": "Separately admitted cancellation and explicit escalation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC07",
+      "subject": "Separate observer, native/descendant and obligation closure",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC08",
+      "subject": "Typed scoped metering with explicit revision and aggregation semantics",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC09",
+      "subject": "Cumulative attempt budgets with explicit recovery/control overhead",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC10",
+      "subject": "Persistent actual/possible exposure and owner settlement across recovery",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC11",
+      "subject": "Versioned owner-evidenced settlement and accepted responsibility transfer",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    },
+    {
+      "id": "RC12",
+      "subject": "Faithful S2 intent/population/output handoff and truthful recovery support",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-recovery-stopping-accounting-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish operational S3 recovery, actual owners or generic resource/exposure accounting"
+    }
+  ],
+  "recovery_accounting_examples": [
+    {
+      "example": "A",
+      "case": "Wait/reconcile uncertain C1 while actual native work and charges may continue"
+    },
+    {
+      "example": "B",
+      "case": "Lost transmission acknowledgement versus another execution after an ended episode"
+    },
+    {
+      "example": "C",
+      "case": "Connection lost while established N1 is running, or decoder-only reprocessing"
+    },
+    {
+      "example": "D",
+      "case": "Checkpoint successor restores optimizer but RNG/session state remain unknown"
+    },
+    {
+      "example": "E",
+      "case": "Cancellation acknowledged while work remains running and descendants are unresolved"
+    },
+    {
+      "example": "F",
+      "case": "20 native-job units: A1 envelope 8, A2 envelope 6, final charges 5+4"
+    },
+    {
+      "example": "G",
+      "case": "Uncertain V1 delivery/exposure persists through reconnect and restart"
+    }
+  ],
+  "recovery_action_distinctions": [
+    "Wait/reconciliation has bounded policy and can incur control/time costs",
+    "Safe retransmission can retain C1/A1 under actual guarantees",
+    "Retry after ended native episode creates A2 with explicit ancestry",
+    "Reconnect established N1 retains A1 without hidden invocation",
+    "Checkpoint relaunch creates A2 with evidenced continuation/restored components",
+    "Cancellation/control request, acknowledgement and actual scoped stop differ",
+    "Collection close preserves cutoff, missingness and pending obligations"
+  ],
+  "recovery_accounting_illustrative_ledger": {
+    "scope": "Hypothetical single native-job resource dimension, not actual billing or policy",
+    "total": "20",
+    "rows": [
+      {
+        "stage": "A1 interim charge in enforced 8-unit envelope",
+        "charged": "3",
+        "a1_pending": "5",
+        "a2_pending": "0",
+        "free": "12"
+      },
+      {
+        "stage": "A1 stopped, bill pending; A2 admitted",
+        "charged": "3",
+        "a1_pending": "5",
+        "a2_pending": "6",
+        "free": "6"
+      },
+      {
+        "stage": "A1 finalized at 5 and remainder released",
+        "charged": "5",
+        "a1_pending": "0",
+        "a2_pending": "6",
+        "free": "9"
+      },
+      {
+        "stage": "A2 finalized at 4 and remainder released",
+        "charged": "9",
+        "a1_pending": "0",
+        "a2_pending": "0",
+        "free": "11"
+      }
+    ],
+    "limits": [
+      "Assumes stated actual owner evidence and enforced envelopes cover included native charges",
+      "A1 stop precedes restart-required nonoverlapping A2; billing can remain unresolved",
+      "Other request/observation/storage/control scopes are not implicitly free or included",
+      "Illustrative arithmetic is not executed metering or S3 acceptance evidence"
+    ]
+  },
+  "recovery_accounting_open_contracts": [
+    "Recovery decision basis/triggers and policy-provider support without universal retry defaults",
+    "Clock/stopping scopes and actual backend/control resource enforcement",
+    "Transmission versus native-episode retry, overlap and native-internal retry mapping",
+    "Actual checkpoint restoration and scoped continuity assessment",
+    "Cancellation/escalation permissions and complete target/descendant stop scope",
+    "Typed metering, interval/peak/resource aggregation, cumulative revisions and credits",
+    "Cumulative trial/account/owner envelopes and separate control overhead",
+    "Exposure history, unknown liabilities and owner settlement/release/accepted handoff",
+    "Exact recovery receipts, S2 handoff, support profiles and core/driver/owner interfaces"
   ]
 }
