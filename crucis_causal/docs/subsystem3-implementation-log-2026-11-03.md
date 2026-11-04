@@ -113,8 +113,43 @@ Source/helpers and scoped tests/receipts are under the execution journal/store,
 `tests/audit_fixtures/sc3_runtime/`, and external `s3-build/S3-B02/`. Full staged-tree
 and enabled-hook receipts are required before B03/B04 advance.
 
+## B03 — Local owners, authority and accounting (2026-11-04)
+
+B02 predecessor:91c150c2e757e86909c3aff61af5135e3df7d8ff. Its24 combined S3
+tests passed without skips; both full gates passed359 tests with0 failures/errors
+and26 existing data/dependency skips.
+
+Added an actual persistent cooperative local owner: scoped capacity holds,
+exact R/H/G request identities, expected revisions, renewal, reconciliation,
+settlement, capacity-only release, explicit native authorization and live
+issuer-checked grants. Expiry and takeover invalidate grants without asserting
+native termination. Durable request/group plans precede receiver entry; partial
+owner groups never become executable admission. Unresolved lookup preserves
+existing holds. Exact replay binds evidence as well as parameters and inputs.
+
+Authorized receiver calls debit a separately persistent control allocation even
+when a response is lost. Recreating the same allocation does not reset it.
+Receiver occurrences/control-overhead facts are retained with their original IDs;
+their counts are not native usage, money or independent CPU measurements.
+BoundaryKind's runtime alias now matches the accepted named Contract grammar.
+
+Accounting applies explicit same-owner/unit/member replacement rules using
+decimals: final5 replaces interim3; disjoint4 gives9. Unknown/finality/conflicting
+revision/overlap cases withhold totals. Exposure facets and recipients remain
+separate; a policy name alone never establishes additive composition. Cleanup
+cannot subtract disclosure history. Settlement uses supplied pinned reports,
+not independently verified provider invoices. Multi-resource partial settlement
+retains known charges and conservative holds; there is no distributed rollback.
+
+Real state/replay/lost-response tests cover OP15–20,A01,F02,F03. An initial
+fixture reference-context error was repaired by explicit derived relocation,
+leaving the frozen B00 fixtures unchanged; failed logs remain external. The
+support claim is local cooperative owner enforcement and scoped arithmetic,
+not third-party rights, hostile-process isolation, provider exactly-once or
+universal measurement. Source, case outcomes and both full commit gates are
+recorded externally under s3-build/S3-B03 before dependent bundles advance.
+
 ## Where we're going
 
-After B02's validated milestone, implement B03's actual local owners, live grants
-and resource/exposure ledgers, then B04's exact S1/S2 scientific bridge. Their
-separate gates must pass before B05 input realization/staging can begin.
+After B03's validated milestone, implement B04's exact S1/S2 scientific bridge.
+Its separate gate must pass before B05 input realization/staging can begin.
