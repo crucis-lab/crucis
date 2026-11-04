@@ -1,0 +1,267 @@
+{
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "local_date": "2026-11-03",
+  "kind": "s3_design_methodology_index",
+  "status": "Design discussion only; new proposals pending user discussion; no S3 implementation or schema freeze",
+  "governing_sources": [
+    "AGENTS.md",
+    "README.md",
+    "provenance/extraction.json",
+    "provenance/publication.json"
+  ],
+  "verified_base": "05b9faefcbfbc108694e356db34903afcb646efa",
+  "historical_path_policy": "Retain earlier audit/ and intermediate crucis/ paths and hashes in historical receipts; use crucis_causal for present sources",
+  "continuation": "crucis_causal/docs/subsystem3-structure-design-2026-11-03.md",
+  "design": "crucis_causal/docs/subsystem3-execution-identity-lifecycle-design-2026-11-03.md",
+  "carried_forward_constraints": [
+    "Generic core, explicit native drivers, faithful evidence and unknowns",
+    "Scientific trial distinct from native attempt and transport delivery",
+    "Checkpoint restart uses a new attempt with explicit continuation; same-episode observer reconnect retains attempt",
+    "Eligibility, readiness, permission, requested and observed effects stay distinct",
+    "Selected response is not established delivery; observation stop is not native termination",
+    "S3 implementation and paid/native/protected execution require their respective later explicit authorization"
+  ],
+  "proposals": [
+    {
+      "id": "P01",
+      "subject": "Execution account distinct from scientific/native/worker identities",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P02",
+      "subject": "Logical commands distinct from forwarding occurrences",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P03",
+      "subject": "Evidence-bound native associations and duplicate episode uncertainty",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P04",
+      "subject": "Durable history plus derived coordinator control view",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P05",
+      "subject": "Reconciliation of uncertain submission before potentially new effects",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P06",
+      "subject": "Independent outcome and knowledge facets",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P07",
+      "subject": "Durable worker ownership with receiver-appropriate fencing",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P08",
+      "subject": "Interactive action identity and delivery recovery",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P09",
+      "subject": "Reconnect, checkpoint restart and partial state continuity",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    },
+    {
+      "id": "P10",
+      "subject": "Immutable evidence and retained pending liabilities",
+      "status": "proposed_not_accepted",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_test_or_receipt": null,
+      "supported_claim": "Design recommendation only; reusable primitives listed separately do not establish it"
+    }
+  ],
+  "worked_paths": [
+    {
+      "path": "local_call",
+      "status": "hypothetical design example; not a native run"
+    },
+    {
+      "path": "asynchronous_remote_job",
+      "status": "hypothetical design example; not a native run"
+    },
+    {
+      "path": "interactive_session",
+      "status": "hypothetical design example; not a native run"
+    },
+    {
+      "path": "interrupted_and_resumed_work",
+      "status": "hypothetical design example; not a native run"
+    }
+  ],
+  "existing_implementation_anchors": [
+    {
+      "path": "crucis_causal/connections/api.py",
+      "sha256": "65af1e3b9101a595e4f7ee6b0dffa06ff3a04f661316daf18ab81963a90fd46e",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/connections/services.py",
+      "sha256": "0e46d041d07cdd4413bec67f7e902e767ab48be0018d20cde22944d7cb1e4345",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/connections/ports.py",
+      "sha256": "f96f7d5e0b761833c3249ecfccc3530b97646bee1f5c274c259412efeb81b98b",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/connections/history.py",
+      "sha256": "2ac6940fd92e8a83abc71978999db0c6866eb09bc4ddc51941988ca123f2df5c",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/connections/store.py",
+      "sha256": "1e7aeba0ab156235d208b2c6dd7b0219a652ab3e70bb4e0cf8e0d2613a0d034a",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/experiments/api.py",
+      "sha256": "c61a5ef6ae22035fa02d2bf2b5a82008eb02da8bbb5f541bf92ad3e5fdd72ff3",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/experiments/handoff.py",
+      "sha256": "4f760e9e04c4675c3f6ff60ce8d2ce9d233b9b617611dd049ff3593a43106ae8",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/experiments/lifecycle.py",
+      "sha256": "91b34b1259ace59422958a70605a48f2ac87110b97d6c7ef37d201ded3cfb0d3",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/experiments/writer.py",
+      "sha256": "5000bb1d21cdfab5b0b97688ef5f44b105fb4fdcc82a176208405c570c2f5563",
+      "scope": "Existing primitive at the verified base; not S3 implementation"
+    }
+  ],
+  "existing_scoped_test_anchors": [
+    {
+      "path": "tests/test_audit_connections_history.py",
+      "sha256": "88cfef43bfbf632d4aa9ddad18ba58c3bfa1c83b640a7abb2b92e7dbc8fde24b",
+      "methods": [
+        "test_checkpoint_restart_is_new_attempt_and_unknown_rng_blocks_exact",
+        "test_cancellation_acknowledgment_is_not_stop",
+        "test_duplicate_transport_needs_supported_receipt_evidence",
+        "test_replay_duplicate_content_has_ordered_occurrence_and_no_fallback",
+        "test_accounting_sums_across_restart_but_rejects_inclusive_overlap",
+        "test_native_fixture_reconnect_checkpoint_callback_and_cancel"
+      ],
+      "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
+    },
+    {
+      "path": "tests/test_audit_connections_ports.py",
+      "sha256": "4d420b6f193f4d1c6ec0e501c68e16113bb1500b25005399306231c86967ac58",
+      "methods": [
+        "test_execution_exact_grant_and_no_implicit_retry",
+        "test_reconnect_reuses_handle_not_attempt_identity",
+        "test_bounded_observation_is_not_native_completion",
+        "test_delivery_and_cancellation_need_separate_exact_authority"
+      ],
+      "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
+    },
+    {
+      "path": "tests/test_audit_experiments_handoff.py",
+      "sha256": "46db6c91bc875fbb19253fd7306c68ce675a9813f59329a3a55fd4dcb2b8484a",
+      "methods": [
+        "test_frozen_R_and_later_O_have_distinct_package_id_and_unchanged_copied_records",
+        "test_handoff_pins_exact_R_request_attempt_and_run_identity",
+        "test_projection_same_occurrence_is_idempotent_without_refreshing_timestamps"
+      ],
+      "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
+    }
+  ],
+  "prior_evidence": [
+    {
+      "scope": "historical S1 data-backed release",
+      "reference": "crucis_causal/docs/subsystem1-release-review-2026-11-01.md",
+      "tests_ran": 140,
+      "skipped": 1
+    },
+    {
+      "scope": "historical S2 data-backed release",
+      "reference": "crucis_causal/docs/subsystem2-methodology-index-implementation-2026-11-02.json",
+      "tests_ran": 334,
+      "skipped": 1
+    },
+    {
+      "scope": "prior qualified standalone offline package suite",
+      "workspace_receipt": "_repo_migration/2026-11-03/qualified-namespace-tests.json",
+      "tests_ran": 335,
+      "skipped": 26
+    },
+    {
+      "scope": "prior qualified recorded numerical rerun",
+      "workspace_receipt": "_repo_migration/2026-11-03/qualified-rerun/comparison.json",
+      "compared": 1298,
+      "passed": 1298,
+      "tolerance": 0.001
+    },
+    {
+      "scope": "prior qualified recorded certificate verification",
+      "workspace_receipt": "_repo_migration/2026-11-03/qualified-certificates.json",
+      "historical": 14,
+      "freshly_recomputed": 14
+    },
+    {
+      "scope": "prior qualified distribution/installed-wheel isolation",
+      "workspace_receipt": "_repo_migration/2026-11-03/qualified-distribution.json"
+    }
+  ],
+  "milestone_validation": {
+    "required_gate": "python -B tools/commit_gate.py (full staged-tree checks; hook repeats)",
+    "result_location": "External local validation receipt and milestone commit message",
+    "scope_limit": "Package conformance and public-source checks do not execute or establish proposed S3 lifecycle guarantees",
+    "new_runtime_or_test_code": false,
+    "data_backed_rerun_requested": false
+  },
+  "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
+  "next_design": "Discuss identity proposals and knowledge transitions, then admission/authority/resources and the remaining S3 responsibilities before exact serialization/signatures/build bundles."
+}
