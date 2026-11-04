@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 identity/account/admission/lifecycle/input directions affirmed with exact details open; dispatch/attachment recommendations pending review; no S3 implementation or schema freeze",
+  "status": "S3 identity/account/admission/lifecycle/input/dispatch directions affirmed with exact details open; observation/collection/interaction recommendations pending review; no S3 implementation or schema freeze",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -259,7 +259,9 @@
         "test_accounting_sums_across_restart_but_rejects_inclusive_overlap",
         "test_native_fixture_reconnect_checkpoint_callback_and_cancel",
         "test_event_partial_order_has_concurrency_and_rejects_cycles",
-        "test_recovery_self_cycle_and_wrong_request_relation_fail"
+        "test_recovery_self_cycle_and_wrong_request_relation_fail",
+        "test_parent_completion_not_inferred_from_membership",
+        "test_replay_cannot_reuse_source_occurrence"
       ],
       "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
     },
@@ -312,7 +314,11 @@
       "methods": [
         "test_local_record_never_creates_external_attestation_or_grant",
         "test_partial_exposure_survives_failure_and_unknown_admission",
-        "test_amendment_retains_old_new_and_prior_exposure_no_native_rerun"
+        "test_amendment_retains_old_new_and_prior_exposure_no_native_rerun",
+        "test_cycle_in_event_predecessors_is_not_observed_chronology",
+        "test_threshold_decision_records_selected_action_and_no_delivery",
+        "test_nonconforming_or_claimed_delivered_choice_preserved_with_failed_conformance",
+        "test_negative_branch_and_evaluator_feedback_are_not_conflated"
       ],
       "claim_limit": "Existing synthetic/metadata or legacy rule scope only; no new durable S3 resource/exposure admission guarantee"
     },
@@ -334,7 +340,10 @@
         "test_missing_external_is_not_broken_internal",
         "test_same_path_and_mtime_changed_bytes_get_new_snapshot",
         "test_interrupted_staging_is_not_a_published_package",
-        "test_partial_evidence_publishes_without_a_fake_graph"
+        "test_partial_evidence_publishes_without_a_fake_graph",
+        "test_source_snapshot_cannot_mutate_through_builder_get",
+        "test_publish_is_immutable_and_record_identity_global_to_store",
+        "test_idempotent_import_is_occurrence_scoped"
       ],
       "claim_limit": "Existing byte/snapshot/package-publication fixtures only; interrupted publication is not native input staging, isolation or remote cleanup"
     },
@@ -397,8 +406,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review dispatch/identity/reconciliation/attachment examples and remaining association gaps; then observation, collection and interaction, before recovery/publication, full S3 reconciliation, interfaces or bundles.",
-  "current_design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
+  "next_design": "Review observation/capture progress, event identity/order/gaps and action/response examples; then consolidate recovery, stopping and actual resource/exposure accounting before publication/reconciliation, full S3 review, exact interfaces or build bundles.",
+  "current_design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -517,6 +526,27 @@
         "DA10",
         "DA11",
         "DA12"
+      ],
+      "status": "direction_affirmed_details_open",
+      "commit": "f9e32c3940de734a5b0ecb468813986088afea40"
+    },
+    {
+      "subject": "observation, collection and interaction",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "based_on_commit": "f9e32c3940de734a5b0ecb468813986088afea40",
+      "proposal_ids": [
+        "OC01",
+        "OC02",
+        "OC03",
+        "OC04",
+        "OC05",
+        "OC06",
+        "OC07",
+        "OC08",
+        "OC09",
+        "OC10",
+        "OC11",
+        "OC12"
       ],
       "status": "recommendations_pending_review"
     }
@@ -663,7 +693,12 @@
     "connections.ports.attached_connection observes a caller-established handle; no built-in network lookup, fresh attachment authority or attach-or-create fallback is supplied",
     "connections.services.HandleRegistry is in-memory and reconnect reuses an existing handle; durable association reconstruction and controlled handle replacement remain unbuilt",
     "S1 NativeIdentity is a closed authority/namespace/native_id/source object; richer incarnation evidence needs explicit reviewed scope without changing historical wire records",
-    "The deterministic s1_native_fixture demonstrates local protocol distinctions, not provider idempotency or post-crash remote reconnection"
+    "The deterministic s1_native_fixture demonstrates local protocol distinctions, not provider idempotency or post-crash remote reconnection",
+    "S1 Cursor and ObservationBatch are runtime representations; no durable cursor/capture/acknowledgement protocol or generic continuity/watermark interpretation is implemented",
+    "S1 observe wrappers bound returned record count and serialized record bytes; deadline, driver duration, sink size, source cursor validity and native completeness are not established by those checks",
+    "S1 event ordering and immutable record checks do not themselves correlate duplicate native events across transports or adjudicate all temporal/gap semantics",
+    "S2 record_decision retains/checks a particular supplied threshold-action policy and exposure basis; no generic policy engine, automatic response delivery or distributed decision claim is supplied",
+    "A one-use in-memory delivery grant and local decision record do not establish receiver idempotency or exactly one native response across coordinator restarts"
   ],
   "account_direction_affirmation": {
     "scope": "User affirmed the minimum-account/knowledge/closure explanation and requested admission, authority, resources and exposure next",
@@ -1205,122 +1240,134 @@
     {
       "id": "DA01",
       "subject": "Durable exact command and admitted explicit-driver dispatch",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA02",
       "subject": "Boundary/native evidence independent of port-operation status",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA03",
       "subject": "Evidenced native identity with issuer/namespace/incarnation scope",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA04",
       "subject": "Separate native-job association from request conformance",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA05",
       "subject": "Lost-acknowledgement reconciliation with scoped evidence",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA06",
       "subject": "Actual native idempotency distinct from grants and transport occurrences",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA07",
       "subject": "Admitted attachment without implicit create/invoke fallback",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA08",
       "subject": "Durable association reconstruction with current runtime ownership/authority",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA09",
       "subject": "Same-session/action evidence versus explicit new continuation",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA10",
       "subject": "External-job observation origin and actual commitment timing",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA11",
       "subject": "Declared native children versus accidental duplicate episodes",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     },
     {
       "id": "DA12",
       "subject": "Truthful dispatch/attachment support and receipt requirements",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-dispatch-attachment-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 dispatch or native-provider attachment guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact native-driver/identity/attachment protocol or implementation approval"
     }
   ],
   "dispatch_attachment_examples": [
@@ -1373,5 +1420,191 @@
     "Representation/cardinalities for accidental duplicate episodes versus declared workflow children",
     "Stateful-session continuity and external-job historical provenance",
     "Exact receipt schema, core/driver interfaces and support-profile guarantees"
+  ],
+  "dispatch_attachment_direction_affirmation": {
+    "basis": "User affirmed preceding dispatch/attachment explanation and requested observation, collection and interaction",
+    "preceding_design_commit": "f9e32c3940de734a5b0ecb468813986088afea40",
+    "scope": "Exact invocation and boundary evidence, native identity/conformance distinction, lost acknowledgements and explicit attachment without hidden launch; detailed contracts remain open",
+    "not_implied": [
+      "Exact schema/API freeze",
+      "S3 implementation approval",
+      "Production policy changes",
+      "Native execution or paid campaign authorization"
+    ]
+  },
+  "observation_interaction_recommendations": [
+    {
+      "id": "OC01",
+      "subject": "Source/protocol/scope-bound cursors and independent stream positions",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC02",
+      "subject": "Separate fetched, durable capture, interpretation and source acknowledgement progress",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC03",
+      "subject": "Preserve captures and associate evidenced native occurrences",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC04",
+      "subject": "Native partial order, conflicts and knowledge cutoffs",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC05",
+      "subject": "Scoped gap/coverage evidence with later partial repair",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC06",
+      "subject": "Actual bounded observation/backpressure and scoped exhaustion",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC07",
+      "subject": "Captured extent and explicit partial/intermediate output roles",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC08",
+      "subject": "Versioned decoding with separate observer/native attribution",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC09",
+      "subject": "Exact action correlation and fixed permitted decision basis",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC10",
+      "subject": "Current exact delivery authority, validity and explicit abstention",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC11",
+      "subject": "Coordinated decision ownership and actual receiver guarantees",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    },
+    {
+      "id": "OC12",
+      "subject": "Bounded closure with pending obligations and faithful S2 handoff",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-observation-collection-interaction-design-2026-11-03.md",
+      "design_section": 11,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; current scoped primitives/fixtures do not establish durable S3 cursors, temporal collection or distributed response guarantees"
+    }
+  ],
+  "observation_interaction_examples": [
+    {
+      "example": "A",
+      "case": "Source returns 101-104 after durable 100; interruption before/after capture commit and source ack"
+    },
+    {
+      "example": "B",
+      "case": "Same evidenced native event from callback and replay versus distinct equal-content events"
+    },
+    {
+      "example": "C",
+      "case": "Native completion 18 arrives before running 17; contiguous versus sparse gaps and partial repair"
+    },
+    {
+      "example": "D",
+      "case": "Incomplete JSON capture versus a complete intermediate graph followed by later failure"
+    },
+    {
+      "example": "E",
+      "case": "Native action with fixed permitted decision information/cutoff, missing prerequisites and abstention"
+    },
+    {
+      "example": "F",
+      "case": "Repeated established Q1 versus same-text Q2; concurrent decisions and uncertain answer delivery"
+    }
+  ],
+  "observation_progress_distinctions": [
+    "Source fetched/returned cursor under exact contract",
+    "Durable permitted capture and its extent/gaps",
+    "Interpretation/decision readiness and its input cutoff",
+    "Source acknowledgement/retention and its established or unknown effects"
+  ],
+  "observation_interaction_claim_limits": [
+    "Arrival/capture time is not native order or proof of causal precedence",
+    "Offset jumps require source coverage semantics before claiming a gap",
+    "Identical content is not native event/action identity",
+    "Complete captured bytes do not prove complete native answer or full domain coverage",
+    "Source callback receipt acknowledgement is separate from answer delivery acknowledgement",
+    "Exhausted/empty batch does not prove native termination or final resource settlement",
+    "Current S1 batch wrappers check returned record count/serialized bytes, not general deadline/runtime/sink bounds",
+    "Existing S2 record_decision checks a supplied scoped threshold-action contract rather than implementing every decision provider"
+  ],
+  "observation_interaction_open_contracts": [
+    "Cursor source/protocol/partition/filter/generation scope, opacity, retention and replay",
+    "Durable capture-progress commit, permitted evidence extent and source ack boundaries",
+    "Native occurrence/capture associations and immutable conflict treatment",
+    "Temporal partial order, gap coverage/watermark evidence and current versus cutoff assessments",
+    "Real runtime/byte/sink/backpressure guarantees and instrumentation treatment",
+    "Incremental artifact capture, framing/coherence and versioned decoding progress",
+    "Generic action/decision-provider inputs, cutoffs, permitted fallbacks and source effects",
+    "Durable decision ownership, response validity and receiver delivery guarantees",
+    "Collection closure/follow-up and exact support/receipt/interface profiles"
   ]
 }
