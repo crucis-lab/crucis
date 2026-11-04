@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 minimum/support semantic direction affirmed; BS01-BS12 bounded serialization recommendations pending review. No S3 runtime, complete package conformance or implementation approval.",
+  "status": "S3 bounded serialization direction affirmed; OC01-OC16 operational/compatibility/package-review recommendations pending review. No S3 implementation or native integration approval.",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -270,6 +270,11 @@
       "path": "crucis_causal/experiments/schema.py",
       "sha256": "536a12c530dcc1861be2b54600cc3dfb23423d54bc45296c7cc9458f11e71941",
       "scope": "Existing closed S2 reference/primitive namespace ownership, not a loader for this S3 design catalog."
+    },
+    {
+      "path": "crucis_causal/experiments/core.py",
+      "sha256": "2ecb2f8363859d485f6a6c550fc5fe61135729f6785e75e028419c3f215fb826",
+      "scope": "Existing metadata API/reexports; no native S3 coordination."
     }
   ],
   "existing_scoped_test_anchors": [
@@ -314,7 +319,9 @@
         "test_handoff_pins_exact_R_request_attempt_and_run_identity",
         "test_projection_same_occurrence_is_idempotent_without_refreshing_timestamps",
         "test_changed_request_or_presentation_cannot_reuse_the_occurrence_or_handoff",
-        "test_external_evidence_links_are_qualified_and_historical_imports_do_not_gain_attempts"
+        "test_external_evidence_links_are_qualified_and_historical_imports_do_not_gain_attempts",
+        "test_supported_differently_named_operation_projects_only_native_fields_and_allowed_bytes",
+        "test_missing_native_support_or_exact_projection_registry_never_invokes"
       ],
       "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
     },
@@ -446,8 +453,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review BS01-BS12 common serialization candidate and partial fragments; close exact operation/role/parameter and journal/owner/driver/decision/storage contracts plus explicit S1/S2 mappings. Then complete-package/failure review, S3 final review and build DAG. Still no implementation authorization.",
-  "current_design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+  "next_design": "Review OC01-OC16 operational closure and complete preservation-package limits, adjudicate remaining objections, then final S3 design review and detailed implementation DAG/bundles with acceptance/fault/support gates. No implementation authorization.",
+  "current_design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -696,6 +703,33 @@
         "BS10",
         "BS11",
         "BS12"
+      ],
+      "status": "direction_affirmed_details_open",
+      "commit": "9983e790b42133e554370eba0ee967f6d763b5f9"
+    },
+    {
+      "subject": "operation/interface/recovery closure, explicit S1/S2 bridge and complete preservation-package review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "catalog": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
+      "packages": "crucis_causal/docs/subsystem3-complete-package-review-2026-11-03.json",
+      "based_on_commit": "9983e790b42133e554370eba0ee967f6d763b5f9",
+      "proposal_ids": [
+        "OC01",
+        "OC02",
+        "OC03",
+        "OC04",
+        "OC05",
+        "OC06",
+        "OC07",
+        "OC08",
+        "OC09",
+        "OC10",
+        "OC11",
+        "OC12",
+        "OC13",
+        "OC14",
+        "OC15",
+        "OC16"
       ],
       "status": "recommendations_pending_review"
     }
@@ -2498,13 +2532,10 @@
     }
   ],
   "remaining_before_s3_freeze": [
-    "Review BS01-BS12 common wire forms/version/cardinality proposals; do not call partial fragments complete native packages.",
-    "Close exact operation/family positive cardinalities, accepted role target types and native/owner parameter payload grammars with interface contracts.",
-    "Define journal/capture/owner/native receipt binding, validity, replay/ack and actual storage/publication guarantees.",
-    "Specify exact core/owner/driver/decision/storage signatures and recovery/failure semantics.",
-    "Close S1/S2 native identity/action/receipt/handle/snapshot/projection compatibility without changing accepted old schemas.",
-    "Transcribe and review complete packages with external dependency pins, audience closure and negative conformance cases; extend beyond four illustrative native paths.",
-    "Final S3 design review, implementation DAG/bundles and scoped acceptance gates. Implementation needs explicit authorization."
+    "Review OC01-OC16 exact operation/interface/recovery/bridge recommendations and revision2 refinements.",
+    "Confirm claim/support scopes, fault models and deliberate scientific/native-identity/authority gaps in preservation examples; never relabel them eligible native runs.",
+    "Final S3 review against accepted S1/S2 and capability map, including optional/composite/multi-party profiles with explicit native evidence requirements.",
+    "Define implementation DAG/bundles and acceptance gates only after design review; implementation requires explicit authorization."
   ],
   "consolidation_direction_affirmation": {
     "source": "User: yes this makes sense; specify precise minimum versus conditional S3 record and support matrix, still no implementation.",
@@ -2671,7 +2702,7 @@
       "subject": "Strict bounded UTF-8 transport and explicit local limits",
       "alternative": "Permissive parsers plus post-parse validation",
       "cost_and_failure_prevented": "Explicit ingestion failures; prevents overwritten duplicates/resource exhaustion being misread as native outcomes",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2682,7 +2713,7 @@
       "subject": "Separate closed S3 view package and recorder envelope",
       "alternative": "Extend the existing S1 package in place",
       "cost_and_failure_prevented": "New resolver ownership; preserves accepted schemas and native/recorder distinctions",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2693,7 +2724,7 @@
       "subject": "Occurrence UUIDs, immutable account/view roles, separate byte pins",
       "alternative": "Content-address every entity",
       "cost_and_failure_prevented": "More identities; avoids merging identical events/repetitions or cyclic self-digests",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2704,7 +2735,7 @@
       "subject": "Qualified exact references and explicit unresolved identities",
       "alternative": "Ambient ID lookup",
       "cost_and_failure_prevented": "Descriptor overhead; prevents wrong-package/type/version substitution",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2715,7 +2746,7 @@
       "subject": "Existing three knowledge variants plus separate conflict records",
       "alternative": "A single broad status enum with null",
       "cost_and_failure_prevented": "More links; prevents unknown/NA/disputed/false conflation",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2726,7 +2757,7 @@
       "subject": "Scoped indexes and immutable basis/frontier references",
       "alternative": "Latest-state snapshots with optional lists",
       "cost_and_failure_prevented": "More scope metadata; prevents missingness/hindsight becoming completeness",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2737,7 +2768,7 @@
       "subject": "Opaque scoped cursors and distinct progress stages",
       "alternative": "One numeric high-water mark",
       "cost_and_failure_prevented": "More source contracts; prevents gaps, replay mismatch and acknowledgement loss",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2748,7 +2779,7 @@
       "subject": "Closed family role indexes plus exact operation-specific constraints",
       "alternative": "Inline every possible native operation schema in core",
       "cost_and_failure_prevented": "More registered contracts; preserves generic representation without permissive execution",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2759,7 +2790,7 @@
       "subject": "Tagged decimals and explicit revision/aggregation scope",
       "alternative": "Floating totals with a newest-bill rule",
       "cost_and_failure_prevented": "Typed arithmetic/revision links; prevents precision loss and double counting",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2770,7 +2801,7 @@
       "subject": "Exact stored-byte pins and separately versioned record comparison",
       "alternative": "Hash one universal normalized JSON representation",
       "cost_and_failure_prevented": "Two named procedures; preserves original evidence and existing scientific receipts",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2781,7 +2812,7 @@
       "subject": "Audience-specific view shapes and exact-version compatibility procedures",
       "alternative": "A full private-root shape everywhere and tolerant readers",
       "cost_and_failure_prevented": "More projection/version work; prevents identity disclosure and silent semantic upgrades",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2792,7 +2823,7 @@
       "subject": "Labeled partial specimens and explicit remaining native-contract dependencies",
       "alternative": "Transcribe all native packages before reviewing common wire forms",
       "cost_and_failure_prevented": "Another review step; avoids invented S1 projections and false acceptance claims",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2810,5 +2841,263 @@
       "sha256": "adb9b3b1e0abe4702141d7249e9cb36084fa424194fa15c3521ccca257dd3ed0",
       "kind": "declarative_candidate_not_runtime_or_native_evidence"
     }
-  ]
+  ],
+  "bounded_serialization_direction_affirmation": {
+    "source": "User affirmed common serialization and requested operational/interface/recovery closure, S1/S2 mapping and complete-package review, still no implementation.",
+    "scope": "BS direction affirmed; exact new OC contracts remain recommendations pending review."
+  },
+  "current_operation_catalog": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
+  "current_complete_package_review": "crucis_causal/docs/subsystem3-complete-package-review-2026-11-03.json",
+  "current_serialization_revision": {
+    "version": "0.1.0-proposal.2",
+    "base": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
+    "refinements": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
+    "status": "candidate_not_adopted"
+  },
+  "operational_closure_recommendations": [
+    {
+      "id": "OC01",
+      "subject": "Closed typed operation rows and phase-specific admission counts",
+      "alternative": "One permissive execute request with driver validation",
+      "cost_and_failure_prevented": "Catalog/registration effort; common policy cannot disappear into adapters",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC02",
+      "subject": "Explicit parameter/context grammars and revision2",
+      "alternative": "Keep artifact-host-relative interpretation",
+      "cost_and_failure_prevented": "More context pins; prevents silent reference rebinding",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC03",
+      "subject": "Separate pure selection from information/model effects",
+      "alternative": "Let decision providers acquire inputs internally",
+      "cost_and_failure_prevented": "More explicit operations; prevents hidden spend/evaluator disclosure",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC04",
+      "subject": "CallResult plus per-command boundary/acceptance evidence",
+      "alternative": "Reuse S2 atomic rejection everywhere",
+      "cost_and_failure_prevented": "More result dimensions; preserves launch/charge uncertainty after failures",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC05",
+      "subject": "Typed coordinator/owner/driver/decision/journal/storage ports",
+      "alternative": "A single orchestrator object with backend-specific branches",
+      "cost_and_failure_prevented": "More interfaces; thin adapters and testable common ownership rules",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC06",
+      "subject": "Runtime-only grants and explicit control bootstrap",
+      "alternative": "Deserialize or infer grants from permission records",
+      "cost_and_failure_prevented": "Owner integration; prevents self-grants and recursive admission fiction",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC07",
+      "subject": "Per-owner correlation/revision plus conservative partial admission",
+      "alternative": "A distributed transaction across all owners",
+      "cost_and_failure_prevented": "Longer holds/reconciliation; works with heterogeneous owners without claiming global rollback",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC08",
+      "subject": "Journal intent/capture barriers plus actual receiver guarantees",
+      "alternative": "Treat local durable intent as exactly-once launch",
+      "cost_and_failure_prevented": "Backend qualification; prevents duplicate effects/lost evidence claims",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC09",
+      "subject": "Explicit recovery kinds and state/overlap scope",
+      "alternative": "Uniform retry/restart command",
+      "cost_and_failure_prevented": "More state distinctions; prevents attempt/trial inflation and unsafe overlap",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC10",
+      "subject": "Independent stop, settlement, closure and projection guarantees",
+      "alternative": "One final-success/closed flag",
+      "cost_and_failure_prevented": "Retained obligations; preserves bounded observation and later evidence",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC11",
+      "subject": "Explicit exact S1/S2 projection/working context",
+      "alternative": "Strip qualification and reuse matching IDs",
+      "cost_and_failure_prevented": "Bridge receipts; prevents cross-package substitution",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC12",
+      "subject": "Literal-unique or explicit lossless incarnation-key bridge",
+      "alternative": "Assume provider IDs never repeat",
+      "cost_and_failure_prevented": "Driver capability checks; preserves actual incarnation without changing S1 schema",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC13",
+      "subject": "Mark S1 single-action/value-CAS/process-local limits",
+      "alternative": "Present all S3 guarantees as already supplied by S1 ports",
+      "cost_and_failure_prevented": "Additional S3 mechanisms; avoids unsupported native coverage",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC14",
+      "subject": "Complete preservation packages with honest scientific gaps",
+      "alternative": "Invent missing ready S2 bindings for positive examples",
+      "cost_and_failure_prevented": "Withheld eligibility; avoids manufacturing history/authority",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC15",
+      "subject": "Exact dependency/cutoff/audience review and separate native public payload",
+      "alternative": "One uniform public package format",
+      "cost_and_failure_prevented": "Extra publication representations; preserves original disclosure policy",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "OC16",
+      "subject": "Documentary closure/pin checks and existing package gates separately",
+      "alternative": "Count authored receipts as executed S3 acceptance",
+      "cost_and_failure_prevented": "Scoped evidence account; prevents synthetic/native conflation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+      "design_section": 7,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    }
+  ],
+  "operational_closure_anchors": [
+    {
+      "path": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
+      "sha256": "2d99dec932c44d1be13d77f3d8d18e45afbbca86f6eedd033965daf9c65c7f57",
+      "scope": "Authored design data, no S3 runtime/native acceptance"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-complete-package-review-2026-11-03.json",
+      "sha256": "71b6f5624fa9e8e2b813026a44398d5fc09690227443697cc496fa94204f6fc6",
+      "scope": "Authored design data, no S3 runtime/native acceptance"
+    }
+  ],
+  "complete_package_review_scope": {
+    "package_count": 28,
+    "known_reference_occurrences": 4553,
+    "embedded_payload_reference_occurrences": 36,
+    "wrong_artifact_host_context_checks": 24,
+    "pinned_external_edges": 40,
+    "S1_wire_packages_checked": 16,
+    "S2_wire_packages_checked": 4,
+    "S3_complete_authored_packages": 8,
+    "native_public_artifacts": 1,
+    "authored_temporal_reviews": 3,
+    "negative_cases_documented_not_executed_by_S3": 16,
+    "S3_runtime_or_native_acceptance": false,
+    "known_external_closure": "Complete supplied archive; no source stubs",
+    "scientific_eligibility": "Withheld: actual original S2 run/plan/task-binding snapshots not supplied",
+    "audience": "Private retrospective accounts; L public deliverable only original two native entities",
+    "temporal": "Authored nonfuture-basis review only; same-step order/actual receiver admission not proved",
+    "identity_roundtrips": [
+      {
+        "source": "R.N",
+        "check": "lossless authored tuple encoding only; no driver/provider claim"
+      },
+      {
+        "source": "I.N",
+        "check": "lossless authored tuple encoding only; no driver/provider claim"
+      },
+      {
+        "source": "K.N1",
+        "check": "lossless authored tuple encoding only; no driver/provider claim"
+      },
+      {
+        "source": "K.N2",
+        "check": "lossless authored tuple encoding only; no driver/provider claim"
+      }
+    ]
+  },
+  "existing_bridge_test_execution": {
+    "kind": "existing_S2_to_S1_metadata_bridge_checks",
+    "source": "tests/test_audit_experiments_handoff.py",
+    "source_sha256": "46db6c91bc875fbb19253fd7306c68ce675a9813f59329a3a55fd4dcb2b8484a",
+    "methods": [
+      "test_supported_differently_named_operation_projects_only_native_fields_and_allowed_bytes",
+      "test_missing_native_support_or_exact_projection_registry_never_invokes",
+      "test_projection_same_occurrence_is_idempotent_without_refreshing_timestamps",
+      "test_frozen_R_and_later_O_have_distinct_package_id_and_unchanged_copied_records",
+      "test_handoff_pins_exact_R_request_attempt_and_run_identity",
+      "test_changed_request_or_presentation_cannot_reuse_the_occurrence_or_handoff"
+    ],
+    "ran": 6,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "scope": "Existing synthetic metadata compiler, occurrence identity, R/O snapshot and handoff behavior only. No native execution or S3 implementation/acceptance.",
+    "receipt_location": "External milestone validation directory; logs/receipts not copied as native evidence"
+  }
 }
