@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 account and admission directions affirmed in discussion, exact details open; interrupted/concurrent lifecycle recommendations pending review; no S3 implementation or schema freeze",
+  "status": "S3 identity/account/admission/lifecycle directions affirmed with exact details open; input realization/staging recommendations pending review; no S3 implementation or schema freeze",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -215,6 +215,31 @@
       "path": "crucis_causal/core/runs.py",
       "sha256": "f0432d0846aca7e5882af2785d6c1f2d7e7013fcf6fc3112e897664f1c41cc56",
       "scope": "Existing source at design base 8c76c2e; legacy scope/guards or reported fields, not the new S3 admission service"
+    },
+    {
+      "path": "crucis_causal/connections/evidence.py",
+      "sha256": "927b38bc259520f52189139070dce1759a99ee56bf9e413d2fb4cc09a60d0821",
+      "scope": "Existing byte capture/selectors/reader access and integrity checks, not native isolation or stable-use enforcement; source at design base 55153dd8"
+    },
+    {
+      "path": "crucis_causal/experiments/bindings.py",
+      "sha256": "c3f062812b6aa55c7e534cb91d312cf5f58ea703913ee881ee1cd0363d9f7d68",
+      "scope": "Records supplied realization/check evidence and run bindings; does not execute transforms or stage inputs; source at design base 55153dd8"
+    },
+    {
+      "path": "crucis_causal/experiments/information.py",
+      "sha256": "c5912c106378c7667a184c262d06fca276ed140a82f0be1f4c302093af8c5e96",
+      "scope": "Checks supplied transform dependency/policy/presentation records; does not enforce all native information channels; source at design base 55153dd8"
+    },
+    {
+      "path": "crucis_causal/experiments/resolver.py",
+      "sha256": "9436befdf7b6fde0edd6f6de142120f52a09e1e048439af80f7800b9128197bb",
+      "scope": "Resolves explicitly supplied immutable package bytes under local metadata access; not external source retrieval or native sandbox; source at design base 55153dd8"
+    },
+    {
+      "path": "crucis_causal/experiments/families.py",
+      "sha256": "63591d100c605f973d68f125003036e5afa0e53c4d578ad14174cb781b0a85ab",
+      "scope": "Typed family bindings and scoped invariant checks; not actual transform execution or general scientific validity; source at design base 55153dd8"
     }
   ],
   "existing_scoped_test_anchors": [
@@ -293,6 +318,32 @@
         "test_one_read_per_version_and_rotation"
       ],
       "claim_limit": "Existing synthetic/metadata or legacy rule scope only; no new durable S3 resource/exposure admission guarantee"
+    },
+    {
+      "path": "tests/test_audit_connections_evidence.py",
+      "sha256": "6fbac0936e4519c8d468f716a32da070b6e4bc4344ad6d46b0e3d7a9fbafeb7f",
+      "methods": [
+        "test_arbitrary_bytes_and_unknown_original_execution",
+        "test_hash_mismatch_is_scoped_and_never_repaired",
+        "test_missing_external_is_not_broken_internal",
+        "test_same_path_and_mtime_changed_bytes_get_new_snapshot",
+        "test_interrupted_staging_is_not_a_published_package",
+        "test_partial_evidence_publishes_without_a_fake_graph"
+      ],
+      "claim_limit": "Existing byte/snapshot/package-publication fixtures only; interrupted publication is not native input staging, isolation or remote cleanup"
+    },
+    {
+      "path": "tests/test_audit_experiments_families.py",
+      "sha256": "ae225fa1c9c5be0ba022e2f9497a22421e06f078ff770d4ac85ce9a6971ec454",
+      "methods": [
+        "test_complete_supplied_identity_realization_records_checks_without_transform_execution",
+        "test_missing_materialization_and_subject_support_remain_partial_without_execution",
+        "test_partial_transform_receipt_preserves_gaps_and_does_not_generate_sources",
+        "test_evaluator_channel_cannot_become_native_permission_by_presentation_label",
+        "test_proxy_domain_not_reused_as_underlying_identity",
+        "test_random_repeat_key_does_not_establish_shared_native_randomness"
+      ],
+      "claim_limit": "Existing supplied-metadata/typed-family fixtures, not actual transformation, raw-data custody, native channel observation or S3 enforcement"
     }
   ],
   "prior_evidence": [
@@ -340,8 +391,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review interrupted/concurrent admission examples and owner transition evidence; then input realization and information staging, before exact interfaces, profiles, full S3 review or build bundles.",
-  "current_design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
+  "next_design": "Review input realization/staging examples and prospective binding order; then dispatch/attachment with exact realized presentations, current authority and truthful stable-use guarantees before later S3 design reconciliation, interfaces or bundles.",
+  "current_design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -418,6 +469,27 @@
         "AL10",
         "AL11",
         "AL12"
+      ],
+      "status": "direction_affirmed_details_open",
+      "commit": "55153dd835234b0ca42b837303a5bf48a1133254"
+    },
+    {
+      "subject": "input realization and information staging",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "based_on_commit": "55153dd835234b0ca42b837303a5bf48a1133254",
+      "proposal_ids": [
+        "IS01",
+        "IS02",
+        "IS03",
+        "IS04",
+        "IS05",
+        "IS06",
+        "IS07",
+        "IS08",
+        "IS09",
+        "IS10",
+        "IS11",
+        "IS12"
       ],
       "status": "recommendations_pending_review"
     }
@@ -555,7 +627,11 @@
     "connections.ports.observe bounds batches but does not provide the proposed per-action resource admission",
     "core.sealed helpers and tests preserve historical rules; no real seed/read-ledger access or transactional concurrent disclosure service is asserted",
     "core.adapter spend guards and RunRecord reported costs do not implement global budget reservation or hard monetary enforcement",
-    "connections.history and in-memory handles retain scoped identity, receipt and accounting semantics; no durable owner-operation ledger, receiver fencing, reservation lifecycle or settlement protocol is implemented"
+    "connections.history and in-memory handles retain scoped identity, receipt and accounting semantics; no durable owner-operation ledger, receiver fencing, reservation lifecycle or settlement protocol is implemented",
+    "experiments.bindings.record_materialization and bind_run record/check supplied evidence; no source generation, fitted preprocessing or actual staging is executed",
+    "connections.evidence capture/selectors establish captured identity within reader scope, not actual native input consumption or general filesystem isolation",
+    "experiments.information checks supplied channels/presentations rather than proving complete actual information confinement",
+    "The existing interrupted package-publication fixture does not validate remote native-input activation, partial upload or cleanup"
   ],
   "account_direction_affirmation": {
     "scope": "User affirmed the minimum-account/knowledge/closure explanation and requested admission, authority, resources and exposure next",
@@ -720,122 +796,134 @@
     {
       "id": "AL01",
       "subject": "Separate owner state, coordinator knowledge, native effects and settlement",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL02",
       "subject": "Stable scoped owner operations, transmissions and explicit amendments",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL03",
       "subject": "Durable intent and partial outcomes without atomic remote-dispatch claims",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL04",
       "subject": "Conditional multi-owner preparation and declared bounded acquisition",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL05",
       "subject": "Receiver-enforced abandonment versus entitlement consumption",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL06",
       "subject": "Lost native acknowledgement reconciliation under actual native guarantees",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL07",
       "subject": "Authoritative takeover and scoped effect-receiver fencing",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL08",
       "subject": "Liability reconstruction and attempt/continuation identity through takeover",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL09",
       "subject": "Distinct expiry, renewal, revocation and native-work semantics",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL10",
       "subject": "Scoped settlement, inclusive membership and remaining liability",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL11",
       "subject": "Policy debit, physical exposure and accepted responsibility transfer",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     },
     {
       "id": "AL12",
       "subject": "Precise reconciliation questions and scoped positive/negative/conflict evidence",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-admission-lifecycle-design-2026-11-03.md",
       "design_section": 10,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee"
+      "scope": "Semantic recommendation and hypothetical reasoning; existing scoped tests do not establish the proposed durable/distributed guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact owner/backend protocol or implementation approval"
     }
   ],
   "admission_lifecycle_views": [
@@ -880,5 +968,182 @@
     "Clock/order semantics, grant renewal and revocation boundaries",
     "Metering, remaining-liability assessment, finality and accepted transfer",
     "Serialization, exact core/driver/owner signatures and support profiles"
-  ]
+  ],
+  "admission_lifecycle_direction_affirmation": {
+    "basis": "User affirmed the preceding admission lifecycle explanation and requested input realization/staging",
+    "preceding_design_commit": "55153dd835234b0ca42b837303a5bf48a1133254",
+    "scope": "Partial preparation, lost acknowledgements, owner/effect knowledge distinctions, takeover and scoped settlement; exact protocols remain open",
+    "not_implied": [
+      "Exact schema/API freeze",
+      "Production policy changes",
+      "S3 implementation approval",
+      "Native execution or paid campaign authorization"
+    ]
+  },
+  "input_staging_recommendations": [
+    {
+      "id": "IS01",
+      "subject": "Prospective preparation before final realized run/request binding",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS02",
+      "subject": "Separate source, realization, checks, staging, exposure and cleanup evidence",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS03",
+      "subject": "Explicit admitted provider/transform execution and actual provenance",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS04",
+      "subject": "Scoped input invariants, fitted state and reference applicability",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS05",
+      "subject": "Typed faithful native representations across batch/dynamic/distributed inputs",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS06",
+      "subject": "Recipient-specific views and actual access enforcement evidence",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS07",
+      "subject": "Stable-use binding at the actual consumption boundary",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS08",
+      "subject": "Partial staging with coherent activation or declared incremental consumption",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS09",
+      "subject": "Disclosure admission at the actual crossed boundary and uncertain extent",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS10",
+      "subject": "Scoped concurrent cleanup, ownership and persistent obligations",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS11",
+      "subject": "Separate native staging and audience/retention-controlled evidence",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    },
+    {
+      "id": "IS12",
+      "subject": "Source-linked S2/S1 handoff preserving intended versus actual deviations",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-input-realization-staging-design-2026-11-03.md",
+      "design_section": 10,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic recommendation and hypothetical examples; existing primitive tests do not establish actual S3 transformation, isolation, staging or cleanup guarantees"
+    }
+  ],
+  "input_staging_precedence": [
+    "Preparation admission links exact prospective S2 intent before final materialization/run/request bindings exist",
+    "Realize admitted sources/transforms and return actual evidence to S2",
+    "Use actual S2 materialization/resolution/binding results and freeze appropriate S1 request/handoff",
+    "Bind authorized late transport details without substituting fixed scientific input",
+    "Admit actual staging/disclosure/activation boundaries and collect scoped evidence",
+    "Reconcile partial effects and cleanup/retention under owner policy"
+  ],
+  "input_staging_examples": [
+    {
+      "example": "A",
+      "case": "Relabel and permute columns with aligned masks/units/intervention targets and evaluator-only map"
+    },
+    {
+      "example": "B",
+      "case": "Fit only on declared calibration subset, preserving actual fitted state and reference limits"
+    },
+    {
+      "example": "C",
+      "case": "Selected data member in an archive that also contains evaluator material"
+    },
+    {
+      "example": "D",
+      "case": "Mutable source path or memory alias changes after preflight check"
+    },
+    {
+      "example": "E",
+      "case": "Remote data upload succeeds while mask upload acknowledgement is lost before launch"
+    },
+    {
+      "example": "F",
+      "case": "Local object deletion while provider/native copies may remain"
+    }
+  ],
+  "input_staging_open_contracts": [
+    "Conditional prospective/final binding cardinalities and publication order",
+    "Provider invocation and trusted procedure registration without implicit execution authority",
+    "Actual transformation/check and fitted-state/randomization evidence contracts",
+    "Native encoding fidelity and stable-use profiles",
+    "Recipient views, actual custody/isolation and dynamic/federated route support",
+    "Partial staging, activation, uncertain disclosure and recovery protocols",
+    "Concurrent cleanup, evidence audiences/retention and exact handoff receipts"
+  ],
+  "input_staging_precedence_scope": "Dependency constraints rather than a universal total order. Staging may precede final handoff under adequately bound prospective admission; a later binding cannot retroactively authorize disclosure."
 }
