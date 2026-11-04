@@ -39,7 +39,39 @@ Commit and staged-tree gate receipts are external under
 only after its actual gate and enabled-hook commit receipts exist; log text is
 not a substitute for those receipts. B01-B13 have not started at this milestone.
 
+## B01 — Closed wire and supplied registries
+
+B00 predecessor: b9b316bda8560781f3c734584c9ef2170052cc3e. Both staged-tree
+gate runs passed335 tests,0 failures/errors,26 data/dependency skips. D00's
+independent baseline check passed. One earlier staged-tree attempt was deliberately
+invalidated during pre-commit fixture review; its logs remain external.
+
+Implemented the38-kind closed revision3 schema, explicit31 operation role/parameter
+contracts and18 family/77 role definitions,61 runtime value declarations and48 exact
+port signatures. Core records stay in S3; S1/S2 snapshots use their own readers.
+The packaged catalog retains the common named-family contracts' exact inherited
+versions and final role refinements. An unrecognized family revision can be preserved
+but cannot establish its meaning. Historical candidate docs/pins are unchanged.
+
+Strict bounded decoding rejects duplicate properties, structural null/bare numbers,
+invalid scalar encodings, unknown core formats/kinds and out-of-budget trees before
+resolution. The resolver admits only explicitly supplied immutable bytes, checks
+types/content/context pins and global traversal budgets, and performs no automatic
+locator lookup/import. Payload references bind their declared context rather than
+the S1 artifact host. Immutable read/callable bindings cannot be minted by JSON.
+
+Exact driver/decision registries validate supplied call signatures and implementation
+snapshot pins without running native probes. Copied declarations do not alter stored
+bindings; unknown critical extensions hold affected claims without deleting opaque
+evidence. These mechanisms establish structural and declared registry behavior only;
+owner authority, coordinator issue and native execution remain later bundles.
+
+Targeted tests and case receipts for W01,W02,X10,M01, including inherited B01
+negative boundaries, are external under `s3-build/S3-B01/`. Source/fixture hashes,
+full staged-tree gate and enabled-hook commit receipts control advancement. No
+OPxx execution case is credited merely for its preliminary wire-shape checks.
+
 ## Where we're going
 
-After B00's local milestone passes, implement B01's closed schema, bounded
-resolution, exact registries and runtime signatures against this fixed baseline.
+After B01's validated milestone, implement B02's local journal/artifact store and
+its process-crash, competing-writer and one-time-forwarding-claim recovery gates.
