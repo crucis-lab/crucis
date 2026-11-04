@@ -149,7 +149,7 @@ def dumps(package, limits):
     if len(raw) > int(limits.max_manifest_bytes): raise ExecutionError('s3.manifest_limit')
     return raw
 
-def parse_snapshot(data, limits, *, access=None):
+def _parse_snapshot_uncached(data, limits, *, access=None):
     # S1/S2 retain their own exact codecs. The initial format peek never repairs.
     from crucis_causal.connections.codec import loads as peek
     if not isinstance(data, bytes) or len(data) > int(limits.max_manifest_bytes): raise ExecutionError('s3.manifest_limit')
@@ -172,6 +172,42 @@ def parse_snapshot(data, limits, *, access=None):
     cap = supplied_read([p['package_id']]) if access is None else access
     if not isinstance(cap, ReadCapability) or not cap.permits(p['package_id']): raise ExecutionError('s3.read_denied')
     return PinnedView(p['package_id'], copy.deepcopy(p['format']), digest(data), data, cap)
+
+
+# Cache only successful immutable-byte validation, bounded by retained key bytes.
+# No decoded mutable record, read capability, native handle or authorization is
+# cached. Exact reader limits are part of the key; access is checked every time.
+from collections import OrderedDict
+import threading
+_VALIDATED = OrderedDict()
+_VALIDATED_LOCK = threading.RLock()
+_VALIDATED_BYTES = 0
+_VALIDATED_MAX_BYTES = 67108864
+
+
+def parse_snapshot(data, limits, *, access=None):
+    global _VALIDATED_BYTES
+    if not isinstance(data, bytes) or len(data) > int(limits.max_manifest_bytes):
+        raise ExecutionError('s3.manifest_limit')
+    cache_key = (data, limits)
+    with _VALIDATED_LOCK:
+        metadata = _VALIDATED.get(cache_key)
+        if metadata is not None: _VALIDATED.move_to_end(cache_key)
+    if metadata is None:
+        view = _parse_snapshot_uncached(data, limits, access=access)
+        metadata = (view.package_id, copy.deepcopy(view.format), copy.deepcopy(view.digest))
+        if len(data) <= _VALIDATED_MAX_BYTES:
+            with _VALIDATED_LOCK:
+                if cache_key not in _VALIDATED:
+                    while _VALIDATED and _VALIDATED_BYTES + len(data) > _VALIDATED_MAX_BYTES:
+                        removed, _ = _VALIDATED.popitem(last=False)
+                        _VALIDATED_BYTES -= len(removed[0])
+                    _VALIDATED[cache_key] = metadata
+                    _VALIDATED_BYTES += len(data)
+    pid, format_contract, content_digest = metadata
+    cap = supplied_read([pid]) if access is None else access
+    if not isinstance(cap, ReadCapability) or not cap.permits(pid): raise ExecutionError('s3.read_denied')
+    return PinnedView(pid, copy.deepcopy(format_contract), copy.deepcopy(content_digest), data, cap)
 
 class Resolver:
     """Finite caller-supplied byte closure. No locator handlers or ambient imports."""

@@ -166,8 +166,9 @@ class Journal:
     def head(self, account, context):
         try:
             with self._db() as db:
-                db.execute('BEGIN');self._check(db,account,context,'read');value=self._head(db,account);db.execute('COMMIT')
-            return api.CallResult('completed',value)
+                db.execute('BEGIN');self._check(db,account,context,'read');value=self._head(db,account)
+                dependencies=self._dependencies(db,account);db.execute('COMMIT')
+            return api.CallResult('completed',value,records=api.RecordDelta(dependencies=dependencies))
         except ExecutionError as exc:return api.rejected(exc.code,scope(account))
         except sqlite3.Error:return api.rejected('s3.journal_read_unconfirmed',scope(account))
 
@@ -175,7 +176,9 @@ class Journal:
         try:
             with self._db() as db:
                 self._check(db,account,context,'read');value=self._snapshot(db,account,revision)
-            return api.CallResult('completed',value)
+                selected={d['package_id'] for d in value.package['external_packages']}
+                dependencies=tuple(v for v in self._dependencies(db,account) if v.package_id in selected)
+            return api.CallResult('completed',value,records=api.RecordDelta(dependencies=dependencies))
         except ExecutionError as exc:return api.rejected(exc.code,scope(account))
         except sqlite3.Error:return api.rejected('s3.journal_read_unconfirmed',scope(account))
 
@@ -287,8 +290,10 @@ class Journal:
         try:
             supplied=tuple(context.read.views)+(expected_head.snapshot,)
             resolver=codec.Resolver(supplied,limits=self.limits)
-            c,c_pid=resolver.record(command,expected_head.snapshot.package_id)
-            d,_=resolver.record(transmission,expected_head.snapshot.package_id)
+            # Explicit staged source views are validated before their first
+            # atomic append; an older head cannot already declare a new D view.
+            c,c_pid=resolver.record(command,command['package_id'] if command.get('binding')=='external' else expected_head.snapshot.package_id)
+            d,d_pid=resolver.record(transmission,transmission['package_id'] if transmission.get('binding')=='external' else expected_head.snapshot.package_id)
             if c['record_type']!='s3.effect_command' or d['record_type']!='s3.transmission' or d['payload']['command']['target']!=c['id']:
                 raise ExecutionError('s3.intent_command_transmission_mismatch')
             if c['payload']['account']['target']!=account['target']:raise ExecutionError('s3.intent_account_mismatch')
@@ -296,7 +301,19 @@ class Journal:
                 raise ExecutionError('s3.intent_binding_digest_mismatch')
             with self._db() as db:epoch=self._check(db,account,context,'write')
             binding={'command':c,'transmission':d,'binding_digest':grant_bindings.binding_digest,'owner_receipts':list(grant_bindings.receipts),'epoch':epoch}
-            delta=api.CommitDelta((c,d),(),tuple(resolver._views.values()))
+            # Preserve the original records and their local reference closure.
+            # Newly staged D can have its own recorder, absent from the old head.
+            # Relocating references would mutate immutable record identities.
+            from .model import walk
+            records={}
+            def local_closure(record,pid):
+                if record['id'] in records:return
+                records[record['id']]=record
+                for _,ref,_ in walk(record):
+                    if isinstance(ref,dict) and ref.get('binding')=='internal' and 'target_type' in ref:
+                        linked,_=resolver.record(ref,pid);local_closure(linked,pid)
+            local_closure(c,c_pid);local_closure(d,d_pid)
+            delta=api.CommitDelta(tuple(records.values()),(),tuple(resolver._views.values()))
             value,fresh,extra=self._append(account,expected_head.revision,d['id'],delta,context,binding,
                 exposed=grant_bindings.binding_digest,kind='issue',extra={'epoch':epoch})
             opaque_epoch=api.OpaqueEpoch(api._OPAQUE_KEY,self)

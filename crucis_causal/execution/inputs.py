@@ -162,7 +162,7 @@ class InputDriver(DeclaredDriver):
     def install(self,registry):
         """Explicit supplied-plugin installation, with its exact pure grammar."""
         registry.payloads.register(contract('s3.invocation.guarded_input'),guarded_input_invocation)
-        registry.drivers.register(self.describe(registry))
+        registry.drivers.install(self,registry)
 
     def _realization(self,binding,resolver):
         params=_parameters(binding);specs=[e for e in binding.inputs.entries if e.role=='s3.role.specification']

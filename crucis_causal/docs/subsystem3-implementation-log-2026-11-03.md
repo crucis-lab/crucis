@@ -288,6 +288,95 @@ s3-build/S3-B05 control advancement, not this log's prose.
 
 ## Where we're going
 
-After B05's validated milestone, implement B06's coordinator lifecycle, temporal
-admission and caller-ID recovery using the existing shared owner/journal/driver
-boundary. B07–B13 remain unimplemented and require their own dependency gates.
+Complete B06's final targeted/staged-tree/enabled-hook checks and receipt. Its
+implementation account follows below. B07–B13 remain unimplemented and require
+their own dependency gates; no remote/native scientific campaign is implied.
+
+## S3-B06: coordinator lifecycle and current admission
+
+B05 committed as 222834deec4c8b58a5360389ab0f2ff4edc1d5d3 after both full
+checks ran395 tests, zero failures/errors,26 existing availability skips. Its15
+new tests had no skips. B06 adds coordinator.py/clock.py, coordinator tests and
+an owned deterministic process-death worker. Shared plumbing changes are explicit:
+the B01 registry associates actual supplied pure preparers; InputDriver installs
+that association; B02 journal reads return authorized retained dependency bytes,
+and prepare_issue preserves the original staged transmission's local reference
+closure. No record fields, operation/port signature, historical fixture, scientific
+quantity or accepted contract pin is changed.
+
+Planning and restoration use only supplied pinned snapshots and installed pure
+rules/preparers. A restored plan is neither a restored grant nor a new command.
+Uninterpreted/missing prerequisite families, coverage, rules and requested claims
+hold. Rule and driver source artifacts are command dependencies. Scientific launch
+uses B04's exact S2/R/A/handoff checks; positive compiler metadata cannot be waived
+by changing the purpose enum. An explicit fixed nonscientific probe is distinct
+from scientific execution. Preparation does not invent a discovery request/run.
+Concrete native scientific and remote adapters remain later bundles.
+
+Runtime bootstrap receives real journal/owner/driver controls and explicit required
+owner roles, allocation quantities/units, deadline and contexts. It does not create
+owner allowances. Expected owner revisions are explicit conditional-request inputs,
+not assumed current facts; stale expectations hold at the owner. No hidden owner
+inspection RPC runs to construct the first durable R. Qualified LocalOwner replay preserves original G/H/R identities,
+amounts, revisions and control allocations. The whole admission plan/request bytes
+precede RPC; each available owner response is retained before the next boundary.
+One partial reservation cannot produce LiveAdmission or implicit release. The
+fixture's federated-owner variant checks missing participants without supplying
+central raw rows or inferring shared participant IDs.
+
+Issue revalidates exact prepared bytes/declaration, original prerequisite frontier,
+actual admission identity, current owner grants/head and time bounds. Fresh D intent
+commits before driver entry. Only the actual guarded driver consumes the single live
+issuer permit. Same-D repetition reconciles the original intent/return and cannot
+mint another permit. A different D for an unresolved prior C holds. Lost replies,
+metadata faults and result state do not redefine native acceptance. Useful driver
+evidence/handles survive a later local fault as a partial return; persisted replay
+preserves frozen evidence without pretending to restore handles. Scoped interruption
+diagnostics retain outstanding reconciliation obligations.
+
+Absolute UTC deadlines require established finite uncertainty bounds and strict
+comparison of current upper/deadline lower bounds. Host timer resolution supplies
+no clock-accuracy proof; the default wall clock therefore has unknown uncertainty.
+The explicit no-absolute-deadline policy is distinct from missing validity and does
+not remove native/resource-owner limits. Expiry or loss of a bound after D commit
+prevents forwarding while preserving D and its scoped reason.
+
+Integrated replay exposed repeated validation cost. The byte reader now caches only
+successful exact immutable-byte validation, keyed also by every reader limit, with
+at most64MiB of retained byte keys. No decoded mutable record/capability is cached.
+Each read rechecks access; changed bytes, tighter limits, false digest metadata and
+denied scopes still fail. This changes validation reuse, not wire semantics or any
+scientific tolerance. Tests include those controls.
+
+Independent oracles are actual persisted owner hold/request/control rows, custody
+consumption/content and a supplied local probe callback. The probe emits one metered
+usage unit and zero scientific-input transmission under its explicit empty-input
+profile; usage is not owner settlement. These supplemental mechanisms do not alter
+B00's frozen causal-protocol oracles. Worker tests terminate at acknowledged owner/
+pre-entry barriers, then reopen actual stores in a fresh coordinator with the same
+control-allocation IDs. Exact history prefixes, receiver oracles and recovered views
+are saved externally when receipt output is requested. No timing sleep, paid provider,
+OS isolation, distributed atomicity or universal owner replay is claimed.
+
+Failed development runs remain under s3-build/S3-B06. They diagnosed custody-right
+names, missing retained dependency bytes and newly staged D reference context to
+their fields/lines. Windows fixture SQLite readers now close their connections
+explicitly before owned scratch cleanup. Final tests.json/gate.json/commit.json
+control bundle completion; this narrative does not substitute for those receipts.
+
+An additional pure negative review exposed a missing live integration: B01's
+critical-extension guard existed but the coordinator had not invoked it. A future
+extension explicitly critical to operational admission was incorrectly planned,
+with zero owner/native effects. The pending automatic commit was stopped, its
+exported-tree check and earlier72-test receipt preserved, and the coordinator now
+checks admission/operation/requested-claim critical semantics over the exact pinned
+closure. A new live-plan negative test holds that condition while retaining opaque
+bytes for an unrequested claim without blocking unrelated supported work. This is
+an implementation correction to the accepted rule, not a contract/fixture rebaseline.
+
+## Where we're going after B06
+
+After its actual validated local commit, build B07's dispatch/attachment drivers and
+independent persistent native fixture service. Then continue B08–B13 in dependency
+order, keeping raw capture, interaction, recovery/settlement, publication and final
+qualification independently tested and explicitly scoped.

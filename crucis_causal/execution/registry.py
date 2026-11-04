@@ -141,6 +141,30 @@ def require_critical_semantics(view, claims, payloads, limits):
 class ExactDriverRegistry:
     def __init__(self):
         self._entries = {}
+        self._preparers = {}
+
+    def install(self, driver, context):
+        """Associate an explicitly supplied pure preparer; no method-name lookup."""
+        _signature(driver.prepare, 'Driver.prepare')
+        declaration = driver.describe(context)
+        self.register(declaration)
+        for descriptor in declaration.methods:
+            self._preparers[key(descriptor.operation)] = (descriptor.method, driver.prepare)
+
+    def prepare(self, binding, inputs, context):
+        selected = binding.record['payload']['operation']
+        descriptor = self.lookup(selected)
+        entry = self._preparers.get(key(selected))
+        if entry is None or entry[0] is not descriptor.method:
+            return api.rejected('s3.pure_preparer_unavailable')
+        result = entry[1](binding, inputs, context)
+        if not isinstance(result, api.CallResult):
+            raise ExecutionError('s3.typed_preparation_result_required')
+        if result.state == 'completed':
+            value = result.value
+            if not isinstance(value, api.PreparedNativeCall) or value.descriptor.method is not descriptor.method or value.descriptor.component != descriptor.component or value.binding != binding or value.inputs != inputs:
+                raise ExecutionError('s3.preparation_binding_mismatch')
+        return result
 
     def register(self, declaration):
         if not isinstance(declaration, api.DriverDeclaration): raise ExecutionError('s3.driver_declaration_required')
