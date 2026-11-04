@@ -1,0 +1,4325 @@
+{
+  "kind": "s3_bounded_design_payload_fragments",
+  "local_date": "2026-11-03",
+  "status": "proposed_common_forms_not_complete_packages",
+  "based_on_commit": "6f0669a4a4a2d134548de202197e456aa14e5b09",
+  "candidate_contract_revision": "0.1.0-proposal.1",
+  "all_values_hypothetical": true,
+  "native_execution": false,
+  "runtime_S3_validator_executed": false,
+  "complete_wire_package_conformance_claimed": false,
+  "source_anchors": [
+    {
+      "path": "crucis_causal/docs/subsystem3-contract-examples-2026-11-03.json",
+      "sha256": "de5473970db55c47cf1ad60d0e3a0f89418033258c0d57da650acb6454b5ad1f"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-requirements-case-matrix-2026-11-03.json",
+      "sha256": "3bdbe535c836875130bba857123c87e3c68ebcce4ecd3b9a51a8ec6a2d261bc8"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
+      "sha256": "b9a4846895f9b8d8563697ed7c60600024d64c09d8e40702d45a630c0969b20d"
+    }
+  ],
+  "reference_stub_policy": "Synthetic ambient references supply only context for fragment review. They are not actual local records or verified external SC-1/SC-2 packages, native identities or accepted compatibility mappings. External byte pins remain unresolved.",
+  "cases": [
+    {
+      "case": "L",
+      "fragment_status": "partial_common_payloads_not_complete_wire_records",
+      "source_trace_cutoff": "l07",
+      "reference_environment": [
+        {
+          "label": "L.transcription_gap",
+          "reference": {
+            "binding": "internal",
+            "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+            "target_type": "s3.diagnostic"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.E",
+          "reference": {
+            "binding": "internal",
+            "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+            "target_type": "s3.account"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.final_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "11dd5544-8aeb-4042-86cf-6ee4f5568c1e",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.audience",
+          "reference": {
+            "binding": "internal",
+            "target": "6f112169-dcd8-4a98-97b2-de3fe5f82427",
+            "target_type": "s3.audience"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.requirements",
+          "reference": {
+            "binding": "internal",
+            "target": "a3ab0262-aed9-4796-aef9-d57846a69f9c",
+            "target_type": "s3.requirement_context"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.close",
+          "reference": {
+            "binding": "internal",
+            "target": "08ee3525-d65a-46d5-90af-9534a84531b6",
+            "target_type": "s3.collection_closure"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.period",
+          "reference": {
+            "binding": "internal",
+            "target": "1bdfc6ea-1ec5-42af-91b7-bb9226e41910",
+            "target_type": "s3.collection_period"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.disposition",
+          "reference": {
+            "binding": "internal",
+            "target": "2930dc6a-e286-47d1-aa06-758c360f37ba",
+            "target_type": "s3.disposition"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.account_view",
+          "reference": {
+            "binding": "internal",
+            "target": "5f8342a3-3bb9-4124-9c1f-03195f710f1c",
+            "target_type": "s3.account_view"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.C",
+          "reference": {
+            "binding": "internal",
+            "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+            "target_type": "s3.effect_command"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.output",
+          "reference": {
+            "binding": "external",
+            "target": "b3530c35-4383-4e91-b32a-76308b431428",
+            "target_type": "s1.output",
+            "package_id": "a0357d83-c530-448f-8f8e-a5c5a7e8df09"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.local_source_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "47c0e3f8-3011-4fc5-ab4d-7003451aba43",
+            "target_type": "s3.source_frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.public_summary",
+          "reference": {
+            "binding": "internal",
+            "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+            "target_type": "s3.typed_payload"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.public_basis_gap",
+          "reference": {
+            "binding": "internal",
+            "target": "684b925d-c6ce-4dee-abbe-c4d298068903",
+            "target_type": "s3.diagnostic"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.public_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "4c2dbc55-5d76-4bdc-92f2-05d99db04c81",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.public_statement",
+          "reference": {
+            "binding": "internal",
+            "target": "4348e558-bbb9-4079-bd13-81a531056efe",
+            "target_type": "s3.assessment"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.public_audience",
+          "reference": {
+            "binding": "internal",
+            "target": "a5e8c041-a95d-4750-81e3-7b57824d696b",
+            "target_type": "s3.audience"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "L.public_projection",
+          "reference": {
+            "binding": "internal",
+            "target": "8c6e92e1-f0b8-49d2-a99e-2097924a9f2d",
+            "target_type": "s3.projection_view"
+          },
+          "synthetic_context_only": true
+        }
+      ],
+      "fragments": [
+        {
+          "label": "L.transcription_gap",
+          "record_id": "18494119-28b0-4a7d-ba77-a184b999f865",
+          "record_type": "s3.diagnostic",
+          "contract": {
+            "name": "s3.diagnostic",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "code": "s3.partial_design_transcription",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "details": "Common forms only; exact operation/native payload mappings and complete packages are not instantiated.",
+            "evidence": []
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.disposition",
+          "record_id": "2930dc6a-e286-47d1-aa06-758c360f37ba",
+          "record_type": "s3.disposition",
+          "contract": {
+            "name": "s3.disposition",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "kind": "collection_closed",
+            "operations": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "a3ab0262-aed9-4796-aef9-d57846a69f9c",
+              "target_type": "s3.requirement_context"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "11dd5544-8aeb-4042-86cf-6ee4f5568c1e",
+              "target_type": "s3.frontier"
+            },
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "08ee3525-d65a-46d5-90af-9534a84531b6",
+                "target_type": "s3.collection_closure"
+              }
+            ]
+          },
+          "source_trace_refs": [
+            "L.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.account_view",
+          "record_id": "5f8342a3-3bb9-4124-9c1f-03195f710f1c",
+          "record_type": "s3.account_view",
+          "contract": {
+            "name": "s3.account_view",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "account": {
+              "binding": "internal",
+              "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+              "target_type": "s3.account"
+            },
+            "view_role": "full_account",
+            "audience": {
+              "binding": "internal",
+              "target": "6f112169-dcd8-4a98-97b2-de3fe5f82427",
+              "target_type": "s3.audience"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "11dd5544-8aeb-4042-86cf-6ee4f5568c1e",
+              "target_type": "s3.frontier"
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "a3ab0262-aed9-4796-aef9-d57846a69f9c",
+              "target_type": "s3.requirement_context"
+            },
+            "activities": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "evidence": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "assessments": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "disposition": {
+              "binding": "internal",
+              "target": "2930dc6a-e286-47d1-aa06-758c360f37ba",
+              "target_type": "s3.disposition"
+            },
+            "obligations": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "collections": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "1bdfc6ea-1ec5-42af-91b7-bb9226e41910",
+                  "target_type": "s3.collection_period"
+                },
+                {
+                  "binding": "internal",
+                  "target": "08ee3525-d65a-46d5-90af-9534a84531b6",
+                  "target_type": "s3.collection_closure"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "L.E",
+            "L.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.requirements",
+          "record_id": "a3ab0262-aed9-4796-aef9-d57846a69f9c",
+          "record_type": "s3.requirement_context",
+          "contract": {
+            "name": "s3.requirement_context",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "catalog": {
+              "name": "s3.requirements",
+              "version": "0.1.0-proposal.1"
+            },
+            "requested_claims": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "coverage": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.close",
+          "record_id": "08ee3525-d65a-46d5-90af-9534a84531b6",
+          "record_type": "s3.collection_closure",
+          "contract": {
+            "name": "s3.collection_closure",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "period": {
+              "binding": "internal",
+              "target": "1bdfc6ea-1ec5-42af-91b7-bb9226e41910",
+              "target_type": "s3.collection_period"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "11dd5544-8aeb-4042-86cf-6ee4f5568c1e",
+              "target_type": "s3.frontier"
+            },
+            "stopping_rule": {
+              "name": "s3.fixture.bounded_observation",
+              "version": "0.1.0-proposal.1"
+            },
+            "reason": "s3.fixture.declared_boundary",
+            "captured": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "outstanding": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "18494119-28b0-4a7d-ba77-a184b999f865",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "L.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.local_source_frontier",
+          "record_id": "47c0e3f8-3011-4fc5-ab4d-7003451aba43",
+          "record_type": "s3.source_frontier",
+          "contract": {
+            "name": "s3.source_frontier",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "source": {
+              "binding": "internal",
+              "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+              "target_type": "s3.effect_command"
+            },
+            "episode": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.no_external_episode_descriptor",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "protocol": {
+              "name": "s3.fixture.local_return",
+              "version": "0.1.0-proposal.1"
+            },
+            "filter": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.no_stream_filter",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "generation": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.no_stream_generation",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "fetched": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.non_cursor_local_call",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "durably_captured": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.non_cursor_local_call",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "interpreted": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.non_cursor_local_call",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "acknowledged": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.non_cursor_local_call",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "internal",
+                  "target": "0b8ff8be-b1e1-45ec-bd68-9acf80a5d370",
+                  "target_type": "s3.effect_command"
+                }
+              ]
+            },
+            "coverage": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "b3530c35-4383-4e91-b32a-76308b431428",
+                  "target_type": "s1.output",
+                  "package_id": "a0357d83-c530-448f-8f8e-a5c5a7e8df09"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "3a8bab15-0cfa-4aba-906f-c144720df1da",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "L.C",
+            "L.output"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.public_basis_gap",
+          "record_id": "684b925d-c6ce-4dee-abbe-c4d298068903",
+          "record_type": "s3.diagnostic",
+          "contract": {
+            "name": "s3.diagnostic",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "code": "s3.private_basis_not_exported",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                  "target_type": "s3.typed_payload"
+                }
+              ],
+              "qualifiers": []
+            },
+            "details": "Private raw verification is not independently reproducible from this audience view.",
+            "evidence": []
+          },
+          "source_trace_refs": [
+            "L.public_statement"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.public_frontier",
+          "record_id": "4c2dbc55-5d76-4bdc-92f2-05d99db04c81",
+          "record_type": "s3.frontier",
+          "contract": {
+            "name": "s3.frontier",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "local_records": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                  "target_type": "s3.typed_payload"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                    "target_type": "s3.typed_payload"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "source_positions": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                    "target_type": "s3.typed_payload"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "selection_rule": {
+              "name": "s3.fixture.public_statement_basis",
+              "version": "0.1.0-proposal.1"
+            }
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.public_statement",
+          "record_id": "4348e558-bbb9-4079-bd13-81a531056efe",
+          "record_type": "s3.assessment",
+          "contract": {
+            "name": "s3.assessment",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.validator_attestation",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                  "target_type": "s3.typed_payload"
+                }
+              ],
+              "qualifiers": []
+            },
+            "result": {
+              "state": "known",
+              "value": "Validator reports ordering fulfillment; private raw verification basis is not exported.",
+              "basis": []
+            },
+            "basis": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                  "target_type": "s3.typed_payload"
+                }
+              ],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                    "target_type": "s3.typed_payload"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "684b925d-c6ce-4dee-abbe-c4d298068903",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "4c2dbc55-5d76-4bdc-92f2-05d99db04c81",
+              "target_type": "s3.frontier"
+            },
+            "procedure": {
+              "name": "s3.fixture.public_attestation",
+              "version": "0.1.0-proposal.1"
+            },
+            "revises": [],
+            "conflicts_with": []
+          },
+          "source_trace_refs": [
+            "L.public_statement",
+            "L.public_summary"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "L.public_projection",
+          "record_id": "8c6e92e1-f0b8-49d2-a99e-2097924a9f2d",
+          "record_type": "s3.projection_view",
+          "contract": {
+            "name": "s3.projection_view",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "view_role": "audience_projection",
+            "audience": {
+              "binding": "internal",
+              "target": "a5e8c041-a95d-4750-81e3-7b57824d696b",
+              "target_type": "s3.audience"
+            },
+            "projection_contract": {
+              "name": "s3.fixture.public_summary",
+              "version": "0.1.0-proposal.1"
+            },
+            "members": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                  "target_type": "s3.typed_payload"
+                },
+                {
+                  "binding": "internal",
+                  "target": "4348e558-bbb9-4079-bd13-81a531056efe",
+                  "target_type": "s3.assessment"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                    "target_type": "s3.typed_payload"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "claims": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "4348e558-bbb9-4079-bd13-81a531056efe",
+                  "target_type": "s3.assessment"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                    "target_type": "s3.typed_payload"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "limits": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "684b925d-c6ce-4dee-abbe-c4d298068903",
+                  "target_type": "s3.diagnostic"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "83005fac-583e-4b38-94db-f810a42aeebd",
+                    "target_type": "s3.typed_payload"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "L.public",
+            "L.public_statement",
+            "L.public_summary"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        }
+      ],
+      "external_descriptors": [
+        {
+          "package_id": "a0357d83-c530-448f-8f8e-a5c5a7e8df09",
+          "format": {
+            "name": "s1.connection_package",
+            "version": "0.1.0-proposal.1"
+          },
+          "locator": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.synthetic_package_not_instantiated"
+            ],
+            "evidence": []
+          },
+          "expected_digest": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.no_actual_external_package_bytes"
+            ],
+            "evidence": []
+          },
+          "access": "s3.fixture.unavailable"
+        }
+      ],
+      "actual_S3_native_support": "unimplemented_unestablished",
+      "wire_conformance": "not_claimed",
+      "notes": [
+        "Projection fragments have a new frontier and explicit private-basis gap; no private account/map/fulfillment reference appears in those payloads. Full package audience closure remains untested.",
+        "Original two-entity public policy does not authorize extra S3 producer/audience/frontier metadata. Actual public deliverable remains the permitted native artifact; these candidate S3 bookkeeping fragments are not authorized exports."
+      ]
+    },
+    {
+      "case": "R",
+      "fragment_status": "partial_common_payloads_not_complete_wire_records",
+      "source_trace_cutoff": "r08",
+      "reference_environment": [
+        {
+          "label": "R.transcription_gap",
+          "reference": {
+            "binding": "internal",
+            "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+            "target_type": "s3.diagnostic"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.E",
+          "reference": {
+            "binding": "internal",
+            "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+            "target_type": "s3.account"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.final_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "ace06d32-1a89-4c85-b1f3-33106dba33be",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.audience",
+          "reference": {
+            "binding": "internal",
+            "target": "55f88603-296d-4ccd-b844-de0b7c7c8fda",
+            "target_type": "s3.audience"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.requirements",
+          "reference": {
+            "binding": "internal",
+            "target": "438d6d00-0ce6-4d40-8466-39a6f0bedce4",
+            "target_type": "s3.requirement_context"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.close",
+          "reference": {
+            "binding": "internal",
+            "target": "ce7ec228-90e1-4342-b678-ab68e790c139",
+            "target_type": "s3.collection_closure"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.period",
+          "reference": {
+            "binding": "internal",
+            "target": "6e2ee163-a322-4aa3-87b6-a80c72b62d4a",
+            "target_type": "s3.collection_period"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.disposition",
+          "reference": {
+            "binding": "internal",
+            "target": "3c5db932-20fe-4db4-bf92-829380fba057",
+            "target_type": "s3.disposition"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.account_view",
+          "reference": {
+            "binding": "internal",
+            "target": "0d13a385-ab4b-4311-b79d-490e436f8657",
+            "target_type": "s3.account_view"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.early_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "5c9b4f14-508e-41c8-9c1e-dec9d7fed39a",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.C",
+          "reference": {
+            "binding": "internal",
+            "target": "345b0f6a-e22d-40be-965b-90c72d0d876a",
+            "target_type": "s3.effect_command"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.acceptance_early",
+          "reference": {
+            "binding": "internal",
+            "target": "059af463-65e4-4bda-9230-eca3053128f4",
+            "target_type": "s3.assessment"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.lookup",
+          "reference": {
+            "binding": "external",
+            "target": "294f15c9-90b0-4293-8150-20dc230865c4",
+            "target_type": "s1.import_receipt",
+            "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.reconciliation_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "45ba2080-5be7-4ba3-adc7-0d679eac4f57",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.acceptance_later",
+          "reference": {
+            "binding": "internal",
+            "target": "9ee772e4-9315-4ac0-bd19-6ea9d8db6c75",
+            "target_type": "s3.assessment"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.N",
+          "reference": {
+            "binding": "internal",
+            "target": "3b24eb66-1829-4e21-94da-93e483483b93",
+            "target_type": "s3.native_subject"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.capture",
+          "reference": {
+            "binding": "external",
+            "target": "06a5e7ea-1b7e-4967-bb0f-fb67173eac4a",
+            "target_type": "s1.event",
+            "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.o18cb",
+          "reference": {
+            "binding": "external",
+            "target": "0d9b4407-b2b3-4939-b0c0-471c98dfb2ec",
+            "target_type": "s1.observation",
+            "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.o17poll",
+          "reference": {
+            "binding": "external",
+            "target": "a89e3157-7ead-4776-9a24-11e095f326ea",
+            "target_type": "s1.observation",
+            "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.o18poll",
+          "reference": {
+            "binding": "external",
+            "target": "84bd4344-c0d5-47ce-af40-18768d1024eb",
+            "target_type": "s1.observation",
+            "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.remote_source_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "e6e9a306-a4e5-4564-9105-e8ecfe7acc7c",
+            "target_type": "s3.source_frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "R.conflicting_report_counterexample",
+          "reference": {
+            "binding": "internal",
+            "target": "9c329e1f-fea8-421a-853d-cd3d83909649",
+            "target_type": "s3.assessment"
+          },
+          "synthetic_context_only": true
+        }
+      ],
+      "fragments": [
+        {
+          "label": "R.transcription_gap",
+          "record_id": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+          "record_type": "s3.diagnostic",
+          "contract": {
+            "name": "s3.diagnostic",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "code": "s3.partial_design_transcription",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "details": "Common forms only; exact operation/native payload mappings and complete packages are not instantiated.",
+            "evidence": []
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.disposition",
+          "record_id": "3c5db932-20fe-4db4-bf92-829380fba057",
+          "record_type": "s3.disposition",
+          "contract": {
+            "name": "s3.disposition",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "kind": "collection_closed",
+            "operations": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "438d6d00-0ce6-4d40-8466-39a6f0bedce4",
+              "target_type": "s3.requirement_context"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "ace06d32-1a89-4c85-b1f3-33106dba33be",
+              "target_type": "s3.frontier"
+            },
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "ce7ec228-90e1-4342-b678-ab68e790c139",
+                "target_type": "s3.collection_closure"
+              }
+            ]
+          },
+          "source_trace_refs": [
+            "R.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.account_view",
+          "record_id": "0d13a385-ab4b-4311-b79d-490e436f8657",
+          "record_type": "s3.account_view",
+          "contract": {
+            "name": "s3.account_view",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "account": {
+              "binding": "internal",
+              "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+              "target_type": "s3.account"
+            },
+            "view_role": "full_account",
+            "audience": {
+              "binding": "internal",
+              "target": "55f88603-296d-4ccd-b844-de0b7c7c8fda",
+              "target_type": "s3.audience"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "ace06d32-1a89-4c85-b1f3-33106dba33be",
+              "target_type": "s3.frontier"
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "438d6d00-0ce6-4d40-8466-39a6f0bedce4",
+              "target_type": "s3.requirement_context"
+            },
+            "activities": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "evidence": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "assessments": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "disposition": {
+              "binding": "internal",
+              "target": "3c5db932-20fe-4db4-bf92-829380fba057",
+              "target_type": "s3.disposition"
+            },
+            "obligations": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "collections": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "6e2ee163-a322-4aa3-87b6-a80c72b62d4a",
+                  "target_type": "s3.collection_period"
+                },
+                {
+                  "binding": "internal",
+                  "target": "ce7ec228-90e1-4342-b678-ab68e790c139",
+                  "target_type": "s3.collection_closure"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "R.E",
+            "R.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.requirements",
+          "record_id": "438d6d00-0ce6-4d40-8466-39a6f0bedce4",
+          "record_type": "s3.requirement_context",
+          "contract": {
+            "name": "s3.requirement_context",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "catalog": {
+              "name": "s3.requirements",
+              "version": "0.1.0-proposal.1"
+            },
+            "requested_claims": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "coverage": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.close",
+          "record_id": "ce7ec228-90e1-4342-b678-ab68e790c139",
+          "record_type": "s3.collection_closure",
+          "contract": {
+            "name": "s3.collection_closure",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "period": {
+              "binding": "internal",
+              "target": "6e2ee163-a322-4aa3-87b6-a80c72b62d4a",
+              "target_type": "s3.collection_period"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "ace06d32-1a89-4c85-b1f3-33106dba33be",
+              "target_type": "s3.frontier"
+            },
+            "stopping_rule": {
+              "name": "s3.fixture.bounded_observation",
+              "version": "0.1.0-proposal.1"
+            },
+            "reason": "s3.fixture.declared_boundary",
+            "captured": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "outstanding": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "R.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.acceptance_early",
+          "record_id": "059af463-65e4-4bda-9230-eca3053128f4",
+          "record_type": "s3.assessment",
+          "contract": {
+            "name": "s3.assessment",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.native_acceptance",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "result": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.launch_acknowledgement_lost"
+              ],
+              "evidence": []
+            },
+            "basis": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "345b0f6a-e22d-40be-965b-90c72d0d876a",
+                  "target_type": "s3.effect_command"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "5c9b4f14-508e-41c8-9c1e-dec9d7fed39a",
+              "target_type": "s3.frontier"
+            },
+            "procedure": {
+              "name": "s3.fixture.receipt_interpretation",
+              "version": "0.1.0-proposal.1"
+            },
+            "revises": [],
+            "conflicts_with": []
+          },
+          "source_trace_refs": [
+            "R.C",
+            "R.gap",
+            "R.P1"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.acceptance_later",
+          "record_id": "9ee772e4-9315-4ac0-bd19-6ea9d8db6c75",
+          "record_type": "s3.assessment",
+          "contract": {
+            "name": "s3.assessment",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.native_acceptance",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "result": {
+              "state": "known",
+              "value": true,
+              "basis": [
+                {
+                  "binding": "external",
+                  "target": "294f15c9-90b0-4293-8150-20dc230865c4",
+                  "target_type": "s1.import_receipt",
+                  "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+                }
+              ]
+            },
+            "basis": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "294f15c9-90b0-4293-8150-20dc230865c4",
+                  "target_type": "s1.import_receipt",
+                  "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "45ba2080-5be7-4ba3-adc7-0d679eac4f57",
+              "target_type": "s3.frontier"
+            },
+            "procedure": {
+              "name": "s3.fixture.receipt_interpretation",
+              "version": "0.1.0-proposal.1"
+            },
+            "revises": [
+              {
+                "binding": "internal",
+                "target": "059af463-65e4-4bda-9230-eca3053128f4",
+                "target_type": "s3.assessment"
+              }
+            ],
+            "conflicts_with": []
+          },
+          "source_trace_refs": [
+            "R.lookup",
+            "R.P2"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.remote_source_frontier",
+          "record_id": "e6e9a306-a4e5-4564-9105-e8ecfe7acc7c",
+          "record_type": "s3.source_frontier",
+          "contract": {
+            "name": "s3.source_frontier",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "source": {
+              "binding": "internal",
+              "target": "3b24eb66-1829-4e21-94da-93e483483b93",
+              "target_type": "s3.native_subject"
+            },
+            "episode": {
+              "state": "known",
+              "value": {
+                "binding": "internal",
+                "target": "3b24eb66-1829-4e21-94da-93e483483b93",
+                "target_type": "s3.native_subject"
+              },
+              "basis": []
+            },
+            "protocol": {
+              "name": "s3.fixture.remote_events_after16",
+              "version": "0.1.0-proposal.1"
+            },
+            "filter": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.filter_descriptor_not_transcribed"
+              ],
+              "evidence": []
+            },
+            "generation": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.incarnation_descriptor_not_transcribed"
+              ],
+              "evidence": []
+            },
+            "fetched": {
+              "state": "known",
+              "value": {
+                "contract": {
+                  "name": "s3.fixture.remote_cursor",
+                  "version": "0.1.0-proposal.1"
+                },
+                "position": "event:18",
+                "scope": {
+                  "subjects": [
+                    {
+                      "binding": "internal",
+                      "target": "3b24eb66-1829-4e21-94da-93e483483b93",
+                      "target_type": "s3.native_subject"
+                    }
+                  ],
+                  "qualifiers": []
+                }
+              },
+              "basis": []
+            },
+            "durably_captured": {
+              "state": "known",
+              "value": {
+                "contract": {
+                  "name": "s3.fixture.remote_cursor",
+                  "version": "0.1.0-proposal.1"
+                },
+                "position": "event:18",
+                "scope": {
+                  "subjects": [
+                    {
+                      "binding": "internal",
+                      "target": "3b24eb66-1829-4e21-94da-93e483483b93",
+                      "target_type": "s3.native_subject"
+                    }
+                  ],
+                  "qualifiers": []
+                }
+              },
+              "basis": [
+                {
+                  "binding": "external",
+                  "target": "06a5e7ea-1b7e-4967-bb0f-fb67173eac4a",
+                  "target_type": "s1.event",
+                  "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+                }
+              ]
+            },
+            "interpreted": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.interpretation_position_not_established"
+              ],
+              "evidence": []
+            },
+            "acknowledged": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.native_ack_position_not_established"
+              ],
+              "evidence": []
+            },
+            "coverage": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "0d9b4407-b2b3-4939-b0c0-471c98dfb2ec",
+                  "target_type": "s1.observation",
+                  "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+                },
+                {
+                  "binding": "external",
+                  "target": "a89e3157-7ead-4776-9a24-11e095f326ea",
+                  "target_type": "s1.observation",
+                  "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+                },
+                {
+                  "binding": "external",
+                  "target": "84bd4344-c0d5-47ce-af40-18768d1024eb",
+                  "target_type": "s1.observation",
+                  "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8"
+                }
+              ],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [
+            "R.N",
+            "R.capture",
+            "R.o18cb",
+            "R.o17poll",
+            "R.o18poll"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "R.conflicting_report_counterexample",
+          "record_id": "9c329e1f-fea8-421a-853d-cd3d83909649",
+          "record_type": "s3.assessment",
+          "contract": {
+            "name": "s3.assessment",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.native_acceptance",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "result": {
+              "state": "known",
+              "value": false,
+              "basis": []
+            },
+            "basis": {
+              "members": [],
+              "extent": "unresolved",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "2a9c5df6-05fb-4444-9212-a6ba7373992b",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "eb3b1f0e-cc75-4871-8aca-7c0549f50282",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "ace06d32-1a89-4c85-b1f3-33106dba33be",
+              "target_type": "s3.frontier"
+            },
+            "procedure": {
+              "name": "s3.fixture.unverified_report",
+              "version": "0.1.0-proposal.1"
+            },
+            "revises": [],
+            "conflicts_with": [
+              {
+                "binding": "internal",
+                "target": "9ee772e4-9315-4ac0-bd19-6ea9d8db6c75",
+                "target_type": "s3.assessment"
+              }
+            ]
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        }
+      ],
+      "external_descriptors": [
+        {
+          "package_id": "0893a7bf-eb63-457a-bca4-a22ef4865aa8",
+          "format": {
+            "name": "s1.connection_package",
+            "version": "0.1.0-proposal.1"
+          },
+          "locator": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.synthetic_package_not_instantiated"
+            ],
+            "evidence": []
+          },
+          "expected_digest": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.no_actual_external_package_bytes"
+            ],
+            "evidence": []
+          },
+          "access": "s3.fixture.unavailable"
+        }
+      ],
+      "actual_S3_native_support": "unimplemented_unestablished",
+      "wire_conformance": "not_claimed",
+      "notes": [
+        "Conflict fragment is an additional counterexample annotation, not evidence that the original R story contained contradictory receipts.",
+        "Native incarnation/filter semantics and exact S1 receipt/event mapping remain untranscribed; no safe replay/attachment guarantee follows from the cursor text."
+      ]
+    },
+    {
+      "case": "I",
+      "fragment_status": "partial_common_payloads_not_complete_wire_records",
+      "source_trace_cutoff": "i08",
+      "reference_environment": [
+        {
+          "label": "I.transcription_gap",
+          "reference": {
+            "binding": "internal",
+            "target": "56037dff-24ce-4455-a568-ca30ca246663",
+            "target_type": "s3.diagnostic"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.E",
+          "reference": {
+            "binding": "internal",
+            "target": "b4224683-b959-4745-b50f-149c5238d583",
+            "target_type": "s3.account"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.final_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "52afedaa-180d-485b-abb7-0b81845b1e1b",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.audience",
+          "reference": {
+            "binding": "internal",
+            "target": "b06f31ce-1b76-40da-a012-fcbf27f4e516",
+            "target_type": "s3.audience"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.requirements",
+          "reference": {
+            "binding": "internal",
+            "target": "54d98bcd-0162-46ed-b3fa-1ea2dcad4372",
+            "target_type": "s3.requirement_context"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.close",
+          "reference": {
+            "binding": "internal",
+            "target": "9cd3ee29-00fd-4238-8d52-3e4f419a384e",
+            "target_type": "s3.collection_closure"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.period",
+          "reference": {
+            "binding": "internal",
+            "target": "ced7e9ec-aeb1-4e3c-ad42-f050adec8f14",
+            "target_type": "s3.collection_period"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.disposition",
+          "reference": {
+            "binding": "internal",
+            "target": "2d3d4889-c8ac-4c06-8258-c258f8a45aee",
+            "target_type": "s3.disposition"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.source_gap",
+          "reference": {
+            "binding": "internal",
+            "target": "01b708e4-ec33-4ba8-b73f-b64f745a6e2c",
+            "target_type": "s3.diagnostic"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.pending",
+          "reference": {
+            "binding": "internal",
+            "target": "c3fb01a3-51b5-46cb-996d-b89941d207d6",
+            "target_type": "s3.obligation"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.account_view",
+          "reference": {
+            "binding": "internal",
+            "target": "637165a9-54ec-49a5-8627-be6b68adb96c",
+            "target_type": "s3.account_view"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.Q1",
+          "reference": {
+            "binding": "external",
+            "target": "db16b1aa-08e7-4044-8e78-cdbeef7a34e3",
+            "target_type": "s1.action_request",
+            "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.Q2",
+          "reference": {
+            "binding": "external",
+            "target": "5ca62e7b-6435-4945-abac-20de347351e8",
+            "target_type": "s1.action_request",
+            "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.response1",
+          "reference": {
+            "binding": "external",
+            "target": "aa075139-e927-4d29-9609-1e5d50267aae",
+            "target_type": "s1.action_response",
+            "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.source",
+          "reference": {
+            "binding": "external",
+            "target": "2d8a1e04-34b6-40f4-9a84-2fb3b3797179",
+            "target_type": "s1.artifact_snapshot",
+            "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.pre_send_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "2857bbeb-f05b-4405-b8ad-6d9609d8461e",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.decision1",
+          "reference": {
+            "binding": "internal",
+            "target": "4b745365-44bd-4646-a585-779abb77cbf9",
+            "target_type": "s3.action_decision"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.held_decision2",
+          "reference": {
+            "binding": "internal",
+            "target": "efe285f0-a3af-4eac-aab5-b64922ed3255",
+            "target_type": "s3.action_decision"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.deliver1",
+          "reference": {
+            "binding": "internal",
+            "target": "588a9a67-4036-4b44-a8a6-a4f2c9b74e9c",
+            "target_type": "s3.effect_command"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.N",
+          "reference": {
+            "binding": "internal",
+            "target": "da634ecc-bb43-4ecb-b13e-f3bd0bfc8dda",
+            "target_type": "s3.native_subject"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.response_validity",
+          "reference": {
+            "binding": "internal",
+            "target": "82657695-f008-4012-9ef1-b39b1d5d877b",
+            "target_type": "s3.typed_payload"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.receipt1",
+          "reference": {
+            "binding": "external",
+            "target": "61241324-e756-4d3d-91aa-252e11cd9b20",
+            "target_type": "s1.transmission",
+            "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.delivery1",
+          "reference": {
+            "binding": "internal",
+            "target": "b8a84349-5785-4c85-b4a5-23072b36f586",
+            "target_type": "s3.delivery"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.exposure_owner",
+          "reference": {
+            "binding": "internal",
+            "target": "cf9b451d-113e-462c-88d4-11f41af4d292",
+            "target_type": "s3.component"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.exposure",
+          "reference": {
+            "binding": "internal",
+            "target": "2dca1ebb-3ecd-4c2c-9565-4992ca0c3e53",
+            "target_type": "s3.exposure_entry"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "I.native_use",
+          "reference": {
+            "binding": "internal",
+            "target": "374db1bc-915c-4dfa-b9f2-d8d8b88a4ecc",
+            "target_type": "s3.assessment"
+          },
+          "synthetic_context_only": true
+        }
+      ],
+      "fragments": [
+        {
+          "label": "I.transcription_gap",
+          "record_id": "56037dff-24ce-4455-a568-ca30ca246663",
+          "record_type": "s3.diagnostic",
+          "contract": {
+            "name": "s3.diagnostic",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "code": "s3.partial_design_transcription",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "b4224683-b959-4745-b50f-149c5238d583",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "details": "Common forms only; exact operation/native payload mappings and complete packages are not instantiated.",
+            "evidence": []
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.pending",
+          "record_id": "c3fb01a3-51b5-46cb-996d-b89941d207d6",
+          "record_type": "s3.obligation",
+          "contract": {
+            "name": "s3.obligation",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.pending_q2_and_stop",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "b4224683-b959-4745-b50f-149c5238d583",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "owner": {
+              "binding": "unresolved",
+              "target_type": "s3.component",
+              "reason": "s3.owner_scope_unestablished",
+              "evidence": [],
+              "source_labels": []
+            },
+            "disposition": "pending",
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "01b708e4-ec33-4ba8-b73f-b64f745a6e2c",
+                "target_type": "s3.diagnostic"
+              }
+            ],
+            "follow_up": {
+              "members": [],
+              "extent": "unresolved",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [
+            "I.source_gap",
+            "I.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.disposition",
+          "record_id": "2d3d4889-c8ac-4c06-8258-c258f8a45aee",
+          "record_type": "s3.disposition",
+          "contract": {
+            "name": "s3.disposition",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "kind": "held",
+            "operations": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "54d98bcd-0162-46ed-b3fa-1ea2dcad4372",
+              "target_type": "s3.requirement_context"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "52afedaa-180d-485b-abb7-0b81845b1e1b",
+              "target_type": "s3.frontier"
+            },
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "9cd3ee29-00fd-4238-8d52-3e4f419a384e",
+                "target_type": "s3.collection_closure"
+              }
+            ]
+          },
+          "source_trace_refs": [
+            "I.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.account_view",
+          "record_id": "637165a9-54ec-49a5-8627-be6b68adb96c",
+          "record_type": "s3.account_view",
+          "contract": {
+            "name": "s3.account_view",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "account": {
+              "binding": "internal",
+              "target": "b4224683-b959-4745-b50f-149c5238d583",
+              "target_type": "s3.account"
+            },
+            "view_role": "full_account",
+            "audience": {
+              "binding": "internal",
+              "target": "b06f31ce-1b76-40da-a012-fcbf27f4e516",
+              "target_type": "s3.audience"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "52afedaa-180d-485b-abb7-0b81845b1e1b",
+              "target_type": "s3.frontier"
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "54d98bcd-0162-46ed-b3fa-1ea2dcad4372",
+              "target_type": "s3.requirement_context"
+            },
+            "activities": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "evidence": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "assessments": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "disposition": {
+              "binding": "internal",
+              "target": "2d3d4889-c8ac-4c06-8258-c258f8a45aee",
+              "target_type": "s3.disposition"
+            },
+            "obligations": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "c3fb01a3-51b5-46cb-996d-b89941d207d6",
+                  "target_type": "s3.obligation"
+                }
+              ],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "collections": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "ced7e9ec-aeb1-4e3c-ad42-f050adec8f14",
+                  "target_type": "s3.collection_period"
+                },
+                {
+                  "binding": "internal",
+                  "target": "9cd3ee29-00fd-4238-8d52-3e4f419a384e",
+                  "target_type": "s3.collection_closure"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "I.E",
+            "I.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.requirements",
+          "record_id": "54d98bcd-0162-46ed-b3fa-1ea2dcad4372",
+          "record_type": "s3.requirement_context",
+          "contract": {
+            "name": "s3.requirement_context",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "catalog": {
+              "name": "s3.requirements",
+              "version": "0.1.0-proposal.1"
+            },
+            "requested_claims": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "coverage": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.close",
+          "record_id": "9cd3ee29-00fd-4238-8d52-3e4f419a384e",
+          "record_type": "s3.collection_closure",
+          "contract": {
+            "name": "s3.collection_closure",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "period": {
+              "binding": "internal",
+              "target": "ced7e9ec-aeb1-4e3c-ad42-f050adec8f14",
+              "target_type": "s3.collection_period"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "52afedaa-180d-485b-abb7-0b81845b1e1b",
+              "target_type": "s3.frontier"
+            },
+            "stopping_rule": {
+              "name": "s3.fixture.bounded_observation",
+              "version": "0.1.0-proposal.1"
+            },
+            "reason": "s3.fixture.declared_boundary",
+            "captured": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "outstanding": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "c3fb01a3-51b5-46cb-996d-b89941d207d6",
+                  "target_type": "s3.obligation"
+                }
+              ],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "56037dff-24ce-4455-a568-ca30ca246663",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "I.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.source_gap",
+          "record_id": "01b708e4-ec33-4ba8-b73f-b64f745a6e2c",
+          "record_type": "s3.diagnostic",
+          "contract": {
+            "name": "s3.diagnostic",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "code": "s3.required_information_unavailable",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "b4224683-b959-4745-b50f-149c5238d583",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "details": "Q2 requires a different oracle-state context; no authorized fallback.",
+            "evidence": []
+          },
+          "source_trace_refs": [
+            "I.source_gap",
+            "I.Q2"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.decision1",
+          "record_id": "4b745365-44bd-4646-a585-779abb77cbf9",
+          "record_type": "s3.action_decision",
+          "contract": {
+            "name": "s3.action_decision",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "actions": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "db16b1aa-08e7-4044-8e78-cdbeef7a34e3",
+                  "target_type": "s1.action_request",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "rule": {
+              "name": "s3.fixture.fixed_oracle_response",
+              "version": "0.1.0-proposal.1"
+            },
+            "information": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "2d8a1e04-34b6-40f4-9a84-2fb3b3797179",
+                  "target_type": "s1.artifact_snapshot",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "2857bbeb-f05b-4405-b8ad-6d9609d8461e",
+              "target_type": "s3.frontier"
+            },
+            "selected": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "aa075139-e927-4d29-9609-1e5d50267aae",
+                  "target_type": "s1.action_response",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "assessment": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.validation_not_executed"
+              ],
+              "evidence": []
+            }
+          },
+          "source_trace_refs": [
+            "I.decision1",
+            "I.V1",
+            "I.source"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.held_decision2",
+          "record_id": "efe285f0-a3af-4eac-aab5-b64922ed3255",
+          "record_type": "s3.action_decision",
+          "contract": {
+            "name": "s3.action_decision",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "actions": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "5ca62e7b-6435-4945-abac-20de347351e8",
+                  "target_type": "s1.action_request",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "rule": {
+              "name": "s3.fixture.fixed_oracle_response",
+              "version": "0.1.0-proposal.1"
+            },
+            "information": {
+              "members": [],
+              "extent": "unresolved",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "01b708e4-ec33-4ba8-b73f-b64f745a6e2c",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "52afedaa-180d-485b-abb7-0b81845b1e1b",
+              "target_type": "s3.frontier"
+            },
+            "selected": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "assessment": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.required_information_unavailable"
+              ],
+              "evidence": [
+                {
+                  "binding": "internal",
+                  "target": "01b708e4-ec33-4ba8-b73f-b64f745a6e2c",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [
+            "I.Q2",
+            "I.source_gap"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.delivery1",
+          "record_id": "b8a84349-5785-4c85-b4a5-23072b36f586",
+          "record_type": "s3.delivery",
+          "contract": {
+            "name": "s3.delivery",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "command": {
+              "binding": "internal",
+              "target": "588a9a67-4036-4b44-a8a6-a4f2c9b74e9c",
+              "target_type": "s3.effect_command"
+            },
+            "decision": {
+              "binding": "internal",
+              "target": "4b745365-44bd-4646-a585-779abb77cbf9",
+              "target_type": "s3.action_decision"
+            },
+            "actions": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "db16b1aa-08e7-4044-8e78-cdbeef7a34e3",
+                  "target_type": "s1.action_request",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "responses": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "aa075139-e927-4d29-9609-1e5d50267aae",
+                  "target_type": "s1.action_response",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "recipient": {
+              "binding": "internal",
+              "target": "da634ecc-bb43-4ecb-b13e-f3bd0bfc8dda",
+              "target_type": "s3.native_subject"
+            },
+            "validity": {
+              "binding": "internal",
+              "target": "82657695-f008-4012-9ef1-b39b1d5d877b",
+              "target_type": "s3.typed_payload"
+            },
+            "receipts": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "61241324-e756-4d3d-91aa-252e11cd9b20",
+                  "target_type": "s1.transmission",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "I.deliver1",
+            "I.receipt1"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.exposure",
+          "record_id": "2dca1ebb-3ecd-4c2c-9565-4992ca0c3e53",
+          "record_type": "s3.exposure_entry",
+          "contract": {
+            "name": "s3.exposure_entry",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "b4224683-b959-4745-b50f-149c5238d583",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "owner": {
+              "binding": "internal",
+              "target": "cf9b451d-113e-462c-88d4-11f41af4d292",
+              "target_type": "s3.component"
+            },
+            "recipient": {
+              "binding": "internal",
+              "target": "da634ecc-bb43-4ecb-b13e-f3bd0bfc8dda",
+              "target_type": "s3.native_subject"
+            },
+            "information": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "aa075139-e927-4d29-9609-1e5d50267aae",
+                  "target_type": "s1.action_response",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "facet": "policy_consumed",
+            "extent": {
+              "state": "known",
+              "value": {
+                "number_type": "integer",
+                "text": "1"
+              },
+              "basis": []
+            },
+            "policy": {
+              "name": "s3.fixture.two_oracle_answers",
+              "version": "0.1.0-proposal.1"
+            },
+            "basis": [
+              {
+                "binding": "external",
+                "target": "61241324-e756-4d3d-91aa-252e11cd9b20",
+                "target_type": "s1.transmission",
+                "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+              }
+            ],
+            "revises": []
+          },
+          "source_trace_refs": [
+            "I.exposure"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "I.native_use",
+          "record_id": "374db1bc-915c-4dfa-b9f2-d8d8b88a4ecc",
+          "record_type": "s3.assessment",
+          "contract": {
+            "name": "s3.assessment",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.native_use",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "b4224683-b959-4745-b50f-149c5238d583",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "result": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.native_use_not_observed"
+              ],
+              "evidence": []
+            },
+            "basis": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "61241324-e756-4d3d-91aa-252e11cd9b20",
+                  "target_type": "s1.transmission",
+                  "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "b4224683-b959-4745-b50f-149c5238d583",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "52afedaa-180d-485b-abb7-0b81845b1e1b",
+              "target_type": "s3.frontier"
+            },
+            "procedure": {
+              "name": "s3.fixture.delivery_not_use",
+              "version": "0.1.0-proposal.1"
+            },
+            "revises": [],
+            "conflicts_with": []
+          },
+          "source_trace_refs": [
+            "I.receipt1",
+            "I.exposure"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        }
+      ],
+      "external_descriptors": [
+        {
+          "package_id": "76163ee9-3c23-4803-a3b8-4c5b80cc4c74",
+          "format": {
+            "name": "s1.connection_package",
+            "version": "0.1.0-proposal.1"
+          },
+          "locator": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.synthetic_package_not_instantiated"
+            ],
+            "evidence": []
+          },
+          "expected_digest": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.no_actual_external_package_bytes"
+            ],
+            "evidence": []
+          },
+          "access": "s3.fixture.unavailable"
+        }
+      ],
+      "actual_S3_native_support": "unimplemented_unestablished",
+      "wire_conformance": "not_claimed",
+      "notes": [
+        "Exactly one delivery fragment; held Q2 has zero selected members and no fabricated delivery or native abstention.",
+        "Q1 explicitly references a distinct pre-send frontier stub; exact membership/timing is not instantiated here and temporal admission is not claimed from the final account frontier."
+      ]
+    },
+    {
+      "case": "K",
+      "fragment_status": "partial_common_payloads_not_complete_wire_records",
+      "source_trace_cutoff": "k07",
+      "reference_environment": [
+        {
+          "label": "K.transcription_gap",
+          "reference": {
+            "binding": "internal",
+            "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+            "target_type": "s3.diagnostic"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.E",
+          "reference": {
+            "binding": "internal",
+            "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+            "target_type": "s3.account"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.final_frontier",
+          "reference": {
+            "binding": "internal",
+            "target": "276a37a0-ff8c-4f98-8b9b-575cf0c7f24d",
+            "target_type": "s3.frontier"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.audience",
+          "reference": {
+            "binding": "internal",
+            "target": "2a9532c9-b741-466d-b2b6-7d575365e72d",
+            "target_type": "s3.audience"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.requirements",
+          "reference": {
+            "binding": "internal",
+            "target": "52fb8b7d-9fc8-4e4e-9ab6-eb322b2bbf89",
+            "target_type": "s3.requirement_context"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.close",
+          "reference": {
+            "binding": "internal",
+            "target": "f8bb1f53-c878-4e38-84f7-468f9a032bc9",
+            "target_type": "s3.collection_closure"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.period",
+          "reference": {
+            "binding": "internal",
+            "target": "aa6aea82-5557-4f2a-9d11-63d8bad7a47d",
+            "target_type": "s3.collection_period"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.disposition",
+          "reference": {
+            "binding": "internal",
+            "target": "b9ffe785-011e-47bd-8917-12955b6db468",
+            "target_type": "s3.disposition"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.account_view",
+          "reference": {
+            "binding": "internal",
+            "target": "c07a1fa9-391c-423a-9f28-7de4c0ba2605",
+            "target_type": "s3.account_view"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.A1",
+          "reference": {
+            "binding": "external",
+            "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+            "target_type": "s1.attempt",
+            "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.A2",
+          "reference": {
+            "binding": "external",
+            "target": "ad437ffb-f97f-47b3-8a09-2629b4d1422a",
+            "target_type": "s1.attempt",
+            "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.state",
+          "reference": {
+            "binding": "external",
+            "target": "bdb6eac4-ab44-4af3-9ab6-6580317e7284",
+            "target_type": "s1.artifact_snapshot",
+            "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.load",
+          "reference": {
+            "binding": "external",
+            "target": "77a94c87-3fd6-452f-b260-7e7bdd34a05a",
+            "target_type": "s1.state_load",
+            "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.stop1",
+          "reference": {
+            "binding": "external",
+            "target": "e62b981b-6332-4736-b291-80ef385a185a",
+            "target_type": "s1.cancellation",
+            "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.recovery",
+          "reference": {
+            "binding": "internal",
+            "target": "a8be8757-39aa-4c99-a730-b5c32ef9d7ec",
+            "target_type": "s3.recovery"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.job_owner",
+          "reference": {
+            "binding": "internal",
+            "target": "deee996e-e12c-46e2-9a51-f1dd0ea29659",
+            "target_type": "s3.component"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.job_unit",
+          "reference": {
+            "binding": "internal",
+            "target": "8824cfe7-d5ae-42c1-9ef9-142d8f2b314d",
+            "target_type": "s3.typed_payload"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.bill1partial",
+          "reference": {
+            "binding": "internal",
+            "target": "2d411a20-842b-4706-ba55-e4de3a4ba082",
+            "target_type": "s3.resource_entry"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.bill1final",
+          "reference": {
+            "binding": "internal",
+            "target": "ddbd0692-0fd5-4b84-b5ff-25fa5965f2f1",
+            "target_type": "s3.resource_entry"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.bill2final",
+          "reference": {
+            "binding": "internal",
+            "target": "feea06c5-3c45-4f16-a11c-98189104fec2",
+            "target_type": "s3.resource_entry"
+          },
+          "synthetic_context_only": true
+        },
+        {
+          "label": "K.full_continuity",
+          "reference": {
+            "binding": "internal",
+            "target": "f53d910a-19a0-430a-8a6c-b7390aac3f7c",
+            "target_type": "s3.assessment"
+          },
+          "synthetic_context_only": true
+        }
+      ],
+      "fragments": [
+        {
+          "label": "K.transcription_gap",
+          "record_id": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+          "record_type": "s3.diagnostic",
+          "contract": {
+            "name": "s3.diagnostic",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "code": "s3.partial_design_transcription",
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "details": "Common forms only; exact operation/native payload mappings and complete packages are not instantiated.",
+            "evidence": []
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.disposition",
+          "record_id": "b9ffe785-011e-47bd-8917-12955b6db468",
+          "record_type": "s3.disposition",
+          "contract": {
+            "name": "s3.disposition",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "kind": "collection_closed",
+            "operations": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "52fb8b7d-9fc8-4e4e-9ab6-eb322b2bbf89",
+              "target_type": "s3.requirement_context"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "276a37a0-ff8c-4f98-8b9b-575cf0c7f24d",
+              "target_type": "s3.frontier"
+            },
+            "basis": [
+              {
+                "binding": "internal",
+                "target": "f8bb1f53-c878-4e38-84f7-468f9a032bc9",
+                "target_type": "s3.collection_closure"
+              }
+            ]
+          },
+          "source_trace_refs": [
+            "K.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.account_view",
+          "record_id": "c07a1fa9-391c-423a-9f28-7de4c0ba2605",
+          "record_type": "s3.account_view",
+          "contract": {
+            "name": "s3.account_view",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "account": {
+              "binding": "internal",
+              "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+              "target_type": "s3.account"
+            },
+            "view_role": "full_account",
+            "audience": {
+              "binding": "internal",
+              "target": "2a9532c9-b741-466d-b2b6-7d575365e72d",
+              "target_type": "s3.audience"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "276a37a0-ff8c-4f98-8b9b-575cf0c7f24d",
+              "target_type": "s3.frontier"
+            },
+            "requirements": {
+              "binding": "internal",
+              "target": "52fb8b7d-9fc8-4e4e-9ab6-eb322b2bbf89",
+              "target_type": "s3.requirement_context"
+            },
+            "activities": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "evidence": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "assessments": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "disposition": {
+              "binding": "internal",
+              "target": "b9ffe785-011e-47bd-8917-12955b6db468",
+              "target_type": "s3.disposition"
+            },
+            "obligations": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "collections": {
+              "members": [
+                {
+                  "binding": "internal",
+                  "target": "aa6aea82-5557-4f2a-9d11-63d8bad7a47d",
+                  "target_type": "s3.collection_period"
+                },
+                {
+                  "binding": "internal",
+                  "target": "f8bb1f53-c878-4e38-84f7-468f9a032bc9",
+                  "target_type": "s3.collection_closure"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            }
+          },
+          "source_trace_refs": [
+            "K.E",
+            "K.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.requirements",
+          "record_id": "52fb8b7d-9fc8-4e4e-9ab6-eb322b2bbf89",
+          "record_type": "s3.requirement_context",
+          "contract": {
+            "name": "s3.requirement_context",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "catalog": {
+              "name": "s3.requirements",
+              "version": "0.1.0-proposal.1"
+            },
+            "requested_claims": {
+              "members": [],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "coverage": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            }
+          },
+          "source_trace_refs": [],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.close",
+          "record_id": "f8bb1f53-c878-4e38-84f7-468f9a032bc9",
+          "record_type": "s3.collection_closure",
+          "contract": {
+            "name": "s3.collection_closure",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "period": {
+              "binding": "internal",
+              "target": "aa6aea82-5557-4f2a-9d11-63d8bad7a47d",
+              "target_type": "s3.collection_period"
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "276a37a0-ff8c-4f98-8b9b-575cf0c7f24d",
+              "target_type": "s3.frontier"
+            },
+            "stopping_rule": {
+              "name": "s3.fixture.bounded_observation",
+              "version": "0.1.0-proposal.1"
+            },
+            "reason": "s3.fixture.declared_boundary",
+            "captured": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "outstanding": {
+              "members": [],
+              "extent": "partial_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": [
+                {
+                  "binding": "internal",
+                  "target": "0d02aff8-32b4-4304-9292-2b68c5a4e231",
+                  "target_type": "s3.diagnostic"
+                }
+              ]
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "K.close"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.recovery",
+          "record_id": "a8be8757-39aa-4c99-a730-b5c32ef9d7ec",
+          "record_type": "s3.recovery",
+          "contract": {
+            "name": "s3.recovery",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "kind": "native_restart",
+            "subjects": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "policy": {
+              "name": "s3.fixture.partial_continuation_allowed",
+              "version": "0.1.0-proposal.1"
+            },
+            "predecessors": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "successors": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "ad437ffb-f97f-47b3-8a09-2629b4d1422a",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "components": [
+              {
+                "component": {
+                  "name": "s3.fixture.model",
+                  "version": "0.1.0-proposal.1"
+                },
+                "identity": {
+                  "state": "unresolved",
+                  "reasons": [
+                    "s3.component_identity_not_transcribed"
+                  ],
+                  "evidence": []
+                },
+                "availability": {
+                  "state": "known",
+                  "value": {
+                    "artifact": {
+                      "binding": "external",
+                      "target": "bdb6eac4-ab44-4af3-9ab6-6580317e7284",
+                      "target_type": "s1.artifact_snapshot",
+                      "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                    },
+                    "selector": {
+                      "state": "not_applicable",
+                      "rule": {
+                        "name": "s3.fixture.full_artifact",
+                        "version": "0.1.0-proposal.1"
+                      },
+                      "scope": [
+                        {
+                          "binding": "external",
+                          "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                          "target_type": "s1.attempt",
+                          "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                        }
+                      ]
+                    }
+                  },
+                  "basis": []
+                },
+                "loaded": {
+                  "state": "known",
+                  "value": true,
+                  "basis": []
+                },
+                "evidence": [
+                  {
+                    "binding": "external",
+                    "target": "77a94c87-3fd6-452f-b260-7e7bdd34a05a",
+                    "target_type": "s1.state_load",
+                    "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                  }
+                ]
+              },
+              {
+                "component": {
+                  "name": "s3.fixture.optimizer",
+                  "version": "0.1.0-proposal.1"
+                },
+                "identity": {
+                  "state": "unresolved",
+                  "reasons": [
+                    "s3.component_identity_not_transcribed"
+                  ],
+                  "evidence": []
+                },
+                "availability": {
+                  "state": "known",
+                  "value": {
+                    "artifact": {
+                      "binding": "external",
+                      "target": "bdb6eac4-ab44-4af3-9ab6-6580317e7284",
+                      "target_type": "s1.artifact_snapshot",
+                      "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                    },
+                    "selector": {
+                      "state": "not_applicable",
+                      "rule": {
+                        "name": "s3.fixture.full_artifact",
+                        "version": "0.1.0-proposal.1"
+                      },
+                      "scope": [
+                        {
+                          "binding": "external",
+                          "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                          "target_type": "s1.attempt",
+                          "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                        }
+                      ]
+                    }
+                  },
+                  "basis": []
+                },
+                "loaded": {
+                  "state": "known",
+                  "value": true,
+                  "basis": []
+                },
+                "evidence": [
+                  {
+                    "binding": "external",
+                    "target": "77a94c87-3fd6-452f-b260-7e7bdd34a05a",
+                    "target_type": "s1.state_load",
+                    "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                  }
+                ]
+              },
+              {
+                "component": {
+                  "name": "s3.fixture.rng_history",
+                  "version": "0.1.0-proposal.1"
+                },
+                "identity": {
+                  "state": "unresolved",
+                  "reasons": [
+                    "s3.not_established"
+                  ],
+                  "evidence": []
+                },
+                "availability": {
+                  "state": "unresolved",
+                  "reasons": [
+                    "s3.not_established"
+                  ],
+                  "evidence": []
+                },
+                "loaded": {
+                  "state": "unresolved",
+                  "reasons": [
+                    "s3.state_load_not_established"
+                  ],
+                  "evidence": []
+                },
+                "evidence": []
+              }
+            ],
+            "overlap": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.stop_projection_not_transcribed"
+              ],
+              "evidence": []
+            },
+            "basis": [
+              {
+                "binding": "external",
+                "target": "e62b981b-6332-4736-b291-80ef385a185a",
+                "target_type": "s1.cancellation",
+                "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+              },
+              {
+                "binding": "external",
+                "target": "77a94c87-3fd6-452f-b260-7e7bdd34a05a",
+                "target_type": "s1.state_load",
+                "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+              }
+            ]
+          },
+          "source_trace_refs": [
+            "K.recovery",
+            "K.load",
+            "K.stop1"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.bill1partial",
+          "record_id": "2d411a20-842b-4706-ba55-e4de3a4ba082",
+          "record_type": "s3.resource_entry",
+          "contract": {
+            "name": "s3.resource_entry",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "binding": "external",
+                  "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ]
+            },
+            "owner": {
+              "binding": "internal",
+              "target": "deee996e-e12c-46e2-9a51-f1dd0ea29659",
+              "target_type": "s3.component"
+            },
+            "resource": {
+              "name": "s3.fixture.native_job_units",
+              "version": "0.1.0-proposal.1"
+            },
+            "unit": {
+              "binding": "internal",
+              "target": "8824cfe7-d5ae-42c1-9ef9-142d8f2b314d",
+              "target_type": "s3.typed_payload"
+            },
+            "entry_kind": "bill",
+            "quantity": {
+              "state": "known",
+              "value": {
+                "number_type": "integer",
+                "text": "3"
+              },
+              "basis": []
+            },
+            "interval": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.per_attempt_lifetime",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "external",
+                  "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ]
+            },
+            "finality": "interim",
+            "revises": [],
+            "aggregation": {
+              "name": "s3.fixture.replacement_bills_disjoint_attempts",
+              "version": "0.1.0-proposal.1"
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "K.bill1partial"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.bill1final",
+          "record_id": "ddbd0692-0fd5-4b84-b5ff-25fa5965f2f1",
+          "record_type": "s3.resource_entry",
+          "contract": {
+            "name": "s3.resource_entry",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "binding": "external",
+                  "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ]
+            },
+            "owner": {
+              "binding": "internal",
+              "target": "deee996e-e12c-46e2-9a51-f1dd0ea29659",
+              "target_type": "s3.component"
+            },
+            "resource": {
+              "name": "s3.fixture.native_job_units",
+              "version": "0.1.0-proposal.1"
+            },
+            "unit": {
+              "binding": "internal",
+              "target": "8824cfe7-d5ae-42c1-9ef9-142d8f2b314d",
+              "target_type": "s3.typed_payload"
+            },
+            "entry_kind": "bill",
+            "quantity": {
+              "state": "known",
+              "value": {
+                "number_type": "integer",
+                "text": "5"
+              },
+              "basis": []
+            },
+            "interval": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.per_attempt_lifetime",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "external",
+                  "target": "6a5ffc98-28c3-4227-a27c-b01b1f56a5b3",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ]
+            },
+            "finality": "final",
+            "revises": [
+              {
+                "binding": "internal",
+                "target": "2d411a20-842b-4706-ba55-e4de3a4ba082",
+                "target_type": "s3.resource_entry"
+              }
+            ],
+            "aggregation": {
+              "name": "s3.fixture.replacement_bills_disjoint_attempts",
+              "version": "0.1.0-proposal.1"
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "K.bill1final"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.bill2final",
+          "record_id": "feea06c5-3c45-4f16-a11c-98189104fec2",
+          "record_type": "s3.resource_entry",
+          "contract": {
+            "name": "s3.resource_entry",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "binding": "external",
+                  "target": "ad437ffb-f97f-47b3-8a09-2629b4d1422a",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ]
+            },
+            "owner": {
+              "binding": "internal",
+              "target": "deee996e-e12c-46e2-9a51-f1dd0ea29659",
+              "target_type": "s3.component"
+            },
+            "resource": {
+              "name": "s3.fixture.native_job_units",
+              "version": "0.1.0-proposal.1"
+            },
+            "unit": {
+              "binding": "internal",
+              "target": "8824cfe7-d5ae-42c1-9ef9-142d8f2b314d",
+              "target_type": "s3.typed_payload"
+            },
+            "entry_kind": "bill",
+            "quantity": {
+              "state": "known",
+              "value": {
+                "number_type": "integer",
+                "text": "4"
+              },
+              "basis": []
+            },
+            "interval": {
+              "state": "not_applicable",
+              "rule": {
+                "name": "s3.fixture.per_attempt_lifetime",
+                "version": "0.1.0-proposal.1"
+              },
+              "scope": [
+                {
+                  "binding": "external",
+                  "target": "ad437ffb-f97f-47b3-8a09-2629b4d1422a",
+                  "target_type": "s1.attempt",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ]
+            },
+            "finality": "final",
+            "revises": [],
+            "aggregation": {
+              "name": "s3.fixture.replacement_bills_disjoint_attempts",
+              "version": "0.1.0-proposal.1"
+            },
+            "basis": []
+          },
+          "source_trace_refs": [
+            "K.bill2final"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        },
+        {
+          "label": "K.full_continuity",
+          "record_id": "f53d910a-19a0-430a-8a6c-b7390aac3f7c",
+          "record_type": "s3.assessment",
+          "contract": {
+            "name": "s3.assessment",
+            "version": "0.1.0-proposal.1"
+          },
+          "payload": {
+            "question": {
+              "name": "s3.fixture.full_hidden_state_continuity",
+              "version": "0.1.0-proposal.1"
+            },
+            "scope": {
+              "subjects": [
+                {
+                  "binding": "internal",
+                  "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                  "target_type": "s3.account"
+                }
+              ],
+              "qualifiers": []
+            },
+            "result": {
+              "state": "unresolved",
+              "reasons": [
+                "s3.rng_history_unestablished"
+              ],
+              "evidence": []
+            },
+            "basis": {
+              "members": [
+                {
+                  "binding": "external",
+                  "target": "77a94c87-3fd6-452f-b260-7e7bdd34a05a",
+                  "target_type": "s1.state_load",
+                  "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05"
+                }
+              ],
+              "extent": "complete_for_scope",
+              "scope": {
+                "subjects": [
+                  {
+                    "binding": "internal",
+                    "target": "38357a8d-6680-459c-87ad-fedb3a020842",
+                    "target_type": "s3.account"
+                  }
+                ],
+                "qualifiers": []
+              },
+              "gaps": []
+            },
+            "frontier": {
+              "binding": "internal",
+              "target": "276a37a0-ff8c-4f98-8b9b-575cf0c7f24d",
+              "target_type": "s3.frontier"
+            },
+            "procedure": {
+              "name": "s3.fixture.required_components",
+              "version": "0.1.0-proposal.1"
+            },
+            "revises": [],
+            "conflicts_with": []
+          },
+          "source_trace_refs": [
+            "K.load",
+            "K.recovery"
+          ],
+          "status": "candidate_payload_fragment_not_complete_record_or_receipt"
+        }
+      ],
+      "external_descriptors": [
+        {
+          "package_id": "c8cedbe9-5f10-4680-b59e-59249b288e05",
+          "format": {
+            "name": "s1.connection_package",
+            "version": "0.1.0-proposal.1"
+          },
+          "locator": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.synthetic_package_not_instantiated"
+            ],
+            "evidence": []
+          },
+          "expected_digest": {
+            "state": "unresolved",
+            "reasons": [
+              "s3.no_actual_external_package_bytes"
+            ],
+            "evidence": []
+          },
+          "access": "s3.fixture.unavailable"
+        }
+      ],
+      "actual_S3_native_support": "unimplemented_unestablished",
+      "wire_conformance": "not_claimed",
+      "notes": [
+        "Resource replacement yields5+4=9; interim3 retained rather than added.",
+        "Overlap evidence exists in the story, but this fragment leaves its exact typed projection unresolved instead of inventing validation."
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "N01",
+      "input": "duplicate property, invalid UTF-8, nonstandard JSON number, surrogate",
+      "expected": "reject transport; preserve raw capture if permitted"
+    },
+    {
+      "id": "N02",
+      "input": "core unknown field, missing required field, structural null or bare number",
+      "expected": "reject structural conformance; do not report native algorithm failure"
+    },
+    {
+      "id": "N03",
+      "input": "known value wrapping unresolved Ref",
+      "expected": "reject ambiguous reference layering"
+    },
+    {
+      "id": "N04",
+      "input": "internal s1 reference or external same-ID fallback",
+      "expected": "reject wrong binding or withhold unresolved external dependency"
+    },
+    {
+      "id": "N05",
+      "input": "unexamined index containing members; empty index presented as native absence",
+      "expected": "reject shape or withhold unsupported negative claim"
+    },
+    {
+      "id": "N06",
+      "input": "Q2 empty selection presented as abstention/delivery",
+      "expected": "preserve held decision; withhold delivery claim"
+    },
+    {
+      "id": "N07",
+      "input": "checkpoint native restart reuses A1; owner reconnect invents A2",
+      "expected": "reject incompatible recovery claim"
+    },
+    {
+      "id": "N08",
+      "input": "position18 interpreted as gap-free replay after native incarnation changed",
+      "expected": "withhold replay/attachment without matching source contract/evidence"
+    },
+    {
+      "id": "N09",
+      "input": "bill3+replacement5+bill4 summed to12",
+      "expected": "withhold incorrect aggregate; declared replacement yields9"
+    },
+    {
+      "id": "N10",
+      "input": "newer evidence silently changes early frontier/result; conflicting record replaced",
+      "expected": "reject identity mutation; preserve new assessment and its actual cutoff"
+    },
+    {
+      "id": "N11",
+      "input": "public attestation exports private frontier or claims public raw verification",
+      "expected": "deny projection/strong assurance; preserve weaker permitted statement"
+    },
+    {
+      "id": "N12",
+      "input": "unknown version/core kind or unsupported critical extension accepted through latest handler",
+      "expected": "preserve opaque bytes; withhold conformance/affected operations"
+    },
+    {
+      "id": "N13",
+      "input": "same package includes its own whole-package digest receipt",
+      "expected": "reject circular subject pin; place receipt outside hashed subject"
+    },
+    {
+      "id": "N14",
+      "input": "missing operation role grammar treated as permissive Ref target acceptance",
+      "expected": "withhold affected effect/claim until exact contract is supplied"
+    }
+  ]
+}

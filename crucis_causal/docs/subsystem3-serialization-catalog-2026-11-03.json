@@ -1,0 +1,848 @@
+{
+  "kind": "s3_bounded_serialization_design_catalog",
+  "local_date": "2026-11-03",
+  "status": "BS01-BS12_proposals_pending_review_not_installed_or_adopted",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "based_on_commit": "6f0669a4a4a2d134548de202197e456aa14e5b09",
+  "candidate_version": "0.1.0-proposal.1",
+  "wire_schema_implemented": false,
+  "format": {
+    "name": "s3.account_package",
+    "version": "0.1.0-proposal.1"
+  },
+  "scope": "Closed candidate common forms and role indexes. Operation/driver/owner-specific payload grammars, admission proofs and S1/S2 projections must be explicitly selected before corresponding operation support; this catalog does not install them.",
+  "package": {
+    "format": "Contract",
+    "package_id": "ID",
+    "roots": "KnownRef(account_view|projection_view)[1]",
+    "records": "Record[1..n]",
+    "external_packages": "ExternalPackage[]",
+    "extensions": "Extension[]"
+  },
+  "record": {
+    "id": "ID",
+    "record_type": "QName",
+    "contract": "Contract",
+    "producer": "KnownRef(component)",
+    "created_at": "K(Time)",
+    "provenance": "Source",
+    "payload": "ClosedPayload(record_type)",
+    "extensions": "Extension[]"
+  },
+  "primitives": {
+    "Contract": {
+      "name": "QName",
+      "version": "String"
+    },
+    "Scope": {
+      "subjects": "Ref[]",
+      "qualifiers": "Ref[]"
+    },
+    "Source": {
+      "basis": "reported|observed|reconstructed|derived|intrinsic",
+      "evidence": "Ref[]",
+      "procedure": "K(Contract)",
+      "inputs": "Ref[]"
+    },
+    "PayloadRef": {
+      "artifact": "KnownRef(s1.artifact_snapshot)",
+      "selector": "K(Selector)"
+    },
+    "ExternalPackage": {
+      "package_id": "ID",
+      "format": "Contract",
+      "locator": "K(String)",
+      "expected_digest": "K(Digest)",
+      "access": "Code"
+    },
+    "Extension": {
+      "contract": "Contract",
+      "affects": "Ref[]",
+      "critical_for": "Code[]",
+      "payload": "BytePayload"
+    },
+    "RoleBinding": {
+      "role": "Code",
+      "members": "IndexList(Ref)"
+    },
+    "AxisEntry": {
+      "axis": "SupportAxis",
+      "status": "AxisSpecificStatus",
+      "evidence": "IndexList(Ref)",
+      "limits": "IndexList(KnownRef(diagnostic))"
+    },
+    "StateComponent": {
+      "component": "Contract",
+      "identity": "K(String)",
+      "availability": "K(PayloadRef)",
+      "loaded": "K(Boolean)",
+      "evidence": "Ref[]"
+    },
+    "Cursor": {
+      "contract": "Contract",
+      "position": "String",
+      "scope": "Scope"
+    },
+    "Digest": {
+      "algorithm": "sha256",
+      "value": "Hex64",
+      "byte_length": "Index",
+      "scope": "ByteScope"
+    }
+  },
+  "reference_variants": [
+    {
+      "binding": "internal",
+      "target": "ID",
+      "target_type": "QName"
+    },
+    {
+      "binding": "external",
+      "package_id": "ID",
+      "target": "ID",
+      "target_type": "QName"
+    },
+    {
+      "binding": "unresolved",
+      "target_type": "QName",
+      "reason": "Code",
+      "evidence": "Ref[]",
+      "source_labels": "String[]"
+    }
+  ],
+  "knowledge_variants": [
+    {
+      "state": "known",
+      "value": "T",
+      "basis": "Ref[]"
+    },
+    {
+      "state": "unresolved",
+      "reasons": "Code[1..n]",
+      "evidence": "Ref[]"
+    },
+    {
+      "state": "not_applicable",
+      "rule": "Contract",
+      "scope": "Ref[]"
+    }
+  ],
+  "index": {
+    "members": "T[]",
+    "extent": "complete_for_scope|partial_for_scope|not_examined|unresolved",
+    "scope": "Scope",
+    "gaps": "KnownRef(diagnostic)[]"
+  },
+  "lexical_rules": {
+    "ID": "lowercase UUIDv4; source/native IDs remain separate scoped values",
+    "QName": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$",
+    "Index": "^(0|[1-9][0-9]*)$",
+    "IntegerText": "^-?(0|[1-9][0-9]*)$",
+    "DecimalText": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+    "String": "Unicode scalar sequence without normalization; unknown native encoding remains bytes",
+    "Code": "QName; selecting a code does not install its meaning",
+    "Boolean": "JSON true or false; never a Number",
+    "raw_numeric_tokens": "forbidden in interpreted S3 structural tree, including extension JSON; opaque BytePayload text may contain native numeric tokens",
+    "null": "forbidden in interpreted structural slots; native null may be retained in opaque evidence",
+    "Hex64": "^[0-9a-f]{64}$",
+    "Contract.version": "nonempty exact version string; no range/latest semantics",
+    "Time.utc_instant": "valid calendar instant with explicit Z; precision tag matches seconds/fractional seconds; uncertainty finite nonnegative when known",
+    "BytePayload.inline_base64": "strict base64 with padding, no ignored nonalphabet characters; decoded bytes preserved"
+  },
+  "support_axis_statuses": {
+    "representation": [
+      "representable",
+      "uninterpreted",
+      "rejected",
+      "unresolved",
+      "not_examined"
+    ],
+    "mechanism": [
+      "supplied",
+      "absent",
+      "unresolved",
+      "not_examined"
+    ],
+    "readiness": [
+      "established",
+      "blocked",
+      "unresolved",
+      "not_examined"
+    ],
+    "authority": [
+      "permitted",
+      "denied",
+      "unresolved",
+      "not_applicable"
+    ],
+    "enforcement": [
+      "established",
+      "limited",
+      "absent",
+      "unresolved",
+      "not_applicable"
+    ],
+    "tests": [
+      "scoped_pass",
+      "scoped_fail",
+      "skipped",
+      "not_run"
+    ],
+    "native_evidence": [
+      "recorded",
+      "reported_only",
+      "unavailable",
+      "not_examined"
+    ],
+    "coverage": [
+      "complete_for_scope",
+      "partial_for_scope",
+      "not_examined",
+      "unresolved"
+    ]
+  },
+  "core_payloads": {
+    "s3.component": {
+      "name": "String",
+      "role": "Code",
+      "implementation": "K(PayloadRef)"
+    },
+    "s3.account": {
+      "purpose": "prepare|execute|observe",
+      "target": "KnownRef(target)",
+      "related_accounts": "IndexList(Ref(account))"
+    },
+    "s3.target": {
+      "definition": "Contract",
+      "scope": "Scope",
+      "subjects": "IndexList(Ref)",
+      "requirements": "IndexList(Ref)",
+      "relations": "IndexList(Ref)"
+    },
+    "s3.audience": {
+      "purpose": "Contract",
+      "recipients": "IndexList(Ref)",
+      "disclosure_policy": "Ref",
+      "authority": "K(KnownRef(assessment))"
+    },
+    "s3.claim_request": {
+      "claim": "Contract",
+      "scope": "Scope",
+      "parameters": "IndexList(KnownRef(typed_payload))",
+      "required": "Boolean"
+    },
+    "s3.account_view": {
+      "account": "KnownRef(account)",
+      "view_role": "full_account",
+      "audience": "KnownRef(audience)",
+      "frontier": "KnownRef(frontier)",
+      "requirements": "KnownRef(requirement_context)",
+      "activities": "IndexList(Ref)",
+      "evidence": "IndexList(Ref)",
+      "assessments": "IndexList(KnownRef(assessment))",
+      "disposition": "KnownRef(disposition)",
+      "obligations": "IndexList(KnownRef(obligation))",
+      "collections": "IndexList(KnownRef(collection_period|collection_closure))"
+    },
+    "s3.projection_view": {
+      "view_role": "audience_projection",
+      "audience": "KnownRef(audience)",
+      "projection_contract": "Contract",
+      "members": "IndexList(Ref)",
+      "claims": "IndexList(KnownRef(assessment))",
+      "limits": "IndexList(KnownRef(diagnostic))"
+    },
+    "s3.typed_payload": {
+      "payload_contract": "Contract",
+      "content": "PayloadRef"
+    },
+    "s3.frontier": {
+      "local_records": "IndexList(KnownRef)",
+      "source_positions": "IndexList(KnownRef(source_frontier))",
+      "selection_rule": "Contract"
+    },
+    "s3.diagnostic": {
+      "code": "Code",
+      "scope": "Scope",
+      "details": "String",
+      "evidence": "Ref[]"
+    },
+    "s3.assessment": {
+      "question": "Contract",
+      "scope": "Scope",
+      "result": "K(Boolean|String|Number|KnownRef)",
+      "basis": "IndexList(Ref)",
+      "frontier": "KnownRef(frontier)",
+      "procedure": "Contract",
+      "revises": "KnownRef(assessment)[]",
+      "conflicts_with": "KnownRef(assessment)[]"
+    },
+    "s3.disposition": {
+      "kind": "no_effect_selected|waiting|held|selected|collection_closed",
+      "operations": "IndexList(KnownRef(effect_command))",
+      "requirements": "KnownRef(requirement_context)",
+      "frontier": "KnownRef(frontier)",
+      "basis": "Ref[]"
+    },
+    "s3.obligation": {
+      "question": "Contract",
+      "scope": "Scope",
+      "owner": "Ref",
+      "disposition": "pending|handed_off|discharged|unresolved",
+      "basis": "Ref[]",
+      "follow_up": "IndexList(Ref)"
+    },
+    "s3.collection_period": {
+      "scope": "Scope",
+      "bounds": "KnownRef(typed_payload)",
+      "predecessors": "KnownRef(collection_period)[]",
+      "policy": "Contract"
+    },
+    "s3.collection_closure": {
+      "period": "KnownRef(collection_period)",
+      "frontier": "KnownRef(frontier)",
+      "stopping_rule": "Contract",
+      "reason": "Code",
+      "captured": "IndexList(Ref)",
+      "outstanding": "IndexList(KnownRef(obligation))",
+      "basis": "Ref[]"
+    },
+    "s3.source_frontier": {
+      "source": "Ref",
+      "episode": "K(KnownRef(native_subject))",
+      "protocol": "Contract",
+      "filter": "K(KnownRef(typed_payload))",
+      "generation": "K(String)",
+      "fetched": "K(Cursor)",
+      "durably_captured": "K(Cursor)",
+      "interpreted": "K(Cursor)",
+      "acknowledged": "K(Cursor)",
+      "coverage": "IndexList(Ref)"
+    },
+    "s3.requirement_context": {
+      "catalog": "Contract",
+      "requested_claims": "IndexList(KnownRef(claim_request))",
+      "coverage": "IndexList(KnownRef(requirement_case))"
+    },
+    "s3.requirement_case": {
+      "family": "Contract",
+      "scope": "Scope",
+      "applicability": "applies|not_applicable|unresolved|not_examined",
+      "rule": "Contract",
+      "basis": "Ref[]",
+      "roles": "RoleBinding[]",
+      "gaps": "KnownRef(diagnostic)[]",
+      "frontier": "KnownRef(frontier)"
+    },
+    "s3.support_claim": {
+      "feature": "Contract",
+      "supplier": "KnownRef(component)",
+      "scope": "Scope",
+      "parameters": "IndexList(KnownRef(typed_payload))",
+      "dependencies": "IndexList(Ref)",
+      "axes": "AxisEntry[]",
+      "frontier": "KnownRef(frontier)"
+    },
+    "s3.native_subject": {
+      "descriptor": "KnownRef(typed_payload)",
+      "origin_attempt": "Ref(s1.attempt)",
+      "scope": "Scope",
+      "basis": "Ref[]"
+    },
+    "s3.native_association": {
+      "attempt": "Ref(s1.attempt)",
+      "native_subject": "KnownRef(native_subject)",
+      "relation": "candidate|reported|supported|disputed",
+      "basis": "Ref[]",
+      "assessment": "K(KnownRef(assessment))"
+    },
+    "s3.effect_command": {
+      "account": "KnownRef(account)",
+      "operation": "Contract",
+      "binding": "KnownRef(typed_payload)",
+      "targets": "Scope",
+      "dependencies": "IndexList(Ref)",
+      "admission": "K(KnownRef(assessment))",
+      "frontier": "KnownRef(frontier)"
+    },
+    "s3.transmission": {
+      "command": "KnownRef(effect_command)",
+      "channel": "Contract",
+      "recipient": "Ref",
+      "ownership": "K(KnownRef(ownership_context))",
+      "sent_at": "K(Time)",
+      "receipts": "IndexList(Ref)"
+    },
+    "s3.ownership_context": {
+      "owner": "Ref",
+      "scope": "Scope",
+      "validity": "KnownRef(typed_payload)",
+      "receiver_guarantee": "K(KnownRef(typed_payload))",
+      "basis": "Ref[]",
+      "supersedes": "KnownRef(ownership_context)[]"
+    },
+    "s3.realization": {
+      "command": "KnownRef(effect_command)",
+      "specification": "KnownRef(typed_payload)",
+      "inputs": "IndexList(Ref)",
+      "outputs": "IndexList(Ref)",
+      "checks": "IndexList(Ref)",
+      "state": "K(KnownRef(typed_payload))"
+    },
+    "s3.staging": {
+      "command": "KnownRef(effect_command)",
+      "presentation": "Ref(s1.presentation)",
+      "recipient": "Ref",
+      "members": "IndexList(Ref)",
+      "stable_use": "K(KnownRef(assessment))",
+      "disclosure": "IndexList(KnownRef(exposure_entry))",
+      "cleanup": "IndexList(KnownRef(obligation))"
+    },
+    "s3.action_decision": {
+      "actions": "IndexList(Ref(s1.action_request))",
+      "rule": "Contract",
+      "information": "IndexList(Ref)",
+      "frontier": "KnownRef(frontier)",
+      "selected": "IndexList(Ref(s1.action_response))",
+      "assessment": "K(KnownRef(assessment))"
+    },
+    "s3.delivery": {
+      "command": "KnownRef(effect_command)",
+      "decision": "KnownRef(action_decision)",
+      "actions": "IndexList(Ref(s1.action_request))",
+      "responses": "IndexList(Ref(s1.action_response))",
+      "recipient": "Ref",
+      "validity": "KnownRef(typed_payload)",
+      "receipts": "IndexList(Ref)"
+    },
+    "s3.recovery": {
+      "kind": "coordinator_reconnect|transport_retry|native_restart|state_restore|continuation_assessment",
+      "subjects": "Scope",
+      "policy": "Contract",
+      "predecessors": "IndexList(Ref(s1.attempt))",
+      "successors": "IndexList(Ref(s1.attempt))",
+      "components": "StateComponent[]",
+      "overlap": "K(KnownRef(assessment))",
+      "basis": "Ref[]"
+    },
+    "s3.resource_entry": {
+      "scope": "Scope",
+      "owner": "Ref",
+      "resource": "Contract",
+      "unit": "KnownRef(typed_payload)",
+      "entry_kind": "estimate|reservation|usage|bill|settlement|release|control_overhead",
+      "quantity": "K(Number)",
+      "interval": "K(KnownRef(typed_payload))",
+      "finality": "interim|final|unresolved",
+      "revises": "KnownRef(resource_entry)[]",
+      "aggregation": "Contract",
+      "basis": "Ref[]"
+    },
+    "s3.exposure_entry": {
+      "scope": "Scope",
+      "owner": "Ref",
+      "recipient": "Ref",
+      "information": "IndexList(Ref)",
+      "facet": "prepared|reachable|transmitted|delivered|accessed|used|policy_consumed",
+      "extent": "K(Number|KnownRef(typed_payload))",
+      "policy": "Contract",
+      "basis": "Ref[]",
+      "revises": "KnownRef(exposure_entry)[]"
+    },
+    "s3.publication_receipt": {
+      "subject_package": "ID",
+      "subject_format": "Contract",
+      "digest": "K(Digest)",
+      "audience": "KnownRef(audience)",
+      "operation": "KnownRef(effect_command)",
+      "commit_status": "unconfirmed|committed|failed|disputed",
+      "checks": "IndexList(Ref)",
+      "basis": "Ref[]"
+    },
+    "s3.availability": {
+      "subject": "Ref",
+      "locator": "K(String)",
+      "access": "Code",
+      "observation": "Contract",
+      "result": "K(Boolean)",
+      "basis": "Ref[]",
+      "revises": "KnownRef(availability)[]"
+    }
+  },
+  "conditional_families": [
+    {
+      "id": "C01",
+      "contract": {
+        "name": "s3.family.scientific_binding",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.intent",
+        "s3.role.bindings",
+        "s3.role.selection",
+        "s3.role.timing"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C02",
+      "contract": {
+        "name": "s3.family.realization",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.specification",
+        "s3.role.commands",
+        "s3.role.inputs",
+        "s3.role.outputs",
+        "s3.role.checks",
+        "s3.role.state"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C03",
+      "contract": {
+        "name": "s3.family.presentation",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.presentations",
+        "s3.role.recipients",
+        "s3.role.transfers",
+        "s3.role.stable_use",
+        "s3.role.disclosure"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C04",
+      "contract": {
+        "name": "s3.family.effect_admission",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.commands",
+        "s3.role.bindings",
+        "s3.role.requirements",
+        "s3.role.authority",
+        "s3.role.reservations",
+        "s3.role.transmissions"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C05",
+      "contract": {
+        "name": "s3.family.native_association",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.subjects",
+        "s3.role.associations",
+        "s3.role.connections"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C06",
+      "contract": {
+        "name": "s3.family.ownership",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.contexts",
+        "s3.role.guarantees"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C07",
+      "contract": {
+        "name": "s3.family.collection",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.periods",
+        "s3.role.source_positions",
+        "s3.role.capture",
+        "s3.role.closures"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C08",
+      "contract": {
+        "name": "s3.family.artifact_interpretation",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.artifacts",
+        "s3.role.outputs",
+        "s3.role.interpretations",
+        "s3.role.domains",
+        "s3.role.checks"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C09",
+      "contract": {
+        "name": "s3.family.native_action",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.actions",
+        "s3.role.sessions",
+        "s3.role.correlations",
+        "s3.role.validity"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C10",
+      "contract": {
+        "name": "s3.family.action_decision",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.decisions",
+        "s3.role.information",
+        "s3.role.selected",
+        "s3.role.gaps"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C11",
+      "contract": {
+        "name": "s3.family.delivery",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.deliveries",
+        "s3.role.commands",
+        "s3.role.actions",
+        "s3.role.responses",
+        "s3.role.receipts"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C12",
+      "contract": {
+        "name": "s3.family.recovery",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.recoveries",
+        "s3.role.attempts",
+        "s3.role.checkpoints",
+        "s3.role.state_loads",
+        "s3.role.overlap"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C13",
+      "contract": {
+        "name": "s3.family.stopping",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.targets",
+        "s3.role.commands",
+        "s3.role.receipts",
+        "s3.role.assessments"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C14",
+      "contract": {
+        "name": "s3.family.resources",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.entries",
+        "s3.role.owners",
+        "s3.role.obligations"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C15",
+      "contract": {
+        "name": "s3.family.exposure",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.entries",
+        "s3.role.recipients",
+        "s3.role.information",
+        "s3.role.policies",
+        "s3.role.obligations"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C16",
+      "contract": {
+        "name": "s3.family.publication",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.views",
+        "s3.role.receipts",
+        "s3.role.dependencies",
+        "s3.role.claims"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C17",
+      "contract": {
+        "name": "s3.family.current_pointer",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.commands",
+        "s3.role.bindings",
+        "s3.role.revision_evidence",
+        "s3.role.assessments"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C18",
+      "contract": {
+        "name": "s3.family.availability",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.observations",
+        "s3.role.retention",
+        "s3.role.cleanup",
+        "s3.role.obligations"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    }
+  ],
+  "decode_limits_example": {
+    "max_manifest_bytes": "16777216",
+    "max_depth": "64",
+    "max_records": "100000",
+    "max_collection_items": "100000",
+    "max_total_reference_nodes": "1000000",
+    "max_scalar_utf8_bytes": "1048576",
+    "max_external_packages": "10000"
+  },
+  "limit_status": "Explicit illustrative local read policy, not adopted global defaults or native scientific limits.",
+  "compatibility": "S1/S2 records stay in exact-version external packages; no insertion into S3 records or silent widening of guarded handles/contexts.",
+  "cardinality_rules": [
+    "Exactly one internal account_view or projection_view root per candidate view package; multi-account material uses referenced packages rather than inferred merged commissions.",
+    "Every declared core field is required and every object is closed; zero members differs from omitted index.",
+    "Local record identities, external package IDs and root identities are unique; external descriptor cannot name its own package.",
+    "KnownRef is only internal or external; K(KnownRef) forbids known(unresolved reference). Plain Ref permits unresolved identity without target ID.",
+    "Not-examined indexes contain zero members. Partial/unresolved indexes can retain established members and explicit gaps.",
+    "Every support_claim has exactly one entry for each of the eight axes; evidence and scope still determine actual support.",
+    "Every active family role occurs exactly once; no unknown/duplicate role or generic metadata fallback.",
+    "Selected disposition requires at least one effect command; no_effect_selected has zero commands. Held/waiting may retain candidate commands without admission.",
+    "Delivery requires nonempty correlated action and response indexes plus exact bundle contract; zero selected responses belongs to a held decision, not a delivery or abstention.",
+    "Native restart has predecessor/successor attempt relations when established; coordinator reconnect has no new native successor merely because ownership changed.",
+    "Resource revisions link records of the same owner/resource/unit/member/interval scope or provide explicit scope-conversion procedure; replacements and additive deltas are not interchangeable.",
+    "Collection closure references its period and immutable frontier; late evidence appends without reopening the old closure. Active resumed observation creates a linked period.",
+    "Publication receipt is stored outside the exact package whose whole-byte digest it reports; changed content has new package/view identity."
+  ],
+  "semantic_limits": [
+    "Structural conformance is not admission, receiver enforcement, native success or causal correctness.",
+    "Role/operation-specific positive cardinalities and parameter formats remain exact contracts to close with interaction/recovery signatures and compatibility mapping, not inferred permissive defaults.",
+    "No proposal changes historical formats, protocol versions, thresholds, native evidence or paper receipts."
+  ],
+  "value_variants": {
+    "Number": [
+      {
+        "number_type": "integer",
+        "text": "IntegerText"
+      },
+      {
+        "number_type": "finite_decimal",
+        "text": "DecimalText"
+      },
+      {
+        "number_type": "nonfinite",
+        "value": "nan|positive_infinity|negative_infinity"
+      }
+    ],
+    "Time": [
+      {
+        "time_type": "utc_instant",
+        "value": "String",
+        "precision": "second|fractional_second",
+        "clock": "K(KnownRef(component|s1.component|s2.component))",
+        "uncertainty_seconds": "K(Number)"
+      },
+      {
+        "time_type": "native_report",
+        "text": "String",
+        "timezone": "K(String)",
+        "precision": "K(String)"
+      }
+    ],
+    "BytePayload": [
+      {
+        "content_form": "inline_utf8",
+        "text": "String"
+      },
+      {
+        "content_form": "inline_base64",
+        "data": "String"
+      },
+      {
+        "content_form": "external_snapshot",
+        "locations": "KnownRef(s1.location)[]",
+        "digest": "K(Digest)"
+      }
+    ],
+    "ByteScope": [
+      {
+        "kind": "full_content"
+      },
+      {
+        "kind": "byte_range",
+        "start": "Index",
+        "end_exclusive": "Index"
+      }
+    ],
+    "Selector": [
+      {
+        "selector_type": "json_pointer",
+        "pointer": "String"
+      },
+      {
+        "selector_type": "byte_range",
+        "start": "Index",
+        "end_exclusive": "Index"
+      },
+      {
+        "selector_type": "member_key",
+        "key": "String",
+        "member_contract": "Contract"
+      },
+      {
+        "selector_type": "array_coordinate",
+        "axes": "KnownRef(s1.schema)",
+        "coordinates": "Index[]"
+      },
+      {
+        "selector_type": "archive_member",
+        "name": "String",
+        "member_digest": "K(Digest)"
+      }
+    ]
+  }
+}

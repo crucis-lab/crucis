@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 consolidated semantic direction affirmed with details open; minimum/conditional record and scoped capability/support refinements pending review; no S3 implementation or wire/API freeze",
+  "status": "S3 minimum/support semantic direction affirmed; BS01-BS12 bounded serialization recommendations pending review. No S3 runtime, complete package conformance or implementation approval.",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -260,6 +260,16 @@
       "path": "crucis_causal/experiments/codec.py",
       "sha256": "aa54e9686f5b4d5737d2991cbd78effa3adb0314a74d518ab76a065bd4f20e06",
       "scope": "Existing S2 canonical record/package encoding distinct from received raw snapshot byte identity; source at design base f42d7b21"
+    },
+    {
+      "path": "crucis_causal/experiments/model.py",
+      "sha256": "9e3359b877afe7d1f0a6ddc7e0d19fcb6cd146273a17eba9c820c6e56399a802",
+      "scope": "Existing S2 knowledge/reference/decimal forms, not S3 serialization."
+    },
+    {
+      "path": "crucis_causal/experiments/schema.py",
+      "sha256": "536a12c530dcc1861be2b54600cc3dfb23423d54bc45296c7cc9458f11e71941",
+      "scope": "Existing closed S2 reference/primitive namespace ownership, not a loader for this S3 design catalog."
     }
   ],
   "existing_scoped_test_anchors": [
@@ -436,8 +446,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review MS01-MS12 minimum/conditional and scoped support recommendations; then bounded serialization, exact interaction/recovery signatures, S1/S2 mappings and final S3 design review/DAG. No implementation authorization.",
-  "current_design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
+  "next_design": "Review BS01-BS12 common serialization candidate and partial fragments; close exact operation/role/parameter and journal/owner/driver/decision/storage contracts plus explicit S1/S2 mappings. Then complete-package/failure review, S3 final review and build DAG. Still no implementation authorization.",
+  "current_design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -663,6 +673,29 @@
         "MS10",
         "MS11",
         "MS12"
+      ],
+      "status": "direction_affirmed_details_open",
+      "commit": "6f0669a4a4a2d134548de202197e456aa14e5b09"
+    },
+    {
+      "subject": "bounded serialization common forms, references and version rules",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "catalog": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
+      "specimens": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "based_on_commit": "6f0669a4a4a2d134548de202197e456aa14e5b09",
+      "proposal_ids": [
+        "BS01",
+        "BS02",
+        "BS03",
+        "BS04",
+        "BS05",
+        "BS06",
+        "BS07",
+        "BS08",
+        "BS09",
+        "BS10",
+        "BS11",
+        "BS12"
       ],
       "status": "recommendations_pending_review"
     }
@@ -2465,13 +2498,13 @@
     }
   ],
   "remaining_before_s3_freeze": [
-    "Review MS01-MS12 semantic recommendations; exact catalogs/encoding are not frozen.",
-    "Specify bounded serialization, reference/cardinality/phase constraints and versioned support/profile mapping.",
-    "Complete journal/capture/owner/native receipt binding and actual backend guarantee contracts.",
-    "Define exact core/owner/driver/decision/storage signatures, validity, recovery and failure contracts.",
-    "Specify explicit S1/S2 compatibility and snapshot/projection/context preservation without historical rebaselining.",
-    "Recheck complete records/failure cases and profiles outside the four illustrative paths.",
-    "Final S3 design review and implementation DAG/bundles with scoped acceptance gates; implementation awaits explicit authorization."
+    "Review BS01-BS12 common wire forms/version/cardinality proposals; do not call partial fragments complete native packages.",
+    "Close exact operation/family positive cardinalities, accepted role target types and native/owner parameter payload grammars with interface contracts.",
+    "Define journal/capture/owner/native receipt binding, validity, replay/ack and actual storage/publication guarantees.",
+    "Specify exact core/owner/driver/decision/storage signatures and recovery/failure semantics.",
+    "Close S1/S2 native identity/action/receipt/handle/snapshot/projection compatibility without changing accepted old schemas.",
+    "Transcribe and review complete packages with external dependency pins, audience closure and negative conformance cases; extend beyond four illustrative native paths.",
+    "Final S3 design review, implementation DAG/bundles and scoped acceptance gates. Implementation needs explicit authorization."
   ],
   "consolidation_direction_affirmation": {
     "source": "User: yes this makes sense; specify precise minimum versus conditional S3 record and support matrix, still no implementation.",
@@ -2484,7 +2517,7 @@
       "subject": "Separate preservable account, admitted effect and supported claim/projection",
       "alternative": "One valid/ready/success flag",
       "cost_and_failure_prevented": "More explicit judgments; prevents metadata becoming permission or native success",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2495,7 +2528,7 @@
       "subject": "Fifteen shared semantic obligations inside six blocks, conditional empty indices",
       "alternative": "Require every native/distributed field in every record",
       "cost_and_failure_prevented": "Some scoped descriptors; prevents fabricated IDs and heavyweight local minimum",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2506,7 +2539,7 @@
       "subject": "Triggered families with explicit missingness and applicability coverage",
       "alternative": "Optional fields omitted without explanation",
       "cost_and_failure_prevented": "More requirement evidence; prevents unknown becoming non-applicable",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2517,7 +2550,7 @@
       "subject": "Knowledge requirements depend on phase/operation",
       "alternative": "Demand native job ID before launch or permit control with a bare ID",
       "cost_and_failure_prevented": "More conditions; prevents circular startup and wrong-target effects",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2528,7 +2561,7 @@
       "subject": "Orthogonal support axes and exact claim scope",
       "alternative": "A single support score/tier from declared ports",
       "cost_and_failure_prevented": "More evidence links; prevents schema/callable/test/native guarantee conflation",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2539,7 +2572,7 @@
       "subject": "Composed exact capability guarantees and claim predicates",
       "alternative": "System-name profiles or one all-live tier",
       "cost_and_failure_prevented": "More granular profiles; preserves genericism and truthful partial support",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2550,7 +2583,7 @@
       "subject": "Actual admission predicates for each effect/strong claim",
       "alternative": "Implement admission policy independently in each driver",
       "cost_and_failure_prevented": "Shared owner/backend contracts; prevents diverging policy, unsafe retries and hidden exposure",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2561,7 +2594,7 @@
       "subject": "Pin old examples; add explicit documentary metadata overlay",
       "alternative": "Publish a new complete replacement edition of the examples",
       "cost_and_failure_prevented": "Extra versioned artifact; makes added assumptions distinguishable from original story evidence",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2572,7 +2605,7 @@
       "subject": "I partial closure and K scoped continuity remain valid preservation",
       "alternative": "Require complete final execution/full state for any valid account",
       "cost_and_failure_prevented": "Withheld claims; prevents fabricated answers or exclusion of difficult trials",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2583,7 +2616,7 @@
       "subject": "Explicit bootstrap/projection/historical cases and no universal one-to-one counts",
       "alternative": "Force every example into prospective one-job one-result shape",
       "cost_and_failure_prevented": "Conditional roles; prevents false launch/repetition history",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2594,7 +2627,7 @@
       "subject": "Dynamic/multi-party/composite/unknown-origin support is conditional and separately evidenced",
       "alternative": "Restrict the initial contract to the four simpler execution paths",
       "cost_and_failure_prevented": "Additional profiles/tests; avoids baking current examples into universal limitations",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2605,7 +2638,7 @@
       "subject": "Documentary requirement checks distinct from implementation acceptance",
       "alternative": "One combined validation report with explicit documentary/runtime sections",
       "cost_and_failure_prevented": "Separate scoped receipts; reduces the chance that fictional capabilities become implemented guarantees",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-record-capability-matrix-2026-11-03.md",
       "design_section": 9,
       "s3_implementation": null,
@@ -2625,5 +2658,157 @@
     "kind": "authored_requirement_consistency_not_runtime_or_wire_acceptance",
     "s3_acceptance_evidence": false,
     "native_execution": false
-  }
+  },
+  "minimum_support_direction_affirmation": {
+    "source": "User affirmed the minimum/conditional direction and requested bounded serialization, still no implementation.",
+    "scope": "MS01-MS12 direction affirmed with details open; not exact wire/API/operation acceptance."
+  },
+  "current_serialization_catalog": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
+  "current_serialization_specimens": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+  "bounded_serialization_recommendations": [
+    {
+      "id": "BS01",
+      "subject": "Strict bounded UTF-8 transport and explicit local limits",
+      "alternative": "Permissive parsers plus post-parse validation",
+      "cost_and_failure_prevented": "Explicit ingestion failures; prevents overwritten duplicates/resource exhaustion being misread as native outcomes",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS02",
+      "subject": "Separate closed S3 view package and recorder envelope",
+      "alternative": "Extend the existing S1 package in place",
+      "cost_and_failure_prevented": "New resolver ownership; preserves accepted schemas and native/recorder distinctions",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS03",
+      "subject": "Occurrence UUIDs, immutable account/view roles, separate byte pins",
+      "alternative": "Content-address every entity",
+      "cost_and_failure_prevented": "More identities; avoids merging identical events/repetitions or cyclic self-digests",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS04",
+      "subject": "Qualified exact references and explicit unresolved identities",
+      "alternative": "Ambient ID lookup",
+      "cost_and_failure_prevented": "Descriptor overhead; prevents wrong-package/type/version substitution",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS05",
+      "subject": "Existing three knowledge variants plus separate conflict records",
+      "alternative": "A single broad status enum with null",
+      "cost_and_failure_prevented": "More links; prevents unknown/NA/disputed/false conflation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS06",
+      "subject": "Scoped indexes and immutable basis/frontier references",
+      "alternative": "Latest-state snapshots with optional lists",
+      "cost_and_failure_prevented": "More scope metadata; prevents missingness/hindsight becoming completeness",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS07",
+      "subject": "Opaque scoped cursors and distinct progress stages",
+      "alternative": "One numeric high-water mark",
+      "cost_and_failure_prevented": "More source contracts; prevents gaps, replay mismatch and acknowledgement loss",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS08",
+      "subject": "Closed family role indexes plus exact operation-specific constraints",
+      "alternative": "Inline every possible native operation schema in core",
+      "cost_and_failure_prevented": "More registered contracts; preserves generic representation without permissive execution",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS09",
+      "subject": "Tagged decimals and explicit revision/aggregation scope",
+      "alternative": "Floating totals with a newest-bill rule",
+      "cost_and_failure_prevented": "Typed arithmetic/revision links; prevents precision loss and double counting",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS10",
+      "subject": "Exact stored-byte pins and separately versioned record comparison",
+      "alternative": "Hash one universal normalized JSON representation",
+      "cost_and_failure_prevented": "Two named procedures; preserves original evidence and existing scientific receipts",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS11",
+      "subject": "Audience-specific view shapes and exact-version compatibility procedures",
+      "alternative": "A full private-root shape everywhere and tolerant readers",
+      "cost_and_failure_prevented": "More projection/version work; prevents identity disclosure and silent semantic upgrades",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "BS12",
+      "subject": "Labeled partial specimens and explicit remaining native-contract dependencies",
+      "alternative": "Transcribe all native packages before reviewing common wire forms",
+      "cost_and_failure_prevented": "Another review step; avoids invented S1 projections and false acceptance claims",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-bounded-serialization-candidate-2026-11-03.md",
+      "design_section": 9,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    }
+  ],
+  "bounded_serialization_anchors": [
+    {
+      "path": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
+      "sha256": "b9a4846895f9b8d8563697ed7c60600024d64c09d8e40702d45a630c0969b20d",
+      "kind": "declarative_candidate_not_runtime_or_native_evidence"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "sha256": "adb9b3b1e0abe4702141d7249e9cb36084fa424194fa15c3521ccca257dd3ed0",
+      "kind": "declarative_candidate_not_runtime_or_native_evidence"
+    }
+  ]
 }
