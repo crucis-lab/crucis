@@ -217,14 +217,56 @@ def parse_snapshot(data, limits, *, access=None):
     if not isinstance(cap, ReadCapability) or not cap.permits(pid): raise ExecutionError('s3.read_denied')
     return PinnedView(pid, copy.deepcopy(format_contract), copy.deepcopy(content_digest), data, cap)
 
+class _ImmutableDict(dict):
+    def _immutable(self, *args, **kwargs): raise TypeError('private immutable snapshot index')
+    __setitem__ = __delitem__ = clear = pop = popitem = setdefault = update = __ior__ = _immutable
+    def __deepcopy__(self, memo):
+        return {copy.deepcopy(k, memo): copy.deepcopy(v, memo) for k, v in self.items()}
+
+class _ImmutableList(list):
+    def _immutable(self, *args, **kwargs): raise TypeError('private immutable snapshot index')
+    __setitem__ = __delitem__ = append = extend = insert = pop = remove = clear = reverse = sort = __iadd__ = __imul__ = _immutable
+    def __deepcopy__(self, memo): return [copy.deepcopy(v, memo) for v in self]
+
+def _immutable_tree(value):
+    if isinstance(value, dict): return _ImmutableDict((k, _immutable_tree(v)) for k, v in value.items())
+    if isinstance(value, list): return _ImmutableList(_immutable_tree(v) for v in value)
+    return value
+
+_INDEXES = OrderedDict()
+_INDEX_LOCK = threading.RLock()
+_INDEX_BYTES = 0
+_INDEX_MAX_BYTES = 33554432
+
+def _snapshot_index(data):
+    # Caller has already validated exact bytes/limits and the supplied read cap.
+    # Only immutable JSON and immutable canonical bytes are shared, never rights.
+    global _INDEX_BYTES
+    with _INDEX_LOCK:
+        indexed = _INDEXES.get(data)
+        if indexed is not None:
+            _INDEXES.move_to_end(data)
+            return indexed
+    package = _immutable_tree(json.loads(data))
+    signatures = _ImmutableDict((r['id'], canonical(r)) for r in package['records'])
+    references = tuple(ref for _, ref, _ in walk(package) if isinstance(ref, dict) and 'binding' in ref and 'target_type' in ref)
+    indexed = (package, signatures, references)
+    if len(data) <= _INDEX_MAX_BYTES:
+        with _INDEX_LOCK:
+            if data not in _INDEXES:
+                while _INDEXES and (_INDEX_BYTES + len(data) > _INDEX_MAX_BYTES or len(_INDEXES) >= 512):
+                    removed, _ = _INDEXES.popitem(last=False); _INDEX_BYTES -= len(removed)
+                _INDEXES[data] = indexed; _INDEX_BYTES += len(data)
+    return indexed
+
 class Resolver:
     """Finite caller-supplied byte closure. No locator handlers or ambient imports."""
     def __init__(self, views=(), *, limits):
         self.limits = limits
-        self._views, self._records = {}, {}
+        self._views, self._records, self._record_bytes = {}, {}, {}
         # Private indexes of validated immutable snapshots. Public access still
         # checks capabilities/pins and returns copies, never these dictionaries.
-        self._packages, self._by_package, self._descriptors = {}, {}, {}
+        self._packages, self._by_package, self._descriptors, self._references = {}, {}, {}, {}
         for view in views:
             self.add(view)
 
@@ -242,16 +284,18 @@ class Resolver:
         if not old and len(self._views) >= int(self.limits.max_external_packages): raise ExecutionError('s3.external_package_limit')
         total = sum(len(v.source_bytes) for k,v in self._views.items() if k != actual.package_id) + len(actual.source_bytes)
         if total > int(self.limits.max_external_bytes): raise ExecutionError('s3.external_byte_limit')
-        package = actual.package
+        package, signatures, references = _snapshot_index(actual.source_bytes)
+        self._references[actual.package_id] = references
         for record in package['records']:
-            old_record = self._records.get(record['id'])
-            if old_record is not None and canonical(old_record) != canonical(record): raise ExecutionError('s3.record_identity_conflict')
+            old_record = self._record_bytes.get(record['id'])
+            if old_record is not None and old_record != signatures[record['id']]: raise ExecutionError('s3.record_identity_conflict')
         self._views[actual.package_id] = PinnedView(actual.package_id, copy.deepcopy(actual.format), copy.deepcopy(actual.digest), actual.source_bytes, actual.read_scope)
         self._packages[actual.package_id] = package
         self._by_package[actual.package_id] = {r['id']: r for r in package['records']}
         self._descriptors[actual.package_id] = {d['package_id']: d for d in package['external_packages']}
         for record in package['records']:
             self._records[record['id']] = record
+            self._record_bytes[record['id']] = signatures[record['id']]
         return actual
 
     def view(self, package_id):
@@ -297,11 +341,10 @@ class Resolver:
                 if pin['state'] != 'known' or pin['value'] != other.digest: raise ExecutionError('s3.integrity_mismatch')
                 if descriptor.get('format', other.format) != other.format: raise ExecutionError('s3.package_format_mismatch')
                 visit(other.package_id, depth + 1)
-            for _, ref, _ in walk(package):
-                if isinstance(ref, dict) and 'binding' in ref and 'target_type' in ref:
-                    reference_count += 1
-                    if reference_count > int(self.limits.max_total_reference_nodes): raise ExecutionError('s3.reference_count_limit')
-                    if ref['binding'] in ('internal', 'external'): self._locate(ref, pid)
+            for ref in self._references[pid]:
+                reference_count += 1
+                if reference_count > int(self.limits.max_total_reference_nodes): raise ExecutionError('s3.reference_count_limit')
+                if ref['binding'] in ('internal', 'external'): self._locate(ref, pid)
             active.remove(pid)
         visit(package_id, 0)
         return tuple(ordered)

@@ -76,9 +76,9 @@ class Connection:
 
 
 @contextmanager
-def service(root):
+def service(root, *, program=None):
     root = Path(root).resolve(); token = secrets.token_hex(32)
-    process = subprocess.Popen([sys.executable, '-B', str(FIX/'native_service.py'), '--root', str(root)],
+    process = subprocess.Popen([sys.executable, '-B', str(program or FIX/'native_service.py'), '--root', str(root)],
         stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
         creationflags=subprocess.CREATE_NO_WINDOW if os.name == 'nt' else 0)
     messages = queue.Queue()
@@ -238,26 +238,32 @@ def scientific_inputs(path):
     from crucis_causal.connections.model import Builder as B1, contract as c1
     from crucis_causal.connections.ports import prepared_connection
     from crucis_causal.connections.services import RecordBuffer, IdentityService, ContractRegistry
-    manifest = json.loads((FIX/'manifest.json').read_bytes())
-    row = next(r for r in manifest['bindings'] if r['path'] == path)
-    views = tuple(codec.parse_snapshot((FIX/name).read_bytes(), L) for name in row['dependencies'])
-    # B00 froze R before S3 existed, without a request-binding receipt. Complete
-    # that metadata handoff through the real S2 API; never recompile/replace R/A.
-    from crucis_causal.experiments.api import ReaderLimits, ProjectionOccurrence
-    from crucis_causal.experiments.handoff import record_handoff
-    from crucis_causal.experiments.resolver import PlanResolver, ReadAccess
-    from crucis_causal.experiments.writer import S2RecordWriter
-    limits = ReaderLimits.standard()
-    prior = PlanResolver([v.source_bytes for v in views], limits=limits)
-    writer = S2RecordWriter(prior, ReadAccess(frozenset(prior._views)), limits)
-    draft = writer.context()
-    r_view = next(v for v in views if v.package_id == row['R_package_id'])
-    handoff = record_handoff(row['run_binding'], ProjectionOccurrence(row['request']['target'], row['attempt']['target']), r_view, draft)
-    if handoff.state != 'completed': raise AssertionError(handoff.issues)
-    frozen = writer.frozen([handoff.value])
-    views = tuple({v.package_id: v for v in (*views,
-        *(codec.parse_snapshot(v.source_bytes, L) for v in writer.base._views.values()),
-        codec.parse_snapshot(frozen.source_bytes, L))}.values())
+    if path == 'checkpoint_r2':
+        folder = ROOT/'tests/audit_fixtures/sc3_recovery_r2'
+        row = json.loads((folder/'manifest.json').read_bytes())
+        row = {**row, 'R_package_id': row['request']['package_id']}
+        views = tuple(codec.parse_snapshot((folder/item['path']).read_bytes(), L) for item in row['files'])
+    else:
+        manifest = json.loads((FIX/'manifest.json').read_bytes())
+        row = next(r for r in manifest['bindings'] if r['path'] == path)
+        views = tuple(codec.parse_snapshot((FIX/name).read_bytes(), L) for name in row['dependencies'])
+        # B00 froze R before S3 existed, without a request-binding receipt. Complete
+        # that metadata handoff through the real S2 API; never recompile/replace R/A.
+        from crucis_causal.experiments.api import ReaderLimits, ProjectionOccurrence
+        from crucis_causal.experiments.handoff import record_handoff
+        from crucis_causal.experiments.resolver import PlanResolver, ReadAccess
+        from crucis_causal.experiments.writer import S2RecordWriter
+        limits = ReaderLimits.standard()
+        prior = PlanResolver([v.source_bytes for v in views], limits=limits)
+        writer = S2RecordWriter(prior, ReadAccess(frozenset(prior._views)), limits)
+        draft = writer.context()
+        r_view = next(v for v in views if v.package_id == row['R_package_id'])
+        handoff = record_handoff(row['run_binding'], ProjectionOccurrence(row['request']['target'], row['attempt']['target']), r_view, draft)
+        if handoff.state != 'completed': raise AssertionError(handoff.issues)
+        frozen = writer.frozen([handoff.value])
+        views = tuple({v.package_id: v for v in (*views,
+            *(codec.parse_snapshot(v.source_bytes, L) for v in writer.base._views.values()),
+            codec.parse_snapshot(frozen.source_bytes, L))}.values())
     resolver = codec.Resolver(views, limits=L)
     buffer = RecordBuffer(B1('Actual native binding fixture'))
     working = working_s1(row['request'], row['attempt'], resolver, buffer)
@@ -304,7 +310,7 @@ class Environment:
             owner_views = tuple(codec.parse_snapshot(bytes(row[0]), L) for row in db.execute('SELECT data FROM views'))
         read = read_with(read, *owner_views); self.octx = api.RuntimeContext(read, control)
         boundary = DriverBoundary(self.journal, self.jctx, ((self.owner, self.octx),))
-        self.mechanics = Mechanics(self.component, client, scientific_path)
+        self.mechanics = Mechanics(self.component, client, 'checkpoint' if scientific_path == 'checkpoint_r2' else scientific_path)
         supplied = NativeMechanics(self.component, contract('s3.fixture.http'), supplied_callable(self.mechanics.prepare),
             tuple((selected, supplied_callable(getattr(self.mechanics, method))) for selected, method in zip(OPS, ('invoke','lookup','attach'))))
         self.driver = NativeDriver(self.component, self.pin, boundary, supplied); self.driver.install(self.registry)

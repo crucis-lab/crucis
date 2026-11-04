@@ -243,7 +243,9 @@ class NativeDriver(DeclaredDriver):
                 handles = (self.connections.bind(reply.descriptor, reply.runtime, role, reply.epoch, request.command),)
                 from dataclasses import replace
                 evidence = replace(evidence, live_handles=handles)
-            boundary = 'crossed' if reply.acceptance.get('state') == 'known' and reply.acceptance['value'] else 'not_crossed' if reply.acceptance.get('state') == 'known' else 'may_have_crossed'
+            # A negative receiver decision does not prove zero gateway disclosure,
+            # control cost or other effects after entering supplied mechanics.
+            boundary = 'crossed' if reply.acceptance.get('state') == 'known' and reply.acceptance['value'] else 'may_have_crossed'
             effect = api.EffectBoundary(request.command, boundary, reply.acceptance, tuple(evidence.receipts['members']), issue_token.transmission)
             if reply.acceptance.get('state') == 'known' and not reply.acceptance['value']:
                 return api.rejected('s3.native_operation_not_accepted', records=evidence.records, effects=(effect,))

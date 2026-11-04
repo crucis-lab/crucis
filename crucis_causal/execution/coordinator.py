@@ -109,7 +109,9 @@ class _Services:
 
 
 class Coordinator:
-    def __init__(self, rules=(), *, collector=None):
+    def __init__(self, rules=(), *, collector=None, recovery_intents=None, recovery_policies=None):
+        self.recovery_intents = recovery_intents
+        self.recovery_policies = recovery_policies
         self.collector = collector
         self._rules = {}
         self._controls = weakref.WeakKeyDictionary()
@@ -236,9 +238,22 @@ class Coordinator:
         self._scientific(binding, view, resolver)
         return result, rule
 
-    @staticmethod
-    def _scientific(binding, view, resolver):
-        if binding.record['payload']['operation']['name'] != 's3.op.launch': return
+    def _scientific(self, binding, view, resolver):
+        if binding.record['payload']['operation']['name'] == 's3.op.native_restart':
+            from .recovery import require_continuation
+            require_continuation(binding, resolver, self.recovery_intents)
+            return
+        selected = binding.record['payload']['operation']['name']
+        if selected in ('s3.op.acquire_information', 's3.op.compute_response', 's3.op.deliver', 's3.op.restore_state'):
+            from .recovery import visible_scientific_followup, require_scientific_restore
+            if visible_scientific_followup(binding, view, resolver):
+                if selected == 's3.op.restore_state':
+                    require_scientific_restore(binding, resolver, self.recovery_intents)
+                else:
+                    # Native response permission alone is not an S2 channel
+                    # condition. No default evaluator invents that equivalence.
+                    raise ExecutionError('s3.scientific_followup_policy_unqualified')
+        if selected != 's3.op.launch': return
         from .scientific import match_run, require_scientific
         params = {p['key']: p['value'] for p in binding.record['payload']['parameters']}
         roles = {r['role']: r['members']['members'] for r in binding.record['payload']['roles']}
@@ -705,3 +720,8 @@ class Coordinator:
         receipt = api.IssueReceipt(admission.prepared.command, token.value, evidence, effects, transmission, admission.admission_occurrence)
         issues = tuple(api.Issue(i['code'], i['scope'], tuple(i['evidence'])) for i in body['issues'])
         return api.CallResult(body['state'] if body['state'] != 'rejected' else 'partial', receipt, records=evidence.records, issues=issues, effects=effects)
+
+    def recover(self, view, goal, context):
+        from .recovery import RecoveryPolicies
+        policies = self.recovery_policies if isinstance(self.recovery_policies, RecoveryPolicies) else RecoveryPolicies()
+        return policies.plan(view, goal, context)

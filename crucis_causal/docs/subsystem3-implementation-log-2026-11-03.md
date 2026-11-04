@@ -583,3 +583,101 @@ once delivery, causal correctness or a change to the frozen paper contract.
 After B09's actual validated commit, implement B10's evidence-dependent recovery,
 stopping, state loading, collection closure and settlement. Then complete immutable
 audience publication, four-path integration and final qualification through B13.
+
+## B10 implementation: recovery, stopping, state and closure (2026-11-04)
+
+Tickets: DLV-08, DLV-09; related DLV-10. B09 predecessor commit:
+3f1bb357dca34a629b5a067b3ff585eee30cc5db. The accepted baseline, B00
+fixtures/oracles, S1/S2 sources and original paper evidence remain unchanged.
+
+`execution/recovery.py` implements the pure recovery-policy boundary. Policies
+are actual supplied callables with pinned implementations; names never install
+code. Missing policy semantics produce a held plan. Recovery plans contain
+explicit operation requests, held requirements and retained scoped obligations;
+they cannot grant, query, cancel, retransmit or restart anything by themselves.
+Known outstanding obligations in the selected view cannot be dropped by a
+policy result. Later ambient records are not silently substituted for that view.
+There is no universal automatic next-action policy or default retransmission.
+
+The coordinator now checks scientific native restart and restoration. The
+positive checkpoint path uses B04's separately inventoried `sc3_recovery_r2`
+condition and its real S2 handoff. A2 is distinct from A1 and explicitly refers
+to the same frozen request and checkpoint. Its scientific trial remains the
+verified predecessor trial; no A2 compiler handoff or independent repetition is
+fabricated. A new-request recovery relation is held pending an actual supported
+scientific projection. The original B00 checkpoint's NA recovery policy stays
+held. Restoration must also match A2's declared initial checkpoint and the fixed
+S2 partial-state condition before native loading.
+
+Integration review exposed an additional C01 boundary: native permission to
+acquire/compute/deliver a response does not establish its S2 information-channel
+condition. Visible scientific followups are held where that condition has no
+implemented interpreter; changing a target label does not waive scientific
+command intent in the same account. Unknown-origin operational interaction
+retains B09's separately qualified scope. This does not qualify a scientific
+interactive campaign under an undeclared information condition.
+
+`execution/stopping.py` keeps observed component stop, descendant coverage,
+checkpoint identity/source, source availability and actual loading separate.
+Closing collection appends an immutable closure under the expected journal
+revision, preserves outstanding obligations, and neither cancels native work
+nor releases reservations. Repeating the same closure occurrence reconciles
+its exact contents. Invalid supplied captured indexes are rejected rather than
+replaced by a default. Pure stop/state checks remain scoped interpretation of
+supplied evidence, not cryptographic receipt authentication.
+
+The independent `sc3_runtime/recovery_service.py` fixture stores actual jobs,
+checkpoint bytes and loaded state in its own SQLite namespace. It rejects strict
+overlap at native restart and requires a quiescent successor before restoration.
+Captured payload and native checkpoint-handle paths are exercised separately;
+an expired handle prevents creation of another job. Native acceptance leaves
+loading unknown. Actual loading records model/optimizer state while RNG/history
+remain explicitly unknown in both the native reply and structured S3 components.
+Fixture-supervisor stop completion and oracle observations are explicit test
+controls; they are not a generic production stop monitor or descendant terminator.
+
+F12 kills a real coordinator child after the stop acknowledgement. A fresh
+coordinator reconciles the original G/D without another forwarding permit, and
+strict restart remains held until the predecessor is observed stopped. F13 kills
+after successor acceptance and again after loading but before a local receipt.
+Independent native queries distinguish accepted-but-unproven loading from actual
+loaded bytes; they do not relaunch the successor or infer exact trajectory replay.
+The receiver records two native jobs; their S3/S2 bindings keep one scoped
+scientific trial and two attempts. The unchanged final native bill calculation
+is interim3 replaced by5, plus successor4, total9 under cap20.
+F20 separately exercises actual owner settlement/release commit reply loss with
+fresh issuers and the same request/correlation, retained charges and persistent
+control allowance. Scoped ledger composition totals9; releasing capacity never
+erases a charge. This is not a hard monetary guarantee for external providers.
+
+A related driver correction preserves possible effects when a native receiver
+reports acceptancefalse after mechanics were entered. Rejection alone no longer
+asserts `not_crossed`; gateway disclosure/control costs can remain unresolved.
+The controlled stale-epoch test proves zero jobs without claiming zero effects.
+
+Owned plumbing beyond the DAG's three primary paths: coordinator/scientific
+dispatch checks, native-result boundary reporting, the fixture bootstrap and a
+private immutable resolver index. A pure 168-snapshot profile recorded repeated
+JSON decoding and 10,788 identity serializations in one resolver construction.
+The bounded index shares only immutable JSON/canonical bytes/reference positions;
+exact source validation, current access, limits, every reference/pin check and
+public mutable-copy behavior remain enforced. It holds at most32MiB of raw keys
+and512 entries; decoded/index overhead is additional. No handle/grant/clock result
+or authority decision is cached. Adverse index and all15 wire/registry tests are
+preserved alongside the recovery development runs. An earlier intrusive profiler
+was stopped and recorded as incomplete, never counted as acceptance evidence.
+
+Source-stable bundle tests, F12/F13/F20 oracle/history/recovered-view triplets and
+both staged-tree gate receipts outside the checkout control B10 completion.
+Development checks are not substituted for those final receipts. Scope remains
+cooperative same-host fixtures and explicit policy/code bindings; exact replay,
+hostile isolation, distributed atomicity and real native scientific campaigns
+are not qualified by this bundle.
+
+## Where we're going after B10
+
+Complete B11's exact immutable publication and audience/copy closure. Then compose
+B12's four scoped fixture profiles, read-only interface, installed-wheel checks
+and methodology/support index, followed by B13's complete acceptance and the
+separate recorded-parity/certificate qualification. Remote CI, publication and
+new real native campaigns retain their separate authorization boundaries.
