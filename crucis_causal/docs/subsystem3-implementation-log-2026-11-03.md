@@ -211,8 +211,83 @@ errors were diagnosed to their fields and fixed without broadening schemas;
 failed logs remain external under s3-build/S3-B04. Full staged-tree and enabled-hook
 receipts are required before B05 advances.
 
+## B05 — Guarded realization and trusted input custody (2026-11-04)
+
+B04 predecessor:6b68d33d96b09f993a4bdcb92a8e5d94edc026fa. Its10 targeted
+tests passed without skips; both full gates passed380 tests with0 failures/errors
+and26 existing data/dependency skips. Its new checkpoint fixture/pins and all B00
+inputs remain unchanged. The clone's CRLF-aware whitespace setting preserves
+the new pinned manifest bytes; separate controls still reject actual trailing
+spaces. The failed pre-stage diagnostic is retained externally.
+
+Extended the shared authority layer with DriverBoundary. It validates exact
+command/binding/source/implementation/selected driver dependency, actual receiver
+and channel, current issuer-owned grants from every configured owner, and the
+journal's actual one-use permit. It consumes the permit immediately before the
+driver's forwarding boundary. No JSON receipt or repeated token becomes authority.
+Core routing now has an explicitly registered native invocation envelope; native
+arguments keep their own exact grammar. Guarded input drivers install that grammar
+and their actual supplied methods without name-based imports or probes. B06 can
+use the same routing/entry mechanisms instead of special cases for these fixtures.
+
+InputDriver.prepare is pure and does not run a provider or transfer input. Exact
+installed realization procedures receive selected source bytes/identities and
+declared recipe/randomness/fitted-state inputs. Case identities are not flattened
+into datasets. State/randomness semantics require explicit installed validation;
+unsupported predecessor/window/encoding protocols hold rather than substitute.
+Actual product snapshots/checks return through S2's existing record_materialization
+API. No dummy discovery R/A/run binding is created to admit preparation. Failed
+preservation is a partial materialization with actual data retained, not a redraw
+or native discovery failure. Fitted-input knowledge can be unresolved; it is never
+implicitly an empty known list. A provider cannot change the fixed reference rule
+by changing its copy of the input record. Useful captured products survive that
+semantic rejection. Fitting checks cover a separate calibration source and actual
+captured fitted state; missing calibration does not fall back to the target table.
+The fitting fixture explicitly claims no automatic reference-truth inheritance.
+
+LocalCustodian persists exact C/content/recipient/namespace/epoch bindings and
+per-accepted-stage consumption under the qualified local SQLite/artifact mechanisms.
+It exposes a coherent immutable-byte view only after every selected member is
+present and hash-checked. Whole snapshots, byte ranges and exact archive members
+are supported without flattening/re-encoding. Unselected evaluator archive members
+are not given to the native read interface. Same-C receiver replay returns existing
+partial/complete evidence without implicit transfer resumption or allowance reset.
+Partial/lost transfer records possible disclosure and unconfirmed extent. Takeover
+fences this actual read interface; revocation retains bytes, past copies and debit.
+Changed stored bytes block activation/read without repinning. A different custodian
+namespace cannot fulfill the old binding. These are cooperative trusted-interface
+claims, not OS-wide isolation, remote atomic upload or global erasure guarantees.
+
+A separate local endpoint profile stages one actual source-owner capability as
+an immutable reference, without calling it or inventing response bytes. Its exact
+source/recipient/namespace/generation/query bound is checked at delegation. Actual
+queries have distinct source occurrences, debit before callback entry and cannot
+reset through duplicated proxies/revocation. This endpoint owner is deliberately
+process-local: no durable/global query budget, cross-process handle restoration,
+multi-owner atomic endpoint bundle or frozen response-dataset claim. Metadata alone
+cannot recreate its grant. Stronger unsupported endpoint guarantees are held.
+
+Runtime secret slots are opaque, explicitly supplied and restricted to actual
+configured callable identities. No environment/credential lookup occurs. Native
+errors are not copied into audit exception text. Configured sentinel tests cover
+non-serialization and derived redaction with an explicit unretained-original gap;
+redacted bytes never masquerade as original capture. This is not unknown-secret
+detection or the final B11 audience/publication gate.
+
+The supplemental CSV/fitting/endpoint oracles are controlled mechanism tests,
+separate from frozen B00 scientific/native-protocol expectations. Actual test
+providers, their resolved fixture configuration and execution-code manifests are
+identified. OP01/02,X01,X12 cases use real B03 owner decisions and B02 durable
+R/G/C/D/permitted entry, then independent provider counters/custody rows/content/
+endpoint events. Broader coordinator/scientific-profile admission remains B06;
+these manual mechanism tests do not fabricate LiveAdmission or claim S3 is complete.
+An initial tuple-to-wire-array handoff error and invalid native member code labels
+were diagnosed to their fields and corrected against existing schemas. Failed
+runs remain external. Targeted/full staged-tree/enabled-hook receipts under
+s3-build/S3-B05 control advancement, not this log's prose.
+
 ## Where we're going
 
-After B04's validated milestone, implement B05's realization/information staging
-with real access and partial-effect evidence, then B06's shared admission and
-issue boundary. Subsequent native fixtures must enter through that boundary.
+After B05's validated milestone, implement B06's coordinator lifecycle, temporal
+admission and caller-ID recovery using the existing shared owner/journal/driver
+boundary. B07–B13 remain unimplemented and require their own dependency gates.

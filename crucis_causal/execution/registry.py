@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from decimal import Decimal
 from jsonschema import Draft202012Validator
 from . import api
-from .model import ExecutionError, VERSION, digest
+from .model import ExecutionError, VERSION, digest,contract
 from .schema import _catalog, _schema, fields, operation
 
 _CALLABLES = weakref.WeakSet()
@@ -23,6 +23,27 @@ def callable_value(handle):
     if not isinstance(handle, api.SuppliedCallable) or handle not in _CALLABLES:
         raise ExecutionError('s3.callable_binding_unavailable')
     return handle._function
+
+def native_invocation(receiver,channel,selected,native):
+    """Pure routing envelope for explicitly installed native invocation grammars.
+
+    Native arguments remain under their own exact contract. Neither a contract
+    string nor this envelope loads a callable, creates a handle or grants rights.
+    """
+    from .schema import validate_value
+    validate_value(receiver,'KnownRef');validate_value(channel,'Contract');validate_value(selected,'Contract')
+    if not isinstance(native,dict):raise ExecutionError('s3.native_invocation_body_required')
+    return {'kind':'s3.native_invocation','recipient':copy.deepcopy(receiver),'channel':copy.deepcopy(channel),
+        'native_contract':copy.deepcopy(selected),'native':copy.deepcopy(native)}
+
+def invocation_route(value,selected,registry):
+    """Validate the installed grammar before using a driver-provided route."""
+    from .schema import validate_value
+    if not isinstance(value,dict) or set(value)!={'kind','recipient','channel','native_contract','native'} or value['kind']!='s3.native_invocation' or value['native_contract']!=selected:
+        raise ExecutionError('s3.native_invocation_envelope')
+    validate_value(value['recipient'],'KnownRef');validate_value(value['channel'],'Contract')
+    registry.decode(selected,value)
+    return copy.deepcopy(value['recipient']),copy.deepcopy(value['channel'])
 
 def key(selected):
     if not isinstance(selected, dict) or set(selected) != {'name','version'}:
