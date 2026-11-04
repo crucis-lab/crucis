@@ -440,6 +440,31 @@ class Coordinator:
             requests.append(restored)
         return tuple(requests), read_with(read, *resolver._views.values())
 
+    @staticmethod
+    def _attempt_claim(binding, command_id, head, read):
+        """One initiating command per attempt in this journal/account profile.
+
+        A new C is not a reconciliation of the original uncertain launch. This
+        account-local check and expected-revision append are not a distributed
+        receiver guarantee or authority over another coordinator's namespace.
+        """
+        selected = binding.record['payload']['operation']
+        slot = {'s3.op.launch': 's3.role.attempt', 's3.op.native_restart': 's3.role.successor'}.get(selected['name'])
+        if slot is None: return
+        wanted = next(e.record['id'] for e in binding.inputs.entries if e.role == slot)
+        resolver = codec.Resolver((*read.views, head.snapshot), limits=read.limits)
+        for prior in head.snapshot.records:
+            if prior['record_type'] != 's3.effect_command' or prior['id'] == command_id: continue
+            old_slot = {'s3.op.launch': 's3.role.attempt', 's3.op.native_restart': 's3.role.successor'}.get(prior['payload']['operation']['name'])
+            if old_slot is None: continue
+            previous, pid = resolver.record(prior['payload']['binding'], head.snapshot.package_id)
+            for role in previous['payload']['roles']:
+                if role['role'] != old_slot: continue
+                for ref in role['members']['members']:
+                    if ref.get('binding') == 'unresolved': raise ExecutionError('s3.prior_launch_attempt_unestablished')
+                    attempt, _ = resolver.record(ref, pid)
+                    if attempt['id'] == wanted: raise ExecutionError('s3.attempt_already_has_initiating_command')
+
     def admit(self, prepared, expected_head, context, admission_occurrence):
         results = []
         try:
@@ -459,6 +484,7 @@ class Coordinator:
             if head_result.state != 'completed': return head_result
             head = head_result.value
             read = read_with(read, *head_result.records.dependencies, head.snapshot)
+            self._attempt_claim(binding, command['id'], head, read)
             loaded = self._load_requests(head, admission_occurrence, binding, read, services)
             if loaded is None:
                 if head.revision != expected_head.revision: raise ExecutionError('s3.stale_journal_revision')
@@ -550,6 +576,7 @@ class Coordinator:
             if current.state != 'completed': return current
             head = current.value
             read = read_with(read, *current.records.dependencies, head.snapshot)
+            self._attempt_claim(binding, command['id'], head, read)
             source = prepared.source_view
             # Never mint a second transmission for an unresolved prior command.
             transmissions = [r for r in head.snapshot.records if r['record_type'] == 's3.transmission' and r['payload']['command']['target'] == command['id']]

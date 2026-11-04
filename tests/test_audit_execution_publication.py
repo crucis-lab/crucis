@@ -135,6 +135,19 @@ class PublicationCases(unittest.TestCase):
             circular['external_packages'].append(descriptor)
             with self.assertRaisesRegex(ExecutionError,'duplicate_or_self_dependency'):
                 codec.dumps(circular,case.case.L)
+            # N13 direct form: subject_package is an ID, not a dependency Ref.
+            # A known full-content pin cannot name its own containing package.
+            from test_audit_execution_wire import fixture
+            specimen,_=fixture();self_receipt=specimen.package
+            native_receipt=next(r for r in self_receipt['records'] if r['record_type']=='s3.publication_receipt')
+            native_receipt['payload']['subject_package']=specimen.package_id
+            native_receipt['payload']['digest']=known(specimen.digest)
+            with self.assertRaisesRegex(ExecutionError,'circular_publication_subject_digest'):
+                codec.dumps(self_receipt,case.case.L)
+            # An unresolved digest does not assert a circular whole-content pin.
+            native_receipt['payload']['digest']={'state':'unresolved','reasons':['s3.not_observed'],'evidence':[]}
+            codec.dumps(self_receipt,case.case.L)
+
 
     @covers('X09')
     def test_historical_L_native_export_is_exactly_611_bytes_two_entities_without_new_metadata(self):

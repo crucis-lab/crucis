@@ -19,6 +19,8 @@ from crucis_causal.execution.journal import resolve_binding,binding_digest
 from crucis_causal.execution.model import (ExecutionError,Builder,canonical,contract,digest,identity,index,
     known,not_applicable,number,qualified,reference,scope,unknown)
 
+from audit_fixtures.sc3_runtime.receipt_case import snapshot as retained_snapshot, owner_oracle, triplet
+
 RESOURCES={'s3.fixture_work':{'unit':contract('fixture_unit'),'capacity':number('20')}}
 
 def owner_setup(root,*,capacity='20',max_calls='100',clock=None):
@@ -147,7 +149,9 @@ class OwnerCases(unittest.TestCase):
                 req=request(owner,binding,method,correlation=reserved.correlation,params=params,evidence=evidence)
                 def lost(label):
                     if label=='after_owner_commit':raise OSError('lost response after actual receiver commit')
+                before_oracle=owner_oracle(owner)
                 dropped=getattr(owner,method)(req,replace(ctx,fault=lost))
+                committed_oracle=owner_oracle(owner)
                 self.assertEqual(dropped.state,'rejected')
                 replay=getattr(owner,method)(req,ctx)
                 self.assertEqual(replay.state,'completed',replay.issues)
@@ -156,6 +160,12 @@ class OwnerCases(unittest.TestCase):
                 with closing(sqlite3.connect(owner.path)) as db:
                     self.assertEqual(db.execute('SELECT COUNT(*) FROM requests WHERE id=?',(req.request_occurrence,)).fetchone()[0],1)
                     self.assertEqual(db.execute('SELECT COUNT(*) FROM subjects').fetchone()[0],1)
+                triplet('F03',method+'_reply_lost',{'before':before_oracle,'after_lost_reply':committed_oracle,'after_replay':owner_oracle(owner)},
+                    {'request_occurrence':req.request_occurrence,'correlation':req.correlation,'admission_occurrence':req.admission_occurrence,
+                     'revision_before':revision,'source_pins':[{'package_id':v.package_id,'digest':v.digest} for v in ctx.read.views]},
+                    {'receipt':replay.value.receipt,'revision':replay.value.revision,'decision':receipt_payload(replay),
+                     'reply_loss':'injected after actual receiver commit; same-process API replay, not process death'})
+
 
     @covers('OP16P','OP16H','F03')
     def test_OP16_exact_lost_reserve_reply_reconciles_one_hold_and_unknown_stays_unknown(self):
@@ -165,6 +175,7 @@ class OwnerCases(unittest.TestCase):
                 if label=='after_owner_commit':raise OSError('injected lost reply')
             req,normal,first=reserve(owner,binding,replace(ctx,fault=lost))
             self.assertEqual(first.state,'rejected');self.assertEqual(first.issues[0].code,'s3.owner_reply_unconfirmed')
+            committed_oracle=owner_oracle(owner)
             normal=replace(normal,fault=None)
             reconcile,normal=query_request(owner,binding,normal,req)
             recovered=owner.reconcile(reconcile,normal)
@@ -174,6 +185,12 @@ class OwnerCases(unittest.TestCase):
             unknown_query,normal=query_request(owner,binding,normal,req,target=identity())
             missing=owner.reconcile(unknown_query,normal)
             self.assertEqual(missing.state,'completed',missing.issues);self.assertEqual(receipt_payload(missing)['decision'],'unresolved');self.assertIsNone(missing.value.grant)
+            triplet('F03','reserve_reply_lost',{'after_lost_reply':committed_oracle,'after_reconcile':owner_oracle(owner)},
+                {'request_occurrence':req.request_occurrence,'correlation':req.correlation,'admission_occurrence':req.admission_occurrence,
+                 'source_pins':[{'package_id':v.package_id,'digest':v.digest} for v in normal.read.views]},
+                {'receipt':recovered.value.receipt,'decision':receipt_payload(recovered),'unknown_query_decision':receipt_payload(missing),
+                 'reply_loss':'injected after actual receiver commit; reconciliation is not a new reservation'})
+
 
     @covers('OP18P','OP18H','A01')
     def test_OP18_settlement_replaces_interim_bill_and_preserves_missing_evidence(self):
@@ -252,10 +269,16 @@ class OwnerCases(unittest.TestCase):
             self.assertTrue(any(r['id']==req.request_occurrence for r in reopened.records))
             self.assertTrue(any(r['id']==req.admission_occurrence for r in reopened.records))
             with closing(sqlite3.connect(owner.path)) as db:self.assertEqual(db.execute('SELECT COUNT(*) FROM subjects').fetchone()[0],0)
+            before_oracle=owner_oracle(owner)
             retried=owner.reserve(req,ctx)
             self.assertEqual(retried.state,'completed',retried.issues)
             self.assertEqual(receipt_payload(retried)['request_occurrence'],req.request_occurrence)
             with closing(sqlite3.connect(owner.path)) as db:self.assertEqual(db.execute('SELECT COUNT(*) FROM subjects').fetchone()[0],1)
+            triplet('F02','intent_before_receiver',{'before_entry':before_oracle,'after_original_request':owner_oracle(owner)},
+                {'retained_intent':retained_snapshot(reopened),'request_occurrence':req.request_occurrence,
+                 'admission_occurrence':req.admission_occurrence,'interruption':'explicit before owner call; journal object reopened, no process death'},
+                {'receipt':retried.value.receipt,'decision':receipt_payload(retried),'same_request_occurrence':req.request_occurrence})
+
 
     @covers('OP15P','OP15H','A01')
     def test_OP15_actual_hold_dedup_changed_request_and_capacity(self):

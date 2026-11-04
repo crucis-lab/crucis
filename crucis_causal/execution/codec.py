@@ -119,6 +119,10 @@ def _semantics(package):
         elif kind == 's3.delivery':
             if not p['actions']['members'] or not p['responses']['members']:
                 raise ExecutionError('s3.delivery_empty_correlation')
+        elif kind == 's3.publication_receipt':
+            if (p['subject_package'] == package['package_id'] and p['digest']['state'] == 'known'
+                    and p['digest']['value']['scope']['kind'] == 'full_content'):
+                raise ExecutionError('s3.circular_publication_subject_digest')
         elif kind == 's3.resource_entry' and p['quantity']['state'] == 'known':
             value = p['quantity']['value']
             if value['number_type'] == 'nonfinite' or Decimal(value['text']) < 0:

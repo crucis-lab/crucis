@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT/'tests/audit_fixtures/sc3_runtime'))
 from test_audit_execution_wire import covers
 from test_audit_execution_journal import scratch
 import dispatch_case as case
+from audit_fixtures.sc3_runtime.receipt_case import snapshot as retained_snapshot, triplet
 from crucis_causal.execution import api, codec
 from crucis_causal.execution.identity import NativeConnections, coordinate
 from crucis_causal.execution.model import ExecutionError, canonical, contract, digest, identity, known, unknown
@@ -124,7 +125,7 @@ class DispatchCases(unittest.TestCase):
             fault_receipt('F07', 'delayed_request_epoch_takeover', 'recovered-view',
                 {'epoch': changed['epoch'], 'delayed_response': rejected, 'accepted_predecessor': old['command']})
 
-    @covers('OP04P', 'OP04H')
+    @covers('F06', 'OP04P', 'OP04H')
     def test_negative_before_delayed_acceptance_is_not_closure_and_duplicates_are_retained(self):
         with scratch() as root, case.service(root/'provider') as (client, _):
             original = native_request(pause=True)
@@ -145,6 +146,10 @@ class DispatchCases(unittest.TestCase):
             self.assertEqual(closed['classification'], 'negative'); self.assertTrue(closed['no_late_acceptance'])
             later = client.call('launch', **native_request(command=empty_command))
             self.assertFalse(later['acceptance']['value'])
+            triplet('F06','negative_lookup_before_delayed_original_arrives',client.call('oracle'),
+                {'original_request':original,'negative_before_arrival':before,'supervisor_duplicate_request':duplicate,
+                 'scope':'Native receiver negative control; deliberate supervisor duplicate, not auditor resubmission'},
+                {'retained_matches':found,'separately_closed_ingress':closed,'late_closed_command_response':later})
 
     @covers('X06', 'OP05P')
     def test_unknown_origin_attach_has_no_fabricated_R_A_or_trial(self):
@@ -263,6 +268,7 @@ class DispatchCases(unittest.TestCase):
             planned = env.plan(env.launch(drop_reply=True)); self.assertEqual(planned.state, 'completed', planned.issues)
             admitted = env.admit(planned.value); self.assertEqual(admitted.state, 'completed', admitted.issues)
             d = identity(); out = env.issue(admitted.value, transmission=d)
+            uncertain_prefix=retained_snapshot(env.journal.head(env.account,env.jctx).value.snapshot)
             self.assertEqual(out.state, 'partial', out.issues)
             self.assertEqual(out.effects[0].boundary, 'may_have_crossed')
             self.assertEqual(out.effects[0].acceptance['state'], 'unresolved')
@@ -274,6 +280,11 @@ class DispatchCases(unittest.TestCase):
             self.assertEqual(result.state, 'completed', result.issues)
             self.assertTrue(any(v['classification'] == 'positive' for v in lookup_documents(result)))
             self.assertEqual(len(client.call('oracle')['jobs']), 1)
+            triplet('F06','provider_accepted_reply_lost',client.call('oracle'),
+                {'uncertain_account':uncertain_prefix,'C':planned.value.command,'D':d,'acceptance':out.effects[0].acceptance},
+                {'current':retained_snapshot(env.journal.head(env.account,env.jctx).value.snapshot),
+                 'lookup':lookup_documents(result),'same_D_replay_has_permit':False})
+
 
     @covers('X08', 'OP05H')
     def test_actual_connection_registry_never_uses_only_literal_reused_ID(self):

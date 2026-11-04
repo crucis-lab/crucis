@@ -146,6 +146,9 @@ class Environment(case.Environment):
         resources = {'s3.fixture_work': {'unit': contract('fixture_unit'), 'capacity': number('20')},
             's3.fixture_fetch_events': {'unit': contract('fixture_event'), 'capacity': number('12')}}
         super().__init__(root, client, scientific_path=None, fault=fault, native_operations=(*case.OPS, *OPS), resources=resources)
+        self.configure(descriptor,max_events=max_events,max_bytes=max_bytes)
+
+    def configure(self,descriptor,*,max_events='6',max_bytes='65536',native_subject=None):
         self.descriptor = descriptor; self.mechanics_stream = Mechanics(self)
         self.profile = ObservationProfile(PROTOCOL, supplied_callable(source_identity), supplied_callable(measure), supplied_callable(resume), supplied_callable(advance), self.pin)
         self.collector = Collector((self.profile,)); self.collector.install(self.registry); self.coordinator.collector = self.collector
@@ -154,7 +157,7 @@ class Environment(case.Environment):
             tuple(EffectMethod(op, supplied_callable(self.mechanics_stream.prepare), supplied_callable(method), contract('s3.fixture.stream_evidence')) for op,method in zip(OPS,(self.mechanics_stream.observe,self.mechanics_stream.ack))))
         self.stream_driver.install(self.registry)
         self.sources = {}
-        self.native_subject = None
+        self.native_subject = native_subject
         self.max_events, self.max_bytes = max_events, max_bytes
         self.source, self.period = self.add_source()
 

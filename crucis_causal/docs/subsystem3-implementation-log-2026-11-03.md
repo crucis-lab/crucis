@@ -760,3 +760,124 @@ Finish B12's integrated local, remote, unknown-origin interaction and explicit
 checkpoint profiles, exact interface/support mapping and installed distribution
 isolation. Then complete B13's mandatory case/fault reconciliation, final gates,
 methodology/release account and separate legacy parity/certificate qualification.
+
+## B12 implementation: integrated profiles and opt-in package interface (2026-11-04)
+
+Tickets: DLV-08, DLV-09; related DLV-10. B11's actual accepted commit is the
+predecessor. Completion requires stable-source target tests, isolated distribution
+checks and both full staged-tree gates; development runs are retained separately.
+No accepted contract, fixture oracle, S1/S2 scientific definition or paper source
+is rebaselined.
+
+`Core` is a facade over the supplied coordinator and read context. It supplies no
+default driver, owner, policy evaluator or publication backend. The opt-in module
+CLI inspects, validates and plans from explicitly supplied bytes; its default and
+help paths do not bootstrap live capabilities. Missing installed policy code
+produces a held result with no effects. The import bridge routes the actual owned
+S1 PackageStore reader through admission and the one-use driver boundary, retaining
+unknown historical native origin rather than inventing requests, attempts or trials.
+
+E01 calls the owned synchronous native function and independent SQLite call meter
+through S3. It preserves the native column order and creates an explicit derived
+canonical graph/mapping. The native `order` is fixture input-column alignment, not
+a topological-order claim. Unreported edges are not silently made absent. One
+actual call costs0.7 under cap1. A cold process reads committed evidence without
+relaunching. Within one journal/account, launch and restart now reject a different
+initiating command for the same attempt before admission and before issue. The
+check uses actual prior bindings plus expected-revision append; it does not claim
+distributed attempt uniqueness or provider idempotency.
+
+E02 composes scientific handoff, actual asynchronous launch with a lost reply,
+exact lookup, attachment and observation against the independent controlled native
+receiver. Three capture occurrences retain two native events. Existing owner
+capacity remains cap10 when observation is configured; reconnecting does not reset
+quota. A fresh process reconstructs only explicitly supplied runtime controls and
+acknowledges the retained source, without a repeated launch. Negative lookup does
+not establish that ingress has closed or justify a replacement launch.
+
+E03 is explicitly an unknown-origin operational interactive episode. It exercises
+two distinct same-text actions, fixed information/compute/decision inputs, one Q1
+delivery and zero Q2 selections/deliveries, with consumed1/remain1. A cold process
+looks up the actual delivery receipt without resending. It does not fabricate an
+R, A or scientific trial. The original S2 condition admits only its initial table
+channel; scientific followup acquisition/compute/delivery without a corresponding
+implemented S2 condition interpreter remains held by B10. This is a supported
+operational combination and an explicitly unqualified scientific combination.
+
+E04 runs the separate explicit R2 partial-checkpoint condition with captured bytes
+and native handle variants. A1/A2 remain distinct attempts in one scoped trial.
+Actual loaded model/optimizer components are reported independently of unknown
+RNG/history. Replacement billing3→5 plus successor4 yields9 under cap20. A cold
+process verifies the durable state-restore evidence; B10 F12/F13 separately kill
+live coordinators after stop ACK, restart acceptance and native loading. Evidence
+reopening is not substituted for those interrupted-execution recovery tests. The
+original B00 request's NA checkpoint policy remains held and unchanged.
+
+The methodology index maps38 kinds,31 operations,48 actual class method signatures
+and eight support axes to accepted rules, source SHA256, tests and separately
+qualified claims/limits. Its test checks actual source bytes, cardinalities and
+the interactive scientific limitation. Source-distribution packaging includes this
+technical index and the original611-byte L fixture/provenance; development planning
+documents and private operational records remain excluded. The wheel probe checks
+S3 schema/catalog/Core and module help with checkout/research imports blocked.
+Build/install/check outputs remain external and use an offline local wheel.
+The technical index includes exact accepted rule excerpts with full source pins
+and valid source pointers. Repository tests verify those against the original
+accepted file; source-distribution tests exercise the retained excerpts without
+requiring excluded planning documents. The distribution qualification separately
+runs those tests from the unpacked sdist and records its exact staged-tree
+provenance before B12 can commit.
+
+Final receipt reconciliation found that early F01–F03 and F17–F18 assertions had
+passed but had not persisted the DAG's separately named fault triplets. This is
+an evidence-packaging gap in those prior receipts, not a reason to infer missing
+artifacts from a prose summary. Test-only instrumentation in the journal, owner
+and coordinator tests now retains actual SQLite/custody observations, source
+snapshot bytes/pins and recovered outcomes through a shared fixture helper.
+It does not alter runtime logic, scientific expected values or the assertions.
+An initial helper left SQLite readers open on Windows; explicit closing corrected
+the resulting cleanup errors, with the failed development logs retained. Capture
+receipts distinguish raw artifact availability from committed capture metadata:
+an orphan can exist even when the capture transaction did not commit.
+B12's final target re-executes the entire S3 suite, saving these new triplets as
+current integration evidence. Earlier bundle receipts remain unchanged; the final
+release map explicitly links the later re-execution rather than backdating it.
+F18 retains all four requested variants; actual process deaths remain labeled
+separately from injected reply loss and same-process replay.
+
+The inherited N13 review found a separate concrete codec gap: rejecting an
+external self-dependency did not reject a publication receipt whose plain-ID
+subject_package named its containing package with a known full-content digest.
+The pre-fix reproducer and exact codec source hash are retained externally.
+The S3 codec now rejects that circular known whole-package pin directly; the
+publication test checks both dependency and plain-ID forms. An unresolved digest
+does not assert such a pin and can still be preserved. This enforces the accepted
+negative without changing its rule, any S1/S2 schema or scientific expected value.
+B11's earlier weaker negative and receipts remain historical; B12's full S3
+re-execution qualifies the corrected conformance boundary.
+
+Two validation-plumbing corrections are scoped here. The old gate report's hardcoded
+`native_dispatch:false` was misleading once controlled execution fixtures existed;
+it now says dispatch is not measured by the runner and points to scoped case/oracle
+receipts, while distinguishing scientific native campaigns. Historical receipts
+remain unchanged. The existing three-platform CI matrix is preserved and its job
+timeout becomes90 minutes because the expanded real process/durability suite can
+exceed the old20-minute ceiling on this Windows host. This prepares the checks;
+it does not claim fresh Linux or remote CI results.
+
+The first build attempt failed in the Windows sandbox temporary directory before
+building package bytes. Its receipt is retained; the corrected run used explicit
+external temporary storage and normal Windows process/file rights. No durability
+check was disabled. A development test launcher also initially opened its own
+output log twice; the separate stdout log corrected that launcher conflict before
+tests ran. Neither environment/launcher failure is recorded as a passing test.
+
+## Where we're going after B12
+
+Reconcile all mandatory case and inherited-negative mappings against actual scoped
+test/fault receipts, run the once-after-integration legacy1298 comparison and
+14stored/14fresh certificate qualification with explicit data and external outputs,
+and commit B13's implemented scope, methodology and release account. Offline
+completion, historical parity, host matrix and real native integration remain
+separate claims. No remote publication, scientific campaign or paper mutation is
+part of this authorization.

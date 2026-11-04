@@ -21,6 +21,7 @@ from crucis_causal.execution import api,codec
 from crucis_causal.execution.journal import Journal,binding_digest,resolve_binding,delta_binding
 from crucis_causal.execution.model import ExecutionError,canonical,contract,digest,identity,known,reference,scope,unknown
 from crucis_causal.execution.store import ArtifactStore
+from audit_fixtures.sc3_runtime.receipt_case import snapshot as retained_snapshot, triplet
 
 @contextmanager
 def scratch():
@@ -98,6 +99,14 @@ class JournalCases(unittest.TestCase):
                         extra=json.loads(db.execute('SELECT extra FROM transactions WHERE id=?',(tx,)).fetchone()[0])
                     self.assertEqual(extra['members'][0]['occurrence'],occ)
                     self.assertEqual(extra['members'][0]['artifact'],recovered.value.artifacts[0])
+                with closing(sqlite3.connect(fresh.path)) as db:
+                    oracle_rows=db.execute('SELECT COUNT(*) FROM transactions WHERE id=?',(tx,)).fetchone()[0]
+                triplet('F01','capture_'+point,{'transaction_rows':oracle_rows,'capture_metadata_committed':bool(oracle_rows),
+                    'artifact_bytes_present':fresh.artifacts._path(digest(b'crash-capture')['value']).is_file(),'native_calls':0},
+                    {'before':retained_snapshot(head.snapshot),'transaction':tx,'barrier':point,'actual_process_killed':True},
+                    {'state':recovered.state,'checkpoint':fresh.checkpoint(account,source,fresh_ctx),
+                     'current':retained_snapshot(fresh.head(account,fresh_ctx).value.snapshot)})
+
 
     @covers('J01')
     def test_J01_prepare_process_death_never_resurrects_committed_permit(self):
@@ -182,6 +191,10 @@ class JournalCases(unittest.TestCase):
                 with closing(sqlite3.connect(fresh.path)) as db:
                     count=db.execute('SELECT COUNT(*) FROM transactions WHERE id=?',(tx,)).fetchone()[0]
                 self.assertEqual(count,1 if expected_state=='committed' else 0)
+                triplet('F01','append_'+point,{'transaction_rows':count,'native_calls':0},
+                    {'before':retained_snapshot(head.snapshot),'transaction':tx,'barrier':point,'actual_process_killed':True},
+                    {'revision':recovered.revision,'state':expected_state,'current':retained_snapshot(recovered.snapshot)})
+
 
     @covers('J01')
     def test_J01_durable_claim_has_one_live_permit_and_no_replay_permit(self):

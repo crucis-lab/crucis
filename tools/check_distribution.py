@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_EXAMPLES = {
     'crucis_causal/docs/system-connections-sc1-example-2026-11-01.json',
     'crucis_causal/docs/subsystem2-review-traceability-2026-11-02.json',
+    'crucis_causal/docs/subsystem3-methodology-index-2026-11-03.json',
 }
 
 
@@ -50,11 +51,16 @@ sys.meta_path.insert(0, BlockResearch())
 import crucis_causal
 from crucis_causal.connections.schema import schema as sc1
 from crucis_causal.experiments.schema import schema as sc2
+from crucis_causal.execution.schema import _schema as sc3, _catalog as c3
+from crucis_causal.execution.core import Core
 from crucis_causal.core.graph import Graph
 from crucis_causal.core.adapter import names
 import crucis_causal.systems
 module = pathlib.Path(crucis_causal.__file__).resolve()
 assert not module.is_relative_to(checkout), 'Imported the source checkout'
+if installed_root:
+    assert module.is_relative_to(pathlib.Path(installed_root).resolve()), 'Did not import the explicit wheel installation'
+assert sc3() and len(c3()['core_payloads']) == 38 and len(c3()['operations']) == 31 and Core()
 assert sc1() and sc2() and Graph.from_edges(2, [(0,1)]).n == 2
 assert len(names()) == 8
 base = module.parent.parent
@@ -98,7 +104,7 @@ def run(dist_dir, installed_root=None):
         probe = subprocess.run([sys.executable,'-I','-B','-c',PROBE,str(ROOT),installed_root,json.dumps(expected)],
                                cwd=scratch,capture_output=True,text=True,check=True)
         installed = json.loads(probe.stdout)
-        for module in ('crucis_causal','crucis_causal.connections','crucis_causal.experiments'):
+        for module in ('crucis_causal','crucis_causal.connections','crucis_causal.experiments','crucis_causal.execution'):
             command = 'import sys,runpy; '
             if installed_root:
                 command += 'sys.path.insert(0,'+repr(installed_root)+'); '

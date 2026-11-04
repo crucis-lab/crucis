@@ -287,7 +287,7 @@ def scientific_inputs(path):
 
 
 class Environment:
-    def __init__(self, root, client, *, scientific_path='remote', fault=None, native_operations=OPS, resources=None, collector=None):
+    def __init__(self, root, client, *, scientific_path='remote', fault=None, native_operations=OPS, resources=None, collector=None, mechanics_factory=None, native_channel=None):
         self.root, self.client, self.fault = Path(root).resolve(), client, fault
         self.pin = pin(); self.component, actor = input_case.actor(self.pin)
         if scientific_path is None: sources, self.launch_roles = (), None
@@ -310,8 +310,8 @@ class Environment:
             owner_views = tuple(codec.parse_snapshot(bytes(row[0]), L) for row in db.execute('SELECT data FROM views'))
         read = read_with(read, *owner_views); self.octx = api.RuntimeContext(read, control)
         boundary = DriverBoundary(self.journal, self.jctx, ((self.owner, self.octx),))
-        self.mechanics = Mechanics(self.component, client, 'checkpoint' if scientific_path == 'checkpoint_r2' else scientific_path)
-        supplied = NativeMechanics(self.component, contract('s3.fixture.http'), supplied_callable(self.mechanics.prepare),
+        self.mechanics = (mechanics_factory or Mechanics)(self.component, client, 'checkpoint' if scientific_path == 'checkpoint_r2' else scientific_path)
+        supplied = NativeMechanics(self.component, native_channel or contract('s3.fixture.http'), supplied_callable(self.mechanics.prepare),
             tuple((selected, supplied_callable(getattr(self.mechanics, method))) for selected, method in zip(OPS, ('invoke','lookup','attach'))))
         self.driver = NativeDriver(self.component, self.pin, boundary, supplied); self.driver.install(self.registry)
         rule = AdmissionRule(contract('s3.fixture.native_profile'), native_operations, self.pin, supplied_callable(eligible))

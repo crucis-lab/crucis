@@ -16,6 +16,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]; sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT/'tests/audit_fixtures/sc3_runtime'))
 import input_case as case
+from audit_fixtures.sc3_runtime.receipt_case import snapshot as retained_snapshot, triplet
 from test_audit_execution_wire import covers, LIMITS, implementation
 from test_audit_execution_journal import scratch
 from crucis_causal.execution import api, codec
@@ -323,6 +324,9 @@ class CoordinatorCases(unittest.TestCase):
             admission.owner_receipts[0]['target'] = identity()
             self.assertEqual(c.issue(admission, ctx, identity()).issues[0].code, 's3.live_admission_owner_binding_changed')
             self.assertEqual(consumed(custody), 1)
+            triplet('F18','forged_or_copied_token',{'actual_custody_consumed':consumed(custody),'attempted_forged_entries':3,'additional_forward_calls':0},
+                {'original_intent':retained_snapshot(token.intent_commit.head.snapshot),'command':plan.command,'transmission':token.transmission},
+                {'current':retained_snapshot(journal.head(token.intent_commit.head.account,jctx).value.snapshot),'changed_owner_binding':'held'})
 
     @covers('X11')
     def test_fixed_probe_records_real_effect_usage_exposure_and_scientific_relabel_holds(self):
@@ -494,6 +498,13 @@ class CoordinatorCases(unittest.TestCase):
                 conflicted = c.admit(changed.value, journal.head(account, jctx).value, ctx, group)
                 self.assertEqual(conflicted.issues[0].code, 's3.admission_occurrence_binding_conflict')
                 self.assertEqual(holds(owners[0].owner), 1); self.assertEqual(consumed(custody), 1)
+                variant='admit_reply_lost' if label=='before_admit_reply' else 'issue_reply_lost'
+                prefix={'request_view':retained_snapshot(p.source_view),'command':p.command,'group':group,'D':d,'injected_boundary':label}
+                observed={'current':retained_snapshot(journal.head(account,jctx).value.snapshot),'same_group':replay.value.admission_occurrence,
+                    'same_D':again.value.transmission,'runtime_permit_on_replay':False,'changed_binding':'conflict'}
+                actual={'custody_consumed':consumed(custody),'owner_holds':holds(owners[0].owner),'native_scientific_calls':0}
+                triplet('F18',variant,actual,prefix,observed)
+                if label=='before_issue_reply':triplet('F18','same_D_receipt_replayed',actual,prefix,observed)
 
     @covers('F05')
     def test_durable_intent_before_entry_never_resends_after_lost_reply(self):
@@ -515,6 +526,11 @@ class CoordinatorCases(unittest.TestCase):
             now[0] += 300000000001
             out = env[0].issue(a, env[1], identity())
             self.assertEqual(out.state, 'rejected'); self.assertEqual(consumed(env[-2]), 0)
+            account=reference(env[-1].account_id,'account')
+            triplet('F17','owner_expired',{'custody_consumed':consumed(env[-2])},
+                {'admission_view':retained_snapshot(a.prepared.source_view),'clock_ticks':str(now[0])},
+                {'current':retained_snapshot(env[4].head(account,env[5]).value.snapshot),'issues':[i.code for i in out.issues]})
+
         with scratch() as root:
             deadline = known({'time_type': 'utc_instant', 'value': '2099-01-01T00:00:00Z', 'precision': 'second',
                 'clock': unknown(), 'uncertainty_seconds': known(number('0'))})
@@ -548,6 +564,11 @@ class CoordinatorCases(unittest.TestCase):
             replay = c.issue(admission, ctx, d)
             self.assertEqual(replay.state, 'partial'); self.assertIsNone(replay.value.token.runtime_permit)
             self.assertEqual(replay.value.transmission['target'], d); self.assertEqual(consumed(custody), 0)
+            triplet('F17','clock_unknown_after_intent',{'custody_consumed':consumed(custody),'clock_reads':clock.calls},
+                {'intent_cutoff':retained_snapshot(head.snapshot),'D':d,'issue_reason':out.issues[0].code},
+                {'current':retained_snapshot(journal.head(reference(commission.account_id,'account'),jctx).value.snapshot),
+                 'same_D':replay.value.transmission,'runtime_permit':False,'state':replay.state})
+
 
     @covers('T01')
     def test_changed_prepared_binding_and_unavailable_rule_or_preparer_hold(self):
