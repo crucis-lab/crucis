@@ -1,0 +1,139 @@
+{
+  "revision": "r2",
+  "prior_fixture": {
+    "path": "checkpoint",
+    "run_binding": {
+      "binding": "external",
+      "target": "2a688db5-8847-4563-93f0-8c69621503f6",
+      "target_type": "s2.run_binding",
+      "package_id": "8df58942-7642-45f9-b5e8-5e4267f86820"
+    },
+    "request": {
+      "binding": "external",
+      "target": "06dc6861-9f39-45df-9ba4-e96db139b9cd",
+      "target_type": "s1.request",
+      "package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f"
+    },
+    "attempt": {
+      "binding": "external",
+      "target": "74e17fc7-98cd-420f-a5c4-c03a65ab8b32",
+      "target_type": "s1.attempt",
+      "package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f"
+    },
+    "R_package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f",
+    "trial_count": "1",
+    "dependencies": [
+      "checkpoint-dependency-00.json",
+      "checkpoint-dependency-01.json",
+      "checkpoint-dependency-02.json",
+      "checkpoint-dependency-03.json"
+    ]
+  },
+  "run_binding": {
+    "binding": "external",
+    "target": "e974328f-5524-474c-ba3a-badeb68790d4",
+    "target_type": "s2.run_binding",
+    "package_id": "4ca8e553-7a23-4438-ac6e-11d36aa7ed44"
+  },
+  "request": {
+    "binding": "external",
+    "target": "2b9a1f56-6eaf-480d-a1f1-a434c3109a91",
+    "target_type": "s1.request",
+    "package_id": "0ae616bb-12b2-4cd6-b7a0-fc89dbf419c8"
+  },
+  "attempt": {
+    "binding": "external",
+    "target": "d78eba0c-be7e-443e-8d8e-0b4972d300b5",
+    "target_type": "s1.attempt",
+    "package_id": "0ae616bb-12b2-4cd6-b7a0-fc89dbf419c8"
+  },
+  "handoff": {
+    "binding": "external",
+    "target": "ede5e986-9e49-4416-b35d-b658f5f2ca8c",
+    "target_type": "s2.request_binding_receipt",
+    "package_id": "4a745594-d342-4413-90d8-3860dadc2f8e"
+  },
+  "bridge": {
+    "binding": "external",
+    "target": "be17dad5-f7a1-4830-8b8a-c220ff2e500e",
+    "target_type": "s3.bridge_receipt",
+    "package_id": "632fc060-860c-4dc2-b9f2-3c4720b1c613"
+  },
+  "mode": {
+    "name": "s3.fixture.restore_model_optimizer",
+    "version": "0.1.0-proposal.3"
+  },
+  "trial_count": "1",
+  "native_calls": "0",
+  "owner_calls": "0",
+  "expected": {
+    "scientific_trials": "1",
+    "attempts": "2",
+    "required_variants": [
+      "captured_payload",
+      "native_reference"
+    ],
+    "restored": [
+      "model",
+      "optimizer"
+    ],
+    "unknown": [
+      "rng",
+      "history"
+    ],
+    "overlap": "predecessor_observed_stopped",
+    "interim_bill": "3",
+    "replacement_bill": "5",
+    "successor_bill": "4",
+    "total": "9",
+    "cap": "20",
+    "expired_handle_launches": "0"
+  },
+  "files": [
+    {
+      "path": "dependency-00.json",
+      "sha256": "1d2bd73915a31d609ba5a4dba1615e3b55b2d9722e511273172da0656b0197f2",
+      "package_id": "0ae616bb-12b2-4cd6-b7a0-fc89dbf419c8"
+    },
+    {
+      "path": "dependency-01.json",
+      "sha256": "83e2e88500edf17ac1ab8f968711736982eb94222d358755a11156a90e649978",
+      "package_id": "0dc0e21c-5e39-4cc4-94ef-d260a56674ce"
+    },
+    {
+      "path": "dependency-02.json",
+      "sha256": "a427a020b529e26572c5ae4083cab0e31e263a7e63a8ce8373584aae57003a68",
+      "package_id": "4a745594-d342-4413-90d8-3860dadc2f8e"
+    },
+    {
+      "path": "dependency-03.json",
+      "sha256": "3fa17fa26ec32d6dc73ae84e69198a79d7da47695494258a74df5310cb9fbd13",
+      "package_id": "4ca8e553-7a23-4438-ac6e-11d36aa7ed44"
+    },
+    {
+      "path": "dependency-04.json",
+      "sha256": "f3defff55bc6f8d911f13fd25fad172222ebc55a16a3b511aceb38ddd3e54e6a",
+      "package_id": "5b536cc1-a7bc-4239-96f7-1f14dbda8eb7"
+    },
+    {
+      "path": "dependency-05.json",
+      "sha256": "d89a073b37018ea2661eba500c6ce67887eb338801d8a8be6ab863af0854becc",
+      "package_id": "632fc060-860c-4dc2-b9f2-3c4720b1c613"
+    },
+    {
+      "path": "dependency-06.json",
+      "sha256": "d9d555e9a32189700e3e545b03d116d504f1d279467b4f11a09cd8d3dca57fdc",
+      "package_id": "8df58942-7642-45f9-b5e8-5e4267f86820"
+    },
+    {
+      "path": "dependency-07.json",
+      "sha256": "4679e959ccfe139a2354d96a2563454bfc9d2d329efddfc9fbbbbcc2e3f5509c",
+      "package_id": "9d8f3269-4c0e-4cb0-bf7f-415001d3f0a4"
+    },
+    {
+      "path": "dependency-08.json",
+      "sha256": "2d2e31b2f5bbc7d77f47584a10ad701da76200d0abbd025497c023220154bb6f",
+      "package_id": "c2f6cefd-3dc3-4e2c-af92-8d7e4e1a5246"
+    }
+  ]
+}

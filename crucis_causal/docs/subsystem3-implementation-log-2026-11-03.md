@@ -149,7 +149,70 @@ not third-party rights, hostile-process isolation, provider exactly-once or
 universal measurement. Source, case outcomes and both full commit gates are
 recorded externally under s3-build/S3-B03 before dependent bundles advance.
 
+## B04 — Exact scientific/native bridge and imports (2026-11-04)
+
+B03 is committed as78de55c2b16a60aa464c656fd92f17c061c7c40f. Its35 combined
+S3 tests passed with no skips; both full gates passed370 tests with0 failures/
+errors and26 existing data/dependency skips. B04's declared prerequisites B01/B02
+also retain their exact passed receipts.
+
+Coordinator compilation delegates to the actual S2 project_request,
+completion/projection registries, freeze_s1 and record_handoff APIs. It freezes
+R before observations and returns pinned R, scientific handoff and S3 bridge
+evidence. Exact working-context replay reuses the same R/handoff; changed
+occurrences/content fail. Caller mutation of a returned runtime value cannot
+alter the stored replay result. Fresh-process recovery must consume the persisted
+projection, rather than refreezing it as a replacement identity.
+
+The scientific matcher reuses S2's actual run prerequisites and checks exact
+run/trial/request/attempt/receipt context, source pins, native route/configuration,
+response, scopes, policies and permitted presentation payloads. Metadata match
+is distinct from scientific truth, operational readiness and actual authority.
+A visible scientific trigger cannot be waived by a probe label. Historical
+preservation can retain absent original R/A/T without inventing them.
+
+The working S1 bridge preserves every copied record and its qualified source
+coordinate; conflicting identities or subsequent changes hold use. Owned S1/S2
+additions must have exact frozen snapshots before CommitDelta conversion. Raw
+native coordinates remain alongside explicit literal-unique/incarnation-key
+mappings; the key is a derived process-local registry coordinate, not provider
+idempotency. An entered/rejected S1 call retains possible native effects.
+
+Supplied-evidence import uses exact typed OP27 preflight and the existing S1
+PackageStore occurrence backend. Same-key replay recovers the original result,
+including a simulated lost commit reply; changed inputs conflict. Source bytes
+and unknown native origin remain preserved. This backend retains S1's cooperative
+lock limitations; it is not a new distributed/process-crash lock guarantee.
+OP28 uses an explicitly installed, implementation-pinned pure interpreter over
+supplied bytes/selectors; unsupported/failed interpretation retains those bytes.
+The fixture interpreter preserves native ordering and declares a derived S1 order.
+Neither backend helper supplies common admission or launches native work; B06/B12
+must qualify their admitted Driver paths separately.
+
+### Checkpoint fixture addendum, not an old-fixture repair
+
+The original B00 checkpoint R has NA resource/recovery policies and its S2 state
+policy is NA. These remain a held recovery example, not permission to restart.
+The new tests/audit_fixtures/sc3_recovery_r2 revision creates new plan/condition/
+subject/trial/run/R/A identities through actual S2 APIs and an explicitly permitted
+model/optimizer mode. Its manifest SHA256 is
+5367841edc093b4646d2b5f718fdd0d7a6ef49da1967b78fb50ebb95dd9549aa.
+It pins9 source snapshots, records0 native/owner calls, preserves the original
+fixture descriptor and unchanged checkpoint oracles (one trial,two attempts,
+3 replaced by5 plus4 equals9,cap20). Loaded state/history remain unknown in the
+pre-execution condition. Explicit installed pure policy interpretation establishes
+only the narrower requested mode; loading/availability/overlap remain later gates.
+No accepted historical hash, scientific number or B00 fixture was overwritten.
+
+Ten B04 targeted methods cover OP27/28/30 backend/metadata behavior, cross-context
+failures, source/policy preservation and recovery. Full admitted operation claims
+remain deferred to their common-path bundles. Initial schema-root/test-body
+errors were diagnosed to their fields and fixed without broadening schemas;
+failed logs remain external under s3-build/S3-B04. Full staged-tree and enabled-hook
+receipts are required before B05 advances.
+
 ## Where we're going
 
-After B03's validated milestone, implement B04's exact S1/S2 scientific bridge.
-Its separate gate must pass before B05 input realization/staging can begin.
+After B04's validated milestone, implement B05's realization/information staging
+with real access and partial-effect evidence, then B06's shared admission and
+issue boundary. Subsequent native fixtures must enter through that boundary.

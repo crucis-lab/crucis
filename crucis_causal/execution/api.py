@@ -622,8 +622,24 @@ OpaqueGrantSet = tuple[OpaqueGrant, ...]
 OwnerMap = dict[str, 'OwnerPort']
 from crucis_causal.experiments.api import ProjectionOccurrence as S1ProjectionOccurrence
 from crucis_causal.experiments.api import S1ProjectionContext as PinnedProjectionContext
-PinnedWorkingS1Context = object
-S1Projection = object  # B04 supplies the exact projection/R/bridge result.
+@dataclass(frozen=True, slots=True)
+class PinnedWorkingS1Context:
+    buffer: object
+    source_views: tuple[PinnedView, ...]
+    mappings: tuple
+    request: dict
+    attempt: dict
+    limits: Limits = field(default_factory=Limits)
+
+@dataclass(frozen=True, slots=True)
+class S1Projection:
+    projection: object
+    request_view: PinnedView
+    handoff: dict
+    scientific_view: PinnedView
+    bridge: dict
+    dependencies: tuple[PinnedView, ...]
+    claim_scope: str = 'Exact metadata handoff; no launch, admission or causal correctness'
 
 class ExactDriverRegistry(Protocol):
     def lookup(self, selected: dict) -> ExactDriverDescriptor: ...
