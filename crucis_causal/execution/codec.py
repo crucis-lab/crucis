@@ -9,7 +9,7 @@ from functools import lru_cache
 from jsonschema import Draft202012Validator
 from .api import Limits, PinnedView, ReadCapability, supplied_read
 from .model import ExecutionError, canonical, digest, walk
-from .schema import _schema, _catalog, fields, validate_binding, validate_family
+from .schema import _schema, _catalog, fields, validate_binding, validate_family, validate_record
 
 def _pairs(pairs):
     out = {}
@@ -69,7 +69,11 @@ def loads(data, limits):
 
 @lru_cache(maxsize=1)
 def _validator():
-    return Draft202012Validator(_schema())
+    envelope = copy.deepcopy(_schema())
+    # The same exact record schema is checked separately, allowing bounded
+    # successful immutable-record validation reuse across history revisions.
+    envelope['properties']['records']['items'] = {}
+    return Draft202012Validator(envelope)
 
 def _semantics(package):
     for path, item, _ in walk(package):
@@ -127,6 +131,10 @@ def validate_package(package, limits):
     if len(package.get('external_packages', [])) > int(limits.max_external_packages): raise ExecutionError('s3.external_package_limit')
     error = next(_validator().iter_errors(package), None)
     if error: raise ExecutionError('s3.schema', '/' + '/'.join(map(str, error.absolute_path)))
+    for i, record in enumerate(package['records']):
+        try: validate_record(record)
+        except ExecutionError as exc:
+            raise ExecutionError(exc.code, '/records/' + str(i) + exc.path) from exc
     records = {r['id']: r for r in package['records']}
     if len(records) != len(package['records']): raise ExecutionError('s3.duplicate_record_identity')
     externals = {d['package_id']: d for d in package['external_packages']}
@@ -214,6 +222,9 @@ class Resolver:
     def __init__(self, views=(), *, limits):
         self.limits = limits
         self._views, self._records = {}, {}
+        # Private indexes of validated immutable snapshots. Public access still
+        # checks capabilities/pins and returns copies, never these dictionaries.
+        self._packages, self._by_package, self._descriptors = {}, {}, {}
         for view in views:
             self.add(view)
 
@@ -225,14 +236,21 @@ class Resolver:
             raise ExecutionError('s3.pinned_view_mismatch')
         old = self._views.get(actual.package_id)
         if old and old.source_bytes != actual.source_bytes: raise ExecutionError('s3.package_identity_conflict')
+        if old:
+            self._views[actual.package_id] = PinnedView(actual.package_id, copy.deepcopy(actual.format), copy.deepcopy(actual.digest), actual.source_bytes, actual.read_scope)
+            return actual
         if not old and len(self._views) >= int(self.limits.max_external_packages): raise ExecutionError('s3.external_package_limit')
         total = sum(len(v.source_bytes) for k,v in self._views.items() if k != actual.package_id) + len(actual.source_bytes)
         if total > int(self.limits.max_external_bytes): raise ExecutionError('s3.external_byte_limit')
-        for record in actual.records:
+        package = actual.package
+        for record in package['records']:
             old_record = self._records.get(record['id'])
             if old_record is not None and canonical(old_record) != canonical(record): raise ExecutionError('s3.record_identity_conflict')
         self._views[actual.package_id] = PinnedView(actual.package_id, copy.deepcopy(actual.format), copy.deepcopy(actual.digest), actual.source_bytes, actual.read_scope)
-        for record in actual.records:
+        self._packages[actual.package_id] = package
+        self._by_package[actual.package_id] = {r['id']: r for r in package['records']}
+        self._descriptors[actual.package_id] = {d['package_id']: d for d in package['external_packages']}
+        for record in package['records']:
             self._records[record['id']] = record
         return actual
 
@@ -243,20 +261,25 @@ class Resolver:
         return PinnedView(view.package_id, copy.deepcopy(view.format), copy.deepcopy(view.digest), view.source_bytes, view.read_scope)
 
     def record(self, reference, anchor):
+        found, pid = self._locate(reference, anchor)
+        return copy.deepcopy(found), pid
+
+    def _locate(self, reference, anchor):
+        """Internal validation only; callers must not expose the returned record."""
         if reference.get('binding') == 'unresolved': raise ExecutionError('s3.identity_unestablished')
         origin = self.view(anchor)
         pid = anchor if reference['binding'] == 'internal' else reference['package_id']
         target = self.view(pid)
         if pid != anchor:
-            descriptor = next((d for d in origin.package['external_packages'] if d['package_id'] == pid), None)
+            descriptor = self._descriptors[anchor].get(pid)
             if descriptor is None: raise ExecutionError('s3.undeclared_external_package')
             if descriptor.get('format', target.format) != target.format: raise ExecutionError('s3.package_format_mismatch')
             pin = descriptor['expected_digest']
             if pin['state'] != 'known': raise ExecutionError('s3.dependency_pin_unresolved')
             if pin['value'] != target.digest: raise ExecutionError('s3.integrity_mismatch')
-        found = next((r for r in target.records if r['id'] == reference['target']), None)
+        found = self._by_package[pid].get(reference['target'])
         if found is None or found['record_type'] != reference['target_type']: raise ExecutionError('s3.reference_target')
-        return copy.deepcopy(found), pid
+        return found, pid
 
     def closure(self, package_id):
         seen, active, ordered = set(), set(), []
@@ -267,17 +290,18 @@ class Resolver:
             if pid in active: raise ExecutionError('s3.package_dependency_cycle')
             if pid in seen: return
             view = self.view(pid); active.add(pid); seen.add(pid); ordered.append(view)
-            for descriptor in view.package['external_packages']:
+            package = self._packages[pid]
+            for descriptor in package['external_packages']:
                 other = self.view(descriptor['package_id'])
                 pin = descriptor['expected_digest']
                 if pin['state'] != 'known' or pin['value'] != other.digest: raise ExecutionError('s3.integrity_mismatch')
                 if descriptor.get('format', other.format) != other.format: raise ExecutionError('s3.package_format_mismatch')
                 visit(other.package_id, depth + 1)
-            for _, ref, _ in walk(view.package):
+            for _, ref, _ in walk(package):
                 if isinstance(ref, dict) and 'binding' in ref and 'target_type' in ref:
                     reference_count += 1
                     if reference_count > int(self.limits.max_total_reference_nodes): raise ExecutionError('s3.reference_count_limit')
-                    if ref['binding'] in ('internal', 'external'): self.record(ref, pid)
+                    if ref['binding'] in ('internal', 'external'): self._locate(ref, pid)
             active.remove(pid)
         visit(package_id, 0)
         return tuple(ordered)

@@ -25,10 +25,14 @@ def combine_deltas(*deltas):
     return api.RecordDelta(tuple(records.values()), tuple(roots), tuple(views.values()), tuple(native), tuple(scientific))
 
 
-def result_evidence(result, binding, read):
+def result_evidence(result, binding, read, *, captured=None):
     """Validate the declared return shape and retain the original runtime handles."""
     if not isinstance(result, api.CallResult): raise ExecutionError('s3.driver_return_contract')
     value = result.value
+    if isinstance(value, api.NativeBatch):
+        if not isinstance(captured, api.DriverEvidence) or captured.binding != binding:
+            raise ExecutionError('s3.native_batch_requires_capture_handler')
+        return replace(captured, records=combine_deltas(result.records, captured.records))
     if result.state == 'rejected':
         if isinstance(value, api.DriverEvidence): return replace(value, records=combine_deltas(result.records, value.records))
         return api.DriverEvidence(binding, result.records, index(extent='unresolved'), index(extent='unresolved'), index(), ())
@@ -43,8 +47,6 @@ def result_evidence(result, binding, read):
     if isinstance(value, api.DriverEvidence):
         if value.binding != binding: raise ExecutionError('s3.native_evidence_binding_mismatch')
         return replace(value, records=combine_deltas(result.records, value.records))
-    if isinstance(value, api.NativeBatch):
-        raise ExecutionError('s3.native_batch_requires_capture_handler')
     if isinstance(value, (api.NativeStart, api.NativeConnection)):
         evidence = value.evidence
         if not isinstance(evidence, api.DriverEvidence) or evidence.binding != binding:

@@ -37,10 +37,12 @@ CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY,command TEXT NOT NULL,transm
 CREATE TABLE IF NOT EXISTS attachments(id TEXT PRIMARY KEY,job TEXT NOT NULL,role TEXT NOT NULL,epoch TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS closed_commands(command TEXT PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS requests_log(id INTEGER PRIMARY KEY,method TEXT NOT NULL,body BLOB NOT NULL);
+CREATE TABLE IF NOT EXISTS stream_reads(transmission TEXT PRIMARY KEY,fingerprint BLOB NOT NULL,reply BLOB NOT NULL);
+CREATE TABLE IF NOT EXISTS stream_acks(source TEXT PRIMARY KEY,position INTEGER NOT NULL,updates INTEGER NOT NULL);
 ''')
             prior = db.execute('SELECT value FROM meta WHERE key=?', ('config',)).fetchone()
             if prior and json.loads(prior[0]) != config: raise RuntimeError('fixture code drift requires explicit migration')
-            for key, value in [('config', encoded(config)), ('namespace', str(uuid.uuid4()).encode()), ('epoch', b'0')]:
+            for key, value in [('config', encoded(config)), ('namespace', str(uuid.uuid4()).encode()), ('epoch', b'0'), ('tick', b'0')]:
                 db.execute('INSERT OR IGNORE INTO meta VALUES(?,?)', (key, value))
 
     @contextmanager
@@ -65,6 +67,16 @@ CREATE TABLE IF NOT EXISTS requests_log(id INTEGER PRIMARY KEY,method TEXT NOT N
         method = value['method']
         with self.db() as db: db.execute('INSERT INTO requests_log(method,body) VALUES(?,?)', (method, encoded(value)))
         if method == 'launch': return self.launch(value)
+        if method in ('observe', 'ack_source', 'query_ack'): return self.stream(value)
+        if method == 'arm_ack_loss':
+            with self.db() as db: db.execute('INSERT OR REPLACE INTO meta VALUES(?,?)',('lose_ack',b'1'))
+            return {'armed': True}
+        if method == 'advance_tick':
+            with self.db() as db:
+                db.execute('BEGIN IMMEDIATE'); tick = int(self.meta(db,'tick')) + int(value['amount'])
+                if int(value['amount']) < 0: raise ValueError('fixture time cannot regress')
+                db.execute('UPDATE meta SET value=? WHERE key=?',(str(tick).encode(),'tick'));db.execute('COMMIT')
+            return {'tick': str(tick)}
         if method == 'query':
             with self.db() as db:
                 db.execute('BEGIN')
@@ -109,8 +121,57 @@ CREATE TABLE IF NOT EXISTS requests_log(id INTEGER PRIMARY KEY,method TEXT NOT N
                 return {'namespace': self.meta(db, 'namespace'), 'epoch': self.meta(db, 'epoch'),
                     'jobs': [dict(row) | {'result': base64.b64encode(bytes(row['result'])).decode()} for row in db.execute('SELECT * FROM jobs ORDER BY rowid')],
                     'requests': [dict(row) | {'fingerprint': bytes(row['fingerprint']).decode(), 'reply': json.loads(row['reply']) if row['reply'] else None} for row in db.execute('SELECT * FROM requests ORDER BY rowid')],
-                    'attachments': [dict(row) for row in db.execute('SELECT * FROM attachments ORDER BY rowid')]}
+                    'attachments': [dict(row) for row in db.execute('SELECT * FROM attachments ORDER BY rowid')],
+                    'stream_reads': [{'transmission': r['transmission'], 'reply': json.loads(r['reply'])} for r in db.execute('SELECT * FROM stream_reads ORDER BY rowid')],
+                    'stream_acks': [dict(r) for r in db.execute('SELECT * FROM stream_acks ORDER BY rowid')]}
         raise ValueError('unsupported fixture method')
+
+    def stream(self, value):
+        with self.db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            descriptor = value['descriptor']; epoch = self.meta(db, 'epoch')
+            if value['epoch'] != epoch or descriptor['authority'] != 'S3_owned_fixture_provider' or descriptor['namespace'] != self.meta(db, 'namespace'):
+                raise ValueError('source receiver scope mismatch')
+            row = db.execute('SELECT * FROM jobs WHERE native_id=? ORDER BY rowid DESC LIMIT 1', (descriptor['native_id'],)).fetchone()
+            if row is None or descriptor['incarnation'] != known(row['incarnation']): raise ValueError('source incarnation mismatch')
+            if value['partition'] not in ('p0','p1') or not isinstance(value['consumer'], str) or not value['consumer']:
+                raise ValueError('explicit source/filter/consumer required')
+            expected_filter = hashlib.sha256(encoded({'kind': 'all_fixture_events', 'partition': value['partition'], 'consumer': value['consumer']})).hexdigest()
+            if value['filter_digest'] != expected_filter: raise ValueError('filter semantics mismatch')
+            source = encoded([row['id'], row['incarnation'], value['partition'], value['consumer'], expected_filter]).decode()
+            ack = db.execute('SELECT * FROM stream_acks WHERE source=?', (source,)).fetchone()
+            if value['method'] == 'query_ack':
+                return {'position': str(ack['position']) if ack else None, 'updates': str(ack['updates']) if ack else '0', 'epoch': epoch}
+            if value['method'] == 'ack_source':
+                position = int(value['position'])
+                if not 0 <= position <= 3 or ack and position < ack['position']: raise ValueError('ACK position invalid')
+                if ack is None: db.execute('INSERT INTO stream_acks VALUES(?,?,?)', (source, position, 1))
+                elif position > ack['position']: db.execute('UPDATE stream_acks SET position=?,updates=updates+1 WHERE source=?', (position, source))
+                after = db.execute('SELECT * FROM stream_acks WHERE source=?', (source,)).fetchone()
+                lose = db.execute('SELECT value FROM meta WHERE key=?',('lose_ack',)).fetchone()
+                drop = bool(lose and bytes(lose[0]) == b'1')
+                if drop: db.execute('UPDATE meta SET value=? WHERE key=?',(b'0','lose_ack'))
+                db.execute('COMMIT')
+                return {'position': str(after['position']), 'updates': str(after['updates']), 'generation': row['incarnation'], 'filter_digest': expected_filter, 'consumer': value['consumer'], '_drop_reply': drop}
+            prior = db.execute('SELECT * FROM stream_reads WHERE transmission=?', (value['transmission'],)).fetchone()
+            fingerprint = encoded(value)
+            if prior:
+                if bytes(prior['fingerprint']) != fingerprint: raise ValueError('read transmission conflict')
+                return json.loads(prior['reply'])
+            start = int(value['position']); max_events = int(value['max_events']); max_bytes = int(value['max_bytes'])
+            if not 0 <= start <= 3 or not 1 <= max_events <= 100 or not 1 <= max_bytes <= 1048576 or value['deadline'] != 'fixture_tick:10':
+                raise ValueError('bounded fixture stream required')
+            if int(self.meta(db,'tick')) >= 10: raise ValueError('fixture receiver deadline expired')
+            events = [('E2', '2', b'{"graph":'), ('E1','1', bytes(row['result'])), ('E1','1', bytes(row['result']))]
+            returned, size = [], 0
+            for offset, (event, sequence, raw) in enumerate(events[start:], start):
+                if len(returned) == max_events or size + len(raw) > max_bytes: break
+                returned.append({'capture': str(uuid.uuid4()), 'event': event, 'sequence': sequence, 'offset': str(offset), 'bytes': base64.b64encode(raw).decode()}); size += len(raw)
+            reply = {'batch': str(uuid.uuid4()), 'entries': returned, 'next_position': str(start + len(returned)),
+                'generation': row['incarnation'], 'filter_digest': expected_filter, 'consumer': value['consumer'], 'partition': value['partition'],
+                'complete_source_history': start + len(returned) == 3, 'native_termination': unknown()}
+            db.execute('INSERT INTO stream_reads VALUES(?,?,?)', (value['transmission'], fingerprint, encoded(reply))); db.execute('COMMIT')
+            return reply
 
     def launch(self, value):
         required = {'method', 'command', 'transmission', 'binding_digest', 'epoch', 'mode', 'data', 'pause', 'drop_reply', 'native_id'}
@@ -157,7 +218,7 @@ class Handler(BaseHTTPRequestHandler):
             value = json.loads(raw)
             result = self.server.provider.dispatch(value)
             # Actual receiver commit above precedes this deterministic ACK loss.
-            if value.get('drop_reply', False): self.close_connection = True; return
+            if result.pop('_drop_reply', False) or value.get('drop_reply', False): self.close_connection = True; return
             body = encoded({'ok': True, 'value': result})
         except Exception:
             # No token, raw exception/header/body values in diagnostic reply.

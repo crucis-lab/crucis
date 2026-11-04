@@ -111,7 +111,31 @@ def validate_value(value, expr, path=''):
         raise ExecutionError('s3.schema', path + '/' + '/'.join(map(str, error.absolute_path)))
 
 def validate_record(record):
+    # Positive structural results only. Exact schema is static/package-owned;
+    # per-read limits, calendar/value semantics, references and access are still
+    # checked by their callers. No decoded object or authority is cached.
+    global _RECORD_CACHE_BYTES
+    from .model import canonical
+    try: encoded = canonical(record)
+    except (TypeError, ValueError): encoded = None
+    if encoded is not None:
+        with _RECORD_CACHE_LOCK:
+            if encoded in _RECORD_CACHE:
+                _RECORD_CACHE.move_to_end(encoded)
+                return
     validate_value(record, 'Record')
+    if encoded is not None and len(encoded) <= _RECORD_CACHE_MAX_BYTES:
+        with _RECORD_CACHE_LOCK:
+            if encoded not in _RECORD_CACHE:
+                while _RECORD_CACHE and (_RECORD_CACHE_BYTES + len(encoded) > _RECORD_CACHE_MAX_BYTES or len(_RECORD_CACHE) >= 8192):
+                    old, _ = _RECORD_CACHE.popitem(last=False); _RECORD_CACHE_BYTES -= len(old)
+                _RECORD_CACHE[encoded] = True; _RECORD_CACHE_BYTES += len(encoded)
+
+
+from collections import OrderedDict
+import threading
+_RECORD_CACHE, _RECORD_CACHE_LOCK = OrderedDict(), threading.RLock()
+_RECORD_CACHE_BYTES, _RECORD_CACHE_MAX_BYTES = 0, 67108864
 
 def operation(selected):
     return next((o for o in _catalog()['operations'] if o['contract'] == selected), None)

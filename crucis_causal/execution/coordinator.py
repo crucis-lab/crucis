@@ -31,7 +31,12 @@ def correlation_id(domain, occurrence):
 def read_with(read, *views):
     if not isinstance(read, api.PinnedReadContext) or any(not read.access.permits(v.package_id) for v in read.views):
         raise ExecutionError('s3.read_denied')
-    selected = {v.package_id: v for v in (*read.views, *views)}
+    selected = {}
+    for view in (*read.views, *views):
+        previous = selected.get(view.package_id)
+        if previous is not None and previous.source_bytes != view.source_bytes:
+            raise ExecutionError('s3.package_identity_conflict')
+        selected[view.package_id] = view
     resolver = codec.Resolver(selected.values(), limits=read.limits)
     return replace(read, views=tuple(resolver._views.values()), access=api.supplied_read(resolver._views))
 
@@ -104,7 +109,8 @@ class _Services:
 
 
 class Coordinator:
-    def __init__(self, rules=()):
+    def __init__(self, rules=(), *, collector=None):
+        self.collector = collector
         self._rules = {}
         self._controls = weakref.WeakKeyDictionary()
         self._admissions = {}
@@ -276,17 +282,23 @@ class Coordinator:
             rule = self._rules.get(key(requirement_record['payload']['catalog']))
             if rule is None: raise ExecutionError('s3.requirement_evaluator_unavailable')
             b = Builder('Pure operation plan')
+            capture_pins = ()
+            if request.operation['name'] in ('s3.op.observe', 's3.op.acknowledge'):
+                if self.collector is None: raise ExecutionError('s3.capture_handler_unavailable')
+                self.collector.install(context.registry)
+                capture_pins = self.collector.dependencies(payload, view.package_id, resolver)
             binding_ref = b.add('operation_binding', payload)
             command = b.add('effect_command', {'account': qualified(root['account'], view.package_id), 'operation': request.operation,
                 'binding': binding_ref, 'targets': scope(qualified(root['account'], view.package_id)),
-                'dependencies': index([descriptor.component, descriptor.implementation.reference, rule.implementation.reference]), 'admission': unknown('s3.not_admitted'),
+                'dependencies': index([descriptor.component, descriptor.implementation.reference, rule.implementation.reference,
+                    *(p.reference for p in capture_pins if p.reference not in (descriptor.implementation.reference, rule.implementation.reference))]), 'admission': unknown('s3.not_admitted'),
                 'frontier': qualified(root['frontier'], view.package_id)}, record_id=request.request_occurrence)
             # Keep the exact original frontier and scientific context immutable.
             relocated = relocate(root, view.package_id)
             relocated['activities'] = index([command])
             plan_root = b.add('account_view', relocated)
-            staged = frozen(b, plan_root, read_with(context, view, descriptor.implementation.source_view))
-            read = read_with(context, view, staged, descriptor.implementation.source_view)
+            staged = frozen(b, plan_root, read_with(context, view, descriptor.implementation.source_view, *(p.source_view for p in capture_pins)))
+            read = read_with(context, view, staged, descriptor.implementation.source_view, *(p.source_view for p in capture_pins))
             r = codec.Resolver(read.views, limits=read.limits)
             binding = resolve_binding(qualified(binding_ref, staged.package_id), staged.package_id, r)
             requirements, rule = self._evaluate(binding, staged, read)
@@ -560,12 +572,29 @@ class Coordinator:
             require_owner_grants(issued[2], binding, binding.record['payload']['operation'])
             exact = api.ExactOperationRequest(prepared.command, binding, binding.inputs, prepared.driver, source)
             native_context = replace(services.driver_context, read=read)
+            if binding.record['payload']['operation']['name'] == 's3.op.observe':
+                if self.collector is None: raise ExecutionError('s3.capture_handler_unavailable')
+                self.collector.before(exact, token.value, context.journal, services.journal_context, read)
+            elif binding.record['payload']['operation']['name'] == 's3.op.acknowledge':
+                if self.collector is None: raise ExecutionError('s3.capture_handler_unavailable')
+                self.collector.acknowledgement(exact, token.value, context.journal, services.journal_context, read)
             forwarded = True
             result = callable_value(prepared.driver.method)(exact, native_context, admission.live_grants, token.value, services.sink)
             if not isinstance(result, api.CallResult): raise ExecutionError('s3.driver_return_contract')
             observed = result
             from .native_results import result_evidence
-            evidence = result_evidence(result, prepared.binding, read)
+            captured = None
+            if isinstance(result.value, api.NativeBatch):
+                if self.collector is None: raise ExecutionError('s3.capture_handler_unavailable')
+                try:
+                    captured = self.collector.collect(result.value, result, exact, token.value, context.journal, services.journal_context, read)
+                except Exception as exc:
+                    code = exc.code if isinstance(exc, ExecutionError) else 's3.native_capture_unconfirmed'
+                    evidence = self.collector.salvage(result.value, result, exact, read, code)
+                    raise ExecutionError(code) from None
+                evidence = captured
+                self._fault(services, 'after_capture_commit')
+            evidence = result_evidence(result, prepared.binding, read, captured=captured)
             retained = self._save_issue(admission, context, services, token.value, result, evidence, read)
             self._fault(services, 'before_issue_reply')
             return retained

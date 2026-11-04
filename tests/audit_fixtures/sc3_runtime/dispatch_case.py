@@ -32,6 +32,11 @@ OPS = tuple(contract(op) for op in ('s3.op.launch','s3.op.lookup_launch','s3.op.
 L = api.Limits()
 
 
+class ReplyError(ExecutionError):
+    def __init__(self, code, raw, *, complete=True):
+        super().__init__(code); self.raw, self.complete = raw, complete
+
+
 class Client:
     """Actual localhost binding; header auth never enters native audit bodies."""
     def __init__(self, address, token, namespace, epoch):
@@ -45,10 +50,13 @@ class Client:
         try:
             connection.request('POST', '/v1', body=body, headers={'Authorization': 'Bearer '+self._token, 'Content-Type': 'application/json'})
             response = connection.getresponse(); raw = response.read(1048577)
-            if len(raw) > 1048576 or response.status != 200: raise ExecutionError('s3.fixture_transport_unconfirmed')
-            decoded = json.loads(raw)
-            if set(decoded) != {'ok','value'} or decoded['ok'] is not True: raise ExecutionError('s3.fixture_receiver_rejected')
+            if len(raw) > 1048576: raise ReplyError('s3.fixture_response_bound_exceeded',raw[:1048576],complete=False)
+            if response.status != 200: raise ReplyError('s3.fixture_transport_unconfirmed',raw)
+            try: decoded = json.loads(raw)
+            except ValueError: raise ReplyError('s3.fixture_response_uninterpreted',raw) from None
+            if not isinstance(decoded,dict) or set(decoded) != {'ok','value'} or decoded['ok'] is not True: raise ReplyError('s3.fixture_receiver_rejected',raw)
             return raw, decoded['value']
+        except ReplyError: raise
         except (OSError, ValueError, http.client.HTTPException):
             raise ExecutionError('s3.fixture_transport_unconfirmed') from None
         finally: connection.close()
@@ -107,6 +115,9 @@ def pin():
     if test.exists(): files.append(test)
     worker = ROOT/'tests/audit_fixtures/sc3_runtime/dispatch_worker.py'
     if worker.exists(): files.append(worker)
+    files += [p for p in sorted((ROOT/'tests/audit_fixtures/sc3_runtime').glob('*.py')) if p not in files]
+    extra = ROOT/'tests/test_audit_execution_collection.py'
+    if extra.exists(): files.append(extra)
     return implementation(canonical({p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}))
 
 
@@ -269,7 +280,7 @@ def scientific_inputs(path):
 
 
 class Environment:
-    def __init__(self, root, client, *, scientific_path='remote', fault=None):
+    def __init__(self, root, client, *, scientific_path='remote', fault=None, native_operations=OPS, resources=None, collector=None):
         self.root, self.client, self.fault = Path(root).resolve(), client, fault
         self.pin = pin(); self.component, actor = input_case.actor(self.pin)
         if scientific_path is None: sources, self.launch_roles = (), None
@@ -285,8 +296,8 @@ class Environment:
         read = api.PinnedReadContext(views, api.supplied_read(v.package_id for v in views), self.registry, L)
         self.account = reference(identity(), 'account'); self.journal = Journal(self.root/'journal')
         self.jctx = api.RuntimeContext(read, self.journal.control(self.account))
-        self.owner = LocalOwner(self.root/'owner', {'s3.fixture_work': {'unit': contract('fixture_unit'), 'capacity': number('20')}},
-            native_operations=OPS, ttl_ns='300000000000')
+        self.owner = LocalOwner(self.root/'owner', resources or {'s3.fixture_work': {'unit': contract('fixture_unit'), 'capacity': number('20')}},
+            native_operations=native_operations, ttl_ns='300000000000')
         self.allocation = identity(); control = self.owner.control(self.allocation, max_calls='1000')
         with self.owner._db() as db:
             owner_views = tuple(codec.parse_snapshot(bytes(row[0]), L) for row in db.execute('SELECT data FROM views'))
@@ -296,8 +307,8 @@ class Environment:
         supplied = NativeMechanics(self.component, contract('s3.fixture.http'), supplied_callable(self.mechanics.prepare),
             tuple((selected, supplied_callable(getattr(self.mechanics, method))) for selected, method in zip(OPS, ('invoke','lookup','attach'))))
         self.driver = NativeDriver(self.component, self.pin, boundary, supplied); self.driver.install(self.registry)
-        rule = AdmissionRule(contract('s3.fixture.native_profile'), OPS, self.pin, supplied_callable(eligible))
-        self.coordinator = Coordinator((rule,)); runtime = api.RuntimeContext(read, None)
+        rule = AdmissionRule(contract('s3.fixture.native_profile'), native_operations, self.pin, supplied_callable(eligible))
+        self.coordinator = Coordinator((rule,), collector=collector); runtime = api.RuntimeContext(read, None)
         allocation = OwnerAllocation('native_owner', self.owner, self.octx, self.amounts('0'), contract('s3.owner.same_request_exact_replay'), '0')
         cap = self.coordinator.bind(self.journal, self.jctx, self.journal, (allocation,), ('native_owner',), runtime, runtime,
             not_applicable('s3.no_absolute_deadline'), None, fault)
@@ -372,8 +383,7 @@ class Environment:
         observed = self.owner.inspect(actual, self.octx)
         if observed.state != 'completed': raise AssertionError(observed.issues)
         self.include(*observed.value.evidence.dependencies)
-        quantity = '4' if actual.record['payload']['operation'] == contract('s3.op.launch') else '0'
-        allocation = OwnerAllocation('native_owner', self.owner, self.octx, self.amounts(quantity), contract('s3.owner.same_request_exact_replay'), observed.value.revision['value'])
+        allocation = OwnerAllocation('native_owner', self.owner, self.octx, self.operation_amounts(actual), contract('s3.owner.same_request_exact_replay'), observed.value.revision['value'])
         runtime = api.RuntimeContext(self.context.read, None)
         cap = self.coordinator.bind(self.journal, self.jctx, self.journal, (allocation,), ('native_owner',), runtime, runtime,
             not_applicable('s3.no_absolute_deadline'), None, self.fault)
@@ -381,6 +391,9 @@ class Environment:
         current = self.journal.head(self.account, self.jctx)
         result = self.coordinator.admit(plan, current.value, self.context, group or identity())
         return result
+
+    def operation_amounts(self, actual):
+        return self.amounts('4' if actual.record['payload']['operation'] == contract('s3.op.launch') else '0')
 
     def issue(self, admission, *, transmission=None):
         result = self.coordinator.issue(admission, self.context, transmission or identity())

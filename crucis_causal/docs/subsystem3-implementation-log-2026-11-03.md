@@ -429,3 +429,84 @@ third-party provider, hostile-code isolation, scientific discovery quality or
 distributed exactly-once execution. Observation/interaction/recovery/publication
 remain the next dependency-gated bundles. Frozen B00 oracles and contract pins are
 unchanged.
+
+## S3-B08: durable observation and separately admitted ACK
+
+B07 committed as dcc3c180a3a94109c925b3864c308c97388fbbae. Its83-test S3
+regression had zero failures/errors/skips and stable owned bytes. Both full
+418-test gates passed, with26 existing availability skips recorded separately.
+
+B08 adds explicitly supplied effect mechanics and a collector to the real
+coordinator issue path. The original C pins the source-profile implementation;
+describe/prepare remain pure. Actual owners and the single-use journal permit
+precede transport entry. Unavailable or combined-consuming profiles hold rather
+than receiving an invented replay guarantee. New driver methods are routes to
+supplied callbacks, not automatic backend availability or native qualification.
+
+Each source profile defines actual identity, event measurement and opaque cursor
+resume/advance semantics. The fixture source is an existing native subject with
+explicit filter/partition, generation and consumer. A frontier occurrence is not
+a new physical source. Changing evidence about a known generation does not change
+its identity; the source records preserve that evidence. Cursor tokens bind the
+full interpreted source tuple. Another filter/generation/consumer cannot inherit
+the old checkpoint. Actual receiver checks bind the native incarnation and epoch.
+
+Before fetching, core checks committed source progress and remaining collection
+event/payload-byte bounds. Independently persistent owner reservations include
+fetch-event allowance and control-call metering. Native request limits and the
+fixture's receiver-owned virtual deadline are separately enforced. Reopening uses
+the original owner control-allocation ID and retains prior holds; failed capture
+does not erase the fetch or replenish its allowance. Virtual time is a controlled
+fixture clock, not a wall-clock accuracy or real-provider deadline claim.
+
+Raw bytes, their metadata, measured usage and a fresh source frontier commit in
+the same local capture transaction. Captured progress does not assert interpreted
+progress, source completeness, complete graph output or native termination. The
+independent service returns three capture occurrences representing two native
+events, with duplicate and out-of-order reports retained. An incomplete JSON
+fragment remains exactly those bytes. Raw response envelopes and event payload
+occurrences have distinct roles; event payload-byte bounds are not universal
+network billing or a claim of zero metadata/control overhead.
+
+ACK is a separate admitted command. The collector looks up the actual retained
+capture transaction and checks its receipt, account, source and exact cursor;
+copied/forged receipt metadata cannot authorize ACK. A correlated positive native
+receipt produces a later acknowledged frontier. Earlier unknown-ACK frontiers
+and their exact snapshots remain. A lost ACK reply remains unknown in that view,
+even when the independent receiver oracle can show its one persisted update.
+Fresh reconciliation of the original G/D returns no executable replay permit.
+
+Fault tests inject failures before raw flush, after flush and after capture SQLite
+COMMIT, and interrupt after confirmed capture before ACK. Fresh local issuers reopen
+the real journal/owner files. An uncertain capture commit is reconciled before ACK;
+an uncommitted raw stage advances neither cursor nor ACK. Bounded raw bytes survive
+later metadata/storage failures as explicitly uncommitted evidence. Unfrozen owned
+S1/S2 additions remain runtime additions requiring the established bridge; they are
+not serialized into S3 or silently treated as a durable capture. Fault triplets and
+native receiver counters are recorded externally. These B08 faults use explicit
+injection/fresh issuers; B02/B06/B07 retain their separate process-kill receipts.
+
+The growing integration histories exposed repeated decoding/validation cost. The
+resolver now uses private indexes of already validated immutable snapshots, bounded
+by its existing reader limits. Public access still returns copies and checks live
+read capability, exact source/target pin and type. A bounded positive structural
+record cache reuses exact immutable record bytes across revisions; the same record
+schema still runs on cache misses. Package/tree limits, value/calendar semantics,
+reference closure, conflicts and access still run. Neither cache holds authority
+or mutable returned records. Supplied-view merging now rejects same-package/different-
+bytes collisions before any dictionary replacement. Mutation/denial/tighter-limit/
+repeated-invalid-calendar regressions accompany this owned S3 plumbing change.
+
+Development receipts remain external: an initial storage-order assertion was fixed
+to use actual transport offsets; preparation-time rejection was distinguished from
+post-intent rejection; and a forged-receipt negative fixture's internal account ref
+was corrected to its actual qualified source. No accepted oracle, source pin,
+scientific definition or tolerance changed. Final tests.json/gate.json/commit.json
+determine bundle completion, not the development runs or this narrative.
+
+## Where we're going after B08
+
+After B08's validated local commit, implement B09's fixed pre-send decision and
+explicit information/computation/delivery paths. Then continue recovery/settlement,
+audience publication, four-path integration and final independent qualifications
+through B13, with actual predecessor receipts required at each boundary.
