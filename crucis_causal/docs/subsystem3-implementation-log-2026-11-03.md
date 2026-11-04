@@ -510,3 +510,76 @@ After B08's validated local commit, implement B09's fixed pre-send decision and
 explicit information/computation/delivery paths. Then continue recovery/settlement,
 audience publication, four-path integration and final independent qualifications
 through B13, with actual predecessor receipts required at each boundary.
+
+## S3-B09: fixed decisions, explicit information and delivery
+
+B08 committed as8ee184a71a2d5353c0cbbc0db556eb38a29a4cf5. Its mandatory8-test
+suite passed without failures/errors/skips and with stable source. Both426-test
+full gates passed;26 existing availability skips remain separately reported.
+
+B09 adds FixedCandidates, a pure supplied procedure registered through the exact
+Decision interface. Its code and fixed source specification are pinned artifacts.
+Requirements name the actual required context/source records. Selection uses
+only supplied, readable snapshot information in the explicit pre-send frontier,
+with the fixed action/policy/context/domain and response correlations checked.
+Availability is not an attestation of scientific truth. Native/provider/tool
+acquisition and computation are separately planned/admitted Driver operations;
+selection has no provider, network, owner-write or hidden fallback port.
+
+The initial concrete procedure selects among already pinned S1 response candidates
+produced by explicit computation. A required source declaration is not available
+source bytes. Missing sources yield an empty held choice, not an abstention or an
+invented response. Explicit abstention candidates require their own configured
+state/source rule. Unsupported broader procedures remain unavailable rather than
+using a convenient current answer. The generic interfaces preserve richer S1/S2
+information and output families; this fixture procedure is not a universal oracle.
+
+persist_selection stores an immutable action_decision before sending. A stable
+choice can be reconciled after an uncertain metadata commit; a changed frontier/
+response cannot replace it. Possible same-native-identity aliases hold conflicting
+new choices rather than merging records or answering again. Ambiguous/reused native
+identities need the appropriate identity bridge. Delivery replays the frozen
+procedure/basis and checks the exact actions, selected responses, endpoint, bundle,
+validity scope and fixed bundle contract. Late ambient material cannot silently
+enter an earlier selection.
+
+The independent provider fixture now owns actual action/message/computation tables.
+Its default Q1/Q2 have the same question text and distinct native IDs/contexts.
+Q1's explicit source acquisition and computation create the actual candidate;
+Q2's missing source produces no choice/delivery. The controlled receiver enforces
+current context/epoch/open state and its two-slot response policy. A supplemental
+two-source composite fixture performs one physical all-or-none native message:
+both responses are committed, or an expired member prevents both. No native
+atomicity is inferred from multiple S1 grants or multiple independent sends.
+Existing S1 single-action guards retain their earlier scope; this new native
+qualification uses the explicit composite protocol, including size-one bundles.
+
+Native acceptance, gateway transmission, policy consumption, use and termination
+remain separate. A completed delivery RPC can report acceptancefalse. A rejected
+logical response can still have reached the controlled gateway; its transmitted
+exposure is retained. Policy consumption comes from the correlated native receipt,
+including an explicit reported0 on rejection, never from missing evidence. Native
+use and termination remain unestablished. Legal raw error/reconciliation bodies
+are retained without copying arbitrary exception text or authentication headers.
+
+F10 injects loss after the selection journal commit and reopens actual issuers;
+the original choice is recovered before any send. F11 drops the native delivery
+reply after the independent receiver commits V1. Fresh coordinator/owner/registry
+objects retain the same stores and control allocation, reconcile the original G/D
+without another forwarding permit, and use a separately admitted exact receipt
+lookup. Its original content/context is checked; no new answer or source fallback
+is chosen. Receiver counters show one delivery, consumed1 and remaining1. Fault
+triplets are saved externally. Native contexts can expire/change after selection;
+the actual receiver withholds delivery while retaining possible/actual exposure.
+
+Development smoke and six-case runs are preserved outside the checkout. The final
+source-stable tests.json and both full gate/commit receipts control completion.
+This is a trusted scripted protocol qualification, not a real LLM/expert service,
+cryptographic source authentication, hostile-process isolation, universal exactly-
+once delivery, causal correctness or a change to the frozen paper contract.
+
+## Where we're going after B09
+
+After B09's actual validated commit, implement B10's evidence-dependent recovery,
+stopping, state loading, collection closure and settlement. Then complete immutable
+audience publication, four-path integration and final qualification through B13.

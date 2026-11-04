@@ -118,6 +118,7 @@ def pin():
     files += [p for p in sorted((ROOT/'tests/audit_fixtures/sc3_runtime').glob('*.py')) if p not in files]
     extra = ROOT/'tests/test_audit_execution_collection.py'
     if extra.exists(): files.append(extra)
+    files += [p for p in sorted((ROOT/'tests').glob('test_audit_execution_*.py')) if p not in files]
     return implementation(canonical({p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}))
 
 

@@ -39,6 +39,9 @@ CREATE TABLE IF NOT EXISTS closed_commands(command TEXT PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS requests_log(id INTEGER PRIMARY KEY,method TEXT NOT NULL,body BLOB NOT NULL);
 CREATE TABLE IF NOT EXISTS stream_reads(transmission TEXT PRIMARY KEY,fingerprint BLOB NOT NULL,reply BLOB NOT NULL);
 CREATE TABLE IF NOT EXISTS stream_acks(source TEXT PRIMARY KEY,position INTEGER NOT NULL,updates INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS actions(id TEXT PRIMARY KEY,job TEXT NOT NULL,label TEXT NOT NULL,context TEXT NOT NULL,question TEXT NOT NULL,available INTEGER NOT NULL,state TEXT NOT NULL,answer BLOB,receipt TEXT,command TEXT);
+CREATE TABLE IF NOT EXISTS messages(id TEXT PRIMARY KEY,command TEXT NOT NULL,transmission TEXT NOT NULL,fingerprint BLOB NOT NULL,reply BLOB NOT NULL);
+CREATE TABLE IF NOT EXISTS computations(transmission TEXT PRIMARY KEY,body BLOB NOT NULL);
 ''')
             prior = db.execute('SELECT value FROM meta WHERE key=?', ('config',)).fetchone()
             if prior and json.loads(prior[0]) != config: raise RuntimeError('fixture code drift requires explicit migration')
@@ -68,9 +71,14 @@ CREATE TABLE IF NOT EXISTS stream_acks(source TEXT PRIMARY KEY,position INTEGER 
         with self.db() as db: db.execute('INSERT INTO requests_log(method,body) VALUES(?,?)', (method, encoded(value)))
         if method == 'launch': return self.launch(value)
         if method in ('observe', 'ack_source', 'query_ack'): return self.stream(value)
+        if method in ('setup_actions','information','compute','answer_bundle','lookup_answer','expire_action','change_action_context','interaction_oracle'):
+            return self.interact(value)
         if method == 'arm_ack_loss':
             with self.db() as db: db.execute('INSERT OR REPLACE INTO meta VALUES(?,?)',('lose_ack',b'1'))
             return {'armed': True}
+        if method == 'arm_delivery_loss':
+            with self.db() as db:db.execute('INSERT OR REPLACE INTO meta VALUES(?,?)',('lose_delivery',b'1'))
+            return {'armed':True}
         if method == 'advance_tick':
             with self.db() as db:
                 db.execute('BEGIN IMMEDIATE'); tick = int(self.meta(db,'tick')) + int(value['amount'])
@@ -125,6 +133,62 @@ CREATE TABLE IF NOT EXISTS stream_acks(source TEXT PRIMARY KEY,position INTEGER 
                     'stream_reads': [{'transmission': r['transmission'], 'reply': json.loads(r['reply'])} for r in db.execute('SELECT * FROM stream_reads ORDER BY rowid')],
                     'stream_acks': [dict(r) for r in db.execute('SELECT * FROM stream_acks ORDER BY rowid')]}
         raise ValueError('unsupported fixture method')
+
+    def interact(self,value):
+        method=value['method']
+        with self.db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            if method=='setup_actions':
+                job=db.execute('SELECT * FROM jobs WHERE id=?',(value['job'],)).fetchone()
+                if job is None or db.execute('SELECT 1 FROM actions WHERE job=?',(job['id'],)).fetchone():raise ValueError('new explicit interaction fixture required')
+                for i in range(2):
+                    db.execute('INSERT INTO actions VALUES(?,?,?,?,?,?,?,?,?,?)',(str(uuid.uuid4()),job['id'],'Q'+str(i+1),str(uuid.uuid4()),'Continue?',int(i==0 or value['all_sources']), 'open',None,None,None))
+                rows=[dict(r) for r in db.execute('SELECT * FROM actions WHERE job=? ORDER BY label',(job['id'],))];db.execute('COMMIT')
+                return {'session':job['id'],'actions':rows,'capacity':'2','native_termination':unknown()}
+            if method=='interaction_oracle':
+                rows=[dict(r) for r in db.execute('SELECT * FROM actions ORDER BY label')]
+                for r in rows:r['answer']=base64.b64encode(bytes(r['answer'])).decode() if r['answer'] is not None else None
+                return {'actions':rows,'physical_messages':str(db.execute('SELECT COUNT(*) FROM messages').fetchone()[0]),
+                    'deliveries':str(sum(r['state']=='answered' for r in rows)),'consumed':str(sum(r['state']=='answered' for r in rows)),
+                    'remaining':str(2-sum(r['state']=='answered' for r in rows)),'computations':str(db.execute('SELECT COUNT(*) FROM computations').fetchone()[0]),'native_termination':unknown()}
+            if method in ('expire_action','change_action_context'):
+                if method=='expire_action':db.execute('UPDATE actions SET state=? WHERE id=?',('expired',value['action']))
+                else:db.execute('UPDATE actions SET context=? WHERE id=?',(str(uuid.uuid4()),value['action']))
+                db.execute('COMMIT');return {'changed':value['action']}
+            if method in ('information','compute'):
+                row=db.execute('SELECT * FROM actions WHERE id=?',(value['action'],)).fetchone()
+                if row is None or row['context']!=value['context']:raise ValueError('action context mismatch')
+                if not row['available']:return {'state':'unavailable','action':row['id'],'context':row['context']}
+                source=encoded({'action':row['id'],'context':row['context'],'answer':True,'scope':'synthetic_configured_source_not_scientific_truth'})
+                if method=='compute':
+                    if base64.b64decode(value['source'],validate=True)!=source:raise ValueError('computation source mismatch')
+                    db.execute('INSERT INTO computations VALUES(?,?)',(value['transmission'],encoded(value)));db.execute('COMMIT')
+                return {'state':'available','action':row['id'],'context':row['context'],'bytes':base64.b64encode(source).decode()}
+            if method=='lookup_answer':
+                rows=db.execute('SELECT reply FROM messages WHERE command=? ORDER BY rowid',(value['command'],)).fetchall()
+                return {'classification':'positive' if rows else 'negative','matches':[json.loads(r['reply']) for r in rows], 'complete':True,'no_late_acceptance':False}
+            if method!='answer_bundle':raise ValueError('unsupported interaction')
+            if value['epoch']!=self.meta(db,'epoch') or value['atomicity']!='all_or_none' or not 1<=len(value['entries'])<=2:raise ValueError('native bundle contract')
+            rows=[];ids=set()
+            for entry in value['entries']:
+                row=db.execute('SELECT * FROM actions WHERE id=?',(entry['action'],)).fetchone()
+                if row is None or row['context']!=entry['context'] or row['state']!='open' or row['job']!=value['session'] or row['id'] in ids:
+                    return {'accepted':False,'reason':'closed_or_changed_action','consumed':'0'}
+                ids.add(row['id']);rows.append(row)
+            if sum(1 for r in db.execute('SELECT state FROM actions WHERE job=?',(value['session'],)) if r['state']=='answered')+len(rows)>2:
+                return {'accepted':False,'reason':'policy_exhausted','consumed':'0'}
+            message=str(uuid.uuid4());receipt=str(uuid.uuid4())
+            reply={'accepted':True,'message':message,'receipt':receipt,'command':value['command'],'transmission':value['transmission'],
+                'atomicity':'all_or_none','entries':value['entries'],'consumed':str(len(rows)),'native_use':unknown(),'native_termination':unknown()}
+            for row,entry in zip(rows,value['entries']):
+                answer=base64.b64decode(entry['bytes'],validate=True)
+                db.execute('UPDATE actions SET state=?,answer=?,receipt=?,command=? WHERE id=?',('answered',answer,receipt,value['command'],row['id']))
+            db.execute('INSERT INTO messages VALUES(?,?,?,?,?)',(message,value['command'],value['transmission'],encoded(value),encoded(reply)))
+            lose=db.execute('SELECT value FROM meta WHERE key=?',('lose_delivery',)).fetchone();drop=bool(lose and bytes(lose[0])==b'1')
+            if drop:db.execute('UPDATE meta SET value=? WHERE key=?',(b'0','lose_delivery'))
+            db.execute('COMMIT')
+            reply['_drop_reply']=drop
+            return reply
 
     def stream(self, value):
         with self.db() as db:

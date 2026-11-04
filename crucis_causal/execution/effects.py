@@ -15,6 +15,20 @@ from .registry import DeclaredDriver, callable_value, native_invocation, supplie
 from .schema import operation, validate_value
 
 
+def capture_reply_problem(call, raw, code):
+    """Explicitly retain a legal response body, without exception text/headers."""
+    from .drivers import _capture
+    from .model import reference,index
+    if not isinstance(raw,bytes) or len(raw)>int(call.context.read.limits.max_external_bytes):
+        raise ExecutionError('s3.response_retention_limit')
+    ref,view=_capture(raw,{'name':'s1.octets','version':'0.1.0-proposal.1'},call.context.read.views)
+    delta=api.RecordDelta(dependencies=(view,))
+    evidence=api.DriverEvidence(reference(call.request.binding.record['id'],'operation_binding',call.request.binding.context['package_id']),
+        delta,index(extent='unresolved'),index([ref],extent='partial_for_scope'),index(),())
+    return api.CallResult('rejected',evidence,records=delta,issues=(api.Issue(code,scope(call.request.command),(ref,)),),
+        effects=(api.EffectBoundary(call.request.command,'may_have_crossed',unknown('s3.receiver_admission_unestablished'),(ref,),call.transmission),))
+
+
 @dataclass(frozen=True, slots=True)
 class EffectMethod:
     operation: dict
