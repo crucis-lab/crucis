@@ -1,0 +1,29 @@
+{
+  "path": "remote",
+  "run_binding": {
+    "binding": "external",
+    "target": "76582b7a-7575-463f-910d-2614cd5df4b0",
+    "target_type": "s2.run_binding",
+    "package_id": "5607c500-a0de-400b-8479-ccb7c8747217"
+  },
+  "request": {
+    "binding": "external",
+    "target": "0affcce1-71c7-43a4-8786-c9d9e75baf03",
+    "target_type": "s1.request",
+    "package_id": "ce889783-fb10-4064-be73-679cd94daca4"
+  },
+  "attempt": {
+    "binding": "external",
+    "target": "13dcf654-fa23-46e5-bd6c-3aedef1f8ad1",
+    "target_type": "s1.attempt",
+    "package_id": "ce889783-fb10-4064-be73-679cd94daca4"
+  },
+  "R_package_id": "ce889783-fb10-4064-be73-679cd94daca4",
+  "trial_count": "1",
+  "dependencies": [
+    "remote-dependency-00.json",
+    "remote-dependency-01.json",
+    "remote-dependency-02.json",
+    "remote-dependency-03.json"
+  ]
+}

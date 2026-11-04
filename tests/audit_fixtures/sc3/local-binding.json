@@ -1,0 +1,29 @@
+{
+  "path": "local",
+  "run_binding": {
+    "binding": "external",
+    "target": "3e0658ee-2b00-461d-a8f7-494d9e08b3ea",
+    "target_type": "s2.run_binding",
+    "package_id": "2409cd08-7bdc-408a-8b8e-621364291059"
+  },
+  "request": {
+    "binding": "external",
+    "target": "794da2ef-82e1-4090-b125-6ac614c1e148",
+    "target_type": "s1.request",
+    "package_id": "7c902992-e6c4-42a0-8164-8c363636cade"
+  },
+  "attempt": {
+    "binding": "external",
+    "target": "e2028e68-c210-4822-828e-e4f1b9587f01",
+    "target_type": "s1.attempt",
+    "package_id": "7c902992-e6c4-42a0-8164-8c363636cade"
+  },
+  "R_package_id": "7c902992-e6c4-42a0-8164-8c363636cade",
+  "trial_count": "1",
+  "dependencies": [
+    "local-dependency-00.json",
+    "local-dependency-01.json",
+    "local-dependency-02.json",
+    "local-dependency-03.json"
+  ]
+}

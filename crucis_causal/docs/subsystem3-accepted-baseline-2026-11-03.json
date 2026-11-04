@@ -1,0 +1,46 @@
+{
+  "kind": "S3_accepted_implementation_baseline",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "date": "2026-11-03",
+  "approved_source": "c2ec53f3a30562fe31690df8ab0d9b1351784996",
+  "branch": "implement/s3-execution",
+  "approval": {
+    "source": "User instruction in this chat",
+    "quote": "Great yes I approve the final S3 design and bundle DAG. Let’s proceed with the detailed implementationd, working through B00–B13 and meeting each bundle’s acceptance and recovery gates, with validated local commits along the way.",
+    "final_refinements": "FR01-FR10 accepted",
+    "implementation_go": true,
+    "remote_publication": false,
+    "paid_or_scientific_native_campaign": false
+  },
+  "contract_version": "0.1.0-proposal.3",
+  "pins": [
+    {
+      "path": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "sha256": "6555de15a926fd8546213f165eda1fa4a0cb5d7070e50be213d691b1d0e7e48c"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-final-contract-catalog-2026-11-03.json",
+      "sha256": "99b682891c445ef4e792b42a2b282eb4bbb68698cbf703819ab4e5b694d3d5eb"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-implementation-dag-2026-11-03.json",
+      "sha256": "9a216582b599301c510ac95da660bd2f8d33a6f7ee9356799e34dd565cbee18c"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-acceptance-plan-2026-11-03.json",
+      "sha256": "e3b9438e4c1b62c6d7ba8dbbf94136b0098d0bc901b41558af797f944e5ca771"
+    },
+    {
+      "path": "tests/audit_fixtures/sc3/manifest.json",
+      "sha256": "85ccd990276b213947f31b69b4cbe68fc9f28cd1c126cae28601e61ac4af15ac"
+    }
+  ],
+  "fixture_revision": "1",
+  "fixture_scope": "New supplied synthetic S2 bindings and S1 direct requests; no scientific causal-correctness or real provider evidence",
+  "historical_sources": "Unchanged; earlier candidates/receipts retain original identities and bytes",
+  "recovery_policy": "A bundle can advance only after actual predecessor acceptance and recovery receipts. No skipped mandatory S3 case, silent tolerance change or copied capability."
+}
