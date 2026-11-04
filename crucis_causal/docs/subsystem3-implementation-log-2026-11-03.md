@@ -71,7 +71,50 @@ negative boundaries, are external under `s3-build/S3-B01/`. Source/fixture hashe
 full staged-tree gate and enabled-hook commit receipts control advancement. No
 OPxx execution case is credited merely for its preliminary wire-shape checks.
 
+## B02 — Local durable history and artifacts (2026-11-04)
+
+B01 predecessor:78d33b3094cebb4a78563ac9383f860e5b0e522a. Its15 targeted tests
+passed with no skips; both full gates passed350 tests with0 failures/errors and
+26 existing data/dependency skips.
+
+Implemented checked SQLite DELETE/FULL/foreign-key connections with bounded
+contention, atomic expected-revision append, immutable snapshot/record identities,
+exact transaction lookup/replay, storage-owner epochs and durable capture metadata.
+Raw artifacts and dependency/view bytes are flushed and hash-checked before their
+logical reference/checkpoint commit. Interrupted staging remains orphaned rather
+than being promoted into a complete root. Existing content identities are never
+silently overwritten or repaired.
+
+The local namespace owner explicitly supplies process-owned storage capabilities;
+JSON/receipt labels cannot create them. Storage takeover fences old writers but
+does not stop native work. Journal.prepare_issue binds C,D,actual operation/context/
+input pins and owner receipt references. Only a first definitely committed claim
+gets a live permit; replay, uncertain commit and fresh-process reopening return no
+replacement permit. Guarded consumption is one-shot. This is local forwarding
+control, not provider idempotency or native exactly-once.
+
+Capture transactions persist the original source identity, batch/chunk occurrence
+IDs, artifact mappings/digests, metadata and cursor together. Lost replies reconcile
+that original transaction without creating replacement capture IDs. The raw metadata
+is part of the immutable request binding. Source-safe interpretation/ACK and native
+coverage remain B08 responsibilities; capturing bytes does not establish them.
+
+F01/J01 tests use actual process death before/after append and capture commit,
+death after forwarding claim, fresh service reopening, independent SQLite row and
+artifact reads, two competing writers, replay/conflict, takeover and injected write
+failure. All test processes and scratch paths are explicitly owned/bounded. An
+initial test-harness connection-cleanup error was corrected rather than skipped;
+the failed logs remain external. Sandbox temporary-directory creation failed in a
+separate smoke attempt; normal Windows external scratch was used without weakening
+the storage assertions. No power-loss/network/shared-store/hostile-writer claim.
+
+Source/helpers and scoped tests/receipts are under the execution journal/store,
+`tests/test_audit_execution_journal.py`, the controlled worker in
+`tests/audit_fixtures/sc3_runtime/`, and external `s3-build/S3-B02/`. Full staged-tree
+and enabled-hook receipts are required before B03/B04 advance.
+
 ## Where we're going
 
-After B01's validated milestone, implement B02's local journal/artifact store and
-its process-crash, competing-writer and one-time-forwarding-claim recovery gates.
+After B02's validated milestone, implement B03's actual local owners, live grants
+and resource/exposure ledgers, then B04's exact S1/S2 scientific bridge. Their
+separate gates must pass before B05 input realization/staging can begin.
