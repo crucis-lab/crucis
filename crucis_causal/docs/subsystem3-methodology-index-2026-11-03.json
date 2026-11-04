@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 identity/account/admission/input/dispatch/observation/recovery directions affirmed with exact details open; evidence publication/reconciliation recommendations pending review; no S3 implementation or schema freeze",
+  "status": "Seven S3 responsibility directions affirmed in discussion with exact details open; consolidated outline/worked-case resolutions pending review; no S3 implementation, wire/API freeze or live integration claim",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -436,8 +436,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review partial/corrected/restricted-audience packages, exact commit recovery and pointer limits; then consolidate all seven S3 responsibilities with complete worked records and resolve remaining contracts before serialization/interfaces, support profiles, final design review or build bundles. No implementation yet.",
-  "current_design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
+  "next_design": "Review consolidated six-block outline, four complete semantic traces and CS resolutions; then exact minimum/conditional record and capability matrix, bounded serialization, interaction/recovery signatures and S1/S2 mappings before final review and bundle planning. No implementation yet.",
+  "current_design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -620,6 +620,28 @@
         "EP11",
         "EP12"
       ],
+      "status": "direction_affirmed_details_open",
+      "commit": "3cf0cac76e6bb53815396ceb67525a484b35839a"
+    },
+    {
+      "subject": "consolidated S3 outline, complete semantic cases and gap resolutions",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "examples": "crucis_causal/docs/subsystem3-contract-examples-2026-11-03.json",
+      "based_on_commit": "3cf0cac76e6bb53815396ceb67525a484b35839a",
+      "proposal_ids": [
+        "CS01",
+        "CS02",
+        "CS03",
+        "CS04",
+        "CS05",
+        "CS06",
+        "CS07",
+        "CS08",
+        "CS09",
+        "CS10",
+        "CS11",
+        "CS12"
+      ],
       "status": "recommendations_pending_review"
     }
   ],
@@ -780,7 +802,11 @@
     "PackageStore.select_current compares expected_previous selected value and emits a generation; it does not check an expected generation and cannot detect every A-to-B-to-A intervening update",
     "S2 frozen allocates a fresh package identity per freeze while copied records remain unchanged; it is not a same-bytes retry of an earlier publication operation",
     "Expected byte digests and local timestamps do not themselves establish source authenticity, historical existence time, complete coverage or causal correctness",
-    "Existing resolver access is supplied metadata/read scope, not native/runtime publication authority or an automatic remote retrieval/retention service"
+    "Existing resolver access is supplied metadata/read scope, not native/runtime publication authority or an automatic remote retrieval/retention service",
+    "The consolidated four-case JSON is authored documentary data, not SC-3 wire examples, implemented S3 runtime, executed native receipts or acceptance evidence",
+    "HandleRegistry requires its guarded resolved-attempt association; unknown-origin native observation and richer candidate inventories need an explicit S3 profile/mapping rather than fabricated S1 attempts",
+    "A fresh runtime context/registry does not revoke old authority or fence native receivers; no new receiver enforcement is implemented by the proposed handle reconstruction",
+    "Audience-specific public statements can require private derivation records; existing package roots do not automatically enforce that separation"
   ],
   "account_direction_affirmation": {
     "scope": "User affirmed the minimum-account/knowledge/closure explanation and requested admission, authority, resources and exposure next",
@@ -1952,122 +1978,134 @@
     {
       "id": "EP01",
       "subject": "Structurally valid partial immutable views with exact scope and pending obligations",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP02",
       "subject": "Distinct package/record/artifact/publication identities and external exact-byte receipts",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP03",
       "subject": "Evidence frontiers separate from native event, commit and analysis times",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP04",
       "subject": "New explicit corrections/disputes preserving original observations and interpretations",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP05",
       "subject": "Scoped verification dimensions and actual trust mechanisms",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP06",
       "subject": "Audience-specific projection over actual records/artifacts/dependencies",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP07",
       "subject": "Owner-admitted dissemination with audience/retention/exposure effects",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP08",
       "subject": "Exact commit reconciliation after interruption under actual backend guarantees",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP09",
       "subject": "Mutable current selection separate from pinned views and exact CAS preconditions",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP10",
       "subject": "Compatible branch reconciliation without duplicate counts or favorable selection",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP11",
       "subject": "Immutable content pins with new availability/relocation/retention evidence",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     },
     {
       "id": "EP12",
       "subject": "Source-linked scientific handoff with truthful support and ownership boundaries",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-evidence-publication-reconciliation-design-2026-11-03.md",
       "design_section": 11,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees"
+      "scope": "Semantic recommendation and hypothetical examples; existing local package/metadata primitives do not establish full S3 publication, audience enforcement, reconciliation or distributed storage guarantees",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact S3 view/projection/commit/alias protocol or implementation approval"
     }
   ],
   "evidence_publication_examples": [
@@ -2127,5 +2165,291 @@
     "Artifact availability/relocation/retention and honest audience-specific assurance",
     "Source/time trust mechanisms, validation claim matrix and scientific handoff",
     "Complete S3 examples, remaining identity/cardinality/owner/cursor/handle/decision interfaces and final design review before bundles"
+  ],
+  "current_semantic_examples": "crucis_causal/docs/subsystem3-contract-examples-2026-11-03.json",
+  "evidence_publication_direction_affirmation": {
+    "basis": "User affirmed preceding immutable publication/reconciliation explanation and requested consolidated outline and four complete examples",
+    "preceding_design_commit": "3cf0cac76e6bb53815396ceb67525a484b35839a",
+    "scope": "Partial immutable views, later corrections/cutoffs, restricted audiences, exact commit recovery and current-pointer limits; exact contracts remain open",
+    "not_implied": [
+      "Exact schema/API freeze",
+      "S3 implementation approval",
+      "Production policy changes",
+      "Native execution or paid campaign authorization",
+      "Remote publication or external messaging"
+    ]
+  },
+  "consolidation_recommendations": [
+    {
+      "id": "CS01",
+      "subject": "Six account blocks, commission target roles and pre-final preparation dependencies",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "L",
+        "R"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS02",
+      "subject": "Independent native inventory/associations with guarded primary and unknown-origin observation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "R",
+        "I",
+        "K"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS03",
+      "subject": "Durable association plus explicit runtime ownership/context reconstruction",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "R",
+        "I"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS04",
+      "subject": "Common typed effect/admission/owner pattern with actual scoped guarantees",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "L",
+        "R",
+        "I",
+        "K"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS05",
+      "subject": "Capture-evidence/progress commit separate from interpretation and source acknowledgement",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "R",
+        "I"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS06",
+      "subject": "Native occurrence/capture/wire identity, order and raw conflict preservation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "R",
+        "I",
+        "K"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS07",
+      "subject": "Fixed permitted decisions with explicit supersession and combined physical effects",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "I"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS08",
+      "subject": "Scoped continuation/stop/outcome facets and fixed S2 selection",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "K",
+        "I"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS09",
+      "subject": "Typed owner ledgers, revisions and cumulative resources/exposure",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "L",
+        "R",
+        "I",
+        "K"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS10",
+      "subject": "Exact dependency views, external receipt pins and actual public/private projection",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "L",
+        "K"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS11",
+      "subject": "Optional mutable current pointer with actual revision preconditions where required",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "R"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    },
+    {
+      "id": "CS12",
+      "subject": "Composed capabilities and honest conditional support/claim limits",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-contract-outline-worked-cases-2026-11-03.md",
+      "design_section": 13,
+      "documentary_cases": [
+        "L",
+        "R",
+        "I",
+        "K"
+      ],
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Proposed semantic resolution; exact record/API contracts remain open. Authored case consistency is not native execution or S3 conformance evidence."
+    }
+  ],
+  "documentary_example_anchor": {
+    "path": "crucis_causal/docs/subsystem3-contract-examples-2026-11-03.json",
+    "sha256": "de5473970db55c47cf1ad60d0e3a0f89418033258c0d57da650acb6454b5ad1f",
+    "kind": "authored_semantic_traces_not_wire_or_runtime_fixtures",
+    "cases": [
+      "L",
+      "R",
+      "I",
+      "K"
+    ],
+    "case_count": 4,
+    "semantic_entities": 117,
+    "account_blocks_per_case": 6,
+    "claims": "Reference/identity counts, synthetic literal mapping, cutoffs, audience closure and arithmetic can be checked as documentary consistency only",
+    "native_execution": false,
+    "s3_acceptance_evidence": false
+  },
+  "consolidation_account_outline": [
+    "Identity and fixed commission/scientific/observation/preparation target",
+    "Scoped activity and native association inventory, distinct from runtime handles",
+    "Evidence/artifact/output indices with identity, coverage, audience and availability",
+    "Scoped assessments with exact evidence cutoffs and revision/dispute basis",
+    "Coordinator disposition and owner/resource/exposure/stop/publication obligations",
+    "Collection periods, closure views and explicit follow-up"
+  ],
+  "consolidation_gap_resolutions": [
+    {
+      "gap": "Final binding required before the realization that makes final binding possible",
+      "proposed_resolution": "Admit prospective preparation from fixed intent; S1 prepare remains pure; finalize native handoff from actual S2 materialization/binding evidence",
+      "proposal": "CS01"
+    },
+    {
+      "gap": "One active handle cannot retain accidental jobs, shared observers or unknown original history",
+      "proposed_resolution": "Independent episode/candidate associations, guarded unique primary, explicit origin-unknown observation without fabricated attempts",
+      "proposal": "CS02"
+    },
+    {
+      "gap": "New runtime socket conflicts with in-memory registry while original native job continues",
+      "proposed_resolution": "Controlled new ownership/runtime context from durable association, current authority and actual receiver guarantees; preserve old guard/history",
+      "proposal": "CS03"
+    },
+    {
+      "gap": "One local transaction cannot supply cross-owner/native atomicity or idempotency",
+      "proposed_resolution": "Typed exact effects with owner operation correlation, real admission and scoped reconciliation/guarantees",
+      "proposal": "CS04"
+    },
+    {
+      "gap": "Fetched cursor can outrun durable evidence, or parser failure can stall raw capture",
+      "proposed_resolution": "Commit permitted capture plus recovery position; retain separate interpretation and source acknowledgement",
+      "proposal": "CS05"
+    },
+    {
+      "gap": "Native duplicates, equal-content events and changed-content wire IDs can be conflated",
+      "proposed_resolution": "Distinct occurrence/capture/record identities; reject namespace conflicts and preserve permitted raw source evidence",
+      "proposal": "CS06"
+    },
+    {
+      "gap": "Reselection after uncertain send or mandatory extra callback ACK changes native interaction",
+      "proposed_resolution": "Immutable decision history; explicit allowed supersession with old-command invalidation; supported combined-effect contracts",
+      "proposal": "CS07"
+    },
+    {
+      "gap": "Checkpoint bytes, parent stop or surviving output can imply stronger continuation/completion",
+      "proposed_resolution": "Scoped restored components, independent stop/outcome/settlement facets and fixed S2 output selection",
+      "proposal": "CS08"
+    },
+    {
+      "gap": "Retries reset allowances or repeated/cumulative reports overstate charge",
+      "proposed_resolution": "Cumulative typed owner scope with explicit revisions, all attempts and persistent actual/possible exposure",
+      "proposal": "CS09"
+    },
+    {
+      "gap": "Public summary inherits private transitive provenance or retrospective cutoff data",
+      "proposed_resolution": "New public statement plus private derivation receipt; actual permitted closure prepared before private freeze; immutable scoped snapshots",
+      "proposal": "CS10"
+    },
+    {
+      "gap": "Current selected value can change back, while pointer is mistaken for pinned evidence",
+      "proposed_resolution": "Pointer optional; require actual revision precondition for history-sensitive claims; exact package pins for analysis",
+      "proposal": "CS11"
+    },
+    {
+      "gap": "Four lifecycle stories can be mistaken for universal supported implementations",
+      "proposed_resolution": "Explicit assumptions/capability axes and separate representable/supplied/available/tested/native-evidenced status",
+      "proposal": "CS12"
+    }
+  ],
+  "remaining_before_s3_freeze": [
+    "Review CS01-CS12 semantic resolutions without attributing exact-contract approval",
+    "Specify minimum versus conditional record fields, cardinalities, references and source/episode/attempt compatibility mapping",
+    "Choose composed capability/support matrix including origin-unknown, composite, duplicate, dynamic and multi-party limitations",
+    "Complete bounded serialization and actual proof of journal/capture/owner/native receipt binding semantics",
+    "Define exact core/owner/driver/decision/storage signatures, validity/fencing, recovery and failure contracts",
+    "Specify S1/S2 compatibility and exact snapshot/projection/context preservation without historical rebaselining",
+    "Run another complete-record/failure review, including profiles not fully exercised by these four documentary paths",
+    "Final S3 design review, implementation DAG/bundles and scoped acceptance gates; implementation awaits explicit authorization"
   ]
 }
