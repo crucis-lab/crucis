@@ -6,7 +6,7 @@
   ],
   "local_date": "2026-11-03",
   "kind": "s3_design_methodology_index",
-  "status": "S3 semantic design discussion; identity direction affirmed, new minimum-account/knowledge/closure recommendations pending review; no S3 implementation or schema freeze",
+  "status": "S3 account/knowledge directions affirmed in discussion; admission/authority/resource/exposure recommendations pending review; no S3 implementation or schema freeze",
   "governing_sources": [
     "AGENTS.md",
     "README.md",
@@ -200,6 +200,21 @@
       "path": "crucis_causal/experiments/evaluation.py",
       "sha256": "cc656ea567fc622de622407cf7562151d151dddcb911174ef40f6a07c8e075db",
       "scope": "Existing primitive at the current design base; not S3 implementation"
+    },
+    {
+      "path": "crucis_causal/core/adapter.py",
+      "sha256": "e3aa2f355992207766459d59ac7f77f9ae7e49139a2b149d0d3cc9d65259a3c9",
+      "scope": "Existing source at design base 8c76c2e; legacy scope/guards or reported fields, not the new S3 admission service"
+    },
+    {
+      "path": "crucis_causal/core/sealed.py",
+      "sha256": "4c4dcf1e7e9b603c363be0f8991d6423edc196db2618c18cca721974e9253e1d",
+      "scope": "Existing source at design base 8c76c2e; legacy scope/guards or reported fields, not the new S3 admission service"
+    },
+    {
+      "path": "crucis_causal/core/runs.py",
+      "sha256": "f0432d0846aca7e5882af2785d6c1f2d7e7013fcf6fc3112e897664f1c41cc56",
+      "scope": "Existing source at design base 8c76c2e; legacy scope/guards or reported fields, not the new S3 admission service"
     }
   ],
   "existing_scoped_test_anchors": [
@@ -224,7 +239,9 @@
         "test_reconnect_reuses_handle_not_attempt_identity",
         "test_bounded_observation_is_not_native_completion",
         "test_delivery_and_cancellation_need_separate_exact_authority",
-        "test_core_outcome_conflicts_and_later_assessment_do_not_rewrite"
+        "test_core_outcome_conflicts_and_later_assessment_do_not_rewrite",
+        "test_unknown_and_absent_dependency_narrow_readiness_without_import",
+        "test_prepared_process_is_only_argv_descriptor"
       ],
       "claim_limit": "Existing scoped primitive tests; no new S3 acceptance case executed by this source inspection"
     },
@@ -254,6 +271,24 @@
         "test_exclusion_without_a_reason_is_not_an_accounted_denominator"
       ],
       "claim_limit": "Existing primitive scope only; no S3 minimum-account or closure acceptance case is implemented"
+    },
+    {
+      "path": "tests/test_audit_experiments_lifecycle.py",
+      "sha256": "612a1797978ebc64686961f9759288e025c59b9b5d2b32c5d885c494d4c394e1",
+      "methods": [
+        "test_local_record_never_creates_external_attestation_or_grant",
+        "test_partial_exposure_survives_failure_and_unknown_admission"
+      ],
+      "claim_limit": "Existing synthetic/metadata or legacy rule scope only; no new durable S3 resource/exposure admission guarantee"
+    },
+    {
+      "path": "tests/test_audit_report.py",
+      "sha256": "28e4a919545139a6ce3b3cf8bee1465f082d4bc5f54be21fec47309a8cea69f4",
+      "methods": [
+        "test_store_must_be_outside_the_shared_folder",
+        "test_one_read_per_version_and_rotation"
+      ],
+      "claim_limit": "Existing synthetic/metadata or legacy rule scope only; no new durable S3 resource/exposure admission guarantee"
     }
   ],
   "prior_evidence": [
@@ -301,8 +336,8 @@
     "data_backed_rerun_requested": false
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review the minimum blocks and knowledge/closure rules; then detail admission, authority, resources and exposure ownership before exact serialization/APIs/support profiles/build bundles.",
-  "current_design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
+  "next_design": "Review action-scoped owner conditions and examples; then detail interrupted/concurrent admission and reservation lifecycles before input realization/staging, exact interfaces, support profiles or build bundles.",
+  "current_design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -340,6 +375,25 @@
         "EA08",
         "EA09"
       ],
+      "status": "direction_affirmed_details_open",
+      "commit": "8c76c2e9be012b7bfbb9792dceedf423f123e23f"
+    },
+    {
+      "subject": "admission, authority, resources and exposure ownership",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "based_on_commit": "8c76c2e9be012b7bfbb9792dceedf423f123e23f",
+      "proposal_ids": [
+        "AR01",
+        "AR02",
+        "AR03",
+        "AR04",
+        "AR05",
+        "AR06",
+        "AR07",
+        "AR08",
+        "AR09",
+        "AR10"
+      ],
       "status": "recommendations_pending_review"
     }
   ],
@@ -347,92 +401,101 @@
     {
       "id": "EA01",
       "subject": "Six minimum reference-oriented semantic blocks",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA02",
       "subject": "Scoped fact basis, applicability, coverage and two cutoff dimensions",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA03",
       "subject": "Append-only observations and assessment revisions",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA04",
       "subject": "Scoped conflict recognition and evidence-based resolution",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA05",
       "subject": "Explicit scoped negatives and non-applicability",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA06",
       "subject": "Later evidence without hindsight or implicit analysis changes",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA07",
       "subject": "Collection closure with pending effects",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA08",
       "subject": "Independent native-stop and obligation settlement",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     },
     {
       "id": "EA09",
       "subject": "Late import and explicit follow-up collection periods",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-minimum-account-knowledge-design-2026-11-03.md",
       "design_section": 8,
       "s3_implementation": null,
       "new_s3_acceptance_test_or_receipt": null,
-      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee"
+      "scope": "Semantic design; existing primitives below do not implement the new S3 guarantee",
+      "affirmation_scope": "Direction discussed in preceding explanation; no exact contract or implementation approval"
     }
   ],
   "minimum_account_blocks": [
@@ -462,6 +525,148 @@
   "existing_primitive_limits": [
     "connections.core.outcome_observations preserves conflicts within supplied facets but does not adjudicate all proposed time/coverage/authenticity semantics",
     "experiments.profiles retains incomplete-check gaps but does not implement an S3 execution account",
-    "experiments.evaluation retains missing intended units but does not itself establish native execution or close resource/exposure obligations"
+    "experiments.evaluation retains missing intended units but does not itself establish native execution or close resource/exposure obligations",
+    "connections.services.RuntimeAuthority checks supplied in-memory scoped capabilities, not durable distributed reservations or OS isolation",
+    "connections.ports.observe bounds batches but does not provide the proposed per-action resource admission",
+    "core.sealed helpers and tests preserve historical rules; no real seed/read-ledger access or transactional concurrent disclosure service is asserted",
+    "core.adapter spend guards and RunRecord reported costs do not implement global budget reservation or hard monetary enforcement"
+  ],
+  "account_direction_affirmation": {
+    "scope": "User affirmed the minimum-account/knowledge/closure explanation and requested admission, authority, resources and exposure next",
+    "directions": [
+      "six reference-oriented account meanings",
+      "scoped evidence and versioned conclusions",
+      "collection closure distinct from native stop and obligation settlement",
+      "late evidence without rewriting earlier cutoff knowledge or automatic analysis changes"
+    ],
+    "limit": "Semantic direction only; exact schemas, APIs, owner policies and implementation remain open",
+    "preceding_design_commit": "8c76c2e9be012b7bfbb9792dceedf423f123e23f"
+  },
+  "admission_recommendations": [
+    {
+      "id": "AR01",
+      "subject": "Action-scoped admission across applicable prerequisites",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR02",
+      "subject": "Explicit ownership/delegation and runtime authority",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR03",
+      "subject": "Knowledge-bound validity and accepted uncertainty",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR04",
+      "subject": "Typed reservations distinct from usage and enforcement",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR05",
+      "subject": "Custodian-controlled disclosure and persistent exposure history",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR06",
+      "subject": "Explicit partial multi-owner admission and reconciliation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR07",
+      "subject": "Effect-boundary ownership, fencing and revocation",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR08",
+      "subject": "Owner-evidenced settlement of pending liabilities",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR09",
+      "subject": "Strict versus advisory enforcement support profiles",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    },
+    {
+      "id": "AR10",
+      "subject": "Bounded control capacity for required recovery",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-admission-authority-resource-exposure-design-2026-11-03.md",
+      "design_section": 8,
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null,
+      "scope": "Semantic design only; existing primitives do not establish the proposed durable enforcement guarantee"
+    }
+  ],
+  "admission_action_conditions": [
+    "declared_scientific_eligibility",
+    "actual_operational_readiness",
+    "applicable_owner_authority",
+    "resource_reservation_and_enforcement",
+    "exposure_admission_and_history",
+    "command_ownership_and_required_fencing",
+    "effect_boundary_validity"
+  ],
+  "ownership_roles": [
+    "scientific_policy_owner",
+    "execution_authority_or_host_owner",
+    "resource_owner",
+    "information_or_exposure_custodian",
+    "coordinator",
+    "native_driver_or_backend"
+  ],
+  "admission_policy_limits": [
+    "No global runnable flag authorizes every effect",
+    "A resource grant cannot override scientific or information policy",
+    "No new production sealed-read limit, reset or consumption rule selected",
+    "A reservation or conservative policy debit is distinct from observed use",
+    "No universal atomic transaction over independent owners and native effects",
+    "Hard guarantees require adequate actual enforcement, otherwise disclose weaker support or withhold required admission"
   ]
 }
