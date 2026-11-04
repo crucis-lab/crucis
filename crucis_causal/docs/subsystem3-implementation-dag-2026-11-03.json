@@ -1,0 +1,1389 @@
+{
+  "kind": "s3_implementation_bundle_DAG_candidate",
+  "date": "2026-11-03",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "based_on_commit": "de4e48114a45dff53f807d00267cb1758bbba6e6",
+  "status": "final_design_review_complete_recommendation_pending_user_acceptance_and_build_go",
+  "scope": {
+    "runtime_namespace": "crucis_causal/execution/",
+    "test_pattern": "tests/test_audit_execution_*.py",
+    "no_runtime_written_this_turn": true,
+    "core": "All31 operation semantics/grammars and48 interfaces; real local journal/owners/coordinator plus explicit deterministic fixture drivers for local, asynchronous, interactive and recovery paths.",
+    "native_qualification": "Fixtures validate contracts; existing recorded systems stay recorded. No new third-party live integration claim."
+  },
+  "entry_gate": {
+    "design_acceptance": "not_recorded_for_this_final_revision",
+    "implementation_go": "absent",
+    "required": [
+      "Record user acceptance/implementation go and pin exact final review/catalog/DAG/case-plan/source commit outside subject files.",
+      "Verify source/instruction/interpreter state and diagnose any drift; preserve unrelated work.",
+      "No source-generation/native/API/sealed effect beyond specifically authorized scope.",
+      "All predecessor gates must be actual completed receipts; plans, skips and unsupported claims cannot count as passed mechanisms."
+    ]
+  },
+  "contract": {
+    "path": "crucis_causal/docs/subsystem3-final-contract-catalog-2026-11-03.json",
+    "sha256": "99b682891c445ef4e792b42a2b282eb4bbb68698cbf703819ab4e5b694d3d5eb"
+  },
+  "case_plan": {
+    "path": "crucis_causal/docs/subsystem3-acceptance-plan-2026-11-03.json",
+    "sha256": "e3b9438e4c1b62c6d7ba8dbbf94136b0098d0bc901b41558af797f944e5ca771"
+  },
+  "bundles": [
+    {
+      "id": "S3-B00",
+      "name": "Freeze reviewed baseline and independent fixture oracles",
+      "depends_on": [],
+      "owned_paths": [
+        "new dated S3 accepted-baseline and implementation-log records only",
+        "tests/audit_fixtures/sc3/"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Record actual user acceptance/build-go separately; pin complete reviewed catalog, DAG, case plan and source commit outside their hashed subjects.",
+        "Author new positive local/remote/interactive/checkpoint fixtures with actual supplied synthetic S2 run bindings and exact S1 R snapshots, using existing metadata APIs. Retrospective archives remain unchanged.",
+        "Fix receiver/oracle expected jobs/actions/charges/state/cutoffs before implementing codec/coordinator. Plan one positive specimen for every38 core record kinds and one meaningful negative per invariant."
+      ],
+      "recovery_gate": "No native dispatch. Reauthoring a fixture creates a new identity; old accepted expected receipts remain pinned.",
+      "supported_claim_after_gate": "Accepted fixture/specification inventory, not runtime support.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B00/accepted-inputs.json",
+        "<external-build-root>/S3-B00/tests.json",
+        "<external-build-root>/S3-B00/gate.json",
+        "<external-build-root>/S3-B00/source-before-after.json",
+        "<external-build-root>/S3-B00/support-claims.json",
+        "<external-build-root>/S3-B00/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B00/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "D00"
+      ]
+    },
+    {
+      "id": "S3-B01",
+      "name": "Closed wire, runtime values, registries and capability checks",
+      "depends_on": [
+        "S3-B00"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/model.py",
+        "crucis_causal/execution/codec.py",
+        "crucis_causal/execution/schema.py",
+        "crucis_causal/execution/catalog.json",
+        "crucis_causal/execution/api.py",
+        "crucis_causal/execution/registry.py",
+        "tests/test_audit_execution_wire.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Closed38-kind revision3 schema; explicit role/cardinality/parameter grammars for all31 operations,77 role positions and48 methods.",
+        "Exact bytes/pins, qualified/internal/unresolved refs, declared payload contexts, scoped indexes/conflicts, tagged numbers/time and all8 support axes; same-ID/different-content rejected.",
+        "Bounded decoding/resolution; no null/bare numeric repair, unknown-core fallback, automatic dependency/schema imports or grant deserialization.",
+        "All new test IDs appear under the actual test_audit_ discovery pattern. Positive38-kind wire fixtures pass; malformed examples preserve opaque source and withhold interpretation."
+      ],
+      "recovery_gate": "Duplicate property/broken pin/wrong context/unknown contract must fail at correct boundary, preserve source evidence and make zero owner/native calls.",
+      "supported_claim_after_gate": "Structural/preservation and declared registry semantics; no authority/native availability.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B01/accepted-inputs.json",
+        "<external-build-root>/S3-B01/tests.json",
+        "<external-build-root>/S3-B01/gate.json",
+        "<external-build-root>/S3-B01/source-before-after.json",
+        "<external-build-root>/S3-B01/support-claims.json",
+        "<external-build-root>/S3-B01/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B01/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "X10",
+        "W01",
+        "W02",
+        "M01"
+      ]
+    },
+    {
+      "id": "S3-B02",
+      "name": "Single-host journal and artifact commit store",
+      "depends_on": [
+        "S3-B01"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/journal.py",
+        "crucis_causal/execution/store.py",
+        "tests/test_audit_execution_journal.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "SQLite rollback/DELETE, synchronous FULL, foreign keys enabled/verified, explicit bounded lock waits and short expected-revision transactions; local disk only, no WAL mode by default.",
+        "Immutable records/bytes, account revisions, transaction lookup and idempotent same-key exact-binding result; changed binding conflicts.",
+        "Flush/hash/stage artifacts before committing references/capture checkpoint; orphan artifacts tracked but no partially published root/cursor.",
+        "Concurrent cooperative writers: one expected-head winner; stale writer cannot advance revision. Fresh process reload reconstructs exact immutable history.",
+        "prepare_issue first definitely committed D claim returns one live permit; lookup/replay/uncertain commit returns no new executable permit. Persisted claim survives process restart."
+      ],
+      "recovery_gate": "Kill before/after journal/capture commit and reopen: lookup returns original commit or scoped unknown/known noncommit; no cursor beyond retained bytes. Inject write/flush/space errors without filling real disk.",
+      "supported_claim_after_gate": "Qualified local process-crash/cooperative-writer storage; no provider exactly-once, distributed fence or power-loss qualification.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B02/accepted-inputs.json",
+        "<external-build-root>/S3-B02/tests.json",
+        "<external-build-root>/S3-B02/gate.json",
+        "<external-build-root>/S3-B02/source-before-after.json",
+        "<external-build-root>/S3-B02/support-claims.json",
+        "<external-build-root>/S3-B02/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B02/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F01",
+        "J01"
+      ]
+    },
+    {
+      "id": "S3-B03",
+      "name": "Actual local owners, typed resource/exposure ledgers and live grants",
+      "depends_on": [
+        "S3-B01",
+        "S3-B02"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/owners.py",
+        "crucis_causal/execution/accounting.py",
+        "crucis_causal/execution/authority.py",
+        "tests/test_audit_execution_owners.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Distinct admission/group, owner reservation, owner request and native C/D identities. Same request ID dedups exact binding; renewal/settlement uses new request under original subject and revision.",
+        "Actual process-owned capabilities checked at boundary; denied/unknown/partial owner responses produce no LiveAdmission. Include control overhead and parent control allowance without recursive self-grants.",
+        "Resource kind/unit/member/interval/revisions and exposure prepared/reachable/transmitted/delivered/accessed/used/policy-consumed remain independent.",
+        "Replacement bill5 supersedes interim3; disjoint bill4 gives9, pending liability persists until owner evidence/rule permits discharge."
+      ],
+      "recovery_gate": "Lost reserve/renew/settle/release ACK reconciles same request; partial multi-owner admission never issues native work. Old epoch/copy/forged token rejected; native effects remain unknown where not observable.",
+      "supported_claim_after_gate": "Local owner and fixture-unit accounting/enforcement only; no universal monetary meter or hostile-Python isolation.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B03/accepted-inputs.json",
+        "<external-build-root>/S3-B03/tests.json",
+        "<external-build-root>/S3-B03/gate.json",
+        "<external-build-root>/S3-B03/source-before-after.json",
+        "<external-build-root>/S3-B03/support-claims.json",
+        "<external-build-root>/S3-B03/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B03/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F02",
+        "F03",
+        "OP15P",
+        "OP15H",
+        "OP16P",
+        "OP16H",
+        "OP17P",
+        "OP17H",
+        "OP18P",
+        "OP18H",
+        "OP19P",
+        "OP19H",
+        "OP20P",
+        "OP20H",
+        "A01"
+      ]
+    },
+    {
+      "id": "S3-B04",
+      "name": "Exact S1/S2 bridge, scientific prerequisites and recorded import",
+      "depends_on": [
+        "S3-B01",
+        "S3-B02"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/bridge.py",
+        "crucis_causal/execution/scientific.py",
+        "crucis_causal/execution/imports.py",
+        "tests/test_audit_execution_bridge.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Use actual S2 compile/completion/projection APIs and source snapshots; freeze R before O; unchanged copied record IDs/content/context; changed content/occurrence rejected.",
+        "S1/S2 records remain owned/frozen in their namespace; staged deltas become CommitDelta only after dependency views are immutable/pinned.",
+        "Scientific run requires established matching S2 binding; unknown original A/R/T preserved without invented occurrences. Fixed probe NA has explicit rule and cannot erase scientific intent/exposure.",
+        "Literal-unique or explicit supported incarnation-key bridge retains raw coordinates; S1 single-action/value-CAS/process-local limits surfaced. Existing S1/S2 readers never receive S3 packages as native input."
+      ],
+      "recovery_gate": "S1 rejected invocation maps to possible effects, not atomic no-effect. Wrong package/type/pin/import occurrence produces scoped failure and zero native starts.",
+      "supported_claim_after_gate": "Supported exact metadata/native handoff and preservation of richer unknown-origin material; no ready flag from metadata alone.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B04/accepted-inputs.json",
+        "<external-build-root>/S3-B04/tests.json",
+        "<external-build-root>/S3-B04/gate.json",
+        "<external-build-root>/S3-B04/source-before-after.json",
+        "<external-build-root>/S3-B04/support-claims.json",
+        "<external-build-root>/S3-B04/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B04/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "OP27P",
+        "OP27H",
+        "OP28P",
+        "OP28H",
+        "OP30P",
+        "OP30H"
+      ]
+    },
+    {
+      "id": "S3-B05",
+      "name": "Input realization, stable staging and information custody",
+      "depends_on": [
+        "S3-B03",
+        "S3-B04"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/inputs.py",
+        "crucis_causal/execution/staging.py",
+        "tests/test_audit_execution_inputs.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Source generation/fitting/transforms execute only as admitted effects with actual input/recipe/randomness/state evidence returned to S2; prepare/compile remain pure.",
+        "Construct exact permitted presentations for non-tabular/domain/endpoint inputs; stable-use guarantees checked where requested, never flatten/pool/repair silently.",
+        "Partial staging/disclosure/cleanup and native state handles tracked; before final B only independently admissible preparation is allowed.",
+        "Credential sentinel tests: no bearer/log leakage; restricted or absent raw diagnostic stays explicit, redacted views are derived. Preserve evaluator-only input boundaries at declared trusted route scope."
+      ],
+      "recovery_gate": "Interrupt after partial transfer or mutate input after planning: retain actual/possible disclosure, do not reset allowances; refuse strict stable-use claim without actual mechanism.",
+      "supported_claim_after_gate": "Trusted supplied input/fixture transfer and materialization scope; no OS-wide blindness or federated privacy from labels.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B05/accepted-inputs.json",
+        "<external-build-root>/S3-B05/tests.json",
+        "<external-build-root>/S3-B05/gate.json",
+        "<external-build-root>/S3-B05/source-before-after.json",
+        "<external-build-root>/S3-B05/support-claims.json",
+        "<external-build-root>/S3-B05/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B05/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "X01",
+        "X12",
+        "OP01P",
+        "OP01H",
+        "OP02P",
+        "OP02H"
+      ]
+    },
+    {
+      "id": "S3-B06",
+      "name": "Coordinator plan, admission and single forwarding",
+      "depends_on": [
+        "S3-B03",
+        "S3-B04",
+        "S3-B05"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/coordinator.py",
+        "crucis_causal/execution/clock.py",
+        "tests/test_audit_execution_coordinator.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Caller-supplied stable admission and D occurrences; durable admission plan/owner requests before RPC and durable D intent before driver entry.",
+        "Pure plan/recover/freeze do not fetch/probe/install/call native/provider. Each required prerequisite/owner/guarantee gates executable admission.",
+        "Repeated admit/issue reconciles original IDs; no new D/job/grant from retrying a lost call. Current head/epoch/validity checked without silently expanding scientific evidence frontier.",
+        "CallResult state and each C/D boundary/acceptance independent. Time uncertainty/deadline expiry holds dependent effects; local timer is not native resource cap.",
+        "Guarded native entry validates/consumes the actual issuer permit bound to C/D/binding/epoch. Forged fields, copies, JSON or old journal receipts cannot authorize forwarding."
+      ],
+      "recovery_gate": "Crash at owner/preissue/driver-entry barriers and re-enter from fresh process: no unrecorded forwarding or duplicate launch; preserve ambiguous effects.",
+      "supported_claim_after_gate": "Core lifecycle/admission/issue semantics for installed declared mechanisms only.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B06/accepted-inputs.json",
+        "<external-build-root>/S3-B06/tests.json",
+        "<external-build-root>/S3-B06/gate.json",
+        "<external-build-root>/S3-B06/source-before-after.json",
+        "<external-build-root>/S3-B06/support-claims.json",
+        "<external-build-root>/S3-B06/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B06/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F04",
+        "F05",
+        "F17",
+        "F18",
+        "X03",
+        "X11",
+        "T01"
+      ]
+    },
+    {
+      "id": "S3-B07",
+      "name": "Explicit native dispatch, identity, attachment and fixture transport",
+      "depends_on": [
+        "S3-B04",
+        "S3-B06"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/drivers.py",
+        "crucis_causal/execution/identity.py",
+        "tests/audit_fixtures/sc3/native_service.py",
+        "tests/test_audit_execution_dispatch.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Trusted local function and shell-false explicit process/service bindings; direct adapters reuse S1 guards where applicable, no eval/import/fallback execution.",
+        "Independent deterministic provider fixture persists jobs outside coordinator process lifetime; exact query coverage/incarnation and current receiver epoch validated.",
+        "Attach to known work without relaunch; unknown-origin S3 route only when supported, never manufacture S1 A. Retain unexpected duplicate native jobs and costs; no forced canonical merge.",
+        "All actual transport/auth mechanics supplied explicitly; scripted-service scope labeled synthetic, not integration with any real provider.",
+        "Negative lookup before a delayed old request arrives does not permit new work unless earlier acceptance paths are actually closed or covered by a valid receiver single-effect contract. Independent oracle detects duplicate jobs."
+      ],
+      "recovery_gate": "Lose launch ACK/kill coordinator: provider oracle shows exactly one accepted job; supported lookup attaches to it. Unknown query stays unknown; stale receiver epoch rejected after takeover; no hash-based resend.",
+      "supported_claim_after_gate": "Local and independent-process fixture dispatch/reconciliation, with specific receiver guarantees; no third-party backend qualification.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B07/accepted-inputs.json",
+        "<external-build-root>/S3-B07/tests.json",
+        "<external-build-root>/S3-B07/gate.json",
+        "<external-build-root>/S3-B07/source-before-after.json",
+        "<external-build-root>/S3-B07/support-claims.json",
+        "<external-build-root>/S3-B07/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B07/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F06",
+        "F07",
+        "X06",
+        "X08",
+        "OP03P",
+        "OP03H",
+        "OP04P",
+        "OP04H",
+        "OP05P",
+        "OP05H"
+      ]
+    },
+    {
+      "id": "S3-B08",
+      "name": "Observation, durable capture and source progress",
+      "depends_on": [
+        "S3-B02",
+        "S3-B03",
+        "S3-B06",
+        "S3-B07"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/collection.py",
+        "crucis_causal/execution/capture.py",
+        "tests/test_audit_execution_collection.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Fetched/captured/interpreted/acknowledged progress and source/filter/generation/consumer context separate; opaque cursor contract controls replay.",
+        "Duplicate/out-of-order captures preserved as occurrences, linked to native events only with evidence. Gaps/partial output do not become complete response.",
+        "Commit raw bytes/metadata plus checkpoint before separate ACK. Combined consuming sources require their own declared profile; strict replay held if unsupported.",
+        "Bound events/bytes/deadlines without imposing scientific stop; independent source identities for restarted jobs/partitions."
+      ],
+      "recovery_gate": "At every raw-write/capture-commit/ACK barrier, reopen and replay: no missing captured evidence or premature cursor, no double ACK from unknown commit; new epoch cannot inherit old cursor silently.",
+      "supported_claim_after_gate": "Durable bounded collection and exact supported replay scope; no global stream completeness/exactly-once claim.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B08/accepted-inputs.json",
+        "<external-build-root>/S3-B08/tests.json",
+        "<external-build-root>/S3-B08/gate.json",
+        "<external-build-root>/S3-B08/source-before-after.json",
+        "<external-build-root>/S3-B08/support-claims.json",
+        "<external-build-root>/S3-B08/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B08/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F08",
+        "F09",
+        "F19",
+        "X02",
+        "OP06P",
+        "OP06H",
+        "OP07P",
+        "OP07H"
+      ]
+    },
+    {
+      "id": "S3-B09",
+      "name": "Permitted decisions, interaction and delivery",
+      "depends_on": [
+        "S3-B05",
+        "S3-B06",
+        "S3-B07",
+        "S3-B08"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/decisions.py",
+        "crucis_causal/execution/interaction.py",
+        "tests/test_audit_execution_interaction.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Action identity/context distinct from question text; fixed allowed procedure and pre-send frontier; provider/tool/LLM effects explicit acquire/compute operations.",
+        "Q1 selection frozen before send; delivery receipt/use/policy consumption distinct. Q2 missing required source yields no selected response/delivery/fallback unless fixed rule permits.",
+        "Exact one-action S1 delivery or explicitly supported composite bundle; preserve per-entry/all-or-none native atomicity and validity, no false decomposition guarantee.",
+        "Response source attestation/checks cover domain/context/time and permitted audience; scientific truth not inferred from source availability."
+      ],
+      "recovery_gate": "Drop delivery ACK after receiver stores V1: reconcile original action/content, receiver counter1. Expire action/change context or lose source: zero new deliveries, preserved exposure/unknowns.",
+      "supported_claim_after_gate": "Scoped fixture interaction and explicit procedure/provider mechanics; no live LLM/expert integration without separate authorization.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B09/accepted-inputs.json",
+        "<external-build-root>/S3-B09/tests.json",
+        "<external-build-root>/S3-B09/gate.json",
+        "<external-build-root>/S3-B09/source-before-after.json",
+        "<external-build-root>/S3-B09/support-claims.json",
+        "<external-build-root>/S3-B09/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B09/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F10",
+        "F11",
+        "X07",
+        "OP08P",
+        "OP08H",
+        "OP09P",
+        "OP09H",
+        "OP10P",
+        "OP10H",
+        "OP11P",
+        "OP11H",
+        "OP29P",
+        "OP29H"
+      ]
+    },
+    {
+      "id": "S3-B10",
+      "name": "Recovery policy, stopping, state restoration and settlement",
+      "depends_on": [
+        "S3-B03",
+        "S3-B04",
+        "S3-B06",
+        "S3-B07",
+        "S3-B08",
+        "S3-B09"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/recovery.py",
+        "crucis_causal/execution/stopping.py",
+        "tests/test_audit_execution_recovery.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Evidence-dependent wait/reconcile/reconnect/retransmit/restart/stop/close choices; request changes/new attempts/new trials distinct; no hidden retries.",
+        "Native restart creates A2, uses permitted mode/compatible request and required overlap/state boundaries. Native state handle versus captured checkpoint source, availability and actual loading separate.",
+        "Model/optimizer partial continuity allowed only under fixed rule; unknown RNG/history withholds exact continuity. Unknown-origin predecessor has no fabricated S1 recovery projection.",
+        "Stop ACK/observed scoped stop/descendants, collection closure, resource settlement and exposure discharge remain independent; retain unresolved obligations and link follow-up periods."
+      ],
+      "recovery_gate": "Kill around stop ACK, restart acceptance and load receipt; predecessor unknown stops strict nonoverlap; expired state handle blocks launch; no epoch/budget reset; final bill replacement totals9.",
+      "supported_claim_after_gate": "Qualified fixture recovery modes, not universal exact replay, descendant termination or hard monetary bounds.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B10/accepted-inputs.json",
+        "<external-build-root>/S3-B10/tests.json",
+        "<external-build-root>/S3-B10/gate.json",
+        "<external-build-root>/S3-B10/source-before-after.json",
+        "<external-build-root>/S3-B10/support-claims.json",
+        "<external-build-root>/S3-B10/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B10/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F12",
+        "F13",
+        "F20",
+        "X04",
+        "OP12P",
+        "OP12H",
+        "OP13P",
+        "OP13H",
+        "OP14P",
+        "OP14H",
+        "OP31P",
+        "OP31H"
+      ]
+    },
+    {
+      "id": "S3-B11",
+      "name": "Immutable publication, audience projection and optional store operations",
+      "depends_on": [
+        "S3-B02",
+        "S3-B03",
+        "S3-B04",
+        "S3-B06",
+        "S3-B08",
+        "S3-B10"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/publication.py",
+        "crucis_causal/execution/projection.py",
+        "tests/test_audit_execution_publication.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Exact frozen bytes/dependency pins with external commit/verification receipts; same publication key reconciles same package/digest, refreeze is new publication.",
+        "Traverse actual allowed metadata/producer/diagnostic/embedded-payload/reference closure. Unknown opaque payload needs exact byte permission; content-specific assurance withheld without supported interpreter.",
+        "L exports exactly its two native public entities; added S3 metadata/private lineage stays private. New public S3 root requires actual metadata allowance.",
+        "Revision CAS distinct from value CAS. Relocation/revoke/delete scoped to actual owners/copies/retention; historical pins and prior exposure unchanged."
+      ],
+      "recovery_gate": "Crash after manifest commit before ACK -> lookup same bytes. ABA pointer conflict rejects. Delete/revoke interruption retains unknown copies/obligations; partial staging never exposes a complete root.",
+      "supported_claim_after_gate": "Local immutable publication/projection and optional operations under actual local owner scope; no remote dissemination/global erasure claim.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B11/accepted-inputs.json",
+        "<external-build-root>/S3-B11/tests.json",
+        "<external-build-root>/S3-B11/gate.json",
+        "<external-build-root>/S3-B11/source-before-after.json",
+        "<external-build-root>/S3-B11/support-claims.json",
+        "<external-build-root>/S3-B11/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B11/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "F14",
+        "F15",
+        "F16",
+        "X09",
+        "OP21P",
+        "OP21H",
+        "OP22P",
+        "OP22H",
+        "OP23P",
+        "OP23H",
+        "OP24P",
+        "OP24H",
+        "OP25P",
+        "OP25H",
+        "OP26P",
+        "OP26H"
+      ]
+    },
+    {
+      "id": "S3-B12",
+      "name": "End-to-end profiles, opt-in interface and installed-package isolation",
+      "depends_on": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B06",
+        "S3-B07",
+        "S3-B08",
+        "S3-B09",
+        "S3-B10",
+        "S3-B11"
+      ],
+      "owned_paths": [
+        "crucis_causal/execution/core.py",
+        "crucis_causal/execution/__init__.py",
+        "crucis_causal/execution/__main__.py",
+        "crucis_causal/execution/README.md",
+        "tests/test_audit_execution_integration.py"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "Execute fresh positive local/remote/interactive/checkpoint fixtures through real S3 pipeline with independent receiver/oracle logs, alongside preserved historical archives.",
+        "All31 operations/48 method signatures/38 record kinds/8 support axes mapped to actual scoped tests; unsupported guarantee requests produce expected held results without effects.",
+        "Opt-in module CLI for supplied-byte inspect/validate/plan/recovery-plan; no driver import or native execution from help/default parse. Fixture execution distinctly labeled; actual live drivers require injected real capability.",
+        "Wheel in isolated environment imports only Crucis-owned code; no research/harness path insertion. Typed methodology/support index links design->implementation->receipt->claim/limit."
+      ],
+      "recovery_gate": "Fresh process reload must recover all four fixture paths without changing frozen definitions/cutoffs; no default paid/native provider, source scanning or evaluator fallback.",
+      "supported_claim_after_gate": "Integrated scoped offline framework; supported claim cells reflect actually exercised mechanisms.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B12/accepted-inputs.json",
+        "<external-build-root>/S3-B12/tests.json",
+        "<external-build-root>/S3-B12/gate.json",
+        "<external-build-root>/S3-B12/source-before-after.json",
+        "<external-build-root>/S3-B12/support-claims.json",
+        "<external-build-root>/S3-B12/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B12/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "X05",
+        "E01",
+        "E02",
+        "E03",
+        "E04"
+      ]
+    },
+    {
+      "id": "S3-B13",
+      "name": "Final acceptance, compatibility and qualification receipts",
+      "depends_on": [
+        "S3-B12"
+      ],
+      "owned_paths": [
+        "new dated S3 implemented-scope, implementation-log and release-review records only",
+        "crucis_causal/docs/subsystem3-methodology-index-2026-11-03.json"
+      ],
+      "status": "planned_not_started",
+      "must_show": [
+        "All mandatory new cases collected, zero skipped/failed/error; every predecessor must-show/fault receipt present and linked to exact accepted baseline/source.",
+        "Run current staged-tree gate; baseline old data/dependency skips reported separately from mandatory new tests. Preserve S1/S2/scientific sources unless explicit reviewed bridge-plumbing ownership exception.",
+        "Once after integration, qualify legacy recorded parity at unchanged tolerance and certificates with explicit historical data root/external outputs when available; absent data holds that qualification, never silently passes. No scoring/threshold/result repin.",
+        "Linux Python3.10/3.12 and Windows3.12 matrix/installed-wheel receipts required for cross-platform claim. Prepare checks locally; remote CI/push/merge/publication needs separate authorization.",
+        "Report offline implementation completion, parity qualification, host matrix and native backend integration independently. No new real native campaign, sealed read or API spend implied."
+      ],
+      "recovery_gate": "Re-run affected fault regressions after final changes; preserve failing/environment receipts and diagnose barriers instead of weakening tests, widening tolerances or overwriting goldens.",
+      "supported_claim_after_gate": "Only exact receipt-backed release claims; universal native support remains unclaimed.",
+      "receipt_required": [
+        "accepted design/source hashes and predecessor receipts",
+        "case IDs collected/executed with expected scoped outcomes",
+        "actual source manifest, environment and before/after identity",
+        "fault injection/log/receiver oracle references when applicable",
+        "capability dimensions, skipped/not-run/unsupported scope",
+        "full appropriate staged-tree gate and local commit receipt"
+      ],
+      "receipt_paths": [
+        "<external-build-root>/S3-B13/accepted-inputs.json",
+        "<external-build-root>/S3-B13/tests.json",
+        "<external-build-root>/S3-B13/gate.json",
+        "<external-build-root>/S3-B13/source-before-after.json",
+        "<external-build-root>/S3-B13/support-claims.json",
+        "<external-build-root>/S3-B13/commit.json"
+      ],
+      "receipt_fault_paths": "<external-build-root>/S3-B13/faults/<case>/<variant>/{receiver-oracle,history-prefix,recovered-view}.json",
+      "case_ids": [
+        "R01"
+      ]
+    }
+  ],
+  "fault_matrix": [
+    {
+      "id": "F01",
+      "primary_bundle": "S3-B02",
+      "setup": "before/after admission/journal metadata commit",
+      "independent_oracle": "Committed transaction or no commit, exact revision; zero native calls."
+    },
+    {
+      "id": "F02",
+      "primary_bundle": "S3-B03",
+      "setup": "owner request intent before RPC",
+      "independent_oracle": "Original request key survives; reconciliation never creates another hold."
+    },
+    {
+      "id": "F03",
+      "primary_bundle": "S3-B03",
+      "setup": "owner commits reserve/renew before reply",
+      "independent_oracle": "Same request returns same committed hold/revision; lost reply is not failure."
+    },
+    {
+      "id": "F04",
+      "primary_bundle": "S3-B06",
+      "setup": "one of several owner reservations succeeds",
+      "independent_oracle": "No LiveAdmission/native issue until all required owners established; tracked partial liability."
+    },
+    {
+      "id": "F05",
+      "primary_bundle": "S3-B06",
+      "setup": "D intent committed before driver entry",
+      "independent_oracle": "Original D transaction lookup; no inferred native acceptance or blind second D."
+    },
+    {
+      "id": "F06",
+      "primary_bundle": "S3-B07",
+      "setup": "provider accepts job before launch reply",
+      "independent_oracle": "Receiver accepted-job counter1; journal acceptance unknown until adequate lookup."
+    },
+    {
+      "id": "F07",
+      "primary_bundle": "S3-B07",
+      "setup": "takeover while old sender has in-flight request",
+      "independent_oracle": "Actual fixture receiver rejects stale epoch; earlier accepted work remains accounted."
+    },
+    {
+      "id": "F08",
+      "primary_bundle": "S3-B08",
+      "setup": "raw artifact write before capture checkpoint",
+      "independent_oracle": "No durable progress past bytes/metadata; orphan staging not a published capture."
+    },
+    {
+      "id": "F09",
+      "primary_bundle": "S3-B08",
+      "setup": "capture committed before source ACK",
+      "independent_oracle": "Lookup original batch commit and ACK only compatible source position, no lost bytes."
+    },
+    {
+      "id": "F10",
+      "primary_bundle": "S3-B09",
+      "setup": "response selected before send",
+      "independent_oracle": "Frozen response/frontier retained; no receipt/use/consumption inferred."
+    },
+    {
+      "id": "F11",
+      "primary_bundle": "S3-B09",
+      "setup": "response delivered before ACK",
+      "independent_oracle": "Receiver delivery counter1; reconcile same action/content; no second response/fallback."
+    },
+    {
+      "id": "F12",
+      "primary_bundle": "S3-B10",
+      "setup": "stop ACK before observed termination",
+      "independent_oracle": "Native stop remains unresolved until scope evidence; no resource release by ACK."
+    },
+    {
+      "id": "F13",
+      "primary_bundle": "S3-B10",
+      "setup": "successor accepted before component-load evidence",
+      "independent_oracle": "New A2 retained; loaded components unknown, exact continuity withheld."
+    },
+    {
+      "id": "F14",
+      "primary_bundle": "S3-B11",
+      "setup": "package committed before publication reply",
+      "independent_oracle": "Same publication ID/digest resolves existing exact package; no refreeze."
+    },
+    {
+      "id": "F15",
+      "primary_bundle": "S3-B11",
+      "setup": "pointer value A to B to A before CAS",
+      "independent_oracle": "Old revision CAS conflicts even though value equals A."
+    },
+    {
+      "id": "F16",
+      "primary_bundle": "S3-B11",
+      "setup": "revoke/delete request before result",
+      "independent_oracle": "Current copy/access outcome uncertain; old pins/exposure/other copies retained."
+    },
+    {
+      "id": "F17",
+      "primary_bundle": "S3-B06",
+      "setup": "owner validity expires or clock uncertainty at issue",
+      "independent_oracle": "No native forwarding requiring established validity; same D/reason retained."
+    },
+    {
+      "id": "F18",
+      "primary_bundle": "S3-B06",
+      "setup": "admit/issue caller loses final reply and repeats call",
+      "independent_oracle": "Original admission/D IDs reconciled, changed binding conflicts, no new forwarding by API repetition."
+    },
+    {
+      "id": "F19",
+      "primary_bundle": "S3-B08",
+      "setup": "write/flush/space failure at artifact commit",
+      "independent_oracle": "Scoped I/O diagnostic, no advanced cursor/ACK/full publication; source native outcome unaffected."
+    },
+    {
+      "id": "F20",
+      "primary_bundle": "S3-B10",
+      "setup": "owner commits settlement/release before reply",
+      "independent_oracle": "Same request revision reconciles; no duplicate charge, release or allowance reset."
+    }
+  ],
+  "common_exit_gate": [
+    "Owned source/test/docs only; explicit path staging, relevant tests and required staged-tree gate; enabled-hook local commit. No push/merge/publication implied.",
+    "External immutable per-bundle receipts include exact design/implementation/predecessor hashes, named case results, environment/fault scope and claim limitations.",
+    "No historical number/threshold/certificate/path repin. No B5/analysis/score/harness logic changes.",
+    "New fixtures and test process outputs outside checkout; source data under explicit fixture directory only. Real secrets/sealed seeds remain outside shared tree.",
+    "Changed failure or new behavior reruns affected gates; never overwrite failure evidence or update expected values merely to pass."
+  ],
+  "qualification_dimensions": [
+    "offline_framework",
+    "recorded_data_parity",
+    "actual_host_matrix",
+    "actual_native_backend",
+    "external_publication"
+  ],
+  "backend_recommendation": {
+    "engine": "Python stdlib SQLite, rollback journal DELETE, synchronous FULL, foreign keys on; immutable artifact files staged/flushed before journal reference commit",
+    "observed_workspace_sqlite": "3.50.4",
+    "scope": "same-host cooperative local storage and tested process crash only",
+    "unsupported_initially": [
+      "WAL mode",
+      "shared/network database path",
+      "hostile writer isolation",
+      "power-loss and whole-disk failure",
+      "distributed receiver fencing without explicit provider support"
+    ],
+    "sources": [
+      "https://www.sqlite.org/atomiccommit.html",
+      "https://www.sqlite.org/wal.html",
+      "https://www.sqlite.org/useovernet.html"
+    ]
+  },
+  "capability_axis_coverage": [
+    {
+      "axis": "A01",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B06",
+        "S3-B12"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A02",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B12"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A03",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B09"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A04",
+      "primary_bundles": [
+        "S3-B05",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A05",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B09"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A06",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B05",
+        "S3-B09"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A07",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B12"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A08",
+      "primary_bundles": [
+        "S3-B05",
+        "S3-B07",
+        "S3-B09"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A09",
+      "primary_bundles": [
+        "S3-B06",
+        "S3-B08",
+        "S3-B09"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A10",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B07",
+        "S3-B10"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A11",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B08"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A12",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B12"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A13",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B09",
+        "S3-B12"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A14",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B02",
+        "S3-B08",
+        "S3-B11"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A15",
+      "primary_bundles": [
+        "S3-B06",
+        "S3-B07",
+        "S3-B10"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A16",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B08",
+        "S3-B10"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A17",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B07",
+        "S3-B10"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    },
+    {
+      "axis": "A18",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B05",
+        "S3-B11"
+      ],
+      "claim_limit": "Mapped design axis; actual family/driver/guarantee support remains receipt-scoped, not full-field coverage."
+    }
+  ],
+  "representative_case_coverage": [
+    {
+      "case": "C01",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B07",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C02",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B07"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C03",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C04",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B10"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C05",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B05"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C06",
+      "primary_bundles": [
+        "S3-B05",
+        "S3-B09"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C07",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C08",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C09",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C10",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B09"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C11",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C12",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C13",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C14",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C15",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C16",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C17",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C18",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B10"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C19",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08",
+        "S3-B10",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C20",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C21",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B05",
+        "S3-B08",
+        "S3-B09",
+        "S3-B10",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C22",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B08",
+        "S3-B09",
+        "S3-B10"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C23",
+      "primary_bundles": [
+        "S3-B03",
+        "S3-B05",
+        "S3-B06",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C24",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B08",
+        "S3-B10"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C25",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C26",
+      "primary_bundles": [
+        "S3-B01",
+        "S3-B04",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C27",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    },
+    {
+      "case": "C28",
+      "primary_bundles": [
+        "S3-B04",
+        "S3-B07",
+        "S3-B08",
+        "S3-B10",
+        "S3-B11",
+        "S3-B12"
+      ],
+      "claim_limit": "Historical capability-map feature pressure only; no new integration/performance claim for the named system."
+    }
+  ],
+  "combination_probe_coverage": [
+    {
+      "probe": "H01",
+      "bundles": [
+        "S3-B07",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "case_ids": [
+        "X02",
+        "X05",
+        "E02"
+      ]
+    },
+    {
+      "probe": "H02",
+      "bundles": [
+        "S3-B03",
+        "S3-B05",
+        "S3-B09"
+      ],
+      "case_ids": [
+        "X01",
+        "X03",
+        "E03"
+      ]
+    },
+    {
+      "probe": "H03",
+      "bundles": [
+        "S3-B05",
+        "S3-B09",
+        "S3-B10"
+      ],
+      "case_ids": [
+        "X04",
+        "X12",
+        "E04"
+      ]
+    },
+    {
+      "probe": "H04",
+      "bundles": [
+        "S3-B04",
+        "S3-B05",
+        "S3-B08",
+        "S3-B12"
+      ],
+      "case_ids": [
+        "X02",
+        "X03",
+        "X05"
+      ]
+    }
+  ],
+  "capability_source": {
+    "path": "crucis_causal/docs/system-connections-capability-map-2026-11-01.md",
+    "sha256": "978f321edbaefe062ef5cdd5339e667b755310749d4e10001540e0eae1363ac8",
+    "scope": "Historical map/feature pressure; no re-verification of current external systems or universal coverage percentage."
+  }
+}

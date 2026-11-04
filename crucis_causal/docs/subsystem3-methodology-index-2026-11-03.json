@@ -450,11 +450,12 @@
     "result_location": "External local validation receipt and milestone commit message",
     "scope_limit": "Package conformance and public-source checks do not execute or establish proposed S3 lifecycle guarantees",
     "new_runtime_or_test_code": false,
-    "data_backed_rerun_requested": false
+    "data_backed_rerun_requested": false,
+    "plan_checks": "External final-design-review/plan-checks.json; static correspondence/ancestry/source-preservation checks only, not S3 runtime tests"
   },
   "coordination_handoff": "Rule/proposal -> current primitive -> scoped test/prior receipt -> claim and limit. S3 implementation/evidence remain absent. Independent research/reviewer tooling stays outside Crucis.",
-  "next_design": "Review OC01-OC16 operational closure and complete preservation-package limits, adjudicate remaining objections, then final S3 design review and detailed implementation DAG/bundles with acceptance/fault/support gates. No implementation authorization.",
-  "current_design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
+  "next_design": "User final review/acceptance and explicit implementation go; then B00 only, following actual acceptance/recovery gates. No S3 implementation authorized by this design milestone.",
+  "current_design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
   "direction_affirmation": {
     "scope": "User affirmed the preceding execution identity/lifecycle explanation and requested this bounded minimum-account/knowledge pass",
     "limit": "Not interpreted as blanket acceptance of every P01-P10 detail or any exact schema/backend"
@@ -731,7 +732,26 @@
         "OC15",
         "OC16"
       ],
-      "status": "recommendations_pending_review"
+      "status": "direction_affirmed_details_open",
+      "commit": "de4e48114a45dff53f807d00267cb1758bbba6e6"
+    },
+    {
+      "subject": "final design review and concrete acceptance/recovery implementation DAG",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "based_on_commit": "de4e48114a45dff53f807d00267cb1758bbba6e6",
+      "proposal_ids": [
+        "FR01",
+        "FR02",
+        "FR03",
+        "FR04",
+        "FR05",
+        "FR06",
+        "FR07",
+        "FR08",
+        "FR09",
+        "FR10"
+      ],
+      "status": "recommendation_pending_final_user_acceptance_no_build_go"
     }
   ],
   "minimum_account_recommendations": [
@@ -2532,10 +2552,9 @@
     }
   ],
   "remaining_before_s3_freeze": [
-    "Review OC01-OC16 exact operation/interface/recovery/bridge recommendations and revision2 refinements.",
-    "Confirm claim/support scopes, fault models and deliberate scientific/native-identity/authority gaps in preservation examples; never relabel them eligible native runs.",
-    "Final S3 review against accepted S1/S2 and capability map, including optional/composite/multi-party profiles with explicit native evidence requirements.",
-    "Define implementation DAG/bundles and acceptance gates only after design review; implementation requires explicit authorization."
+    "User adjudicates FR01-FR10, final proposed revision3 catalog, qualified scope and B00-B13 DAG.",
+    "Record final acceptance and explicit implementation go before any S3 runtime/test implementation.",
+    "B00 pins accepted source/design and independently specified fixture oracles. Later bundles require actual predecessor receipts; planning checks are not their acceptance results."
   ],
   "consolidation_direction_affirmation": {
     "source": "User: yes this makes sense; specify precise minimum versus conditional S3 record and support matrix, still no implementation.",
@@ -2849,10 +2868,11 @@
   "current_operation_catalog": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
   "current_complete_package_review": "crucis_causal/docs/subsystem3-complete-package-review-2026-11-03.json",
   "current_serialization_revision": {
-    "version": "0.1.0-proposal.2",
+    "version": "0.1.0-proposal.3",
     "base": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
-    "refinements": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
-    "status": "candidate_not_adopted"
+    "previous_refinements": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
+    "final_refinements": "crucis_causal/docs/subsystem3-final-contract-catalog-2026-11-03.json",
+    "status": "recommended_baseline_pending_user_acceptance_and_explicit_build_go"
   },
   "operational_closure_recommendations": [
     {
@@ -2860,7 +2880,7 @@
       "subject": "Closed typed operation rows and phase-specific admission counts",
       "alternative": "One permissive execute request with driver validation",
       "cost_and_failure_prevented": "Catalog/registration effort; common policy cannot disappear into adapters",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2871,7 +2891,7 @@
       "subject": "Explicit parameter/context grammars and revision2",
       "alternative": "Keep artifact-host-relative interpretation",
       "cost_and_failure_prevented": "More context pins; prevents silent reference rebinding",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2882,7 +2902,7 @@
       "subject": "Separate pure selection from information/model effects",
       "alternative": "Let decision providers acquire inputs internally",
       "cost_and_failure_prevented": "More explicit operations; prevents hidden spend/evaluator disclosure",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2893,7 +2913,7 @@
       "subject": "CallResult plus per-command boundary/acceptance evidence",
       "alternative": "Reuse S2 atomic rejection everywhere",
       "cost_and_failure_prevented": "More result dimensions; preserves launch/charge uncertainty after failures",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2904,7 +2924,7 @@
       "subject": "Typed coordinator/owner/driver/decision/journal/storage ports",
       "alternative": "A single orchestrator object with backend-specific branches",
       "cost_and_failure_prevented": "More interfaces; thin adapters and testable common ownership rules",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2915,7 +2935,7 @@
       "subject": "Runtime-only grants and explicit control bootstrap",
       "alternative": "Deserialize or infer grants from permission records",
       "cost_and_failure_prevented": "Owner integration; prevents self-grants and recursive admission fiction",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2926,7 +2946,7 @@
       "subject": "Per-owner correlation/revision plus conservative partial admission",
       "alternative": "A distributed transaction across all owners",
       "cost_and_failure_prevented": "Longer holds/reconciliation; works with heterogeneous owners without claiming global rollback",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2937,7 +2957,7 @@
       "subject": "Journal intent/capture barriers plus actual receiver guarantees",
       "alternative": "Treat local durable intent as exactly-once launch",
       "cost_and_failure_prevented": "Backend qualification; prevents duplicate effects/lost evidence claims",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2948,7 +2968,7 @@
       "subject": "Explicit recovery kinds and state/overlap scope",
       "alternative": "Uniform retry/restart command",
       "cost_and_failure_prevented": "More state distinctions; prevents attempt/trial inflation and unsafe overlap",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2959,7 +2979,7 @@
       "subject": "Independent stop, settlement, closure and projection guarantees",
       "alternative": "One final-success/closed flag",
       "cost_and_failure_prevented": "Retained obligations; preserves bounded observation and later evidence",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2970,7 +2990,7 @@
       "subject": "Explicit exact S1/S2 projection/working context",
       "alternative": "Strip qualification and reuse matching IDs",
       "cost_and_failure_prevented": "Bridge receipts; prevents cross-package substitution",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2981,7 +3001,7 @@
       "subject": "Literal-unique or explicit lossless incarnation-key bridge",
       "alternative": "Assume provider IDs never repeat",
       "cost_and_failure_prevented": "Driver capability checks; preserves actual incarnation without changing S1 schema",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -2992,7 +3012,7 @@
       "subject": "Mark S1 single-action/value-CAS/process-local limits",
       "alternative": "Present all S3 guarantees as already supplied by S1 ports",
       "cost_and_failure_prevented": "Additional S3 mechanisms; avoids unsupported native coverage",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -3003,7 +3023,7 @@
       "subject": "Complete preservation packages with honest scientific gaps",
       "alternative": "Invent missing ready S2 bindings for positive examples",
       "cost_and_failure_prevented": "Withheld eligibility; avoids manufacturing history/authority",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -3014,7 +3034,7 @@
       "subject": "Exact dependency/cutoff/audience review and separate native public payload",
       "alternative": "One uniform public package format",
       "cost_and_failure_prevented": "Extra publication representations; preserves original disclosure policy",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -3025,7 +3045,7 @@
       "subject": "Documentary closure/pin checks and existing package gates separately",
       "alternative": "Count authored receipts as executed S3 acceptance",
       "cost_and_failure_prevented": "Scoped evidence account; prevents synthetic/native conflation",
-      "status": "recommendation_pending_review",
+      "status": "direction_affirmed_details_open",
       "design": "crucis_causal/docs/subsystem3-operational-contract-closure-2026-11-03.md",
       "design_section": 7,
       "s3_implementation": null,
@@ -3099,5 +3119,163 @@
     "passed": true,
     "scope": "Existing synthetic metadata compiler, occurrence identity, R/O snapshot and handoff behavior only. No native execution or S3 implementation/acceptance.",
     "receipt_location": "External milestone validation directory; logs/receipts not copied as native evidence"
+  },
+  "operational_closure_direction_affirmation": {
+    "basis": "User affirmed preceding direction and requested final review/DAG; no implementation go",
+    "prior_commit": "de4e48114a45dff53f807d00267cb1758bbba6e6",
+    "status": "direction_affirmed_details_open"
+  },
+  "current_final_contract": "crucis_causal/docs/subsystem3-final-contract-catalog-2026-11-03.json",
+  "current_implementation_dag": "crucis_causal/docs/subsystem3-implementation-dag-2026-11-03.json",
+  "current_acceptance_plan": "crucis_causal/docs/subsystem3-acceptance-plan-2026-11-03.json",
+  "final_review_recommendations": [
+    {
+      "id": "FR01",
+      "subject": "plan returns a staged immutable command. Caller persists admission_occurrence and transmission_occurrence before corresponding effectful calls. Admission plan/owner IDs are durably recorded before first owner RPC. Same ID with changed binding conflicts; lost reply resumes/reconciles the same occurrence, never silently allocates a new one.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR02",
+      "subject": "StateComponent.restore_source identifies captured payload or native handle; availability is separately assessed for the actual loader/cutoff/rights. Identity, readable bytes and actual loading do not imply one another. S1 projection records unavailable raw bytes as unknown/NA and reports loss; it cannot disguise provider attestations as state bytes.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR03",
+      "subject": "command.admission is the construction-time assessment, possibly unresolved. Later immutable admission assessments/owner receipts reference the command and admission occurrence; current authority comes from live checked owner capabilities, never mutation of C or deserialization of old grants.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR04",
+      "subject": "commit_capture transaction key equals batch_occurrence; prepare_issue transaction key equals D. A lost transaction ACK is queried by original key and exact binding before cursor advance/new forwarding. Only the first definitely committed D claim receives a live one-time permit; replay, lookup, restart and uncertain commits receive none. A negative native query permits retry only with established closure of old acceptance paths or valid receiver deduplication covering all still-eligible arrivals.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR05",
+      "subject": "Initial local SQLite rollback journal plus immutable artifact store is qualified only for cooperative same-host processes and tested process crashes. No shared/network path, hostile writer, power-loss, distributed or external native enforcement claim.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR06",
+      "subject": "Retrospective v2 archives remain preservation fixtures. Independently specified new positive S2-bound executions and receiver-side failure oracles are mandatory before execution support can pass; never fabricate historical identities/bindings.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR07",
+      "subject": "New tests use test_audit_execution_*.py to match current discovery; gate must prove every mandatory new case was collected and executed without skips.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR08",
+      "subject": "Opaque runtime credentials can use owner-approved native transport, but never audit serialization/logging. Restricted raw diagnostics stay restricted or explicitly uncaptured; redacted diagnostics are derived evidence, never substituted original bytes.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR09",
+      "subject": "S3 reads pinned S1/S2 packages; existing S1/S2 readers are not expanded to S3 dialect. Return frozen S1 evidence and existing S2 receipts under explicit bridges; unsupported rich projection keeps loss/withheld claims.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    },
+    {
+      "id": "FR10",
+      "subject": "Release receipts separate offline framework conformance, recorded-data parity, actual host matrix and native backend qualification. Skips/not-run/unsupported never become native success.",
+      "status": "recommendation_pending_review",
+      "design": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "s3_implementation": null,
+      "new_s3_acceptance_test_or_receipt": null
+    }
+  ],
+  "final_review_anchors": [
+    {
+      "path": "crucis_causal/docs/subsystem3-final-design-review-2026-11-03.md",
+      "sha256": "6555de15a926fd8546213f165eda1fa4a0cb5d7070e50be213d691b1d0e7e48c",
+      "scope": "Design recommendation and future oracle specification only; no S3 execution receipt"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-final-contract-catalog-2026-11-03.json",
+      "sha256": "99b682891c445ef4e792b42a2b282eb4bbb68698cbf703819ab4e5b694d3d5eb",
+      "scope": "Design recommendation and future oracle specification only; no S3 execution receipt"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-implementation-dag-2026-11-03.json",
+      "sha256": "9a216582b599301c510ac95da660bd2f8d33a6f7ee9356799e34dd565cbee18c",
+      "scope": "Design recommendation and future oracle specification only; no S3 execution receipt"
+    },
+    {
+      "path": "crucis_causal/docs/subsystem3-acceptance-plan-2026-11-03.json",
+      "sha256": "e3b9438e4c1b62c6d7ba8dbbf94136b0098d0bc901b41558af797f944e5ca771",
+      "scope": "Design recommendation and future oracle specification only; no S3 execution receipt"
+    }
+  ],
+  "final_review_existing_foundations": [
+    {
+      "path": "tests/run_tests.py",
+      "sha256": "736d1538a7261b52e04e75439501cd117f0f27e6eb7abcedb2d89d8fa437220c",
+      "scope": "Inspected test discovery, package boundary or staged-gate mechanics; unchanged implementation"
+    },
+    {
+      "path": "crucis_causal/dev/gates.py",
+      "sha256": "9fe3be254534c24309b874dd13f3b7fb411e0c3529782465a9bfad75c7f0af9c",
+      "scope": "Inspected test discovery, package boundary or staged-gate mechanics; unchanged implementation"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "653d1de162ed51b6be8b4c9f6be2e4a09d4dd557b42a17440c5840eb6e553bcc",
+      "scope": "Inspected test discovery, package boundary or staged-gate mechanics; unchanged implementation"
+    }
+  ],
+  "final_review_scope": {
+    "bundles": 14,
+    "planned_case_specifications": 106,
+    "operation_contracts": 31,
+    "family_role_positions": 77,
+    "method_signatures": 48,
+    "core_kinds": 38,
+    "inherited_negative_specifications": 30,
+    "fault_boundaries": 20,
+    "cross_capability_probes": 12,
+    "capability_axes": 18,
+    "representative_historical_cases": 28,
+    "combined_probes": 4,
+    "implementation": "not_started",
+    "user_acceptance_of_final_refinements": "pending",
+    "build_go": "absent",
+    "qualifications": [
+      "offline_framework",
+      "recorded_data_parity",
+      "actual_host_matrix",
+      "actual_native_backend",
+      "external_publication"
+    ],
+    "limitations": [
+      "These are frozen proposed expectations, not test execution receipts.",
+      "Actual native integrations, hostile isolation, real money/sealed usage, multi-host stores and power-loss qualification need named authorized mechanisms/evidence.",
+      "Four retrospective archives cannot be promoted into positive runnable experiments; new fixture experiments get new identities and complete supplied bindings."
+    ]
   }
 }

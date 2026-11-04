@@ -1,0 +1,2505 @@
+{
+  "kind": "s3_preimplementation_acceptance_and_recovery_plan",
+  "date": "2026-11-03",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "status": "proposed_oracles_not_executed_S3_tests",
+  "based_on_commit": "de4e48114a45dff53f807d00267cb1758bbba6e6",
+  "contract_version": "0.1.0-proposal.3",
+  "cases": [
+    {
+      "id": "F01",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B02",
+      "setup": "before/after admission/journal metadata commit",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Committed transaction or no commit, exact revision; zero native calls.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F02",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B03",
+      "setup": "owner request intent before RPC",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Original request key survives; reconciliation never creates another hold.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F03",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B03",
+      "setup": "owner commits reserve/renew before reply",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Same request returns same committed hold/revision; lost reply is not failure.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F04",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B06",
+      "setup": "one of several owner reservations succeeds",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "No LiveAdmission/native issue until all required owners established; tracked partial liability.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F05",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B06",
+      "setup": "D intent committed before driver entry",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Original D transaction lookup; no inferred native acceptance or blind second D.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F06",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B07",
+      "setup": "provider accepts job before launch reply",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Receiver accepted-job counter1; journal acceptance unknown until adequate lookup.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed",
+      "required_variants": [
+        "provider_accepted_reply_lost",
+        "negative_lookup_before_delayed_original_arrives"
+      ]
+    },
+    {
+      "id": "F07",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B07",
+      "setup": "takeover while old sender has in-flight request",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Actual fixture receiver rejects stale epoch; earlier accepted work remains accounted.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F08",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B08",
+      "setup": "raw artifact write before capture checkpoint",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "No durable progress past bytes/metadata; orphan staging not a published capture.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F09",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B08",
+      "setup": "capture committed before source ACK",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Lookup original batch commit and ACK only compatible source position, no lost bytes.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F10",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B09",
+      "setup": "response selected before send",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Frozen response/frontier retained; no receipt/use/consumption inferred.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F11",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B09",
+      "setup": "response delivered before ACK",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Receiver delivery counter1; reconcile same action/content; no second response/fallback.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F12",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B10",
+      "setup": "stop ACK before observed termination",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Native stop remains unresolved until scope evidence; no resource release by ACK.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F13",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B10",
+      "setup": "successor accepted before component-load evidence",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "New A2 retained; loaded components unknown, exact continuity withheld.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F14",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B11",
+      "setup": "package committed before publication reply",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Same publication ID/digest resolves existing exact package; no refreeze.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F15",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B11",
+      "setup": "pointer value A to B to A before CAS",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Old revision CAS conflicts even though value equals A.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F16",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B11",
+      "setup": "revoke/delete request before result",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Current copy/access outcome uncertain; old pins/exposure/other copies retained.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F17",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B06",
+      "setup": "owner validity expires or clock uncertainty at issue",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "No native forwarding requiring established validity; same D/reason retained.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F18",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B06",
+      "setup": "admit/issue caller loses final reply and repeats call",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Original admission/D IDs reconciled, changed binding conflicts, no new forwarding by API repetition.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed",
+      "required_variants": [
+        "admit_reply_lost",
+        "issue_reply_lost",
+        "forged_or_copied_token",
+        "same_D_receipt_replayed"
+      ]
+    },
+    {
+      "id": "F19",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B08",
+      "setup": "write/flush/space failure at artifact commit",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Scoped I/O diagnostic, no advanced cursor/ACK/full publication; source native outcome unaffected.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "F20",
+      "kind": "fault_boundary",
+      "primary_bundle": "S3-B10",
+      "setup": "owner commits settlement/release before reply",
+      "stimulus": "Deterministic barrier/child-process termination or injected boundary error, then fresh-context recovery. No sleep race or real provider.",
+      "independent_oracle": "Same request revision reconciles; no duplicate charge, release or allowance reset.",
+      "must_not_claim": "Not an external provider, hostile process isolation or power-loss test.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X01",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B05",
+      "setup": "Generated/fitted input",
+      "independent_oracle": "Provider called once only after admission; actual outputs/checks return to S2; no final binding fabricated beforehand.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X02",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B08",
+      "setup": "Temporal/partitioned stream",
+      "independent_oracle": "Separate source/window/filter/generation positions; no flattened iid rows or inherited cursor after epoch change.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X03",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B06",
+      "setup": "Federated owners with unavailable participant",
+      "independent_oracle": "No central raw rows, shared ID inference or all-party admission; partial holds/coverage survive.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X04",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B10",
+      "setup": "Remote native checkpoint without captured bytes",
+      "independent_oracle": "Owner-valid loader handle can establish scoped availability/load; byte-integrity claim withheld. Expired handle means zero restart.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X05",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B12",
+      "setup": "Learned domains and weighted multi-objects",
+      "independent_oracle": "Preserve actual domains/associations/weights and equal-content distinct members; no factor-index alignment or S4 metric selection.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X06",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B07",
+      "setup": "Unknown-origin existing native job",
+      "independent_oracle": "Observe supported exact target without fabricated A/R/T or hidden launch; S1-only projection stays unavailable.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X07",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B09",
+      "setup": "Composite ACK/answer operation",
+      "independent_oracle": "One physical native message, exact logical correlations and per-entry/all-or-none scope; no false atomicity from multiple S1 grants.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X08",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B07",
+      "setup": "Reused provider ID in new incarnation",
+      "independent_oracle": "Old key/connection cannot control new work; explicit descriptor bridge, no literal-ID shortcut.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X09",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B11",
+      "setup": "Restricted projection/retention/opaque payload",
+      "independent_oracle": "All metadata/embedded refs/copies evaluated; explicitly permitted bytes do not establish stronger semantic secrecy claims.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X10",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B01",
+      "setup": "Lossless failed/incomplete native material",
+      "independent_oracle": "Unknown native format/error/null/nonfinite retained as opaque source, no structural coercion or scientific failure inferred.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X11",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B06",
+      "setup": "Fixed non-scientific probe versus scientific relabel",
+      "independent_oracle": "Actual probe effects/costs/exposure recorded; a scientific intent cannot waive S2 binding by enum change.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "X12",
+      "kind": "cross_capability",
+      "primary_bundle": "S3-B05",
+      "setup": "Credential-bearing diagnostic",
+      "independent_oracle": "No synthetic credential sentinel in public manifests/logs; restricted raw or explicit gap plus derived redaction, never fake original bytes.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP01P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B05",
+      "operation": "OP01",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Explicit input/recipe/domain/randomness and information authorization; prepare alone performs no realization.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP01H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B05",
+      "operation": "OP01",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP02P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B05",
+      "operation": "OP02",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Exact bytes/selector/recipient; actual stable-use guarantee and uncertain disclosure/cleanup scoped separately.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP02H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B05",
+      "operation": "OP02",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP03P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B07",
+      "operation": "OP03",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Exact one-shot current grants and prepared intent; no provider ID required before assignment; no implicit retry.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP03H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B07",
+      "operation": "OP03",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP04P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B07",
+      "operation": "OP04",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Positive/negative/unknown with namespace/incarnation/time/retention/paths; empty listing alone is not a no-effect proof.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP04H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B07",
+      "operation": "OP04",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP05P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B07",
+      "operation": "OP05",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "No hidden launch or reset; adequate incarnation and compatible ownership/consumer semantics.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP05H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B07",
+      "operation": "OP05",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP06P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B08",
+      "operation": "OP06",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Bounded request and capture; fetched/captured/interpreted/ack stages separate; combined-consuming sources require explicitly scoped loss/replay guarantees.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP06H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B08",
+      "operation": "OP06",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP07P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B08",
+      "operation": "OP07",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Only acknowledge durably captured matching source/generation/filter/occurrence; no native exactly-once inference.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP07H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B08",
+      "operation": "OP07",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP08P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B09",
+      "operation": "OP08",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Every network/read/provider effect explicitly admitted and exposure/resource owned; no hidden evaluator oracle.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP08H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B09",
+      "operation": "OP08",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP09P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B09",
+      "operation": "OP09",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Paid/model/tool computation is an explicit effect; pure decision selection cannot conceal it.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP09H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B09",
+      "operation": "OP09",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP10P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B09",
+      "operation": "OP10",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Exact response/action/endpoint correlation and current delivery grant; composite only under supported bundle driver; no silent abstention/resend.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP10H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B09",
+      "operation": "OP10",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP11P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B09",
+      "operation": "OP11",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Delivery versus native use distinct; correlate exact occurrence, content and endpoint.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP11H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B09",
+      "operation": "OP11",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP12P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B10",
+      "operation": "OP12",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Requested/acknowledged/observed stop independent; exact descendant coverage and escalation authority required.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP12H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B10",
+      "operation": "OP12",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP13P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B10",
+      "operation": "OP13",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Distinct successor ID; before launch establish permitted mode/state availability/overlap; after launch assess actual load separately. No hidden new scientific repetition.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP13H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B10",
+      "operation": "OP13",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP14P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B10",
+      "operation": "OP14",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Only explicitly supported in-place restoration; does not bypass restart identity or requested scientific condition.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP14H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B10",
+      "operation": "OP14",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP15P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B03",
+      "operation": "OP15",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "One owner correlation per exact binding; duplicate same-key returns prior hold, changed binding conflicts; partial multi-owner reservation is not global admission.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP15H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B03",
+      "operation": "OP15",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP16P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B03",
+      "operation": "OP16",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Read/reconcile the original owner key; no replacement hold after lost ACK until identity is reconciled.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP16H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B03",
+      "operation": "OP16",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP17P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B03",
+      "operation": "OP17",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Actual owner decides validity; local lease text never prolongs remote rights.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP17H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B03",
+      "operation": "OP17",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP18P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B03",
+      "operation": "OP18",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Evidence/revision/scope aware liability; final bill replacement and usage not double counted.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP18H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B03",
+      "operation": "OP18",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP19P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B03",
+      "operation": "OP19",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Release only owner-permitted capacity/liability scope; no native termination or zero cost inferred.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP19H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B03",
+      "operation": "OP19",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP20P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B03",
+      "operation": "OP20",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Returns live scoped capability plus durable receipt; metadata cannot mint runtime authority.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP20H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B03",
+      "operation": "OP20",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP21P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B11",
+      "operation": "OP21",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Exact bytes/ID/pins/permitted audience closure; manifest commit is publication boundary; no implicit pointer or remote dissemination.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP21H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B11",
+      "operation": "OP21",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP22P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B11",
+      "operation": "OP22",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Same-key exact subject reconciliation; no new publication to resolve uncertain commit.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP22H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B11",
+      "operation": "OP22",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP23P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B11",
+      "operation": "OP23",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Revision CAS at actual owner; value-only CAS is insufficient for ABA/no-missed-update claim.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP23H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B11",
+      "operation": "OP23",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP24P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B11",
+      "operation": "OP24",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Explicit access/budget; new locator does not repin original content or promise availability.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP24H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B11",
+      "operation": "OP24",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP25P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B11",
+      "operation": "OP25",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Actual access owner/copy scope only; delivered copies and exposure not undone.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP25H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B11",
+      "operation": "OP25",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP26P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B11",
+      "operation": "OP26",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Actual copy deletion/retention rights; preserves earlier evidence identity/history and remaining-copy obligations.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP26H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B11",
+      "operation": "OP26",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP27P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B04",
+      "operation": "OP27",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Exact supplied source identity; repeat import key is not native occurrence identity; no invented original launch.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP27H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B04",
+      "operation": "OP27",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP28P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B04",
+      "operation": "OP28",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Pure decoding only over supplied bytes/context; preserve raw bytes and scoped gaps on failure.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP28H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B04",
+      "operation": "OP28",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP29P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B09",
+      "operation": "OP29",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Pure, bounded selection from fixed permitted pre-send information; all external acquisition/computation separate operations.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP29H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B09",
+      "operation": "OP29",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP30P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B04",
+      "operation": "OP30",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Exact S2 projection/completion registry and supplied snapshots; metadata only; changed binding cannot reuse occurrence.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP30H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B04",
+      "operation": "OP30",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP31P",
+      "kind": "operation_positive",
+      "primary_bundle": "S3-B10",
+      "operation": "OP31",
+      "setup": "New independently authored complete typed binding with established fixture prerequisites; same exact IDs/content on explicit replay.",
+      "independent_oracle": "Immutable closure with unresolved effects retained; no native cancel/release or future observation implied.",
+      "side_effect_oracle": "Receiver/owner/journal/artifact state read independently from coordinator result. Pure operations have zero provider/owner calls; effect operations have one explicitly requested effect under their declared correlation.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "OP31H",
+      "kind": "operation_held_or_denied",
+      "primary_bundle": "S3-B10",
+      "operation": "OP31",
+      "setup": "Remove or conflict one exact required role/type/cardinality/parameter, owner validity or requested guarantee at its applicable phase.",
+      "independent_oracle": "Dependent forwarding count0; preserved scoped reason/evidence/partial obligations, no scientific condition relabeling or source deletion.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "D00",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B00",
+      "setup": "Baseline/fixture acceptance",
+      "independent_oracle": "Actual user go and exact design/source/fixture hashes recorded before code; no S3/native receipt inferred from planning.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "W01",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B01",
+      "setup": "All38 record kinds and new state sources",
+      "independent_oracle": "Independently authored positive complete packages for every kind/variant parse with exact pins and qualified refs; no native outcome inferred.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "W02",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B01",
+      "setup": "Strict bounded decode and knowledge distinctions",
+      "independent_oracle": "Duplicate key, wrong type/context/version/null/bare-number fail exact boundary; unknown/conflicting source evidence remains preserved.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "J01",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B02",
+      "setup": "Two writers and process-crash journal reopening",
+      "independent_oracle": "One expected-revision winner, same-key lookup same committed bytes, no checkpoint beyond retained artifacts.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "A01",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B03",
+      "setup": "Live owner and replacement ledger",
+      "independent_oracle": "Actual capability checks reject copies/expired binding; hold/revise/settle source units yield final9, not12; pending exposure independent.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "T01",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B06",
+      "setup": "Temporal admission and repeated API entry",
+      "independent_oracle": "No post-decision evidence in pre-send basis; same admission/D replay zero duplicate effects; current validity uncertainty holds issue.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "E01",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B12",
+      "setup": "Fresh positive local scientific execution",
+      "independent_oracle": "Supplied valid synthetic S2 run binding -> frozen S1 R -> one trusted fixture call -> captured O; expected native order v1,v2,v0 maps to canonical A,B,C under declared map. Fixture unit charge0.7/cap1, not OS/causal correctness.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "E02",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B12",
+      "setup": "Fresh positive asynchronous execution",
+      "independent_oracle": "Independent receiver accepts1 job despite lost ACK; lookup/attachment same A/incarnation; three captures/two native events in scoped window; fixture charge4 under cap10. No historical completeness claim.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "E03",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B12",
+      "setup": "Fresh interactive execution with held Q2",
+      "independent_oracle": "Two distinct same-text actions; Q1 fixed source/response before send, receiver delivery1, policy consumed1/remaining1; Q2 source unavailable -> zero second selection/send/fallback; use/termination unresolved at bounded cutoff.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "E04",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B12",
+      "setup": "Fresh checkpoint execution",
+      "independent_oracle": "Mandatory captured-payload and native-reference variants: one scientific trial, A1/A2 distinct, predecessor stop before new native work, actual model/optimizer restoration, unknown RNG/history, first eligible final, replacement bills5+4=9. Invalid/expired source variant means0 new launch.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "R01",
+      "kind": "bundle_or_end_to_end",
+      "primary_bundle": "S3-B13",
+      "setup": "Receipt-backed completion and qualification",
+      "independent_oracle": "Every predecessor/new-case receipt matches source/design pins; new cases zero skips; old unavailable data/hosts/native backends remain explicit separate not-run/held qualifications.",
+      "status": "planned_not_executed"
+    },
+    {
+      "id": "M01",
+      "kind": "interface_behavior",
+      "primary_bundle": "S3-B01",
+      "setup": "Supplied exact driver/decision declarations and prepared invocation over pinned data, including unsupported version and deliberately mismatched advertised method.",
+      "independent_oracle": "Describe/prepare/requirements planning calls cause zero provider/network/dependency probes; method declarations match supplied callables but do not establish native guarantees. Unknown contracts are held without loading code.",
+      "status": "planned_not_executed"
+    }
+  ],
+  "operation_coverage": [
+    {
+      "operation": "OP01",
+      "contract": {
+        "name": "s3.op.realize_input",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B05",
+      "cases": [
+        "OP01P",
+        "OP01H"
+      ]
+    },
+    {
+      "operation": "OP02",
+      "contract": {
+        "name": "s3.op.stage_input",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B05",
+      "cases": [
+        "OP02P",
+        "OP02H"
+      ]
+    },
+    {
+      "operation": "OP03",
+      "contract": {
+        "name": "s3.op.launch",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B07",
+      "cases": [
+        "OP03P",
+        "OP03H"
+      ]
+    },
+    {
+      "operation": "OP04",
+      "contract": {
+        "name": "s3.op.lookup_launch",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B07",
+      "cases": [
+        "OP04P",
+        "OP04H"
+      ]
+    },
+    {
+      "operation": "OP05",
+      "contract": {
+        "name": "s3.op.attach",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B07",
+      "cases": [
+        "OP05P",
+        "OP05H"
+      ]
+    },
+    {
+      "operation": "OP06",
+      "contract": {
+        "name": "s3.op.observe",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B08",
+      "cases": [
+        "OP06P",
+        "OP06H"
+      ]
+    },
+    {
+      "operation": "OP07",
+      "contract": {
+        "name": "s3.op.acknowledge",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B08",
+      "cases": [
+        "OP07P",
+        "OP07H"
+      ]
+    },
+    {
+      "operation": "OP08",
+      "contract": {
+        "name": "s3.op.acquire_information",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B09",
+      "cases": [
+        "OP08P",
+        "OP08H"
+      ]
+    },
+    {
+      "operation": "OP09",
+      "contract": {
+        "name": "s3.op.compute_response",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B09",
+      "cases": [
+        "OP09P",
+        "OP09H"
+      ]
+    },
+    {
+      "operation": "OP10",
+      "contract": {
+        "name": "s3.op.deliver",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B09",
+      "cases": [
+        "OP10P",
+        "OP10H"
+      ]
+    },
+    {
+      "operation": "OP11",
+      "contract": {
+        "name": "s3.op.lookup_delivery",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B09",
+      "cases": [
+        "OP11P",
+        "OP11H"
+      ]
+    },
+    {
+      "operation": "OP12",
+      "contract": {
+        "name": "s3.op.request_stop",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B10",
+      "cases": [
+        "OP12P",
+        "OP12H"
+      ]
+    },
+    {
+      "operation": "OP13",
+      "contract": {
+        "name": "s3.op.native_restart",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B10",
+      "cases": [
+        "OP13P",
+        "OP13H"
+      ]
+    },
+    {
+      "operation": "OP14",
+      "contract": {
+        "name": "s3.op.restore_state",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B10",
+      "cases": [
+        "OP14P",
+        "OP14H"
+      ]
+    },
+    {
+      "operation": "OP15",
+      "contract": {
+        "name": "s3.op.owner_reserve",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B03",
+      "cases": [
+        "OP15P",
+        "OP15H"
+      ]
+    },
+    {
+      "operation": "OP16",
+      "contract": {
+        "name": "s3.op.owner_reconcile",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B03",
+      "cases": [
+        "OP16P",
+        "OP16H"
+      ]
+    },
+    {
+      "operation": "OP17",
+      "contract": {
+        "name": "s3.op.owner_renew",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B03",
+      "cases": [
+        "OP17P",
+        "OP17H"
+      ]
+    },
+    {
+      "operation": "OP18",
+      "contract": {
+        "name": "s3.op.owner_settle",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B03",
+      "cases": [
+        "OP18P",
+        "OP18H"
+      ]
+    },
+    {
+      "operation": "OP19",
+      "contract": {
+        "name": "s3.op.owner_release",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B03",
+      "cases": [
+        "OP19P",
+        "OP19H"
+      ]
+    },
+    {
+      "operation": "OP20",
+      "contract": {
+        "name": "s3.op.owner_authorize",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B03",
+      "cases": [
+        "OP20P",
+        "OP20H"
+      ]
+    },
+    {
+      "operation": "OP21",
+      "contract": {
+        "name": "s3.op.publish",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B11",
+      "cases": [
+        "OP21P",
+        "OP21H"
+      ]
+    },
+    {
+      "operation": "OP22",
+      "contract": {
+        "name": "s3.op.lookup_publication",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B11",
+      "cases": [
+        "OP22P",
+        "OP22H"
+      ]
+    },
+    {
+      "operation": "OP23",
+      "contract": {
+        "name": "s3.op.select_current",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B11",
+      "cases": [
+        "OP23P",
+        "OP23H"
+      ]
+    },
+    {
+      "operation": "OP24",
+      "contract": {
+        "name": "s3.op.locate_artifact",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B11",
+      "cases": [
+        "OP24P",
+        "OP24H"
+      ]
+    },
+    {
+      "operation": "OP25",
+      "contract": {
+        "name": "s3.op.revoke_access",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B11",
+      "cases": [
+        "OP25P",
+        "OP25H"
+      ]
+    },
+    {
+      "operation": "OP26",
+      "contract": {
+        "name": "s3.op.delete_artifact",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B11",
+      "cases": [
+        "OP26P",
+        "OP26H"
+      ]
+    },
+    {
+      "operation": "OP27",
+      "contract": {
+        "name": "s3.op.import_evidence",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B04",
+      "cases": [
+        "OP27P",
+        "OP27H"
+      ]
+    },
+    {
+      "operation": "OP28",
+      "contract": {
+        "name": "s3.op.decode_output",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B04",
+      "cases": [
+        "OP28P",
+        "OP28H"
+      ]
+    },
+    {
+      "operation": "OP29",
+      "contract": {
+        "name": "s3.op.decide_response",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B09",
+      "cases": [
+        "OP29P",
+        "OP29H"
+      ]
+    },
+    {
+      "operation": "OP30",
+      "contract": {
+        "name": "s3.op.compile_request",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B04",
+      "cases": [
+        "OP30P",
+        "OP30H"
+      ]
+    },
+    {
+      "operation": "OP31",
+      "contract": {
+        "name": "s3.op.close_collection",
+        "version": "0.1.0-proposal.3"
+      },
+      "primary_bundle": "S3-B10",
+      "cases": [
+        "OP31P",
+        "OP31H"
+      ]
+    }
+  ],
+  "method_coverage": [
+    {
+      "method": "Coordinator.open",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "T01",
+        "E01",
+        "W01"
+      ],
+      "first_gate_case_ids": [
+        "T01",
+        "W01"
+      ],
+      "integration_case_ids": [
+        "E01"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Coordinator.plan",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "T01",
+        "W02"
+      ],
+      "first_gate_case_ids": [
+        "T01",
+        "W02"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Coordinator.compile",
+      "primary_bundle": "S3-B04",
+      "operation_links": [
+        "OP30"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP30P",
+        "OP30H"
+      ],
+      "first_gate_case_ids": [
+        "OP30P",
+        "OP30H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Coordinator.admit",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "F04",
+        "F18",
+        "A01"
+      ],
+      "first_gate_case_ids": [
+        "F04",
+        "F18",
+        "A01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Coordinator.issue",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "F05",
+        "F17",
+        "F18",
+        "T01"
+      ],
+      "first_gate_case_ids": [
+        "F05",
+        "F17",
+        "F18",
+        "T01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Coordinator.recover",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "T01",
+        "F05",
+        "E02",
+        "E03",
+        "E04",
+        "F06",
+        "F11"
+      ],
+      "first_gate_case_ids": [
+        "T01",
+        "F05"
+      ],
+      "integration_case_ids": [
+        "E02",
+        "E03",
+        "E04",
+        "F06",
+        "F11"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Coordinator.freeze",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "T01",
+        "W01",
+        "X09",
+        "E01"
+      ],
+      "first_gate_case_ids": [
+        "T01",
+        "W01"
+      ],
+      "integration_case_ids": [
+        "X09",
+        "E01"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.inspect",
+      "primary_bundle": "S3-B03",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "A01",
+        "F03"
+      ],
+      "first_gate_case_ids": [
+        "A01",
+        "F03"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.reserve",
+      "primary_bundle": "S3-B03",
+      "operation_links": [
+        "OP15"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP15P",
+        "OP15H"
+      ],
+      "first_gate_case_ids": [
+        "OP15P",
+        "OP15H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.reconcile",
+      "primary_bundle": "S3-B03",
+      "operation_links": [
+        "OP16"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP16P",
+        "OP16H"
+      ],
+      "first_gate_case_ids": [
+        "OP16P",
+        "OP16H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.renew",
+      "primary_bundle": "S3-B03",
+      "operation_links": [
+        "OP17"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP17P",
+        "OP17H"
+      ],
+      "first_gate_case_ids": [
+        "OP17P",
+        "OP17H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.settle",
+      "primary_bundle": "S3-B03",
+      "operation_links": [
+        "OP18"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP18P",
+        "OP18H"
+      ],
+      "first_gate_case_ids": [
+        "OP18P",
+        "OP18H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.release",
+      "primary_bundle": "S3-B03",
+      "operation_links": [
+        "OP19"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP19P",
+        "OP19H"
+      ],
+      "first_gate_case_ids": [
+        "OP19P",
+        "OP19H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.authorize",
+      "primary_bundle": "S3-B03",
+      "operation_links": [
+        "OP20"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP20P",
+        "OP20H"
+      ],
+      "first_gate_case_ids": [
+        "OP20P",
+        "OP20H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Owner.check",
+      "primary_bundle": "S3-B03",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "A01",
+        "T01",
+        "F17"
+      ],
+      "first_gate_case_ids": [
+        "A01"
+      ],
+      "integration_case_ids": [
+        "T01",
+        "F17"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.describe",
+      "primary_bundle": "S3-B07",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "M01"
+      ],
+      "first_gate_case_ids": [
+        "M01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.prepare",
+      "primary_bundle": "S3-B07",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "M01"
+      ],
+      "first_gate_case_ids": [
+        "M01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.realize",
+      "primary_bundle": "S3-B05",
+      "operation_links": [
+        "OP01"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP01P",
+        "OP01H"
+      ],
+      "first_gate_case_ids": [
+        "OP01P",
+        "OP01H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.stage",
+      "primary_bundle": "S3-B05",
+      "operation_links": [
+        "OP02"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP02P",
+        "OP02H"
+      ],
+      "first_gate_case_ids": [
+        "OP02P",
+        "OP02H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.invoke",
+      "primary_bundle": "S3-B07",
+      "operation_links": [
+        "OP03",
+        "OP13"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP03P",
+        "OP03H",
+        "OP13P",
+        "OP13H"
+      ],
+      "first_gate_case_ids": [
+        "OP03P",
+        "OP03H"
+      ],
+      "integration_case_ids": [
+        "OP13P",
+        "OP13H"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.lookup",
+      "primary_bundle": "S3-B07",
+      "operation_links": [
+        "OP04"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP04P",
+        "OP04H"
+      ],
+      "first_gate_case_ids": [
+        "OP04P",
+        "OP04H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.attach",
+      "primary_bundle": "S3-B07",
+      "operation_links": [
+        "OP05"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP05P",
+        "OP05H"
+      ],
+      "first_gate_case_ids": [
+        "OP05P",
+        "OP05H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.observe",
+      "primary_bundle": "S3-B08",
+      "operation_links": [
+        "OP06"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP06P",
+        "OP06H"
+      ],
+      "first_gate_case_ids": [
+        "OP06P",
+        "OP06H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.ack",
+      "primary_bundle": "S3-B08",
+      "operation_links": [
+        "OP07"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP07P",
+        "OP07H"
+      ],
+      "first_gate_case_ids": [
+        "OP07P",
+        "OP07H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.acquire",
+      "primary_bundle": "S3-B09",
+      "operation_links": [
+        "OP08"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP08P",
+        "OP08H"
+      ],
+      "first_gate_case_ids": [
+        "OP08P",
+        "OP08H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.compute",
+      "primary_bundle": "S3-B09",
+      "operation_links": [
+        "OP09"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP09P",
+        "OP09H"
+      ],
+      "first_gate_case_ids": [
+        "OP09P",
+        "OP09H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.deliver",
+      "primary_bundle": "S3-B09",
+      "operation_links": [
+        "OP10"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP10P",
+        "OP10H"
+      ],
+      "first_gate_case_ids": [
+        "OP10P",
+        "OP10H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.lookup_delivery",
+      "primary_bundle": "S3-B09",
+      "operation_links": [
+        "OP11"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP11P",
+        "OP11H"
+      ],
+      "first_gate_case_ids": [
+        "OP11P",
+        "OP11H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.stop",
+      "primary_bundle": "S3-B10",
+      "operation_links": [
+        "OP12"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP12P",
+        "OP12H"
+      ],
+      "first_gate_case_ids": [
+        "OP12P",
+        "OP12H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.restore",
+      "primary_bundle": "S3-B10",
+      "operation_links": [
+        "OP14"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP14P",
+        "OP14H"
+      ],
+      "first_gate_case_ids": [
+        "OP14P",
+        "OP14H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.read",
+      "primary_bundle": "S3-B04",
+      "operation_links": [
+        "OP27"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP27P",
+        "OP27H"
+      ],
+      "first_gate_case_ids": [
+        "OP27P",
+        "OP27H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Driver.decode",
+      "primary_bundle": "S3-B04",
+      "operation_links": [
+        "OP28"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP28P",
+        "OP28H"
+      ],
+      "first_gate_case_ids": [
+        "OP28P",
+        "OP28H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Decision.describe",
+      "primary_bundle": "S3-B09",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "M01"
+      ],
+      "first_gate_case_ids": [
+        "M01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Decision.requirements",
+      "primary_bundle": "S3-B09",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "M01",
+        "E03",
+        "X07"
+      ],
+      "first_gate_case_ids": [
+        "M01",
+        "X07"
+      ],
+      "integration_case_ids": [
+        "E03"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Decision.select",
+      "primary_bundle": "S3-B09",
+      "operation_links": [
+        "OP29"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP29P",
+        "OP29H"
+      ],
+      "first_gate_case_ids": [
+        "OP29P",
+        "OP29H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Journal.head",
+      "primary_bundle": "S3-B02",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "J01"
+      ],
+      "first_gate_case_ids": [
+        "J01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Journal.append",
+      "primary_bundle": "S3-B02",
+      "operation_links": [
+        "OP31"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "J01",
+        "F01"
+      ],
+      "first_gate_case_ids": [
+        "J01",
+        "F01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Journal.prepare_issue",
+      "primary_bundle": "S3-B02",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "J01",
+        "F05",
+        "F18"
+      ],
+      "first_gate_case_ids": [
+        "J01"
+      ],
+      "integration_case_ids": [
+        "F05",
+        "F18"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Journal.commit_capture",
+      "primary_bundle": "S3-B02",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "J01",
+        "F08",
+        "F09",
+        "F19"
+      ],
+      "first_gate_case_ids": [
+        "J01"
+      ],
+      "integration_case_ids": [
+        "F08",
+        "F09",
+        "F19"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Journal.snapshot",
+      "primary_bundle": "S3-B02",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "J01",
+        "W01"
+      ],
+      "first_gate_case_ids": [
+        "J01",
+        "W01"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Storage.publish",
+      "primary_bundle": "S3-B11",
+      "operation_links": [
+        "OP21"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP21P",
+        "OP21H"
+      ],
+      "first_gate_case_ids": [
+        "OP21P",
+        "OP21H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Storage.lookup_commit",
+      "primary_bundle": "S3-B11",
+      "operation_links": [
+        "OP22"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP22P",
+        "OP22H"
+      ],
+      "first_gate_case_ids": [
+        "OP22P",
+        "OP22H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Storage.cas_pointer",
+      "primary_bundle": "S3-B11",
+      "operation_links": [
+        "OP23"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP23P",
+        "OP23H"
+      ],
+      "first_gate_case_ids": [
+        "OP23P",
+        "OP23H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Storage.locate",
+      "primary_bundle": "S3-B11",
+      "operation_links": [
+        "OP24"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP24P",
+        "OP24H"
+      ],
+      "first_gate_case_ids": [
+        "OP24P",
+        "OP24H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Storage.revoke",
+      "primary_bundle": "S3-B11",
+      "operation_links": [
+        "OP25"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP25P",
+        "OP25H"
+      ],
+      "first_gate_case_ids": [
+        "OP25P",
+        "OP25H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Storage.delete",
+      "primary_bundle": "S3-B11",
+      "operation_links": [
+        "OP26"
+      ],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "OP26P",
+        "OP26H"
+      ],
+      "first_gate_case_ids": [
+        "OP26P",
+        "OP26H"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Journal.lookup_transaction",
+      "primary_bundle": "S3-B02",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "J01",
+        "F05",
+        "F09"
+      ],
+      "first_gate_case_ids": [
+        "J01"
+      ],
+      "integration_case_ids": [
+        "F05",
+        "F09"
+      ],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    },
+    {
+      "method": "Clock.now",
+      "primary_bundle": "S3-B06",
+      "operation_links": [],
+      "acceptance": "Meaningful scoped state/evidence/effect test plus runtime shape; signature-presence test alone cannot satisfy method gate.",
+      "case_ids": [
+        "T01",
+        "F17"
+      ],
+      "first_gate_case_ids": [
+        "T01",
+        "F17"
+      ],
+      "integration_case_ids": [],
+      "ordering_rule": "First-gate cases run/reapply against the method implementation at its owning bundle using fixed oracle semantics. Integration cases run only when their owner bundle/dependencies are built; no forward acceptance dependency."
+    }
+  ],
+  "historical_negative_coverage": [
+    {
+      "source_case": "NR01",
+      "boundary": "altered dependency byte pin",
+      "primary_bundle": "S3-B01",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR02",
+      "boundary": "internal wrong target type",
+      "primary_bundle": "S3-B01",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR03",
+      "boundary": "same-ID different-content dependency",
+      "primary_bundle": "S3-B04",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR04",
+      "boundary": "late receipt in earlier decision basis",
+      "primary_bundle": "S3-B09",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR05",
+      "boundary": "stale writer/receiver epoch",
+      "primary_bundle": "S3-B06",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR06",
+      "boundary": "uncertain lookup treated as no effect",
+      "primary_bundle": "S3-B07",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR07",
+      "boundary": "zero-action native delivery",
+      "primary_bundle": "S3-B09",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR08",
+      "boundary": "checkpoint restart reusing predecessor identity",
+      "primary_bundle": "S3-B10",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR09",
+      "boundary": "ambiguous incarnation key",
+      "primary_bundle": "S3-B07",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR10",
+      "boundary": "unverified S2 run binding treated as ready",
+      "primary_bundle": "S3-B04",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR11",
+      "boundary": "native public artifact padded with private S3 metadata",
+      "primary_bundle": "S3-B11",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR12",
+      "boundary": "refreeze used to reconcile old publication",
+      "primary_bundle": "S3-B11",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR13",
+      "boundary": "value-CAS presented as revision CAS",
+      "primary_bundle": "S3-B11",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR14",
+      "boundary": "unknown RNG promoted to exact continuity",
+      "primary_bundle": "S3-B10",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR15",
+      "boundary": "ACK advanced before capture commit",
+      "primary_bundle": "S3-B08",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    },
+    {
+      "source_case": "NR16",
+      "boundary": "unresolved owner reserve treated as admission",
+      "primary_bundle": "S3-B03",
+      "required_result": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+    }
+  ],
+  "core_record_coverage": {
+    "kinds": [
+      "s3.component",
+      "s3.account",
+      "s3.target",
+      "s3.audience",
+      "s3.claim_request",
+      "s3.account_view",
+      "s3.projection_view",
+      "s3.typed_payload",
+      "s3.frontier",
+      "s3.diagnostic",
+      "s3.assessment",
+      "s3.disposition",
+      "s3.obligation",
+      "s3.collection_period",
+      "s3.collection_closure",
+      "s3.source_frontier",
+      "s3.requirement_context",
+      "s3.requirement_case",
+      "s3.support_claim",
+      "s3.native_subject",
+      "s3.native_association",
+      "s3.effect_command",
+      "s3.transmission",
+      "s3.ownership_context",
+      "s3.realization",
+      "s3.staging",
+      "s3.action_decision",
+      "s3.delivery",
+      "s3.recovery",
+      "s3.resource_entry",
+      "s3.exposure_entry",
+      "s3.publication_receipt",
+      "s3.availability",
+      "s3.operation_binding",
+      "s3.owner_receipt",
+      "s3.effect_observation",
+      "s3.journal_receipt",
+      "s3.bridge_receipt"
+    ],
+    "fixture_owner": "S3-B00",
+    "schema_gate": "S3-B01",
+    "integration_gate": "S3-B12",
+    "rule": "Each positive specimen is pinned before codec implementation; structural success is not native success."
+  },
+  "fault_injection_policy": {
+    "scope": "Controlled synthetic fixtures only after build go; no real APIs, sealed stores or scientific-native campaign.",
+    "method": "Deterministic named barriers; kill coordinator sibling while independent service/oracle survives. Fresh process reads original stable IDs. Windows helpers hidden; bounded waits and explicit owned cleanup.",
+    "truth_source": "Independent provider/owner state and artifact bytes, never only driver-returned labels. Evaluator-only oracle data is not in coordinator/native request inputs.",
+    "no_skip": "Mandatory new cases execute without skips. Environment/process-control failures are failures to diagnose, not grounds to weaken assertions.",
+    "no_implementation_now": true
+  },
+  "scope_limits": [
+    "These are frozen proposed expectations, not test execution receipts.",
+    "Actual native integrations, hostile isolation, real money/sealed usage, multi-host stores and power-loss qualification need named authorized mechanisms/evidence.",
+    "Four retrospective archives cannot be promoted into positive runnable experiments; new fixture experiments get new identities and complete supplied bindings."
+  ],
+  "earlier_serialization_negative_coverage": [
+    {
+      "source_case": "N01",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "duplicate property, invalid UTF-8, nonstandard JSON number, surrogate",
+      "required_result": "reject transport; preserve raw capture if permitted",
+      "primary_bundle": "S3-B01"
+    },
+    {
+      "source_case": "N02",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "core unknown field, missing required field, structural null or bare number",
+      "required_result": "reject structural conformance; do not report native algorithm failure",
+      "primary_bundle": "S3-B01"
+    },
+    {
+      "source_case": "N03",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "known value wrapping unresolved Ref",
+      "required_result": "reject ambiguous reference layering",
+      "primary_bundle": "S3-B01"
+    },
+    {
+      "source_case": "N04",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "internal s1 reference or external same-ID fallback",
+      "required_result": "reject wrong binding or withhold unresolved external dependency",
+      "primary_bundle": "S3-B04"
+    },
+    {
+      "source_case": "N05",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "unexamined index containing members; empty index presented as native absence",
+      "required_result": "reject shape or withhold unsupported negative claim",
+      "primary_bundle": "S3-B01"
+    },
+    {
+      "source_case": "N06",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "Q2 empty selection presented as abstention/delivery",
+      "required_result": "preserve held decision; withhold delivery claim",
+      "primary_bundle": "S3-B09"
+    },
+    {
+      "source_case": "N07",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "checkpoint native restart reuses A1; owner reconnect invents A2",
+      "required_result": "reject incompatible recovery claim",
+      "primary_bundle": "S3-B10"
+    },
+    {
+      "source_case": "N08",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "position18 interpreted as gap-free replay after native incarnation changed",
+      "required_result": "withhold replay/attachment without matching source contract/evidence",
+      "primary_bundle": "S3-B08"
+    },
+    {
+      "source_case": "N09",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "bill3+replacement5+bill4 summed to12",
+      "required_result": "withhold incorrect aggregate; declared replacement yields9",
+      "primary_bundle": "S3-B03"
+    },
+    {
+      "source_case": "N10",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "newer evidence silently changes early frontier/result; conflicting record replaced",
+      "required_result": "reject identity mutation; preserve new assessment and its actual cutoff",
+      "primary_bundle": "S3-B02"
+    },
+    {
+      "source_case": "N11",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "public attestation exports private frontier or claims public raw verification",
+      "required_result": "deny projection/strong assurance; preserve weaker permitted statement",
+      "primary_bundle": "S3-B11"
+    },
+    {
+      "source_case": "N12",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "unknown version/core kind or unsupported critical extension accepted through latest handler",
+      "required_result": "preserve opaque bytes; withhold conformance/affected operations",
+      "primary_bundle": "S3-B01"
+    },
+    {
+      "source_case": "N13",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "same package includes its own whole-package digest receipt",
+      "required_result": "reject circular subject pin; place receipt outside hashed subject",
+      "primary_bundle": "S3-B11"
+    },
+    {
+      "source_case": "N14",
+      "source_path": "crucis_causal/docs/subsystem3-serialization-specimens-2026-11-03.json",
+      "boundary": "missing operation role grammar treated as permissive Ref target acceptance",
+      "required_result": "withhold affected effect/claim until exact contract is supplied",
+      "primary_bundle": "S3-B06"
+    }
+  ]
+}
