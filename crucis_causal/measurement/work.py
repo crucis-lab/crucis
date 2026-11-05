@@ -62,6 +62,8 @@ class Recovery:
     state: str
     occurrence_id: str | None = None
     event_bytes: bytes | None = None
+    evidence_view: api.PinnedView | None = None
+    evidence_record_id: str | None = None
 
 
 class Coordinator:
@@ -316,5 +318,6 @@ class Coordinator:
             lookup = self._lookup_event(event)
             if lookup.state != "committed":
                 return Recovery("disputed" if lookup.state == "disputed" else "unknown")
-            observed = Recovery(state, event.get("occurrence_id"), canonical(event))
+            observed = Recovery(state, event.get("occurrence_id"), canonical(event),
+                                head.snapshot, _key(self.account, invocation_id, event["phase"]))
         return observed

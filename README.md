@@ -20,6 +20,7 @@ python -m crucis_causal systems
 python -m crucis_causal.connections --help
 python -m crucis_causal.experiments --help
 python -m crucis_causal.execution --help
+python -m crucis_causal.measurement --help
 ```
 
 Python 3.10 or newer, NumPy and jsonschema are required. Optional native PC/GES
@@ -40,6 +41,15 @@ authority and policy implementations are explicitly injected in Python. See the
 [execution guide](crucis_causal/execution/README.md) for the four controlled
 mechanism profiles and their scientific and operational limits. Those fixture
 results do not establish universal native-system or causal-correctness coverage.
+
+## Measurement
+
+S4 binds a measurement question to specific output, reference and execution
+evidence. Its CLI inspects snapshots and plans with explicitly supplied
+dependencies and procedure declarations. Calculation, durable recording,
+profile assessment and publication use the typed Python interfaces.
+See the [S4 release review](crucis_causal/docs/s4/release-review-2026-11-05.md)
+for the qualified procedures, recovery tests and limits.
 
 ## Evidence and research
 

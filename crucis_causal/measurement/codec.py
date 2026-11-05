@@ -425,6 +425,16 @@ def check_outcome(outcome, limits):
     _validate_forms(outcome, limits)
 
 
+def check_profile_assessment(payload, limits):
+    """Validate a proposed profile record before it is explicitly recorded."""
+    record = {"id": "assessment", "kind": "s4.profile_assessment",
+              "contract": {"name": "s4.profile_assessment", "version": VERSION},
+              "payload": payload}
+    _check_tree(record, limits)
+    _check_shape(_validators()[1][record["kind"]], record)
+    _validate_forms(record, limits)
+
+
 def dumps(package, limits=Limits()):
     """Encode a structurally valid package in its canonical representation."""
     _check_tree(package, limits)

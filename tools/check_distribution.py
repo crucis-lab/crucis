@@ -40,7 +40,7 @@ PROBE = r'''
 import hashlib, importlib.abc, json, pathlib, sys
 checkout = pathlib.Path(sys.argv[1]).resolve()
 installed_root = sys.argv[2]
-expected = json.loads(sys.argv[3])
+expected = json.loads(pathlib.Path(sys.argv[3]).read_bytes())
 if installed_root:
     sys.path.insert(0, installed_root)
 class BlockResearch(importlib.abc.MetaPathFinder):
@@ -53,6 +53,7 @@ from crucis_causal.connections.schema import schema as sc1
 from crucis_causal.experiments.schema import schema as sc2
 from crucis_causal.execution.schema import _schema as sc3, _catalog as c3
 from crucis_causal.execution.core import Core
+from crucis_causal.measurement.codec import _validators as s4_validators
 from crucis_causal.core.graph import Graph
 from crucis_causal.core.adapter import names
 import crucis_causal.systems
@@ -62,6 +63,7 @@ if installed_root:
     assert module.is_relative_to(pathlib.Path(installed_root).resolve()), 'Did not import the explicit wheel installation'
 assert sc3() and len(c3()['core_payloads']) == 38 and len(c3()['operations']) == 31 and Core()
 assert sc1() and sc2() and Graph.from_edges(2, [(0,1)]).n == 2
+assert s4_validators()
 assert len(names()) == 8
 base = module.parent.parent
 for rel, sha in expected.items():
@@ -79,7 +81,8 @@ def run(dist_dir, installed_root=None):
     with zipfile.ZipFile(wheels[0]) as archive:
         wheel_names = [i.filename for i in archive.infolist() if not i.is_dir()]
         check_names(wheel_names, source=False)
-        for required in ('crucis_causal/connections/sc1.schema.json','crucis_causal/experiments/catalog.json'):
+        for required in ('crucis_causal/connections/sc1.schema.json','crucis_causal/experiments/catalog.json',
+                         'crucis_causal/measurement/wire.schema.json'):
             json.loads(archive.read(required))
         if not any(n.endswith('/licenses/LICENSES/NOTEARS-Apache-2.0.txt') for n in wheel_names):
             raise ValueError('Wheel is missing retained NOTEARS license')
@@ -96,15 +99,19 @@ def run(dist_dir, installed_root=None):
         if not SOURCE_EXAMPLES.issubset(source_names):
             raise ValueError('Source distribution lacks technical examples needed by tests')
         for required in ('tests/audit_fixtures/sc1/h1.json','tests/audit_fixtures/sc2/manifest.json',
+                         'tests/fixtures/s4-wire/graph.json',
                          'LICENSES/NOTEARS-Apache-2.0.txt','THIRD_PARTY_NOTICES.md'):
             if required not in source_names:
                 raise ValueError('Source distribution lacks '+required)
     installed_root = str(installed_root.resolve()) if installed_root else ''
     with tempfile.TemporaryDirectory(prefix='crucis-wheel-probe-') as scratch:
-        probe = subprocess.run([sys.executable,'-I','-B','-c',PROBE,str(ROOT),installed_root,json.dumps(expected)],
+        expected_file = Path(scratch) / 'wheel-hashes.json'
+        expected_file.write_text(json.dumps(expected), encoding='utf-8')
+        probe = subprocess.run([sys.executable,'-I','-B','-c',PROBE,str(ROOT),installed_root,str(expected_file)],
                                cwd=scratch,capture_output=True,text=True,check=True)
         installed = json.loads(probe.stdout)
-        for module in ('crucis_causal','crucis_causal.connections','crucis_causal.experiments','crucis_causal.execution'):
+        for module in ('crucis_causal','crucis_causal.connections','crucis_causal.experiments',
+                       'crucis_causal.execution','crucis_causal.measurement'):
             command = 'import sys,runpy; '
             if installed_root:
                 command += 'sys.path.insert(0,'+repr(installed_root)+'); '

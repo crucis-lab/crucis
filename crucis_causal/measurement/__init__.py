@@ -14,6 +14,8 @@ from .publication import (
     AuthorizedStorage, Carrier, Projection, prepare_projection, publish, read_carrier, register_capsule,
 )
 from .legacy import LegacyAttribution, LegacyCapture, capture_legacy
+from .evidence import RecordedMeasurement, materialize_recorded
+from .assessment import ProfileAssessment, ProfileCriterion, assess
 
 __all__ = [
     "FORMAT", "VERSION", "Limits", "Snapshot", "WireError", "dumps", "inspect",
@@ -27,4 +29,6 @@ __all__ = [
     "AuthorizedStorage", "Carrier", "Projection", "prepare_projection", "publish", "read_carrier",
     "register_capsule",
     "LegacyAttribution", "LegacyCapture", "capture_legacy",
+    "RecordedMeasurement", "materialize_recorded",
+    "ProfileAssessment", "ProfileCriterion", "assess",
 ]
