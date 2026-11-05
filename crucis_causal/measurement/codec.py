@@ -114,7 +114,8 @@ def _validators():
         for shape in record_schemas
     }
     reference = Draft202012Validator({"$defs": schema["$defs"], "$ref": "#/$defs/reference"})
-    return Draft202012Validator(envelope), records, reference
+    outcome = Draft202012Validator({"$defs": schema["$defs"], "$ref": "#/$defs/result_outcome"})
+    return Draft202012Validator(envelope), records, reference, outcome
 
 
 def _check_shape(validator, value, path=""):
@@ -391,7 +392,7 @@ def _validate_links(package, records, references, limits):
 
 def _validate(package, limits):
     _check_tree(package, limits)
-    envelope, variants, _ = _validators()
+    envelope, variants, _, _ = _validators()
     _check_shape(envelope, package)
     if len(package["records"]) > limits.records:
         raise WireError("record_limit", "/records")
@@ -416,6 +417,12 @@ def check_reference(ref, limits):
     _check_tree(ref, limits)
     _check_shape(_validators()[2], ref)
     _validate_forms(ref, limits)
+
+
+def check_outcome(outcome, limits):
+    _check_tree(outcome, limits)
+    _check_shape(_validators()[3], outcome)
+    _validate_forms(outcome, limits)
 
 
 def dumps(package, limits=Limits()):
