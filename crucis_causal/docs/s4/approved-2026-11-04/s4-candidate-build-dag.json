@@ -1,0 +1,243 @@
+{
+  "kind": "s4_implementation_bundle_DAG_candidate",
+  "date": "2026-11-04",
+  "status": "design_review_pending_explicit_implementation_go",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "entry": "Pin accepted design and source state at B00; no implementation approval is recorded in this candidate",
+  "review_dependencies": [
+    "s4-final-contract-review.md",
+    "procedure-review.md",
+    "judgment-and-paired-package-review.md",
+    "answer-entry-and-delivery-review.md",
+    "remaining-package-review.md",
+    "role-cardinality-and-reference-review.md"
+  ],
+  "progression": "Each predecessor needs actual scoped acceptance/recovery evidence and a validated local commit. Independent bundles may progress once their prerequisites are satisfied and ownership is isolated.",
+  "bundles": [
+    {
+      "id": "B00",
+      "title": "Pin accepted design and baseline",
+      "requires": [],
+      "tickets": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "acceptance": [
+        "Record explicit design acceptance and build go. Pin exact final docs, procedure and role matrices, examples, DAG, base commit and interpreter.",
+        "Verify baseline and scoped existing receipts. Record data availability. Preserve unrelated index and worktree state."
+      ],
+      "recovery": [
+        "If a pin or base differs, diagnose to the source before starting. No repin or automatic baseline reset."
+      ]
+    },
+    {
+      "id": "B01",
+      "title": "Bounded wire, exact values and typed references",
+      "requires": [
+        "B00"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Implement exact S4 wire version and role grammar; round-trip all worked packages with golden canonical bytes.",
+        "Check strict JSON, duplicate fields and keys, numeric reduction, over-limit input and every cap boundary. Check wrong contracts, bad selectors, dangling targets, proof cycles and self-digests."
+      ],
+      "recovery": [
+        "Malformed or exhausted input produces a bounded scoped diagnostic. Preserve original bytes, and distinguish unresolved references from structural failures."
+      ]
+    },
+    {
+      "id": "B02",
+      "title": "Bindings, plans and scoped premises",
+      "requires": [
+        "B01"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Materialize exact S1/S2/S3 roles under explicit read access. Verify scoped inputs, pinned registry/config and output-role maps. Exercise structural pass with applicability hold.",
+        "Check denied reference, scope-local versus global conflict, changed frontier, incompatible quantities and role-specific requirements. Plan and inspect exercise no scientific work or writes."
+      ],
+      "recovery": [
+        "Missing required input holds only the affected scope. Reopening a locator with changed bytes must not substitute the old pinned input."
+      ]
+    },
+    {
+      "id": "B03",
+      "title": "Calculation lifecycle and durable work evidence",
+      "requires": [
+        "B02"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Pure evaluator boundary, admitted invocation and distinct observed occurrence. Validate emitted roles, partial extent and separate commit/claim steps.",
+        "Controlled fixtures demonstrate local deterministic results, failed work with zero emissions and a role-specific hold beside a defined output."
+      ],
+      "recovery": [
+        "Inject loss before and after observed start and record commit. Reconcile exact transaction, reject same ID/different basis, prove recording never reexecutes, and preserve unknown where lookup is unavailable."
+      ]
+    },
+    {
+      "id": "B04",
+      "title": "Q01 proposition judgment",
+      "requires": [
+        "B03"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Qualify graph adjacency and local parent-membership readers using independent finite truth-ledger oracles. Check covered and full masks, closure, explicit abstention, trustworthy partial answers, and reference policy closure.",
+        "Check graph 2/2 with full held, changed binding 2/3, local 1/1, scoped 0/3 with undefined ratio and missing answer with preflight hold."
+      ],
+      "recovery": [
+        "Recover from truncated or revised stream and lost bytes without fabricating decisions. A recovered source creates an updated binding and preserves old results."
+      ]
+    },
+    {
+      "id": "B05",
+      "title": "Q02 strict sequence and Q03 binary loss",
+      "requires": [
+        "B03"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Enumerate the six small permutations independently. Separate fulfillment, violations and admissibility for complete and necessary-only reference conditions.",
+        "Verify exact 1/25 loss, endpoints and complement symmetry. Reject wrong event, wrong outcome and p-value semantics. Qualify prospective issuance order against the named access policy."
+      ],
+      "recovery": [
+        "Truncated order or unresolved timing holds the appropriate role. A later verified receipt can create a new binding while preserving the earlier frontier."
+      ]
+    },
+    {
+      "id": "B06",
+      "title": "Q04 paired point and Q05 utility enclosure",
+      "requires": [
+        "B04"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Require n exact intended pairs, two arms and 2n slots. Independently verify paired differences and enclosure arithmetic, including all singleton ranges and coupled feasibility.",
+        "Check named frame, attempts, horizon, first qualifying selection, before-failure delivery, incomplete closure, time straddle, unknown winner and ranges. Check 3/20 to 13/20, widened -7/20 to 13/20 and held ordinary quality."
+      ],
+      "recovery": [
+        "Capture gaps retain their uncertainty. A late receipt updates the evidence frontier and can narrow a range without dropping slots or changing the horizon."
+      ]
+    },
+    {
+      "id": "B07",
+      "title": "Q06 finite conditional inference",
+      "requires": [
+        "B03"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Independent finite joint-mass oracle, named model and observation protocol, exact keyed normalization and conditional P4 assessment. Check duplicate keys, zero prior, missing likelihood and zero normalizer.",
+        "Prove zero weights and normalizer may be emitted while posterior is undefined. Hold empirical model-fit and causal claims outside the contract."
+      ],
+      "recovery": [
+        "A corrected model or observation uses a new target or binding as applicable. Failed or interrupted work cannot fabricate posterior or model validation."
+      ]
+    },
+    {
+      "id": "B08",
+      "title": "P5 exact computational reproduction",
+      "requires": [
+        "B04",
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09"
+      ],
+      "acceptance": [
+        "Qualify exact comparator for all initial result families and declared diagnostic cases. Verify same-basis agreement, same-basis derived-mask disagreement, different-basis hold, and score-only versus mask-derivation boundary.",
+        "Compare selected roles and exact scope. Require actual new occurrence and original sources. Preserve original and replay outputs independently."
+      ],
+      "recovery": [
+        "Original unavailable, denied or wrong bytes holds replay. Incomplete observed replay holds comparison. No silent widening or automatic repeat after uncertain prior work."
+      ]
+    },
+    {
+      "id": "B09",
+      "title": "S3 carrier, audience closure and publication",
+      "requires": [
+        "B08"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "acceptance": [
+        "Register exact typed payload, verify S4/S3 dependency reconciliation and pinned projection. Exercise a restricted full view and authorized narrower public view with no restricted metadata leak.",
+        "Verify parser support alone cannot approve claims. Use real local S3 journal, storage lookup and pointer CAS fixtures."
+      ],
+      "recovery": [
+        "Inject stage/commit reply loss and pointer conflict. Reconcile without duplicate evaluation or accidental publication, prove authorization at each effect, and retain immutable committed snapshot on pointer failure."
+      ]
+    },
+    {
+      "id": "B10",
+      "title": "Read-only legacy mapping and preservation",
+      "requires": [
+        "B09"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "acceptance": [
+        "Qualify scoped P0/P1 mapping and refusals for legacy tiers, direction variants, completed/delivered, common-key paired and bootstrap, calibration/ranking and certificates.",
+        "Run explicitly authorized recorded-data compatibility gate: 1298 comparisons at 0.001, 14 stored and 14 fresh certificate verifications. Keep paper sources, tolerances and legacy route identities pinned."
+      ],
+      "recovery": [
+        "Missing historical input yields explicit unavailable coverage. No fallback to fabricated inputs, no repair/rebaseline of historical receipts and no research code imports."
+      ]
+    },
+    {
+      "id": "B11",
+      "title": "Integrated release evidence and support review",
+      "requires": [
+        "B10"
+      ],
+      "tickets": [
+        "DLV-08",
+        "DLV-09",
+        "DLV-10"
+      ],
+      "acceptance": [
+        "Trace each procedure and profile scope to source, fixture, receipt, limits and unsupported cases. Exercise inspect/plan CLI, typed calculation entry and installed-wheel isolation. Run mandatory full staged gate and hook with local commit.",
+        "Report offline and historical data gates separately. Preserve actual skips and exact compatibility claims. Release review is a local milestone."
+      ],
+      "recovery": [
+        "Exercise clean checkout and recovery/reopen paths. Report unresolved gaps and hold any unproven release claims. Remote publication remains separately authorized."
+      ]
+    }
+  ]
+}

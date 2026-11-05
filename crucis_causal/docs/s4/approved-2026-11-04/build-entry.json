@@ -1,0 +1,36 @@
+{
+  "kind": "s4_approved_design_and_build_entry",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "approval_date_pacific": "2026-11-04",
+  "authorization": "User approved the final S4 design and requested implementation of its bundles through the end, with the acceptance and validation gates.",
+  "implementation_base": "2dc9384d8a758938faa312c4ee605ad57447edfe",
+  "implementation_base_tree": "007081bbaadb3ecf49073041085ba7f3bea7da85",
+  "predecessor_completion_sha256": "202f530d8a4f499daf334babcff0bec9f80df300afcbd4909f96a170fc24d677",
+  "previous_gate_scope": "Full standalone compatibility, no S4 procedure qualification",
+  "interpreter": "3.12.13",
+  "approved_review_sha256": {
+    "procedure-review.md": "a32a2ce30ef43ad6564883c753c7decd9f38e2f95e5b7a73c77460c7c134c99d",
+    "judgment-and-paired-package-review.md": "4a49fa4989ee40e5aba1d57f32b4369c3d29eaa1c28118b08e2e9e2c64a9fd5b",
+    "answer-entry-and-delivery-review.md": "1c529a5089bafe7d684218972c928fe4833457396c692f50196b8c8113e0efa3",
+    "remaining-package-review.md": "55eb1854d0839bf53c68258b5d89297a2f31b9b0f0a26e170ddd82a57accae98",
+    "role-cardinality-and-reference-review.md": "b2ccaefca365e91a06281e8b9c418f63e38be1fc2dca005b874ce935852ca77a",
+    "s4-final-contract-review.md": "9b2909a3ef9cda5e23e0d55f4731680403b768f3d0968fd9c9ca5c92583c0b94",
+    "s4-candidate-build-dag.json": "bff31292e201023717a2df7278bacee4c203b085030364cca453731518204003"
+  },
+  "repository_copy_sha256": {
+    "procedure-review.md": "a32a2ce30ef43ad6564883c753c7decd9f38e2f95e5b7a73c77460c7c134c99d",
+    "judgment-and-paired-package-review.md": "4a49fa4989ee40e5aba1d57f32b4369c3d29eaa1c28118b08e2e9e2c64a9fd5b",
+    "answer-entry-and-delivery-review.md": "1c529a5089bafe7d684218972c928fe4833457396c692f50196b8c8113e0efa3",
+    "remaining-package-review.md": "55eb1854d0839bf53c68258b5d89297a2f31b9b0f0a26e170ddd82a57accae98",
+    "role-cardinality-and-reference-review.md": "b2ccaefca365e91a06281e8b9c418f63e38be1fc2dca005b874ce935852ca77a",
+    "s4-final-contract-review.md": "6b8bf03745637373edb152cb397826f9c4f5f014257abd4efc65e08708171184",
+    "s4-candidate-build-dag.json": "bff31292e201023717a2df7278bacee4c203b085030364cca453731518204003"
+  },
+  "relocation": "The final review source link paths were adjusted for its repository location. All other approved document bytes are unchanged.",
+  "dag_status_override": "Accepted as the S4 implementation plan; retain the historical candidate status in the exact reviewed DAG bytes.",
+  "implementation_scope": "Local S4 development and gated validation. Live scientific execution, publication and research-evidence changes remain separately scoped."
+}
