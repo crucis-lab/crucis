@@ -1,0 +1,905 @@
+# S3 implementation log
+
+Tickets: DLV-08, DLV-09; related DLV-10. Started 2026-11-03.
+
+The user accepted FR01-FR10, the final revision3 contract and B00-B13 DAG and
+explicitly authorized detailed implementation. The separately pinned
+[accepted baseline](subsystem3-accepted-baseline-2026-11-03.json) records the
+approval and source identities; prior design proposals remain byte-preserved.
+Local commits are authorized. Remote publication and paid/scientific-native
+campaigns are separate and are not authorized by this implementation instruction.
+
+## B00 — Fixed input/oracle baseline
+
+Created four fresh synthetic S2 run/trial bindings and frozen S1 direct requests,
+using existing metadata APIs. Each has its complete supplied dependency closure.
+The native fixture source is captured as implementation evidence before any S3
+runtime exists. Earlier historical/preservation examples are unchanged.
+
+Fixture revision1 pins expected local native order/mapping and charge0.7/cap1;
+remote job count1/charge4/cap10; one delivered interactive answer with no second
+choice/send when its source is missing; and checkpoint partial restoration across
+two attempts of one scientific trial, with replacement bills5+4=9/cap20. Both
+captured-state and opaque-handle variants are required. These are prospective
+synthetic protocol expectations, not observed native scientific findings.
+
+The baseline also supplies all38 core wire specimens,38 required-field mutations,
+and all30 inherited negative specifications. D00 checked all file hashes, complete
+S1/S2 reference closures, fresh identities, direct request routes and unresolved
+initial native identities: passed with zero S3/native calls. All later S3 cases
+remain unexecuted. Future implementation may not rewrite these expected results
+merely to accommodate failures.
+
+Pre-commit semantic review also checks fixture-level conditional cardinalities,
+including eight explicit support axes and nonempty delivery correlations. A
+package-gate pass alone cannot establish those future S3 schema invariants.
+
+Commit and staged-tree gate receipts are external under
+`_crucis_checks/2026-11-03/s3-build/S3-B00/` in the workspace. A bundle advances
+only after its actual gate and enabled-hook commit receipts exist; log text is
+not a substitute for those receipts. B01-B13 have not started at this milestone.
+
+## B01 — Closed wire and supplied registries
+
+B00 predecessor: b9b316bda8560781f3c734584c9ef2170052cc3e. Both staged-tree
+gate runs passed335 tests,0 failures/errors,26 data/dependency skips. D00's
+independent baseline check passed. One earlier staged-tree attempt was deliberately
+invalidated during pre-commit fixture review; its logs remain external.
+
+Implemented the38-kind closed revision3 schema, explicit31 operation role/parameter
+contracts and18 family/77 role definitions,61 runtime value declarations and48 exact
+port signatures. Core records stay in S3; S1/S2 snapshots use their own readers.
+The packaged catalog retains the common named-family contracts' exact inherited
+versions and final role refinements. An unrecognized family revision can be preserved
+but cannot establish its meaning. Historical candidate docs/pins are unchanged.
+
+Strict bounded decoding rejects duplicate properties, structural null/bare numbers,
+invalid scalar encodings, unknown core formats/kinds and out-of-budget trees before
+resolution. The resolver admits only explicitly supplied immutable bytes, checks
+types/content/context pins and global traversal budgets, and performs no automatic
+locator lookup/import. Payload references bind their declared context rather than
+the S1 artifact host. Immutable read/callable bindings cannot be minted by JSON.
+
+Exact driver/decision registries validate supplied call signatures and implementation
+snapshot pins without running native probes. Copied declarations do not alter stored
+bindings; unknown critical extensions hold affected claims without deleting opaque
+evidence. These mechanisms establish structural and declared registry behavior only;
+owner authority, coordinator issue and native execution remain later bundles.
+
+Targeted tests and case receipts for W01,W02,X10,M01, including inherited B01
+negative boundaries, are external under `s3-build/S3-B01/`. Source/fixture hashes,
+full staged-tree gate and enabled-hook commit receipts control advancement. No
+OPxx execution case is credited merely for its preliminary wire-shape checks.
+
+## B02 — Local durable history and artifacts (2026-11-04)
+
+B01 predecessor:78d33b3094cebb4a78563ac9383f860e5b0e522a. Its15 targeted tests
+passed with no skips; both full gates passed350 tests with0 failures/errors and
+26 existing data/dependency skips.
+
+Implemented checked SQLite DELETE/FULL/foreign-key connections with bounded
+contention, atomic expected-revision append, immutable snapshot/record identities,
+exact transaction lookup/replay, storage-owner epochs and durable capture metadata.
+Raw artifacts and dependency/view bytes are flushed and hash-checked before their
+logical reference/checkpoint commit. Interrupted staging remains orphaned rather
+than being promoted into a complete root. Existing content identities are never
+silently overwritten or repaired.
+
+The local namespace owner explicitly supplies process-owned storage capabilities;
+JSON/receipt labels cannot create them. Storage takeover fences old writers but
+does not stop native work. Journal.prepare_issue binds C,D,actual operation/context/
+input pins and owner receipt references. Only a first definitely committed claim
+gets a live permit; replay, uncertain commit and fresh-process reopening return no
+replacement permit. Guarded consumption is one-shot. This is local forwarding
+control, not provider idempotency or native exactly-once.
+
+Capture transactions persist the original source identity, batch/chunk occurrence
+IDs, artifact mappings/digests, metadata and cursor together. Lost replies reconcile
+that original transaction without creating replacement capture IDs. The raw metadata
+is part of the immutable request binding. Source-safe interpretation/ACK and native
+coverage remain B08 responsibilities; capturing bytes does not establish them.
+
+F01/J01 tests use actual process death before/after append and capture commit,
+death after forwarding claim, fresh service reopening, independent SQLite row and
+artifact reads, two competing writers, replay/conflict, takeover and injected write
+failure. All test processes and scratch paths are explicitly owned/bounded. An
+initial test-harness connection-cleanup error was corrected rather than skipped;
+the failed logs remain external. Sandbox temporary-directory creation failed in a
+separate smoke attempt; normal Windows external scratch was used without weakening
+the storage assertions. No power-loss/network/shared-store/hostile-writer claim.
+
+Source/helpers and scoped tests/receipts are under the execution journal/store,
+`tests/test_audit_execution_journal.py`, the controlled worker in
+`tests/audit_fixtures/sc3_runtime/`, and external `s3-build/S3-B02/`. Full staged-tree
+and enabled-hook receipts are required before B03/B04 advance.
+
+## B03 — Local owners, authority and accounting (2026-11-04)
+
+B02 predecessor:91c150c2e757e86909c3aff61af5135e3df7d8ff. Its24 combined S3
+tests passed without skips; both full gates passed359 tests with0 failures/errors
+and26 existing data/dependency skips.
+
+Added an actual persistent cooperative local owner: scoped capacity holds,
+exact R/H/G request identities, expected revisions, renewal, reconciliation,
+settlement, capacity-only release, explicit native authorization and live
+issuer-checked grants. Expiry and takeover invalidate grants without asserting
+native termination. Durable request/group plans precede receiver entry; partial
+owner groups never become executable admission. Unresolved lookup preserves
+existing holds. Exact replay binds evidence as well as parameters and inputs.
+
+Authorized receiver calls debit a separately persistent control allocation even
+when a response is lost. Recreating the same allocation does not reset it.
+Receiver occurrences/control-overhead facts are retained with their original IDs;
+their counts are not native usage, money or independent CPU measurements.
+BoundaryKind's runtime alias now matches the accepted named Contract grammar.
+
+Accounting applies explicit same-owner/unit/member replacement rules using
+decimals: final5 replaces interim3; disjoint4 gives9. Unknown/finality/conflicting
+revision/overlap cases withhold totals. Exposure facets and recipients remain
+separate; a policy name alone never establishes additive composition. Cleanup
+cannot subtract disclosure history. Settlement uses supplied pinned reports,
+not independently verified provider invoices. Multi-resource partial settlement
+retains known charges and conservative holds; there is no distributed rollback.
+
+Real state/replay/lost-response tests cover OP15–20,A01,F02,F03. An initial
+fixture reference-context error was repaired by explicit derived relocation,
+leaving the frozen B00 fixtures unchanged; failed logs remain external. The
+support claim is local cooperative owner enforcement and scoped arithmetic,
+not third-party rights, hostile-process isolation, provider exactly-once or
+universal measurement. Source, case outcomes and both full commit gates are
+recorded externally under s3-build/S3-B03 before dependent bundles advance.
+
+## B04 — Exact scientific/native bridge and imports (2026-11-04)
+
+B03 is committed as78de55c2b16a60aa464c656fd92f17c061c7c40f. Its35 combined
+S3 tests passed with no skips; both full gates passed370 tests with0 failures/
+errors and26 existing data/dependency skips. B04's declared prerequisites B01/B02
+also retain their exact passed receipts.
+
+Coordinator compilation delegates to the actual S2 project_request,
+completion/projection registries, freeze_s1 and record_handoff APIs. It freezes
+R before observations and returns pinned R, scientific handoff and S3 bridge
+evidence. Exact working-context replay reuses the same R/handoff; changed
+occurrences/content fail. Caller mutation of a returned runtime value cannot
+alter the stored replay result. Fresh-process recovery must consume the persisted
+projection, rather than refreezing it as a replacement identity.
+
+The scientific matcher reuses S2's actual run prerequisites and checks exact
+run/trial/request/attempt/receipt context, source pins, native route/configuration,
+response, scopes, policies and permitted presentation payloads. Metadata match
+is distinct from scientific truth, operational readiness and actual authority.
+A visible scientific trigger cannot be waived by a probe label. Historical
+preservation can retain absent original R/A/T without inventing them.
+
+The working S1 bridge preserves every copied record and its qualified source
+coordinate; conflicting identities or subsequent changes hold use. Owned S1/S2
+additions must have exact frozen snapshots before CommitDelta conversion. Raw
+native coordinates remain alongside explicit literal-unique/incarnation-key
+mappings; the key is a derived process-local registry coordinate, not provider
+idempotency. An entered/rejected S1 call retains possible native effects.
+
+Supplied-evidence import uses exact typed OP27 preflight and the existing S1
+PackageStore occurrence backend. Same-key replay recovers the original result,
+including a simulated lost commit reply; changed inputs conflict. Source bytes
+and unknown native origin remain preserved. This backend retains S1's cooperative
+lock limitations; it is not a new distributed/process-crash lock guarantee.
+OP28 uses an explicitly installed, implementation-pinned pure interpreter over
+supplied bytes/selectors; unsupported/failed interpretation retains those bytes.
+The fixture interpreter preserves native ordering and declares a derived S1 order.
+Neither backend helper supplies common admission or launches native work; B06/B12
+must qualify their admitted Driver paths separately.
+
+### Checkpoint fixture addendum, not an old-fixture repair
+
+The original B00 checkpoint R has NA resource/recovery policies and its S2 state
+policy is NA. These remain a held recovery example, not permission to restart.
+The new tests/audit_fixtures/sc3_recovery_r2 revision creates new plan/condition/
+subject/trial/run/R/A identities through actual S2 APIs and an explicitly permitted
+model/optimizer mode. Its manifest SHA256 is
+5367841edc093b4646d2b5f718fdd0d7a6ef49da1967b78fb50ebb95dd9549aa.
+It pins9 source snapshots, records0 native/owner calls, preserves the original
+fixture descriptor and unchanged checkpoint oracles (one trial,two attempts,
+3 replaced by5 plus4 equals9,cap20). Loaded state/history remain unknown in the
+pre-execution condition. Explicit installed pure policy interpretation establishes
+only the narrower requested mode; loading/availability/overlap remain later gates.
+No accepted historical hash, scientific number or B00 fixture was overwritten.
+
+Ten B04 targeted methods cover OP27/28/30 backend/metadata behavior, cross-context
+failures, source/policy preservation and recovery. Full admitted operation claims
+remain deferred to their common-path bundles. Initial schema-root/test-body
+errors were diagnosed to their fields and fixed without broadening schemas;
+failed logs remain external under s3-build/S3-B04. Full staged-tree and enabled-hook
+receipts are required before B05 advances.
+
+## B05 — Guarded realization and trusted input custody (2026-11-04)
+
+B04 predecessor:6b68d33d96b09f993a4bdcb92a8e5d94edc026fa. Its10 targeted
+tests passed without skips; both full gates passed380 tests with0 failures/errors
+and26 existing data/dependency skips. Its new checkpoint fixture/pins and all B00
+inputs remain unchanged. The clone's CRLF-aware whitespace setting preserves
+the new pinned manifest bytes; separate controls still reject actual trailing
+spaces. The failed pre-stage diagnostic is retained externally.
+
+Extended the shared authority layer with DriverBoundary. It validates exact
+command/binding/source/implementation/selected driver dependency, actual receiver
+and channel, current issuer-owned grants from every configured owner, and the
+journal's actual one-use permit. It consumes the permit immediately before the
+driver's forwarding boundary. No JSON receipt or repeated token becomes authority.
+Core routing now has an explicitly registered native invocation envelope; native
+arguments keep their own exact grammar. Guarded input drivers install that grammar
+and their actual supplied methods without name-based imports or probes. B06 can
+use the same routing/entry mechanisms instead of special cases for these fixtures.
+
+InputDriver.prepare is pure and does not run a provider or transfer input. Exact
+installed realization procedures receive selected source bytes/identities and
+declared recipe/randomness/fitted-state inputs. Case identities are not flattened
+into datasets. State/randomness semantics require explicit installed validation;
+unsupported predecessor/window/encoding protocols hold rather than substitute.
+Actual product snapshots/checks return through S2's existing record_materialization
+API. No dummy discovery R/A/run binding is created to admit preparation. Failed
+preservation is a partial materialization with actual data retained, not a redraw
+or native discovery failure. Fitted-input knowledge can be unresolved; it is never
+implicitly an empty known list. A provider cannot change the fixed reference rule
+by changing its copy of the input record. Useful captured products survive that
+semantic rejection. Fitting checks cover a separate calibration source and actual
+captured fitted state; missing calibration does not fall back to the target table.
+The fitting fixture explicitly claims no automatic reference-truth inheritance.
+
+LocalCustodian persists exact C/content/recipient/namespace/epoch bindings and
+per-accepted-stage consumption under the qualified local SQLite/artifact mechanisms.
+It exposes a coherent immutable-byte view only after every selected member is
+present and hash-checked. Whole snapshots, byte ranges and exact archive members
+are supported without flattening/re-encoding. Unselected evaluator archive members
+are not given to the native read interface. Same-C receiver replay returns existing
+partial/complete evidence without implicit transfer resumption or allowance reset.
+Partial/lost transfer records possible disclosure and unconfirmed extent. Takeover
+fences this actual read interface; revocation retains bytes, past copies and debit.
+Changed stored bytes block activation/read without repinning. A different custodian
+namespace cannot fulfill the old binding. These are cooperative trusted-interface
+claims, not OS-wide isolation, remote atomic upload or global erasure guarantees.
+
+A separate local endpoint profile stages one actual source-owner capability as
+an immutable reference, without calling it or inventing response bytes. Its exact
+source/recipient/namespace/generation/query bound is checked at delegation. Actual
+queries have distinct source occurrences, debit before callback entry and cannot
+reset through duplicated proxies/revocation. This endpoint owner is deliberately
+process-local: no durable/global query budget, cross-process handle restoration,
+multi-owner atomic endpoint bundle or frozen response-dataset claim. Metadata alone
+cannot recreate its grant. Stronger unsupported endpoint guarantees are held.
+
+Runtime secret slots are opaque, explicitly supplied and restricted to actual
+configured callable identities. No environment/credential lookup occurs. Native
+errors are not copied into audit exception text. Configured sentinel tests cover
+non-serialization and derived redaction with an explicit unretained-original gap;
+redacted bytes never masquerade as original capture. This is not unknown-secret
+detection or the final B11 audience/publication gate.
+
+The supplemental CSV/fitting/endpoint oracles are controlled mechanism tests,
+separate from frozen B00 scientific/native-protocol expectations. Actual test
+providers, their resolved fixture configuration and execution-code manifests are
+identified. OP01/02,X01,X12 cases use real B03 owner decisions and B02 durable
+R/G/C/D/permitted entry, then independent provider counters/custody rows/content/
+endpoint events. Broader coordinator/scientific-profile admission remains B06;
+these manual mechanism tests do not fabricate LiveAdmission or claim S3 is complete.
+An initial tuple-to-wire-array handoff error and invalid native member code labels
+were diagnosed to their fields and corrected against existing schemas. Failed
+runs remain external. Targeted/full staged-tree/enabled-hook receipts under
+s3-build/S3-B05 control advancement, not this log's prose.
+
+## Where we're going
+
+Complete B06's final targeted/staged-tree/enabled-hook checks and receipt. Its
+implementation account follows below. B07–B13 remain unimplemented and require
+their own dependency gates; no remote/native scientific campaign is implied.
+
+## S3-B06: coordinator lifecycle and current admission
+
+B05 committed as 222834deec4c8b58a5360389ab0f2ff4edc1d5d3 after both full
+checks ran395 tests, zero failures/errors,26 existing availability skips. Its15
+new tests had no skips. B06 adds coordinator.py/clock.py, coordinator tests and
+an owned deterministic process-death worker. Shared plumbing changes are explicit:
+the B01 registry associates actual supplied pure preparers; InputDriver installs
+that association; B02 journal reads return authorized retained dependency bytes,
+and prepare_issue preserves the original staged transmission's local reference
+closure. No record fields, operation/port signature, historical fixture, scientific
+quantity or accepted contract pin is changed.
+
+Planning and restoration use only supplied pinned snapshots and installed pure
+rules/preparers. A restored plan is neither a restored grant nor a new command.
+Uninterpreted/missing prerequisite families, coverage, rules and requested claims
+hold. Rule and driver source artifacts are command dependencies. Scientific launch
+uses B04's exact S2/R/A/handoff checks; positive compiler metadata cannot be waived
+by changing the purpose enum. An explicit fixed nonscientific probe is distinct
+from scientific execution. Preparation does not invent a discovery request/run.
+Concrete native scientific and remote adapters remain later bundles.
+
+Runtime bootstrap receives real journal/owner/driver controls and explicit required
+owner roles, allocation quantities/units, deadline and contexts. It does not create
+owner allowances. Expected owner revisions are explicit conditional-request inputs,
+not assumed current facts; stale expectations hold at the owner. No hidden owner
+inspection RPC runs to construct the first durable R. Qualified LocalOwner replay preserves original G/H/R identities,
+amounts, revisions and control allocations. The whole admission plan/request bytes
+precede RPC; each available owner response is retained before the next boundary.
+One partial reservation cannot produce LiveAdmission or implicit release. The
+fixture's federated-owner variant checks missing participants without supplying
+central raw rows or inferring shared participant IDs.
+
+Issue revalidates exact prepared bytes/declaration, original prerequisite frontier,
+actual admission identity, current owner grants/head and time bounds. Fresh D intent
+commits before driver entry. Only the actual guarded driver consumes the single live
+issuer permit. Same-D repetition reconciles the original intent/return and cannot
+mint another permit. A different D for an unresolved prior C holds. Lost replies,
+metadata faults and result state do not redefine native acceptance. Useful driver
+evidence/handles survive a later local fault as a partial return; persisted replay
+preserves frozen evidence without pretending to restore handles. Scoped interruption
+diagnostics retain outstanding reconciliation obligations.
+
+Absolute UTC deadlines require established finite uncertainty bounds and strict
+comparison of current upper/deadline lower bounds. Host timer resolution supplies
+no clock-accuracy proof; the default wall clock therefore has unknown uncertainty.
+The explicit no-absolute-deadline policy is distinct from missing validity and does
+not remove native/resource-owner limits. Expiry or loss of a bound after D commit
+prevents forwarding while preserving D and its scoped reason.
+
+Integrated replay exposed repeated validation cost. The byte reader now caches only
+successful exact immutable-byte validation, keyed also by every reader limit, with
+at most64MiB of retained byte keys. No decoded mutable record/capability is cached.
+Each read rechecks access; changed bytes, tighter limits, false digest metadata and
+denied scopes still fail. This changes validation reuse, not wire semantics or any
+scientific tolerance. Tests include those controls.
+
+Independent oracles are actual persisted owner hold/request/control rows, custody
+consumption/content and a supplied local probe callback. The probe emits one metered
+usage unit and zero scientific-input transmission under its explicit empty-input
+profile; usage is not owner settlement. These supplemental mechanisms do not alter
+B00's frozen causal-protocol oracles. Worker tests terminate at acknowledged owner/
+pre-entry barriers, then reopen actual stores in a fresh coordinator with the same
+control-allocation IDs. Exact history prefixes, receiver oracles and recovered views
+are saved externally when receipt output is requested. No timing sleep, paid provider,
+OS isolation, distributed atomicity or universal owner replay is claimed.
+
+Failed development runs remain under s3-build/S3-B06. They diagnosed custody-right
+names, missing retained dependency bytes and newly staged D reference context to
+their fields/lines. Windows fixture SQLite readers now close their connections
+explicitly before owned scratch cleanup. Final tests.json/gate.json/commit.json
+control bundle completion; this narrative does not substitute for those receipts.
+
+An additional pure negative review exposed a missing live integration: B01's
+critical-extension guard existed but the coordinator had not invoked it. A future
+extension explicitly critical to operational admission was incorrectly planned,
+with zero owner/native effects. The pending automatic commit was stopped, its
+exported-tree check and earlier72-test receipt preserved, and the coordinator now
+checks admission/operation/requested-claim critical semantics over the exact pinned
+closure. A new live-plan negative test holds that condition while retaining opaque
+bytes for an unrequested claim without blocking unrelated supported work. This is
+an implementation correction to the accepted rule, not a contract/fixture rebaseline.
+
+## Where we're going after B06
+
+After its actual validated local commit, build B07's dispatch/attachment drivers and
+independent persistent native fixture service. Then continue B08–B13 in dependency
+order, keeping raw capture, interaction, recovery/settlement, publication and final
+qualification independently tested and explicitly scoped.
+
+## S3-B07: explicit dispatch, native identity and attachment
+
+B06 committed as 0e84b278fbd27f6e50cea9a71673d2a07afb694d. Its final
+73-test S3 suite and both408-test full gates passed;26 pre-existing availability
+skips remain separate. Earlier pre-correction receipts are retained externally.
+
+B07 adds supplied native mechanics and explicit return projection, an actual
+runtime connection registry, and a guarded S1 invocation bridge. Metadata never
+imports a driver or chooses an executable/credential. Invocation prepares exact
+input bytes and consumes the coordinator's issuer permit plus current owner grants.
+S1 function/process bindings additionally consume the original S1 authority.
+The process test uses explicit argv and shell=False, retaining literal shell syntax.
+Fresh frozen S1 evidence preserves original R and distinct result snapshots.
+
+The independent synthetic HTTP fixture owns a durable SQLite job ledger outside
+the coordinator's lifetime. Transport/authentication objects are supplied directly;
+tokens are runtime-only and omitted from packets/evidence. Same exact D replays its
+original receiver result; a new D under the same C can create another job. Request
+hashes and negative listings confer no provider idempotency. Delayed acceptance and
+duplicate jobs/charges remain visible. Receiver epoch checks occur at acceptance;
+takeover rejects delayed old requests while retaining previously accepted work.
+
+Lookup preserves actual classification, query binding, paths, time/retention scope,
+completeness and late-acceptance closure separately. Reconnection uses full native
+authority/namespace/ID/incarnation and actual opaque handles. Unknown-origin attach
+can observe supported existing work without inventing R/A or a scientific trial.
+Reused literal IDs cannot authorize access to another incarnation. Attach does not
+launch work. Persisted evidence does not restore live handles.
+
+An acknowledged process-kill barrier after a lost receiver reply leaves exactly one
+provider job. A fresh coordinator opens the original journal/owner allocation and
+same G/D, obtains no executable replay permit, then performs separately admitted
+lookup. History/oracle/recovered-view receipts are saved for F06/F07 externally.
+
+Development failures are preserved: the B00 originals lacked a live S2 handoff,
+so the helper now records a new handoff for the unchanged original R/A/run using
+actual S2 APIs and retains its writer dependencies. Pure native preparation now
+compares exact pinned semantic bytes rather than process-local read-capability
+object identity. The cold worker's missing own-source import root was diagnosed
+at its import line and corrected without adding research paths. NativeStart's
+accepted knowledge wrapper is now respected by the earlier coordinator probe.
+
+Final tests.json/gate.json/commit.json determine completion. This qualifies trusted
+local function/process guards and the explicitly scripted service, not any real
+third-party provider, hostile-code isolation, scientific discovery quality or
+distributed exactly-once execution. Observation/interaction/recovery/publication
+remain the next dependency-gated bundles. Frozen B00 oracles and contract pins are
+unchanged.
+
+## S3-B08: durable observation and separately admitted ACK
+
+B07 committed as dcc3c180a3a94109c925b3864c308c97388fbbae. Its83-test S3
+regression had zero failures/errors/skips and stable owned bytes. Both full
+418-test gates passed, with26 existing availability skips recorded separately.
+
+B08 adds explicitly supplied effect mechanics and a collector to the real
+coordinator issue path. The original C pins the source-profile implementation;
+describe/prepare remain pure. Actual owners and the single-use journal permit
+precede transport entry. Unavailable or combined-consuming profiles hold rather
+than receiving an invented replay guarantee. New driver methods are routes to
+supplied callbacks, not automatic backend availability or native qualification.
+
+Each source profile defines actual identity, event measurement and opaque cursor
+resume/advance semantics. The fixture source is an existing native subject with
+explicit filter/partition, generation and consumer. A frontier occurrence is not
+a new physical source. Changing evidence about a known generation does not change
+its identity; the source records preserve that evidence. Cursor tokens bind the
+full interpreted source tuple. Another filter/generation/consumer cannot inherit
+the old checkpoint. Actual receiver checks bind the native incarnation and epoch.
+
+Before fetching, core checks committed source progress and remaining collection
+event/payload-byte bounds. Independently persistent owner reservations include
+fetch-event allowance and control-call metering. Native request limits and the
+fixture's receiver-owned virtual deadline are separately enforced. Reopening uses
+the original owner control-allocation ID and retains prior holds; failed capture
+does not erase the fetch or replenish its allowance. Virtual time is a controlled
+fixture clock, not a wall-clock accuracy or real-provider deadline claim.
+
+Raw bytes, their metadata, measured usage and a fresh source frontier commit in
+the same local capture transaction. Captured progress does not assert interpreted
+progress, source completeness, complete graph output or native termination. The
+independent service returns three capture occurrences representing two native
+events, with duplicate and out-of-order reports retained. An incomplete JSON
+fragment remains exactly those bytes. Raw response envelopes and event payload
+occurrences have distinct roles; event payload-byte bounds are not universal
+network billing or a claim of zero metadata/control overhead.
+
+ACK is a separate admitted command. The collector looks up the actual retained
+capture transaction and checks its receipt, account, source and exact cursor;
+copied/forged receipt metadata cannot authorize ACK. A correlated positive native
+receipt produces a later acknowledged frontier. Earlier unknown-ACK frontiers
+and their exact snapshots remain. A lost ACK reply remains unknown in that view,
+even when the independent receiver oracle can show its one persisted update.
+Fresh reconciliation of the original G/D returns no executable replay permit.
+
+Fault tests inject failures before raw flush, after flush and after capture SQLite
+COMMIT, and interrupt after confirmed capture before ACK. Fresh local issuers reopen
+the real journal/owner files. An uncertain capture commit is reconciled before ACK;
+an uncommitted raw stage advances neither cursor nor ACK. Bounded raw bytes survive
+later metadata/storage failures as explicitly uncommitted evidence. Unfrozen owned
+S1/S2 additions remain runtime additions requiring the established bridge; they are
+not serialized into S3 or silently treated as a durable capture. Fault triplets and
+native receiver counters are recorded externally. These B08 faults use explicit
+injection/fresh issuers; B02/B06/B07 retain their separate process-kill receipts.
+
+The growing integration histories exposed repeated decoding/validation cost. The
+resolver now uses private indexes of already validated immutable snapshots, bounded
+by its existing reader limits. Public access still returns copies and checks live
+read capability, exact source/target pin and type. A bounded positive structural
+record cache reuses exact immutable record bytes across revisions; the same record
+schema still runs on cache misses. Package/tree limits, value/calendar semantics,
+reference closure, conflicts and access still run. Neither cache holds authority
+or mutable returned records. Supplied-view merging now rejects same-package/different-
+bytes collisions before any dictionary replacement. Mutation/denial/tighter-limit/
+repeated-invalid-calendar regressions accompany this owned S3 plumbing change.
+
+Development receipts remain external: an initial storage-order assertion was fixed
+to use actual transport offsets; preparation-time rejection was distinguished from
+post-intent rejection; and a forged-receipt negative fixture's internal account ref
+was corrected to its actual qualified source. No accepted oracle, source pin,
+scientific definition or tolerance changed. Final tests.json/gate.json/commit.json
+determine bundle completion, not the development runs or this narrative.
+
+## Where we're going after B08
+
+After B08's validated local commit, implement B09's fixed pre-send decision and
+explicit information/computation/delivery paths. Then continue recovery/settlement,
+audience publication, four-path integration and final independent qualifications
+through B13, with actual predecessor receipts required at each boundary.
+
+## S3-B09: fixed decisions, explicit information and delivery
+
+B08 committed as8ee184a71a2d5353c0cbbc0db556eb38a29a4cf5. Its mandatory8-test
+suite passed without failures/errors/skips and with stable source. Both426-test
+full gates passed;26 existing availability skips remain separately reported.
+
+B09 adds FixedCandidates, a pure supplied procedure registered through the exact
+Decision interface. Its code and fixed source specification are pinned artifacts.
+Requirements name the actual required context/source records. Selection uses
+only supplied, readable snapshot information in the explicit pre-send frontier,
+with the fixed action/policy/context/domain and response correlations checked.
+Availability is not an attestation of scientific truth. Native/provider/tool
+acquisition and computation are separately planned/admitted Driver operations;
+selection has no provider, network, owner-write or hidden fallback port.
+
+The initial concrete procedure selects among already pinned S1 response candidates
+produced by explicit computation. A required source declaration is not available
+source bytes. Missing sources yield an empty held choice, not an abstention or an
+invented response. Explicit abstention candidates require their own configured
+state/source rule. Unsupported broader procedures remain unavailable rather than
+using a convenient current answer. The generic interfaces preserve richer S1/S2
+information and output families; this fixture procedure is not a universal oracle.
+
+persist_selection stores an immutable action_decision before sending. A stable
+choice can be reconciled after an uncertain metadata commit; a changed frontier/
+response cannot replace it. Possible same-native-identity aliases hold conflicting
+new choices rather than merging records or answering again. Ambiguous/reused native
+identities need the appropriate identity bridge. Delivery replays the frozen
+procedure/basis and checks the exact actions, selected responses, endpoint, bundle,
+validity scope and fixed bundle contract. Late ambient material cannot silently
+enter an earlier selection.
+
+The independent provider fixture now owns actual action/message/computation tables.
+Its default Q1/Q2 have the same question text and distinct native IDs/contexts.
+Q1's explicit source acquisition and computation create the actual candidate;
+Q2's missing source produces no choice/delivery. The controlled receiver enforces
+current context/epoch/open state and its two-slot response policy. A supplemental
+two-source composite fixture performs one physical all-or-none native message:
+both responses are committed, or an expired member prevents both. No native
+atomicity is inferred from multiple S1 grants or multiple independent sends.
+Existing S1 single-action guards retain their earlier scope; this new native
+qualification uses the explicit composite protocol, including size-one bundles.
+
+Native acceptance, gateway transmission, policy consumption, use and termination
+remain separate. A completed delivery RPC can report acceptancefalse. A rejected
+logical response can still have reached the controlled gateway; its transmitted
+exposure is retained. Policy consumption comes from the correlated native receipt,
+including an explicit reported0 on rejection, never from missing evidence. Native
+use and termination remain unestablished. Legal raw error/reconciliation bodies
+are retained without copying arbitrary exception text or authentication headers.
+
+F10 injects loss after the selection journal commit and reopens actual issuers;
+the original choice is recovered before any send. F11 drops the native delivery
+reply after the independent receiver commits V1. Fresh coordinator/owner/registry
+objects retain the same stores and control allocation, reconcile the original G/D
+without another forwarding permit, and use a separately admitted exact receipt
+lookup. Its original content/context is checked; no new answer or source fallback
+is chosen. Receiver counters show one delivery, consumed1 and remaining1. Fault
+triplets are saved externally. Native contexts can expire/change after selection;
+the actual receiver withholds delivery while retaining possible/actual exposure.
+
+Development smoke and six-case runs are preserved outside the checkout. The final
+source-stable tests.json and both full gate/commit receipts control completion.
+This is a trusted scripted protocol qualification, not a real LLM/expert service,
+cryptographic source authentication, hostile-process isolation, universal exactly-
+once delivery, causal correctness or a change to the frozen paper contract.
+
+## Where we're going after B09
+
+After B09's actual validated commit, implement B10's evidence-dependent recovery,
+stopping, state loading, collection closure and settlement. Then complete immutable
+audience publication, four-path integration and final qualification through B13.
+
+## B10 implementation: recovery, stopping, state and closure (2026-11-04)
+
+Tickets: DLV-08, DLV-09; related DLV-10. B09 predecessor commit:
+3f1bb357dca34a629b5a067b3ff585eee30cc5db. The accepted baseline, B00
+fixtures/oracles, S1/S2 sources and original paper evidence remain unchanged.
+
+`execution/recovery.py` implements the pure recovery-policy boundary. Policies
+are actual supplied callables with pinned implementations; names never install
+code. Missing policy semantics produce a held plan. Recovery plans contain
+explicit operation requests, held requirements and retained scoped obligations;
+they cannot grant, query, cancel, retransmit or restart anything by themselves.
+Known outstanding obligations in the selected view cannot be dropped by a
+policy result. Later ambient records are not silently substituted for that view.
+There is no universal automatic next-action policy or default retransmission.
+
+The coordinator now checks scientific native restart and restoration. The
+positive checkpoint path uses B04's separately inventoried `sc3_recovery_r2`
+condition and its real S2 handoff. A2 is distinct from A1 and explicitly refers
+to the same frozen request and checkpoint. Its scientific trial remains the
+verified predecessor trial; no A2 compiler handoff or independent repetition is
+fabricated. A new-request recovery relation is held pending an actual supported
+scientific projection. The original B00 checkpoint's NA recovery policy stays
+held. Restoration must also match A2's declared initial checkpoint and the fixed
+S2 partial-state condition before native loading.
+
+Integration review exposed an additional C01 boundary: native permission to
+acquire/compute/deliver a response does not establish its S2 information-channel
+condition. Visible scientific followups are held where that condition has no
+implemented interpreter; changing a target label does not waive scientific
+command intent in the same account. Unknown-origin operational interaction
+retains B09's separately qualified scope. This does not qualify a scientific
+interactive campaign under an undeclared information condition.
+
+`execution/stopping.py` keeps observed component stop, descendant coverage,
+checkpoint identity/source, source availability and actual loading separate.
+Closing collection appends an immutable closure under the expected journal
+revision, preserves outstanding obligations, and neither cancels native work
+nor releases reservations. Repeating the same closure occurrence reconciles
+its exact contents. Invalid supplied captured indexes are rejected rather than
+replaced by a default. Pure stop/state checks remain scoped interpretation of
+supplied evidence, not cryptographic receipt authentication.
+
+The independent `sc3_runtime/recovery_service.py` fixture stores actual jobs,
+checkpoint bytes and loaded state in its own SQLite namespace. It rejects strict
+overlap at native restart and requires a quiescent successor before restoration.
+Captured payload and native checkpoint-handle paths are exercised separately;
+an expired handle prevents creation of another job. Native acceptance leaves
+loading unknown. Actual loading records model/optimizer state while RNG/history
+remain explicitly unknown in both the native reply and structured S3 components.
+Fixture-supervisor stop completion and oracle observations are explicit test
+controls; they are not a generic production stop monitor or descendant terminator.
+
+F12 kills a real coordinator child after the stop acknowledgement. A fresh
+coordinator reconciles the original G/D without another forwarding permit, and
+strict restart remains held until the predecessor is observed stopped. F13 kills
+after successor acceptance and again after loading but before a local receipt.
+Independent native queries distinguish accepted-but-unproven loading from actual
+loaded bytes; they do not relaunch the successor or infer exact trajectory replay.
+The receiver records two native jobs; their S3/S2 bindings keep one scoped
+scientific trial and two attempts. The unchanged final native bill calculation
+is interim3 replaced by5, plus successor4, total9 under cap20.
+F20 separately exercises actual owner settlement/release commit reply loss with
+fresh issuers and the same request/correlation, retained charges and persistent
+control allowance. Scoped ledger composition totals9; releasing capacity never
+erases a charge. This is not a hard monetary guarantee for external providers.
+
+A related driver correction preserves possible effects when a native receiver
+reports acceptancefalse after mechanics were entered. Rejection alone no longer
+asserts `not_crossed`; gateway disclosure/control costs can remain unresolved.
+The controlled stale-epoch test proves zero jobs without claiming zero effects.
+
+Owned plumbing beyond the DAG's three primary paths: coordinator/scientific
+dispatch checks, native-result boundary reporting, the fixture bootstrap and a
+private immutable resolver index. A pure 168-snapshot profile recorded repeated
+JSON decoding and 10,788 identity serializations in one resolver construction.
+The bounded index shares only immutable JSON/canonical bytes/reference positions;
+exact source validation, current access, limits, every reference/pin check and
+public mutable-copy behavior remain enforced. It holds at most32MiB of raw keys
+and512 entries; decoded/index overhead is additional. No handle/grant/clock result
+or authority decision is cached. Adverse index and all15 wire/registry tests are
+preserved alongside the recovery development runs. An earlier intrusive profiler
+was stopped and recorded as incomplete, never counted as acceptance evidence.
+
+Source-stable bundle tests, F12/F13/F20 oracle/history/recovered-view triplets and
+both staged-tree gate receipts outside the checkout control B10 completion.
+Development checks are not substituted for those final receipts. Scope remains
+cooperative same-host fixtures and explicit policy/code bindings; exact replay,
+hostile isolation, distributed atomicity and real native scientific campaigns
+are not qualified by this bundle.
+
+## Where we're going after B10
+
+Complete B11's exact immutable publication and audience/copy closure. Then compose
+B12's four scoped fixture profiles, read-only interface, installed-wheel checks
+and methodology/support index, followed by B13's complete acceptance and the
+separate recorded-parity/certificate qualification. Remote CI, publication and
+new real native campaigns retain their separate authorization boundaries.
+
+## B11 implementation: immutable publication and audience/copy closure (2026-11-04)
+
+Tickets: DLV-08, DLV-09; related DLV-10. The actual B10 predecessor receipt
+controls this bundle's start and exact parent. Original accepted contracts,
+oracles, S1/S2 definitions, legacy scientific results and paper sources remain
+unchanged. Required source-stable acceptance and both full gate receipts outside
+the checkout control completion; development runs are not substituted for them.
+
+`projection.py` implements pure audience closure over exact supplied packages.
+An installed pinned policy must permit every record, including producers,
+diagnostics, provenance and dependency metadata. Required dependency/record sets
+must match exactly, preventing additional unexamined dependencies from being
+staged under a nominal allowance. The root audience must match the requested
+audience. Supported payload interpreters traverse actual embedded references in
+their pinned reference contexts. Opaque bytes can be retained under exact byte
+permission, while stronger requested content assurances remain held. There is
+no default public-data classifier, hidden fetch or permission from a label.
+
+The historical L allowance remains exactly its original611-byte native JSON
+array, with two named entities and no new S3 metadata. The test stages and reads
+those exact native bytes independently of any S3 root. Permission for that blob
+does not authorize a new public account or its private lineage.
+
+`publication.py` implements the six exact Storage ports against a supplied local
+store, actual journal permit and current owner grants. Pure registered preparation
+and explicit storage routing reuse the coordinator's durable admission/issue
+pipeline; the core does not import a store from metadata or require a particular
+backend class. Public methods retain their accepted signatures. The qualified
+backend uses checked SQLite DELETE/FULL and immutable flushed artifact bytes.
+Owner/code profile, publication correlation, package/digest and audience closure
+cannot be replaced under an old identity. Publication commits a manifest; staged
+bytes without that manifest remain orphans, not a complete published root.
+
+Publication and verification receipts remain outside the subject's hashed bytes.
+Development testing found a real recovery failure: a lost publication reply left
+an external commit receipt depending on an earlier journal snapshot absent from
+the next account head's dependency list. The store now retains and flushes the
+receipt's exact private dependencies with the manifest transaction. Its private
+receipt projection is distinct from the subject's requested public audience.
+A fresh lookup can return a closed commit receipt without refreezing the subject,
+exposing private lineage under the subject allowance or regenerating a permit.
+The failing and corrected development receipts remain available externally.
+
+Revision CAS is implemented at the actual pointer owner. A→B→A advances the
+revision to3; an old revision1 update conflicts even when the current value is A.
+An arbitrary alleged commit receipt cannot select a package: its exact stored
+publication receipt must match. Value equality is never promoted to revision CAS.
+
+Owned copy provisioning, lookup, application-access revocation and physical
+named-copy unlinking are separately scoped. The original artifact identity,
+publication history and other-copy obligations survive. Reusing a closed copy ID
+cannot recreate it implicitly. Revocation applies to this store's access path;
+unlinking one owned path is not global erasure or a reversal of prior disclosure.
+Actual retention rules, copy identities, owner scope, current access and source
+digests are checked. Interrupted operations preserve possible effects and the
+independent copy oracle; they do not report zero effects or erase outstanding
+liabilities because a reply was lost.
+
+F14 covers staged bytes without a manifest and manifest commit before ACK, then
+fresh issuer reconciliation of the original C/G/D and exact package. F15 checks
+actual pointer ABA/revision conflict. F16 loses revoke/delete replies after real
+local commit, reopens issuers, checks unchanged pins and remaining physical copies,
+and separately exercises positive scoped receipts. X09 checks denied metadata,
+dependency closure, opaque content assurance and the exact L export. Development
+run3 passed all6 tests with no skips; final source-stable bundle receipts and
+F14/F15/F16 oracle/history/recovered-view triplets qualify the committed source.
+
+These are local cooperative-store mechanisms. There is no remote dissemination,
+whole-host/power-loss guarantee, hostile isolation, external cryptographic
+authentication or global copy-erasure claim. No scientific protocol or source
+population is changed.
+
+## Where we're going after B11
+
+Finish B12's integrated local, remote, unknown-origin interaction and explicit
+checkpoint profiles, exact interface/support mapping and installed distribution
+isolation. Then complete B13's mandatory case/fault reconciliation, final gates,
+methodology/release account and separate legacy parity/certificate qualification.
+
+## B12 implementation: integrated profiles and opt-in package interface (2026-11-04)
+
+Tickets: DLV-08, DLV-09; related DLV-10. B11's actual accepted commit is the
+predecessor. Completion requires stable-source target tests, isolated distribution
+checks and both full staged-tree gates; development runs are retained separately.
+No accepted contract, fixture oracle, S1/S2 scientific definition or paper source
+is rebaselined.
+
+`Core` is a facade over the supplied coordinator and read context. It supplies no
+default driver, owner, policy evaluator or publication backend. The opt-in module
+CLI inspects, validates and plans from explicitly supplied bytes; its default and
+help paths do not bootstrap live capabilities. Missing installed policy code
+produces a held result with no effects. The import bridge routes the actual owned
+S1 PackageStore reader through admission and the one-use driver boundary, retaining
+unknown historical native origin rather than inventing requests, attempts or trials.
+
+E01 calls the owned synchronous native function and independent SQLite call meter
+through S3. It preserves the native column order and creates an explicit derived
+canonical graph/mapping. The native `order` is fixture input-column alignment, not
+a topological-order claim. Unreported edges are not silently made absent. One
+actual call costs0.7 under cap1. A cold process reads committed evidence without
+relaunching. Within one journal/account, launch and restart now reject a different
+initiating command for the same attempt before admission and before issue. The
+check uses actual prior bindings plus expected-revision append; it does not claim
+distributed attempt uniqueness or provider idempotency.
+
+E02 composes scientific handoff, actual asynchronous launch with a lost reply,
+exact lookup, attachment and observation against the independent controlled native
+receiver. Three capture occurrences retain two native events. Existing owner
+capacity remains cap10 when observation is configured; reconnecting does not reset
+quota. A fresh process reconstructs only explicitly supplied runtime controls and
+acknowledges the retained source, without a repeated launch. Negative lookup does
+not establish that ingress has closed or justify a replacement launch.
+
+E03 is explicitly an unknown-origin operational interactive episode. It exercises
+two distinct same-text actions, fixed information/compute/decision inputs, one Q1
+delivery and zero Q2 selections/deliveries, with consumed1/remain1. A cold process
+looks up the actual delivery receipt without resending. It does not fabricate an
+R, A or scientific trial. The original S2 condition admits only its initial table
+channel; scientific followup acquisition/compute/delivery without a corresponding
+implemented S2 condition interpreter remains held by B10. This is a supported
+operational combination and an explicitly unqualified scientific combination.
+
+E04 runs the separate explicit R2 partial-checkpoint condition with captured bytes
+and native handle variants. A1/A2 remain distinct attempts in one scoped trial.
+Actual loaded model/optimizer components are reported independently of unknown
+RNG/history. Replacement billing3→5 plus successor4 yields9 under cap20. A cold
+process verifies the durable state-restore evidence; B10 F12/F13 separately kill
+live coordinators after stop ACK, restart acceptance and native loading. Evidence
+reopening is not substituted for those interrupted-execution recovery tests. The
+original B00 request's NA checkpoint policy remains held and unchanged.
+
+The methodology index maps38 kinds,31 operations,48 actual class method signatures
+and eight support axes to accepted rules, source SHA256, tests and separately
+qualified claims/limits. Its test checks actual source bytes, cardinalities and
+the interactive scientific limitation. Source-distribution packaging includes this
+technical index and the original611-byte L fixture/provenance; development planning
+documents and private operational records remain excluded. The wheel probe checks
+S3 schema/catalog/Core and module help with checkout/research imports blocked.
+Build/install/check outputs remain external and use an offline local wheel.
+The technical index includes exact accepted rule excerpts with full source pins
+and valid source pointers. Repository tests verify those against the original
+accepted file; source-distribution tests exercise the retained excerpts without
+requiring excluded planning documents. The distribution qualification separately
+runs those tests from the unpacked sdist and records its exact staged-tree
+provenance before B12 can commit.
+
+Final receipt reconciliation found that early F01–F03 and F17–F18 assertions had
+passed but had not persisted the DAG's separately named fault triplets. This is
+an evidence-packaging gap in those prior receipts, not a reason to infer missing
+artifacts from a prose summary. Test-only instrumentation in the journal, owner
+and coordinator tests now retains actual SQLite/custody observations, source
+snapshot bytes/pins and recovered outcomes through a shared fixture helper.
+It does not alter runtime logic, scientific expected values or the assertions.
+An initial helper left SQLite readers open on Windows; explicit closing corrected
+the resulting cleanup errors, with the failed development logs retained. Capture
+receipts distinguish raw artifact availability from committed capture metadata:
+an orphan can exist even when the capture transaction did not commit.
+B12's final target re-executes the entire S3 suite, saving these new triplets as
+current integration evidence. Earlier bundle receipts remain unchanged; the final
+release map explicitly links the later re-execution rather than backdating it.
+F18 retains all four requested variants; actual process deaths remain labeled
+separately from injected reply loss and same-process replay.
+
+The inherited N13 review found a separate concrete codec gap: rejecting an
+external self-dependency did not reject a publication receipt whose plain-ID
+subject_package named its containing package with a known full-content digest.
+The pre-fix reproducer and exact codec source hash are retained externally.
+The S3 codec now rejects that circular known whole-package pin directly; the
+publication test checks both dependency and plain-ID forms. An unresolved digest
+does not assert such a pin and can still be preserved. This enforces the accepted
+negative without changing its rule, any S1/S2 schema or scientific expected value.
+B11's earlier weaker negative and receipts remain historical; B12's full S3
+re-execution qualifies the corrected conformance boundary.
+
+Two validation-plumbing corrections are scoped here. The old gate report's hardcoded
+`native_dispatch:false` was misleading once controlled execution fixtures existed;
+it now says dispatch is not measured by the runner and points to scoped case/oracle
+receipts, while distinguishing scientific native campaigns. Historical receipts
+remain unchanged. The existing three-platform CI matrix is preserved and its job
+timeout becomes90 minutes because the expanded real process/durability suite can
+exceed the old20-minute ceiling on this Windows host. This prepares the checks;
+it does not claim fresh Linux or remote CI results.
+
+The first build attempt failed in the Windows sandbox temporary directory before
+building package bytes. Its receipt is retained; the corrected run used explicit
+external temporary storage and normal Windows process/file rights. No durability
+check was disabled. A development test launcher also initially opened its own
+output log twice; the separate stdout log corrected that launcher conflict before
+tests ran. Neither environment/launcher failure is recorded as a passing test.
+
+## Where we're going after B12
+
+Reconcile all mandatory case and inherited-negative mappings against actual scoped
+test/fault receipts, run the once-after-integration legacy1298 comparison and
+14stored/14fresh certificate qualification with explicit data and external outputs,
+and commit B13's implemented scope, methodology and release account. Offline
+completion, historical parity, host matrix and real native integration remain
+separate claims. No remote publication, scientific campaign or paper mutation is
+part of this authorization.
+
+## B13 final acceptance and qualification (2026-11-04)
+
+R01 reconciled all 106 planned obligations, 30 inherited negative boundaries and
+all required predecessor acceptance/recovery triplets against the unchanged accepted
+baseline. B12 predecessor is `704433af9fc55111b9bd17c12d72bc101dc758b1`. The final integrated target
+passed 118 tests without skips; both B12 full gates passed 453
+tests with 0 failures/errors and 26 old availability skips. B13's
+current full staged-tree gate and enabled-hook receipt control its own completion.
+
+The once-after-integration legacy rerun passed 1,298 comparisons at unchanged 0.001
+tolerance; 14 stored and 14 fresh certificates verified. Isolated installed-wheel
+checks passed with research imports blocked. The dated implemented-scope,
+release-review and typed release-traceability account preserve exact claims and
+limits, source/test/receipt links and prior commits without exposing private
+bootstrap controls. No S1/S2/scientific rebaseline, remote publication or campaign.
+
+## Where we're going after B13
+
+Review the implemented S3 foundation and begin the next subsystem's design when
+requested. Fresh remote CI, scientific native integrations and broader scientific
+interaction/recovery conditions remain separately scoped and unclaimed.

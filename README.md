@@ -19,6 +19,8 @@ python -m crucis_causal --help
 python -m crucis_causal systems
 python -m crucis_causal.connections --help
 python -m crucis_causal.experiments --help
+python -m crucis_causal.execution --help
+python -m crucis_causal.measurement --help
 ```
 
 Python 3.10 or newer, NumPy and jsonschema are required. Optional native PC/GES
@@ -29,6 +31,25 @@ Install from this checkout. The distribution is `crucis-causal`, the Python
 namespace is `crucis_causal`, and the command is `crucis-causal`. No package-index
 release has been published. Bare `pip install crucis` obtains an
 [unrelated coding-agent project](https://pypi.org/project/crucis/).
+
+## Execution and evidence lifecycle
+
+The opt-in S3 layer provides durable execution accounts, admission and owner
+controls, guarded native dispatch, capture and interaction, recovery and immutable
+evidence publication. Its CLI inspects and plans from supplied bytes; live drivers,
+authority and policy implementations are explicitly injected in Python. See the
+[execution guide](crucis_causal/execution/README.md) for the four controlled
+mechanism profiles and their scientific and operational limits. Those fixture
+results do not establish universal native-system or causal-correctness coverage.
+
+## Measurement
+
+S4 binds a measurement question to specific output, reference and execution
+evidence. Its CLI inspects snapshots and plans with explicitly supplied
+dependencies and procedure declarations. Calculation, durable recording,
+profile assessment and publication use the typed Python interfaces.
+See the [S4 release review](crucis_causal/docs/s4/release-review-2026-11-05.md)
+for the qualified procedures, recovery tests and limits.
 
 ## Evidence and research
 
@@ -90,12 +111,12 @@ their original paths/commands; this README gives the current installation route.
 
 GitHub source history contains development/design records as well as runtime
 code and tests. Installed wheels exclude `crucis_causal/docs/`; source distributions
-retain only the two technical JSON examples needed by the offline tests, along
+retain the S1/S2 technical JSON examples and S3 methodology index needed by tests, along
 with test fixtures and tooling. Research datasets, recorded runs, sealed battery
 seeds and credentials are not bundled. Excluded-data tests report explicit skips.
 
 CI is configured to test Python 3.10/3.12 on Linux and 3.12 on Windows, build both
 distribution formats, and inspect the installed wheel from an isolated working
-directory. It preserves test/skip receipts. Until the first push succeeds, these
-are configured remote checks, not completed GitHub validation. CI does not run
+directory. It preserves test/skip receipts. Prior publication checks do not
+qualify new local S3 changes; those need their own remote CI results. CI does not run
 paid model experiments, deploy a site or publish to a package index.

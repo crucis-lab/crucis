@@ -1,0 +1,3021 @@
+{
+  "kind": "sc3_accepted_runtime_catalog",
+  "date": "2026-11-03",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "based_on_commit": "de4e48114a45dff53f807d00267cb1758bbba6e6",
+  "status": "B01 structural and declared registry layer; operation mechanisms separately implemented/qualified",
+  "version": "0.1.0-proposal.3",
+  "implemented": false,
+  "base_serialization": {
+    "path": "crucis_causal/docs/subsystem3-serialization-catalog-2026-11-03.json",
+    "sha256": "b9a4846895f9b8d8563697ed7c60600024d64c09d8e40702d45a630c0969b20d",
+    "old_version": "0.1.0-proposal.1"
+  },
+  "core_payloads": {
+    "s3.component": {
+      "name": "String",
+      "role": "Code",
+      "implementation": "K(PayloadRef)"
+    },
+    "s3.account": {
+      "purpose": "prepare|execute|observe",
+      "target": "KnownRef(target)",
+      "related_accounts": "IndexList(Ref(account))"
+    },
+    "s3.target": {
+      "definition": "Contract",
+      "scope": "Scope",
+      "subjects": "IndexList(Ref)",
+      "requirements": "IndexList(Ref)",
+      "relations": "IndexList(Ref)"
+    },
+    "s3.audience": {
+      "purpose": "Contract",
+      "recipients": "IndexList(Ref)",
+      "disclosure_policy": "Ref",
+      "authority": "K(KnownRef(assessment))"
+    },
+    "s3.claim_request": {
+      "claim": "Contract",
+      "scope": "Scope",
+      "parameters": "IndexList(KnownRef(typed_payload))",
+      "required": "Boolean"
+    },
+    "s3.account_view": {
+      "account": "KnownRef(account)",
+      "view_role": "full_account",
+      "audience": "KnownRef(audience)",
+      "frontier": "KnownRef(frontier)",
+      "requirements": "KnownRef(requirement_context)",
+      "activities": "IndexList(Ref)",
+      "evidence": "IndexList(Ref)",
+      "assessments": "IndexList(KnownRef(assessment))",
+      "disposition": "KnownRef(disposition)",
+      "obligations": "IndexList(KnownRef(obligation))",
+      "collections": "IndexList(KnownRef(collection_period|collection_closure))"
+    },
+    "s3.projection_view": {
+      "view_role": "audience_projection",
+      "audience": "KnownRef(audience)",
+      "projection_contract": "Contract",
+      "members": "IndexList(Ref)",
+      "claims": "IndexList(KnownRef(assessment))",
+      "limits": "IndexList(KnownRef(diagnostic))"
+    },
+    "s3.typed_payload": {
+      "payload_contract": "Contract",
+      "content": "PayloadRef",
+      "reference_context": "PayloadContext"
+    },
+    "s3.frontier": {
+      "local_records": "IndexList(KnownRef)",
+      "source_positions": "IndexList(KnownRef(source_frontier))",
+      "selection_rule": "Contract"
+    },
+    "s3.diagnostic": {
+      "code": "Code",
+      "scope": "Scope",
+      "details": "String",
+      "evidence": "Ref[]"
+    },
+    "s3.assessment": {
+      "question": "Contract",
+      "scope": "Scope",
+      "result": "K(Boolean|String|Number|KnownRef)",
+      "basis": "IndexList(Ref)",
+      "frontier": "KnownRef(frontier)",
+      "procedure": "Contract",
+      "revises": "KnownRef(assessment)[]",
+      "conflicts_with": "KnownRef(assessment)[]"
+    },
+    "s3.disposition": {
+      "kind": "no_effect_selected|waiting|held|selected|collection_closed",
+      "operations": "IndexList(KnownRef(effect_command))",
+      "requirements": "KnownRef(requirement_context)",
+      "frontier": "KnownRef(frontier)",
+      "basis": "Ref[]"
+    },
+    "s3.obligation": {
+      "question": "Contract",
+      "scope": "Scope",
+      "owner": "Ref",
+      "disposition": "pending|handed_off|discharged|unresolved",
+      "basis": "Ref[]",
+      "follow_up": "IndexList(Ref)"
+    },
+    "s3.collection_period": {
+      "scope": "Scope",
+      "bounds": "KnownRef(typed_payload)",
+      "predecessors": "KnownRef(collection_period)[]",
+      "policy": "Contract"
+    },
+    "s3.collection_closure": {
+      "period": "KnownRef(collection_period)",
+      "frontier": "KnownRef(frontier)",
+      "stopping_rule": "Contract",
+      "reason": "Code",
+      "captured": "IndexList(Ref)",
+      "outstanding": "IndexList(KnownRef(obligation))",
+      "basis": "Ref[]"
+    },
+    "s3.source_frontier": {
+      "source": "Ref",
+      "episode": "K(KnownRef(native_subject))",
+      "protocol": "Contract",
+      "filter": "K(KnownRef(typed_payload))",
+      "generation": "K(String)",
+      "fetched": "K(Cursor)",
+      "durably_captured": "K(Cursor)",
+      "interpreted": "K(Cursor)",
+      "acknowledged": "K(Cursor)",
+      "coverage": "IndexList(Ref)"
+    },
+    "s3.requirement_context": {
+      "catalog": "Contract",
+      "requested_claims": "IndexList(KnownRef(claim_request))",
+      "coverage": "IndexList(KnownRef(requirement_case))"
+    },
+    "s3.requirement_case": {
+      "family": "Contract",
+      "scope": "Scope",
+      "applicability": "applies|not_applicable|unresolved|not_examined",
+      "rule": "Contract",
+      "basis": "Ref[]",
+      "roles": "RoleBinding[]",
+      "gaps": "KnownRef(diagnostic)[]",
+      "frontier": "KnownRef(frontier)"
+    },
+    "s3.support_claim": {
+      "feature": "Contract",
+      "supplier": "KnownRef(component)",
+      "scope": "Scope",
+      "parameters": "IndexList(KnownRef(typed_payload))",
+      "dependencies": "IndexList(Ref)",
+      "axes": "AxisEntry[]",
+      "frontier": "KnownRef(frontier)"
+    },
+    "s3.native_subject": {
+      "descriptor": "KnownRef(typed_payload)",
+      "origin_attempt": "Ref(s1.attempt)",
+      "scope": "Scope",
+      "basis": "Ref[]"
+    },
+    "s3.native_association": {
+      "attempt": "Ref(s1.attempt)",
+      "native_subject": "KnownRef(native_subject)",
+      "relation": "candidate|reported|supported|disputed",
+      "basis": "Ref[]",
+      "assessment": "K(KnownRef(assessment))"
+    },
+    "s3.effect_command": {
+      "account": "KnownRef(account)",
+      "operation": "Contract",
+      "binding": "KnownRef(operation_binding)",
+      "targets": "Scope",
+      "dependencies": "IndexList(Ref)",
+      "admission": "K(KnownRef(assessment))",
+      "frontier": "KnownRef(frontier)"
+    },
+    "s3.transmission": {
+      "command": "KnownRef(effect_command)",
+      "channel": "Contract",
+      "recipient": "Ref",
+      "ownership": "K(KnownRef(ownership_context))",
+      "sent_at": "K(Time)",
+      "receipts": "IndexList(Ref)"
+    },
+    "s3.ownership_context": {
+      "owner": "Ref",
+      "scope": "Scope",
+      "validity": "KnownRef(typed_payload)",
+      "receiver_guarantee": "K(KnownRef(typed_payload))",
+      "basis": "Ref[]",
+      "supersedes": "KnownRef(ownership_context)[]"
+    },
+    "s3.realization": {
+      "command": "KnownRef(effect_command)",
+      "specification": "KnownRef(typed_payload)",
+      "inputs": "IndexList(Ref)",
+      "outputs": "IndexList(Ref)",
+      "checks": "IndexList(Ref)",
+      "state": "K(KnownRef(typed_payload))"
+    },
+    "s3.staging": {
+      "command": "KnownRef(effect_command)",
+      "presentation": "Ref(s1.presentation)",
+      "recipient": "Ref",
+      "members": "IndexList(Ref)",
+      "stable_use": "K(KnownRef(assessment))",
+      "disclosure": "IndexList(KnownRef(exposure_entry))",
+      "cleanup": "IndexList(KnownRef(obligation))"
+    },
+    "s3.action_decision": {
+      "actions": "IndexList(Ref(s1.action_request))",
+      "rule": "Contract",
+      "information": "IndexList(Ref)",
+      "frontier": "KnownRef(frontier)",
+      "selected": "IndexList(Ref(s1.action_response))",
+      "assessment": "K(KnownRef(assessment))"
+    },
+    "s3.delivery": {
+      "command": "KnownRef(effect_command)",
+      "decision": "KnownRef(action_decision)",
+      "actions": "IndexList(Ref(s1.action_request))",
+      "responses": "IndexList(Ref(s1.action_response))",
+      "recipient": "Ref",
+      "validity": "KnownRef(typed_payload)",
+      "receipts": "IndexList(Ref)"
+    },
+    "s3.recovery": {
+      "kind": "coordinator_reconnect|transport_retry|native_restart|state_restore|continuation_assessment",
+      "subjects": "Scope",
+      "policy": "Contract",
+      "predecessors": "IndexList(Ref(s1.attempt))",
+      "successors": "IndexList(Ref(s1.attempt))",
+      "components": "StateComponent[]",
+      "overlap": "K(KnownRef(assessment))",
+      "basis": "Ref[]"
+    },
+    "s3.resource_entry": {
+      "scope": "Scope",
+      "owner": "Ref",
+      "resource": "Contract",
+      "unit": "KnownRef(typed_payload)",
+      "entry_kind": "estimate|reservation|usage|bill|settlement|release|control_overhead",
+      "quantity": "K(Number)",
+      "interval": "K(KnownRef(typed_payload))",
+      "finality": "interim|final|unresolved",
+      "revises": "KnownRef(resource_entry)[]",
+      "aggregation": "Contract",
+      "basis": "Ref[]"
+    },
+    "s3.exposure_entry": {
+      "scope": "Scope",
+      "owner": "Ref",
+      "recipient": "Ref",
+      "information": "IndexList(Ref)",
+      "facet": "prepared|reachable|transmitted|delivered|accessed|used|policy_consumed",
+      "extent": "K(Number|KnownRef(typed_payload))",
+      "policy": "Contract",
+      "basis": "Ref[]",
+      "revises": "KnownRef(exposure_entry)[]"
+    },
+    "s3.publication_receipt": {
+      "subject_package": "ID",
+      "subject_format": "Contract",
+      "digest": "K(Digest)",
+      "audience": "KnownRef(audience)",
+      "operation": "KnownRef(effect_command)",
+      "commit_status": "unconfirmed|committed|failed|disputed",
+      "checks": "IndexList(Ref)",
+      "basis": "Ref[]"
+    },
+    "s3.availability": {
+      "subject": "Ref",
+      "locator": "K(String)",
+      "access": "Code",
+      "observation": "Contract",
+      "result": "K(Boolean)",
+      "basis": "Ref[]",
+      "revises": "KnownRef(availability)[]"
+    },
+    "s3.operation_binding": {
+      "operation": "Contract",
+      "roles": "RoleBinding[]",
+      "parameters": "OperationParameter[]"
+    },
+    "s3.owner_receipt": {
+      "owner": "Ref",
+      "correlation": "ID",
+      "binding": "KnownRef(operation_binding)",
+      "revision": "K(String)",
+      "decision": "permitted|denied|held|unresolved",
+      "holds": "IndexList(Ref)",
+      "validity": "KnownRef(typed_payload)",
+      "evidence": "Ref[]",
+      "request_occurrence": "ID",
+      "admission_occurrence": "ID"
+    },
+    "s3.effect_observation": {
+      "command": "KnownRef(effect_command)",
+      "boundary": "not_crossed|may_have_crossed|crossed|not_applicable",
+      "acceptance": "K(Boolean)",
+      "evidence": "Ref[]",
+      "frontier": "KnownRef(frontier)",
+      "transmission": "Ref(transmission)"
+    },
+    "s3.journal_receipt": {
+      "account": "KnownRef(account)",
+      "transaction": "ID",
+      "previous_revision": "String",
+      "committed_revision": "String",
+      "records": "IndexList(KnownRef)",
+      "durability": "Contract"
+    },
+    "s3.bridge_receipt": {
+      "rule": "Contract",
+      "inputs": "IndexList(Ref)",
+      "outputs": "IndexList(Ref)",
+      "context": "PayloadContext",
+      "losses": "IndexList(KnownRef(diagnostic))",
+      "checks": "IndexList(Ref)"
+    }
+  },
+  "added_primitives": {
+    "PayloadContext": {
+      "package_id": "ID",
+      "format": "Contract"
+    },
+    "OperationParameter": {
+      "key": "String",
+      "value": "K(ParameterValue)"
+    },
+    "ParameterValue": "String|Boolean|Number|Contract|Digest|KnownRef|KnownRef[]|Cursor|Time|ID|PositiveIndex|Contract[]"
+  },
+  "operations": [
+    {
+      "id": "OP01",
+      "contract": {
+        "name": "s3.op.realize_input",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "specification": "s2.transform_spec[1]",
+        "sources": "s1.artifact_snapshot|s2.case_revision[1..n]",
+        "provider": "s3.component[1]",
+        "account": "s3.account[1]"
+      },
+      "parameters": {
+        "procedure": "Contract",
+        "randomness": "Ref(s2.resolution_receipt)[0..n]",
+        "fitted_state": "Ref(s1.output|s1.artifact_snapshot)|NA",
+        "source_window": "Ref(s3.typed_payload)|NA"
+      },
+      "port": "Driver.realize",
+      "pure": false,
+      "required_guarantee": "Explicit input/recipe/domain/randomness and information authorization; prepare alone performs no realization.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP02",
+      "contract": {
+        "name": "s3.op.stage_input",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "presentations": "s1.presentation[1..n]",
+        "recipient": "s1.component|s3.native_subject[1]",
+        "account": "s3.account[1]"
+      },
+      "parameters": {
+        "transfer_contract": "Contract",
+        "native_parameters": "Ref(s3.typed_payload)",
+        "stability": "snapshot|immutable_reference|version_checked|none",
+        "cleanup_rule": "Contract"
+      },
+      "port": "Driver.stage",
+      "pure": false,
+      "required_guarantee": "Exact bytes/selector/recipient; actual stable-use guarantee and uncertain disclosure/cleanup scoped separately.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP03",
+      "contract": {
+        "name": "s3.op.launch",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "request": "s1.request[1]",
+        "attempt": "s1.attempt[1]",
+        "binding": "s1.binding[1]",
+        "presentations": "s1.presentation[0..n]",
+        "scientific_binding": "s2.run_binding[0..1]"
+      },
+      "parameters": {
+        "invocation": "Ref(s3.typed_payload)",
+        "request_relation": "same_request",
+        "idempotency": "Ref(s3.typed_payload)|NA",
+        "purpose": "scientific_run|connection_probe|non_scientific_execution",
+        "scientific_rule": "Contract"
+      },
+      "port": "Driver.invoke",
+      "pure": false,
+      "required_guarantee": "Exact one-shot current grants and prepared intent; no provider ID required before assignment; no implicit retry.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP04",
+      "contract": {
+        "name": "s3.op.lookup_launch",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "command": "s3.effect_command[1]",
+        "owner": "s3.component[1]"
+      },
+      "parameters": {
+        "query": "Ref(s3.typed_payload)",
+        "coverage_rule": "Contract",
+        "native_idempotency": "Ref(s3.typed_payload)|NA"
+      },
+      "port": "Driver.lookup",
+      "pure": false,
+      "required_guarantee": "Positive/negative/unknown with namespace/incarnation/time/retention/paths; empty listing alone is not a no-effect proof.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP05",
+      "contract": {
+        "name": "s3.op.attach",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s3.native_subject[1]",
+        "association": "s3.native_association[1]",
+        "ownership": "s3.ownership_context[1]"
+      },
+      "parameters": {
+        "connection_role": "observer|controller|consumer",
+        "subscription": "Ref(s3.typed_payload)"
+      },
+      "port": "Driver.attach",
+      "pure": false,
+      "required_guarantee": "No hidden launch or reset; adequate incarnation and compatible ownership/consumer semantics.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP06",
+      "contract": {
+        "name": "s3.op.observe",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s3.native_subject|s1.attempt[1]",
+        "source": "s3.source_frontier[1]",
+        "period": "s3.collection_period[1]"
+      },
+      "parameters": {
+        "cursor": "Cursor|NA",
+        "max_events": "PositiveIndex",
+        "max_bytes": "PositiveIndex",
+        "deadline": "Time",
+        "ack_mode": "separate|combined|none",
+        "deadline_rule": "Contract"
+      },
+      "port": "Driver.observe",
+      "pure": false,
+      "required_guarantee": "Bounded request and capture; fetched/captured/interpreted/ack stages separate; combined-consuming sources require explicitly scoped loss/replay guarantees.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP07",
+      "contract": {
+        "name": "s3.op.acknowledge",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "source": "s3.source_frontier[1]",
+        "capture_receipt": "s3.journal_receipt[1]"
+      },
+      "parameters": {
+        "position": "Cursor",
+        "protocol": "Contract"
+      },
+      "port": "Driver.ack",
+      "pure": false,
+      "required_guarantee": "Only acknowledge durably captured matching source/generation/filter/occurrence; no native exactly-once inference.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP08",
+      "contract": {
+        "name": "s3.op.acquire_information",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "source": "s1.artifact_snapshot|s1.artifact_declaration|s3.typed_payload[1..n]",
+        "recipient": "s3.component|s1.component[1]",
+        "policy": "s2.information_policy|s1.policy[1]"
+      },
+      "parameters": {
+        "provider": "Contract",
+        "query": "Ref(s3.typed_payload)",
+        "expected_response": "Contract"
+      },
+      "port": "Driver.acquire",
+      "pure": false,
+      "required_guarantee": "Every network/read/provider effect explicitly admitted and exposure/resource owned; no hidden evaluator oracle.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP09",
+      "contract": {
+        "name": "s3.op.compute_response",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "actions": "s1.action_request[1..n]",
+        "inputs": "s1.output|s1.artifact_snapshot|s3.typed_payload[1..n]",
+        "policy": "s2.information_policy|s1.policy[1]"
+      },
+      "parameters": {
+        "provider": "Contract",
+        "native_parameters": "Ref(s3.typed_payload)",
+        "expected_response": "Contract"
+      },
+      "port": "Driver.compute",
+      "pure": false,
+      "required_guarantee": "Paid/model/tool computation is an explicit effect; pure decision selection cannot conceal it.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP10",
+      "contract": {
+        "name": "s3.op.deliver",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "decision": "s3.action_decision[1]",
+        "actions": "s1.action_request[1..n]",
+        "responses": "s1.action_response[1..n]",
+        "endpoint": "s1.endpoint[1]",
+        "presentations": "s1.presentation[0..n]"
+      },
+      "parameters": {
+        "bundle": "Contract",
+        "correlation": "Ref(s3.typed_payload)",
+        "validity": "Ref(s3.typed_payload)",
+        "idempotency": "Ref(s3.typed_payload)|NA"
+      },
+      "port": "Driver.deliver",
+      "pure": false,
+      "required_guarantee": "Exact response/action/endpoint correlation and current delivery grant; composite only under supported bundle driver; no silent abstention/resend.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP11",
+      "contract": {
+        "name": "s3.op.lookup_delivery",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "delivery_command": "s3.effect_command[1]",
+        "actions": "s1.action_request[1..n]",
+        "endpoint": "s1.endpoint[1]"
+      },
+      "parameters": {
+        "query": "Ref(s3.typed_payload)",
+        "receipt_contract": "Contract"
+      },
+      "port": "Driver.lookup_delivery",
+      "pure": false,
+      "required_guarantee": "Delivery versus native use distinct; correlate exact occurrence, content and endpoint.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP12",
+      "contract": {
+        "name": "s3.op.request_stop",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s3.native_subject|s1.attempt|s1.session|s1.action_request[1]",
+        "policy": "s1.policy|s3.typed_payload[1]"
+      },
+      "parameters": {
+        "scope": "component|episode|declared_descendants",
+        "method": "Contract",
+        "escalation": "Ref(s3.typed_payload)|NA"
+      },
+      "port": "Driver.stop",
+      "pure": false,
+      "required_guarantee": "Requested/acknowledged/observed stop independent; exact descendant coverage and escalation authority required.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP13",
+      "contract": {
+        "name": "s3.op.native_restart",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "request": "s1.request[1]",
+        "predecessor": "s1.attempt|s3.native_subject[1]",
+        "successor": "s1.attempt[1]",
+        "scientific_binding": "s2.run_binding[0..1]",
+        "checkpoint": "s1.output[0..1]",
+        "policy": "s1.policy[1]"
+      },
+      "parameters": {
+        "mode": "retry|checkpoint_continuation|warm_start|branch",
+        "request_relation": "same_request|new_request",
+        "required_components": "Contract[0..n]",
+        "overlap_rule": "Contract",
+        "invocation": "Ref(s3.typed_payload)",
+        "purpose": "scientific_run|connection_probe|non_scientific_execution",
+        "scientific_rule": "Contract"
+      },
+      "port": "Driver.invoke",
+      "pure": false,
+      "required_guarantee": "Distinct successor ID; before launch establish permitted mode/state availability/overlap; after launch assess actual load separately. No hidden new scientific repetition.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP14",
+      "contract": {
+        "name": "s3.op.restore_state",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s3.native_subject[1]",
+        "checkpoint": "s1.output[1]",
+        "policy": "s1.policy[1]"
+      },
+      "parameters": {
+        "required_components": "Contract[1..n]",
+        "quiescence_rule": "Contract"
+      },
+      "port": "Driver.restore",
+      "pure": false,
+      "required_guarantee": "Only explicitly supported in-place restoration; does not bypass restart identity or requested scientific condition.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP15",
+      "contract": {
+        "name": "s3.op.owner_reserve",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "owner": "s3.component[1]",
+        "binding": "s3.operation_binding[1]",
+        "evidence": "s3.assessment|s3.owner_receipt|s3.effect_observation|s1.authority_evidence[0..n]"
+      },
+      "parameters": {
+        "correlation": "ID",
+        "amounts": "Ref(s3.typed_payload)",
+        "expected_revision": "String",
+        "request_occurrence": "ID",
+        "admission_occurrence": "ID"
+      },
+      "port": "Owner.reserve",
+      "pure": false,
+      "required_guarantee": "One owner correlation per exact binding; duplicate same-key returns prior hold, changed binding conflicts; partial multi-owner reservation is not global admission.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP16",
+      "contract": {
+        "name": "s3.op.owner_reconcile",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "owner": "s3.component[1]",
+        "binding": "s3.operation_binding[1]",
+        "evidence": "s3.assessment|s3.owner_receipt|s3.effect_observation|s1.authority_evidence[0..n]"
+      },
+      "parameters": {
+        "correlation": "ID",
+        "query": "Ref(s3.typed_payload)",
+        "request_occurrence": "ID",
+        "request_to_reconcile": "ID",
+        "admission_occurrence": "ID"
+      },
+      "port": "Owner.reconcile",
+      "pure": false,
+      "required_guarantee": "Read/reconcile the original owner key; no replacement hold after lost ACK until identity is reconciled.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP17",
+      "contract": {
+        "name": "s3.op.owner_renew",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "owner": "s3.component[1]",
+        "binding": "s3.operation_binding[1]",
+        "evidence": "s3.assessment|s3.owner_receipt|s3.effect_observation|s1.authority_evidence[0..n]"
+      },
+      "parameters": {
+        "correlation": "ID",
+        "expected_revision": "String",
+        "extension": "Ref(s3.typed_payload)",
+        "request_occurrence": "ID",
+        "admission_occurrence": "ID"
+      },
+      "port": "Owner.renew",
+      "pure": false,
+      "required_guarantee": "Actual owner decides validity; local lease text never prolongs remote rights.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP18",
+      "contract": {
+        "name": "s3.op.owner_settle",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "owner": "s3.component[1]",
+        "binding": "s3.operation_binding[1]",
+        "evidence": "s3.assessment|s3.owner_receipt|s3.effect_observation|s1.authority_evidence[0..n]"
+      },
+      "parameters": {
+        "correlation": "ID",
+        "expected_revision": "String",
+        "aggregation": "Contract",
+        "request_occurrence": "ID",
+        "admission_occurrence": "ID"
+      },
+      "port": "Owner.settle",
+      "pure": false,
+      "required_guarantee": "Evidence/revision/scope aware liability; final bill replacement and usage not double counted.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP19",
+      "contract": {
+        "name": "s3.op.owner_release",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "owner": "s3.component[1]",
+        "binding": "s3.operation_binding[1]",
+        "evidence": "s3.assessment|s3.owner_receipt|s3.effect_observation|s1.authority_evidence[0..n]"
+      },
+      "parameters": {
+        "correlation": "ID",
+        "expected_revision": "String",
+        "release_rule": "Contract",
+        "request_occurrence": "ID",
+        "admission_occurrence": "ID"
+      },
+      "port": "Owner.release",
+      "pure": false,
+      "required_guarantee": "Release only owner-permitted capacity/liability scope; no native termination or zero cost inferred.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP20",
+      "contract": {
+        "name": "s3.op.owner_authorize",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "owner": "s3.component[1]",
+        "binding": "s3.operation_binding[1]",
+        "evidence": "s3.assessment|s3.owner_receipt|s3.effect_observation|s1.authority_evidence[0..n]"
+      },
+      "parameters": {
+        "correlation": "ID",
+        "effects": "Contract[1..n]",
+        "validity": "Ref(s3.typed_payload)",
+        "request_occurrence": "ID",
+        "admission_occurrence": "ID"
+      },
+      "port": "Owner.authorize",
+      "pure": false,
+      "required_guarantee": "Returns live scoped capability plus durable receipt; metadata cannot mint runtime authority.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP21",
+      "contract": {
+        "name": "s3.op.publish",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "view": "s3.account_view|s3.projection_view[1]",
+        "audience": "s3.audience[1]",
+        "checks": "s3.assessment|s1.check[0..n]"
+      },
+      "parameters": {
+        "publication_id": "ID",
+        "package_id": "ID",
+        "digest": "Digest",
+        "backend": "Contract",
+        "closure": "Ref(s3.typed_payload)"
+      },
+      "port": "Storage.publish",
+      "pure": false,
+      "required_guarantee": "Exact bytes/ID/pins/permitted audience closure; manifest commit is publication boundary; no implicit pointer or remote dissemination.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP22",
+      "contract": {
+        "name": "s3.op.lookup_publication",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "command": "s3.effect_command[1]"
+      },
+      "parameters": {
+        "publication_id": "ID",
+        "package_id": "ID",
+        "digest": "Digest"
+      },
+      "port": "Storage.lookup_commit",
+      "pure": false,
+      "required_guarantee": "Same-key exact subject reconciliation; no new publication to resolve uncertain commit.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP23",
+      "contract": {
+        "name": "s3.op.select_current",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "selection": "s1.selection|s3.account_view|s3.projection_view[1]",
+        "committed_receipt": "s3.publication_receipt[1]"
+      },
+      "parameters": {
+        "namespace": "ID",
+        "name": "String",
+        "expected_revision": "String",
+        "selection_digest": "Digest"
+      },
+      "port": "Storage.cas_pointer",
+      "pure": false,
+      "required_guarantee": "Revision CAS at actual owner; value-only CAS is insufficient for ABA/no-missed-update claim.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP24",
+      "contract": {
+        "name": "s3.op.locate_artifact",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s1.artifact_snapshot|s1.artifact_declaration[1]"
+      },
+      "parameters": {
+        "locator": "String",
+        "retrieval_contract": "Contract",
+        "expected_digest": "Digest|NA"
+      },
+      "port": "Storage.locate",
+      "pure": false,
+      "required_guarantee": "Explicit access/budget; new locator does not repin original content or promise availability.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP25",
+      "contract": {
+        "name": "s3.op.revoke_access",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s1.artifact_snapshot|s3.typed_payload[1]",
+        "owner": "s3.component[1]"
+      },
+      "parameters": {
+        "scope": "Ref(s3.typed_payload)",
+        "revocation_rule": "Contract"
+      },
+      "port": "Storage.revoke",
+      "pure": false,
+      "required_guarantee": "Actual access owner/copy scope only; delivered copies and exposure not undone.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP26",
+      "contract": {
+        "name": "s3.op.delete_artifact",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "subject": "s1.artifact_snapshot[1]",
+        "owner": "s3.component[1]"
+      },
+      "parameters": {
+        "retention_rule": "Contract",
+        "copy_scope": "Ref(s3.typed_payload)"
+      },
+      "port": "Storage.delete",
+      "pure": false,
+      "required_guarantee": "Actual copy deletion/retention rights; preserves earlier evidence identity/history and remaining-copy obligations.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP27",
+      "contract": {
+        "name": "s3.op.import_evidence",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "sources": "s1.artifact_snapshot|s1.artifact_declaration[1..n]"
+      },
+      "parameters": {
+        "occurrence": "ID",
+        "reader": "Contract",
+        "prior_import": "Ref(s1.import_receipt)|NA"
+      },
+      "port": "Driver.read",
+      "pure": false,
+      "required_guarantee": "Exact supplied source identity; repeat import key is not native occurrence identity; no invented original launch.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP28",
+      "contract": {
+        "name": "s3.op.decode_output",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "artifacts": "s1.artifact_snapshot[1..n]",
+        "mappings": "s1.mapping[0..n]",
+        "source_outputs": "s1.output[0..n]"
+      },
+      "parameters": {
+        "decoder": "Contract",
+        "selectors": "Ref(s3.typed_payload)",
+        "target_contract": "Contract"
+      },
+      "port": "Driver.decode",
+      "pure": true,
+      "required_guarantee": "Pure decoding only over supplied bytes/context; preserve raw bytes and scoped gaps on failure.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP29",
+      "contract": {
+        "name": "s3.op.decide_response",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "actions": "s1.action_request[1..n]",
+        "information": "s1.output|s1.artifact_snapshot|s3.typed_payload[0..n]",
+        "policy": "s2.information_policy|s1.policy[1]",
+        "frontier": "s3.frontier[1]"
+      },
+      "parameters": {
+        "procedure": "Contract",
+        "bundle": "Contract",
+        "fallback": "forbidden|explicit_rule",
+        "fallback_rule": "Contract|NA"
+      },
+      "port": "Decision.select",
+      "pure": true,
+      "required_guarantee": "Pure, bounded selection from fixed permitted pre-send information; all external acquisition/computation separate operations.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP30",
+      "contract": {
+        "name": "s3.op.compile_request",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "run": "s2.run_binding[1]",
+        "recipient": "s1.component[1]",
+        "definitions": "s1.component|s1.configuration|s1.policy|s1.domain|s1.artifact_snapshot[1..n]"
+      },
+      "parameters": {
+        "request_occurrence": "ID",
+        "attempt_occurrence": "ID",
+        "projection": "Contract",
+        "route": "Contract"
+      },
+      "port": "Coordinator.compile",
+      "pure": true,
+      "required_guarantee": "Exact S2 projection/completion registry and supplied snapshots; metadata only; changed binding cannot reuse occurrence.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    },
+    {
+      "id": "OP31",
+      "contract": {
+        "name": "s3.op.close_collection",
+        "version": "0.1.0-proposal.3"
+      },
+      "roles": {
+        "period": "s3.collection_period[1]",
+        "frontier": "s3.frontier[1]",
+        "obligations": "s3.obligation[0..n]"
+      },
+      "parameters": {
+        "stopping_rule": "Contract",
+        "reason": "Code",
+        "expected_journal_revision": "String"
+      },
+      "port": "Journal.append",
+      "pure": false,
+      "required_guarantee": "Immutable closure with unresolved effects retained; no native cancel/release or future observation implied.",
+      "unknown_input_rule": "Preserve all declared slots with missingness; withhold invocation/admission if any operation-required known identity/value/count/coverage is not established.",
+      "parameter_rule": "Exactly these keys once; K(T) wrapper for each; NA only where the type explicitly permits it. No additional keys or implicit defaults."
+    }
+  ],
+  "runtime_values": {
+    "Issue": {
+      "code": "Code",
+      "scope": "Scope",
+      "evidence": "Ref[]"
+    },
+    "CallResult[T]": {
+      "state": "completed|partial|rejected",
+      "value": "T or runtime None",
+      "records": "RecordDelta",
+      "issues": "Issue[]",
+      "effects": "EffectBoundary[]"
+    },
+    "EffectBoundary": {
+      "command": "KnownRef(s3.effect_command)",
+      "boundary": "not_crossed|may_have_crossed|crossed|not_applicable",
+      "acceptance": "K(Boolean)",
+      "evidence": "Ref[]",
+      "transmission": "Ref(s3.transmission)"
+    },
+    "PreparedOperation": {
+      "binding": "KnownRef(s3.operation_binding)",
+      "source_view": "PinnedView",
+      "requirements": "RequirementEvaluation",
+      "driver": "ExactDriverDescriptor",
+      "dependencies": "PinnedClosure",
+      "command": "KnownRef(s3.effect_command)"
+    },
+    "LiveAdmission": {
+      "prepared": "PreparedOperation",
+      "owner_receipts": "OwnerReceipt[]",
+      "live_grants": "OpaqueGrant[]",
+      "journal_head": "JournalHead",
+      "validity": "ValidityContext",
+      "admission_occurrence": "ID",
+      "admission_plan": "KnownRef(s3.typed_payload)",
+      "assessment": "KnownRef(s3.assessment)"
+    },
+    "IssueToken": {
+      "command": "KnownRef(s3.effect_command)",
+      "intent_commit": "JournalCommit",
+      "owner_epoch": "OpaqueEpoch",
+      "binding_digest": "Digest",
+      "transmission": "KnownRef(s3.transmission)",
+      "runtime_permit": "OpaqueIssuePermit or runtime None"
+    },
+    "JournalHead": {
+      "account": "KnownRef(s3.account)",
+      "revision": "Index",
+      "snapshot": "PinnedView"
+    },
+    "PinnedView": {
+      "package_id": "ID",
+      "format": "Contract",
+      "digest": "Digest",
+      "source_bytes": "bytes",
+      "read_scope": "ReadCapability"
+    },
+    "NativeBatch": {
+      "source": "SourceIdentity",
+      "occurrence": "ID",
+      "raw": "CapturedBytes[]",
+      "observations": "RecordDelta",
+      "next_cursor": "K(Cursor)",
+      "coverage": "Scope",
+      "source_ack": "K(SourceAck)"
+    },
+    "LookupResult": {
+      "classification": "positive|negative|unknown|disputed",
+      "matches": "NativeDescriptor[]",
+      "query_binding": "Digest",
+      "coverage": "QueryCoverage",
+      "evidence": "RecordDelta"
+    },
+    "DecisionResult": {
+      "actions": "KnownRef[]",
+      "selected": "IndexList(KnownRef(s1.action_response))",
+      "input_frontier": "KnownRef(s3.frontier)",
+      "rule": "Contract",
+      "issues": "Issue[]"
+    },
+    "CoordinatorContext": {
+      "read": "PinnedReadContext",
+      "journal": "JournalPort",
+      "storage": "StoragePort",
+      "owners": "OwnerMap",
+      "drivers": "ExactDriverRegistry",
+      "decisions": "ExactDecisionRegistry",
+      "control_capability": "OpaqueControlCapability",
+      "clock": "ClockPort",
+      "limits": "Limits"
+    },
+    "RecordDelta": {
+      "records": "S3Record[]",
+      "roots": "KnownRef[]",
+      "dependencies": "PinnedView[]",
+      "native_additions": "OwnedS1Delta[]",
+      "scientific_additions": "OwnedS2Delta[]"
+    },
+    "CommissionSpec": {
+      "account_id": "ID",
+      "purpose": "prepare|execute|observe",
+      "target": "ImmutableTargetDefinition",
+      "audience": "KnownRef(s3.audience)",
+      "requirements": "KnownRef(s3.requirement_context)"
+    },
+    "OperationRequest": {
+      "operation": "Contract",
+      "roles": "RoleBinding[]",
+      "parameters": "OperationParameter[]",
+      "request_occurrence": "ID"
+    },
+    "ExactOperationRequest": {
+      "command": "KnownRef(s3.effect_command)",
+      "binding": "ResolvedOperationBinding",
+      "inputs": "PinnedInputs",
+      "descriptor": "ExactDriverDescriptor",
+      "source_view": "PinnedView"
+    },
+    "ExactOwnerRequest": {
+      "operation": "Contract",
+      "owner": "KnownRef(s3.component)",
+      "correlation": "ID",
+      "binding": "ResolvedOperationBinding",
+      "parameters": "OperationParameter[]",
+      "evidence": "PinnedInputs",
+      "request_occurrence": "ID",
+      "admission_occurrence": "ID"
+    },
+    "PinnedReadContext": {
+      "views": "PinnedView[]",
+      "access": "ReadCapability",
+      "registry": "SuppliedRegistryContext",
+      "limits": "Limits"
+    },
+    "PinnedInputs": {
+      "entries": "BoundInput[]",
+      "source_views": "PinnedView[]"
+    },
+    "BoundInput": {
+      "role": "Code",
+      "reference": "KnownRef",
+      "record": "ImmutableRecord",
+      "source_package": "ID",
+      "source_digest": "Digest"
+    },
+    "ResolvedOperationBinding": {
+      "record": "s3.operation_binding",
+      "context": "PayloadContext",
+      "inputs": "PinnedInputs"
+    },
+    "ExactDriverDescriptor": {
+      "component": "KnownRef(s3.component)",
+      "operation": "Contract",
+      "input_contract": "Contract",
+      "output_contract": "Contract",
+      "implementation": "PinnedArtifactIdentity",
+      "guarantees": "SupportClaim[]",
+      "method": "SuppliedCallable"
+    },
+    "PreparedNativeCall": {
+      "binding": "ResolvedOperationBinding",
+      "descriptor": "ExactDriverDescriptor",
+      "invocation": "DecodedInvocation",
+      "inputs": "PinnedInputs"
+    },
+    "DriverDeclaration": {
+      "component": "KnownRef(s3.component)",
+      "methods": "ExactDriverDescriptor[]",
+      "dependencies": "SupportClaim[]"
+    },
+    "DecisionDeclaration": {
+      "component": "KnownRef(s3.component)",
+      "procedure": "Contract",
+      "input_contract": "Contract",
+      "output_contract": "Contract",
+      "information_requirements": "Contract",
+      "fallback_rule": "K(Contract)",
+      "implementation": "PinnedArtifactIdentity"
+    },
+    "RecoveryGoal": {
+      "kind": "wait|reconcile|reconnect|retransmit|restart|stop|close",
+      "scope": "Scope",
+      "policy": "Contract"
+    },
+    "RecoveryPlan": {
+      "goal": "RecoveryGoal",
+      "operations": "OperationRequest[]",
+      "held_requirements": "Issue[]",
+      "obligations": "KnownRef(s3.obligation)[]"
+    },
+    "RequirementEvaluation": {
+      "requirements": "KnownRef(s3.requirement_context)",
+      "established": "ClaimRequest[]",
+      "withheld": "ClaimRequest[]",
+      "issues": "Issue[]",
+      "frontier": "KnownRef(s3.frontier)"
+    },
+    "InformationRequirements": {
+      "actions": "PinnedActionSet",
+      "sources": "RequirementSpec[]",
+      "policy": "PinnedPolicy",
+      "context": "PayloadContext"
+    },
+    "OwnerReceiptAndOptionalLiveGrant": {
+      "receipt": "KnownRef(s3.owner_receipt)",
+      "revision": "String",
+      "grant": "OpaqueGrant or runtime None",
+      "effects": "EffectBoundary[]"
+    },
+    "OwnerSnapshot": {
+      "owner": "KnownRef(s3.component)",
+      "revision": "K(String)",
+      "availability": "RequirementEvaluation",
+      "evidence": "RecordDelta"
+    },
+    "ValidityReceipt": {
+      "binding_digest": "Digest",
+      "owner": "KnownRef(s3.component)",
+      "decision": "permitted|denied|unresolved",
+      "evidence": "RecordDelta"
+    },
+    "JournalCommit": {
+      "receipt": "KnownRef(s3.journal_receipt)",
+      "head": "JournalHead",
+      "binding_digest": "Digest",
+      "durability": "Contract"
+    },
+    "CaptureCommit": {
+      "commit": "JournalCommit",
+      "source": "SourceIdentity",
+      "occurrence": "ID",
+      "artifacts": "KnownRef(s1.artifact_snapshot)[]",
+      "durable_cursor": "K(Cursor)"
+    },
+    "IssueReceipt": {
+      "command": "KnownRef(s3.effect_command)",
+      "token": "IssueToken",
+      "result": "DriverEvidence",
+      "effects": "EffectBoundary[]",
+      "transmission": "KnownRef(s3.transmission)",
+      "admission_occurrence": "ID"
+    },
+    "DriverEvidence": {
+      "binding": "KnownRef(s3.operation_binding)",
+      "records": "RecordDelta",
+      "subjects": "IndexList(Ref)",
+      "receipts": "IndexList(Ref)",
+      "assessments": "IndexList(Ref)",
+      "live_handles": "OpaqueHandle[]"
+    },
+    "NativeStart": {
+      "attempt": "KnownRef(s1.attempt)",
+      "native_subject": "K(KnownRef(s3.native_subject))",
+      "connection": "OpaqueHandle or runtime None",
+      "evidence": "DriverEvidence"
+    },
+    "NativeConnection": {
+      "subject": "KnownRef(s3.native_subject)",
+      "attempt": "Ref(s1.attempt)",
+      "role": "Code",
+      "owner_epoch": "String",
+      "handle": "OpaqueHandle",
+      "evidence": "DriverEvidence"
+    },
+    "SourceIdentity": {
+      "subject": "KnownRef",
+      "protocol": "Contract",
+      "filter_digest": "Digest",
+      "generation": "K(String)",
+      "consumer": "K(String)",
+      "identity_rule": "Contract"
+    },
+    "QueryCoverage": {
+      "scope": "Scope",
+      "paths": "Contract[]",
+      "interval": "K(TimeInterval)",
+      "retention": "Contract",
+      "complete": "K(Boolean)",
+      "evidence": "RecordDelta",
+      "no_late_acceptance": "K(Boolean)"
+    },
+    "PublicationReceipt": {
+      "receipt": "KnownRef(s3.publication_receipt)",
+      "package_id": "ID",
+      "digest": "Digest",
+      "commit_state": "committed|unconfirmed|failed|disputed"
+    },
+    "CommitLookup": {
+      "state": "committed|not_committed|unknown|disputed",
+      "package_id": "ID",
+      "digest": "Digest",
+      "evidence": "RecordDelta"
+    },
+    "PointerReceipt": {
+      "namespace": "ID",
+      "name": "String",
+      "previous_revision": "Index",
+      "current_revision": "Index",
+      "selection": "PinnedSelection",
+      "evidence": "RecordDelta"
+    },
+    "PackageDraft": {
+      "package_id": "ID",
+      "format": "Contract",
+      "bytes": "bytes",
+      "digest": "Digest",
+      "audience": "AudienceClosure",
+      "withheld": "Issue[]"
+    },
+    "PinnedArtifactIdentity": {
+      "reference": "KnownRef(s1.artifact_snapshot)",
+      "content_digest": "Digest",
+      "selector": "K(Selector)",
+      "source_view": "PinnedView"
+    },
+    "PinnedSelection": {
+      "reference": "KnownRef",
+      "source_view": "PinnedView",
+      "commit_receipt": "PublicationReceipt"
+    },
+    "AudienceClosure": {
+      "audience": "KnownRef(s3.audience)",
+      "allowed_records": "KnownRef[]",
+      "allowed_dependencies": "PinnedView[]",
+      "policy": "Contract",
+      "checks": "KnownRef(s3.assessment)[]"
+    },
+    "AccessScope": {
+      "owner": "KnownRef(s3.component)",
+      "recipients": "KnownRef[]",
+      "rights": "Contract[]",
+      "subject": "PinnedArtifactIdentity"
+    },
+    "CopyRetentionScope": {
+      "owner": "KnownRef(s3.component)",
+      "copies": "KnownRef[]",
+      "retention_rule": "Contract",
+      "subject": "PinnedArtifactIdentity"
+    },
+    "CapturedBytes": {
+      "occurrence": "ID",
+      "source": "SourceIdentity",
+      "bytes": "bytes",
+      "extent": "Scope",
+      "metadata": "RecordDelta"
+    },
+    "ClaimRequest": {
+      "contract": "Contract",
+      "scope": "Scope",
+      "parameters": "PinnedInputs"
+    },
+    "OwnerBindingReceipts": {
+      "receipts": "KnownRef(s3.owner_receipt)[]",
+      "binding_digest": "Digest",
+      "validity": "ValidityContext"
+    },
+    "ValidityContext": {
+      "owner_epochs": "OwnerEpochBinding[]",
+      "deadline": "K(Time)",
+      "requirements": "Contract[]",
+      "evidence": "RecordDelta"
+    },
+    "OwnerEpochBinding": {
+      "owner": "KnownRef(s3.component)",
+      "epoch": "String",
+      "binding_digest": "Digest",
+      "validity": "PinnedInputs"
+    },
+    "TimeInterval": {
+      "start": "K(Time)",
+      "end": "K(Time)",
+      "clock": "K(KnownRef)",
+      "comparison": "Contract"
+    },
+    "ClockReading": {
+      "value": "Time",
+      "source": "KnownRef(s3.component)",
+      "evidence": "RecordDelta"
+    },
+    "TransactionLookup": {
+      "state": "committed|not_committed|unknown|disputed",
+      "transaction": "ID",
+      "binding_digest": "Digest",
+      "commit": "K(KnownRef(s3.journal_receipt))",
+      "records": "RecordDelta"
+    },
+    "OwnedS1Delta": {
+      "context": "PinnedWorkingS1Context",
+      "value": "existing S1 EvidenceDelta",
+      "scope": "Scope"
+    },
+    "OwnedS2Delta": {
+      "context": "existing DraftContext",
+      "value": "existing S2 RecordDelta",
+      "scope": "Scope"
+    },
+    "CommitDelta": {
+      "records": "S3Record[]",
+      "roots": "KnownRef[]",
+      "dependencies": "PinnedView[]"
+    },
+    "PinnedClosure": {
+      "views": "PinnedView[]",
+      "record_bindings": "BoundInput[]"
+    }
+  },
+  "ports": [
+    {
+      "port": "Coordinator.open",
+      "arguments": {
+        "commission": "CommissionSpec",
+        "context": "CoordinatorContext"
+      },
+      "returns": "CallResult[AccountView]",
+      "guarantee": "Append immutable commission under supplied storage/control authority; no native launch."
+    },
+    {
+      "port": "Coordinator.plan",
+      "arguments": {
+        "view": "PinnedView",
+        "request": "OperationRequest",
+        "context": "PinnedReadContext"
+      },
+      "returns": "CallResult[PreparedOperation]",
+      "guarantee": "Pure supplied-data validation; never probe/install/fetch or reserve."
+    },
+    {
+      "port": "Coordinator.compile",
+      "arguments": {
+        "run": "KnownRef(s2.run_binding)",
+        "occurrence": "S1ProjectionOccurrence",
+        "context": "PinnedProjectionContext"
+      },
+      "returns": "CallResult[S1Projection]",
+      "guarantee": "Use exact S2 compiler/completion/projection contract; freeze R before native evidence O."
+    },
+    {
+      "port": "Coordinator.admit",
+      "arguments": {
+        "prepared": "PreparedOperation",
+        "expected_head": "JournalHead",
+        "context": "CoordinatorContext",
+        "admission_occurrence": "ID"
+      },
+      "returns": "CallResult[LiveAdmission]",
+      "guarantee": "Request owners in declared deterministic order; journal each correlation; partial/unknown hold never yields executable grant."
+    },
+    {
+      "port": "Coordinator.issue",
+      "arguments": {
+        "admission": "LiveAdmission",
+        "context": "CoordinatorContext",
+        "transmission_occurrence": "ID"
+      },
+      "returns": "CallResult[IssueReceipt]",
+      "guarantee": "Durable intent before driver; revalidate actual owners/epochs; one explicitly authorized forwarding; no automatic retry."
+    },
+    {
+      "port": "Coordinator.recover",
+      "arguments": {
+        "view": "PinnedView",
+        "goal": "RecoveryGoal",
+        "context": "PinnedReadContext"
+      },
+      "returns": "CallResult[RecoveryPlan]",
+      "guarantee": "Pure next-action proposal, with missing evidence and obligations; never hidden launch, cancel or lookup."
+    },
+    {
+      "port": "Coordinator.freeze",
+      "arguments": {
+        "view": "PinnedView",
+        "audience": "KnownRef(s3.audience)",
+        "claims": "ClaimRequest[]",
+        "context": "PinnedReadContext"
+      },
+      "returns": "CallResult[PackageDraft]",
+      "guarantee": "Pure candidate exact-byte assembly; holds absent pins/rights; no retrieval/publication."
+    },
+    {
+      "port": "Owner.inspect",
+      "arguments": {
+        "binding": "OperationBinding",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerSnapshot]",
+      "guarantee": "Actual control/read scope; remote introspection costs admitted under explicit parent control capability."
+    },
+    {
+      "port": "Owner.reserve",
+      "arguments": {
+        "request": "ExactOwnerRequest",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerReceiptAndOptionalLiveGrant]",
+      "guarantee": "One owner correlation per exact binding; duplicate same-key returns prior hold, changed binding conflicts; partial multi-owner reservation is not global admission."
+    },
+    {
+      "port": "Owner.reconcile",
+      "arguments": {
+        "request": "ExactOwnerRequest",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerReceiptAndOptionalLiveGrant]",
+      "guarantee": "Read/reconcile the original owner key; no replacement hold after lost ACK until identity is reconciled."
+    },
+    {
+      "port": "Owner.renew",
+      "arguments": {
+        "request": "ExactOwnerRequest",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerReceiptAndOptionalLiveGrant]",
+      "guarantee": "Actual owner decides validity; local lease text never prolongs remote rights."
+    },
+    {
+      "port": "Owner.settle",
+      "arguments": {
+        "request": "ExactOwnerRequest",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerReceiptAndOptionalLiveGrant]",
+      "guarantee": "Evidence/revision/scope aware liability; final bill replacement and usage not double counted."
+    },
+    {
+      "port": "Owner.release",
+      "arguments": {
+        "request": "ExactOwnerRequest",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerReceiptAndOptionalLiveGrant]",
+      "guarantee": "Release only owner-permitted capacity/liability scope; no native termination or zero cost inferred."
+    },
+    {
+      "port": "Owner.authorize",
+      "arguments": {
+        "request": "ExactOwnerRequest",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[OwnerReceiptAndOptionalLiveGrant]",
+      "guarantee": "Returns live scoped capability plus durable receipt; metadata cannot mint runtime authority."
+    },
+    {
+      "port": "Owner.check",
+      "arguments": {
+        "grant": "OpaqueGrant",
+        "binding": "OperationBinding",
+        "boundary": "BoundaryKind",
+        "context": "OwnerControlContext"
+      },
+      "returns": "CallResult[ValidityReceipt]",
+      "guarantee": "Actual owner verifies exact current grant; no JSON grant reconstruction."
+    },
+    {
+      "port": "Driver.describe",
+      "arguments": {
+        "context": "SuppliedRegistryContext"
+      },
+      "returns": "DriverDeclaration",
+      "guarantee": "Pure; exact versions, formats, guarantee/fault scopes and actual implemented methods."
+    },
+    {
+      "port": "Driver.prepare",
+      "arguments": {
+        "binding": "OperationBinding",
+        "inputs": "PinnedInputs",
+        "context": "PureDriverContext"
+      },
+      "returns": "CallResult[PreparedNativeCall]",
+      "guarantee": "Pure descriptor creation only; no native imports/probes/realization concealed."
+    },
+    {
+      "port": "Driver.realize",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[RealizationEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.stage",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[StagingEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.invoke",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[NativeStart]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.lookup",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[LookupResult]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.attach",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[NativeConnection]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.observe",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[NativeBatch]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.ack",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[SourceAck]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.acquire",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[InformationEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.compute",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[ComputationEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.deliver",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[DeliveryEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.lookup_delivery",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[DeliveryLookup]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.stop",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[StopEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.restore",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[StateLoadEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.read",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "LiveDriverContext",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "sink": "CaptureSink"
+      },
+      "returns": "CallResult[ImportEvidence]",
+      "guarantee": "Explicit supplied native mechanism under bound runtime grants. Exceptions after intent preserve uncertainty; no automatic resend, reset or control escalation."
+    },
+    {
+      "port": "Driver.decode",
+      "arguments": {
+        "request": "ExactOperationRequest",
+        "context": "PureDriverContext"
+      },
+      "returns": "CallResult[InterpretationEvidence]",
+      "guarantee": "Exact operation-specific input/output contracts; evidence capture and boundary status required. No implicit fallback/retry. Pure decode consumes only supplied bytes."
+    },
+    {
+      "port": "Decision.describe",
+      "arguments": {
+        "context": "SuppliedRegistryContext"
+      },
+      "returns": "DecisionDeclaration",
+      "guarantee": "Pure exact rule, required information/provider formats, output/cardinality and fallback declaration."
+    },
+    {
+      "port": "Decision.requirements",
+      "arguments": {
+        "actions": "PinnedActionSet",
+        "policy": "PinnedPolicy",
+        "context": "PinnedReadContext"
+      },
+      "returns": "CallResult[InformationRequirements]",
+      "guarantee": "Pure; changes in action/source context require distinct input binding; repeated question text is insufficient."
+    },
+    {
+      "port": "Decision.select",
+      "arguments": {
+        "actions": "PinnedActionSet",
+        "policy": "PinnedPolicy",
+        "inputs": "PinnedInputs",
+        "frontier": "KnownRef(s3.frontier)",
+        "context": "PureDecisionContext"
+      },
+      "returns": "CallResult[DecisionResult]",
+      "guarantee": "Pure bounded selection; returned choice frozen before send; unsupported/missing source holds affected choice."
+    },
+    {
+      "port": "Journal.head",
+      "arguments": {
+        "account": "KnownRef(s3.account)",
+        "context": "JournalReadContext"
+      },
+      "returns": "CallResult[JournalHead]",
+      "guarantee": "Explicit read consistency/fault model; local cache does not prove latest owner epoch."
+    },
+    {
+      "port": "Journal.append",
+      "arguments": {
+        "account": "KnownRef(s3.account)",
+        "expected_revision": "Index",
+        "transaction": "ID",
+        "delta": "CommitDelta",
+        "context": "JournalWriteContext"
+      },
+      "returns": "CallResult[JournalCommit]",
+      "guarantee": "Atomic exact-record append plus account revision; same tx/binding reconciles, changed binding conflicts; reject stale writer at storage boundary."
+    },
+    {
+      "port": "Journal.prepare_issue",
+      "arguments": {
+        "command": "KnownRef(s3.effect_command)",
+        "expected_head": "JournalHead",
+        "grant_bindings": "OwnerBindingReceipts",
+        "context": "JournalWriteContext",
+        "transmission": "KnownRef(s3.transmission)"
+      },
+      "returns": "CallResult[IssueToken]",
+      "guarantee": "prepare_issue atomically records the original D intent and its one-time local forwarding claim. Only the first definitely committed claim may receive an issuer-held OpaqueIssuePermit, bound to C/D/binding/epoch and consumed by the guarded driver boundary. Same-key replay, transaction lookup, lost/uncertain commit or process restart never mints a fresh permit for D. A returned historical token has runtime_permit=None. Field copies/JSON cannot forge the permit. Crash after claim and before actual send conservatively retains possible effects until scoped reconciliation. This controls coordinator forwarding, not provider duplicate execution or native exactly-once."
+    },
+    {
+      "port": "Journal.commit_capture",
+      "arguments": {
+        "source": "SourceIdentity",
+        "expected_revision": "Index",
+        "batch_occurrence": "ID",
+        "bytes": "CapturedBytes[]",
+        "delta": "CommitDelta",
+        "next_cursor": "K(Cursor)",
+        "context": "CaptureWriteContext"
+      },
+      "returns": "CallResult[CaptureCommit]",
+      "guarantee": "Raw bytes/identity/occurrence and durable checkpoint committed as one logical transaction. No advance on unknown commit; orphan staging tracked."
+    },
+    {
+      "port": "Journal.snapshot",
+      "arguments": {
+        "account": "KnownRef(s3.account)",
+        "revision": "Index",
+        "context": "JournalReadContext"
+      },
+      "returns": "CallResult[PinnedView]",
+      "guarantee": "Return exact immutable source bytes/digest; no new-current substitution."
+    },
+    {
+      "port": "Storage.publish",
+      "arguments": {
+        "publication_id": "ID",
+        "bytes": "bytes",
+        "expected_id": "ID",
+        "expected_digest": "Digest",
+        "audience": "AudienceClosure",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "context": "StorageContext"
+      },
+      "returns": "CallResult[PublicationReceipt]",
+      "guarantee": "Exact owner/fault/audience scope; commit/availability evidence external to hashed subject; no global erasure, authority or remote delivery inferred."
+    },
+    {
+      "port": "Storage.lookup_commit",
+      "arguments": {
+        "publication_id": "ID",
+        "package_id": "ID",
+        "expected_digest": "Digest",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "context": "StorageContext"
+      },
+      "returns": "CallResult[CommitLookup]",
+      "guarantee": "Exact owner/fault/audience scope; commit/availability evidence external to hashed subject; no global erasure, authority or remote delivery inferred."
+    },
+    {
+      "port": "Storage.cas_pointer",
+      "arguments": {
+        "namespace": "ID",
+        "name": "String",
+        "expected_revision": "Index",
+        "committed_selection": "PinnedSelection",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "context": "StorageContext"
+      },
+      "returns": "CallResult[PointerReceipt]",
+      "guarantee": "Exact owner/fault/audience scope; commit/availability evidence external to hashed subject; no global erasure, authority or remote delivery inferred."
+    },
+    {
+      "port": "Storage.locate",
+      "arguments": {
+        "subject": "PinnedArtifactIdentity",
+        "locator": "String",
+        "expected_digest": "K(Digest)",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "context": "StorageContext"
+      },
+      "returns": "CallResult[AvailabilityEvidence]",
+      "guarantee": "Exact owner/fault/audience scope; commit/availability evidence external to hashed subject; no global erasure, authority or remote delivery inferred."
+    },
+    {
+      "port": "Storage.revoke",
+      "arguments": {
+        "subject": "PinnedArtifactIdentity",
+        "scope": "AccessScope",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "context": "StorageContext"
+      },
+      "returns": "CallResult[RevocationEvidence]",
+      "guarantee": "Exact owner/fault/audience scope; commit/availability evidence external to hashed subject; no global erasure, authority or remote delivery inferred."
+    },
+    {
+      "port": "Storage.delete",
+      "arguments": {
+        "subject": "PinnedArtifactIdentity",
+        "scope": "CopyRetentionScope",
+        "grants": "OpaqueGrantSet",
+        "issue_token": "IssueToken",
+        "context": "StorageContext"
+      },
+      "returns": "CallResult[DeletionEvidence]",
+      "guarantee": "Exact owner/fault/audience scope; commit/availability evidence external to hashed subject; no global erasure, authority or remote delivery inferred."
+    },
+    {
+      "port": "Journal.lookup_transaction",
+      "arguments": {
+        "account": "KnownRef(s3.account)",
+        "transaction": "ID",
+        "expected_binding": "Digest",
+        "context": "JournalReadContext"
+      },
+      "returns": "CallResult[TransactionLookup]",
+      "guarantee": "Reconcile exact original intent/capture/append transaction after lost ACK; unknown is not uncommitted. Intent transaction ID equals the allocated transmission occurrence ID."
+    },
+    {
+      "port": "Clock.now",
+      "arguments": {
+        "context": "ClockReadContext"
+      },
+      "returns": "CallResult[ClockReading]",
+      "guarantee": "Actual recorder/control clock reading with uncertainty. Remote clock acquisition is an explicit admitted effect; no global native ordering inferred."
+    }
+  ],
+  "wire_adaptation": "Proposed revision2 changes only S3; all S1/S2 contracts remain their exact existing revision1. Runtime values/capabilities are never serialized by object introspection.",
+  "closure_rules": [
+    "Every role and parameter key from the operation entry occurs once. No undeclared key. Required known/effect minima are operation admission predicates, not permission to discard incomplete history.",
+    "KnownRef targets resolve to exact listed types. A driver extension uses a selected exact input/output contract; unknown critical payload grammars hold execution.",
+    "S3 typed_payload.reference_context explicitly binds all embedded references to that package/format; never infer context from the S1 artifact storage package.",
+    "No unresolved reference receives a stand-in UUID. Unknown S2 binding preserves evidence but blocks a newly issued scientific run.",
+    "Every returned effect boundary is per-command, independent of operation return state. Exceptions/crash after prepared intent retain possible effects until reconciled.",
+    "No coordinator may receive a valid LiveAdmission when a required owner decision/hold/validity or strict guarantee is unresolved."
+  ],
+  "parameter_grammars": {
+    "function_invocation": {
+      "kind": "function",
+      "entrypoint": "String",
+      "arguments": "Ref(s3.typed_payload)",
+      "callable_binding": "Contract"
+    },
+    "process_invocation": {
+      "kind": "process",
+      "executable": "String",
+      "argv": "String[]",
+      "cwd": "String",
+      "environment_policy": "Ref(s1.policy)",
+      "secret_slots": "SecretSlot[]",
+      "shell": "false"
+    },
+    "service_invocation": {
+      "kind": "service",
+      "endpoint": "Ref(s1.endpoint)",
+      "request": "Ref(s3.typed_payload)",
+      "secret_slots": "SecretSlot[]"
+    },
+    "SecretSlot": {
+      "owner": "Ref(s3.component)",
+      "slot": "Code",
+      "required": "Boolean"
+    },
+    "native_descriptor": {
+      "authority": "String",
+      "namespace": "String",
+      "native_id": "String",
+      "incarnation": "K(String)",
+      "identity_rule": "Contract",
+      "validity": "Ref(s3.typed_payload)",
+      "basis": "Ref[]"
+    },
+    "idempotency": {
+      "owner": "Ref(s3.component)",
+      "key": "String",
+      "binding_digest": "Digest",
+      "scope": "Scope",
+      "valid_until": "Time",
+      "guarantee": "Contract",
+      "basis": "Ref[]"
+    },
+    "observation_subscription": {
+      "source_contract": "Contract",
+      "native_subject": "Ref(s3.native_subject)",
+      "filter": "Ref(s3.typed_payload)",
+      "generation": "K(String)",
+      "consumer_group": "K(String)",
+      "retention_rule": "Contract"
+    },
+    "bundle_correlation": {
+      "contract": "Contract",
+      "entries": "ActionResponsePair[1..n]",
+      "physical_operation": "Contract",
+      "receiver_atomicity": "all_or_none|per_entry|unresolved"
+    },
+    "ActionResponsePair": {
+      "action": "Ref(s1.action_request)",
+      "response": "Ref(s1.action_response)",
+      "endpoint": "Ref(s1.endpoint)"
+    },
+    "query": {
+      "subject": "Ref",
+      "keys": "Ref(s3.typed_payload)",
+      "time_scope": "Ref(s3.typed_payload)",
+      "retention": "Contract",
+      "negative_coverage": "Contract"
+    },
+    "reservation_amounts": {
+      "entries": "Amount[1..n]"
+    },
+    "Amount": {
+      "resource": "Contract",
+      "unit": "Contract",
+      "quantity": "Number",
+      "scope": "Scope",
+      "aggregation": "Contract"
+    },
+    "validity": {
+      "owner": "Ref(s3.component)",
+      "scope": "Scope",
+      "epoch": "String",
+      "valid_from": "K(Time)",
+      "valid_until": "K(Time)",
+      "receiver_check": "Contract",
+      "revocation": "Contract"
+    },
+    "collection_bounds": {
+      "max_events": "K(PositiveIndex)",
+      "max_bytes": "K(PositiveIndex)",
+      "deadline": "K(Time)",
+      "stopping_rule": "Contract"
+    },
+    "source_filter": {
+      "contract": "Contract",
+      "parameters": "Ref(s3.typed_payload)[0..n]"
+    },
+    "unit": {
+      "contract": "Contract",
+      "resource": "Contract",
+      "owner_scope": "Scope"
+    },
+    "audience_closure": {
+      "audience": "Ref(s3.audience)",
+      "members": "Ref[1..n]",
+      "dependencies": "Ref[0..n]",
+      "policy": "Contract",
+      "checks": "Ref(s3.assessment)[0..n]"
+    },
+    "selection_pointer": {
+      "namespace": "ID",
+      "name": "String",
+      "expected_revision": "Index",
+      "selected_package": "ID",
+      "selected_digest": "Digest"
+    },
+    "control_allocation": {
+      "owner": "Ref(s3.component)",
+      "allowed_operations": "Contract[1..n]",
+      "limits": "Amount[0..n]",
+      "validity": "Ref(s3.typed_payload)"
+    },
+    "admission_plan": {
+      "admission_occurrence": "ID",
+      "command": "KnownRef(s3.effect_command)",
+      "binding_digest": "Digest",
+      "basis_frontier": "KnownRef(s3.frontier)",
+      "requirements": "KnownRef(s3.requirement_context)",
+      "owner_requests": "OwnerRequestPlan[1..n]"
+    },
+    "OwnerRequestPlan": {
+      "owner": "KnownRef(s3.component)",
+      "correlation": "ID",
+      "request_occurrence": "ID",
+      "operation": "Contract",
+      "expected_revision": "K(String)"
+    },
+    "native_state_locator": {
+      "owner": "Ref(s3.component)",
+      "identity": "NativeDescriptor",
+      "state_contract": "Contract",
+      "validity": "Ref(s3.typed_payload)",
+      "loader_contract": "Contract",
+      "basis": "Ref[]"
+    }
+  },
+  "grammar_rules": [
+    "All parameter grammar fields required/closed. Native driver parameters select one exact declared contract with a supplied pure decoder; no arbitrary dictionary fallback.",
+    "Only nonnegative finite quantities in capacity/charge fields, positive canonical Index text for limits, start<=end for byte ranges, valid UTC instants/uncertainties, and exact source-selector bounds.",
+    "Changing effect content/key/recipient/required guarantee needs a new related command. Changing runtime ownership requires an explicit new admission and forwarding occurrence; it does not extend native idempotency retention or mutate the original command.",
+    "An empty native lookup needs adequate negative coverage/retention/incarnation to prove no acceptance; unknown stays unknown.",
+    "Secret slots name owner-managed runtime inputs; the values and bearer tokens are not captured in these public records. Missing secret-version evidence limits reproducibility claims."
+  ],
+  "family_role_type_rule": "Each C01-C18 role from the base catalog has a typed union below; all family roles remain indexes. Positive cardinalities are imposed by applicable operation rows and named claim/recovery laws, not a universal live tier.",
+  "family_role_types": {
+    "C01": {
+      "s3.role.intent": "s2.plan_snapshot|s2.trial_slot|s2.task_definition",
+      "s3.role.bindings": "s2.run_binding|s2.request_binding_receipt|s3.operation_binding",
+      "s3.role.selection": "s2.selection_rule|s2.response_contract|s3.assessment",
+      "s3.role.timing": "s2.commitment_receipt|s2.lifecycle_event|s2.assessment|s3.frontier|s3.assessment"
+    },
+    "C02": {
+      "s3.role.specification": "s2.transform_spec|s3.typed_payload",
+      "s3.role.commands": "s3.effect_command",
+      "s3.role.inputs": "s1.artifact_snapshot|s2.case_revision|s3.typed_payload",
+      "s3.role.outputs": "s1.output|s1.artifact_snapshot|s2.case_revision",
+      "s3.role.checks": "s1.check|s2.assessment|s3.assessment",
+      "s3.role.state": "s1.output|s1.state_load|s3.recovery"
+    },
+    "C03": {
+      "s3.role.presentations": "s1.presentation",
+      "s3.role.recipients": "s1.component|s1.endpoint|s3.native_subject|s3.component",
+      "s3.role.transfers": "s3.transmission|s1.transmission",
+      "s3.role.stable_use": "s3.assessment",
+      "s3.role.disclosure": "s3.exposure_entry"
+    },
+    "C04": {
+      "s3.role.commands": "s3.effect_command",
+      "s3.role.bindings": "s2.run_binding|s2.request_binding_receipt|s3.operation_binding",
+      "s3.role.requirements": "s3.requirement_context|s2.requirement",
+      "s3.role.authority": "s1.authority_evidence|s3.owner_receipt",
+      "s3.role.reservations": "s3.owner_receipt|s3.resource_entry|s3.exposure_entry",
+      "s3.role.transmissions": "s3.transmission|s1.transmission"
+    },
+    "C05": {
+      "s3.role.subjects": "s3.native_subject",
+      "s3.role.associations": "s3.native_association",
+      "s3.role.connections": "s3.ownership_context|s3.typed_payload"
+    },
+    "C06": {
+      "s3.role.contexts": "s3.ownership_context",
+      "s3.role.guarantees": "s3.support_claim|s3.assessment"
+    },
+    "C07": {
+      "s3.role.periods": "s3.collection_period",
+      "s3.role.source_positions": "s3.source_frontier",
+      "s3.role.capture": "s3.journal_receipt|s1.artifact_snapshot|s1.observation",
+      "s3.role.closures": "s3.collection_closure"
+    },
+    "C08": {
+      "s3.role.artifacts": "s1.artifact_snapshot|s1.artifact_declaration",
+      "s3.role.outputs": "s1.output|s1.artifact_snapshot|s2.case_revision",
+      "s3.role.interpretations": "s1.output|s3.assessment",
+      "s3.role.domains": "s1.domain|s1.mapping",
+      "s3.role.checks": "s1.check|s2.assessment|s3.assessment"
+    },
+    "C09": {
+      "s3.role.actions": "s1.action_request",
+      "s3.role.sessions": "s1.session",
+      "s3.role.correlations": "s1.relation|s3.typed_payload",
+      "s3.role.validity": "s3.typed_payload|s1.authority_evidence"
+    },
+    "C10": {
+      "s3.role.decisions": "s3.action_decision",
+      "s3.role.information": "s1.artifact_snapshot|s1.output|s3.typed_payload",
+      "s3.role.selected": "s1.action_response",
+      "s3.role.gaps": "s3.diagnostic|s1.gap|s2.diagnostic"
+    },
+    "C11": {
+      "s3.role.deliveries": "s3.delivery",
+      "s3.role.commands": "s3.effect_command",
+      "s3.role.actions": "s1.action_request",
+      "s3.role.responses": "s1.action_response",
+      "s3.role.receipts": "s1.transmission|s1.cancellation|s1.import_receipt|s3.owner_receipt|s3.publication_receipt|s3.effect_observation"
+    },
+    "C12": {
+      "s3.role.recoveries": "s3.recovery|s1.recovery",
+      "s3.role.attempts": "s1.attempt",
+      "s3.role.checkpoints": "s1.output",
+      "s3.role.state_loads": "s1.state_load",
+      "s3.role.overlap": "s3.assessment"
+    },
+    "C13": {
+      "s3.role.targets": "s3.native_subject|s1.attempt|s1.session|s1.action_request",
+      "s3.role.commands": "s3.effect_command",
+      "s3.role.receipts": "s1.transmission|s1.cancellation|s1.import_receipt|s3.owner_receipt|s3.publication_receipt|s3.effect_observation",
+      "s3.role.assessments": "s3.assessment"
+    },
+    "C14": {
+      "s3.role.entries": "s3.resource_entry",
+      "s3.role.owners": "s3.component|s1.component",
+      "s3.role.obligations": "s3.obligation"
+    },
+    "C15": {
+      "s3.role.entries": "s3.exposure_entry",
+      "s3.role.recipients": "s1.component|s1.endpoint|s3.native_subject|s3.component",
+      "s3.role.information": "s1.artifact_snapshot|s1.output|s3.typed_payload",
+      "s3.role.policies": "s1.policy|s2.information_policy|s3.typed_payload",
+      "s3.role.obligations": "s3.obligation"
+    },
+    "C16": {
+      "s3.role.views": "s3.account_view|s3.projection_view",
+      "s3.role.receipts": "s1.transmission|s1.cancellation|s1.import_receipt|s3.owner_receipt|s3.publication_receipt|s3.effect_observation",
+      "s3.role.dependencies": "s1.artifact_snapshot|s3.typed_payload|s3.bridge_receipt",
+      "s3.role.claims": "s3.assessment|s3.claim_request"
+    },
+    "C17": {
+      "s3.role.commands": "s3.effect_command",
+      "s3.role.bindings": "s2.run_binding|s2.request_binding_receipt|s3.operation_binding",
+      "s3.role.revision_evidence": "s3.owner_receipt|s3.journal_receipt|s3.typed_payload",
+      "s3.role.assessments": "s3.assessment"
+    },
+    "C18": {
+      "s3.role.observations": "s3.availability|s1.observation",
+      "s3.role.retention": "s3.typed_payload|s3.assessment",
+      "s3.role.cleanup": "s3.effect_observation|s3.obligation",
+      "s3.role.obligations": "s3.obligation"
+    }
+  },
+  "runtime_aliases": {
+    "RealizationEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "StagingEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "SourceAck": "DriverEvidence constrained by exact selected output_contract",
+    "InformationEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "ComputationEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "DeliveryEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "DeliveryLookup": "DriverEvidence constrained by exact selected output_contract",
+    "StopEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "StateLoadEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "ImportEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "InterpretationEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "AvailabilityEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "RevocationEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "DeletionEvidence": "DriverEvidence constrained by exact selected output_contract",
+    "AccountView": "PinnedView whose root is s3.account_view",
+    "OperationBinding": "ResolvedOperationBinding",
+    "PinnedActionSet": "BoundInput[] restricted to s1.action_request",
+    "PinnedPolicy": "BoundInput restricted to s1.policy or s2.information_policy",
+    "S1ProjectionOccurrence": "existing crucis_causal.experiments.api.ProjectionOccurrence",
+    "S1Projection": "existing S1RequestProjection plus exact R PackageView and bridge receipt",
+    "PinnedProjectionContext": "existing S1ProjectionContext with pinned S2 DraftContext/input views and current registry descriptors",
+    "ImmutableRecord": "closed exact-version immutable S1/S2/S3 record",
+    "ImmutableTargetDefinition": "s3.target payload with fixed identities and source pins",
+    "DecodedInvocation": "one exact function/process/service grammar or separately registered native driver grammar",
+    "RequirementSpec": "ClaimRequest",
+    "SupportClaim": "s3.support_claim plus actual evidence; no inferred implementation",
+    "S3Record": "revision3 catalog core record",
+    "OwnerMap": "explicit mapping of owner identity to supplied OwnerPort",
+    "ExactDriverRegistry": "exact contract/version to supplied Driver descriptor; no automatic loading",
+    "ExactDecisionRegistry": "exact contract/version to supplied Decision descriptor; no automatic loading",
+    "Limits": "positive bounded read/control/record/byte/time policy; no native scientific limit inferred",
+    "BoundaryKind": "exact named operation/receiver boundary contract",
+    "OpaqueGrantSet": "owner-supplied OpaqueGrant[]; neither copied nor serialized",
+    "SuppliedRegistryContext": "immutable caller-supplied exact driver/procedure/schema/owner bindings",
+    "PureDriverContext": "PinnedReadContext without native/network/owner write methods",
+    "PureDecisionContext": "PinnedReadContext plus fixed exact rule; no external provider methods",
+    "JournalReadContext": "PinnedReadContext plus actual read-consistency capability",
+    "JournalWriteContext": "JournalReadContext plus live scoped write capability and expected owner epoch",
+    "CaptureWriteContext": "JournalWriteContext plus supplied artifact staging/commit capabilities",
+    "StorageContext": "PinnedReadContext plus actual storage/access owner and control accounting",
+    "LiveDriverContext": "PinnedReadContext plus fixed owner epochs, actual limits and nonserialized runtime transport/secret bindings",
+    "OwnerControlContext": "explicit parent control capability, owner implementation, limits, metering and expected binding",
+    "CaptureSink": "existing S1 CaptureSink-compatible bounded staging port; no implicit publication/native launch",
+    "ClockReadContext": "Supplied local clock and provenance capability; remote time source must be separately acquired and pinned",
+    "PinnedWorkingS1Context": "Exact verified S1 R/O working context established by the versioned bridge; mutable additions cannot masquerade as frozen external dependencies",
+    "NativeDescriptor": "Decoded exact native_descriptor grammar, with explicit source/payload context and adequate identity-rule evidence before control",
+    "CoordinatorPort": "Protocol consisting exactly of catalog.ports methods with Coordinator. prefix; declaration alone does not establish implemented guarantees",
+    "OwnerPort": "Protocol consisting exactly of catalog.ports methods with Owner. prefix; declaration alone does not establish implemented guarantees",
+    "DriverPort": "Protocol consisting exactly of catalog.ports methods with Driver. prefix; declaration alone does not establish implemented guarantees",
+    "DecisionPort": "Protocol consisting exactly of catalog.ports methods with Decision. prefix; declaration alone does not establish implemented guarantees",
+    "JournalPort": "Protocol consisting exactly of catalog.ports methods with Journal. prefix; declaration alone does not establish implemented guarantees",
+    "StoragePort": "Protocol consisting exactly of catalog.ports methods with Storage. prefix; declaration alone does not establish implemented guarantees",
+    "ClockPort": "Protocol consisting exactly of catalog.ports methods with Clock. prefix; declaration alone does not establish implemented guarantees"
+  },
+  "opaque_runtime_types": [
+    "OpaqueGrant",
+    "OpaqueControlCapability",
+    "OpaqueHandle",
+    "OpaqueEpoch",
+    "ReadCapability",
+    "SuppliedCallable",
+    "OpaqueIssuePermit"
+  ],
+  "opaque_rule": "Opaque values have issuer/owner-specific implementations, identity/lifetime and explicit method contracts. They cannot be instantiated from serialized records, copied as grants or used outside the exact binding/epoch. No untyped native invocation fallback.",
+  "result_laws": [
+    "Rejected requires issues; may retain immutable evidence and effect uncertainty. It must not contain an executable LiveAdmission.",
+    "Partial requires useful value plus issues. Completed does not imply a positive owner decision or native success.",
+    "S1 rejected invoke after executor entry maps to may_have_crossed unless stronger evidence exists; no-handle is not no-effect. S2 rejected PlanOp retains its own atomic metadata meaning only.",
+    "A process crash after durable intent with no result leaves possible effects even when no transmission receipt was persisted.",
+    "Every actual driver/owner/storage effect binds the original command/key and its own measured or unknown overhead."
+  ],
+  "recovery_guarantees": {
+    "lost_launch_ack": {
+      "allowed": [
+        "wait",
+        "admitted exact lookup",
+        "same-key retransmission only under actual valid single-effect receiver contract"
+      ],
+      "held": [
+        "fresh launch under strict nonoverlap while predecessor acceptance unresolved"
+      ],
+      "retained": [
+        "original command/attempt",
+        "possible job/charge/exposure",
+        "owner commitments"
+      ]
+    },
+    "takeover": {
+      "required": [
+        "journal expected-revision/epoch check",
+        "actual owner/receiver fencing where requested",
+        "reconciliation of accepted/in-flight work"
+      ],
+      "non_inferences": [
+        "local lease expiry stops native",
+        "fresh context revokes old grants"
+      ]
+    },
+    "capture": {
+      "required": [
+        "durable raw artifact+metadata identity",
+        "atomic logical checkpoint commit under explicit fault model",
+        "matching source/generation/filter/occurrence before ACK"
+      ],
+      "non_inferences": [
+        "max seen event number means gap-free",
+        "captured means interpreted or native-acknowledged"
+      ]
+    },
+    "restart": {
+      "required": [
+        "distinct A2 from A1",
+        "fixed permitted S2 recovery condition",
+        "compatible request relation",
+        "required state availability and overlap rule before issue",
+        "actual component loading assessed after issue"
+      ],
+      "non_inferences": [
+        "unknown RNG is loaded",
+        "restart is independent trial"
+      ]
+    },
+    "publication": {
+      "required": [
+        "same publication correlation/exact package bytes on lookup/retry",
+        "manifest commit evidence",
+        "actual audience/dependency closure"
+      ],
+      "non_inferences": [
+        "refreeze is identical retry",
+        "value-CAS is revision CAS",
+        "commit implies Slack/site delivery"
+      ]
+    }
+  },
+  "native_identity_projection": {
+    "rule": {
+      "name": "s3.bridge.incarnation_key",
+      "version": "0.1.0-proposal.2"
+    },
+    "input": "known [authority,namespace,native_id,incarnation] raw string tuple",
+    "encoding": "strict base64 of compact UTF-8 JSON array with ensure_ascii=false, no normalization, prefixed s3-incarnation-key-v1:",
+    "output": "S1 native_id derived registry key, with authority/namespace retained and source.basis=derived; raw descriptor/bridge receipt pinned",
+    "limits": "Driver must explicitly support this bridge and use raw native coordinates for provider calls. Unknown incarnation requires a separate positively established literal-unique identity rule, not empty substitution."
+  },
+  "owner_correlation_law": "correlation identifies the stable reservation/authority subject binding; request_occurrence identifies one immutable reserve/reconcile/renew/settle/release/authorize request. Same request occurrence plus changed parameters conflicts. Renewal/settlement uses a new request occurrence and expected revision under the same unchanged subject binding. Reconcile names the exact lost request occurrence; no second hold or renewal inferred.",
+  "transmission_law": "Command C is immutable exact intended effect; D is an allocated forwarding occurrence with its own durable issue transaction and per-boundary observation. Never update an old D with newly learned receipt/time. Later evidence references it. Recovery looks up the exact transaction before deciding whether another D is permitted. A new D/owner epoch may reuse C only with explicit current admission and still-valid native single-effect guarantee; no changed payload/key/recipient/required guarantee under C.",
+  "scientific_binding_law": "Scientific-run purpose or an otherwise applicable S2 intent requires exactly one established run binding and actual matching conditions before issue. A fixed, explicitly non-scientific preparation/probe commission can use a positively justified NA scientific binding, while retaining all actual native effects, costs/exposure and S2 contamination/history consequences. Purpose cannot be relabeled after results or used to override visible C01 triggers.",
+  "external_origin_recovery_law": "The one-parent restart profile accepts an established s1.attempt or an adequate known s3.native_subject as predecessor. Unknown original S1 A/R stays unresolved; S3 driver support, actual native state/stop/ownership and scientific policy remain required. Exact S1 recovery projection is unavailable without its real predecessor/successor attempt identities; do not fabricate them. Multi-parent continuation uses a separately registered typed contract, not this one-parent profile.",
+  "format": {
+    "name": "s3.account_package",
+    "version": "0.1.0-proposal.3"
+  },
+  "serialization_inheritance": "Revision3 is complete common schema data plus explicit operational contracts here; inherited semantics are the exact pinned revision1/revision2 sources. Record/format/core operation revisions are3. Existing S1/S2 remain revision1; the unchanged incarnation-key algorithm retains its explicitly pinned version2 procedure. No implicit semver widening.",
+  "namespace_delta_law": "Runtime RecordDelta partitions new S3 records, owned S1 native additions and owned S2 scientific additions. They never share a serialized records array. Before append/capture commit, freeze owned additions in their own exact formats and resolve bridge/pin context into immutable PinnedViews; only CommitDelta enters the durable journal. Failure leaves staging/orphan/uncertain commit evidence, not a published cursor.",
+  "common_issue_codes": {
+    "s3.invalid_structure": "Reject interpretation; retain source bytes if permitted, not native algorithm failure.",
+    "s3.unsupported_contract": "Withhold affected operation/interpretation; preserve opaque evidence.",
+    "s3.dependency_unresolved": "No ambient/latest fallback; acquire only through separately admitted operation.",
+    "s3.admission_denied": "Record actual owner denial; no override from local metadata.",
+    "s3.admission_held": "Missing/uncertain prerequisite; preserve partial holds/obligations.",
+    "s3.stale_revision": "Re-read/review exact journal or owner state, not blind replay.",
+    "s3.binding_conflict": "Same identity/key with changed binding; preserve conflict and refuse substitution.",
+    "s3.boundary_uncertain": "Possible native/owner/storage effects retained; reconcile original occurrence.",
+    "s3.capture_partial": "Coverage/byte loss retained, no cursor advance or invented full output.",
+    "s3.publication_uncertain": "Reconcile same exact publication/package/digest.",
+    "s3.audience_denied": "Hold export; keep only permitted scoped preservation.",
+    "s3.guarantee_unavailable": "Hold requested stronger profile/effect, not all unrelated preservation claims."
+  },
+  "previous_operational_catalog": {
+    "path": "crucis_causal/docs/subsystem3-operation-contract-catalog-2026-11-03.json",
+    "sha256": "2d99dec932c44d1be13d77f3d8d18e45afbbca86f6eedd033965daf9c65c7f57",
+    "version": "0.1.0-proposal.2"
+  },
+  "common_primitives": {
+    "Contract": {
+      "name": "QName",
+      "version": "String"
+    },
+    "Scope": {
+      "subjects": "Ref[]",
+      "qualifiers": "Ref[]"
+    },
+    "Source": {
+      "basis": "reported|observed|reconstructed|derived|intrinsic",
+      "evidence": "Ref[]",
+      "procedure": "K(Contract)",
+      "inputs": "Ref[]"
+    },
+    "PayloadRef": {
+      "artifact": "KnownRef(s1.artifact_snapshot)",
+      "selector": "K(Selector)"
+    },
+    "ExternalPackage": {
+      "package_id": "ID",
+      "format": "Contract",
+      "locator": "K(String)",
+      "expected_digest": "K(Digest)",
+      "access": "Code"
+    },
+    "Extension": {
+      "contract": "Contract",
+      "affects": "Ref[]",
+      "critical_for": "Code[]",
+      "payload": "BytePayload"
+    },
+    "RoleBinding": {
+      "role": "Code",
+      "members": "IndexList(Ref)"
+    },
+    "AxisEntry": {
+      "axis": "SupportAxis",
+      "status": "AxisSpecificStatus",
+      "evidence": "IndexList(Ref)",
+      "limits": "IndexList(KnownRef(diagnostic))"
+    },
+    "StateComponent": {
+      "component": "Contract",
+      "identity": "K(String)",
+      "restore_source": "K(StateSource)",
+      "availability": "K(Boolean)",
+      "loaded": "K(Boolean)",
+      "evidence": "Ref[]"
+    },
+    "Cursor": {
+      "contract": "Contract",
+      "position": "String",
+      "scope": "Scope"
+    },
+    "Digest": {
+      "algorithm": "sha256",
+      "value": "Hex64",
+      "byte_length": "Index",
+      "scope": "ByteScope"
+    },
+    "PayloadContext": {
+      "package_id": "ID",
+      "format": "Contract"
+    },
+    "OperationParameter": {
+      "key": "String",
+      "value": "K(ParameterValue)"
+    },
+    "ParameterValue": "String|Boolean|Number|Contract|Digest|KnownRef|KnownRef[]|Cursor|Time|ID|PositiveIndex|Contract[]"
+  },
+  "value_variants": {
+    "Number": [
+      {
+        "number_type": "integer",
+        "text": "IntegerText"
+      },
+      {
+        "number_type": "finite_decimal",
+        "text": "DecimalText"
+      },
+      {
+        "number_type": "nonfinite",
+        "value": "nan|positive_infinity|negative_infinity"
+      }
+    ],
+    "Time": [
+      {
+        "time_type": "utc_instant",
+        "value": "String",
+        "precision": "second|fractional_second",
+        "clock": "K(KnownRef(component|s1.component|s2.component))",
+        "uncertainty_seconds": "K(Number)"
+      },
+      {
+        "time_type": "native_report",
+        "text": "String",
+        "timezone": "K(String)",
+        "precision": "K(String)"
+      }
+    ],
+    "BytePayload": [
+      {
+        "content_form": "inline_utf8",
+        "text": "String"
+      },
+      {
+        "content_form": "inline_base64",
+        "data": "String"
+      },
+      {
+        "content_form": "external_snapshot",
+        "locations": "KnownRef(s1.location)[]",
+        "digest": "K(Digest)"
+      }
+    ],
+    "ByteScope": [
+      {
+        "kind": "full_content"
+      },
+      {
+        "kind": "byte_range",
+        "start": "Index",
+        "end_exclusive": "Index"
+      }
+    ],
+    "Selector": [
+      {
+        "selector_type": "json_pointer",
+        "pointer": "String"
+      },
+      {
+        "selector_type": "byte_range",
+        "start": "Index",
+        "end_exclusive": "Index"
+      },
+      {
+        "selector_type": "member_key",
+        "key": "String",
+        "member_contract": "Contract"
+      },
+      {
+        "selector_type": "array_coordinate",
+        "axes": "KnownRef(s1.schema)",
+        "coordinates": "Index[]"
+      },
+      {
+        "selector_type": "archive_member",
+        "name": "String",
+        "member_digest": "K(Digest)"
+      }
+    ],
+    "StateSource": [
+      {
+        "source_type": "captured_payload",
+        "payload": "PayloadRef"
+      },
+      {
+        "source_type": "native_reference",
+        "reference": "KnownRef(s1.output|s3.typed_payload)"
+      }
+    ]
+  },
+  "reference_variants": [
+    {
+      "binding": "internal",
+      "target": "ID",
+      "target_type": "QName"
+    },
+    {
+      "binding": "external",
+      "package_id": "ID",
+      "target": "ID",
+      "target_type": "QName"
+    },
+    {
+      "binding": "unresolved",
+      "target_type": "QName",
+      "reason": "Code",
+      "evidence": "Ref[]",
+      "source_labels": "String[]"
+    }
+  ],
+  "knowledge_variants": [
+    {
+      "state": "known",
+      "value": "T",
+      "basis": "Ref[]"
+    },
+    {
+      "state": "unresolved",
+      "reasons": "Code[1..n]",
+      "evidence": "Ref[]"
+    },
+    {
+      "state": "not_applicable",
+      "rule": "Contract",
+      "scope": "Ref[]"
+    }
+  ],
+  "index": {
+    "members": "T[]",
+    "extent": "complete_for_scope|partial_for_scope|not_examined|unresolved",
+    "scope": "Scope",
+    "gaps": "KnownRef(diagnostic)[]"
+  },
+  "lexical_rules": {
+    "ID": "lowercase UUIDv4; source/native IDs remain separate scoped values",
+    "QName": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$",
+    "Index": "^(0|[1-9][0-9]*)$",
+    "IntegerText": "^-?(0|[1-9][0-9]*)$",
+    "DecimalText": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+    "String": "Unicode scalar sequence without normalization; unknown native encoding remains bytes",
+    "Code": "QName; selecting a code does not install its meaning",
+    "Boolean": "JSON true or false; never a Number",
+    "raw_numeric_tokens": "forbidden in interpreted S3 structural tree, including extension JSON; opaque BytePayload text may contain native numeric tokens",
+    "null": "forbidden in interpreted structural slots; native null may be retained in opaque evidence",
+    "Hex64": "^[0-9a-f]{64}$",
+    "Contract.version": "nonempty exact version string; no range/latest semantics",
+    "Time.utc_instant": "valid calendar instant with explicit Z; precision tag matches seconds/fractional seconds; uncertainty finite nonnegative when known",
+    "BytePayload.inline_base64": "strict base64 with padding, no ignored nonalphabet characters; decoded bytes preserved"
+  },
+  "package": {
+    "format": "Contract",
+    "package_id": "ID",
+    "roots": "KnownRef(account_view|projection_view)[1]",
+    "records": "Record[1..n]",
+    "external_packages": "ExternalPackage[]",
+    "extensions": "Extension[]"
+  },
+  "record": {
+    "id": "ID",
+    "record_type": "QName",
+    "contract": "Contract",
+    "producer": "KnownRef(component)",
+    "created_at": "K(Time)",
+    "provenance": "Source",
+    "payload": "ClosedPayload(record_type)",
+    "extensions": "Extension[]"
+  },
+  "review_refinements": {
+    "FR01": "plan returns a staged immutable command. Caller persists admission_occurrence and transmission_occurrence before corresponding effectful calls. Admission plan/owner IDs are durably recorded before first owner RPC. Same ID with changed binding conflicts; lost reply resumes/reconciles the same occurrence, never silently allocates a new one.",
+    "FR02": "StateComponent.restore_source identifies captured payload or native handle; availability is separately assessed for the actual loader/cutoff/rights. Identity, readable bytes and actual loading do not imply one another. S1 projection records unavailable raw bytes as unknown/NA and reports loss; it cannot disguise provider attestations as state bytes.",
+    "FR03": "command.admission is the construction-time assessment, possibly unresolved. Later immutable admission assessments/owner receipts reference the command and admission occurrence; current authority comes from live checked owner capabilities, never mutation of C or deserialization of old grants.",
+    "FR04": "commit_capture transaction key equals batch_occurrence; prepare_issue transaction key equals D. A lost transaction ACK is queried by original key and exact binding before cursor advance/new forwarding. Only the first definitely committed D claim receives a live one-time permit; replay, lookup, restart and uncertain commits receive none. A negative native query permits retry only with established closure of old acceptance paths or valid receiver deduplication covering all still-eligible arrivals.",
+    "FR05": "Initial local SQLite rollback journal plus immutable artifact store is qualified only for cooperative same-host processes and tested process crashes. No shared/network path, hostile writer, power-loss, distributed or external native enforcement claim.",
+    "FR06": "Retrospective v2 archives remain preservation fixtures. Independently specified new positive S2-bound executions and receiver-side failure oracles are mandatory before execution support can pass; never fabricate historical identities/bindings.",
+    "FR07": "New tests use test_audit_execution_*.py to match current discovery; gate must prove every mandatory new case was collected and executed without skips.",
+    "FR08": "Opaque runtime credentials can use owner-approved native transport, but never audit serialization/logging. Restricted raw diagnostics stay restricted or explicitly uncaptured; redacted diagnostics are derived evidence, never substituted original bytes.",
+    "FR09": "S3 reads pinned S1/S2 packages; existing S1/S2 readers are not expanded to S3 dialect. Return frozen S1 evidence and existing S2 receipts under explicit bridges; unsupported rich projection keeps loss/withheld claims.",
+    "FR10": "Release receipts separate offline framework conformance, recorded-data parity, actual host matrix and native backend qualification. Skips/not-run/unsupported never become native success."
+  },
+  "normalization_rules": [
+    "V3-only native S3 decoding initially. Prior S3 candidate versions can be raw-preserved or explicitly converted into new IDs with losses; no silent promotion of missing bindings/authority/availability.",
+    "V2 captured-state availability maps to V3 restore_source=captured_payload; actual V3 availability remains unresolved unless separately established. Do not infer available=true from a known snapshot reference.",
+    "Explicit operator-supplied non-scientific purposes cannot waive an otherwise visible scientific requirement; actual costs/exposure/history remain accounted.",
+    "Observed native handles/reference descriptors may support owner-verified restoration without central raw bytes, only under their exact loader/identity/validity/rights contracts.",
+    "A repeated admit or issue call with original IDs must reconcile existing intent/result. New D under unresolved C is held unless explicit valid receiver idempotency/no-effect evidence and policy permit forwarding."
+  ],
+  "forwarding_claim_law": "prepare_issue atomically records the original D intent and its one-time local forwarding claim. Only the first definitely committed claim may receive an issuer-held OpaqueIssuePermit, bound to C/D/binding/epoch and consumed by the guarded driver boundary. Same-key replay, transaction lookup, lost/uncertain commit or process restart never mints a fresh permit for D. A returned historical token has runtime_permit=None. Field copies/JSON cannot forge the permit. Crash after claim and before actual send conservatively retains possible effects until scoped reconciliation. This controls coordinator forwarding, not provider duplicate execution or native exactly-once.",
+  "native_absence_law": "A negative lookup may establish absence only at its exact query cutoff. A new potentially duplicate forwarding additionally requires actual no_late_acceptance evidence closing earlier in-flight acceptance paths, or an actual single-effect receiver contract covering all still-eligible arrivals/retention windows. Empty/eventually consistent listing, sender timeout or local lease expiry provides neither. Receiver fencing/tombstone/expired-authorization evidence must be scoped and positively established; otherwise hold the new effect and retain possible work/charges/exposure.",
+  "support_axis_statuses": {
+    "representation": [
+      "representable",
+      "uninterpreted",
+      "rejected",
+      "unresolved",
+      "not_examined"
+    ],
+    "mechanism": [
+      "supplied",
+      "absent",
+      "unresolved",
+      "not_examined"
+    ],
+    "readiness": [
+      "established",
+      "blocked",
+      "unresolved",
+      "not_examined"
+    ],
+    "authority": [
+      "permitted",
+      "denied",
+      "unresolved",
+      "not_applicable"
+    ],
+    "enforcement": [
+      "established",
+      "limited",
+      "absent",
+      "unresolved",
+      "not_applicable"
+    ],
+    "tests": [
+      "scoped_pass",
+      "scoped_fail",
+      "skipped",
+      "not_run"
+    ],
+    "native_evidence": [
+      "recorded",
+      "reported_only",
+      "unavailable",
+      "not_examined"
+    ],
+    "coverage": [
+      "complete_for_scope",
+      "partial_for_scope",
+      "not_examined",
+      "unresolved"
+    ]
+  },
+  "conditional_families": [
+    {
+      "id": "C01",
+      "contract": {
+        "name": "s3.family.scientific_binding",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.intent",
+        "s3.role.bindings",
+        "s3.role.selection",
+        "s3.role.timing"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C02",
+      "contract": {
+        "name": "s3.family.realization",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.specification",
+        "s3.role.commands",
+        "s3.role.inputs",
+        "s3.role.outputs",
+        "s3.role.checks",
+        "s3.role.state"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C03",
+      "contract": {
+        "name": "s3.family.presentation",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.presentations",
+        "s3.role.recipients",
+        "s3.role.transfers",
+        "s3.role.stable_use",
+        "s3.role.disclosure"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C04",
+      "contract": {
+        "name": "s3.family.effect_admission",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.commands",
+        "s3.role.bindings",
+        "s3.role.requirements",
+        "s3.role.authority",
+        "s3.role.reservations",
+        "s3.role.transmissions"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C05",
+      "contract": {
+        "name": "s3.family.native_association",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.subjects",
+        "s3.role.associations",
+        "s3.role.connections"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C06",
+      "contract": {
+        "name": "s3.family.ownership",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.contexts",
+        "s3.role.guarantees"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C07",
+      "contract": {
+        "name": "s3.family.collection",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.periods",
+        "s3.role.source_positions",
+        "s3.role.capture",
+        "s3.role.closures"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C08",
+      "contract": {
+        "name": "s3.family.artifact_interpretation",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.artifacts",
+        "s3.role.outputs",
+        "s3.role.interpretations",
+        "s3.role.domains",
+        "s3.role.checks"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C09",
+      "contract": {
+        "name": "s3.family.native_action",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.actions",
+        "s3.role.sessions",
+        "s3.role.correlations",
+        "s3.role.validity"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C10",
+      "contract": {
+        "name": "s3.family.action_decision",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.decisions",
+        "s3.role.information",
+        "s3.role.selected",
+        "s3.role.gaps"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C11",
+      "contract": {
+        "name": "s3.family.delivery",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.deliveries",
+        "s3.role.commands",
+        "s3.role.actions",
+        "s3.role.responses",
+        "s3.role.receipts"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C12",
+      "contract": {
+        "name": "s3.family.recovery",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.recoveries",
+        "s3.role.attempts",
+        "s3.role.checkpoints",
+        "s3.role.state_loads",
+        "s3.role.overlap"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C13",
+      "contract": {
+        "name": "s3.family.stopping",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.targets",
+        "s3.role.commands",
+        "s3.role.receipts",
+        "s3.role.assessments"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C14",
+      "contract": {
+        "name": "s3.family.resources",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.entries",
+        "s3.role.owners",
+        "s3.role.obligations"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C15",
+      "contract": {
+        "name": "s3.family.exposure",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.entries",
+        "s3.role.recipients",
+        "s3.role.information",
+        "s3.role.policies",
+        "s3.role.obligations"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C16",
+      "contract": {
+        "name": "s3.family.publication",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.views",
+        "s3.role.receipts",
+        "s3.role.dependencies",
+        "s3.role.claims"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C17",
+      "contract": {
+        "name": "s3.family.current_pointer",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.commands",
+        "s3.role.bindings",
+        "s3.role.revision_evidence",
+        "s3.role.assessments"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    },
+    {
+      "id": "C18",
+      "contract": {
+        "name": "s3.family.availability",
+        "version": "0.1.0-proposal.1"
+      },
+      "allowed_roles": [
+        "s3.role.observations",
+        "s3.role.retention",
+        "s3.role.cleanup",
+        "s3.role.obligations"
+      ],
+      "role_shape": "Every listed role occurs exactly once when applies; each has a scoped index. Non-applies has no role payload. Role indices may be empty/partial/unresolved as phase/evidence permits; selected operation/claim contract determines positive minimum, accepted target types and semantic constraints."
+    }
+  ],
+  "decode_limits_example": {
+    "max_manifest_bytes": "16777216",
+    "max_depth": "64",
+    "max_records": "100000",
+    "max_collection_items": "100000",
+    "max_total_reference_nodes": "1000000",
+    "max_scalar_utf8_bytes": "1048576",
+    "max_external_packages": "10000"
+  },
+  "wire_schema_implemented": true,
+  "implemented_layers": [
+    "closed_wire_schema",
+    "bounded_resolution",
+    "runtime_declarations",
+    "exact_supplied_registries"
+  ]
+}

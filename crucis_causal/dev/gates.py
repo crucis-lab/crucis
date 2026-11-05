@@ -35,7 +35,9 @@ def run(bundle,out,dependencies=None,*,accepted=None,predecessors=()):
     report={'tickets':['DLV-08','DLV-09'],'bundle_label':bundle,
             'scope':'standalone development conformance; does not recreate historical bundle acceptance or scientific certificates',
             'source_manifest':before,'source_stable':before==after,'tests':tests,
-            'historical_reference_files':references,'api_spend':False,'native_dispatch':False,
+            'historical_reference_files':references,'api_spend':False,'native_dispatch':'not_measured_by_runner',
+            'scientific_native_campaign':False,
+            'execution_scope':'Owned controlled fixture receivers may execute; exact effects are in scoped case/oracle receipts',
             'pass':result.returncode==0 and before==after}
     report['passed']=report['pass']
     (out/'gate.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

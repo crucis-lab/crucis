@@ -1,0 +1,350 @@
+{
+  "missing_required_field": [
+    {
+      "record_type": "s3.component",
+      "remove": "name",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.account",
+      "remove": "purpose",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.target",
+      "remove": "definition",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.audience",
+      "remove": "purpose",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.claim_request",
+      "remove": "claim",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.account_view",
+      "remove": "account",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.projection_view",
+      "remove": "view_role",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.typed_payload",
+      "remove": "payload_contract",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.frontier",
+      "remove": "local_records",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.diagnostic",
+      "remove": "code",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.assessment",
+      "remove": "question",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.disposition",
+      "remove": "kind",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.obligation",
+      "remove": "question",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.collection_period",
+      "remove": "scope",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.collection_closure",
+      "remove": "period",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.source_frontier",
+      "remove": "source",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.requirement_context",
+      "remove": "catalog",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.requirement_case",
+      "remove": "family",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.support_claim",
+      "remove": "feature",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.native_subject",
+      "remove": "descriptor",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.native_association",
+      "remove": "attempt",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.effect_command",
+      "remove": "account",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.transmission",
+      "remove": "command",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.ownership_context",
+      "remove": "owner",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.realization",
+      "remove": "command",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.staging",
+      "remove": "command",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.action_decision",
+      "remove": "actions",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.delivery",
+      "remove": "command",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.recovery",
+      "remove": "kind",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.resource_entry",
+      "remove": "scope",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.exposure_entry",
+      "remove": "scope",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.publication_receipt",
+      "remove": "subject_package",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.availability",
+      "remove": "subject",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.operation_binding",
+      "remove": "operation",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.owner_receipt",
+      "remove": "owner",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.effect_observation",
+      "remove": "command",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.journal_receipt",
+      "remove": "account",
+      "expected": "schema_rejection"
+    },
+    {
+      "record_type": "s3.bridge_receipt",
+      "remove": "rule",
+      "expected": "schema_rejection"
+    }
+  ],
+  "inherited": {
+    "subsystem3-complete-package-review-2026-11-03.json": [
+      {
+        "id": "NR01",
+        "boundary": "altered dependency byte pin",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR02",
+        "boundary": "internal wrong target type",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR03",
+        "boundary": "same-ID different-content dependency",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR04",
+        "boundary": "late receipt in earlier decision basis",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR05",
+        "boundary": "stale writer/receiver epoch",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR06",
+        "boundary": "uncertain lookup treated as no effect",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR07",
+        "boundary": "zero-action native delivery",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR08",
+        "boundary": "checkpoint restart reusing predecessor identity",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR09",
+        "boundary": "ambiguous incarnation key",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR10",
+        "boundary": "unverified S2 run binding treated as ready",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR11",
+        "boundary": "native public artifact padded with private S3 metadata",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR12",
+        "boundary": "refreeze used to reconcile old publication",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR13",
+        "boundary": "value-CAS presented as revision CAS",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR14",
+        "boundary": "unknown RNG promoted to exact continuity",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR15",
+        "boundary": "ACK advanced before capture commit",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      },
+      {
+        "id": "NR16",
+        "boundary": "unresolved owner reserve treated as admission",
+        "expected": "withhold affected claim/effect; preserve original account and scoped diagnostics"
+      }
+    ],
+    "subsystem3-serialization-specimens-2026-11-03.json": [
+      {
+        "id": "N01",
+        "input": "duplicate property, invalid UTF-8, nonstandard JSON number, surrogate",
+        "expected": "reject transport; preserve raw capture if permitted"
+      },
+      {
+        "id": "N02",
+        "input": "core unknown field, missing required field, structural null or bare number",
+        "expected": "reject structural conformance; do not report native algorithm failure"
+      },
+      {
+        "id": "N03",
+        "input": "known value wrapping unresolved Ref",
+        "expected": "reject ambiguous reference layering"
+      },
+      {
+        "id": "N04",
+        "input": "internal s1 reference or external same-ID fallback",
+        "expected": "reject wrong binding or withhold unresolved external dependency"
+      },
+      {
+        "id": "N05",
+        "input": "unexamined index containing members; empty index presented as native absence",
+        "expected": "reject shape or withhold unsupported negative claim"
+      },
+      {
+        "id": "N06",
+        "input": "Q2 empty selection presented as abstention/delivery",
+        "expected": "preserve held decision; withhold delivery claim"
+      },
+      {
+        "id": "N07",
+        "input": "checkpoint native restart reuses A1; owner reconnect invents A2",
+        "expected": "reject incompatible recovery claim"
+      },
+      {
+        "id": "N08",
+        "input": "position18 interpreted as gap-free replay after native incarnation changed",
+        "expected": "withhold replay/attachment without matching source contract/evidence"
+      },
+      {
+        "id": "N09",
+        "input": "bill3+replacement5+bill4 summed to12",
+        "expected": "withhold incorrect aggregate; declared replacement yields9"
+      },
+      {
+        "id": "N10",
+        "input": "newer evidence silently changes early frontier/result; conflicting record replaced",
+        "expected": "reject identity mutation; preserve new assessment and its actual cutoff"
+      },
+      {
+        "id": "N11",
+        "input": "public attestation exports private frontier or claims public raw verification",
+        "expected": "deny projection/strong assurance; preserve weaker permitted statement"
+      },
+      {
+        "id": "N12",
+        "input": "unknown version/core kind or unsupported critical extension accepted through latest handler",
+        "expected": "preserve opaque bytes; withhold conformance/affected operations"
+      },
+      {
+        "id": "N13",
+        "input": "same package includes its own whole-package digest receipt",
+        "expected": "reject circular subject pin; place receipt outside hashed subject"
+      },
+      {
+        "id": "N14",
+        "input": "missing operation role grammar treated as permissive Ref target acceptance",
+        "expected": "withhold affected effect/claim until exact contract is supplied"
+      }
+    ]
+  }
+}

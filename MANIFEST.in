@@ -9,3 +9,4 @@ recursive-include tools *.py *.md
 include tools/hooks/pre-commit
 exclude tests/last_run.json
 global-exclude __pycache__ *.py[cod]
+include crucis_causal/docs/subsystem3-methodology-index-2026-11-03.json

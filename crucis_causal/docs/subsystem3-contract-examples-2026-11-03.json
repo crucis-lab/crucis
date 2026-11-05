@@ -1,0 +1,2129 @@
+{
+  "kind": "s3_semantic_design_examples",
+  "local_date": "2026-11-03",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "status": "illustrative_not_wire_contract_or_executed_receipts",
+  "all_values_hypothetical": true,
+  "wire_specimen": false,
+  "executed_acceptance_evidence": false,
+  "based_on_commit": "3cf0cac76e6bb53815396ceb67525a484b35839a",
+  "outline": "subsystem3-contract-outline-worked-cases-2026-11-03.md",
+  "vocabulary_limit": "Fields/IDs/roles/story facts are documentary notation, not SC-3 serialization or runtime evidence. Local sequence labels are not a universal native/global clock. Entity-table order is not creation order; use the explicit story history and acquisition/cutoff facts.",
+  "account_blocks": [
+    "identity_and_target",
+    "activity_and_association_index",
+    "evidence_index",
+    "scoped_assessments",
+    "disposition_and_obligations",
+    "collection_and_closure"
+  ],
+  "cases": [
+    {
+      "case": "L",
+      "assumptions": [
+        "One hypothetical trial requests an ordering of three variables under labels-only argument presentation; causal correctness is unassessed.",
+        "Trusted local function and admitted realization are explicit; no OS-wide blindness, hostile-code isolation, provider ID or paid service is claimed.",
+        "Public policy permits only the new summary/validator statement and their opaque public IDs. Private derivation links stay private."
+      ],
+      "entities": [
+        {
+          "id": "L.intent",
+          "role": "scientific_intent",
+          "links": [],
+          "in_story_facts": {
+            "task": "ordering",
+            "trial_count": "1"
+          }
+        },
+        {
+          "id": "L.E",
+          "role": "account",
+          "links": [
+            "L.intent"
+          ],
+          "in_story_facts": {
+            "purpose": "prospective execution"
+          }
+        },
+        {
+          "id": "L.source",
+          "role": "artifact",
+          "links": [],
+          "in_story_facts": {
+            "utf8": "A,B,C\n1,2,3\n4,5,6\n",
+            "audience": "preparation/evaluator",
+            "literal_sha256": "91e42fbb44c8d29d0c3af97ed5fbda15c2c70b349aad408fd5ff5c90e908c193"
+          }
+        },
+        {
+          "id": "L.recipe",
+          "role": "recipe",
+          "links": [
+            "L.source"
+          ],
+          "in_story_facts": {
+            "shown_to_canonical": [
+              2,
+              0,
+              1
+            ],
+            "native_names": [
+              "v0",
+              "v1",
+              "v2"
+            ]
+          }
+        },
+        {
+          "id": "L.realize",
+          "role": "admitted_preparation_command",
+          "links": [
+            "L.E",
+            "L.recipe"
+          ],
+          "in_story_facts": {
+            "final_binding_not_yet_required": true
+          }
+        },
+        {
+          "id": "L.input",
+          "role": "artifact",
+          "links": [
+            "L.realize"
+          ],
+          "in_story_facts": {
+            "utf8": "v0,v1,v2\n3,1,2\n6,4,5\n",
+            "audience": "native",
+            "literal_sha256": "0df62b46ed12927fe64dd9104aafa3407fa3ca35bdf9b87666cd6ca16be3bd68"
+          }
+        },
+        {
+          "id": "L.map",
+          "role": "evaluator_mapping",
+          "links": [
+            "L.recipe"
+          ],
+          "in_story_facts": {
+            "shown_to_canonical": [
+              2,
+              0,
+              1
+            ],
+            "audience": "evaluator_only"
+          }
+        },
+        {
+          "id": "L.check",
+          "role": "input_assessment",
+          "links": [
+            "L.source",
+            "L.input",
+            "L.map"
+          ],
+          "in_story_facts": {
+            "mapped_values": "pass in story",
+            "whole_file_byte_equality": "not claimed"
+          }
+        },
+        {
+          "id": "L.B",
+          "role": "final_run_binding",
+          "links": [
+            "L.intent",
+            "L.check",
+            "L.input"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "L.R",
+          "role": "native_request",
+          "links": [
+            "L.B",
+            "L.input"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "L.A",
+          "role": "attempt",
+          "links": [
+            "L.R"
+          ],
+          "in_story_facts": {
+            "provider_native_identity": "not supplied; no fabricated provider ID"
+          }
+        },
+        {
+          "id": "L.hold",
+          "role": "owner_reservation",
+          "links": [
+            "L.E",
+            "L.A"
+          ],
+          "in_story_facts": {
+            "units": "fictional native-job units",
+            "maximum": "1"
+          }
+        },
+        {
+          "id": "L.admit",
+          "role": "admission",
+          "links": [
+            "L.A",
+            "L.hold",
+            "L.input"
+          ],
+          "in_story_facts": {
+            "authority": "explicit local owner",
+            "guarantee": "trusted supplied argument boundary"
+          }
+        },
+        {
+          "id": "L.C",
+          "role": "native_launch_command",
+          "links": [
+            "L.A",
+            "L.admit"
+          ],
+          "in_story_facts": {
+            "native_launch_count": "1"
+          }
+        },
+        {
+          "id": "L.output",
+          "role": "captured_native_output",
+          "links": [
+            "L.C"
+          ],
+          "in_story_facts": {
+            "utf8": "{\"order\":[\"v1\",\"v2\",\"v0\"]}",
+            "role": "final",
+            "extent": "complete for requested ordering",
+            "literal_sha256": "a9baa75bc2b62ba7a7037abd1ea950cec9a132203a77a32a78b663be61abc942"
+          }
+        },
+        {
+          "id": "L.interpret",
+          "role": "derived_output",
+          "links": [
+            "L.output",
+            "L.map"
+          ],
+          "in_story_facts": {
+            "canonical_order": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        },
+        {
+          "id": "L.fulfillment",
+          "role": "assessment",
+          "links": [
+            "L.R",
+            "L.interpret"
+          ],
+          "in_story_facts": {
+            "response_fulfillment": "supported in story",
+            "causal_correctness": "unassessed"
+          }
+        },
+        {
+          "id": "L.settlement",
+          "role": "owner_settlement",
+          "links": [
+            "L.hold"
+          ],
+          "in_story_facts": {
+            "charged": "0.7",
+            "pending": "0",
+            "free": "0.3",
+            "scope": "included native-job units only"
+          }
+        },
+        {
+          "id": "L.other",
+          "role": "resource_scope_assessment",
+          "links": [
+            "L.E"
+          ],
+          "in_story_facts": {
+            "cpu_time": "unmeasured",
+            "storage": "unmeasured",
+            "all_resource_hard_cap": "not claimed"
+          }
+        },
+        {
+          "id": "L.close",
+          "role": "collection_closure",
+          "links": [
+            "L.fulfillment",
+            "L.settlement",
+            "L.other"
+          ],
+          "in_story_facts": {
+            "native_termination": "normal return evidenced in story",
+            "pending_native_commands": []
+          }
+        },
+        {
+          "id": "L.public_statement",
+          "role": "derived_validator_statement",
+          "links": [],
+          "in_story_facts": {
+            "audience": "public",
+            "claim": "authorized evaluator reports scoped fulfillment check",
+            "assurance": "hypothetical statement; no independent authentication mechanism exercised",
+            "direct_raw_mapping_verification": false
+          }
+        },
+        {
+          "id": "L.public_summary",
+          "role": "new_derived_record",
+          "links": [
+            "L.public_statement"
+          ],
+          "in_story_facts": {
+            "audience": "public",
+            "claim": "permitted scoped fulfillment summary"
+          }
+        },
+        {
+          "id": "L.projection_receipt",
+          "role": "private_derivation_receipt",
+          "links": [
+            "L.fulfillment",
+            "L.public_statement",
+            "L.public_summary"
+          ],
+          "in_story_facts": {
+            "audience": "private",
+            "private_basis_ids_not_serialized_publicly": true
+          }
+        },
+        {
+          "id": "L.private",
+          "role": "publication",
+          "links": [
+            "L.close",
+            "L.output",
+            "L.map",
+            "L.interpret",
+            "L.projection_receipt",
+            "L.E",
+            "L.B",
+            "L.R",
+            "L.A"
+          ],
+          "in_story_facts": {
+            "audience": "authorized evaluator",
+            "cutoff": "l06"
+          }
+        },
+        {
+          "id": "L.public",
+          "role": "publication",
+          "links": [
+            "L.public_summary",
+            "L.public_statement"
+          ],
+          "in_story_facts": {
+            "audience": "public",
+            "serialized_entities": [
+              "L.public_summary",
+              "L.public_statement"
+            ],
+            "private_map_serialized": false,
+            "cutoff": "l07",
+            "view_kind": "derived audience summary, not a complete execution account"
+          }
+        }
+      ],
+      "history": [
+        {
+          "at": "l01",
+          "action": "Create prospective account; final B/R/A not invented",
+          "refs": [
+            "L.E",
+            "L.intent",
+            "L.recipe"
+          ]
+        },
+        {
+          "at": "l02",
+          "action": "Admit realization; capture and check actual materialization",
+          "refs": [
+            "L.realize",
+            "L.input",
+            "L.map",
+            "L.check"
+          ]
+        },
+        {
+          "at": "l03",
+          "action": "Finalize eligible S2 binding and S1 request/attempt; reserve/admit",
+          "refs": [
+            "L.B",
+            "L.R",
+            "L.A",
+            "L.hold",
+            "L.admit"
+          ]
+        },
+        {
+          "at": "l04",
+          "action": "Pure descriptor preparation then one invocation",
+          "refs": [
+            "L.C"
+          ]
+        },
+        {
+          "at": "l05",
+          "action": "Capture ordering, interpret and assess separately",
+          "refs": [
+            "L.output",
+            "L.interpret",
+            "L.fulfillment"
+          ]
+        },
+        {
+          "at": "l06",
+          "action": "Settle included units, close, prepare public statement/summary and private derivation receipt, then freeze private view",
+          "refs": [
+            "L.settlement",
+            "L.other",
+            "L.close",
+            "L.private",
+            "L.public_statement",
+            "L.public_summary",
+            "L.projection_receipt"
+          ]
+        },
+        {
+          "at": "l07",
+          "action": "Separately admit and commit the already prepared public projection",
+          "refs": [
+            "L.public_statement",
+            "L.public_summary",
+            "L.public",
+            "L.projection_receipt"
+          ]
+        }
+      ],
+      "account_blocks": {
+        "identity_and_target": [
+          "L.E",
+          "L.intent",
+          "L.B"
+        ],
+        "activity_and_association_index": [
+          "L.R",
+          "L.A",
+          "L.realize",
+          "L.C"
+        ],
+        "evidence_index": [
+          "L.source",
+          "L.input",
+          "L.map",
+          "L.output",
+          "L.private",
+          "L.public",
+          "L.projection_receipt"
+        ],
+        "scoped_assessments": [
+          "L.check",
+          "L.fulfillment"
+        ],
+        "disposition_and_obligations": [
+          "L.admit",
+          "L.hold",
+          "L.settlement",
+          "L.other"
+        ],
+        "collection_and_closure": [
+          "L.close"
+        ]
+      },
+      "ending": {
+        "planned_trials": "1",
+        "attempts": "1",
+        "native_invocations": "1",
+        "causal_correctness": "unassessed",
+        "declared_native_job_charge": "0.7",
+        "pending_job_liability": "0",
+        "uses_mutable_current_pointer": false
+      },
+      "variants": [
+        {
+          "if": "OS-wide confinement is required but unavailable",
+          "then": "Hold strict invocation/claim; trusted argument boundary is insufficient",
+          "resolutions": [
+            "CS04",
+            "CS10",
+            "CS12"
+          ]
+        },
+        {
+          "if": "Required materialization invariant fails",
+          "then": "Retain intended slot/reason; no eligible native handoff or fabricated native crash",
+          "resolutions": [
+            "CS01",
+            "CS12"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R",
+      "assumptions": [
+        "One hypothetical graph trial; native owner enforces a six-unit envelope within ten fictional native-job units.",
+        "Receiver enforces new ownership for new effects; already accepted work continues.",
+        "One adequately bound combined lookup/attachment and one later poll are the two counted control requests; other charges are not asserted zero.",
+        "Polling window is explicitly after 16, not complete capture of earlier history; callback independently delivers event 18."
+      ],
+      "entities": [
+        {
+          "id": "R.intent",
+          "role": "scientific_intent",
+          "links": [],
+          "in_story_facts": {
+            "task": "graph on x,y",
+            "trial_count": "1"
+          }
+        },
+        {
+          "id": "R.E",
+          "role": "account",
+          "links": [
+            "R.intent"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "R.input",
+          "role": "artifact",
+          "links": [],
+          "in_story_facts": {
+            "utf8": "x,y\n0,1\n1,2\n",
+            "audience": "native",
+            "literal_sha256": "7621c4fa19d6d59767cd12a562ec03eb84505a8fd761266abd1cf549ba846453"
+          }
+        },
+        {
+          "id": "R.B",
+          "role": "final_run_binding",
+          "links": [
+            "R.intent",
+            "R.input"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "R.R",
+          "role": "native_request",
+          "links": [
+            "R.B"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "R.A",
+          "role": "attempt",
+          "links": [
+            "R.R"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "R.W1",
+          "role": "runtime_ownership",
+          "links": [
+            "R.E"
+          ],
+          "in_story_facts": {
+            "epoch": "1"
+          }
+        },
+        {
+          "id": "R.hold",
+          "role": "owner_reservation",
+          "links": [
+            "R.A"
+          ],
+          "in_story_facts": {
+            "total": "10",
+            "maximum": "6",
+            "free_before_settlement": "4"
+          }
+        },
+        {
+          "id": "R.C",
+          "role": "native_launch_command",
+          "links": [
+            "R.A",
+            "R.hold",
+            "R.W1"
+          ],
+          "in_story_facts": {
+            "native_launch_count": "1"
+          }
+        },
+        {
+          "id": "R.gap",
+          "role": "observation_gap",
+          "links": [
+            "R.C"
+          ],
+          "in_story_facts": {
+            "acceptance": "unknown at r03",
+            "stop": "unknown at r03",
+            "cost": "unknown at r03"
+          }
+        },
+        {
+          "id": "R.P1",
+          "role": "publication",
+          "links": [
+            "R.E",
+            "R.C",
+            "R.gap",
+            "R.hold"
+          ],
+          "in_story_facts": {
+            "cutoff": "r03",
+            "acceptance": "unknown"
+          }
+        },
+        {
+          "id": "R.W2",
+          "role": "runtime_ownership",
+          "links": [
+            "R.E",
+            "R.W1"
+          ],
+          "in_story_facts": {
+            "epoch": "2",
+            "old_new_effects": "receiver fenced; accepted job not stopped"
+          }
+        },
+        {
+          "id": "R.N",
+          "role": "native_episode",
+          "links": [],
+          "in_story_facts": {
+            "issuer": "fictional owner",
+            "namespace": "job/account-scope",
+            "native_id": "42",
+            "incarnation": "launch-generation-1"
+          }
+        },
+        {
+          "id": "R.lookup",
+          "role": "owner_native_receipt",
+          "links": [
+            "R.C",
+            "R.N",
+            "R.W2"
+          ],
+          "in_story_facts": {
+            "acquired_at": "r05",
+            "acceptance_event": "before r03",
+            "control_requests": "1"
+          }
+        },
+        {
+          "id": "R.assoc",
+          "role": "native_association",
+          "links": [
+            "R.A",
+            "R.N",
+            "R.lookup"
+          ],
+          "in_story_facts": {
+            "primary": "unique supported in story"
+          }
+        },
+        {
+          "id": "R.connection",
+          "role": "new_runtime_connection",
+          "links": [
+            "R.assoc",
+            "R.W2"
+          ],
+          "in_story_facts": {
+            "old_runtime_object_serialized": false,
+            "original_attempt": "R.A"
+          }
+        },
+        {
+          "id": "R.P2",
+          "role": "publication",
+          "links": [
+            "R.P1",
+            "R.lookup",
+            "R.assoc",
+            "R.connection"
+          ],
+          "in_story_facts": {
+            "cutoff": "r05",
+            "acceptance": "supported now; P1 unchanged"
+          }
+        },
+        {
+          "id": "R.e17",
+          "role": "native_event",
+          "links": [
+            "R.N"
+          ],
+          "in_story_facts": {
+            "stream": "events/generation-1",
+            "position": "17",
+            "value": "running"
+          }
+        },
+        {
+          "id": "R.e18",
+          "role": "native_event",
+          "links": [
+            "R.N"
+          ],
+          "in_story_facts": {
+            "stream": "events/generation-1",
+            "position": "18",
+            "value": "completed"
+          }
+        },
+        {
+          "id": "R.o18cb",
+          "role": "observation",
+          "links": [
+            "R.e18",
+            "R.connection"
+          ],
+          "in_story_facts": {
+            "transport": "callback",
+            "capture_position": "first"
+          }
+        },
+        {
+          "id": "R.o17poll",
+          "role": "observation",
+          "links": [
+            "R.e17",
+            "R.connection"
+          ],
+          "in_story_facts": {
+            "transport": "poll",
+            "capture_position": "second"
+          }
+        },
+        {
+          "id": "R.o18poll",
+          "role": "observation",
+          "links": [
+            "R.e18",
+            "R.connection"
+          ],
+          "in_story_facts": {
+            "transport": "poll",
+            "capture_position": "third; duplicate native event"
+          }
+        },
+        {
+          "id": "R.capture",
+          "role": "durable_capture_checkpoint",
+          "links": [
+            "R.o18cb",
+            "R.o17poll",
+            "R.o18poll"
+          ],
+          "in_story_facts": {
+            "poll_window": "after 16",
+            "durable_next": "18",
+            "earlier_history": "not claimed complete",
+            "control_requests_total": "2"
+          }
+        },
+        {
+          "id": "R.output",
+          "role": "captured_native_output",
+          "links": [
+            "R.N"
+          ],
+          "in_story_facts": {
+            "utf8": "{\"nodes\":[\"x\",\"y\"],\"edges\":[[\"x\",\"y\"]]}",
+            "role": "final",
+            "coverage": "complete for requested x,y graph in story",
+            "literal_sha256": "da9c76e6584d5702e7c6e9fe5ac0a13a9bb97fca28511112b860d53964327536"
+          }
+        },
+        {
+          "id": "R.assess",
+          "role": "assessment",
+          "links": [
+            "R.output",
+            "R.capture"
+          ],
+          "in_story_facts": {
+            "native_termination": "completed in story",
+            "response_fulfillment": "supported in story",
+            "causal_correctness": "unassessed"
+          }
+        },
+        {
+          "id": "R.settle",
+          "role": "owner_settlement",
+          "links": [
+            "R.hold",
+            "R.lookup"
+          ],
+          "in_story_facts": {
+            "charged": "4",
+            "pending": "0",
+            "free": "6",
+            "original_envelope": "6"
+          }
+        },
+        {
+          "id": "R.other",
+          "role": "resource_scope_assessment",
+          "links": [
+            "R.E"
+          ],
+          "in_story_facts": {
+            "control_requests": "2",
+            "other_usage_charges": "unmeasured; no all-resource total/cap"
+          }
+        },
+        {
+          "id": "R.close",
+          "role": "collection_closure",
+          "links": [
+            "R.assess",
+            "R.settle",
+            "R.other"
+          ],
+          "in_story_facts": {
+            "pending_native_launches": "none in complete local command index",
+            "historical_stream_coverage": "declared window only"
+          }
+        },
+        {
+          "id": "R.P3",
+          "role": "publication",
+          "links": [
+            "R.P2",
+            "R.close",
+            "R.output",
+            "R.capture"
+          ],
+          "in_story_facts": {
+            "cutoff": "r08",
+            "prior_package_bytes": "unchanged"
+          }
+        }
+      ],
+      "history": [
+        {
+          "at": "r01",
+          "action": "Bind/admit intent, request, attempt, ownership and hold",
+          "refs": [
+            "R.E",
+            "R.B",
+            "R.R",
+            "R.A",
+            "R.W1",
+            "R.hold"
+          ]
+        },
+        {
+          "at": "r02",
+          "action": "Dispatch C once; native acknowledgement lost",
+          "refs": [
+            "R.C",
+            "R.gap"
+          ]
+        },
+        {
+          "at": "r03",
+          "action": "Publish P1 with unknown acceptance/cost/stop",
+          "refs": [
+            "R.P1"
+          ]
+        },
+        {
+          "at": "r04",
+          "action": "Take over with authority and receiver enforcement",
+          "refs": [
+            "R.W2"
+          ]
+        },
+        {
+          "at": "r05",
+          "action": "Combined lookup/attach establishes existing job and new connection; publish P2",
+          "refs": [
+            "R.lookup",
+            "R.assoc",
+            "R.connection",
+            "R.P2"
+          ]
+        },
+        {
+          "at": "r06",
+          "action": "Capture callback 18 then poll 17/18; commit exact progress",
+          "refs": [
+            "R.o18cb",
+            "R.o17poll",
+            "R.o18poll",
+            "R.capture"
+          ]
+        },
+        {
+          "at": "r07",
+          "action": "Capture graph and assess response, not scientific truth",
+          "refs": [
+            "R.output",
+            "R.assess"
+          ]
+        },
+        {
+          "at": "r08",
+          "action": "Settle included job units, close and publish P3",
+          "refs": [
+            "R.settle",
+            "R.other",
+            "R.close",
+            "R.P3"
+          ]
+        }
+      ],
+      "account_blocks": {
+        "identity_and_target": [
+          "R.E",
+          "R.intent",
+          "R.B"
+        ],
+        "activity_and_association_index": [
+          "R.R",
+          "R.A",
+          "R.C",
+          "R.N",
+          "R.assoc",
+          "R.W1",
+          "R.W2",
+          "R.connection"
+        ],
+        "evidence_index": [
+          "R.gap",
+          "R.lookup",
+          "R.o18cb",
+          "R.o17poll",
+          "R.o18poll",
+          "R.capture",
+          "R.output",
+          "R.P1",
+          "R.P2",
+          "R.P3"
+        ],
+        "scoped_assessments": [
+          "R.assess"
+        ],
+        "disposition_and_obligations": [
+          "R.hold",
+          "R.settle",
+          "R.other"
+        ],
+        "collection_and_closure": [
+          "R.close"
+        ]
+      },
+      "ending": {
+        "planned_trials": "1",
+        "attempts": "1",
+        "native_invocations": "1",
+        "reconnected_same_attempt": "R.A",
+        "native_events": "2",
+        "observer_event_captures": "3",
+        "declared_native_job_charge": "4",
+        "causal_correctness": "unassessed",
+        "uses_mutable_current_pointer": false
+      },
+      "variants": [
+        {
+          "if": "Inadequate lookup and no valid native idempotency",
+          "then": "Hold replacement launch and retain commitment/uncertainty; bounded closure possible",
+          "resolutions": [
+            "CS04",
+            "CS11",
+            "CS12"
+          ]
+        },
+        {
+          "if": "Lookup establishes two unintended jobs",
+          "then": "Keep both in inventory, withhold ambiguous primary; no registry overwrite or extra planned trial",
+          "resolutions": [
+            "CS02",
+            "CS03"
+          ]
+        },
+        {
+          "if": "Original external job has no established original attempt",
+          "then": "Explicit origin-unknown observation profile; no fabricated attempt for the registry",
+          "resolutions": [
+            "CS01",
+            "CS02"
+          ]
+        },
+        {
+          "if": "P2 manifest committed but its acknowledgement was lost",
+          "then": "Reconcile the exact frozen P2 identity/bytes; no new native invocation or fresh freeze as a retry",
+          "resolutions": [
+            "CS10",
+            "CS11"
+          ]
+        },
+        {
+          "if": "A current pointer changed A to B to A after it was read",
+          "then": "Use actual expected-revision enforcement for no-missed-update scope, or keep a narrower value-CAS/no-pointer profile; pin analyses to exact packages",
+          "resolutions": [
+            "CS11"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "I",
+      "assumptions": [
+        "One hypothetical interactive trial; its declared condition explicitly permits the particular oracle channel.",
+        "Custodian counts answered native actions with allowance two. Other usage is unmeasured/advisory, not a hard all-resource cap.",
+        "Native action IDs and receipt lookup are adequately evidenced. Session can remain waiting after bounded observation closes.",
+        "Q2 requires unavailable permitted source information; no fallback is permitted in the main trace.",
+        "Each native action binds its actual source context; Q2 refers to unavailable oracle-state-2, so Q1 content cannot silently substitute."
+      ],
+      "entities": [
+        {
+          "id": "I.intent",
+          "role": "scientific_intent",
+          "links": [],
+          "in_story_facts": {
+            "task": "complete global ordering",
+            "trial_count": "1",
+            "oracle_channel": "explicitly permitted",
+            "fallback": "none on missing required source"
+          }
+        },
+        {
+          "id": "I.E",
+          "role": "account",
+          "links": [
+            "I.intent"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "I.B",
+          "role": "final_run_binding",
+          "links": [
+            "I.intent",
+            "I.input"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "I.R",
+          "role": "native_request",
+          "links": [
+            "I.B",
+            "I.input"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "I.A",
+          "role": "attempt",
+          "links": [
+            "I.R"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "I.N",
+          "role": "native_episode",
+          "links": [],
+          "in_story_facts": {
+            "issuer": "fictional session owner",
+            "namespace": "interactive",
+            "native_id": "session-one",
+            "incarnation": "1"
+          }
+        },
+        {
+          "id": "I.assoc",
+          "role": "native_association",
+          "links": [
+            "I.A",
+            "I.N",
+            "I.accept"
+          ],
+          "in_story_facts": {
+            "primary": "unique supported in story"
+          }
+        },
+        {
+          "id": "I.C",
+          "role": "native_launch_command",
+          "links": [
+            "I.A"
+          ],
+          "in_story_facts": {
+            "native_launch_count": "1",
+            "admission": "established in story"
+          }
+        },
+        {
+          "id": "I.Q1",
+          "role": "native_action",
+          "links": [
+            "I.N"
+          ],
+          "in_story_facts": {
+            "native_action_id": "q1",
+            "question": "Is X independent of Y given Z?",
+            "source_context": "oracle-state-1"
+          }
+        },
+        {
+          "id": "I.q1cb",
+          "role": "observation",
+          "links": [
+            "I.Q1"
+          ],
+          "in_story_facts": {
+            "transport": "callback"
+          }
+        },
+        {
+          "id": "I.q1poll",
+          "role": "observation",
+          "links": [
+            "I.Q1"
+          ],
+          "in_story_facts": {
+            "transport": "poll; same established action"
+          }
+        },
+        {
+          "id": "I.source",
+          "role": "permitted_oracle_evidence",
+          "links": [
+            "I.intent"
+          ],
+          "in_story_facts": {
+            "utf8": "{\"independent\":false,\"conditioning\":[\"Z\"]}",
+            "scientific_truth": "not established by documentary example",
+            "literal_sha256": "9fe0fbadc42f08310b5314baffb0733891db774ccc2ceb7c250e868794d099dc",
+            "source_context": "oracle-state-1"
+          }
+        },
+        {
+          "id": "I.decision1",
+          "role": "selected_response",
+          "links": [
+            "I.Q1",
+            "I.source"
+          ],
+          "in_story_facts": {
+            "basis_cutoff": "i03",
+            "response": "I.V1",
+            "procedure": "declared permitted source response"
+          }
+        },
+        {
+          "id": "I.V1",
+          "role": "response_content",
+          "links": [
+            "I.source"
+          ],
+          "in_story_facts": {
+            "value": "independent=false"
+          }
+        },
+        {
+          "id": "I.H1",
+          "role": "exposure_reservation",
+          "links": [
+            "I.Q1",
+            "I.V1"
+          ],
+          "in_story_facts": {
+            "allowance": "2",
+            "reserved": "1",
+            "remaining_unreserved": "1"
+          }
+        },
+        {
+          "id": "I.deliver1",
+          "role": "admitted_delivery_command",
+          "links": [
+            "I.Q1",
+            "I.decision1",
+            "I.V1",
+            "I.H1"
+          ],
+          "in_story_facts": {
+            "delivery_transmissions": "1",
+            "acknowledgement": "initially unknown"
+          }
+        },
+        {
+          "id": "I.P1",
+          "role": "publication",
+          "links": [
+            "I.deliver1",
+            "I.H1",
+            "I.decision1",
+            "I.E",
+            "I.B",
+            "I.R",
+            "I.A",
+            "I.assoc",
+            "I.q1cb",
+            "I.q1poll"
+          ],
+          "in_story_facts": {
+            "cutoff": "i04",
+            "delivery": "unknown; possible exposure retained"
+          }
+        },
+        {
+          "id": "I.takeover",
+          "role": "runtime_ownership",
+          "links": [
+            "I.E"
+          ],
+          "in_story_facts": {
+            "epoch": "2",
+            "same_native_attempt": "I.A",
+            "new_launch": false
+          }
+        },
+        {
+          "id": "I.receipt1",
+          "role": "native_delivery_receipt",
+          "links": [
+            "I.Q1",
+            "I.deliver1"
+          ],
+          "in_story_facts": {
+            "acquired_at": "i06",
+            "delivery": "matched receipt establishes delivery in story",
+            "use": "unknown"
+          }
+        },
+        {
+          "id": "I.exposure",
+          "role": "owner_settlement",
+          "links": [
+            "I.H1",
+            "I.receipt1"
+          ],
+          "in_story_facts": {
+            "consumed": "1",
+            "pending": "0",
+            "remaining": "1",
+            "unit": "answered native actions"
+          }
+        },
+        {
+          "id": "I.Q2",
+          "role": "native_action",
+          "links": [
+            "I.N"
+          ],
+          "in_story_facts": {
+            "native_action_id": "q2",
+            "question": "Is X independent of Y given Z?",
+            "source_context": "oracle-state-2; required current evidence unavailable"
+          }
+        },
+        {
+          "id": "I.source_gap",
+          "role": "evidence_gap",
+          "links": [
+            "I.Q2"
+          ],
+          "in_story_facts": {
+            "required_source": "unavailable",
+            "fallback": "not permitted"
+          }
+        },
+        {
+          "id": "I.partial",
+          "role": "captured_native_output",
+          "links": [
+            "I.N"
+          ],
+          "in_story_facts": {
+            "role": "intermediate local relation",
+            "utf8": "{\"asserted\":[[\"X\",\"Y\"]]}",
+            "coverage": "explicit-only; Z/final order unreported",
+            "literal_sha256": "5e0aa5da67942f9cdbca594879959516fd76208979e54bbc0de6d4653d56a382"
+          }
+        },
+        {
+          "id": "I.assess",
+          "role": "assessment",
+          "links": [
+            "I.receipt1",
+            "I.Q2",
+            "I.source_gap",
+            "I.partial"
+          ],
+          "in_story_facts": {
+            "Q1": "delivered, use unknown",
+            "Q2": "distinct pending action, no selected answer",
+            "final_fulfillment": "unestablished",
+            "native_stop": "unknown"
+          }
+        },
+        {
+          "id": "I.other",
+          "role": "resource_scope_assessment",
+          "links": [
+            "I.E"
+          ],
+          "in_story_facts": {
+            "compute_and_other_charges": "unmeasured; not zero",
+            "hard_all_resource_cap": "not claimed"
+          }
+        },
+        {
+          "id": "I.close",
+          "role": "collection_closure",
+          "links": [
+            "I.assess",
+            "I.exposure",
+            "I.other",
+            "I.Q2"
+          ],
+          "in_story_facts": {
+            "cutoff": "i08",
+            "pending_action": "I.Q2",
+            "native_termination": "unresolved",
+            "follow_up": "actual owner disposition required; no discharge invented"
+          }
+        },
+        {
+          "id": "I.P2",
+          "role": "publication",
+          "links": [
+            "I.P1",
+            "I.receipt1",
+            "I.close",
+            "I.partial"
+          ],
+          "in_story_facts": {
+            "cutoff": "i08",
+            "earlier_P1": "unchanged"
+          }
+        },
+        {
+          "id": "I.input",
+          "role": "native_presentation",
+          "links": [],
+          "in_story_facts": {
+            "utf8": "{\"variables\":[\"X\",\"Y\",\"Z\"],\"channel\":\"explicitly permitted oracle\"}",
+            "audience": "native",
+            "scope": "task/domain; not evaluator reference",
+            "literal_sha256": "4aa0dcd411d48262035669d17c42defc65cf1f2baa2839d05d0780a5d51733d3"
+          }
+        },
+        {
+          "id": "I.accept",
+          "role": "owner_native_receipt",
+          "links": [
+            "I.C",
+            "I.N"
+          ],
+          "in_story_facts": {
+            "basis": "hypothetical session-owner acceptance receipt"
+          }
+        }
+      ],
+      "history": [
+        {
+          "at": "i01",
+          "action": "Bind/admit the domain presentation, invoke once, capture session acceptance and establish association",
+          "refs": [
+            "I.E",
+            "I.input",
+            "I.B",
+            "I.R",
+            "I.A",
+            "I.C",
+            "I.N",
+            "I.accept",
+            "I.assoc"
+          ]
+        },
+        {
+          "at": "i02",
+          "action": "Capture callback/poll observations of Q1",
+          "refs": [
+            "I.q1cb",
+            "I.q1poll"
+          ]
+        },
+        {
+          "at": "i03",
+          "action": "Record selection from permitted source/cutoff",
+          "refs": [
+            "I.Q1",
+            "I.source",
+            "I.decision1",
+            "I.V1",
+            "I.H1"
+          ]
+        },
+        {
+          "at": "i04",
+          "action": "Send once, lose ack and publish partial P1",
+          "refs": [
+            "I.deliver1",
+            "I.P1"
+          ]
+        },
+        {
+          "at": "i05",
+          "action": "Take over preserving session, choice and possible exposure",
+          "refs": [
+            "I.takeover"
+          ]
+        },
+        {
+          "at": "i06",
+          "action": "Reconcile Q1 delivery and settle allowance without resend/proof of use",
+          "refs": [
+            "I.receipt1",
+            "I.exposure"
+          ]
+        },
+        {
+          "at": "i07",
+          "action": "Recognize distinct same-text Q2; hold on source gap and retain partial output",
+          "refs": [
+            "I.Q2",
+            "I.source_gap",
+            "I.partial"
+          ]
+        },
+        {
+          "at": "i08",
+          "action": "Close with Q2/native stop unresolved; publish P2",
+          "refs": [
+            "I.assess",
+            "I.other",
+            "I.close",
+            "I.P2"
+          ]
+        }
+      ],
+      "account_blocks": {
+        "identity_and_target": [
+          "I.E",
+          "I.intent",
+          "I.B"
+        ],
+        "activity_and_association_index": [
+          "I.R",
+          "I.A",
+          "I.N",
+          "I.assoc",
+          "I.C",
+          "I.Q1",
+          "I.Q2",
+          "I.takeover",
+          "I.deliver1"
+        ],
+        "evidence_index": [
+          "I.q1cb",
+          "I.q1poll",
+          "I.source",
+          "I.receipt1",
+          "I.source_gap",
+          "I.partial",
+          "I.P1",
+          "I.P2",
+          "I.input",
+          "I.accept"
+        ],
+        "scoped_assessments": [
+          "I.assess"
+        ],
+        "disposition_and_obligations": [
+          "I.decision1",
+          "I.V1",
+          "I.H1",
+          "I.exposure",
+          "I.other",
+          "I.Q2"
+        ],
+        "collection_and_closure": [
+          "I.close"
+        ]
+      },
+      "ending": {
+        "planned_trials": "1",
+        "attempts": "1",
+        "native_invocations": "1",
+        "selected_responses": "1",
+        "delivery_transmissions": "1",
+        "distinct_observed_actions": "2",
+        "pending_action": "I.Q2",
+        "native_termination": "unknown",
+        "response_fulfillment": "unestablished",
+        "policy_consumed": "1",
+        "policy_remaining": "1",
+        "causal_correctness": "unassessed",
+        "uses_mutable_current_pointer": false
+      },
+      "variants": [
+        {
+          "if": "Fixed policy permits abstention on source gap",
+          "then": "Distinct explicit selected/admitted abstention; silence is not delivery",
+          "resolutions": [
+            "CS07"
+          ]
+        },
+        {
+          "if": "Callback ack and answer are one physical operation",
+          "then": "Real combined-effect admission/receipt rather than invented extra ACK",
+          "resolutions": [
+            "CS04",
+            "CS07"
+          ]
+        },
+        {
+          "if": "Pre-delivery decision update is explicitly permitted",
+          "then": "New decision/command plus adequate old-command invalidation/nonexecution; no overwritten choice or assumed non-delivery",
+          "resolutions": [
+            "CS07"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "K",
+      "assumptions": [
+        "One hypothetical final-graph trial; fixed selection is first eligible final, not best reference score.",
+        "Partial continuation is explicitly allowed; predecessor stop is required before restart.",
+        "Owner enforces included native-job envelopes within twenty fictional units. Other usage stays outside that exact total.",
+        "Model/optimizer load is evidenced; RNG/history continuity unknown, no exact full-state claim."
+      ],
+      "entities": [
+        {
+          "id": "K.intent",
+          "role": "scientific_intent",
+          "links": [],
+          "in_story_facts": {
+            "task": "final graph on A,B,C",
+            "trial_count": "1",
+            "recovery": "partial continuation allowed; nonoverlap required"
+          }
+        },
+        {
+          "id": "K.E",
+          "role": "account",
+          "links": [
+            "K.intent"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "K.B",
+          "role": "final_run_binding",
+          "links": [
+            "K.intent",
+            "K.input"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "K.R",
+          "role": "native_request",
+          "links": [
+            "K.B",
+            "K.input"
+          ],
+          "in_story_facts": {
+            "recovery_policy": "partial continuation within fixed intent"
+          }
+        },
+        {
+          "id": "K.A1",
+          "role": "attempt",
+          "links": [
+            "K.R"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "K.N1",
+          "role": "native_episode",
+          "links": [],
+          "in_story_facts": {
+            "native_id": "job-first",
+            "incarnation": "1",
+            "issuer": "fictional owner",
+            "namespace": "checkpoint"
+          }
+        },
+        {
+          "id": "K.assoc1",
+          "role": "native_association",
+          "links": [
+            "K.A1",
+            "K.N1",
+            "K.accept1"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "K.H1",
+          "role": "owner_reservation",
+          "links": [
+            "K.A1"
+          ],
+          "in_story_facts": {
+            "maximum": "8",
+            "total": "20"
+          }
+        },
+        {
+          "id": "K.C1",
+          "role": "native_launch_command",
+          "links": [
+            "K.A1",
+            "K.H1"
+          ],
+          "in_story_facts": {
+            "native_launch_count": "1"
+          }
+        },
+        {
+          "id": "K.G1",
+          "role": "captured_native_output",
+          "links": [
+            "K.N1"
+          ],
+          "in_story_facts": {
+            "utf8": "{\"nodes\":[\"A\",\"B\",\"C\"],\"edges\":[[\"A\",\"B\"]]}",
+            "role": "complete intermediate snapshot, not final",
+            "literal_sha256": "869621154db6510488c3cfcc7c6d35c4f2f78bb9eca6c8eba331296c54972406"
+          }
+        },
+        {
+          "id": "K.state",
+          "role": "checkpoint_artifact",
+          "links": [
+            "K.N1"
+          ],
+          "in_story_facts": {
+            "audience": "authorized operator only",
+            "scope": "model/optimizer available; RNG/history unknown"
+          }
+        },
+        {
+          "id": "K.stop1",
+          "role": "native_stop_receipt",
+          "links": [
+            "K.N1"
+          ],
+          "in_story_facts": {
+            "scope": "required primary/known descendants stopped before A2"
+          }
+        },
+        {
+          "id": "K.bill1partial",
+          "role": "owner_report",
+          "links": [
+            "K.H1"
+          ],
+          "in_story_facts": {
+            "charged": "3",
+            "remaining_bound": "5",
+            "final": false
+          }
+        },
+        {
+          "id": "K.P1",
+          "role": "publication",
+          "links": [
+            "K.G1",
+            "K.state",
+            "K.stop1",
+            "K.bill1partial",
+            "K.E",
+            "K.B",
+            "K.R",
+            "K.A1",
+            "K.assoc1"
+          ],
+          "in_story_facts": {
+            "cutoff": "k03",
+            "cost": "A1 final bill unknown"
+          }
+        },
+        {
+          "id": "K.A2",
+          "role": "attempt",
+          "links": [
+            "K.R",
+            "K.state"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "K.N2",
+          "role": "native_episode",
+          "links": [],
+          "in_story_facts": {
+            "native_id": "job-successor",
+            "incarnation": "1",
+            "issuer": "fictional owner",
+            "namespace": "checkpoint"
+          }
+        },
+        {
+          "id": "K.H2",
+          "role": "owner_reservation",
+          "links": [
+            "K.A2",
+            "K.bill1partial"
+          ],
+          "in_story_facts": {
+            "maximum": "6",
+            "free_after_admission": "6"
+          }
+        },
+        {
+          "id": "K.C2",
+          "role": "native_restart_command",
+          "links": [
+            "K.A2",
+            "K.H2",
+            "K.stop1",
+            "K.state"
+          ],
+          "in_story_facts": {
+            "native_launch_count": "1"
+          }
+        },
+        {
+          "id": "K.assoc2",
+          "role": "native_association",
+          "links": [
+            "K.A2",
+            "K.N2",
+            "K.accept2"
+          ],
+          "in_story_facts": {}
+        },
+        {
+          "id": "K.load",
+          "role": "state_load_evidence",
+          "links": [
+            "K.A2",
+            "K.state"
+          ],
+          "in_story_facts": {
+            "loaded": [
+              "model",
+              "optimizer"
+            ],
+            "unknown": [
+              "rng",
+              "interaction_history"
+            ],
+            "continuity": "partial; exact only for evidenced stated components"
+          }
+        },
+        {
+          "id": "K.recovery",
+          "role": "recovery_relationship",
+          "links": [
+            "K.A1",
+            "K.A2",
+            "K.load"
+          ],
+          "in_story_facts": {
+            "kind": "checkpoint_continuation",
+            "request_relation": "same compatible request"
+          }
+        },
+        {
+          "id": "K.G2",
+          "role": "captured_native_output",
+          "links": [
+            "K.N2"
+          ],
+          "in_story_facts": {
+            "utf8": "{\"nodes\":[\"A\",\"B\",\"C\"],\"edges\":[[\"A\",\"B\"],[\"B\",\"C\"]]}",
+            "role": "first eligible final",
+            "literal_sha256": "a91e2b9a54517667aba3abee1664e5ec7f62ffab43ef07a360b870f269e4a4c0"
+          }
+        },
+        {
+          "id": "K.assess",
+          "role": "assessment",
+          "links": [
+            "K.G1",
+            "K.G2",
+            "K.recovery"
+          ],
+          "in_story_facts": {
+            "selected": "K.G2",
+            "unselected_preserved": "K.G1",
+            "full_hidden_state_continuity": "unestablished",
+            "causal_correctness": "unassessed"
+          }
+        },
+        {
+          "id": "K.stop2",
+          "role": "native_stop_receipt",
+          "links": [
+            "K.N2"
+          ],
+          "in_story_facts": {
+            "scope": "declared native workflow completed"
+          }
+        },
+        {
+          "id": "K.P2",
+          "role": "publication",
+          "links": [
+            "K.P1",
+            "K.assess",
+            "K.stop2",
+            "K.assoc2"
+          ],
+          "in_story_facts": {
+            "cutoff": "k06",
+            "cost": "final billing not established"
+          }
+        },
+        {
+          "id": "K.bill1final",
+          "role": "owner_report",
+          "links": [
+            "K.bill1partial",
+            "K.H1"
+          ],
+          "in_story_facts": {
+            "charged": "5",
+            "remaining_bound": "0",
+            "final": true,
+            "revises_prior_covered_total": true
+          }
+        },
+        {
+          "id": "K.bill2final",
+          "role": "owner_report",
+          "links": [
+            "K.H2"
+          ],
+          "in_story_facts": {
+            "charged": "4",
+            "remaining_bound": "0",
+            "final": true
+          }
+        },
+        {
+          "id": "K.settle",
+          "role": "owner_settlement",
+          "links": [
+            "K.bill1final",
+            "K.bill2final"
+          ],
+          "in_story_facts": {
+            "charged": "9",
+            "pending": "0",
+            "free": "11",
+            "scope": "included native-job units only"
+          }
+        },
+        {
+          "id": "K.other",
+          "role": "resource_scope_assessment",
+          "links": [
+            "K.E"
+          ],
+          "in_story_facts": {
+            "other_usage": "unmeasured; no all-resource total"
+          }
+        },
+        {
+          "id": "K.close",
+          "role": "collection_closure",
+          "links": [
+            "K.assess",
+            "K.stop2",
+            "K.settle",
+            "K.other"
+          ],
+          "in_story_facts": {
+            "cutoff": "k07",
+            "attempt_history": "both retained"
+          }
+        },
+        {
+          "id": "K.P3",
+          "role": "publication",
+          "links": [
+            "K.P2",
+            "K.close",
+            "K.settle"
+          ],
+          "in_story_facts": {
+            "cutoff": "k07",
+            "restricted_checkpoint": "not automatically exported",
+            "prior_views": "unchanged"
+          }
+        },
+        {
+          "id": "K.input",
+          "role": "native_presentation",
+          "links": [],
+          "in_story_facts": {
+            "utf8": "A,B,C\n1,2,3\n4,5,6\n",
+            "audience": "native",
+            "scope": "fixed source snapshot for both compatible attempts",
+            "literal_sha256": "91e42fbb44c8d29d0c3af97ed5fbda15c2c70b349aad408fd5ff5c90e908c193"
+          }
+        },
+        {
+          "id": "K.accept1",
+          "role": "owner_native_receipt",
+          "links": [
+            "K.C1",
+            "K.N1"
+          ],
+          "in_story_facts": {
+            "basis": "hypothetical first-job acceptance receipt"
+          }
+        },
+        {
+          "id": "K.accept2",
+          "role": "owner_native_receipt",
+          "links": [
+            "K.C2",
+            "K.N2"
+          ],
+          "in_story_facts": {
+            "basis": "hypothetical successor-job acceptance receipt"
+          }
+        }
+      ],
+      "history": [
+        {
+          "at": "k01",
+          "action": "Bind/admit fixed input and first envelope; invoke once, capture N1 acceptance and establish association",
+          "refs": [
+            "K.E",
+            "K.input",
+            "K.B",
+            "K.R",
+            "K.A1",
+            "K.H1",
+            "K.C1",
+            "K.N1",
+            "K.accept1",
+            "K.assoc1"
+          ]
+        },
+        {
+          "at": "k02",
+          "action": "Capture intermediate output/checkpoint",
+          "refs": [
+            "K.G1",
+            "K.state"
+          ]
+        },
+        {
+          "at": "k03",
+          "action": "Establish predecessor stop; interim bill/P1 remain partial",
+          "refs": [
+            "K.stop1",
+            "K.bill1partial",
+            "K.P1"
+          ]
+        },
+        {
+          "at": "k04",
+          "action": "Admit/invoke successor once under fixed partial-continuation policy; capture N2 acceptance and association",
+          "refs": [
+            "K.A2",
+            "K.H2",
+            "K.C2",
+            "K.N2",
+            "K.accept2",
+            "K.assoc2"
+          ]
+        },
+        {
+          "at": "k05",
+          "action": "Capture actual load and continuation; RNG/history unknown",
+          "refs": [
+            "K.load",
+            "K.recovery"
+          ]
+        },
+        {
+          "at": "k06",
+          "action": "Capture first eligible final, preserve old output, establish completion/P2",
+          "refs": [
+            "K.G2",
+            "K.assess",
+            "K.stop2",
+            "K.P2"
+          ]
+        },
+        {
+          "at": "k07",
+          "action": "Late final bills settle both attempts; publish new P3",
+          "refs": [
+            "K.bill1final",
+            "K.bill2final",
+            "K.settle",
+            "K.other",
+            "K.close",
+            "K.P3"
+          ]
+        }
+      ],
+      "account_blocks": {
+        "identity_and_target": [
+          "K.E",
+          "K.intent",
+          "K.B"
+        ],
+        "activity_and_association_index": [
+          "K.R",
+          "K.A1",
+          "K.A2",
+          "K.N1",
+          "K.N2",
+          "K.assoc1",
+          "K.assoc2",
+          "K.C1",
+          "K.C2",
+          "K.recovery"
+        ],
+        "evidence_index": [
+          "K.G1",
+          "K.state",
+          "K.load",
+          "K.G2",
+          "K.stop1",
+          "K.stop2",
+          "K.bill1partial",
+          "K.bill1final",
+          "K.bill2final",
+          "K.P1",
+          "K.P2",
+          "K.P3",
+          "K.input",
+          "K.accept1",
+          "K.accept2"
+        ],
+        "scoped_assessments": [
+          "K.assess"
+        ],
+        "disposition_and_obligations": [
+          "K.H1",
+          "K.H2",
+          "K.settle",
+          "K.other"
+        ],
+        "collection_and_closure": [
+          "K.close"
+        ]
+      },
+      "ending": {
+        "planned_trials": "1",
+        "attempts": "2",
+        "native_invocations": "2",
+        "selected_final": "K.G2",
+        "full_hidden_state_continuity": "unestablished",
+        "native_job_charges": "9",
+        "pending_job_liability": "0",
+        "free_native_job_units": "11",
+        "causal_correctness": "unassessed",
+        "uses_mutable_current_pointer": false
+      },
+      "variants": [
+        {
+          "if": "Exact RNG/history continuity is required",
+          "then": "Hold exact restart/claim; partial load is not full restoration",
+          "resolutions": [
+            "CS08",
+            "CS12"
+          ]
+        },
+        {
+          "if": "Stop unknown while fixed policy requires nonoverlap",
+          "then": "Hold successor; extra budget cannot waive scientific condition",
+          "resolutions": [
+            "CS04",
+            "CS08"
+          ]
+        },
+        {
+          "if": "Incoming package reuses record ID with changed content",
+          "then": "Reject structured integration; capture permitted raw conflict under new artifact ID, preserve guards",
+          "resolutions": [
+            "CS06",
+            "CS10"
+          ]
+        }
+      ],
+      "illustrative_ledger": {
+        "total": "20",
+        "rows": [
+          {
+            "charged": "3",
+            "a1_pending": "5",
+            "a2_pending": "0",
+            "free": "12"
+          },
+          {
+            "charged": "3",
+            "a1_pending": "5",
+            "a2_pending": "6",
+            "free": "6"
+          },
+          {
+            "charged": "5",
+            "a1_pending": "0",
+            "a2_pending": "6",
+            "free": "9"
+          },
+          {
+            "charged": "9",
+            "a1_pending": "0",
+            "a2_pending": "0",
+            "free": "11"
+          }
+        ]
+      }
+    }
+  ],
+  "literal_digest_scope": "Hashes identify only authored synthetic UTF-8 literals, not actual native-capture or S3 execution evidence."
+}

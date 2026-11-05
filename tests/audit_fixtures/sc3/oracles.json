@@ -1,0 +1,65 @@
+{
+  "scope": "Controlled protocol fixtures, not causal correctness or real provider integration",
+  "local": {
+    "jobs": "1",
+    "native_order": [
+      "v1",
+      "v2",
+      "v0"
+    ],
+    "canonical_order": [
+      "A",
+      "B",
+      "C"
+    ],
+    "mapping": {
+      "v1": "A",
+      "v2": "B",
+      "v0": "C"
+    },
+    "charge": "0.7",
+    "cap": "1"
+  },
+  "remote": {
+    "jobs_after_lost_ack": "1",
+    "captures": "3",
+    "distinct_events": "2",
+    "charge": "4",
+    "cap": "10",
+    "negative_before_delayed_acceptance": "hold_without_receiver_closure"
+  },
+  "interactive": {
+    "same_text_action_occurrences": "2",
+    "q1_deliveries": "1",
+    "q2_missing_source_choices": "0",
+    "q2_missing_source_deliveries": "0",
+    "policy_consumed": "1",
+    "policy_remaining": "1",
+    "native_termination": "unresolved"
+  },
+  "checkpoint": {
+    "scientific_trials": "1",
+    "attempts": "2",
+    "required_variants": [
+      "captured_payload",
+      "native_reference"
+    ],
+    "restored": [
+      "model",
+      "optimizer"
+    ],
+    "unknown": [
+      "rng",
+      "history"
+    ],
+    "overlap": "predecessor_observed_stopped",
+    "interim_bill": "3",
+    "replacement_bill": "5",
+    "successor_bill": "4",
+    "total": "9",
+    "cap": "20",
+    "expired_handle_launches": "0"
+  },
+  "faults": "Every F01-F20 variant in the accepted case plan must run under deterministic barriers with independent durable oracle",
+  "no_native_or_S3_execution_during_authoring": true
+}

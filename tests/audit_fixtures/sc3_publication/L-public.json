@@ -1,0 +1,24 @@
+[
+  {
+    "id": "L.public_statement",
+    "role": "derived_validator_statement",
+    "links": [],
+    "in_story_facts": {
+      "audience": "public",
+      "claim": "authorized evaluator reports scoped fulfillment check",
+      "assurance": "hypothetical statement; no independent authentication mechanism exercised",
+      "direct_raw_mapping_verification": false
+    }
+  },
+  {
+    "id": "L.public_summary",
+    "role": "new_derived_record",
+    "links": [
+      "L.public_statement"
+    ],
+    "in_story_facts": {
+      "audience": "public",
+      "claim": "permitted scoped fulfillment summary"
+    }
+  }
+]

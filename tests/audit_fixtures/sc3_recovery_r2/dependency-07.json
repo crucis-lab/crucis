@@ -1,0 +1,439 @@
+{
+  "format": {
+    "name": "s1.connection_package",
+    "version": "0.1.0-proposal.1"
+  },
+  "package_id": "9d8f3269-4c0e-4cb0-bf7f-415001d3f0a4",
+  "roots": [
+    {
+      "binding": "internal",
+      "target": "b1af94b3-614b-414e-838a-0189c060c964",
+      "target_type": "s1.artifact_snapshot"
+    }
+  ],
+  "records": [
+    {
+      "id": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+      "record_type": "s1.component",
+      "contract": {
+        "name": "s1.component",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-04T07:10:19.282630Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_computed"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "name": "S1 byte capture for S2 provenance",
+        "role": "s1.observer",
+        "version": {
+          "state": "known",
+          "value": "0.1.0-proposal.1",
+          "basis": []
+        },
+        "implementation": {
+          "state": "known",
+          "value": {
+            "artifact": {
+              "binding": "internal",
+              "target": "bd2d3ddc-03de-4b87-8eec-584c26afdb8e",
+              "target_type": "s1.artifact_snapshot"
+            },
+            "selector": {
+              "state": "known",
+              "value": {
+                "selector_type": "json_pointer",
+                "pointer": ""
+              },
+              "basis": []
+            }
+          },
+          "basis": []
+        },
+        "configuration": {
+          "state": "unresolved",
+          "reasons": [
+            "s1.not_observed"
+          ],
+          "evidence": []
+        },
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "bd2d3ddc-03de-4b87-8eec-584c26afdb8e",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-04T07:10:19.315165Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_computed"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"__init__.py\": \"7d6a75fc1f913e8cd21ac4f65993bdf504298a61292a76e847dfc4cc7d543404\", \"__main__.py\": \"50b71e6988838976a51e413257fe5806b1fc25c2a072bf98cbb274df6ba21f39\", \"api.py\": \"65af1e3b9101a595e4f7ee6b0dffa06ff3a04f661316daf18ab81963a90fd46e\", \"codec.py\": \"2c6d7c92f9a5a5ea8ae4ab21e89ef09af8eae5e9b6afc33123e19828da14e0cf\", \"core.py\": \"83063ebc548970a38738cb4c88309b9721bff7ff39e515f67b15ae3e5c87ad60\", \"domains.py\": \"9563a6e0ae3bbae7361ac9b9b249e97200832584e8bcd9bae7069a6b2667899c\", \"evidence.py\": \"927b38bc259520f52189139070dce1759a99ee56bf9e413d2fb4cc09a60d0821\", \"families.py\": \"9c196cf4649852756b01acfd83a4a2fd4a5b77ee1617c579ffe7cb0917dab28b\", \"gates.py\": \"a27c15247ae76b4f06eca17670d80326212c7f8293e78ac2695fafae68d0b82e\", \"history.py\": \"2ac6940fd92e8a83abc71978999db0c6866eb09bc4ddc51941988ca123f2df5c\", \"integrations/__init__.py\": \"9fec2fb8cd736b35137983e58c82cb8c6a29bb2f60e4b149b1c094d14235f13f\", \"integrations/causaliq.py\": \"7de0c4701b514243a346ef522cfee198528206aada573c2aa99ecc27f175a0f5\", \"integrations/legacy_recorded.py\": \"bd84c6a86857ba819cc9a9beafdc6a80f4111e09c316673d265fb39dc5818b1f\", \"legacy.py\": \"2b9bdae909ce1d3c908ccc385a8a3117219ee39f940dc2ad0321cf5161d58846\", \"model.py\": \"7fc6f31b77aec41cf514b8dbdf7346c4d90d819186d6fafed6f0366da2ef3071\", \"ports.py\": \"f96f7d5e0b761833c3249ecfccc3530b97646bee1f5c274c259412efeb81b98b\", \"requirements.txt\": \"c21189b0c18ab3957239a7ee599d87546e698c1768ff8d762010215946a940ff\", \"sc1.schema.json\": \"6630aa8ae67dda918343b456e7854cf8b569133a6de6a382741ac88cf4c75497\", \"schema.py\": \"0edc3efa8a77af1c9d9b948b3ad0bee5315a78ef16db0eff74c969fc2cf7ba4b\", \"semantics.py\": \"1d0184451938e9d5cd8c60d598a825041daed7acdd4f7e1b6e7e8e966dc3bef7\", \"services.py\": \"0e46d041d07cdd4413bec67f7e902e767ab48be0018d20cde22944d7cb1e4345\", \"specimens.py\": \"341a4cc4d0f634f351b4c156d8ca0561b30d91818b19edb92c96638af73636af\", \"store.py\": \"1e7aeba0ab156235d208b2c6dd7b0219a652ab3e70bb4e0cf8e0d2613a0d034a\", \"validation.py\": \"e1271444e5bc8abb22ef1fbe48f56d8a6e4213e31d4f1a0dba9bd98ad4f41760\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s1.code_identity_manifest",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "unresolved",
+          "reasons": [
+            "s1.not_observed"
+          ],
+          "evidence": []
+        },
+        "native_capture_extent": "s1.full_for_interface",
+        "locations": [],
+        "digest_claims": [],
+        "source": {
+          "basis": "intrinsic",
+          "evidence": [],
+          "procedure": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_observed"
+            ],
+            "evidence": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "6112d2b0-20b7-4fbb-96de-27b58366a19e",
+      "record_type": "s1.proposition",
+      "contract": {
+        "name": "s1.proposition",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-04T07:10:19.333825Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_computed"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "predicate": {
+          "name": "s1.native_property",
+          "version": "0.1.0-proposal.1"
+        },
+        "arguments": [
+          {
+            "role": "s1.subject",
+            "value": {
+              "binding": "internal",
+              "target": "b1af94b3-614b-414e-838a-0189c060c964",
+              "target_type": "s1.artifact_snapshot"
+            }
+          },
+          {
+            "role": "s1.property",
+            "value": "s1.content_sha256"
+          },
+          {
+            "role": "s1.value",
+            "value": "dfedea0ae214b0f45cceaa22eafbb0cfbc2236961ce6fefa8b9bafc8ac14b2a3"
+          }
+        ],
+        "conditioning": [],
+        "scope": {
+          "subjects": [
+            {
+              "binding": "internal",
+              "target": "b1af94b3-614b-414e-838a-0189c060c964",
+              "target_type": "s1.artifact_snapshot"
+            }
+          ],
+          "qualifiers": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "004fb1e8-c700-44a9-9115-a6776df85fdd",
+      "record_type": "s1.observation",
+      "contract": {
+        "name": "s1.observation",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-04T07:10:19.333825Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_computed"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "subject": {
+          "binding": "internal",
+          "target": "b1af94b3-614b-414e-838a-0189c060c964",
+          "target_type": "s1.artifact_snapshot"
+        },
+        "proposition": {
+          "binding": "internal",
+          "target": "6112d2b0-20b7-4fbb-96de-27b58366a19e",
+          "target_type": "s1.proposition"
+        },
+        "value": "dfedea0ae214b0f45cceaa22eafbb0cfbc2236961ce6fefa8b9bafc8ac14b2a3",
+        "scope": {
+          "subjects": [
+            {
+              "binding": "internal",
+              "target": "b1af94b3-614b-414e-838a-0189c060c964",
+              "target_type": "s1.artifact_snapshot"
+            }
+          ],
+          "qualifiers": []
+        },
+        "source_time": {
+          "state": "unresolved",
+          "reasons": [
+            "s1.not_observed"
+          ],
+          "evidence": []
+        },
+        "capture_time": {
+          "state": "unresolved",
+          "reasons": [
+            "s1.not_observed"
+          ],
+          "evidence": []
+        },
+        "source": {
+          "basis": "observed",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        },
+        "event": {
+          "state": "unresolved",
+          "reasons": [
+            "s1.not_observed"
+          ],
+          "evidence": []
+        }
+      },
+      "extensions": []
+    },
+    {
+      "id": "b1af94b3-614b-414e-838a-0189c060c964",
+      "record_type": "s1.artifact_snapshot",
+      "contract": {
+        "name": "s1.artifact_snapshot",
+        "version": "0.1.0-proposal.1"
+      },
+      "producer": {
+        "binding": "internal",
+        "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+        "target_type": "s1.component"
+      },
+      "created_at": {
+        "state": "known",
+        "value": {
+          "time_type": "utc_instant",
+          "value": "2026-11-04T07:10:19.333825Z",
+          "precision": "fractional_second",
+          "clock": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "uncertainty_seconds": {
+            "state": "unresolved",
+            "reasons": [
+              "s1.not_computed"
+            ],
+            "evidence": []
+          }
+        },
+        "basis": []
+      },
+      "payload": {
+        "content": {
+          "content_form": "inline_utf8",
+          "text": "{\"__init__.py\":\"b1cf285b2fddc9fc492d13a6b4cc1d1059d443d81cbfce6153a1f4f7b30db556\",\"__main__.py\":\"5b5c8e5f28c542b2b5c6e0b0ac27ea1593ad58f559e57ca325c7f20184a0f91a\",\"acceptance.py\":\"e419364ba2820580e7a3d7dff48ff28de44e9b14c4493f959943a8ebe4e8d3f0\",\"api.py\":\"c61a5ef6ae22035fa02d2bf2b5a82008eb02da8bbb5f541bf92ad3e5fdd72ff3\",\"bindings.py\":\"c3f062812b6aa55c7e534cb91d312cf5f58ea703913ee881ee1cd0363d9f7d68\",\"catalog.json\":\"d3c3bf3897a77f3cda60c2209b317475b4f9d041d6b263f5c9ff22d9f7babd36\",\"codec.py\":\"aa54e9686f5b4d5737d2991cbd78effa3adb0314a74d518ab76a065bd4f20e06\",\"completion.py\":\"d1ff32d10f7329057a45fa4a3d5d914a332ad9d4b62b9be1a3c8be4457d5833b\",\"contracts.py\":\"4209f97b1a30597258faf5cfb6fdf043782e653fbf8473603ce81f107345d80e\",\"core.py\":\"2ecb2f8363859d485f6a6c550fc5fe61135729f6785e75e028419c3f215fb826\",\"errors.py\":\"76f29fd37cb675e33dd11463e4390bacc13e013a39d42037d04639a3a20a37b4\",\"evaluation.py\":\"cc656ea567fc622de622407cf7562151d151dddcb911174ef40f6a07c8e075db\",\"families.py\":\"63591d100c605f973d68f125003036e5afa0e53c4d578ad14174cb781b0a85ab\",\"gates.py\":\"95ee52c01874b8fd480aef9441554d2e9a6af5e51601f5a8201466c6e55a5294\",\"handoff.py\":\"4f760e9e04c4675c3f6ff60ce8d2ce9d233b9b617611dd049ff3593a43106ae8\",\"information.py\":\"c5912c106378c7667a184c262d06fca276ed140a82f0be1f4c302093af8c5e96\",\"legacy.py\":\"9ff5dd284bcc301a52b1495bc69757811da65df6798e26984c2f07815a68bd5e\",\"lifecycle.py\":\"91b34b1259ace59422958a70605a48f2ac87110b97d6c7ef37d201ded3cfb0d3\",\"model.py\":\"9e3359b877afe7d1f0a6ddc7e0d19fcb6cd146273a17eba9c820c6e56399a802\",\"operations.py\":\"2ab04fa05a38d0347b89942300ee3c9a9e45889bf3a9804030ab0d69c5f3a6c6\",\"payloads.py\":\"5d35ed59793c9c241d9cb3be5f06a6524a0948e75e3b321c285eb4388c305a2d\",\"profiles.py\":\"841c1c2a7898bd3335a9f3604d4f41b1cd97f8e233f5518ddd3fe3d01f170851\",\"requirements.txt\":\"0a4163122325f656c2b393128e34409a388da82e86250f69c9965dc80cfcb05d\",\"resolver.py\":\"9436befdf7b6fde0edd6f6de142120f52a09e1e048439af80f7800b9128197bb\",\"responses.py\":\"9c6008208d52f64dcedaf80fe5ed25ed1c1c75fa512990080ce45eb14605bdc1\",\"schema.py\":\"536a12c530dcc1861be2b54600cc3dfb23423d54bc45296c7cc9458f11e71941\",\"selection.py\":\"80948fd0b687689133ef409ba7d438c7c965b5d7a27d453f02ccf788271356ad\",\"services.py\":\"25cf932a10d55b64e4c89be742dfbf8283c71616fe39d599f98b3b972d5ed7e1\",\"writer.py\":\"5000bb1d21cdfab5b0b97688ef5f44b105fb4fdcc82a176208405c570c2f5563\"}"
+        },
+        "format": {
+          "state": "known",
+          "value": {
+            "name": "s2.code_identity_manifest",
+            "version": "0.1.0-proposal.1"
+          },
+          "basis": []
+        },
+        "capture_scope": {
+          "kind": "full_content"
+        },
+        "source_span": {
+          "state": "unresolved",
+          "reasons": [
+            "s1.not_observed"
+          ],
+          "evidence": []
+        },
+        "native_capture_extent": "s1.extent_unresolved",
+        "locations": [],
+        "digest_claims": [
+          {
+            "binding": "internal",
+            "target": "004fb1e8-c700-44a9-9115-a6776df85fdd",
+            "target_type": "s1.observation"
+          }
+        ],
+        "source": {
+          "basis": "observed",
+          "evidence": [],
+          "procedure": {
+            "state": "known",
+            "value": {
+              "binding": "internal",
+              "target": "494b5b00-f0ce-4d43-aede-3f0b94b3848b",
+              "target_type": "s1.component"
+            },
+            "basis": []
+          },
+          "inputs": []
+        }
+      },
+      "extensions": []
+    }
+  ],
+  "external_packages": [],
+  "extensions": []
+}

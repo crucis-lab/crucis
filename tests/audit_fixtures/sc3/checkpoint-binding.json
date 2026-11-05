@@ -1,0 +1,29 @@
+{
+  "path": "checkpoint",
+  "run_binding": {
+    "binding": "external",
+    "target": "2a688db5-8847-4563-93f0-8c69621503f6",
+    "target_type": "s2.run_binding",
+    "package_id": "8df58942-7642-45f9-b5e8-5e4267f86820"
+  },
+  "request": {
+    "binding": "external",
+    "target": "06dc6861-9f39-45df-9ba4-e96db139b9cd",
+    "target_type": "s1.request",
+    "package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f"
+  },
+  "attempt": {
+    "binding": "external",
+    "target": "74e17fc7-98cd-420f-a5c4-c03a65ab8b32",
+    "target_type": "s1.attempt",
+    "package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f"
+  },
+  "R_package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f",
+  "trial_count": "1",
+  "dependencies": [
+    "checkpoint-dependency-00.json",
+    "checkpoint-dependency-01.json",
+    "checkpoint-dependency-02.json",
+    "checkpoint-dependency-03.json"
+  ]
+}

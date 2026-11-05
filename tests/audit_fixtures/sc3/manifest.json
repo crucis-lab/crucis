@@ -1,0 +1,239 @@
+{
+  "revision": "1",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "approved_source": "c2ec53f3a30562fe31690df8ab0d9b1351784996",
+  "native_execution": false,
+  "S3_execution": false,
+  "bindings": [
+    {
+      "path": "local",
+      "run_binding": {
+        "binding": "external",
+        "target": "3e0658ee-2b00-461d-a8f7-494d9e08b3ea",
+        "target_type": "s2.run_binding",
+        "package_id": "2409cd08-7bdc-408a-8b8e-621364291059"
+      },
+      "request": {
+        "binding": "external",
+        "target": "794da2ef-82e1-4090-b125-6ac614c1e148",
+        "target_type": "s1.request",
+        "package_id": "7c902992-e6c4-42a0-8164-8c363636cade"
+      },
+      "attempt": {
+        "binding": "external",
+        "target": "e2028e68-c210-4822-828e-e4f1b9587f01",
+        "target_type": "s1.attempt",
+        "package_id": "7c902992-e6c4-42a0-8164-8c363636cade"
+      },
+      "R_package_id": "7c902992-e6c4-42a0-8164-8c363636cade",
+      "trial_count": "1",
+      "dependencies": [
+        "local-dependency-00.json",
+        "local-dependency-01.json",
+        "local-dependency-02.json",
+        "local-dependency-03.json"
+      ]
+    },
+    {
+      "path": "remote",
+      "run_binding": {
+        "binding": "external",
+        "target": "76582b7a-7575-463f-910d-2614cd5df4b0",
+        "target_type": "s2.run_binding",
+        "package_id": "5607c500-a0de-400b-8479-ccb7c8747217"
+      },
+      "request": {
+        "binding": "external",
+        "target": "0affcce1-71c7-43a4-8786-c9d9e75baf03",
+        "target_type": "s1.request",
+        "package_id": "ce889783-fb10-4064-be73-679cd94daca4"
+      },
+      "attempt": {
+        "binding": "external",
+        "target": "13dcf654-fa23-46e5-bd6c-3aedef1f8ad1",
+        "target_type": "s1.attempt",
+        "package_id": "ce889783-fb10-4064-be73-679cd94daca4"
+      },
+      "R_package_id": "ce889783-fb10-4064-be73-679cd94daca4",
+      "trial_count": "1",
+      "dependencies": [
+        "remote-dependency-00.json",
+        "remote-dependency-01.json",
+        "remote-dependency-02.json",
+        "remote-dependency-03.json"
+      ]
+    },
+    {
+      "path": "interactive",
+      "run_binding": {
+        "binding": "external",
+        "target": "1ce27a03-f8f2-4a21-af4b-ad7fe2b02a64",
+        "target_type": "s2.run_binding",
+        "package_id": "e0ce083f-1cee-4847-bc72-2b8561848e50"
+      },
+      "request": {
+        "binding": "external",
+        "target": "61d21801-3690-4953-8a8e-27a11a4a4ff7",
+        "target_type": "s1.request",
+        "package_id": "b255ab36-80a8-4dd2-acde-07a0d41ac84f"
+      },
+      "attempt": {
+        "binding": "external",
+        "target": "1c5bca72-81f1-4423-8125-08569f25bd80",
+        "target_type": "s1.attempt",
+        "package_id": "b255ab36-80a8-4dd2-acde-07a0d41ac84f"
+      },
+      "R_package_id": "b255ab36-80a8-4dd2-acde-07a0d41ac84f",
+      "trial_count": "1",
+      "dependencies": [
+        "interactive-dependency-00.json",
+        "interactive-dependency-01.json",
+        "interactive-dependency-02.json",
+        "interactive-dependency-03.json"
+      ]
+    },
+    {
+      "path": "checkpoint",
+      "run_binding": {
+        "binding": "external",
+        "target": "2a688db5-8847-4563-93f0-8c69621503f6",
+        "target_type": "s2.run_binding",
+        "package_id": "8df58942-7642-45f9-b5e8-5e4267f86820"
+      },
+      "request": {
+        "binding": "external",
+        "target": "06dc6861-9f39-45df-9ba4-e96db139b9cd",
+        "target_type": "s1.request",
+        "package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f"
+      },
+      "attempt": {
+        "binding": "external",
+        "target": "74e17fc7-98cd-420f-a5c4-c03a65ab8b32",
+        "target_type": "s1.attempt",
+        "package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f"
+      },
+      "R_package_id": "4c022e9a-56d0-4ad0-946e-f3e38479fd9f",
+      "trial_count": "1",
+      "dependencies": [
+        "checkpoint-dependency-00.json",
+        "checkpoint-dependency-01.json",
+        "checkpoint-dependency-02.json",
+        "checkpoint-dependency-03.json"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "all-core-records.json",
+      "sha256": "8cb79dec040f1f536ea839ecea35371f762848f400a066d51b97e77d6dbe62f3"
+    },
+    {
+      "path": "author.py",
+      "sha256": "9c89dcd86ff0166ef0858723d247d767016f13ef07e14e139d5020783fe30632"
+    },
+    {
+      "path": "check_baseline.py",
+      "sha256": "2327481b744817423cca5452777997b00f9671d6377173de64542486bda38617"
+    },
+    {
+      "path": "checkpoint-binding.json",
+      "sha256": "1182f258d57a1347f93cf991b636af01eb9c04982070132932c0690fd9817520"
+    },
+    {
+      "path": "checkpoint-dependency-00.json",
+      "sha256": "2798b163cd9c56219c20f2a47d086796d1031c5007e4cea6215e97851ad12ad8"
+    },
+    {
+      "path": "checkpoint-dependency-01.json",
+      "sha256": "f3defff55bc6f8d911f13fd25fad172222ebc55a16a3b511aceb38ddd3e54e6a"
+    },
+    {
+      "path": "checkpoint-dependency-02.json",
+      "sha256": "d9d555e9a32189700e3e545b03d116d504f1d279467b4f11a09cd8d3dca57fdc"
+    },
+    {
+      "path": "checkpoint-dependency-03.json",
+      "sha256": "4679e959ccfe139a2354d96a2563454bfc9d2d329efddfc9fbbbbcc2e3f5509c"
+    },
+    {
+      "path": "interactive-binding.json",
+      "sha256": "8023ca19941bfa683495f1a9c5f9b3f6a14b6959641cb4de37201a722c4e9a26"
+    },
+    {
+      "path": "interactive-dependency-00.json",
+      "sha256": "15f28045b8f248469a24c8ae364007ef5c2acea442fe32519781f4945ab7a7ff"
+    },
+    {
+      "path": "interactive-dependency-01.json",
+      "sha256": "c01483baa453a310838ab2e6df8d08ebe84b73ac9bc0151c5911b1c0032af44b"
+    },
+    {
+      "path": "interactive-dependency-02.json",
+      "sha256": "c183a83331812e9c5b2c56297c652f6bdf62085b53af35cf07bb8b587e6a442f"
+    },
+    {
+      "path": "interactive-dependency-03.json",
+      "sha256": "dc54d6e3948022490263722700e56f534ebce817a648db992c89122a36de40f0"
+    },
+    {
+      "path": "local-binding.json",
+      "sha256": "da2b17359f58cb07940504e84ce9df8e96d06b82045e566e2c46b609df9c007e"
+    },
+    {
+      "path": "local-dependency-00.json",
+      "sha256": "e62d2d6e74ab777101d3c92d77ce731dbc1ee6b0541322c521f712059c2dbd93"
+    },
+    {
+      "path": "local-dependency-01.json",
+      "sha256": "84a281acaaac5e0225e963b3286695696b1066bed8c6c242738ee99260f74230"
+    },
+    {
+      "path": "local-dependency-02.json",
+      "sha256": "a4eff05cfc875b52cc70187a644622e927e88dd34a78367a810f760ce4bd6309"
+    },
+    {
+      "path": "local-dependency-03.json",
+      "sha256": "0e4252b0c1498158e387b7e8d08931ee255e28a3e05c687246d067ee9e4cba76"
+    },
+    {
+      "path": "native_program.py",
+      "sha256": "2e1859ed403694a299c678931df85a681c372e7e25225c308830a1991420bfe3"
+    },
+    {
+      "path": "negative-oracles.json",
+      "sha256": "695504370f169c3bc89b8f3e0b54898b0441b45bc0f91a12467689fcb6efd737"
+    },
+    {
+      "path": "oracles.json",
+      "sha256": "d78145cff98749e6735f528895b5dc0cada9e1f186b942d3c9b4f99ef78b351a"
+    },
+    {
+      "path": "remote-binding.json",
+      "sha256": "04f636a4e45d34db6a97e5c0bf92655313cdd6efcd226981552584c2091a0a7f"
+    },
+    {
+      "path": "remote-dependency-00.json",
+      "sha256": "466079b50a89c3ae5ebddbe320fd373d5ae5c4d41beff6d7d6fe376bd1b35365"
+    },
+    {
+      "path": "remote-dependency-01.json",
+      "sha256": "12cbdb1f72f0e645374cb0d5520560465e6e89e562c7088bb1db5ed4e5564f6e"
+    },
+    {
+      "path": "remote-dependency-02.json",
+      "sha256": "5b20d4d8d2b45c227364138a5b2ad9d6ffc2c108f8744a6fc9426c25bb2476c0"
+    },
+    {
+      "path": "remote-dependency-03.json",
+      "sha256": "d3473a942a588c6cb4f5c801c9dc779b5ce58284b0d20b844aeab4c3ed0f3466"
+    },
+    {
+      "path": "wire-actions.json",
+      "sha256": "ddd5b88f7d8b58e4a00950119d297e2bfb1ca4776b31b0388062b9b6cd0bc999"
+    }
+  ]
+}
