@@ -477,6 +477,23 @@
           "additionalProperties": false,
           "properties": {
             "value_kind": {
+              "const": "text"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "value_kind",
+            "value"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value_kind": {
               "const": "category"
             },
             "value": {
