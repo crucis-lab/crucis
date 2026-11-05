@@ -1,8 +1,12 @@
 """S4 calculation admission, observation and durable S3 journal evidence."""
 
 from dataclasses import dataclass
+import fractions
 from hashlib import sha256
+from importlib.metadata import version
 import json
+import platform
+import sys
 from threading import RLock
 from uuid import UUID, uuid4
 
@@ -20,6 +24,18 @@ def _key(account, invocation, phase):
     # S3's ID grammar requires the version-four and RFC variant bits. This
     # is a deterministic correlation ID; journal append checks the full basis.
     return str(UUID(bytes=sha256(material).digest()[:16], version=4))
+
+
+def _runtime_pin(path):
+    total = 0
+    digestor = sha256()
+    with open(path, "rb") as source:
+        for chunk in iter(lambda: source.read(65536), b""):
+            total += len(chunk)
+            if total > 33554432:
+                raise ValueError("s4.runtime_pin_limit")
+            digestor.update(chunk)
+    return digestor.hexdigest()
 
 
 @dataclass(frozen=True, slots=True)
@@ -71,6 +87,16 @@ class Coordinator:
         self._account_bytes = canonical(account)
         self._context = journal_context
         self._fault = fault
+        self._environment = canonical({
+            "implementation": platform.python_implementation(),
+            "python": platform.python_version(),
+            "system": platform.system(),
+            "machine": platform.machine(),
+            "byteorder": sys.byteorder,
+            "jsonschema": version("jsonschema"),
+            "interpreter_sha256": _runtime_pin(getattr(sys, "_base_executable", sys.executable)),
+            "fractions_sha256": _runtime_pin(fractions.__file__),
+        })
         self._reports = {}
         self._lock = RLock()
 
@@ -127,8 +153,7 @@ class Coordinator:
         if self._fault is not None:
             self._fault(name)
 
-    @staticmethod
-    def _plan_evidence(selected):
+    def _plan_evidence(self, selected):
         def pin(record):
             return {"package_id": record.package_id, "digest": record.package_digest,
                     "record_id": record.record_id}
@@ -138,6 +163,7 @@ class Coordinator:
             "plan": pin(selected.plan_record),
             "procedure": {"name": descriptor.name, "version": descriptor.version,
                           "implementation_digest": descriptor.implementation_digest},
+            "environment": json.loads(self._environment),
             "outputs": [{"key": out.key, "binding": pin(out.binding), "scope": pin(out.scope),
                          "role": out.output_role, "subject_key": out.subject_key}
                         for out in selected.outputs],
