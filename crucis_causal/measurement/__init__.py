@@ -10,6 +10,9 @@ from .point import evaluate_forecast, evaluate_order
 from .posterior import evaluate_posterior
 from .paired import evaluate_paired_point, evaluate_utility_enclosure
 from .reproduction import Comparison, ExactComparator, ReplayGoal, compare
+from .publication import (
+    AuthorizedStorage, Carrier, Projection, prepare_projection, publish, read_carrier, register_capsule,
+)
 
 __all__ = [
     "FORMAT", "VERSION", "Limits", "Snapshot", "WireError", "dumps", "inspect",
@@ -20,4 +23,6 @@ __all__ = [
     "evaluate_judgment", "evaluate_forecast", "evaluate_order", "evaluate_posterior",
     "evaluate_paired_point", "evaluate_utility_enclosure",
     "Comparison", "ExactComparator", "ReplayGoal", "compare",
+    "AuthorizedStorage", "Carrier", "Projection", "prepare_projection", "publish", "read_carrier",
+    "register_capsule",
 ]

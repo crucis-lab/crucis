@@ -316,3 +316,21 @@ class Reader:
 
         visit(self._loaded[self._view.snapshot.snapshot_id], 0)
         return frozenset(heights)
+
+    def verified_closure(self):
+        """Close S4 references in every reachable S4 snapshot before disclosure."""
+        identities = self.closure()
+        for identity in sorted(identities):
+            package = self._loaded[identity]
+            if package.format["name"] != FORMAT:
+                continue
+            raw = (self._view.snapshot.source_bytes if identity == self._view.snapshot.snapshot_id
+                   else self._view._supplied[identity])
+            from crucis_causal.execution.model import walk
+            for _, value, _ in walk(json.loads(raw)):
+                if not isinstance(value, dict) or "ref_kind" not in value:
+                    continue
+                # An artifact consumes its inner record reference as part
+                # of the same typed lookup.
+                self.read(value, identity)
+        return identities
