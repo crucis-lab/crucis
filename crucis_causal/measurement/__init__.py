@@ -13,6 +13,7 @@ from .reproduction import Comparison, ExactComparator, ReplayGoal, compare
 from .publication import (
     AuthorizedStorage, Carrier, Projection, prepare_projection, publish, read_carrier, register_capsule,
 )
+from .legacy import LegacyAttribution, LegacyCapture, capture_legacy
 
 __all__ = [
     "FORMAT", "VERSION", "Limits", "Snapshot", "WireError", "dumps", "inspect",
@@ -25,4 +26,5 @@ __all__ = [
     "Comparison", "ExactComparator", "ReplayGoal", "compare",
     "AuthorizedStorage", "Carrier", "Projection", "prepare_projection", "publish", "read_carrier",
     "register_capsule",
+    "LegacyAttribution", "LegacyCapture", "capture_legacy",
 ]
