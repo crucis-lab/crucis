@@ -113,7 +113,8 @@ def _validators():
         )
         for shape in record_schemas
     }
-    return Draft202012Validator(envelope), records
+    reference = Draft202012Validator({"$defs": schema["$defs"], "$ref": "#/$defs/reference"})
+    return Draft202012Validator(envelope), records, reference
 
 
 def _check_shape(validator, value, path=""):
@@ -227,9 +228,9 @@ def _validate_forms(package, limits):
     for path, item, _ in walk(package):
         if isinstance(item, list):
             field = path.rsplit("/", 1)[-1]
-            if field in _SET_FIELDS:
+            if field in _SET_FIELDS or field == "dependencies" and path != "/dependencies":
                 _check_set(item, path)
-            if field in _KEYED_FIELDS:
+            if field in _KEYED_FIELDS and (field != "dependencies" or path == "/dependencies"):
                 _check_keys(item, "id" if field == "records" else "key", path)
         if not isinstance(item, dict):
             continue
@@ -390,7 +391,7 @@ def _validate_links(package, records, references, limits):
 
 def _validate(package, limits):
     _check_tree(package, limits)
-    envelope, variants = _validators()
+    envelope, variants, _ = _validators()
     _check_shape(envelope, package)
     if len(package["records"]) > limits.records:
         raise WireError("record_limit", "/records")
@@ -408,6 +409,13 @@ def _validate(package, limits):
     records = {r["id"]: r for r in package["records"]}
     _validate_links(package, records, refs, limits)
     _validate_output_links(records)
+
+
+def check_reference(ref, limits):
+    """Validate one caller-supplied reference before interpreting its fields."""
+    _check_tree(ref, limits)
+    _check_shape(_validators()[2], ref)
+    _validate_forms(ref, limits)
 
 
 def dumps(package, limits=Limits()):
