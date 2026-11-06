@@ -1,0 +1,43 @@
+{
+  "bundle": "B00",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "approval": "User approved the S5 design and B00–B11 implementation in the project conversation on 2026-11-06.",
+  "base": "c99d0ffe85c0acdf385cf91e58ace6621e866847",
+  "main_base": "827b43cfd02dc9037c074adeda6512ade5d402a6",
+  "interpreter_version": "3.12.13",
+  "design_sha256": {
+    "crucis_causal/docs/subsystem5-candidate-build-dag-2026-11-06.json": "6a206ab4ba1ef3d827feab1c92cc17b2c50b4ae2440af87f31b06a0428dbce4c",
+    "crucis_causal/docs/subsystem5-structure-design-2026-11-05.md": "50b1e019bc7027dca49a1efdc9a5e4c49bdbe68289b93fc3f5099196b3ec3d10",
+    "crucis_causal/docs/subsystem5-finding-identity-lifecycle-design-2026-11-05.md": "31cbf00a718f3c7e682cae836fe4746a01998df7c014adbbe8e56570b28a4ed7",
+    "crucis_causal/docs/subsystem5-applicability-evidence-design-2026-11-05.md": "5d71ace933fe36129b0a8f0f1e78959924b337128a09b5af91d5817a3fddf870",
+    "crucis_causal/docs/subsystem5-rule-families-decision-semantics-design-2026-11-05.md": "fbc24d44cfe3988d0ac38984a9ab99e21cbbb67b0f0979a75cd6f316fdd76df1",
+    "crucis_causal/docs/subsystem5-registration-claim-status-design-2026-11-05.md": "0a4ba2de9240b95a57d959ebebfc4e7dd58b33bc78676c8b6e565fd025643590",
+    "crucis_causal/docs/subsystem5-decision-history-s6-handoff-design-2026-11-05.md": "e61720af13486c131d115fd75fdc94e59d585f21c6f7be434cba58dbe8d7efe9",
+    "crucis_causal/docs/subsystem5-contract-outline-2026-11-06.md": "658fe302b5fffd4d659f391037f405e775e8b1d16661a429ecb8e24fbb621b0e",
+    "crucis_causal/docs/subsystem5-cardinality-wire-design-2026-11-06.md": "e35b2ff42a4824b19dd9bc1e87e8178457311edbbd2c3d0b3fd8ea7268fc883b",
+    "crucis_causal/docs/subsystem5-operations-recovery-legacy-design-2026-11-06.md": "51770b5988742eb46f9417369da911f1885d3e98d300dc3b8a9fa208f387390c",
+    "crucis_causal/docs/subsystem5-final-design-review-2026-11-06.md": "3e72ba20ab70460a252736d53e4c1c9a2718735820c68ee8eb362e22be087610"
+  },
+  "prior_receipts_sha256": {
+    "design": "a2360dad323cf1db3df00fcbdba4daa8c09d9d5b186f757dabb72f97725e2645",
+    "s4_release": "8b8b3d8774aae1aed5f8f1c0f54cc24df28115599b52a7ba07758647c6de175b",
+    "historical": "5566ae1466dbcd16607d247b07fdf1b05786109632ab7eb3fdabfa5474f8bcd8"
+  },
+  "offline_baseline": {
+    "ran": 509,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 26
+  },
+  "historical_expected": {
+    "comparisons": 1298,
+    "tolerance": "0.001",
+    "stored_certificates": 14,
+    "recomputed_certificates": 14
+  },
+  "historical_data": "Historical compatibility requires separately supplied evidence and a fresh recorded gate at B09."
+}
