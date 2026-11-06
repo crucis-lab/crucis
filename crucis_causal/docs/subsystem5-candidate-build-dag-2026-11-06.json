@@ -1,0 +1,196 @@
+{
+  "kind": "s5_implementation_bundle_DAG_candidate",
+  "date": "2026-11-06",
+  "status": "design_review_pending_explicit_implementation_go",
+  "tickets": [
+    "DLV-08",
+    "DLV-09",
+    "DLV-10"
+  ],
+  "entry": "B00 requires explicit design acceptance and implementation authorization.",
+  "review_dependencies": [
+    "subsystem5-structure-design-2026-11-05.md",
+    "subsystem5-finding-identity-lifecycle-design-2026-11-05.md",
+    "subsystem5-applicability-evidence-design-2026-11-05.md",
+    "subsystem5-rule-families-decision-semantics-design-2026-11-05.md",
+    "subsystem5-registration-claim-status-design-2026-11-05.md",
+    "subsystem5-decision-history-s6-handoff-design-2026-11-05.md",
+    "subsystem5-contract-outline-2026-11-06.md",
+    "subsystem5-cardinality-wire-design-2026-11-06.md",
+    "subsystem5-operations-recovery-legacy-design-2026-11-06.md",
+    "subsystem5-final-design-review-2026-11-06.md"
+  ],
+  "progression": "Each bundle requires acceptance and recovery evidence, exact staged validation, enabled-hook validation and an owned local commit. Cross-bundle integration and remote publication have separate gates.",
+  "bundles": [
+    {
+      "id": "B00",
+      "title": "Accepted design and baseline",
+      "requires": [],
+      "acceptance": [
+        "Record explicit acceptance and build go. Pin design, rule families, worked cases, DAG, source base and interpreter.",
+        "Check ownership, historical pins and available prior conformance and compatibility receipts."
+      ],
+      "recovery": [
+        "On pin drift, base movement or mixed ownership, diagnose the exact source and preserve all existing work before proceeding."
+      ]
+    },
+    {
+      "id": "B01",
+      "title": "Bounded wire, role grammar and references",
+      "requires": [
+        "B00"
+      ],
+      "acceptance": [
+        "Build four full canonical golden packages and typed held, completed inconclusive, corrected and attributed public records. Verify exact byte replay, conditional cardinalities and profile targeting.",
+        "Check strict UTF-8, number forms, allowed versions, ordered collections, role contracts, exact limits, selectors, proof cycles and navigation."
+      ],
+      "recovery": [
+        "Reject malformed or exhausted inputs with bounded scoped issues. Preserve opaque source identity where safe. Keep missing external evidence distinct from invalid local shape."
+      ]
+    },
+    {
+      "id": "B02",
+      "title": "Scoped evidence, applicability and preparation",
+      "requires": [
+        "B01"
+      ],
+      "acceptance": [
+        "Resolve selected actual S1–S4 packages and pinned qualifications under explicit access. Freeze exact question, rule implementation, population, basis, frontier and limits. Exercise applicable, inapplicable, unrun, deviated and held outcomes.",
+        "Verify the prepared hold leaves evaluation absent. Exercise the four-visible/two-unresolved frame and reject wrong quantity, population, condition, reference, or audience."
+      ],
+      "recovery": [
+        "Reopening changed bytes or an unauthorized locator cannot satisfy the original pin. A later valid source requires a new basis; one operand gap holds its scope under the declared rule."
+      ]
+    },
+    {
+      "id": "B03",
+      "title": "Observed decision work and immutable recording",
+      "requires": [
+        "B02"
+      ],
+      "acceptance": [
+        "Use actual local S3 journal and separate bounded evaluator, invocation, entry, observed work, prepare-record and append. Demonstrate a recorded hold without evaluator work and an evaluated decision with exact work.",
+        "Reject forged work, changed basis, stale journal revisions and concurrent attempts to claim one invocation."
+      ],
+      "recovery": [
+        "Inject lost intent, entry and record replies. Recover the matching transaction without evaluating again. Preserve unresolved effects when lookup cannot reconcile. Explicit replay uses a new occurrence. Changed head binds a distinct transaction after review."
+      ]
+    },
+    {
+      "id": "B04",
+      "title": "Exact point, sampling endpoint and outer bound rules",
+      "requires": [
+        "B03"
+      ],
+      "acceptance": [
+        "Use exact oracles for 0.0996 versus displayed 0.10, strict and inclusive equality, point-only with straddling interval, endpoint rules and explicit two-branch sampling decisions.",
+        "Check qualified closed enclosure [0.08, 0.16] at 0.10, endpoint equality, singleton and both decisive outcomes. Distinguish missing qualification from completed inconclusive."
+      ],
+      "recovery": [
+        "Hold on absent or wrongly typed evidence. A corrected quantity creates a new prepared basis. Reject tolerance or midpoint substitution and preserve scope on re-evaluation."
+      ]
+    },
+    {
+      "id": "B05",
+      "title": "Unit counts and bounded compound predicates",
+      "requires": [
+        "B04"
+      ],
+      "acceptance": [
+        "Check exact and bounded counts, four-to-six eligible pairs against a minimum of five, a closed maximum of four, and an attributed crash with an unresolved attempt. Retain unit and denominator scope.",
+        "Use truth-table oracles for AND and OR with missing, disputed, undefined and unevaluated operands. Check decisive partial evidence versus a failed shared prerequisite and bound graph expansion."
+      ],
+      "recovery": [
+        "Hold any clause with unresolved shared dependencies. Reject duplicate units and cyclic or over-budget predicates. Reconcile a later closed count through a linked assessment."
+      ]
+    },
+    {
+      "id": "B06",
+      "title": "Registration and claim status",
+      "requires": [
+        "B02",
+        "B03"
+      ],
+      "acceptance": [
+        "Verify exact prior commitment, comparable ordering, exposure, conformance and scoped amendments. Exercise prior 0.10, post-exposure 0.15, same-day unknown and a permitted byte-identical replacement or bounded adaptive choice.",
+        "Record a late receipt that changes status while reusing the exact numerical decision. Keep historical reported labels separate."
+      ],
+      "recovery": [
+        "Reject wrong rule pins and incompatible clocks. Retain disputed or later withdrawn registration evidence and the earlier status cutoff. A registration-only update performs no new numerical evaluation."
+      ]
+    },
+    {
+      "id": "B07",
+      "title": "Decision history, adjudication and selection",
+      "requires": [
+        "B04",
+        "B06"
+      ],
+      "acceptance": [
+        "Exercise A1 hold, A2 0.12 meet and C 0.09 miss with pinned predecessors and explicit adjudication. Distinguish new rule and changed population from correction.",
+        "Record a dispute and retraction with held replacement. Reopen the exact A2 view and demonstrate scoped authorized current selection."
+      ],
+      "recovery": [
+        "Competing or unauthorized corrections stay separate; reject cyclic, stale or wrong-target history. A rejected selection never overwrites a prior assessment."
+      ]
+    },
+    {
+      "id": "B08",
+      "title": "Audience handoff and S3 carrier",
+      "requires": [
+        "B05",
+        "B07"
+      ],
+      "acceptance": [
+        "Publish the authorized D view with separately pinned exact S5 and S3 closure. Exercise direct proof and attributed statement integrity at their different assurance scopes. Ensure private metadata, digests and dependencies are absent where excluded.",
+        "Use actual local S3 storage, authorized read and pointer ports. Reopen the exact published capsule."
+      ],
+      "recovery": [
+        "Inject lost publication reply, denied disclosure, changed dependency and stale pointer. Reconcile committed bytes independently of pointer advancement and retain a dated permitted view."
+      ]
+    },
+    {
+      "id": "B09",
+      "title": "Read-only historical mapping and compatibility",
+      "requires": [
+        "B02"
+      ],
+      "acceptance": [
+        "Pin exact legacy report and certificate formats and selectors. Test all five historical verdicts, reported labels, missing fields, unknown versions, and the distinct P9/K04 and M3/K11 scopes.",
+        "Check protected historical and checkpoint pins and run the recorded compatibility gate at unchanged tolerance 0.001. Expect 1,298 comparisons and verification of 14 stored and 14 freshly computed certificates; record actual results and availability."
+      ],
+      "recovery": [
+        "Diagnose mismatches to source without repinning or changing tolerance. Keep unavailable or changed sources, attribution gaps and unsupported meaning distinct; preserve the originals."
+      ]
+    },
+    {
+      "id": "B10",
+      "title": "Integrated findings and S6 input evidence",
+      "requires": [
+        "B08",
+        "B09"
+      ],
+      "acceptance": [
+        "Exercise all four cases through actual predecessor readers and the typed S5 interfaces. Trace all six profile guarantees to their exact scopes, qualifications, evidence and explicit withheld claims.",
+        "Expose offline inspect and prepare with supplied inputs. Demonstrate actual recorded decision, history, registration-only update and authorized handoff on normal paths."
+      ],
+      "recovery": [
+        "Reopen from the stored artifacts after cold start. Use lost replies, wrong rule or scope and restricted proof to verify limits. Confirm inspection and preparation do not invoke work or effects."
+      ]
+    },
+    {
+      "id": "B11",
+      "title": "Distribution and release evidence",
+      "requires": [
+        "B10"
+      ],
+      "acceptance": [
+        "Build exact staged sdist and wheel, install offline into an isolated target, run packaged fixture checks and verify installed CLI and wire assets. Review every bundle receipt, source pin and claim-to-test link.",
+        "Run the mandatory full staged gate and enabled hook. Record offline tests and skips, historical receipts and distribution evidence separately."
+      ],
+      "recovery": [
+        "Diagnose failed or skipped required gates and hold affected release claims. Confirm clean local milestone and preserved predecessor evidence. Remote publication requires separate authorization."
+      ]
+    }
+  ]
+}
