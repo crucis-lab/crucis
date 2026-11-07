@@ -1,0 +1,2167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "s5.finding_package"
+        },
+        "version": {
+          "const": "0.1.0-proposal.1"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ]
+    },
+    "account_id": {
+      "$ref": "#/$defs/id"
+    },
+    "snapshot_id": {
+      "$ref": "#/$defs/id"
+    },
+    "audience": {
+      "$ref": "#/$defs/record_ref"
+    },
+    "frontier": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/frontier_entry"
+      },
+      "minItems": 1
+    },
+    "roots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record_ref"
+      },
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      },
+      "minItems": 1
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dependency"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "format",
+    "account_id",
+    "snapshot_id",
+    "audience",
+    "frontier",
+    "roots",
+    "records",
+    "dependencies"
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9._-]{0,127}(?![\\s\\S])"
+    },
+    "uint": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(?![\\s\\S])"
+    },
+    "sint": {
+      "type": "string",
+      "pattern": "^(0|-?[1-9][0-9]*)(?![\\s\\S])"
+    },
+    "positive": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*(?![\\s\\S])"
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._+-]{0,63}(?![\\s\\S])"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ]
+    },
+    "extent": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "extent_kind": {
+              "const": "whole"
+            }
+          },
+          "required": [
+            "extent_kind"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "extent_kind": {
+              "const": "byte_range"
+            },
+            "start": {
+              "$ref": "#/$defs/uint"
+            },
+            "end_exclusive": {
+              "$ref": "#/$defs/uint"
+            }
+          },
+          "required": [
+            "extent_kind",
+            "start",
+            "end_exclusive"
+          ]
+        }
+      ]
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "const": "sha256"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}(?![\\s\\S])"
+        },
+        "length": {
+          "$ref": "#/$defs/uint"
+        },
+        "extent": {
+          "$ref": "#/$defs/extent"
+        }
+      },
+      "required": [
+        "algorithm",
+        "digest",
+        "length",
+        "extent"
+      ]
+    },
+    "whole_pin": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/pin"
+        },
+        {
+          "properties": {
+            "extent": {
+              "properties": {
+                "extent_kind": {
+                  "const": "whole"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "local_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref_kind": {
+          "const": "local"
+        },
+        "target_id": {
+          "$ref": "#/$defs/id"
+        },
+        "expected_contract": {
+          "$ref": "#/$defs/contract"
+        },
+        "selector": {
+          "$ref": "#/$defs/selector"
+        }
+      },
+      "required": [
+        "ref_kind",
+        "target_id",
+        "expected_contract"
+      ]
+    },
+    "external_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref_kind": {
+          "const": "external"
+        },
+        "dependency_key": {
+          "$ref": "#/$defs/id"
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_contract": {
+          "$ref": "#/$defs/contract"
+        },
+        "selector": {
+          "$ref": "#/$defs/selector"
+        }
+      },
+      "required": [
+        "ref_kind",
+        "dependency_key",
+        "target_id",
+        "expected_contract"
+      ]
+    },
+    "record_ref": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/local_ref"
+        },
+        {
+          "$ref": "#/$defs/external_ref"
+        }
+      ]
+    },
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref_kind": {
+          "const": "artifact"
+        },
+        "artifact_record": {
+          "$ref": "#/$defs/record_ref"
+        },
+        "content_pin": {
+          "$ref": "#/$defs/pin"
+        }
+      },
+      "required": [
+        "ref_kind",
+        "artifact_record",
+        "content_pin"
+      ]
+    },
+    "reference": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/record_ref"
+        },
+        {
+          "$ref": "#/$defs/artifact_ref"
+        }
+      ]
+    },
+    "gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tag": {
+          "enum": [
+            "unresolved",
+            "contradicted",
+            "inapplicable",
+            "unavailable",
+            "denied"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/id"
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "tag",
+        "reason",
+        "basis"
+      ]
+    },
+    "input": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/reference"
+        },
+        {
+          "$ref": "#/$defs/gap"
+        }
+      ]
+    },
+    "frontier_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position": {
+          "$ref": "#/$defs/input"
+        }
+      },
+      "required": [
+        "key",
+        "position"
+      ]
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/id"
+        },
+        "format": {
+          "$ref": "#/$defs/contract"
+        },
+        "package_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pin": {
+          "$ref": "#/$defs/whole_pin"
+        }
+      },
+      "required": [
+        "key",
+        "format",
+        "package_id",
+        "pin"
+      ]
+    },
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "number_kind": {
+          "const": "rational"
+        },
+        "numerator": {
+          "$ref": "#/$defs/sint"
+        },
+        "denominator": {
+          "$ref": "#/$defs/positive"
+        }
+      },
+      "required": [
+        "number_kind",
+        "numerator",
+        "denominator"
+      ]
+    },
+    "integer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "number_kind": {
+          "const": "int"
+        },
+        "text": {
+          "$ref": "#/$defs/sint"
+        }
+      },
+      "required": [
+        "number_kind",
+        "text"
+      ]
+    },
+    "exact": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/rational"
+        },
+        {
+          "$ref": "#/$defs/integer"
+        }
+      ]
+    },
+    "selector": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "selector_kind": {
+          "const": "member"
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "selector_kind",
+        "key"
+      ]
+    },
+    "attribution": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "const": "attributed"
+            },
+            "issuer": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "mode",
+            "issuer"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "const": "observed"
+            },
+            "observer": {
+              "$ref": "#/$defs/record_ref"
+            }
+          },
+          "required": [
+            "mode",
+            "observer"
+          ]
+        }
+      ]
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "const": "selected"
+            },
+            "reference": {
+              "$ref": "#/$defs/reference"
+            }
+          },
+          "required": [
+            "state",
+            "reference"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "enum": [
+                "unavailable",
+                "restricted",
+                "unexamined"
+              ]
+            },
+            "reason": {
+              "$ref": "#/$defs/id"
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/reference"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "state",
+            "reason"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "const": "conflicting"
+            },
+            "reason": {
+              "$ref": "#/$defs/id"
+            },
+            "alternatives": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/reference"
+              },
+              "minItems": 2
+            }
+          },
+          "required": [
+            "state",
+            "reason",
+            "alternatives"
+          ]
+        }
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "$ref": "#/$defs/id"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      },
+      "required": [
+        "key",
+        "role",
+        "evidence"
+      ]
+    },
+    "operand": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/id"
+        },
+        "quantity": {
+          "$ref": "#/$defs/contract"
+        },
+        "unit": {
+          "$ref": "#/$defs/contract"
+        },
+        "evidence_contract": {
+          "$ref": "#/$defs/contract"
+        },
+        "form": {
+          "enum": [
+            "point",
+            "sampling_lower",
+            "sampling_upper",
+            "outer_bound",
+            "count"
+          ]
+        }
+      },
+      "required": [
+        "key",
+        "quantity",
+        "unit",
+        "evidence_contract",
+        "form"
+      ]
+    },
+    "clause": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "compare"
+            },
+            "operand": {
+              "$ref": "#/$defs/id"
+            },
+            "operator": {
+              "enum": [
+                "lt",
+                "le",
+                "eq",
+                "ge",
+                "gt"
+              ]
+            },
+            "threshold": {
+              "$ref": "#/$defs/exact"
+            }
+          },
+          "required": [
+            "key",
+            "kind",
+            "operand",
+            "operator",
+            "threshold"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "key": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "enum": [
+                "and",
+                "or"
+              ]
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "minItems": 2
+            }
+          },
+          "required": [
+            "key",
+            "kind",
+            "children"
+          ]
+        }
+      ]
+    },
+    "decision_policy": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "predicate"
+            },
+            "root": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "kind",
+            "root"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "branches"
+            },
+            "positive": {
+              "$ref": "#/$defs/id"
+            },
+            "negative": {
+              "$ref": "#/$defs/id"
+            },
+            "overlap": {
+              "const": "disputed"
+            },
+            "uncovered": {
+              "const": "inconclusive"
+            }
+          },
+          "required": [
+            "kind",
+            "positive",
+            "negative",
+            "overlap",
+            "uncovered"
+          ]
+        }
+      ]
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/id"
+        },
+        "state": {
+          "enum": [
+            "true",
+            "false",
+            "inconclusive",
+            "unresolved",
+            "unevaluated"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/id"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "key",
+        "state"
+      ]
+    },
+    "outcome": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "const": "met"
+            }
+          },
+          "required": [
+            "state"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "const": "missed"
+            }
+          },
+          "required": [
+            "state"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "const": "inconclusive"
+            },
+            "branch": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "state",
+            "branch"
+          ]
+        }
+      ]
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/id"
+        },
+        "scope": {
+          "$ref": "#/$defs/contract"
+        },
+        "origin": {
+          "$ref": "#/$defs/attribution"
+        },
+        "assertion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assurance": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mode": {
+                  "const": "direct"
+                },
+                "proof": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/reference"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "mode",
+                "proof"
+              ]
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mode": {
+                  "const": "attributed"
+                },
+                "source": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "verification": {
+                  "$ref": "#/$defs/id"
+                }
+              },
+              "required": [
+                "mode",
+                "source",
+                "verification"
+              ]
+            }
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "key",
+        "scope",
+        "origin",
+        "assertion",
+        "assurance"
+      ]
+    },
+    "record": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.account"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.account"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "origin": {
+                  "$ref": "#/$defs/attribution"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/record_ref"
+                  },
+                  "minItems": 1
+                },
+                "history": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/record_ref"
+                  },
+                  "minItems": 1
+                },
+                "profiles": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/record_ref"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "origin",
+                "items"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.capture"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.capture"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "origin": {
+                  "$ref": "#/$defs/attribution"
+                },
+                "extent": {
+                  "enum": [
+                    "complete",
+                    "partial",
+                    "known_empty",
+                    "unexamined",
+                    "unavailable"
+                  ]
+                },
+                "availability": {
+                  "$ref": "#/$defs/evidence"
+                },
+                "reported": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "key": {
+                        "$ref": "#/$defs/id"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "key",
+                      "text"
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "origin",
+                "extent",
+                "availability"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.question"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.question"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "finding_kind": {
+                  "$ref": "#/$defs/contract"
+                },
+                "subject": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "scope": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "quantity": {
+                  "$ref": "#/$defs/contract"
+                },
+                "comparison": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "first": {
+                      "$ref": "#/$defs/record_ref"
+                    },
+                    "second": {
+                      "$ref": "#/$defs/record_ref"
+                    },
+                    "selection": {
+                      "$ref": "#/$defs/record_ref"
+                    },
+                    "unit": {
+                      "$ref": "#/$defs/contract"
+                    }
+                  },
+                  "required": [
+                    "first",
+                    "second",
+                    "selection",
+                    "unit"
+                  ]
+                },
+                "reference": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "target": {
+                      "$ref": "#/$defs/record_ref"
+                    },
+                    "interpretation": {
+                      "$ref": "#/$defs/contract"
+                    }
+                  },
+                  "required": [
+                    "target",
+                    "interpretation"
+                  ]
+                }
+              },
+              "required": [
+                "finding_kind",
+                "subject",
+                "scope",
+                "quantity"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.rule"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.rule"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "definition": {
+                  "$ref": "#/$defs/contract"
+                },
+                "target": {
+                  "$ref": "#/$defs/contract"
+                },
+                "evidence_policy": {
+                  "$ref": "#/$defs/contract"
+                },
+                "implementation": {
+                  "$ref": "#/$defs/artifact_ref"
+                },
+                "partial": {
+                  "enum": [
+                    "require_all",
+                    "decisive"
+                  ]
+                },
+                "operands": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/operand"
+                  },
+                  "minItems": 1
+                },
+                "clauses": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/clause"
+                  },
+                  "minItems": 1
+                },
+                "decision_policy": {
+                  "$ref": "#/$defs/decision_policy"
+                },
+                "prerequisites": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/id"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "definition",
+                "target",
+                "evidence_policy",
+                "implementation",
+                "partial",
+                "operands",
+                "clauses",
+                "decision_policy"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.basis"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.basis"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "question": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "rule": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "selection": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "entries": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/entry"
+                  },
+                  "minItems": 0
+                },
+                "empty_reason": {
+                  "$ref": "#/$defs/id"
+                }
+              },
+              "required": [
+                "question",
+                "rule",
+                "selection",
+                "entries"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.assessment"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.assessment"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "question": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "rule": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "basis": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "origin": {
+                  "$ref": "#/$defs/attribution"
+                },
+                "applicability": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "applicable"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "inapplicable"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unresolved"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "disputed"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unevaluated"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    }
+                  ]
+                },
+                "execution": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "established"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unrun"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "deviated"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unresolved"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "disputed"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "inapplicable"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unevaluated"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    }
+                  ]
+                },
+                "sufficiency": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "sufficient"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "insufficient"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "held"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unevaluated"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    }
+                  ]
+                },
+                "decision": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "completed"
+                        },
+                        "decision": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "decision"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "held"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unevaluated"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    }
+                  ]
+                },
+                "registration": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unrequested"
+                        }
+                      },
+                      "required": [
+                        "state"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unevaluated"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unresolved"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "disputed"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        },
+                        "basis": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason",
+                        "basis"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "assessed"
+                        },
+                        "registration": {
+                          "$ref": "#/$defs/record_ref"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "registration"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "question",
+                "rule",
+                "basis",
+                "origin",
+                "applicability",
+                "execution",
+                "sufficiency",
+                "decision",
+                "registration"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.decision"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.decision"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "question": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "rule": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "basis": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "work": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "outcome": {
+                  "$ref": "#/$defs/outcome"
+                },
+                "trace": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/trace"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "question",
+                "rule",
+                "basis",
+                "work",
+                "outcome",
+                "trace"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.registration"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.registration"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "question": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "rule": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "basis": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "policy": {
+                  "$ref": "#/$defs/contract"
+                },
+                "determination": {
+                  "enum": [
+                    "confirmatory",
+                    "exploratory",
+                    "unresolved",
+                    "disputed"
+                  ]
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/reference"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "question",
+                "rule",
+                "basis",
+                "policy",
+                "determination",
+                "evidence"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.history"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.history"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "subject": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "related": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/record_ref"
+                  },
+                  "minItems": 1
+                },
+                "relationship": {
+                  "enum": [
+                    "update",
+                    "correction",
+                    "retraction",
+                    "resolution",
+                    "dispute",
+                    "alternative_rule",
+                    "alternative_question"
+                  ]
+                },
+                "dimensions": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "applicability",
+                      "execution",
+                      "sufficiency",
+                      "decision",
+                      "registration",
+                      "scope",
+                      "basis",
+                      "rule"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "adjudication": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/reference"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "subject",
+                "related",
+                "relationship",
+                "dimensions"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.handoff"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.handoff"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "authority": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "statements": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/statement"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "authority",
+                "statements"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "kind": {
+              "const": "s5.profile_claim"
+            },
+            "contract": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "const": "s5.profile_claim"
+                },
+                "version": {
+                  "const": "0.1.0-proposal.1"
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            },
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "profile": {
+                  "enum": [
+                    "preservation",
+                    "scoped_assessment",
+                    "rule_decision",
+                    "registration",
+                    "history",
+                    "handoff"
+                  ]
+                },
+                "target": {
+                  "$ref": "#/$defs/record_ref"
+                },
+                "criterion": {
+                  "$ref": "#/$defs/contract"
+                },
+                "outcome": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "established"
+                        },
+                        "evidence": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/$defs/reference"
+                          },
+                          "minItems": 1
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "evidence"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "withheld"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "state": {
+                          "const": "unevaluated"
+                        },
+                        "reason": {
+                          "$ref": "#/$defs/id"
+                        }
+                      },
+                      "required": [
+                        "state",
+                        "reason"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "profile",
+                "target",
+                "criterion",
+                "outcome"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "contract",
+            "payload"
+          ]
+        }
+      ]
+    }
+  }
+}
