@@ -97,7 +97,7 @@ class _Package:
 
 
 def _index(identity, digest, package):
-    if package["format"]["name"] == FORMAT:
+    if "dependencies" in package:
         dependencies = {item["key"]: item for item in package["dependencies"]}
     else:
         dependencies = {}
@@ -136,6 +136,7 @@ def _select(record, selector):
     if kind == "member":
         record_kind = record.get("kind", record.get("record_type"))
         field = {"s4.ledger": "entries", "s4.population": "slots",
+                 "s5.basis": "entries",
                  "s4.request": "goals"}.get(record_kind)
         items = payload[field] if field else ()
         if record_kind == "s4.result" and payload["outcome"]["tag"] == "defined":
@@ -159,12 +160,17 @@ def _select(record, selector):
 class Reader:
     """Per-operation budget and private cache. Each lookup rechecks authority."""
 
+    _inspect_snapshot = staticmethod(inspect)
+    _check_reference = staticmethod(check_reference)
+    _formats = frozenset({FORMAT})
+    _wire_errors = (WireError,)
+
     def __init__(self, view):
         self._view = view
         self._loaded = {}
         self._bytes = 0
         self._visits = 0
-        root = inspect(view.snapshot.source_bytes, view.limits)
+        root = self._inspect_snapshot(view.snapshot.source_bytes, view.limits)
         if root != view.snapshot:
             raise ResolutionError("snapshot_identity_mismatch")
         self._permit(root.snapshot_id)
@@ -207,14 +213,14 @@ class Reader:
         if loaded is None:
             try:
                 fmt = descriptor["format"]
-                if fmt is not None and fmt["name"] == FORMAT:
-                    snapshot = inspect(raw, self._view.limits)
+                if fmt is not None and fmt["name"] in self._formats:
+                    snapshot = self._decode_snapshot(raw, fmt["name"])
                     actual_id, package = snapshot.snapshot_id, snapshot.package
                 else:
                     view = parse_snapshot(raw, self._view.limits.execution_limits(),
                                           access=self._view._access)
                     actual_id, package = view.package_id, view.package
-            except (ExecutionError, WireError) as exc:
+            except (ExecutionError,) + self._wire_errors as exc:
                 raise ResolutionError("dependency_wire_invalid") from exc
             if actual_id != identity:
                 raise ResolutionError("package_identity_mismatch")
@@ -223,6 +229,9 @@ class Reader:
         if descriptor["format"] is not None and loaded.format != descriptor["format"]:
             raise ResolutionError("package_format_mismatch")
         return loaded
+
+    def _decode_snapshot(self, raw, name):
+        return self._inspect_snapshot(raw, self._view.limits)
 
     def _record(self, ref, owner):
         self._visit()
@@ -239,8 +248,8 @@ class Reader:
 
     def read(self, ref, anchor=None):
         try:
-            check_reference(ref, self._view.limits)
-        except WireError as exc:
+            self._check_reference(ref, self._view.limits)
+        except self._wire_errors as exc:
             raise ResolutionError("invalid_reference") from exc
         owner = self._loaded.get(anchor or self._view.snapshot.snapshot_id)
         if owner is None:
@@ -322,7 +331,7 @@ class Reader:
         identities = self.closure()
         for identity in sorted(identities):
             package = self._loaded[identity]
-            if package.format["name"] != FORMAT:
+            if package.format["name"] not in self._formats:
                 continue
             raw = (self._view.snapshot.source_bytes if identity == self._view.snapshot.snapshot_id
                    else self._view._supplied[identity])
@@ -332,5 +341,8 @@ class Reader:
                     continue
                 # An artifact consumes its inner record reference as part
                 # of the same typed lookup.
-                self.read(value, identity)
+                self._read_closure_reference(value, identity, package.format["name"])
         return identities
+
+    def _read_closure_reference(self, value, identity, format_name):
+        self.read(value, identity)
