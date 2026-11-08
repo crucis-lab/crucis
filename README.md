@@ -9,6 +9,17 @@ inspired by the *instantia crucis*: evidence that discriminates between competin
 explanations. This repository is the extracted development version. Protocol,
 implemented support and empirical coverage are versioned separately.
 
+**Human and AI contributions.** Uzair Gheewala directed the research and design,
+approved subsystem boundaries and implementation bundles, and retained scientific
+and release decisions. AI assistance was extensive in architecture, code, tests,
+debugging, documentation and review. See [AI_USE.md](AI_USE.md) for important
+prompt summaries, exact excerpts, testing and historical coverage limits.
+
+This code-checkpoint snapshot includes the public S1–S4 implementation and these
+disclosure documents. Subsequent findings-subsystem development is separate.
+Recorded paper results remain in the research repository; software conformance
+checks are distinct from new native-system experiments and scientific validity.
+
 ## Install and inspect
 
 ```sh
@@ -115,8 +126,10 @@ retain the S1/S2 technical JSON examples and S3 methodology index needed by test
 with test fixtures and tooling. Research datasets, recorded runs, sealed battery
 seeds and credentials are not bundled. Excluded-data tests report explicit skips.
 
-CI is configured to test Python 3.10/3.12 on Linux and 3.12 on Windows, build both
-distribution formats, and inspect the installed wheel from an isolated working
-directory. It preserves test/skip receipts. Prior publication checks do not
-qualify new local S3 changes; those need their own remote CI results. CI does not run
-paid model experiments, deploy a site or publish to a package index.
+CI tests Python 3.10 and 3.12 on Linux and Python 3.12 on Windows. It builds both
+distribution formats, checks the installed wheel in isolation and preserves test
+and skip receipts. The S1–S4 baseline passed this matrix. Its Windows package job
+took about 26 minutes. A follow-up on the stable source ran the cursor-isolation
+test to completion after an earlier 45-second diagnostic timeout. Check the
+[CI runs](https://github.com/crucis-lab/crucis/actions) for the status of each
+commit. Successful main-branch checks trigger the documentation deployment.
