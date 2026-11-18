@@ -1,0 +1,259 @@
+{
+  "kind": "build-time public view bindings; not canonical scientific records",
+  "pages": [
+    {
+      "page": "reference-key",
+      "sources": {
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "reference-evidence",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "reference-boundary",
+      "sources": {
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "answer-selected",
+      "sources": {
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "answer-meaning",
+      "sources": {
+        "causaliq-card": "461679b56592d13c4137ff31fedbe723220e05c7fe4d0221f8d0b66975513529",
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "answer-boundary",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "comparison-task",
+      "sources": {
+        "causaliq-card": "461679b56592d13c4137ff31fedbe723220e05c7fe4d0221f8d0b66975513529",
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "comparison-outcome",
+      "sources": {
+        "causaliq-card": "461679b56592d13c4137ff31fedbe723220e05c7fe4d0221f8d0b66975513529",
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "comparison-population",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "retrace-finding",
+      "sources": {
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "retrace-change",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "retrace-boundary",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "validate-cases",
+      "sources": {
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "validate-coverage",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "validate-extension",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3"
+      },
+      "depends_on": [],
+      "basis_level": "source-bound editorial explanation and expectations; not a new software qualification"
+    },
+    {
+      "page": "index",
+      "sources": {
+        "apartment": "e7643bf1cd7368306fe20134a623e1581b0f2c17303b7a4d25cd2a812b698d21"
+      },
+      "depends_on": [],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    },
+    {
+      "page": "atlas",
+      "sources": {
+        "framework": "3cddc26768e78002bf69037d1d044a7e60f4aad9aed81f61cf7e85e843d58944",
+        "s7": "430e1d13a6680f4a0e0f2b6e860209e8f94729de66b02675b17bacdf109f5e61",
+        "diverse-reference": "85e4730cea812616f87a0279ad35325c3a9ad759872accb898449f466919636c",
+        "diverse-build": "ce100e8c5d018bd274e41dcbbc92637af78253ac5893358abe95e7a40981ae6f",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "study-design": "c6964af452d96fb5542da9fd492dee8fc910d9e4247b7372b1d16c2c8e428b51",
+        "apartment": "e7643bf1cd7368306fe20134a623e1581b0f2c17303b7a4d25cd2a812b698d21",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e",
+        "joined-checks": "38919c340e4ace4fe309a753479e8e9da18cd80bb585e6ccac93ceb3346bd59d",
+        "native-stage": "b63874985b1ba7f85a75dad01a8e2783603e33665ed1bb17d03addac917f059c",
+        "causaliq-card": "461679b56592d13c4137ff31fedbe723220e05c7fe4d0221f8d0b66975513529",
+        "eligibility": "143f7c77aa9a23b38787c07d12d3389f5e1e40df86abe8f5ab0d45b993a8a937",
+        "study-path": "4afbf37444449a3d92822c5499dcc53b95e8cc22e5c7635d6d102e19e1b58c3b",
+        "reference-choice": "00d1b6eac102e521b5d9ea4bdeec857ff75fc0f0116edb5dd61b52310e8726d9",
+        "apartment-task": "1ae69f12911464d1aeb248e080643399c0b5bfd24e05b3c423d0e02c3f24e6a9"
+      },
+      "depends_on": [],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    },
+    {
+      "page": "evidence",
+      "sources": {
+        "framework": "3cddc26768e78002bf69037d1d044a7e60f4aad9aed81f61cf7e85e843d58944",
+        "s7": "430e1d13a6680f4a0e0f2b6e860209e8f94729de66b02675b17bacdf109f5e61",
+        "reference-choice": "00d1b6eac102e521b5d9ea4bdeec857ff75fc0f0116edb5dd61b52310e8726d9",
+        "diverse-reference": "85e4730cea812616f87a0279ad35325c3a9ad759872accb898449f466919636c",
+        "diverse-build": "ce100e8c5d018bd274e41dcbbc92637af78253ac5893358abe95e7a40981ae6f",
+        "eligibility": "143f7c77aa9a23b38787c07d12d3389f5e1e40df86abe8f5ab0d45b993a8a937",
+        "study-path": "4afbf37444449a3d92822c5499dcc53b95e8cc22e5c7635d6d102e19e1b58c3b",
+        "native-stage": "b63874985b1ba7f85a75dad01a8e2783603e33665ed1bb17d03addac917f059c",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "causaliq-card": "461679b56592d13c4137ff31fedbe723220e05c7fe4d0221f8d0b66975513529",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e",
+        "apartment": "e7643bf1cd7368306fe20134a623e1581b0f2c17303b7a4d25cd2a812b698d21",
+        "joined-checks": "38919c340e4ace4fe309a753479e8e9da18cd80bb585e6ccac93ceb3346bd59d",
+        "study-design": "c6964af452d96fb5542da9fd492dee8fc910d9e4247b7372b1d16c2c8e428b51",
+        "apartment-task": "1ae69f12911464d1aeb248e080643399c0b5bfd24e05b3c423d0e02c3f24e6a9"
+      },
+      "depends_on": [],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    },
+    {
+      "page": "history",
+      "sources": {
+        "diverse-build": "ce100e8c5d018bd274e41dcbbc92637af78253ac5893358abe95e7a40981ae6f",
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "s7": "430e1d13a6680f4a0e0f2b6e860209e8f94729de66b02675b17bacdf109f5e61",
+        "joined-checks": "38919c340e4ace4fe309a753479e8e9da18cd80bb585e6ccac93ceb3346bd59d",
+        "study-design": "c6964af452d96fb5542da9fd492dee8fc910d9e4247b7372b1d16c2c8e428b51"
+      },
+      "depends_on": [],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    },
+    {
+      "page": "review",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3",
+        "copilot-card": "20950a896d8ebbfe84b176e4f45fe06f835d7828ef7797bab969bd6dd2160686",
+        "causaliq-card": "461679b56592d13c4137ff31fedbe723220e05c7fe4d0221f8d0b66975513529",
+        "diverse-reference": "85e4730cea812616f87a0279ad35325c3a9ad759872accb898449f466919636c"
+      },
+      "depends_on": [
+        "comparison-task",
+        "validate-coverage",
+        "reference-boundary"
+      ],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    },
+    {
+      "page": "research-record",
+      "sources": {
+        "framework-map": "0d3428c28c166c02042b3da992477318b41bc8cac40e275daaada1deffe403b4",
+        "teaching-only": "254e375a5e1f72e92365643fad44a6523d63582b0d5e64774fafd1a1c461de3e"
+      },
+      "depends_on": [],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    },
+    {
+      "page": "operations",
+      "sources": {
+        "framework": "3cddc26768e78002bf69037d1d044a7e60f4aad9aed81f61cf7e85e843d58944",
+        "native-policy": "bbe7911b98dd92cb2adb75d90badb67ebe2234a725185f6a0f641c545942faa3"
+      },
+      "depends_on": [],
+      "basis_level": "Source-bound editorial view; not newly qualified software or an issued scientific finding"
+    }
+  ],
+  "fingerprint_version": 2
+}

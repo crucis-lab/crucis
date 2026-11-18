@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crucis · Would opening the window earlier help?</title>
+<meta name="description" content="Start with a hot apartment and explore how Crucis checks competing causal explanations.">
+<link rel="stylesheet" href="./opening.css"><script defer src="./opening.js"></script>
+</head>
+<body>
+<header class="mast"><div class="wrap mast-inner"><span class="mark"><span aria-hidden="true">✳</span> Crucis</span><span class="mast-label">Research approach</span><a href="./atlas.html">Research atlas →</a><a href="./evidence.html#apartment">Case evidence ↗</a></div></header>
+<main class="wrap journey">
+  <p class="eyebrow journey-label">The opening investigation</p>
+  <nav class="journey-map" aria-label="Opening steps">
+    <button type="button" data-jump="0" aria-current="step"><b>1</b> A hot apartment</button>
+    <button type="button" data-jump="1"><b>2</b> Check what affects heat</button>
+    <button type="button" data-jump="2"><b>3</b> Add measurements</button>
+    <button type="button" data-jump="3"><b>4</b> Return to the window</button>
+    <button type="button" data-jump="4"><b>5</b> What Crucis has to solve</button>
+  </nav>
+  <section class="canvas" aria-label="Opening investigation canvas">
+    <div class="canvas-body">
+    <section class="scene scenario-scene" data-scene="0" aria-labelledby="opening-title">
+      <div>
+        <p class="eyebrow">A question from a hot apartment</p>
+        <h1 id="opening-title" tabindex="-1">Would opening the window earlier help?</h1>
+        <p class="lead">Your apartment gets too warm by late morning. You want to know whether opening the window earlier tomorrow would keep it cooler.</p>
+      </div>
+      <aside class="scenario-card" aria-label="A fair test of opening time">
+        <p class="eyebrow">Imagine two versions of the same morning</p>
+        <div class="opening-times"><h2>Open at 8 a.m.</h2><h2>Open at 10 a.m.</h2></div>
+        <p class="fixed-conditions"><strong>Keep the morning the same.</strong> Use the same starting room temperature, outdoor temperature, wind speed and sunlight. Change only the opening time, then compare how much heat builds up over the same period.</p>
+        <p class="scenario-question">That’s the test we’d like to run. First, let’s look at a saved apartment simulation where we already know what affects what.</p>
+      </aside>
+    </section>
+    <section class="scene exhibit" data-scene="1 2" aria-labelledby="case-title" hidden>
+    <div class="case-copy">
+      <div data-case-copy="1" data-compare-phase="0">
+        <p class="eyebrow">A saved apartment case</p>
+        <h2 id="case-title" tabindex="-1">How could opening time affect the heat?</h2>
+        <p>Our October 2026 study used a saved apartment case from CausalArena, a collection of simulated examples. It came with simulated measurements and a diagram of what affects what. The green arrows show one route by which opening time can affect the heat.</p>
+        <p><strong>Read an arrow from tail to tip.</strong> Start at <em>First opening time</em>. The first arrow says that when you open the window affects how much it is open over the morning. Follow the next arrows through airflow to the heat that builds up.</p>
+        <a class="method-link" href="./evidence.html#saved-case">Where the saved case came from ↗</a>
+      </div>
+      <div data-case-copy="1" data-compare-phase="1" hidden>
+        <p class="eyebrow">The method we’re checking</p>
+        <h2 id="method-title" tabindex="-1">Could a method recover those links?</h2>
+        <p>In a real apartment, we might have measurements and descriptions but no diagram of what affects what. A causal-discovery method tries to infer those links from clues.</p>
+        <p>One way to form a proposal is to ask a <strong>language model</strong>, a tool that answers written questions. Give it three names from the diagram, such as opening time, how much the window is open, and airflow. Ask what could affect what.</p>
+        <p>In our study, Vashishtha and colleagues’ method asked the model about groups of three using the names and setting. It combined the replies into a diagram we call the <strong>earlier proposal</strong>. We can check it against the saved simulation rules.</p>
+        <a class="method-link" href="./evidence.html#method">See how the method combines replies ↗</a>
+      </div>
+      <div data-case-copy="1" data-compare-phase="2" hidden>
+        <p class="eyebrow">Compare the arrows</p>
+        <h2 id="proposal-title" tabindex="-1">Where do the arrows disagree?</h2>
+        <p>The green arrows show the simulation’s rules. We’ve picked one arrow from the earlier proposal to check first. It’s the amber arrow from heat back to opening time.</p>
+      </div>
+      <div data-case-copy="2" data-measurement-phase="0" hidden>
+        <p class="eyebrow">Same apartment · Another clue</p>
+        <h2 id="measure-title" tabindex="-1">What can measurements add?</h2>
+        <p>The earlier proposal came from the names and setting. The experiment code had also analyzed the saved measurements. The <strong>final diagram</strong> combines that analysis with the proposal for the same run.</p>
+        <p>For example, when the window opens earlier, is it usually open for more of the morning? The measurements-based procedure looks for patterns to decide what to connect. The local experiment keeps the directions that procedure picks and can use the proposal when a direction is still open.</p>
+        <a class="method-link" href="./evidence.html#method">How this run used the measurements ↗</a>
+      </div>
+      <div data-case-copy="2" data-measurement-phase="1 2" hidden>
+        <p class="eyebrow">Compare the two diagrams</p>
+        <h2 id="change-title" tabindex="-1">What changed in the final diagram?</h2>
+        <p>We showed the arrow from heat on its own to find the first conflict. Now we’re showing one more arrow from that same saved proposal, between the window boxes at the top.</p>
+      </div>
+      <fieldset class="switch" data-case-copy="2" data-measurement-phase="1 2" hidden>
+        <legend>Diagram to check</legend>
+        <label><input type="radio" name="stage" value="intermediate"><span>Earlier proposal</span></label>
+        <label><input type="radio" name="stage" value="final"><span>Final diagram</span></label>
+      </fieldset>
+      <p class="prompt" data-view="proposal" hidden>Start at <em>First opening time</em>. Follow the green arrows to <em>Heat exposure</em>, then follow the amber arrow. Where do you end up?</p>
+      <p class="prompt" data-view="earlier" hidden>The top arrow agreed with the simulation, so we left it out of the first check. Switch to the final diagram to see what happened to both amber arrows.</p>
+      <p class="prompt" data-view="final" hidden>The arrow up from heat is gone. The arrow across the top flipped. Of the two arrows we’re following, that leaves one amber arrow in this view.</p>
+      <div data-view="final" hidden>
+        <p>The reversed direction came from the measurements-based analysis. The local experiment kept it in the final diagram. Now the green and amber arrows at the top point opposite ways. Each would put a different box first.</p>
+        <a class="method-link" href="./evidence.html#final">Trace the change in the two diagrams ↗</a>
+      </div>
+      <details id="reasoning" hidden>
+        <summary>See why the explanations clash</summary>
+        <p>Try putting the four boxes in a row so every arrow points forward. The green chain puts opening time before heat exposure. The amber arrow would put heat exposure before opening time. No row can do both, so this proposed link conflicts with the rules of the simulated morning.</p>
+        <a href="./evidence.html#intermediate">Evidence for the intermediate comparison ↗</a>
+      </details>
+    </div>
+    <figure class="diagram">
+      <div class="diagram-heading"><span id="diagram-mode">How the simulation works</span><span>Selected arrows</span></div>
+      <svg viewBox="0 0 620 305" role="img" aria-labelledby="graph-title graph-description">
+        <title id="graph-title">How opening time can affect heat in the simulation</title>
+        <desc id="graph-description">The simulation goes from first window opening through window-open fraction and ventilation to heat exposure.</desc>
+        <defs>
+          <marker id="benchmark-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#a6e7cf"/></marker>
+          <marker id="recorded-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#ffd388"/></marker>
+        </defs>
+        <path class="benchmark" d="M234 94 H382" marker-end="url(#benchmark-arrow)"/>
+        <path class="benchmark" d="M489 130 V207" marker-end="url(#benchmark-arrow)"/>
+        <path class="benchmark" d="M386 243 H238" marker-end="url(#benchmark-arrow)"/>
+        <path data-view="proposal measurements earlier" class="recorded" d="M131 207 V134" marker-end="url(#recorded-arrow)" hidden/>
+        <path data-view="earlier" class="recorded" d="M236 75 C280 25 340 25 386 75" marker-end="url(#recorded-arrow)" hidden/>
+        <path data-view="final" class="recorded" d="M386 75 C340 25 280 25 236 75" marker-end="url(#recorded-arrow)" hidden/>
+        <g class="nodes">
+          <rect x="28" y="61" width="206" height="66" rx="12"/><text x="131" y="90"><tspan x="131">First opening</tspan><tspan x="131" dy="24">time</tspan></text>
+          <rect x="386" y="61" width="206" height="66" rx="12"/><text x="489" y="91"><tspan x="489">How far open</tspan><tspan x="489" dy="21">the window is</tspan></text>
+          <rect x="386" y="210" width="206" height="66" rx="12"/><text x="489" y="239"><tspan x="489">Airflow</tspan><tspan x="489" dy="24">when open</tspan></text>
+          <rect x="28" y="210" width="206" height="66" rx="12"/><text x="131" y="239"><tspan x="131">Heat</tspan><tspan x="131" dy="24">exposure</tspan></text>
+        </g>
+      </svg>
+      <figcaption><span class="key mint">Rules of the simulation</span><span class="key amber" id="answer-key" hidden>From the earlier proposal</span><span id="diagram-scope">Only relevant arrows shown</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="scene purpose-scene" data-scene="3" aria-labelledby="purpose" hidden>
+    <div class="purpose-copy">
+      <p class="eyebrow">Back to the original decision</p>
+      <h2 id="purpose" tabindex="-1">Would opening earlier cool the room?</h2>
+      <p>The green arrows traced a route from opening time through airflow to heat. Even if the method recovered every arrow, we’d still need to measure how much warmer or cooler the room gets when we change the opening time.</p>
+      <p>For a real test, plan pairs of mornings with similar starting room temperatures and weather. Flip a coin before each pair to choose which morning gets the 8 a.m. opening. Record the starting temperature, outdoor temperature, wind and sunlight so you can check how closely the mornings match.</p>
+      <a href="./evidence.html#saved-case">What the saved study tested ↗</a>
+    </div>
+    <aside class="scenario-card" aria-label="Proposed temperature comparison">
+      <p class="eyebrow">Proposed test · Two opening times</p>
+      <div class="opening-times"><h3>Open at 8 a.m.</h3><h3>Open at 10 a.m.</h3></div>
+      <p class="fixed-conditions"><strong>Change the opening time.</strong> Keep the opening width, shade and AC settings the same. Close the window at noon on both schedules.</p>
+      <p class="fixed-conditions"><strong>Record indoor temperature.</strong> Measure in the same spot every five minutes from 8 a.m. to noon on both schedules. That includes the two hours when only the earlier schedule has the window open.</p>
+      <p class="scenario-question"><strong>Compare the averages.</strong> Average the readings for each morning and compare the two averages in each pair. Consistently lower averages for 8 a.m. would support opening earlier under those conditions.</p>
+    </aside>
+  </section>
+
+  <section class="scene requirements" id="next-questions" data-scene="4" aria-labelledby="requirements-title" hidden>
+    <p class="eyebrow">What the apartment showed us</p>
+    <h2 id="requirements-title" tabindex="-1">What can each check tell us?</h2>
+    <div class="questions">
+      <article>
+        <p class="eyebrow">Check the arrows · What we did</p>
+        <h3>Did the final diagram fit the simulation?</h3>
+        <p>We checked the saved final diagram against the simulation’s rules. The arrow between the window boxes pointed the opposite way. That gives us a specific conflict to report for this run.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Test the decision · What we proposed</p>
+        <h3>Would opening at 8 keep the room cooler?</h3>
+        <p>We’d try 8 and 10 on comparable mornings and compare average room temperature from 8 a.m. to noon. The difference would estimate how much warmer or cooler the room got when we opened earlier under those conditions.</p>
+      </article>
+    </div>
+    <section class="audit-purpose" aria-labelledby="audit-purpose-title">
+      <h3 id="audit-purpose-title">Why we’re building Crucis</h3>
+      <p>A reader should be able to find the exact diagram behind a claim about arrows or the readings behind a claim about cooling. <strong>Crucis is a framework for auditing causal-discovery systems.</strong> It needs to keep what the system returned, run checks that match each claim, and link each finding to the evidence behind it.</p>
+      <p>The audit needs testing too. If we deliberately give it the earlier proposal labeled as the final diagram, can it catch the mix-up?</p>
+      <a href="./evidence.html#requirements">Research basis and scope ↗</a>
+    </section>
+    <div class="research-handoff">
+      <p>The apartment showed two different jobs: checking an explanation and testing a decision. To make either finding useful, we must also choose the right answer, use an appropriate reference and let a reader retrace the check. Follow those responsibilities on the research atlas, or start with the limits of the answer key.</p>
+      <nav class="research-links" aria-label="Continue the research">
+        <a href="./reference-key.html">What if we know only some of the rules? →</a>
+        <a href="./atlas.html">Explore the research atlas →</a>
+      </nav>
+    </div>
+  </section>
+    </div>
+    <footer class="canvas-controls" aria-label="Walkthrough controls">
+      <button type="button" id="previous" disabled>← Back</button>
+      <span id="position" aria-live="polite">Step 1 of 5</span>
+      <button type="button" id="next">Open a saved apartment case →</button>
+    </footer>
+  </section>
+  <noscript><p>Open the <a href="./evidence.html#apartment">case evidence</a> for the full comparison.</p></noscript>
+</main>
+<footer class="wrap footer">Crucis · Research edition · 17 November 2026</footer>
+</body>
+</html>

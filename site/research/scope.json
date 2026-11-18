@@ -1,0 +1,1634 @@
+{
+  "format": "local.public_atlas_editorial_scope.v1",
+  "date": "2026-11-17",
+  "base_path": "/research/",
+  "route_count": 22,
+  "routes": [
+    {
+      "path": "index.html",
+      "title": "Would opening the window earlier help?",
+      "goal": "Start with a decision worth answering; derive why testing explanations and testing the decision need different evidence.",
+      "reader_prerequisites": [],
+      "earned_outcome": "Understand why Crucis must check what a causal-discovery answer means and what its evidence supports.",
+      "next": [
+        "atlas.html"
+      ],
+      "visual_purpose": "One apartment scene develops through the approved five opening stages.",
+      "kind": "opening",
+      "families": [],
+      "capabilities": [],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "atlas.html",
+      "title": "Crucis research home",
+      "goal": "Derive the need for Crucis from the apartment decision, then expose five connected audit questions, evidence boundaries, open choices and the study rationale in one page.",
+      "reader_prerequisites": [],
+      "earned_outcome": "Explain the project, inspect a territory, identify decisive next work, and distinguish coverage from statistical study size.",
+      "next": [
+        "reference-key.html",
+        "answer-selected.html",
+        "comparison-task.html",
+        "retrace-finding.html",
+        "validate-cases.html"
+      ],
+      "visual_purpose": "A short developing apartment scene, five linked duties, inline selectable landscape, separate instrument/study tracks and a sizing path. Region geometry is schematic.",
+      "kind": "map",
+      "families": [],
+      "capabilities": [],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "evidence.html",
+      "title": "Follow a statement to its evidence",
+      "goal": "Explain the public evidence view before exposing exact source bindings and derivations.",
+      "reader_prerequisites": [],
+      "earned_outcome": "Know what the linked record establishes, what access permits and what remains independently unreproduced.",
+      "next": [
+        "atlas.html"
+      ],
+      "visual_purpose": "Trace a visible sentence to the exact version, source excerpt and bounded interpretation.",
+      "kind": "ledger",
+      "families": [
+        "F8"
+      ],
+      "capabilities": [],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "history.html",
+      "title": "What changed, and why?",
+      "goal": "Preserve dated assessment editions and the reason an interpretation changed.",
+      "reader_prerequisites": [
+        "Current and historical assessments can differ without rewriting the old evidence."
+      ],
+      "earned_outcome": "Tell an earlier valid claim from a stale present use; inspect the change without invented session attribution.",
+      "next": [
+        "research-record.html",
+        "retrace-change.html"
+      ],
+      "visual_purpose": "Before/after record with retained predecessor and affected-dependency paths.",
+      "kind": "history",
+      "families": [
+        "F9"
+      ],
+      "capabilities": [
+        "C12",
+        "C18"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "review.html",
+      "title": "Where could a useful challenge change our direction?",
+      "goal": "Turn a genuine unresolved choice into a focused review entry with alternatives and decisive evidence.",
+      "reader_prerequisites": [
+        "Prepared expectations and qualification results are different; a session does not establish correctness."
+      ],
+      "earned_outcome": "See what a TA or specialist could add beyond already completed source reading or an ordinary engineering check.",
+      "next": [
+        "reference-boundary.html",
+        "comparison-population.html",
+        "validate-extension.html"
+      ],
+      "visual_purpose": "Question-to-alternatives-to-decisive-work paths, not a contact funnel or generic meeting agenda.",
+      "kind": "review",
+      "families": [],
+      "capabilities": [],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "research-record.html",
+      "title": "How does new work change the record?",
+      "goal": "Show how private notes, proposed findings, accepted scientific changes and public editions remain distinct.",
+      "reader_prerequisites": [],
+      "earned_outcome": "Understand one-note refresh, no-finding, disagreement, exposure, source corrections and publication approval without equating activity to progress.",
+      "next": [
+        "history.html",
+        "review.html"
+      ],
+      "visual_purpose": "An event can propose an evidence/argument change; only accepted, scoped changes affect a public edition.",
+      "kind": "update",
+      "families": [
+        "F7",
+        "F9"
+      ],
+      "capabilities": [
+        "C04",
+        "C07",
+        "C11"
+      ],
+      "composition": [
+        "J03"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "operations.html",
+      "title": "What actually happened during the run?",
+      "goal": "Separate intended work, authorized effects, issued requests, observed native results, capture and settled outcomes.",
+      "reader_prerequisites": [
+        "A missing graph is different from a captured graph containing no arrows."
+      ],
+      "earned_outcome": "Know why timeout, cancellation request, capture recovery and a fresh native attempt need different dispositions.",
+      "next": [
+        "answer-boundary.html",
+        "comparison-outcome.html",
+        "retrace-change.html"
+      ],
+      "visual_purpose": "One run timeline with separate request, native-return and capture markers; unknown spans stay unknown.",
+      "kind": "crosscutting",
+      "families": [
+        "F5",
+        "F9"
+      ],
+      "capabilities": [
+        "C01",
+        "C05",
+        "C06",
+        "C07",
+        "C15",
+        "C19"
+      ],
+      "composition": [
+        "J02"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "reference-key.html",
+      "title": "What makes an answer key usable?",
+      "goal": "Derive why the source must license this exact question, variable scope and case edition.",
+      "reader_prerequisites": [
+        "The apartment scene provides named quantities and proposed arrows."
+      ],
+      "earned_outcome": "Distinguish a table of observations from source rules and a covered reference answer.",
+      "next": [
+        "reference-evidence.html"
+      ],
+      "visual_purpose": "Same apartment values alongside two possible causal explanations.",
+      "journey": "reference",
+      "families": [
+        "F1",
+        "F2"
+      ],
+      "capabilities": [
+        "C03"
+      ],
+      "composition": [
+        "J01"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "reference-evidence.html",
+      "title": "What would rule an explanation out?",
+      "goal": "Use a bounded exercise to derive what observations and controlled changes do and do not distinguish.",
+      "reader_prerequisites": [
+        "A source can leave more than one allowed diagram."
+      ],
+      "earned_outcome": "Explain exactly which assumption or controlled record excludes an orientation; do not infer direction from a table alone.",
+      "next": [
+        "reference-boundary.html"
+      ],
+      "visual_purpose": "Select directions in a three/four-node exercise, then reveal a worked source-specific derivation.",
+      "journey": "reference",
+      "families": [
+        "F2"
+      ],
+      "capabilities": [
+        "C08",
+        "C09",
+        "C14"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "reference-boundary.html",
+      "title": "Where does the answer key stop helping?",
+      "goal": "Show which reference questions have an engineering design, which await qualification, and which require scientific judgment.",
+      "reader_prerequisites": [
+        "A derived reference conclusion holds within its declared class and source scope."
+      ],
+      "earned_outcome": "Identify model fidelity, allowed-class and transfer questions without reopening solved version-binding work.",
+      "next": [
+        "review.html",
+        "answer-selected.html"
+      ],
+      "visual_purpose": "A declared class boundary with one counterexample crossing it.",
+      "journey": "reference",
+      "families": [
+        "F2"
+      ],
+      "capabilities": [
+        "C02",
+        "C09",
+        "C14",
+        "C15"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "answer-selected.html",
+      "title": "Which answer did we check?",
+      "goal": "Follow one retained output through occurrence, subject, field and cutoff selection.",
+      "reader_prerequisites": [
+        "One method can produce more than one diagram during a single attempt."
+      ],
+      "earned_outcome": "See why same attempt or intact bytes do not establish the requested final product.",
+      "next": [
+        "answer-meaning.html"
+      ],
+      "visual_purpose": "Two intact recorded fields; the selected one remains visibly attached to its occurrence.",
+      "journey": "answers",
+      "families": [
+        "F3",
+        "F5"
+      ],
+      "capabilities": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "composition": [
+        "J01"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "answer-meaning.html",
+      "title": "What does this answer actually mean?",
+      "goal": "Derive representation and variable correspondence before assigning causal commitments.",
+      "reader_prerequisites": [
+        "The selected object is fixed independently of how well it scores."
+      ],
+      "earned_outcome": "Distinguish direct edge, indirect route, graph candidate and probability product; preserve default/tie attribution.",
+      "next": [
+        "answer-boundary.html"
+      ],
+      "visual_purpose": "A matrix cell becomes a named relation; a wire and a multi-step route remain separate.",
+      "journey": "answers",
+      "families": [
+        "F3",
+        "F6"
+      ],
+      "capabilities": [
+        "C02",
+        "C14",
+        "C16",
+        "C17"
+      ],
+      "composition": [
+        "J01"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "answer-boundary.html",
+      "title": "When is there no answer to judge?",
+      "goal": "Separate partial/absent/unavailable evidence, abstention and semantic inapplicability at the intended cutoff.",
+      "reader_prerequisites": [
+        "Knowing reference truth does not tell us what the method returned."
+      ],
+      "earned_outcome": "Choose the appropriate held or inapplicable disposition without inventing a negative answer or fresh occurrence.",
+      "next": [
+        "operations.html",
+        "comparison-task.html"
+      ],
+      "visual_purpose": "Captured empty graph, missing capture and probability output remain different products.",
+      "journey": "answers",
+      "families": [
+        "F3",
+        "F5"
+      ],
+      "capabilities": [],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "comparison-task.html",
+      "title": "What makes a comparison fair?",
+      "goal": "Start from the decision a comparison should inform; align task, product, information and native claim.",
+      "reader_prerequisites": [
+        "Graphs and probability products need not express the same answer."
+      ],
+      "earned_outcome": "Explain why a common metric or equal timer does not create the same scientific task.",
+      "next": [
+        "comparison-outcome.html"
+      ],
+      "visual_purpose": "Paired question/information/product columns make a mismatch visible before scoring.",
+      "journey": "comparison",
+      "families": [
+        "F1",
+        "F4"
+      ],
+      "capabilities": [
+        "C03",
+        "C17"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "comparison-outcome.html",
+      "title": "What counts as a useful answer?",
+      "goal": "Derive source accuracy, evidence support, delivery and omission/failure rules for an applicable product.",
+      "reader_prerequisites": [
+        "The intended comparison question and native product are fixed."
+      ],
+      "earned_outcome": "Keep wrong source answer, unsupported stronger conclusion, abstention and unavailable evidence distinct.",
+      "next": [
+        "comparison-population.html"
+      ],
+      "visual_purpose": "Same proposed arrow under different evidence; outcome labels change only where their deciding premise changes.",
+      "journey": "comparison",
+      "families": [
+        "F4",
+        "F6",
+        "F7"
+      ],
+      "capabilities": [
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "comparison-population.html",
+      "title": "What can these cases tell us?",
+      "goal": "Bind eligible case mixture, weights, independent units, failure costs and uncertainty to the intended claim.",
+      "reader_prerequisites": [
+        "A case-level outcome is defined only for compatible native/reference questions."
+      ],
+      "earned_outcome": "Explain why repeated calls are not independent worlds; retain missing slots and distinguish logical bounds from sampling uncertainty.",
+      "next": [
+        "review.html",
+        "retrace-finding.html"
+      ],
+      "visual_purpose": "Weighted case blocks retain blanks and shared-source dependence rather than disappearing from the frame.",
+      "journey": "comparison",
+      "families": [
+        "F4",
+        "F6"
+      ],
+      "capabilities": [
+        "C04",
+        "C10",
+        "C15",
+        "C19"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "retrace-finding.html",
+      "title": "Can a reader retrace the finding?",
+      "goal": "Reconstruct one bounded statement from the selected answer, reference, calculation and consumed inputs.",
+      "reader_prerequisites": [
+        "Native meaning and the intended comparison are separate prerequisites."
+      ],
+      "earned_outcome": "Rebuild the narrow result and reject a stronger sentence that its evidence does not support.",
+      "next": [
+        "retrace-change.html"
+      ],
+      "visual_purpose": "A sentence unfolds into source and result records with an actual joined-path gap visible.",
+      "journey": "reconstruction",
+      "families": [
+        "F7",
+        "F8"
+      ],
+      "capabilities": [
+        "C10",
+        "C12",
+        "C17",
+        "C18"
+      ],
+      "composition": [
+        "J01",
+        "J02"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "retrace-change.html",
+      "title": "What changes after a correction?",
+      "goal": "Preserve the old record while reopening affected conclusions and justifying unaffected continuation.",
+      "reader_prerequisites": [
+        "A correct calculation does not guarantee a faithful report."
+      ],
+      "earned_outcome": "Separate suggested fix, implemented change and accepted retest; preserve exposure, disagreement and reasons.",
+      "next": [
+        "retrace-boundary.html"
+      ],
+      "visual_purpose": "Changed premise highlights affected descendants; unchanged branches require explicit dependency justification.",
+      "journey": "reconstruction",
+      "families": [
+        "F9"
+      ],
+      "capabilities": [
+        "C06",
+        "C11"
+      ],
+      "composition": [
+        "J03",
+        "J04"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "retrace-boundary.html",
+      "title": "What can someone else independently check?",
+      "goal": "Distinguish a readable public explanation, public source access and reproducible original execution.",
+      "reader_prerequisites": [
+        "Traceability requires access to the decisive material, not just a hash."
+      ],
+      "earned_outcome": "Understand privacy/access limits without treating a private binding as public reproducibility.",
+      "next": [
+        "evidence.html",
+        "research-record.html",
+        "validate-cases.html"
+      ],
+      "visual_purpose": "Public evidence closure beside withheld raw material with the resulting limit named.",
+      "journey": "reconstruction",
+      "families": [
+        "F8"
+      ],
+      "capabilities": [
+        "C07",
+        "C12",
+        "C20"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "validate-cases.html",
+      "title": "Can Crucis get the important cases right?",
+      "goal": "Use positive, error, ambiguity, wrong-field, unavailable and inapplicable cases to test different audit obligations.",
+      "reader_prerequisites": [
+        "A prepared expected outcome differs from an observed auditor result."
+      ],
+      "earned_outcome": "Know why a checker that withholds everything fails the supported-positive duty, and why component passes do not certify a whole path.",
+      "next": [
+        "validate-coverage.html"
+      ],
+      "visual_purpose": "Contrasting cases keep native answer, independent reference and expected auditor action aligned.",
+      "journey": "validation",
+      "families": [
+        "F6",
+        "F10"
+      ],
+      "capabilities": [
+        "C08",
+        "C13",
+        "C19"
+      ],
+      "composition": [
+        "J02"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "validate-coverage.html",
+      "title": "What do the checks actually cover?",
+      "goal": "Define independently adjudicable obligations, explicit component preconditions and whole-path duties.",
+      "reader_prerequisites": [
+        "Each control has a scope; one passing run cannot validate unrelated behavior."
+      ],
+      "earned_outcome": "Read a frozen eligible denominator without mistaking inventory groups or passed tests for all-auditor correctness.",
+      "next": [
+        "validate-extension.html"
+      ],
+      "visual_purpose": "Obligation/case matrix includes unrun and reopened cells; no universal completion percentage.",
+      "journey": "validation",
+      "families": [
+        "F1",
+        "F10"
+      ],
+      "capabilities": [
+        "C13"
+      ],
+      "composition": [],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    },
+    {
+      "path": "validate-extension.html",
+      "title": "What happens when the next system is different?",
+      "goal": "Qualify new native meanings, model classes, interfaces and deployment assumptions before transferring assurance.",
+      "reader_prerequisites": [
+        "Scope and dependencies limit what prior evidence can establish."
+      ],
+      "earned_outcome": "Identify genuine extension research, reused qualified obligations and new composition duties without promising future-proof completeness.",
+      "next": [
+        "review.html",
+        "atlas.html"
+      ],
+      "visual_purpose": "Existing bounded territory beside an unqualified extension, with precise dependency crossings.",
+      "journey": "validation",
+      "families": [
+        "F10"
+      ],
+      "capabilities": [
+        "C13",
+        "C16",
+        "C20"
+      ],
+      "composition": [
+        "J04"
+      ],
+      "status": "Editorial home included in this edition; no scientific qualification credit follows from this mapping."
+    }
+  ],
+  "promise_mapping": [
+    {
+      "id": "P1",
+      "title": "Preserve what actually exists",
+      "families": [
+        "F2",
+        "F3",
+        "F5",
+        "F8"
+      ],
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "evidence.html",
+        "operations.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html",
+        "retrace-boundary.html",
+        "retrace-finding.html"
+      ]
+    },
+    {
+      "id": "P2",
+      "title": "Judge the intended scientific question",
+      "families": [
+        "F1",
+        "F2",
+        "F3",
+        "F6",
+        "F7"
+      ],
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "comparison-task.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html",
+        "research-record.html",
+        "retrace-finding.html",
+        "validate-cases.html",
+        "validate-coverage.html"
+      ]
+    },
+    {
+      "id": "P3",
+      "title": "Answer when the supported task is answerable",
+      "families": [
+        "F1",
+        "F3",
+        "F5",
+        "F6",
+        "F7",
+        "F10"
+      ],
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "comparison-task.html",
+        "operations.html",
+        "reference-key.html",
+        "research-record.html",
+        "retrace-finding.html",
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ]
+    },
+    {
+      "id": "P4",
+      "title": "Support defensible experimental conclusions",
+      "families": [
+        "F4",
+        "F6",
+        "F7"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "comparison-task.html",
+        "research-record.html",
+        "retrace-finding.html",
+        "validate-cases.html"
+      ]
+    },
+    {
+      "id": "P5",
+      "title": "Execute with accountable boundaries",
+      "families": [
+        "F5",
+        "F9"
+      ],
+      "routes": [
+        "answer-boundary.html",
+        "answer-selected.html",
+        "history.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-change.html"
+      ]
+    },
+    {
+      "id": "P6",
+      "title": "Communicate a retraceable scoped finding",
+      "families": [
+        "F8",
+        "F9"
+      ],
+      "routes": [
+        "evidence.html",
+        "history.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-boundary.html",
+        "retrace-change.html",
+        "retrace-finding.html"
+      ]
+    },
+    {
+      "id": "P7",
+      "title": "Keep assurance applicable as the system changes",
+      "families": [
+        "F9",
+        "F10"
+      ],
+      "routes": [
+        "history.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-change.html",
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ]
+    }
+  ],
+  "family_mapping": [
+    {
+      "id": "F1",
+      "title": "Task and scope",
+      "question": "Which question is this audit supposed to answer?",
+      "routes": [
+        "reference-key.html",
+        "comparison-task.html",
+        "validate-coverage.html"
+      ]
+    },
+    {
+      "id": "F2",
+      "title": "Sources and references",
+      "question": "What makes the answer key applicable and scientifically warranted?",
+      "routes": [
+        "reference-key.html",
+        "reference-evidence.html",
+        "reference-boundary.html"
+      ]
+    },
+    {
+      "id": "F3",
+      "title": "Native products and meaning",
+      "question": "What did the system return and which proposition does it express?",
+      "routes": [
+        "answer-selected.html",
+        "answer-meaning.html",
+        "answer-boundary.html"
+      ]
+    },
+    {
+      "id": "F4",
+      "title": "Experimental design",
+      "question": "Does this comparison discriminate the intended explanations for the intended population?",
+      "routes": [
+        "comparison-task.html",
+        "comparison-outcome.html",
+        "comparison-population.html"
+      ]
+    },
+    {
+      "id": "F5",
+      "title": "Execution and collection",
+      "question": "What happened under which authority and limits, including uncertain and failed effects?",
+      "routes": [
+        "operations.html",
+        "answer-selected.html",
+        "answer-boundary.html"
+      ]
+    },
+    {
+      "id": "F6",
+      "title": "Measurement",
+      "question": "Does this procedure compute the intended quantity at its qualified precision and scope?",
+      "routes": [
+        "answer-meaning.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "validate-cases.html"
+      ]
+    },
+    {
+      "id": "F7",
+      "title": "Findings",
+      "question": "Does the conclusion follow from the qualified measurements, rule and evidence?",
+      "routes": [
+        "comparison-outcome.html",
+        "retrace-finding.html",
+        "research-record.html"
+      ]
+    },
+    {
+      "id": "F8",
+      "title": "Reports and reconstruction",
+      "question": "Can a permitted reader reconstruct what was established without stronger implications?",
+      "routes": [
+        "retrace-finding.html",
+        "retrace-boundary.html",
+        "evidence.html"
+      ]
+    },
+    {
+      "id": "F9",
+      "title": "Changes and recovery",
+      "question": "Which current uses remain justified after a change, and which need reassessment?",
+      "routes": [
+        "retrace-change.html",
+        "research-record.html",
+        "history.html",
+        "operations.html"
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "Validation adequacy",
+      "question": "Could Crucis satisfy the chosen checks and still materially mislead?",
+      "routes": [
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ]
+    }
+  ],
+  "capability_mapping": [
+    {
+      "id": "C01",
+      "title": "Native evidence and occurrence identity",
+      "routes": [
+        "answer-selected.html",
+        "operations.html"
+      ],
+      "operation": "Capture bytes/selectors and explicit gaps; distinguish equal bytes from one native occurrence.",
+      "inherited_evidence_limit": "Source describes snapshot/import identity fixtures; no universal provenance authentication.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C02",
+      "title": "Variables, native forms and semantic profiles",
+      "routes": [
+        "answer-meaning.html",
+        "reference-boundary.html"
+      ],
+      "operation": "Interpret supported native families, coordinates, explicit mappings and profile requirements.",
+      "inherited_evidence_limit": "Encoding/DAG/measure checks are scoped; causal meaning and complete latent/relational support do not follow from preservation.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C03",
+      "title": "Tasks, source-scoped cases and references",
+      "routes": [
+        "reference-key.html",
+        "comparison-task.html"
+      ],
+      "operation": "Bind task, case revision, reference, information condition and native request.",
+      "inherited_evidence_limit": "S2 metadata completion is not scientific truth, native fulfillment or authority.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C04",
+      "title": "Comparison, population and adaptive design",
+      "routes": [
+        "comparison-population.html",
+        "research-record.html"
+      ],
+      "operation": "Declare units, membership, selection, matching, transformations, repetitions and amendments.",
+      "inherited_evidence_limit": "Recorded labels and completed attempts do not establish independent samples or fair causal comparisons.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C05",
+      "title": "Admission, issue and owner/resource accounting",
+      "routes": [
+        "operations.html"
+      ],
+      "operation": "Bind actual live owners, policy, resource reservations and intended dispatch effects.",
+      "inherited_evidence_limit": "Metadata permission and successful transport do not establish native effect or universal monetary/isolation guarantees.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C06",
+      "title": "Observation, interaction and recovery",
+      "routes": [
+        "operations.html",
+        "retrace-change.html"
+      ],
+      "operation": "Collect evidence, observe interactions, reconcile uncertain dispatch and distinguish restart, stop and collection closure.",
+      "inherited_evidence_limit": "Acknowledgment is not termination; restored model state is not exact trajectory restoration.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C07",
+      "title": "Staging, journals and immutable publication",
+      "routes": [
+        "operations.html",
+        "retrace-boundary.html",
+        "research-record.html"
+      ],
+      "operation": "Retain intent before effect, stage bounded inputs, publish exact audience/dependency closures and observe current selection.",
+      "inherited_evidence_limit": "Cooperative local custody is not hostile-process isolation, distributed transactionality or external authentication.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C08",
+      "title": "Scoped proposition measurement",
+      "routes": [
+        "reference-evidence.html",
+        "comparison-outcome.html",
+        "validate-cases.html"
+      ],
+      "operation": "Select a native/reference proposition and judge only covered, interpretable keys. The declared_scope/declared_assessment branch separately qualifies native meaning, reference truth/warrant and signed direct-claim assessment.",
+      "inherited_evidence_limit": "Partial/open/closed/missing/abstaining states retain distinct masks; reference qualification remains a separate premise. Finite BIF/SCM arithmetic does not establish source authenticity, controlled-model adoption, physical truth or native eligibility; no default scientific oracle is installed.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C09",
+      "title": "Ordering and binary point questions",
+      "routes": [
+        "reference-evidence.html",
+        "reference-boundary.html",
+        "comparison-outcome.html"
+      ],
+      "operation": "Assess strict sequences and named binary-event losses under qualified task/reference semantics.",
+      "inherited_evidence_limit": "Necessary-only constraints and event/cutoff identity matter; field reliability is not a six-permutation result.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C10",
+      "title": "Aggregation, bounds, posterior and reproduction",
+      "routes": [
+        "comparison-population.html",
+        "retrace-finding.html"
+      ],
+      "operation": "Compute named paired quantities, intended-frame enclosures, finite conditional posterior and exact reproduction comparisons.",
+      "inherited_evidence_limit": "Outer ranges are not sampling intervals; conditional finite models are not model adequacy; numerical agreement is not scientific replication.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C11",
+      "title": "Rules, findings, registration and history",
+      "routes": [
+        "comparison-outcome.html",
+        "retrace-change.html",
+        "research-record.html"
+      ],
+      "operation": "Bind rule/criterion, observe decision work, assess temporal registration and preserve corrections.",
+      "inherited_evidence_limit": "Source attribution is not new evidence; fixture rule semantics do not qualify a new estimator or threshold rationale.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C12",
+      "title": "Reporting, certificates, disclosure and currentness",
+      "routes": [
+        "retrace-finding.html",
+        "retrace-boundary.html",
+        "history.html"
+      ],
+      "operation": "Render controlled views, check fidelity/lineage, replay within authority and retain outward/current-selection distinctions.",
+      "inherited_evidence_limit": "Deterministic JSON/Markdown controls do not cover every format or establish issuer authentication or public release permission.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C13",
+      "title": "Independent auditor-validation workflow",
+      "routes": [
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ],
+      "operation": "Plan opportunities, qualify independent expectations, compare actual candidate work and preserve denominators/handoffs.",
+      "inherited_evidence_limit": "Initial implemented roster is the legacy K10/K12 fixed grid plus controlled reporting; it does not certify all new native/question families.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C14",
+      "title": "Continuous scientific source and direct-claim reference",
+      "routes": [
+        "reference-evidence.html",
+        "reference-boundary.html",
+        "answer-meaning.html"
+      ],
+      "operation": "Bind original real variables and declared model class, raw-coordinate premises, reference mathematics and target correspondence.",
+      "inherited_evidence_limit": "Fixed source/fork/triangle arguments are conditional; normalization capture is not a transformation proof or a universal reference solver.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C15",
+      "title": "Numerical realization, checking and cohort supply",
+      "routes": [
+        "operations.html",
+        "reference-boundary.html",
+        "comparison-population.html"
+      ],
+      "operation": "Bind numerical observation, pinned replay, separate checker, material emission and intended/released/assessable supply.",
+      "inherited_evidence_limit": "Replay trusts declared library evidence; repeated checks and copies are not new draws, ideal iid guarantees or independent families.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C16",
+      "title": "System-specific native adapters",
+      "routes": [
+        "answer-selected.html",
+        "answer-meaning.html",
+        "validate-extension.html"
+      ],
+      "operation": "Expose declared recorded/replay/live modes, native stage/object interpretations and system-specific control boundaries.",
+      "inherited_evidence_limit": "Named adapters and prepared ports are not proof of supported live execution or scientific eligibility for a new case.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C17",
+      "title": "Legacy graph, transformation and finding path",
+      "routes": [
+        "answer-meaning.html",
+        "comparison-task.html",
+        "retrace-finding.html"
+      ],
+      "operation": "Preserve the distinct legacy audit path, graph conventions, controls, metrics and frozen rule meanings.",
+      "inherited_evidence_limit": "Historical recomputation stays at its original population, tolerance and claim scope; opt-in lifecycle support is not inherited automatically.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C18",
+      "title": "Recorded stages, reruns and legacy reports",
+      "routes": [
+        "answer-selected.html",
+        "retrace-finding.html",
+        "history.html"
+      ],
+      "operation": "Reconstruct recorded stage lineage, compare reruns and verify legacy report/certificate content at stated boundaries.",
+      "inherited_evidence_limit": "A reconstructed stage or matching number does not authenticate original native occurrence, prove observation neutrality or replicate science.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C19",
+      "title": "Study workers, timing and native qualification controls",
+      "routes": [
+        "operations.html",
+        "comparison-population.html",
+        "validate-cases.html"
+      ],
+      "operation": "Prepare bounded Q1 study and native qualification mechanics: assignments/commands in q1_pilot, pinned workers/observers in systems, durable stage/owner/fit/window/storage controls in execution.",
+      "inherited_evidence_limit": "Current continuous window held before native dispatch; corrected offline controls do not supply successful corrected execution or paid efficacy.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    },
+    {
+      "id": "C20",
+      "title": "Shared primitives, declarations and distribution",
+      "routes": [
+        "validate-extension.html",
+        "retrace-boundary.html"
+      ],
+      "operation": "Account for shared helpers, serialization/dependency assumptions, entry points, specimen builders, package and build boundaries. The dev gate is development/test tooling, separate from Q1 study execution and scientific certificates.",
+      "inherited_evidence_limit": "Static declarations and passing an old distribution check do not qualify every installed environment or new combination. Workbench architecture remains design guidance only, not Crucis package evidence.",
+      "limit_note": "This is retained 16 November source-account scope, not a current software-status verdict."
+    }
+  ],
+  "composition_mapping": {
+    "J01": {
+      "routes": [
+        "answer-selected.html",
+        "answer-meaning.html",
+        "reference-key.html",
+        "retrace-finding.html"
+      ],
+      "duty": "Join one compatible task/product/meaning/reference/frontier; individually valid components do not establish compatibility."
+    },
+    "J02": {
+      "routes": [
+        "operations.html",
+        "validate-cases.html",
+        "retrace-finding.html"
+      ],
+      "duty": "Observe actual consumed whole path with positive, adverse and held cases; prepared expectations are not execution receipts."
+    },
+    "J03": {
+      "routes": [
+        "retrace-change.html",
+        "research-record.html"
+      ],
+      "duty": "Reopen affected descendants after a decisive source, mapping, interpretation or implementation change."
+    },
+    "J04": {
+      "routes": [
+        "retrace-change.html",
+        "validate-extension.html"
+      ],
+      "duty": "Justify unaffected continuation from unchanged deciding premises, including shared/hidden dependencies."
+    }
+  },
+  "retained_example_duties": [
+    {
+      "id": "A01",
+      "title": "Name the question",
+      "routes": [
+        "comparison-task.html",
+        "reference-key.html",
+        "validate-coverage.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A02",
+      "title": "Verify the saved bytes",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "operations.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A03",
+      "title": "Establish the archived subject",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "operations.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A04",
+      "title": "Select the requested field",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A05",
+      "title": "Keep variable identities",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A06",
+      "title": "Establish the answer's meaning",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A07",
+      "title": "Read the recorded commitments",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A08",
+      "title": "Verify the reference bytes",
+      "routes": [
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A09",
+      "title": "Establish reference applicability",
+      "routes": [
+        "answer-meaning.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A10",
+      "title": "Read the reference commitments",
+      "routes": [
+        "answer-meaning.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A11",
+      "title": "Make the permitted comparison",
+      "routes": [
+        "answer-meaning.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "research-record.html",
+        "retrace-finding.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A12",
+      "title": "Preserve meaning in the presentation",
+      "routes": [
+        "evidence.html",
+        "retrace-boundary.html",
+        "retrace-finding.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A13",
+      "title": "Enable reader reconstruction",
+      "routes": [
+        "evidence.html",
+        "retrace-boundary.html",
+        "retrace-finding.html",
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "A14",
+      "title": "Preserve dated history",
+      "routes": [
+        "history.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "J01",
+      "title": "Join compatible evidence",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "comparison-task.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "reference-key.html",
+        "validate-cases.html",
+        "validate-coverage.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "J02",
+      "title": "Observe the actual whole path",
+      "routes": [
+        "answer-boundary.html",
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "evidence.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-boundary.html",
+        "retrace-finding.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "J03",
+      "title": "Reassess affected conclusions",
+      "routes": [
+        "history.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    },
+    {
+      "id": "J04",
+      "title": "Justify unaffected continuation",
+      "routes": [
+        "history.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "Retained apartment-to-framework example mapping; no new satisfaction/execution credit and not the whole-framework leaf denominator."
+    }
+  ],
+  "interface_mapping": [
+    {
+      "id": "I00",
+      "surface": "Root legacy CLI",
+      "capabilities": [
+        "C17",
+        "C18"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-task.html",
+        "history.html",
+        "retrace-finding.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I01",
+      "surface": "S1 CLI",
+      "capabilities": [
+        "C01",
+        "C02"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "answer-selected.html",
+        "operations.html",
+        "reference-boundary.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I02",
+      "surface": "S2 CLI",
+      "capabilities": [
+        "C03",
+        "C04"
+      ],
+      "routes": [
+        "comparison-population.html",
+        "comparison-task.html",
+        "reference-key.html",
+        "research-record.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I03",
+      "surface": "S3 CLI",
+      "capabilities": [
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "routes": [
+        "operations.html",
+        "research-record.html",
+        "retrace-boundary.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I04",
+      "surface": "S4 CLI",
+      "capabilities": [
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "routes": [
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "retrace-finding.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I05",
+      "surface": "S5 CLI",
+      "capabilities": [
+        "C11"
+      ],
+      "routes": [
+        "comparison-outcome.html",
+        "research-record.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I06",
+      "surface": "S6 CLI",
+      "capabilities": [
+        "C12"
+      ],
+      "routes": [
+        "history.html",
+        "retrace-boundary.html",
+        "retrace-finding.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I07",
+      "surface": "S7 CLI",
+      "capabilities": [
+        "C13"
+      ],
+      "routes": [
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I08",
+      "surface": "S1 supplied typed ports",
+      "capabilities": [
+        "C01",
+        "C02",
+        "C16"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "answer-selected.html",
+        "operations.html",
+        "reference-boundary.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I09",
+      "surface": "S2 typed operations",
+      "capabilities": [
+        "C03",
+        "C04"
+      ],
+      "routes": [
+        "comparison-population.html",
+        "comparison-task.html",
+        "reference-key.html",
+        "research-record.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I10",
+      "surface": "S3 supplied typed services",
+      "capabilities": [
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "routes": [
+        "operations.html",
+        "research-record.html",
+        "retrace-boundary.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I11",
+      "surface": "S4 typed operations and extensions",
+      "capabilities": [
+        "C08",
+        "C09",
+        "C10"
+      ],
+      "routes": [
+        "comparison-outcome.html",
+        "comparison-population.html",
+        "reference-boundary.html",
+        "reference-evidence.html",
+        "retrace-finding.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I12",
+      "surface": "S5 typed operations",
+      "capabilities": [
+        "C11"
+      ],
+      "routes": [
+        "comparison-outcome.html",
+        "research-record.html",
+        "retrace-change.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I13",
+      "surface": "S6 typed operations",
+      "capabilities": [
+        "C12"
+      ],
+      "routes": [
+        "history.html",
+        "retrace-boundary.html",
+        "retrace-finding.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I14",
+      "surface": "S7 typed validation",
+      "capabilities": [
+        "C13"
+      ],
+      "routes": [
+        "validate-cases.html",
+        "validate-coverage.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I15",
+      "surface": "Continuous typed specialization",
+      "capabilities": [
+        "C14",
+        "C15"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "comparison-population.html",
+        "operations.html",
+        "reference-boundary.html",
+        "reference-evidence.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I16",
+      "surface": "Q1 CLI and study-control path",
+      "capabilities": [
+        "C19"
+      ],
+      "routes": [
+        "comparison-population.html",
+        "operations.html",
+        "validate-cases.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I17",
+      "surface": "Native adapter methods and prepared commands",
+      "capabilities": [
+        "C16",
+        "C17",
+        "C19"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-population.html",
+        "comparison-task.html",
+        "operations.html",
+        "retrace-finding.html",
+        "validate-cases.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I18",
+      "surface": "Development/distribution tooling",
+      "capabilities": [
+        "C20"
+      ],
+      "routes": [
+        "retrace-boundary.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    },
+    {
+      "id": "I19",
+      "surface": "Installed host bindings and dependencies",
+      "capabilities": [
+        "C05",
+        "C07",
+        "C16",
+        "C19",
+        "C20"
+      ],
+      "routes": [
+        "answer-meaning.html",
+        "answer-selected.html",
+        "comparison-population.html",
+        "operations.html",
+        "research-record.html",
+        "retrace-boundary.html",
+        "validate-cases.html",
+        "validate-extension.html"
+      ],
+      "scope_note": "A route home for a source-inventoried surface, not an independently qualified behavior."
+    }
+  ],
+  "coverage_display_policy": {
+    "whole_framework_percentage": null,
+    "leaf_obligation_denominator": null,
+    "reason": "Reader routes, capability groups, artifacts and interface mappings are not independently adjudicable leaves. Frozen per-assessment eligible obligations must be derived and independently decided before displaying a scoped score.",
+    "allowed_count": "The finite count of pages, mapped inventory groups or individually dispositioned obligations may be shown as that exact inventory count, never as proof of scientific adequacy."
+  },
+  "scope_interpretation": {
+    "bounded": "All 52 prior HTML artifacts receive a disposition. All 7 retained promises,10families,20capabilities and4composition categories have reader-route homes.",
+    "not_claimed": "Navigation coverage is not independently adjudicable obligation completion, executable support, scientific correctness or an exhausted future problem space.",
+    "unknown_unknowns": "Independent omission challenge, counterexample search and new-profile admission can discover new duties; preserve a versioned change disposition.",
+    "new_discovery_policy": "Necessary in-scope premise -> revise affected route/dependencies. Bounded open choice -> show explicit alternatives and decisive work. Future work -> justify exclusion; never keep a stronger claim whose premise was deferred."
+  },
+  "excluded_from_release": [
+    "Canonical S7 implementations or study-rule changes",
+    "New native/provider runs or paid studies",
+    "Live outreach, booking, correspondence/calendar ingestion",
+    "Public attribution of private TA/expert activity",
+    "Universal future-system correctness score or 100-percent unknown-space claim",
+    "Raw private campaign/evidence stores, contact details or sealed seeds"
+  ],
+  "required_data_views": [
+    "Readable evidence ledger with statement/source/assumptions/limits",
+    "Machine-readable public release data derived from approved evidence projection",
+    "Versioned public-history summary without private attribution",
+    "Private-only release inventory and source-reconciliation receipts"
+  ],
+  "completion_gate": "Every frozen route is implemented and checked; no known consequential reader leap or unqualified stronger status claim; public-source/access limits visible; exact final build and diff bound to checks. Genuine open research can remain.",
+  "entry_points": {
+    "main_homepage": "../index.html",
+    "same_research_view": "atlas.html",
+    "detailed_opening": "index.html",
+    "software_and_installation": "../software.html"
+  }
+}

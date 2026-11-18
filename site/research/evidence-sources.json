@@ -1,0 +1,565 @@
+{
+  "kind": "candidate_public_source_excerpts_v1",
+  "publication_approved": false,
+  "sources": [
+    {
+      "id": "framework",
+      "title": "What Crucis is",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "README.md",
+      "sha256": "0880a8e44bc87efaf274f4c4052bb0b2f606a121d07783e4864489e5bcf993f8",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/README.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "Framework scope and separation of versioned protocol, implementation support and empirical coverage.",
+      "limits": "Architecture description, not a measured correctness guarantee.",
+      "excerpts": [
+        {
+          "text": "Crucis is an independent framework for auditing causal discovery systems and\ntheir claims. It preserves native evidence and declared uncertainty, supports\ncontrolled comparisons, and produces traceable findings and reports.\n\nThe framework, its evaluation suite and its paper share the Crucis identity,\ninspired by the *instantia crucis*: evidence that discriminates between competing\nexplanations. This repository is the extracted development version. Protocol,\nimplemented support and empirical coverage are versioned separately.",
+          "line_start": 3,
+          "line_end": 10,
+          "sha256": "d10c90290af33dd232217a63bf1aa3ea2dd70c5f10d398adddfb622ab000c0f1"
+        },
+        {
+          "text": "The opt-in S3 layer provides durable execution accounts, admission and owner\ncontrols, guarded native dispatch, capture and interaction, recovery and immutable\nevidence publication. Its CLI inspects and plans from supplied bytes; live drivers,\nauthority and policy implementations are explicitly injected in Python. See the\n[execution guide](crucis_causal/execution/README.md) for the four controlled\nmechanism profiles and their scientific and operational limits. Those fixture\nresults do not establish universal native-system or causal-correctness coverage.",
+          "line_start": 40,
+          "line_end": 46,
+          "sha256": "91c8176a8129de59d05ce13468828e42de4f3e9ee03a07e68547aaae8599cfe6"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "What the original S7 controls establish",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/s7/release-review-2026-11-10.md",
+      "sha256": "7affab16ed2c438be6cb9b6e0c1d760f138f2294dd0cae488a1c2f545d1ae6e9",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/s7/release-review-2026-11-10.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "The original fixed offline fixture grid and controlled reporting path are implemented and source-reported as qualified at their declared scope.",
+      "limits": "No population reliability estimate, new-native guarantee or whole-framework correctness percentage.",
+      "excerpts": [
+        {
+          "text": "The package exposes the supplied-byte inspection route through\n`python -m crucis_causal.validation inspect SNAPSHOT`. Active work,\nreassessment, recording and release preparation use explicitly supplied\nPython contexts. The first grid reports conformance on its declared\nfixtures. Population estimates, sealed studies, new native integrations\nand remote publication require separate qualification.",
+          "line_start": 18,
+          "line_end": 23,
+          "sha256": "38cec52c50e870e3d53df352c7329900e957d2f2fadc0a52dc581045842e7271"
+        }
+      ]
+    },
+    {
+      "id": "reference-choice",
+      "title": "Why the study uses controlled references first",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/q1-controlled-reference-first-decision-2026-11-12.md",
+      "sha256": "edf23d5ec3242041e2786f94a45d5deca43ce91e85b30945974078a133d5b128",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/q1-controlled-reference-first-decision-2026-11-12.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "Controlled-reference-first was selected; benchmark-label agreement remains a separate diagnostic lane.",
+      "limits": "A controlled mechanism does not become an official benchmark instance or physical truth; old envelope proposals are not current execution authority.",
+      "excerpts": [
+        {
+          "text": "The user selected **validated controlled cases first**, retaining CausalArena\ngraph-label agreement as a separate diagnostic lane. This accepts the first\nmatched pilot's reference basis. It does not authorize a paid run, scored\nassignment, sealed reserve access, changed scientific scoring or paper port.",
+          "line_start": 5,
+          "line_end": 8,
+          "sha256": "7bfba6b342dbf35621178c1672ef686abbfcc1832cb8ed69335358ad4445af7c"
+        },
+        {
+          "text": "Source-validated controlled cases provide an explicit mechanism, independently\nchecked reference and scoped source warrant before a paid comparison. A modified\nor newly authored mechanism receives its own controlled-case identity. It is not\nsilently described as an official CausalArena instance or measured-world truth.\n\nThe strongest alternative was to run existing CausalArena label-agreement\ndiagnostics first. That would reach larger benchmark inputs sooner and avoid\nintroducing a controlled generator population. It would measure reference-label\nsensitivity, availability and work, while leaving primary warranted-benefit/harm\neligibility open. The accepted direction prioritizes evidence for those primary\nquestions without discarding the diagnostic lane.\n\nControlled cases cost additional reference qualification and cannot alone support\nclaims of broad benchmark coverage or transfer. The independent unit remains the\nsource scenario/block, with alternative worlds, arms, edits, draws and resamplings\nkept within its declared lineage. An exposed development specimen is not a\nreserved study unit or a population-variance estimate.",
+          "line_start": 41,
+          "line_end": 57,
+          "sha256": "6af13f834c077e39f220382de7b1224eec1fc1a179f4af4745a1c3d6570ee722"
+        }
+      ]
+    },
+    {
+      "id": "diverse-reference",
+      "title": "What the controlled response can establish",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/q1-diversified-continuous-reference-proof-2026-11-16.md",
+      "sha256": "88314e0bb78153ac82ddc754f7286241aee317e799b8585dfdd1229e6965a883",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/q1-diversified-continuous-reference-proof-2026-11-16.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "Fixed-family analytic arguments distinguish source truth, direct response, ancestry and directness ambiguity under a declared class.",
+      "limits": "Curated fixed-recipe proof; not an arbitrary-equation solver, physical truth, finite-sample guarantee or native information-use observation.",
+      "excerpts": [
+        {
+          "text": "Under do(X=x), the source and triangle have identical entire Y distributions:\nY=x+U_M+U_Y in C0/C1 and Y=x+Z+U_M+U_Y in C2. This is equality of the selected\nY law for every x, not equality of every interventional joint distribution.\nThe fork's Y law is independent of do(X), giving P(Y>0)=1/2 at both doses.\n\nFor two uniforms, use the triangular CDF. For three, the exact CDF is\n`sum_{j=0}^3 (-1)^j choose(3,j) max(t+3-2j,0)^3 / 48`.\nIt follows that the R_H probabilities are 23/32,9/32 in C0/C1 and\n131/192,61/192 in C2. The compatible triangle differs on direct X->Y, so the\nqualified R_H basis does not identify directness. Its nonzero response does\nestablish ancestry; acyclicity excludes the reverse Y->X.\n\nUnder R_B's complete clamps, the source M=x+U_M gives 3/4,1/4. A nonzero\nresponse while every other endogenous variable is fixed requires an active\ndirect X parent of M in the declared modular class. The fork gives 1/2,1/2;\nthe triangle gives 2/3,1/3, so these witnesses are incompatible with that record.\nThe reverse M->X is excluded by acyclicity. Missing clamps, changed doses,\nthresholds, coordinates, source-specific probabilities or class bindings do not\ninherit this qualification. Other questions remain unresolved without a scoped\nidentification proof or valid disagreement witness.",
+          "line_start": 71,
+          "line_end": 90,
+          "sha256": "c7dbe6642a34007b0a36345abc53945c4c3013dab38ccf4d4b2d078958fb0939"
+        },
+        {
+          "text": "Full observational-law equality is stronger than matching a particular finite\nCSV. These proofs do not establish ideal iid sampling by PCG64, successful input\nrelease, faithful native preprocessing, actual information receipt/use, a native\nclaim of certainty, nominal Fisher-z calibration, or a real-world causal truth.\nThose are separate claims and gates. The source's active-parent truth and an\nanswer's warrant in the broad admitted class are separate outcomes.",
+          "line_start": 94,
+          "line_end": 99,
+          "sha256": "f1203f19f8b472effd59314c0b3ea949bea430ff744ac2bc0604c355645419bb"
+        }
+      ]
+    },
+    {
+      "id": "diverse-build",
+      "title": "What the newer controlled implementation adds",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/q1-diversified-continuous-release-review-2026-11-16.md",
+      "sha256": "573b8bf919f1634c39dab5cf526a0fec5267e1de6d427621189d659614f3389b",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/q1-diversified-continuous-release-review-2026-11-16.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "Committed source account supports three source recipes, independently specified numerical checking and joined controlled S4 paths.",
+      "limits": "Hand-specified outputs are not model behavior. No new S5/S6/S7 joined qualification is claimed at this committed cutoff; later uncommitted work is separate.",
+      "excerpts": [
+        {
+          "text": "The common continuous core now supports the chain, middle-variable branch and\nsecond-parent collider. Their equations, role/noise order and raw bounds are\nclosed trusted recipes. The new codec is explicitly selected:\n\n```python\nfrom crucis_causal.continuous import records, recipes\n\nwire = records.for_profile(recipes.DIVERSE)\nwire.install(payloads)  # supplied host registry; does not dispatch anything\n```\n\nFifteen scalar forms use `0.1.0-proposal.3`; Plan, LaunchSchedule and AnalyticRecord\nuse `0.2.0-proposal.3`. The v4 catalog admits nine named model families: three\nsources and their reference-only fork/triangle witnesses. Generation accepts\nthe three sources only. Legacy defaults, the old catalog, four-unit rejection\nand C0 cell/CSV bytes remain at their original boundary. Mixed versions are not\nsilently promoted. Unknown recipe/version names cannot load executable code.\nThe compatibility check also executed the unchanged numeric implementation from\npre-build commit `1b565a47` on both public fixed tapes. Cell and CSV bytes matched;\nthe resulting original-source hashes are retained as regression expectations.",
+          "line_start": 13,
+          "line_end": 32,
+          "sha256": "41369494c447bd2118f58667923f441bdf1f1d3d9ada5be2dfcbb20bac993877"
+        },
+        {
+          "text": "The S4 path uses the original captured scope wire. Controlled B1 arrows yield\nsupported resolution; H1 direct arrows remain unwarranted under R_H. Matched\nH0/H1 fixtures retain the same case, domain and analytic record while changing\nthe fallible comment and workflow occurrence identities. Missing output retains\nan outcome range. A genuine controlled B0 ingress/continuation account establishes\nabsence of added premises; it does not infer absence from an unread document.\nWrong intact class and variable-map joins reject. These are hand-specified\noutput controls, not observed model behavior or estimated treatment effects.\n\nThe combined continuous regression ran 72 tests without failures, errors or\nskips. Its controlled counters recorded 62 fixture derivations and 107 full\nchecks, below the fixed 64/128 caps for that process. Additional original-source\nbyte expectations and expanded all-pair truth checks passed separately. The\nfinal repository gates include those additions; the local gate receipts record\ntheir exact tree, totals and availability skips.",
+          "line_start": 112,
+          "line_end": 126,
+          "sha256": "a630d0524cb28d44d79068e5521e13f3f04b2e216c9033edd6089b87b2818c31"
+        },
+        {
+          "text": "No new S5/S6 reporting chain or canonical S7 assessment/key roster is claimed.\nBefore issuing native scientific findings, qualify the actual selected\nmeasurement–finding–report–validation path and its independent expected outcomes.\nExisting component tests or the separate candidate-duty blueprint cannot create\nan accepted denominator or framework-wide correctness percentage.\n\nThe proposed six development blocks remain two draws in each of three fixed,\nrelated source strata. They are not main-study N, random mechanisms, ideal iid\nsampling proved by distinct seeds, or a way to give knowledge-only systems\nvariance from CSVs they never receive. Other system/task/reference lanes retain\ntheir own qualification plans. Mathematical source claims do not establish\nphysical causal truth, finite-sample rank, faithfulness, nominal test calibration,\ninformation use/comprehension or universal isolation.\nThe raw role/column order is fixed in these profiles; additional presentations\nor transformations require their own realization, mapping and applicability checks.",
+          "line_start": 158,
+          "line_end": 172,
+          "sha256": "679d4026909bef076424b43086cf52fd101ee83f93425615182ff4ca33ad2b33"
+        }
+      ]
+    },
+    {
+      "id": "eligibility",
+      "title": "What the completed feasibility block establishes",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/q1-system-case-reference-eligibility-review-2026-11-16.md",
+      "sha256": "5dee321605f551c95aa4b354c934875bf6d6c5805dfc3caf09a83fdd7596aa7e",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/q1-system-case-reference-eligibility-review-2026-11-16.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "Source account reports one exposed input, eight paid workflows, eighty provider requests and 168 fit entries; these are distinct units. Scientific eligibility and truth/support judgments remain separate.",
+      "limits": "Counts are not independent cases, benefit/harm estimates or a main-study precision result. This document is a review proposal, not an adopted new study rule.",
+      "excerpts": [
+        {
+          "text": "Keep scientific applicability, operational readiness, permission and observed\neffects separate. A source-backed reference can exist before a runnable driver;\na completed native workflow can lack the meaning/reference needed for a requested\nscore. An installed adapter name establishes neither property.\n\nFor each requested use, bind system/version, product/stage/field, variable map,\nquestion, reference/model class, information basis, audience and cutoff. State\nwhich existing receipts transfer and why. Preserve unsupported and unresolved\nfrontiers. A roster inventory is not a performance denominator or a claim to cover\nevery discovery system or dataset.\n\nAn assigned failure or invalid native answer stays in the intended study frame.\nFor example, a cyclic answer to a DAG task can be a task-fulfillment failure even\nwhen an ordering metric cannot accept it. Withholding that metric does not delete\nthe unit. Pre-assignment scope selection and post-assignment outcome handling\nmust not be conflated.",
+          "line_start": 13,
+          "line_end": 28,
+          "sha256": "62283cac73b85d86b04976bbace78a44eb4ac015d0c73b5993ac3305f66deab2"
+        },
+        {
+          "text": "The completed Copilot feasibility block used one exposed continuous input. Its\neight workflows, eighty actual provider requests and 168 native fit entries are\ndifferent work units, not eight, eighty or 168 independent source cases. Sixteen\ntyped graph objects were resolved; global family assurance remained unknown.\nNo benefit/harm, population or main-study precision estimate was issued.",
+          "line_start": 45,
+          "line_end": 49,
+          "sha256": "db2f3fcc6933da2c5007fc0f109e3a1d0e11767aa9e7576107c618b8eb6457c2"
+        },
+        {
+          "text": "**Truth and warrant have separate paths.** A truth-only error can be decided with\nEG04 while EG05 remains unresolved. An unsupported-positive endpoint can be\ndecided with EG05 while actual truth remains unknown. The combined warranted-\nresolution endpoint requires both of its premises. Unknown proof search is not\nan ambiguity witness, and a true estimate is not automatically a warranted claim.\nExisting `measurement/direct_claims.py` already implements separate signed\noutcomes; qualifying the assembled use is a different obligation.",
+          "line_start": 98,
+          "line_end": 104,
+          "sha256": "1360c8804e0bbcb91536f62f711132bb6712112158a3eb93972903c5b27e1a90"
+        }
+      ]
+    },
+    {
+      "id": "study-path",
+      "title": "How preparation leads to a study",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/q1-study-six-step-plan-2026-11-14.md",
+      "sha256": "95ef1e2dfaf19efb8a691d8d05569ff81fed4b476f421b9b260c6a7fa569ee63",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/q1-study-six-step-plan-2026-11-14.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "The planned progression separates input realization, native mechanics, paid feasibility, case expansion, prospective freeze and separately authorized larger waves.",
+      "limits": "Planning milestones are not current statuses or study-run grants. In particular its immediate-next-action prose is historical and not exported.",
+      "excerpts": [
+        {
+          "text": "The Q1 goal is an independently auditable account of how discovery systems use\nknowledge, accept or reject edits, and seek information or abstain, with a versioned\nbenchmark and validation of Crucis itself. Q1 should inform concrete Q2 design\nchoices. It cannot identify a universally optimal causal discovery system from\na finite sample. S1--S7 are built at documented support profiles. The continuous\nT00--RC5 extension is also built; do not restart either implementation DAG.",
+          "line_start": 13,
+          "line_end": 18,
+          "sha256": "b4c57574e8e977cfee7b314d03895ee7e5499ce7454134191c90d2263bf0a792"
+        },
+        {
+          "text": "The finish line is a finite, qualified multi-system Q1 study and benchmark edition\nwith scoped findings, uncertainty/holds and limitations, plus a source-linked\npaper handoff. Every system on the roster gets a coverage disposition; it need\nnot run on an incompatible task. Universal support and a complete Cartesian\nproduct of all systems/datasets are not exit criteria.\n\n## Milestone DAG and single next action\n\n```\nM1: one development emission/cohort\n  -> M2: minimum free native qualification\n    -> M3: bounded paid feasibility/sizing tranche\n      -> M4: targeted independent-case/system expansion and sizing\n        -> M5: prospective main-study freeze\n          -> M6: separately authorized larger waves and synthesis\n```\n\nFree source/reference and roster inventory in M4 can proceed alongside M1/M2\nwhen it uses no new input generation, native launch, sealed access or spend.\nIt must not delay the critical path for unrelated completeness. Each finished\nmilestone has a closure receipt; reuse it unless the consuming pins, scope,\ncutoff, audience or authority require a new check. Do not repeat whole gates\nmerely because a new planning document was opened. Repository commit checks\nremain mandatory for each actual local change.",
+          "line_start": 40,
+          "line_end": 63,
+          "sha256": "46e77a125d5186e341773893e55dd39487628d0cf167d605f3cffdf38ad8e438"
+        }
+      ]
+    },
+    {
+      "id": "native-stage",
+      "title": "Why an earlier graph is not the final graph",
+      "repository": "crucis-lab/crucis",
+      "commit": "db30ba29e182293555b740afa58816220684b860",
+      "path": "crucis_causal/docs/q1-copilot-native-graph-qualification-2026-11-12.md",
+      "sha256": "50748068f2e7cdb743bad02f76317bd7565a76a0c93663a06d667735171a1928",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "public_candidate_eligibility": "project-owned prose excerpt suitable for exact-content review; publication not yet approved",
+      "primary_access": "bundled exact excerpt; do not require unverified remote commit URL",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/db30ba29e182293555b740afa58816220684b860/crucis_causal/docs/q1-copilot-native-graph-qualification-2026-11-12.md",
+      "evidence_level": "committed source account / analytic derivation; external execution receipts not independently reproduced in this reconciliation",
+      "supports": "One earlier two-variable canned-reply development run retained distinct initial, converted and revised graphs; revised graph was empty.",
+      "limits": "This is not the later five-variable paid B0 output, real-model advice, a scored causal finding, or whole collector acceptance. Pruning attribution is a documented control-flow inference, not a direct post-loop snapshot.",
+      "excerpts": [
+        {
+          "text": "The initial selected native graph had an undirected U–V edge; the converted\nrepresentation and later revised graph were preserved separately. The revised\ngraph was empty. This demonstrates why a study must capture intermediate and\nfinal native objects rather than infer final behavior from a model reply or\ninitial fit. It is not a scored causal finding, an effect of genuine model\nadvice or a population claim.\n\nThe returned bootstrap recommendation classified the edge as low probability\nusing the directed-edge probability, despite a retained undirected-edge\nprobability of one. Native quality-judge control flow deletes such an edge.\nThe later model-edit dictionaries and KCI-forbid dictionary were empty, and\ncycle processing returned the empty graph. Attribution to the bootstrap pruning\nloop is a source-control-flow inference anchored to these records: there is no\nsnapshot immediately after that loop. No native repair or scientific harm\nclaim is adopted here.",
+          "line_start": 77,
+          "line_end": 91,
+          "sha256": "61f48e0ffbe7e5dd917c8c117b68322dc6518f39f550448b802218b730788baf"
+        }
+      ]
+    },
+    {
+      "id": "native-policy",
+      "title": "Match the question to the native product",
+      "kind": "retained-source editorial summary",
+      "supports": "A complete proposed graph, a probability product and an unavailable output license different judgments. Cutoff, recovery and missingness rules are proposed design choices until adopted for a named study.",
+      "limits": "The retained policy is a local proposal, not an adopted cross-system endpoint, deadline, retry grant or scientific certificate.",
+      "derivation": [
+        "If a complete graph proposes no link while the qualified source has that link, source-relative candidate error can be decided without knowing whether all available information justified the candidate.",
+        "A probability product must first be evaluated as the product it actually is. An auditor must not invent a hard decision or attribute a parser default to the model.",
+        "Recovering authenticated old bytes is different from asking a system to generate a new answer. Unavailable evidence, verified no-delivery and explicit abstention remain separate."
+      ],
+      "papers": [],
+      "evidence_level": "Editorial explanation; not a newly accepted runtime finding or reproduced auditor result",
+      "source_digest": "de83f28892ba61dd757a59ae3265ba3c3dcd16516b4a6ee5fac90854fd24a400",
+      "binding": "Exact retained source digest; raw source not included in this public projection. Access/redistribution limits remain."
+    },
+    {
+      "id": "copilot-card",
+      "title": "The original saved five-variable candidate",
+      "kind": "retained-source editorial summary",
+      "supports": "The retained original stock B0 revised graph is a complete five-by-five matrix with no arrows. Under the qualified closed-candidate reading, its answer for V1 → V2 is negative, while that controlled source contains the direct edge.",
+      "limits": "This is a source-bound expectation for the exact original product, not a new S7-certified audit or a claim of native certainty. Raw paid output is not republished here.",
+      "derivation": [
+        "Selected product: revised_graph at the original graph-return boundary, not an earlier converted graph or a later same-byte occurrence.",
+        "Retained product: 328 bytes; SHA-256 d72b16984739a07b167ee3c51c32ae98a07f7a137445162a2449781348f16692. Variables V1–V5; the controlled source has V1 → V2 → V3 and isolated V4,V5.",
+        "The source-negative/positive mismatch concerns the proposed graph. Whether the available evidence established the answer is a separate question. Exact meaning, mapping, reference and consumed-path qualification are premises."
+      ],
+      "papers": [],
+      "evidence_level": "Editorial explanation; not a newly accepted runtime finding or reproduced auditor result",
+      "source_digest": "69c7936f86e29960e9fad416991c493c60b40b198ce15fe536bad7660f96dbca",
+      "binding": "Exact retained source digest; raw source not included in this public projection. Access/redistribution limits remain."
+    },
+    {
+      "id": "causaliq-card",
+      "title": "A probability product is not a hard answer",
+      "kind": "retained-source editorial summary",
+      "supports": "In the retained scripted parser/core example, existence 3/4 and an even directional split yield 3/8 for A → B, 3/8 for B → A and 1/4 for no edge.",
+      "limits": "This is a parser transformation control, not a real provider reply, calibrated confidence, causal accuracy result or observed selected-graph workflow.",
+      "derivation": [
+        "Forward: (3/4) × (1/2) = 3/8. Backward: (3/4) × (1 − 1/2) = 3/8. No edge: 1 − 3/4 = 1/4. These values sum to one.",
+        "If the pinned most-likely selector is actually called, its tie policy is a separate program behavior. The tie is not evidence that the model preferred either direction.",
+        "An omitted pair can receive a native no-edge default, and malformed values can receive a fallback. Preserve that origin rather than calling it explicit model confidence."
+      ],
+      "papers": [],
+      "evidence_level": "Editorial explanation; not a newly accepted runtime finding or reproduced auditor result",
+      "source_digest": "69c7936f86e29960e9fad416991c493c60b40b198ce15fe536bad7660f96dbca",
+      "binding": "Exact retained source digest; raw source not included in this public projection. Access/redistribution limits remain."
+    },
+    {
+      "id": "framework-map",
+      "title": "A bounded inventory of audit responsibilities",
+      "kind": "retained-source editorial summary",
+      "supports": "The retained assessment proposal organizes seven framework promises into ten question families and twenty capability groups, including shared interfaces and composition obligations.",
+      "limits": "These are editorial/design inventory objects. Their counts are not passed scientific duties, an accepted canonical S7 denominator or proof that no unknown failure remains.",
+      "derivation": [
+        "Separate task, reference, native meaning, experiment, execution, measurement, finding, reporting, change and validation questions.",
+        "A component check cannot replace a whole-path obligation when the components do not entail the joined property. Independent adjudicability is the splitting rule, with explicit preconditions.",
+        "A coverage fraction is meaningful only for an explicit versioned eligible roster. Record unresolved, not-run and inapplicable cases separately; inventory adequacy is a further question."
+      ],
+      "papers": [],
+      "evidence_level": "Editorial explanation; not a newly accepted runtime finding or reproduced auditor result",
+      "source_digest": "6ff067132a9dea9f72dd4629be968ed456e694aa963ff42894a7c3993ebd1711",
+      "binding": "Exact retained source digest; raw source not included in this public projection. Access/redistribution limits remain."
+    },
+    {
+      "id": "teaching-only",
+      "title": "Authored examples and worked reasoning",
+      "kind": "authored teaching contrast",
+      "supports": "Teaching examples deliberately simplify a distinction. They show why a check is needed without pretending that a native run or a new experiment occurred.",
+      "limits": "No empirical system performance, human contribution or canonical scientific adoption is created by these examples.",
+      "derivation": [
+        "A direct arrow means a link with no represented intermediate variable. A route can contain several arrows. A conclusion about one is not automatically a conclusion about the other.",
+        "An intact wrong field, missing capture and a changed variable map are separately labeled contrasts. Finite example enumeration establishes only its stated finite property."
+      ],
+      "papers": [],
+      "evidence_level": "Editorial explanation; not a newly accepted runtime finding or reproduced auditor result"
+    },
+    {
+      "id": "apartment",
+      "title": "The recurring apartment example",
+      "kind": "retained-source editorial summary",
+      "supports": "The opening follows an archived simulated apartment comparison, then separately proposes a practical eight-versus-ten cooling experiment. The saved diagrams illustrate a changed candidate; they do not establish the cooling decision.",
+      "limits": "The retained raw result, graph and generator recipe are absent from the cited public cc-research commit. Raw redistribution has not been qualified here. This edition offers a bounded explanation, not a fully public raw reproduction. This 17-variable case is separate from the later controlled V1–V5 source.",
+      "derivation": [
+        "The pictured source path is first opening time → how much the window is open → airflow → heat exposure. Other variables and arrows are omitted from the explanatory picture.",
+        "The first pictured conflict follows the earlier proposal’s heat-exposure → opening-time arrow. The later comparison also follows its opening-time → opening-fraction arrow, which had initially been omitted from view. The final diagram removes the first conflict but reverses the second relationship.",
+        "The illustrative airflow values are evaluations before noise, not measured apartment readings: with 30°C outdoor temperature, 25% opening gives 0.75 air changes per hour and 75% gives 1.95; at 25°C both give 0.15 under the retained recipe.",
+        "The borrowed ordering method asks a language model about causal relationships and uses additional variables to help resolve ordering conflicts. Its paper is the method basis; the local implementation and saved output are separate evidence."
+      ],
+      "papers": [
+        {
+          "title": "Vashishtha et al. — Causal Order: The Key to Leveraging Imperfect Experts in Causal Inference, §4",
+          "url": "https://arxiv.org/html/2310.15117v2#S4"
+        },
+        {
+          "title": "Gamella et al. — The Causal Chambers, causal ground-truth and empirical-validation sections (physical-system contrast)",
+          "url": "https://arxiv.org/html/2404.11341#S3.SS1"
+        }
+      ],
+      "evidence_level": "Editorial explanation; not a newly accepted runtime finding or reproduced auditor result",
+      "source_digest": "a2ec56f436b41c53e4721d229bbb1a90c22a8bc771510651f7c0eeff575a2a69",
+      "binding": "Exact retained source digest; raw source not included in this public projection. Access/redistribution limits remain."
+    },
+    {
+      "id": "joined-checks",
+      "title": "A newer controlled joined audit path",
+      "repository": "crucis-lab/crucis",
+      "commit": "26ac414bc6a151f7e9c44a2e37bada097237ba61",
+      "path": "crucis_causal/docs/q1-multi-input-release-review-2026-11-16.md",
+      "sha256": "3888a581f9e8a89835daec5934439870b38e0cf139e958bd6587e89e75082766",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "primary_access": "bundled exact project-owned excerpts; remote commit availability not assumed",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/26ac414bc6a151f7e9c44a2e37bada097237ba61/crucis_causal/docs/q1-multi-input-release-review-2026-11-16.md",
+      "kind": "committed planning / implementation source account",
+      "evidence_level": "Selected source account, not a reproduced runtime finding or scientific adoption",
+      "supports": "Committed source account of controlled joined measurement, finding, report and generic auditor-validation checks with fixed three-source expectations.",
+      "limits": "Source-reported controlled implementation checks, not independently reproduced here, new scientific/native observations, original paid-product certification or a main-study correctness rate. Later staged work is outside this record.",
+      "excerpts": [
+        {
+          "text": "| MI09 | Direct-claim path through S4–S7 | Actual S4 sidecars, exact S5 reader/decision, S6 verdict lineage/fidelity, independent literal expectations and generic S7 packets | Construction, truth, warrant, output strength, recording loss, competing heads, correction and restricted access remain separate |\n| MI10 | Joined packages and recovery | Six-account/three-selected window; single-selected paid-plan shape; cold restore and readiness acknowledgement loss | Reopening consumes original evidence without replay; takeover and native-fixture substitution hold |\n| MI11 | Installed isolation and methodology handoff | Built wheel, offline target installation, resource bytes and import isolation; full staged-tree gate | Failed checks block commit; no historical repin, tolerance change, skip inflation or remote publication |\n\n## What the checks do and do not establish\n\nThese fixtures use actual local numerical checking, immutable storage, SQLite\nhistory, subprocess execution, S4 calculations, S5 decisions and S6 presentation\nverification. Their scientific inputs reuse two public fixed tapes. Their release\nand assignment histories are explicitly simulated. Their native environment,\nprovider and account metadata are placeholders on a non-dispatchable fixture\nprofile. They provide no new independent scientific observations, native fits,\nmodel responses, paid sizing estimates or main-study sample size.\n\nThe new direct-claim controls have a deliberately narrow oracle: fixed three-source\ndirect-benefit and path-overreach cases. Truth and evidential warrant qualify\nseparately. The generic S7 packets expose unresolved coverage; they do not modify\nthe legacy K10/K12 executable grid or issue a framework-wide correctness rate.",
+          "line_start": 43,
+          "line_end": 60,
+          "sha256": "45fa2f8d3bfa90e9baa17c0f68593bba7b332a135bcc2e42ed45fab2fdb027b6"
+        },
+        {
+          "text": "## Verification receipts\n\nThe current stable-source controlled run passed **70 tests, zero failures, zero\nerrors and zero skips** through an actual separate ordinary test process. Its\nbefore/after source manifests match, and the actual started test identities match\nthe expected set. The child test process recorded 17 derivations and 16 full\nchecks against its unchanged 64/128 caps. Parent counters stayed unchanged.\nThe index pins the qualification, child reply and host accounting receipts.\n\nThe 70 include the installed-wheel control, actual owned subprocess controls,\nsix SQLite persistence controls, two storage controls and three test-isolation\ncontrols. Earlier passing 65-test, two-storage-test and three-isolation-test\nreceipts overlap this current run and are not added to its denominator. Tests\nare not scientific cases or sixteen independent CP observations.",
+          "line_start": 73,
+          "line_end": 86,
+          "sha256": "ced56f06bd3e19e655fdeda5aa5ae4e3dc2097b6faec90c9b318841fae3d4304"
+        },
+        {
+          "text": "## What follows this build\n\n1. Separately admit the six actual development input/assignment realizations,\n   keeping each material proof and every held occurrence in the complete account.\n2. Qualify the actual native environment and the three-input, eight-workflow free\n   route against those exact inputs and delivery/output/reference boundaries.\n3. Admit a bounded single-input, eight-workflow paid sizing window only against\n   current account authority, remaining cumulative spending and window limits.\n4. Extend sizing across the admitted development cases. Estimate paired benefit,\n   harm, costs, failures and between-case variability without treating workflow\n   arms or repeated fixture tapes as independent cases.\n5. Freeze the main-study population, comparison eligibility, precision, stopping\n   and budget. Other systems and datasets retain their own qualification lanes;\n   this Copilot bridge does not narrow the study to Copilot or qualify all systems.\n",
+          "line_start": 136,
+          "line_end": 150,
+          "sha256": "1c02937c2a894c08cc67dab702065062c82f7e89c2c44942f1551538d59fa625"
+        }
+      ]
+    },
+    {
+      "id": "study-design",
+      "title": "Why the study tests Crucis too—and how sizing is justified",
+      "repository": "crucis-lab/crucis",
+      "commit": "26ac414bc6a151f7e9c44a2e37bada097237ba61",
+      "path": "crucis_causal/docs/q1-study-six-step-plan-2026-11-14.md",
+      "sha256": "95ef1e2dfaf19efb8a691d8d05569ff81fed4b476f421b9b260c6a7fa569ee63",
+      "source_state": "committed_local_snapshot",
+      "remote_publication_verified": false,
+      "primary_access": "bundled exact project-owned excerpts; remote commit availability not assumed",
+      "optional_repository_url": "https://github.com/crucis-lab/crucis/blob/26ac414bc6a151f7e9c44a2e37bada097237ba61/crucis_causal/docs/q1-study-six-step-plan-2026-11-14.md",
+      "kind": "committed planning / implementation source account",
+      "evidence_level": "Selected source account, not a reproduced runtime finding or scientific adoption",
+      "supports": "The scoped scientific aims, separation of calibration and study observations, multi-case sizing inputs, independent units, main freeze and missing-evidence-directed expansion.",
+      "limits": "Versioned planning account, not an adopted main N, power calculation, spending authorization, completed study or favorable validation of Crucis.",
+      "excerpts": [
+        {
+          "text": "The Q1 goal is an independently auditable account of how discovery systems use\nknowledge, accept or reject edits, and seek information or abstain, with a versioned\nbenchmark and validation of Crucis itself. Q1 should inform concrete Q2 design\nchoices. It cannot identify a universally optimal causal discovery system from\na finite sample. S1--S7 are built at documented support profiles. The continuous\nT00--RC5 extension is also built; do not restart either implementation DAG.\n\nPreserve the accepted directions:\n\n- Stock automatic Copilot graph workflow primary; configured PC diagnostic;\n  application reports/discussion audited separately.\n- Delivered-evidence variant separately attributed; whole-workflow evidence\n  support primary, stage-visible evidence diagnostic; delivery is not comprehension.\n- Direct-edge benefit B1 versus B0; total-effect-overreach harm H1 versus H0;\n  unsupported edge assertions lead, denials/truth errors/withholding separate.\n- Scoped paired estimates with uncertainty first. Old illustrative margins,\n  powers and N are not adopted. Routine-follow-up comparison stays secondary.\n- Controlled reference first. Mechanism/label disagreement does not become causal\n  correctness by using the label as truth. Partial, missing and uncertain outcomes\n  retain their meanings and intended denominators.\n- Unit, source family, draw, model repetition and execution attempt are different\n  identities. No extra independence follows from having more run folders.",
+          "line_start": 13,
+          "line_end": 34,
+          "sha256": "0725d911cd4e99545d5b21636ed6838bc57788a7ad20e25bd56ed55ead97bb5e"
+        },
+        {
+          "text": "### M4.3: measured sizing and a bounded expansion proposal\n\nAfter M3, propose a **small multi-case sizing tranche**, with new independent\nsource-case supply or explicitly clustered cases, before any main N is selected.\nSpecify candidate count and hard assigned cap from the actual eligible inventory,\nnot a generic 16-block tradition. Set a finite number of development tranches and\ntotal ceiling in that proposal. No open-ended pilot loop or automatic doubling.\n\nUse pilot information to choose among more source cases, repeated draws within\na source, repeated native/model sampling, or a missing system/reference route:\n\n- Mostly route/readiness holds -> fix/qualify the named mechanics free; do not\n  buy more repetitions hoping the route happens not to be selected.\n- High within-case model variation -> limited repetitions can measure it, while\n  keeping their parent case/cluster identity. They do not replace case diversity.\n- Between-case/family variation dominates -> prioritize eligible new cases and\n  source-family coverage over repeats on one convenient chain.\n- Low paired adjudicability -> diagnose delivery/reference/output coverage and\n  retain full-frame ranges; a bigger complete-case count alone cannot fix bias.\n- Good mechanics and adequate reference coverage -> update per-comparison cost,\n  time, completion and paired/cluster variability ranges; prepare M5.\n\nFor planning sensitivity only, independent complete paired differences with SD s\nand desired approximate 95% half-width h give n about (1.96*s/h)^2. This is not\nthe adopted analysis, a cluster-adjusted answer, an exact small-sample formula,\nor a missingness correction. Uncertainty-method qualification and family/dependence\nstructure must precede final sizing. Workload division by observed completion is\nonly an expected cost scenario; it does not restore unidentified outcomes.\n\nExit: a finite eligible case/system matrix, source-family/cluster definition,\nper-comparison supply and adjudicability, low/middle/stressed cost/variance/time\nscenarios, explicit thin strata/gaps, and a proposed affordable main core plus\nseparately priced breadth/sensitivity extensions. If supply is insufficient,\nbring the resulting scientific scope decision to the user instead of silently\nweakening references or promoting exposed development data to confirmatory.",
+          "line_start": 293,
+          "line_end": 327,
+          "sha256": "5d824034b90f190ecc51b7177b4a800a4f65b70df053fd89704dcba6aa757523"
+        },
+        {
+          "text": "### M5.1: design freeze checklist\n\nFix, review and pin all of these together:\n\n1. Target claims, eligible populations, source-family strata and weights; finite\n   roster dispositions; primary core versus optional extensions/fallback claims.\n2. Independent units, clusters, draws, repetitions, matching and condition order;\n   intended slots before seed assignment; precise between-system comparability.\n3. Per-comparison endpoints, directions, measurement/reference scope, partial/\n   unsupported/absent/abstained meanings; native and variant source identities.\n4. Qualified uncertainty/precision analysis, dependence and multiplicity handling;\n   main assigned caps and planned complete coverage; formal thresholds only if\n   separately adopted. No old illustrative 10/5-point margins inherit authority.\n5. Generation supply versus released cohort versus assessable pairs; held,\n   failed, disputed, undispatched and unknown effects; missing-outcome ranges\n   separate from sampling uncertainty; estimator/denominator policy frozen.\n6. Seed owner, access and deterministic assignment map for data/native/order/\n   repetitions; main reserves outside the shared workspace, never derived from\n   exposed development seeds. Freeze assignment before relevant exposure. Any\n   pre-assignment intake reserve rule must be explicit; assigned failures remain.\n7. Exact source/environment/data/reference/procedure pins, license/access and\n   audience closure; admissible transformations, stage information and action\n   menus; replay/restart identity and reconciliation rules.\n8. Work/request/token/dollar/exposure and clock ceilings, settlement reserve,\n   stopping rule and batch order; no optional stopping at an attractive result\n   or after spending an unapproved ceiling. Criteria for changes/new versions.\n9. Registration and exposure history per claim. A plan frozen now cannot make\n   an already seen development outcome prospective. Record exploratory status.",
+          "line_start": 331,
+          "line_end": 358,
+          "sha256": "a0ca173361eeb81b9a3e15bfef8eed21b5c1e6c6d32d59436b496b020d754249"
+        },
+        {
+          "text": "\n| Choice | Recommendation / strongest alternative | Cost and failure prevented |\n|---|---|---|\n| First data | One exposed development assignment / sealed development draw | Avoids new secrecy infrastructure and reserve contamination; no blind-test claim |\n| Native checks | Dependency-based checklist in bounded tranches / every route x every condition | Saves redundant native work; uncovered dependencies remain explicit rather than assumed |\n| First paid block | Full conservative eight-workflow plan, stopping on first hold / cheaper fixed-stage-only block | Tests the actual primary product and variant while preserving stage diagnostics; no pretending a fixed-stage check evaluates automatic selection |\n| Expansion | Additional eligible cases/systems selected by missing evidence / repeated convenient case | Buys independent coverage or variance evidence actually needed; avoids pseudoreplication and a Copilot-only paper |\n| Main design | Scoped estimates with uncertainty / formal margin certification | Avoids paying for an unadopted threshold and unsupported large-N promises; formal certification can be proposed separately |\n| Scale | Finite core with explicit extensions and wave grants / open-ended pilot ladder | Bounds capital/time, preserves stopping discipline and turns scope/budget conflicts into decisions |\n\nThere is no defensible current full-study dollar estimate or main N. These are\noutputs of M3/M4 and decisions at M5. Report both expected workload scenarios and\nhard authorized ceilings; the former never authorize the latter. Free work means\nzero provider spend, not zero local cost. Keep a pilot that holds or finds no\nbenefit scientifically visible; don't spend merely to chase a favorable result.",
+          "line_start": 436,
+          "line_end": 450,
+          "sha256": "331725fafad1dfd3484826fe34ba589ed73731baa1caadca9fa288f0b5546126"
+        }
+      ]
+    },
+    {
+      "id": "apartment-task",
+      "title": "The actual CausalArena apartment task and a released-table excerpt",
+      "repository": "LAMDA-Tabular/CausalArena",
+      "commit": "130d89da6eaac2b0763fff7495721c4b399b776d",
+      "path": "scm/semantic/data/semantic_obs_only/semantic_housing_and_real_estate_apartment_heat_exposure_shading_ac__semantic_obs_only__rep000.npz",
+      "sha256": "b261ddda703205e8679ab3affefe5a7e2cb937a73c090e75b8668b80c7d4dd2d",
+      "source_state": "public release retrieved and exact local archive/graph/recipe hashes matched",
+      "remote_publication_verified": true,
+      "kind": "released simulated observations and task specification",
+      "evidence_level": "exact source excerpt; no new causal inference, native run or generator fidelity proof",
+      "supports": "Identity of the archived CausalArena task, source-described task structure and first-five-row/four-column excerpt of the standardized observation array.",
+      "limits": "Public simulated dataset, not real apartment sensors. The 8 AM versus 10 AM comparison and average temperature from 8 AM until 12 PM are a motivating proposed experiment, not the original task or an observed result. Distributional fidelity and historical execution authentication are not resolved by matching files.",
+      "source_files": {
+        "README.md": {
+          "file": "README.md",
+          "path": "README.md",
+          "url": "https://huggingface.co/datasets/LAMDA-Tabular/CausalArena/resolve/130d89da6eaac2b0763fff7495721c4b399b776d/README.md",
+          "bytes": 3680,
+          "sha256": "296471a6a93e034d898600539d6fbb69eafa4f95595e8e84e88f3ae8bb38290f"
+        },
+        "observations.npz": {
+          "file": "observations.npz",
+          "path": "scm/semantic/data/semantic_obs_only/semantic_housing_and_real_estate_apartment_heat_exposure_shading_ac__semantic_obs_only__rep000.npz",
+          "url": "https://huggingface.co/datasets/LAMDA-Tabular/CausalArena/resolve/130d89da6eaac2b0763fff7495721c4b399b776d/scm/semantic/data/semantic_obs_only/semantic_housing_and_real_estate_apartment_heat_exposure_shading_ac__semantic_obs_only__rep000.npz",
+          "bytes": 75640,
+          "sha256": "b261ddda703205e8679ab3affefe5a7e2cb937a73c090e75b8668b80c7d4dd2d"
+        },
+        "graph.json": {
+          "file": "graph.json",
+          "path": "scm/semantic/artifacts/housing_and_real_estate/081_apartment_heat_exposure_shading_ac_apartment_heat_exposure_shading_and_ac_use/graph.json",
+          "url": "https://huggingface.co/datasets/LAMDA-Tabular/CausalArena/resolve/130d89da6eaac2b0763fff7495721c4b399b776d/scm/semantic/artifacts/housing_and_real_estate/081_apartment_heat_exposure_shading_ac_apartment_heat_exposure_shading_and_ac_use/graph.json",
+          "bytes": 74126,
+          "sha256": "c0d83adfd59c0e015bad623b33a6d0591c0d7312f2bf2da6e5bf2363ec73e290"
+        },
+        "generator_spec.json": {
+          "file": "generator_spec.json",
+          "path": "scm/semantic/artifacts/housing_and_real_estate/081_apartment_heat_exposure_shading_ac_apartment_heat_exposure_shading_and_ac_use/generator_spec.json",
+          "url": "https://huggingface.co/datasets/LAMDA-Tabular/CausalArena/resolve/130d89da6eaac2b0763fff7495721c4b399b776d/scm/semantic/artifacts/housing_and_real_estate/081_apartment_heat_exposure_shading_ac_apartment_heat_exposure_shading_and_ac_use/generator_spec.json",
+          "bytes": 47865,
+          "sha256": "b264567778c07fdae223f33fbc958896586585d0fbebc6a93b7ca31d6e090c16"
+        }
+      },
+      "data_excerpt": {
+        "kind": "exact selected released observation values; not physical sensor measurements or a new simulation",
+        "rows_total": 1000,
+        "variables_total": 17,
+        "member": "x.npy",
+        "value_channel": 0,
+        "row_indices_zero_based": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "columns": [
+          {
+            "native_name": "D3_time_to_first_window_open_min",
+            "label": "Opening delay",
+            "column_index": 9
+          },
+          {
+            "native_name": "D4_mean_window_open_fraction",
+            "label": "Window opening",
+            "column_index": 10
+          },
+          {
+            "native_name": "D5_ventilation_ach_open",
+            "label": "Airflow",
+            "column_index": 11
+          },
+          {
+            "native_name": "O3_heat_exposure_degmin",
+            "label": "Heat exposure",
+            "column_index": 15
+          }
+        ],
+        "values": [
+          [
+            0.6943197250366211,
+            1.312422752380371,
+            -1.132507562637329,
+            -0.47458383440971375
+          ],
+          [
+            0.68874591588974,
+            -0.17148466408252716,
+            -1.0250847339630127,
+            0.39972543716430664
+          ],
+          [
+            0.7003021240234375,
+            -1.020219326019287,
+            -0.34703102707862854,
+            -1.2683831453323364
+          ],
+          [
+            -0.9764857292175293,
+            0.4290715157985687,
+            0.8611551523208618,
+            0.466280072927475
+          ],
+          [
+            -1.2649356126785278,
+            1.531424641609192,
+            0.5009473562240601,
+            -0.7168034911155701
+          ]
+        ],
+        "display_decimals": 3,
+        "scale": "standardized exported values; not original minutes, fractions, ACH or degree-minutes",
+        "selection": "first five rows in stored order; four named columns; no outcome-based filtering",
+        "source_sha256": "b261ddda703205e8679ab3affefe5a7e2cb937a73c090e75b8668b80c7d4dd2d"
+      },
+      "papers": [
+        {
+          "title": "CausalArena public dataset and task files",
+          "url": "https://huggingface.co/datasets/LAMDA-Tabular/CausalArena/tree/130d89da6eaac2b0763fff7495721c4b399b776d"
+        },
+        {
+          "title": "Li, Liu, Wang and Ye — CausalArena (2026)",
+          "url": "https://arxiv.org/abs/2609.11897"
+        },
+        {
+          "title": "Declared dataset license: CC BY 4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "derivation": [
+        "The archive, graph and generator specification downloaded at the pinned public release match the three byte digests retained for the earlier apartment case.",
+        "The scenario concerns exterior shading, heat exposure and air-conditioning electricity. The window-opening chain is one part of it. Original opening delay is relative to sunrise; the rendered table keeps exported standardized values, with no invented conversion to clock time.",
+        "Shown cells select x[row, column, 0] directly. The other channel contains intervention flags; all flags in this observation-only archive are zero. Values are rounded to three decimal places for display, with exact selected float32 values retained in the machine-readable view.",
+        "Attribution: Zi-Rong Li, Si-Yang Liu, Tian-Zuo Wang and Han-Jia Ye, CausalArena public release. Declared license CC BY 4.0. Presentation changes: selected five rows/four columns, shortened column labels and rounded displayed values."
+      ]
+    }
+  ],
+  "edition": "2026-11-17",
+  "projection": "Selected public editorial evidence view; original records remain with their owners"
+}

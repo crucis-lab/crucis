@@ -1,0 +1,2941 @@
+{
+  "kind": "local_editorial_build_data_not_runtime_schema",
+  "edition": "2026-11-17-candidate",
+  "status": "Authored content awaiting root source binding, implementation and independent review",
+  "source_key_notes": {
+    "teaching-only": "Authored explicitly hypothetical teaching example; no native/provider execution or historical event claimed.",
+    "copilot-card": "Retained local source-bound product card; root must bind approved public evidence or label access limits.",
+    "causaliq-card": "Retained local scripted parser/core control card; not a provider study outcome.",
+    "native-policy": "Retained local prospective policy proposal; not an adopted scientific protocol.",
+    "framework-map": "Retained assessment-design proposal; no global completeness or issued correctness percentage."
+  },
+  "pages": [
+    {
+      "slug": "reference-key",
+      "journey": "reference",
+      "title": "Where does the answer key come from?",
+      "lead": "To check an explanation, Crucis needs a reason to trust the answer it compares against.",
+      "case_kind": "authored-teaching-case",
+      "case_label": "Apartment teaching case; the table below is invented, not a new apartment experiment.",
+      "steps": [
+        {
+          "id": "a-question-worth-checking",
+          "title": "We still want a cooler apartment",
+          "question": "Would opening the window at eight, instead of ten, lower average room temperature from 8 a.m. to noon?",
+          "body": [
+            "We want opening the window earlier to lower average room temperature from 8 a.m. to noon. One possible explanation is that opening changes airflow, which changes temperature. But drawing that explanation does not show that it is right.",
+            "Before Crucis checks the drawing, we need a separate reason to trust the arrows it compares against. This page asks where that answer key could come from. The temperature decision will still need its own comparison."
+          ],
+          "visual": {
+            "type": "graph",
+            "nodes": [
+              "Window opening",
+              "Airflow",
+              "Room temperature"
+            ],
+            "edges": [
+              [
+                "Window opening",
+                "Airflow"
+              ],
+              [
+                "Airflow",
+                "Room temperature"
+              ]
+            ],
+            "caption": "A possible explanation, not yet an answer key."
+          },
+          "takeaway": "A proposed explanation creates a checking question; it does not supply its own answer.",
+          "evidence": [
+            "teaching-only"
+          ],
+          "next_label": "Look at the available observations",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "a-table-is-not-a-rule",
+          "title": "A table shows what happened together",
+          "question": "Does seeing more airflow with a wider opening tell us which caused which?",
+          "body": [
+            "These invented rows show wider openings alongside stronger airflow. They do not record how the opening was chosen or what the wind was doing. We can see what happened together without yet knowing why.",
+            "Someone might have opened the window further on windier mornings. That would create another explanation for the same pattern. More rows with the same missing information do not, by themselves, choose between those explanations."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Morning",
+              "Opening",
+              "Airflow",
+              "Wind recorded?"
+            ],
+            "rows": [
+              [
+                "1",
+                "Narrow",
+                "Lower",
+                "No"
+              ],
+              [
+                "2",
+                "Wide",
+                "Higher",
+                "No"
+              ],
+              [
+                "3",
+                "Narrow",
+                "Lower",
+                "No"
+              ],
+              [
+                "4",
+                "Wide",
+                "Higher",
+                "No"
+              ]
+            ],
+            "highlight_rows": [
+              1,
+              3
+            ],
+            "caption": "Invented observations. The missing wind record matters to interpretation."
+          },
+          "takeaway": "An observation table is evidence to interpret, not automatically the rule that generated it.",
+          "evidence": [
+            "teaching-only"
+          ],
+          "next_label": "Separate observations from an answer key",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "what-we-call-a-reference",
+          "title": "A check needs a reason beyond the answer itself",
+          "question": "What could tell us the direction without borrowing the program’s own answer?",
+          "body": [
+            "In a simulation, we can keep the rules used to generate the data separately from the discovery program. In a physical experiment, a documented controlled change may establish a particular relationship. Either can provide a reason to check an answer that does not come from that answer itself.",
+            "We call the answer key a reference. It must state what it decides and why. A rule that directly links two quantities, an observed effect of changing one, and a required earlier-to-later order are different things; the reference must match the question."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "What we observed",
+              "items": [
+                "Rows of measured values",
+                "Conditions recorded with them"
+              ]
+            },
+            "right": {
+              "title": "What licenses the check",
+              "items": [
+                "Independent source or experiment",
+                "A question it actually answers"
+              ]
+            },
+            "caption": "The two sides can be linked, but they cannot be silently substituted."
+          },
+          "takeaway": "A reference is an answer key justified for the particular question being checked.",
+          "evidence": [
+            "framework-map",
+            "teaching-only"
+          ],
+          "next_label": "Try a smaller source we can inspect",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "a-different-controlled-case",
+          "title": "Now make the checking problem small",
+          "question": "If the saved source says V1 → V2 → V3, which arrows does that let us check?",
+          "body": [
+            "We now leave the earlier seventeen-variable apartment case for a separate controlled example. It has five quantities named V1–V5. The saved source describes V1 → V2 → V3, with V4 and V5 isolated. These names do not stand for the apartment’s window, airflow or temperature.",
+            "The source has a direct V1 → V2 arrow. It does not have a direct V1 → V3 arrow: that route goes through V2. This fixes one small question we can later ask of a saved program answer."
+          ],
+          "visual": {
+            "type": "graph",
+            "nodes": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5"
+            ],
+            "edges": [
+              [
+                "V1",
+                "V2"
+              ],
+              [
+                "V2",
+                "V3"
+              ]
+            ],
+            "highlight_edges": [
+              [
+                "V1",
+                "V2"
+              ]
+            ],
+            "caption": "Separate five-variable controlled source. The highlighted question asks about the direct V1 → V2 arrow."
+          },
+          "takeaway": "The source can tell us whether its direct arrow exists. Whether the observed data establish that arrow is a separate question.",
+          "evidence": [
+            "copilot-card"
+          ],
+          "next_label": "See why the same observations may leave direction unsettled",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        }
+      ],
+      "next": {
+        "slug": "reference-evidence",
+        "label": "When do observations distinguish two directions?"
+      },
+      "next_work": {
+        "kind": "Check the source actually used",
+        "question": "Does the answer key judge the same direct arrow as the returned answer?",
+        "already_known": "The saved source account contains V1 → V2. This page does not newly demonstrate that the auditor-validation subsystem checked its use.",
+        "needed": "Show the exact source edition, matching quantity names and task, and which records the assessment actually read.",
+        "human_use": "A reviewer can challenge a proposed correspondence or assumption. Finding existing records is evidence-recovery work, not a request for scientific endorsement."
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "reference-evidence",
+      "journey": "reference",
+      "title": "When do the observations decide the direction?",
+      "lead": "A tiny invented machine shows why a correct arrow and an established arrow are different achievements.",
+      "case_kind": "authored-finite-model",
+      "case_label": "Two invented on/off machines; no discovery program or physical experiment was run.",
+      "steps": [
+        {
+          "id": "two-machines",
+          "title": "Two machines can leave the same table",
+          "question": "Could the same observations come from opposite directions?",
+          "body": [
+            "Imagine lamps X and Y, each either off or on. In machine one a control switch sets X, and Y copies X. In machine two it sets Y, and X copies Y. Give both machines the same switch settings.",
+            "When the switch is off, both lamps are off; when it is on, both are on. A table recording only the lamps is identical in the two machines. We know and can set the switch because we invented these machines; this is not a discovery about the apartment."
+          ],
+          "visual": {
+            "type": "worlds",
+            "worlds": [
+              {
+                "title": "Machine one",
+                "nodes": [
+                  "Switch",
+                  "X",
+                  "Y"
+                ],
+                "edges": [
+                  [
+                    "Switch",
+                    "X"
+                  ],
+                  [
+                    "X",
+                    "Y"
+                  ]
+                ]
+              },
+              {
+                "title": "Machine two",
+                "nodes": [
+                  "Switch",
+                  "Y",
+                  "X"
+                ],
+                "edges": [
+                  [
+                    "Switch",
+                    "Y"
+                  ],
+                  [
+                    "Y",
+                    "X"
+                  ]
+                ]
+              }
+            ],
+            "caption": "Both machines produce only (X,Y) = (0,0) or (1,1) under ordinary operation."
+          },
+          "takeaway": "Matching these observations does not identify which copying direction is present.",
+          "evidence": [
+            "teaching-only"
+          ],
+          "next_label": "Predict what a controlled change would do",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "change-one-lamp",
+          "title": "Stop one lamp from copying its usual rule",
+          "question": "With the control switch off, what happens if we force X on?",
+          "body": [
+            "Keep the control switch off, but force X on instead of letting its usual rule set it. In machine one, Y copies X, so Y turns on. In machine two, Y still follows the off switch, so Y stays off.",
+            "Replacing one quantity’s usual rule in this controlled way is called an intervention. It helps here because the two remaining explanations predict different responses to it."
+          ],
+          "visual": {
+            "type": "exercise",
+            "prompt": "Force X = 1 while the switch is 0. Predict Y in each machine.",
+            "options": [
+              "Y is on in both",
+              "Y is on only in machine one",
+              "Y is off in both"
+            ],
+            "answer": 1,
+            "explanation": "Machine one uses Y := X, giving Y = 1. Machine two uses Y := switch, giving Y = 0.",
+            "caption": "Exact prediction from the invented rules, not an empirical result."
+          },
+          "takeaway": "A useful test is one on which the remaining explanations disagree.",
+          "evidence": [
+            "teaching-only"
+          ],
+          "next_label": "Compare the predictions with a recorded response",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "what-a-response-rules-out",
+          "title": "A response rules out a specified alternative",
+          "question": "If Y turns on, can we reject machine two?",
+          "body": [
+            "Yes, if these are the two machines we are considering and the controlled change really happened as described. Machine two predicts Y = 0. A reliable Y = 1 observation therefore contradicts machine two.",
+            "That result does not rule out every imaginable machine. A third machine might connect X to Y through another lamp and also produce Y = 1. To conclude that the arrow is direct, we need to explain which other machines are allowed and why."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Allowed machine",
+              "Predicted Y",
+              "If recorded Y = 1"
+            ],
+            "rows": [
+              [
+                "One: Y copies X",
+                "1",
+                "Compatible"
+              ],
+              [
+                "Two: Y follows switch",
+                "0",
+                "Ruled out"
+              ]
+            ],
+            "highlight_rows": [
+              1
+            ],
+            "caption": "The exclusion is conditional on this explicitly stated two-machine space."
+          },
+          "takeaway": "A test rules out the explanations that contradict it, under the test conditions and assumptions we have actually justified.",
+          "evidence": [
+            "teaching-only",
+            "framework-map"
+          ],
+          "next_label": "Return to what Crucis is responsible for",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "auditor-not-discoverer",
+          "title": "Crucis checks the claim and its basis",
+          "question": "Isn’t finding the direction the discovery program’s job?",
+          "body": [
+            "Yes. The discovery system proposes an explanation using its method. Crucis preserves what the system actually returned, then checks a stated question: does the answer agree with the source? A separate, stronger question is whether the evidence available to the system establishes that answer.",
+            "For the stronger question, “establishes” means every explanation allowed by the chosen assumptions agrees. We must justify that standard for the task. A method offering its best estimate has not automatically promised this kind of proof. Crucis must not invent an experiment or exclude alternatives just to make the check pass."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Discovery program",
+                "detail": "Produces its own answer"
+              },
+              {
+                "title": "Crucis",
+                "detail": "Checks a stated question against evidence checked for that use"
+              },
+              {
+                "title": "Reader",
+                "detail": "Sees the result and its limits"
+              }
+            ],
+            "caption": "Different responsibilities; no new run occurs in this teaching example."
+          },
+          "takeaway": "The scientific choice is when the stronger evidence test is justified and useful. Adding a source-version field does not decide that choice.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Locate the remaining reference boundary",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "reference-boundary",
+        "label": "Which remaining reference choices need research?"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "Which allowed explanations and controlled evidence justify the claim we want to check?",
+        "already_known": "The invented two-machine case has an exact answer under its stated assumptions. It does not solve every reference problem.",
+        "needed": "State the allowed explanations, the evidence actually available and a separately derived argument or counterexample.",
+        "human_use": "A causal-methodology specialist can ask whether our assumptions exclude a plausible explanation or demand a guarantee the method never offered.",
+        "paths": [
+          {
+            "label": "Check agreement with the source",
+            "test": "Can a separately checked source decide this exact proposed arrow?",
+            "yield": "A narrower correctness result without claiming the evidence uniquely identifies it."
+          },
+          {
+            "label": "Justify stronger assumptions",
+            "test": "Do restrictions on possible explanations fit the actual task and available evidence?",
+            "yield": "A support judgment that explicitly depends on those restrictions."
+          },
+          {
+            "label": "Leave the judgment unsettled",
+            "test": "Do allowed explanations still disagree, or is deciding evidence missing?",
+            "yield": "A visible limit distinguishing genuine ambiguity from unavailable evidence."
+          }
+        ]
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "reference-boundary",
+      "journey": "reference",
+      "title": "What still needs a reference decision?",
+      "lead": "Version tracking helps us use the right answer key. It does not decide whether that key answers the right scientific question.",
+      "case_kind": "mixed-source-and-authored-contrast",
+      "case_label": "Retained controlled-source account, with clearly invented change examples.",
+      "steps": [
+        {
+          "id": "right-edition",
+          "title": "First use the right edition",
+          "question": "What if the source rules change while the variable names stay the same?",
+          "body": [
+            "A benchmark maintainer can correct the rules generating the data, change assumptions or publish a new edition. The names can stay the same while the underlying model changes. Each run must stay linked to the edition it actually used.",
+            "There is a concrete engineering approach: save that edition and link the input, answer key and assessment to it. We need records showing that the actual software followed those links. We should not describe this version-tracking work as an unsolved scientific mystery."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Run from edition one",
+              "items": [
+                "Its original input",
+                "Its original source rules"
+              ]
+            },
+            "right": {
+              "title": "Later edition",
+              "items": [
+                "May correct a rule",
+                "Must not overwrite the old run"
+              ]
+            },
+            "caption": "An authored version-change scenario, not a claim that this source has changed."
+          },
+          "takeaway": "A new source edition does not silently replace the answer key for an old run.",
+          "evidence": [
+            "framework-map",
+            "native-policy",
+            "teaching-only"
+          ],
+          "next_label": "Check what properties the claim needs",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "different-fidelity-burdens",
+          "title": "Different claims need different parts of the source",
+          "question": "Would a correct arrow picture be enough for every study claim?",
+          "body": [
+            "For “does this output omit a direct source arrow?”, we need the source’s arrows and their meaning. For the apartment’s average-temperature decision, we also need how opening affects airflow and temperature under the stated conditions. For average performance across cases, we need to know how those cases were chosen.",
+            "Check the properties that the particular claim relies on. Matching an arrow picture does not settle every numerical or population claim. Conversely, a separate unresolved numerical question need not overturn an arrow result that does not depend on it."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Claim",
+              "Properties it needs"
+            ],
+            "rows": [
+              [
+                "Direct source-arrow accuracy",
+                "Structure, variables and arrow meaning"
+              ],
+              [
+                "Magnitude of a controlled effect",
+                "Mechanisms and intervention conditions"
+              ],
+              [
+                "Average performance over cases",
+                "Case distribution, units and measurement rule"
+              ]
+            ],
+            "caption": "Claim-dependent obligations; each row requires its own actual source binding."
+          },
+          "takeaway": "The answer key must be trustworthy in the properties that actually decide the claim.",
+          "evidence": [
+            "framework-map",
+            "copilot-card"
+          ],
+          "next_label": "Separate completed reasoning from pending checks on the actual path",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "what-is-and-is-not-open",
+          "title": "Three different kinds of unfinished work",
+          "question": "What should happen next when a reference judgment cannot yet be made?",
+          "body": [
+            "If we know which source edition should be used but lack a record of the software reading it, obtain that record. If a deciding document is missing, recover it or explain what cannot be concluded. Neither problem becomes scientific uncertainty merely because this page cannot show a passed check.",
+            "A scientific choice remains when plausible assumptions or evaluation standards would change the conclusion, and the evidence does not yet justify choosing between them. That calls for a reasoned argument, a counterexample or an experiment on which the alternatives disagree."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Remaining gap",
+              "Next work"
+            ],
+            "rows": [
+              [
+                "Known approach; no bound execution result",
+                "Qualify the actual path"
+              ],
+              [
+                "Deciding source unavailable",
+                "Recover it or show the limit"
+              ],
+              [
+                "Competing defensible scientific standards",
+                "Compare consequences and justify the choice"
+              ]
+            ],
+            "caption": "Do not spend human review time relabeling ordinary evidence recovery as an open scientific problem."
+          },
+          "takeaway": "Classify the gap by the evidence or judgment that could actually close it.",
+          "evidence": [
+            "framework-map",
+            "native-policy"
+          ],
+          "next_label": "Choose a useful question for a human reviewer",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "the-reference-challenge",
+          "title": "Ask for a counterexample to the boundary",
+          "question": "Could this answer key mark a reasonable system answer wrong—or treat a misleading one as justified?",
+          "body": [
+            "Bring the exact task, the meaning of the returned answer, the source assumptions and one worked case. Ask the reviewer for an alternative that our answer key would handle badly, or an argument that our restriction is appropriate.",
+            "The result might be a narrower claim, a better argument, another test or a decision not to judge. It need not be agreement or endorsement. Ordinary development can continue while a clearly identified scientific question remains open."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Challenge the standard",
+              "items": [
+                "Which premise could fail?",
+                "Which alternative would change the result?"
+              ]
+            },
+            "right": {
+              "title": "Record the consequence",
+              "items": [
+                "Revise a claim or test",
+                "Retain disagreement and limits"
+              ]
+            },
+            "caption": "A review question with something concrete to overturn."
+          },
+          "takeaway": "Use expertise to challenge the scientific assumptions; use records of actual runs to show what the software did.",
+          "evidence": [
+            "framework-map",
+            "native-policy"
+          ],
+          "next_label": "Return to the research atlas",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "atlas",
+        "label": "Return to the research atlas"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "For each returned answer, which check is justified and useful: source agreement or stronger evidential support?",
+        "already_known": "Source-version tracking and several limited reference procedures have concrete approaches. They do not choose one scientific standard for every task.",
+        "needed": "Review the actual answer’s meaning and assumptions, using deciding arguments or counterexamples.",
+        "human_use": "Target expertise that can challenge source assumptions. Do not spend the review approving a record format or routine version tracking.",
+        "paths": [
+          {
+            "label": "Check source agreement",
+            "test": "Can the exact source relationship be decided independently?",
+            "yield": "A limited accuracy result."
+          },
+          {
+            "label": "Check stronger evidence support",
+            "test": "Do the available evidence and justified alternatives settle the answer?",
+            "yield": "A stronger judgment with explicit assumptions."
+          },
+          {
+            "label": "Choose another question",
+            "test": "Does the system return a different kind of answer?",
+            "yield": "An applicable evaluation instead of invented equivalence."
+          }
+        ]
+      },
+      "crosslinks": [
+        {
+          "slug": "answer-selected",
+          "label": "Follow the actual saved answer"
+        },
+        {
+          "slug": "comparison-task",
+          "label": "See why the evaluation task matters"
+        }
+      ]
+    },
+    {
+      "slug": "answer-selected",
+      "journey": "answers",
+      "title": "Which answer did we check?",
+      "lead": "A calculation can be correct and still judge the wrong thing. Start by following one saved output.",
+      "case_kind": "retained-native-product-account",
+      "case_label": "Saved Causal-Copilot revised answer from the separate five-variable case. This page explains an expected result, not a new demonstrated auditor result.",
+      "steps": [
+        {
+          "id": "the-saved-product",
+          "title": "The saved output is a proposed diagram",
+          "question": "What did Causal-Copilot return in the saved record?",
+          "body": [
+            "We use the separate five-variable controlled source, not the earlier seventeen-variable apartment. Causal-Copilot, a system that proposes causal explanations from data, returned the selected revised diagram. Its five-by-five matrix has a slot for every ordered pair of variables. Every entry is zero.",
+            "Here, the system’s output rules let us read zero as “no proposed direct arrow.” Having every slot filled does not mean every pair is connected. It means this particular proposal omits all arrows. It neither proves that no causes exist nor shows that the later report finished."
+          ],
+          "visual": {
+            "type": "matrix",
+            "labels": [
+              "V1",
+              "V2",
+              "V3",
+              "V4",
+              "V5"
+            ],
+            "values": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "highlight_cells": [
+              [
+                0,
+                1
+              ]
+            ],
+            "caption": "Every pair has a recorded entry; every entry is zero. This is a fully specified no-arrow proposal, not a fully connected graph."
+          },
+          "takeaway": "We are checking one saved answer at a particular return point, not everything said during the attempt.",
+          "evidence": [
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Identify the requested field and return point",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "one-attempt-several-outputs",
+          "title": "One attempt can contain several answers",
+          "question": "Why isn’t an intact earlier diagram enough?",
+          "body": [
+            "The same attempt can contain an earlier diagram and a revised one. Both can be valid files. If our question concerns the revised diagram, reading the earlier field answers a different question even though the file is intact.",
+            "We also specify when to take the answer: here, when the diagram-producing call successfully returns. Later report text, or an identical-looking object from another moment, cannot silently replace that saved return."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Earlier graph",
+                "detail": "A different retained field"
+              },
+              {
+                "title": "Revised graph",
+                "detail": "Selected at graph return"
+              },
+              {
+                "title": "Later report",
+                "detail": "Another product and boundary"
+              }
+            ],
+            "selected": 1,
+            "caption": "Field, occurrence and return point are part of the question, not merely storage details."
+          },
+          "takeaway": "Valid contents can still belong to the wrong answer for this check.",
+          "evidence": [
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Follow the variable names through the record",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "the-same-variables",
+          "title": "The positions must still refer to the same quantities",
+          "question": "Could the right matrix still point to the wrong variables?",
+          "body": [
+            "Yes. After a column reorder, the first row and second column might no longer mean the original pair. Reading the numbers correctly is not enough; we must know which quantity each position now represents.",
+            "For a reorder alone, keep a one-to-one name map and check that values and questions move with their quantities. If preparation merges or changes quantities, that is more than renaming. It needs a separate argument that the question still means what we intended."
+          ],
+          "visual": {
+            "type": "mapping",
+            "before": [
+              "V1",
+              "V2",
+              "V3"
+            ],
+            "after": [
+              "V3",
+              "V1",
+              "V2"
+            ],
+            "pairs": [
+              [
+                "V1",
+                "V1"
+              ],
+              [
+                "V2",
+                "V2"
+              ],
+              [
+                "V3",
+                "V3"
+              ]
+            ],
+            "caption": "Authored reorder illustration. Positions change; quantity identities must remain fixed."
+          },
+          "takeaway": "Follow the quantities through each transformation. The same position need not mean the same thing.",
+          "evidence": [
+            "framework-map",
+            "teaching-only"
+          ],
+          "next_label": "Join selection, mapping and comparison",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "one-whole-path",
+          "title": "Follow one answer all the way to the report",
+          "question": "What must a check of the whole route demonstrate?",
+          "body": [
+            "Show what the actual software read: the intended saved answer and field, the map from positions to quantities, the output’s meaning, and the answer key for that same question. A parser test from another version does not show that this happened.",
+            "Then follow the calculated result into the report. The saved answer lets us derive what the result should be. To say the implementation produced it correctly, we need a record of this whole route—not just a diagram describing the intended design."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Select",
+                "detail": "Occurrence + field + return point"
+              },
+              {
+                "title": "Interpret",
+                "detail": "Quantity names + meaning of the answer"
+              },
+              {
+                "title": "Compare",
+                "detail": "Matching source question"
+              },
+              {
+                "title": "Report",
+                "detail": "Same result and bounds"
+              }
+            ],
+            "caption": "Even tested parts need a check that their actual connection preserves the answer and its meaning."
+          },
+          "takeaway": "The records must show that the actual parts used the same answer, question and source from beginning to end.",
+          "evidence": [
+            "framework-map",
+            "copilot-card"
+          ],
+          "next_label": "Read what different kinds of answer mean",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "answer-meaning",
+        "label": "What does this native answer mean?"
+      },
+      "next_work": {
+        "kind": "Check the whole route",
+        "question": "Did the software preserve the saved answer, quantity names and task from the system’s return to the report?",
+        "already_known": "The original saved all-zero revised matrix and its expected disagreement with the source are documented.",
+        "needed": "Records showing which inputs this software version actually read, what it calculated and what it reported.",
+        "human_use": "A reviewer can challenge a quantity map or overlooked connection. The implementation owner must provide records of what the software actually did."
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "answer-meaning",
+      "journey": "answers",
+      "title": "What did the answer actually say?",
+      "lead": "No arrow, a tied probability and no captured answer look different because they are different.",
+      "case_kind": "retained-and-scripted-contrast",
+      "case_label": "Saved Causal-Copilot proposal contrasted with a scripted CausalIQ response-reading example.",
+      "steps": [
+        {
+          "id": "no-arrow-is-a-candidate",
+          "title": "No proposed arrow is not a proof of impossibility",
+          "question": "What does the all-zero proposal say about V1 → V2?",
+          "body": [
+            "For this saved output, the system’s rules let us interpret every zero as no proposed direct arrow. Its proposed V1 → V2 arrow is therefore absent. The independent controlled source contains that arrow, so the proposal disagrees with the source on this question.",
+            "That does not tell us whether the system’s available evidence could establish the arrow. Nor does it show that the system refused to answer or claimed certainty. We must keep a wrong proposal separate from those other questions."
+          ],
+          "visual": {
+            "type": "comparison",
+            "left": {
+              "title": "Selected candidate",
+              "nodes": [
+                "V1",
+                "V2"
+              ],
+              "edges": []
+            },
+            "right": {
+              "title": "Controlled source",
+              "nodes": [
+                "V1",
+                "V2"
+              ],
+              "edges": [
+                [
+                  "V1",
+                  "V2"
+                ]
+              ]
+            },
+            "caption": "Source-relative error expectation. This is not a newly observed auditor result."
+          },
+          "takeaway": "We can identify a wrong proposal without saying the system promised certainty.",
+          "evidence": [
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Try a product that returns numbers instead",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "a-probability-product",
+          "title": "Some products divide weight among alternatives",
+          "question": "What if the answer is a set of numbers rather than one diagram?",
+          "body": [
+            "Now consider a separate scripted CausalIQ example. It starts with three quarters of its weight on there being a relationship, then splits that weight equally between directions. Its code produces three eighths for A → B, three eighths for B → A and one quarter for no edge.",
+            "These are test values supplied to the parser, the code that reads a response. They are not a new study reply from a model. The equal directional numbers do not prefer one direction. Crucis should not invent a definite arrow just to reuse the graph score."
+          ],
+          "visual": {
+            "type": "probabilities",
+            "labels": [
+              "A → B",
+              "B → A",
+              "No edge"
+            ],
+            "values": [
+              0.375,
+              0.375,
+              0.25
+            ],
+            "fractions": [
+              "3/8",
+              "3/8",
+              "1/4"
+            ],
+            "derivation": [
+              "(3/4) × (1/2)",
+              "(3/4) × (1 − 1/2)",
+              "1 − 3/4"
+            ],
+            "caption": "Exact scripted arithmetic. No causal truth or actual study outcome is supplied."
+          },
+          "takeaway": "First ask what the returned numbers mean. Do not turn them into an answer the system did not return.",
+          "evidence": [
+            "causaliq-card",
+            "native-policy"
+          ],
+          "next_label": "Find out where a displayed choice came from",
+          "case_kind": "scripted-native-control",
+          "case_label": "Scripted response-reading test; not a study reply from a model."
+        },
+        {
+          "id": "defaults-and-selection",
+          "title": "A displayed value may come from code",
+          "question": "What if code chooses one tied direction or fills in a missing pair?",
+          "body": [
+            "In the code used for this example, a most-likely-choice function breaks this tie by choosing the first listed direction—if that function is actually called. That would explain a selected direction, not prove that the model preferred it.",
+            "For a pair omitted from the response, a lookup can supply a built-in no-edge value. Keep both the value and the fact that code supplied it. Calling it an explicit model denial would misreport where the answer came from."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "What happened",
+              "Product behavior",
+              "Do not attribute"
+            ],
+            "rows": [
+              [
+                "Directional tie",
+                "A selector may choose by tie rule",
+                "A model preference"
+              ],
+              [
+                "Pair omitted",
+                "Lookup supplies a no-edge default",
+                "An explicit model denial"
+              ],
+              [
+                "Malformed values",
+                "Parser uses its fallback",
+                "Valid model confidence"
+              ]
+            ],
+            "caption": "Code can transform or supply values. A real result also needs records showing which functions were actually used."
+          },
+          "takeaway": "Check the displayed value and who or what supplied it.",
+          "evidence": [
+            "causaliq-card",
+            "native-policy"
+          ],
+          "next_label": "Separate missing evidence from inapplicable judgment",
+          "case_kind": "scripted-native-control",
+          "case_label": "Scripted response-reading test; not a study reply from a model."
+        },
+        {
+          "id": "unknown-versus-not-defined",
+          "title": "Not every blank means the same thing",
+          "question": "How should we describe what we cannot judge?",
+          "body": [
+            "If the requested diagram was not captured, we do not know its contents. That is different from capturing a diagram with no arrows. An explicit refusal is different again: there is an answer saying that the system declines the task.",
+            "A set of probabilities raises another issue. It may not make a definite yes-or-no assertion, so a test of a definite claim may not apply. Missing contents call for recovery or a limit; an inapplicable question calls for a different, justified task. Neither should quietly become a score of zero."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Situation",
+              "What follows"
+            ],
+            "rows": [
+              [
+                "Captured fully specified candidate graph without an edge",
+                "A proposal that this arrow is absent"
+              ],
+              [
+                "Selected graph not captured",
+                "Answer unavailable"
+              ],
+              [
+                "System explicitly declines",
+                "A refusal, after checking what it means"
+              ],
+              [
+                "Only a probability product",
+                "Use an applicable probability task"
+              ]
+            ],
+            "caption": "Describe what the record actually provides before deciding how, or whether, it can be scored."
+          },
+          "takeaway": "Distinguish a proposed absence, an explicit refusal, unknown answer contents and a question that does not apply.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "See how return time and recovery affect the answer",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "answer-boundary",
+        "label": "When does a returned answer count?"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "Which answer returned by the actual systems should the intended comparison evaluate?",
+        "already_known": "The selected diagram and scripted probability example mean different things.",
+        "needed": "Records of actual returned answers and later selections, plus a justified purpose for the study.",
+        "human_use": "A methods reviewer can test whether the chosen question rewards the capability the research actually cares about.",
+        "paths": [
+          {
+            "label": "Compare proposed diagrams",
+            "test": "Did each system itself return a diagram answering the same question?",
+            "yield": "A source-agreement comparison for those diagrams."
+          },
+          {
+            "label": "Evaluate returned probabilities",
+            "test": "Do the possible events, answer key and available information match?",
+            "yield": "A separately named prediction task."
+          },
+          {
+            "label": "Keep separate studies",
+            "test": "Do the requirements for a common task fail?",
+            "yield": "Useful results without a false shared ranking."
+          }
+        ]
+      },
+      "crosslinks": [
+        {
+          "slug": "comparison-task",
+          "label": "Choose a fair comparison task"
+        }
+      ]
+    },
+    {
+      "slug": "answer-boundary",
+      "journey": "answers",
+      "title": "When does a returned answer count?",
+      "lead": "An answer’s content, return time and capture time are separate facts. Recovery must not quietly become another try.",
+      "case_kind": "authored-operating-contrast",
+      "case_label": "Prospective cutoff and recovery examples, not a new run policy or historical outcome.",
+      "steps": [
+        {
+          "id": "pick-the-deliverable",
+          "title": "Choose the finish line before running",
+          "question": "Are we waiting for the diagram or for the later report?",
+          "body": [
+            "If the task judges the returned diagram, say which successful return ends that part of the task. If it judges the later report, specify that different finish line. Do not choose whichever stage looks best after seeing the results.",
+            "For a future timed study, fix the deadline and resource limits before launching work. This page does not choose a numeric deadline or apply a new rule to old attempts. Those attempts retain their original conditions."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Launch",
+                "detail": "Declared clock begins"
+              },
+              {
+                "title": "Graph returns",
+                "detail": "Possible selected deliverable"
+              },
+              {
+                "title": "Report returns",
+                "detail": "A different deliverable"
+              },
+              {
+                "title": "Capture",
+                "detail": "When bytes reach the collector"
+              }
+            ],
+            "caption": "Illustrated event order only. A real study must separately approve its timing and resource limits."
+          },
+          "takeaway": "What counts as a delivered answer, and when it must arrive, are parts of the task.",
+          "evidence": [
+            "native-policy"
+          ],
+          "next_label": "Distinguish late collection from late generation",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "recover-not-regenerate",
+          "title": "Later recovery can preserve the same attempt",
+          "question": "What if an on-time answer is discovered in storage only later?",
+          "body": [
+            "Suppose trustworthy records show that the requested answer returned before the deadline. Finding its exact saved contents later can recover that same return. Keep the earlier “not captured” assessment and record why it can now be updated.",
+            "Asking the program to answer again creates another attempt. That is true even if the prompt is unchanged or the new contents match. The new attempt cannot silently replace the original or become another independently sampled case."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Recover the original",
+              "items": [
+                "Same returned occurrence",
+                "Authenticated existing bytes",
+                "History retained"
+              ]
+            },
+            "right": {
+              "title": "Generate another answer",
+              "items": [
+                "Another run of the system",
+                "New attempt and exposure",
+                "Separate authority required"
+              ]
+            },
+            "caption": "Recovery changes our access to an event; regeneration creates another event."
+          },
+          "takeaway": "Recovering an existing answer changes what we can inspect. Running the program again creates a new event.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Handle uncertain effects without guessing",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "a-timeout-is-not-a-result",
+          "title": "A timeout does not tell us everything that happened",
+          "question": "If the collector stops waiting, has the program definitely stopped?",
+          "body": [
+            "No. The request might still be running, might have finished remotely, or might have failed before doing anything. Asking it to stop does not prove that it stopped. Record what is known and investigate the uncertain effects before retrying.",
+            "A complete record showing no final answer returned by the deadline can establish non-delivery by that time. A collector merely giving up cannot. Even verified non-delivery does not by itself tell us whether the program terminated, failed or remained active."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Observed record",
+              "What it establishes",
+              "What it does not"
+            ],
+            "rows": [
+              [
+                "Collector timeout",
+                "Collector stopped waiting",
+                "Program termination"
+              ],
+              [
+                "Cancel requested",
+                "A request to stop was issued",
+                "Stop completed"
+              ],
+              [
+                "Authenticated on-time return",
+                "Product returned within the window",
+                "Whole report completed"
+              ]
+            ],
+            "caption": "Execution accountability is part of preserving the answer, not a substitute for scientific correctness."
+          },
+          "takeaway": "Separate what we intended, what we requested, what we observed and what we know has finished.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Decide which missingness question remains",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "keep-the-intended-slot",
+          "title": "Do not erase a difficult case",
+          "question": "How does an unavailable answer enter a later comparison?",
+          "body": [
+            "Keep the planned case and the reason its result is unknown. Knowing the source graph does not tell us what an uncaptured answer said. Dropping the case would change the study after we saw which work completed.",
+            "If the outcome is defined but unknown, we may be able to bound its possible value. If that outcome does not apply to this kind of answer, a numerical range cannot fix the task. The comparison journey works through this distinction."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Intended case",
+                "detail": "Stays in its declared frame"
+              },
+              {
+                "title": "Observed evidence",
+                "detail": "Retains its actual disposition"
+              },
+              {
+                "title": "Comparison",
+                "detail": "Uses justified policy or bounds"
+              }
+            ],
+            "caption": "No new deadline, failure cost, retry budget or study endpoint is adopted by this example."
+          },
+          "takeaway": "Incomplete observation changes what we can conclude; it must not silently change which cases count.",
+          "evidence": [
+            "native-policy"
+          ],
+          "next_label": "Return to the research atlas",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "atlas",
+        "label": "Return to the research atlas"
+      },
+      "next_work": {
+        "kind": "Execution checks and study policy",
+        "question": "Do the execution records preserve the chosen finish line, uncertain effects and original planned attempts?",
+        "already_known": "The proposed distinctions and saved historical return point are documented. No new execution policy is adopted here.",
+        "needed": "Approved numeric limits and records of actual return times, saved contents and resolution of uncertain effects.",
+        "human_use": "Experts can challenge what the timing and missing-result policy would mean scientifically. Execution records must show what happened."
+      },
+      "crosslinks": [
+        {
+          "slug": "comparison-outcome",
+          "label": "See how unavailable answers affect the outcome"
+        },
+        {
+          "slug": "retrace-change",
+          "label": "Follow a later correction without rewriting history"
+        }
+      ]
+    },
+    {
+      "slug": "comparison-task",
+      "journey": "comparison",
+      "title": "What would make this comparison useful?",
+      "lead": "Before asking which system is better, decide which achievement the comparison is supposed to measure.",
+      "case_kind": "native-product-comparison",
+      "case_label": "A saved Causal-Copilot proposal and a scripted CausalIQ example, not a completed comparison study.",
+      "steps": [
+        {
+          "id": "start-with-the-decision",
+          "title": "Better at what?",
+          "question": "Would a better diagram necessarily tell us whether to open the window earlier?",
+          "body": [
+            "A diagram proposes which quantities influence which others. The apartment question asks whether opening at eight rather than ten lowers average room temperature from 8 a.m. to noon under the stated conditions. An arrow score does not automatically answer that practical question.",
+            "Begin a study with the conclusion we want it to support. We might check agreement with source arrows, probability predictions, use of added evidence or a downstream decision. Each needs different returned answers and different checking evidence."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Diagram question",
+              "items": [
+                "Which direct arrows are proposed?",
+                "Do they match the source?"
+              ]
+            },
+            "right": {
+              "title": "Decision question",
+              "items": [
+                "What happens under eight versus ten?",
+                "Is the change useful under these conditions?"
+              ]
+            },
+            "caption": "Two legitimate achievements. One cannot silently stand in for the other."
+          },
+          "takeaway": "Choose the achievement that matters before choosing how to compare systems.",
+          "evidence": [
+            "framework-map",
+            "teaching-only"
+          ],
+          "next_label": "Inspect the actual products",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "different-native-products",
+          "title": "The systems may answer different kinds of question",
+          "question": "Can the same score judge a graph and a set of probabilities?",
+          "body": [
+            "Causal-Copilot and CausalIQ are causal-discovery systems. Here, the saved Copilot answer is a proposed diagram from numerical input. The CausalIQ example shows probabilities produced by reading a scripted reply. It does not show a real CausalIQ study attempt receiving Copilot’s table or returning a diagram.",
+            "Inspect the actual inputs, instructions and returned answers before calling this a shared task. Drawing an arrow at the largest probability inside Crucis would add a choice that the audited system may never have made."
+          ],
+          "visual": {
+            "type": "comparison",
+            "left": {
+              "title": "Copilot retained product",
+              "nodes": [
+                "V1",
+                "V2",
+                "V3"
+              ],
+              "edges": []
+            },
+            "right": {
+              "title": "CausalIQ scripted values",
+              "labels": [
+                "A → B",
+                "B → A",
+                "No edge"
+              ],
+              "values": [
+                0.375,
+                0.375,
+                0.25
+              ]
+            },
+            "caption": "Different products and evidence levels, not two scored study arms. The Copilot picture shows three of its five variables; all five are retained in the selected matrix."
+          },
+          "takeaway": "Show that the systems answer a comparable question; do not create comparability by changing their answers.",
+          "evidence": [
+            "copilot-card",
+            "causaliq-card",
+            "native-policy"
+          ],
+          "next_label": "Compare the information each product actually received",
+          "case_kind": "mixed-evidence-levels",
+          "case_label": "Saved Copilot answer contrasted with scripted CausalIQ values; not a completed comparison study."
+        },
+        {
+          "id": "information-changes-the-task",
+          "title": "Same variable names do not mean the same information",
+          "question": "What if one system sees measurements and another sees descriptive context?",
+          "body": [
+            "A numerical table, descriptive variable names, background text and a record of a controlled change can each eliminate different explanations. What a system can reasonably infer depends on which of these it actually receives.",
+            "State exactly what each system receives and may use. Giving both the same information asks one kind of question; comparing their usual configured workflows asks another. Neither is automatically fairer. The choice needs to fit what the study claims to measure."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Possible design",
+              "Question it can address",
+              "Required caution"
+            ],
+            "rows": [
+              [
+                "Matched admissible information",
+                "Behavior under this shared information policy",
+                "Actual system inputs must still serve comparable tasks"
+              ],
+              [
+                "Usual system conditions",
+                "Behavior of each declared system as configured",
+                "Differences include information and workflow"
+              ],
+              [
+                "Added-information contrast",
+                "What changes under a specified information addition",
+                "Hold other deciding conditions fixed"
+              ]
+            ],
+            "caption": "Design alternatives, not adopted study arms."
+          },
+          "takeaway": "What information a system receives is a scientific condition, not just an implementation detail.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "State the first open comparison choice",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "the-first-choice",
+          "title": "Choose a claim the products can support",
+          "question": "What would justify one cross-system result?",
+          "body": [
+            "To support one shared result, the systems must address the same scientific question. We must understand both answers, have an applicable answer key, and explain how different kinds of return are treated. If that is not possible, separate studies can still teach us something useful.",
+            "The open choice is which evaluation informs our research goal without inventing different systems. Ask a reviewer to challenge that fit before optimizing the score or collecting more runs."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Intended claim",
+                "detail": "Why the comparison matters"
+              },
+              {
+                "title": "Actual task and products",
+                "detail": "What each system can provide"
+              },
+              {
+                "title": "Applicable outcome",
+                "detail": "What the evidence can judge"
+              }
+            ],
+            "caption": "If a link fails, narrow or change the study question before producing a ranking."
+          },
+          "takeaway": "Use a narrower comparison when it is the one whose meaning the evidence can support.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Define the outcome before counting success",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "comparison-outcome",
+        "label": "How should answers, failures and omissions count?"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "Should the first comparison study use a shared achievement, separate system-specific questions or a controlled information change?",
+        "already_known": "The saved diagram and scripted probabilities do not yet justify one ranking of categorical benefit or harm.",
+        "needed": "Reviewed descriptions of the actual systems’ claims and answers, records of real attempts, and a concrete proposed task.",
+        "human_use": "Ask a methods reviewer what useful conclusion each design could support and which uncontrolled difference could defeat it.",
+        "paths": [
+          {
+            "label": "Use a shared task",
+            "test": "Can the actual answers, information, source and outcome address one question?",
+            "yield": "A narrowly defined comparison."
+          },
+          {
+            "label": "Use system-specific tasks",
+            "test": "Do the different answers serve different useful achievements?",
+            "yield": "Separate results without invented equivalence."
+          },
+          {
+            "label": "Change information within a system",
+            "test": "Can an information addition be isolated while the task stays fixed?",
+            "yield": "An effect of that change, not an overall system ranking."
+          }
+        ]
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "comparison-outcome",
+      "journey": "comparison",
+      "title": "What counts as an outcome?",
+      "lead": "Getting an answer, getting it right and having enough evidence for it are three different questions.",
+      "case_kind": "mixed-source-and-authored-arithmetic",
+      "case_label": "Meanings of returned answers plus invented arithmetic examples. No study score or failure policy is adopted.",
+      "steps": [
+        {
+          "id": "three-questions",
+          "title": "Delivery, agreement and support are different",
+          "question": "What can we say about the saved graph that omitted V1 → V2?",
+          "body": [
+            "At the chosen return point, a matrix with every entry specified was saved. Reading it according to the system’s output rules, it omits a direct arrow present in the source. That gives an expected error on this question, even though what its available evidence justified remains unresolved.",
+            "Do not collapse those facts into “the run failed.” A wrong returned diagram differs from no diagram returning. A wrong proposal also does not prove that the system claimed certainty or broke a guarantee offered by its algorithm."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Question",
+              "Retained expectation",
+              "Limit"
+            ],
+            "rows": [
+              [
+                "Was a selected graph delivered?",
+                "A matrix with an entry for every pair was retained",
+                "Not proof the later report finished"
+              ],
+              [
+                "Does V1 → V2 match the source?",
+                "Candidate no; source yes",
+                "Requires checked meanings and a matching answer key"
+              ],
+              [
+                "Was the candidate established by its evidence?",
+                "Unresolved in this account",
+                "No certainty claim inferred from an arrow"
+              ]
+            ],
+            "caption": "Separate expected judgments. To claim the auditor produced them, we need a record of what it read, calculated and reported."
+          },
+          "takeaway": "An outcome definition should preserve the differences that matter to the scientific claim.",
+          "evidence": [
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Use a forecast outcome only for a forecast product",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "a-forecast-needs-its-own-rule",
+          "title": "A probability forecast needs a compatible event",
+          "question": "How could the three CausalIQ values be evaluated without inventing an arrow?",
+          "body": [
+            "Suppose a separately checked answer key says the state is A → B. For that three-state question, the reference numbers would be (1, 0, 0): all weight on A → B. One proposed score compares the prediction with those numbers using half the sum of the squared differences.",
+            "For the scripted values (3/8, 3/8, 1/4), that calculation gives 19/64. This is conditional arithmetic, not an observed CausalIQ score. No causal answer key is supplied for that scripted example, and this page does not adopt the proposed score for a study."
+          ],
+          "visual": {
+            "type": "distribution",
+            "labels": [
+              "A → B",
+              "B → A",
+              "No edge"
+            ],
+            "values": [
+              0.375,
+              0.375,
+              0.25
+            ],
+            "reference": [
+              1,
+              0,
+              0
+            ],
+            "formula": "½[(3/8 − 1)² + (3/8)² + (1/4)²] = 19/64",
+            "caption": "Authored arithmetic under hypothetical forward truth. Applicability and scientific relevance require review."
+          },
+          "takeaway": "Correct arithmetic does not establish that the score measures the research question we care about.",
+          "evidence": [
+            "native-policy",
+            "causaliq-card"
+          ],
+          "next_label": "Keep unavailable outcomes in their intended frame",
+          "case_kind": "authored-arithmetic-on-scripted-values",
+          "case_label": "Invented answer key and exact calculation on scripted values; not an observed study score."
+        },
+        {
+          "id": "missing-does-not-mean-zero",
+          "title": "Unknown outcomes can leave a bounded range",
+          "question": "What can four planned 0-or-1 outcomes tell us when only two are known?",
+          "body": [
+            "Consider an invented task with four equally weighted outcomes, each already defined as 0 or 1. We know one is 1 and one is 0; two are unknown. The average can be no lower than 1/4 and no higher than 3/4.",
+            "Put 0 in both unknown slots to obtain the lower limit; put 1 in both to obtain the upper limit. This does not assume the missing answers are random, or give a probability that the average lies inside the range. It also cannot make an inapplicable outcome applicable."
+          ],
+          "visual": {
+            "type": "bounds",
+            "slots": [
+              "1",
+              "0",
+              "?",
+              "?"
+            ],
+            "lower": 0.25,
+            "upper": 0.75,
+            "lower_completion": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "upper_completion": [
+              1,
+              0,
+              1,
+              1
+            ],
+            "caption": "Invented four-slot example: all four planned outcomes remain counted. No actual study result."
+          },
+          "takeaway": "Preserving the intended frame makes the cost of missing evidence visible.",
+          "evidence": [
+            "native-policy",
+            "teaching-only"
+          ],
+          "next_label": "Decide failure and refusal policy before exposure",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "refusal-has-a-context",
+          "title": "Failure costs depend on the task",
+          "question": "When is explicitly declining to answer the right thing to do?",
+          "body": [
+            "If a task asks for an answer only when the evidence settles it, withholding can be appropriate when it does not. Withholding on a case whose evidence does settle it can lose a useful result. A task asking for the best available prediction needs its own rule for handling refusal.",
+            "Set those rules, the timing and any costs before seeing results. Report how often useful answers arrive as well as their quality. Otherwise a system may look excellent by answering only easy cases—or a checker may look safe by withholding everything."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Situation",
+              "Question for the policy"
+            ],
+            "rows": [
+              [
+                "Evidence genuinely insufficient",
+                "Is withholding the intended correct action?"
+              ],
+              [
+                "Eligible sufficient-evidence case",
+                "Did the system deliver the useful answer?"
+              ],
+              [
+                "Explicit refusal",
+                "What does the system’s refusal mean?"
+              ],
+              [
+                "Capture unavailable",
+                "Do we know what the system did at all?"
+              ]
+            ],
+            "caption": "No universal failure penalty or abstention cost is assumed."
+          },
+          "takeaway": "Outcome policy is part of the research design, not a patch applied after a leaderboard looks inconvenient.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Decide what population the result concerns",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "comparison-population",
+        "label": "What can the cases tell us beyond themselves?"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "Which delivery, correctness, support and refusal outcomes matter to the intended use, and why?",
+        "already_known": "Different returned answers need different applicable outcomes. A missing answer differs from a question that cannot judge it.",
+        "needed": "A proposed policy with useful answers, errors, ambiguity, missing records and inapplicable questions, fixed before seeing outcomes.",
+        "human_use": "Ask for a case where the proposed rule rewards the wrong behavior or answers a different scientific question.",
+        "paths": [
+          {
+            "label": "Report separate outcomes",
+            "test": "Can delivery, error and applicability each be shown faithfully?",
+            "yield": "Useful descriptions without inventing one combined usefulness score."
+          },
+          {
+            "label": "Justify decision costs",
+            "test": "Can consequences justify costs for wrong answers, refusal and delay before the study?",
+            "yield": "A comparison tied to a particular decision."
+          },
+          {
+            "label": "Evaluate prediction quality",
+            "test": "Does the probability question match the scientific claim?",
+            "yield": "A separate prediction result, showing delivery and code-supplied values too."
+          }
+        ]
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "comparison-population",
+      "journey": "comparison",
+      "title": "What can these cases tell us?",
+      "lead": "A detailed result on one source can be valuable. It does not become evidence about every system by repeating it.",
+      "case_kind": "authored-sampling-contrast",
+      "case_label": "Case-unit and missingness illustrations; no population size, case weights or interval procedure is adopted.",
+      "steps": [
+        {
+          "id": "one-source-many-records",
+          "title": "More records do not always mean more independent cases",
+          "question": "If we inspect five arrows, three stages and two reruns, have we studied thirty independent worlds?",
+          "body": [
+            "No. All those records may come from one source model and input. Different questions and reruns can reveal different errors or variation in execution. Multiplying the records does not create more independently chosen causal systems.",
+            "Before averaging, say what counts as one scientific case. It might be a source family, a generated input chosen by a stated procedure, or a task within a case. Cases sharing a mechanism or origin may move together; that dependence matters when interpreting the average."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "One source/input",
+                "detail": "Shared scientific origin"
+              },
+              {
+                "title": "Many stages and questions",
+                "detail": "Several views of that origin"
+              },
+              {
+                "title": "Repeated attempts",
+                "detail": "Execution variation, not automatic new worlds"
+              }
+            ],
+            "caption": "The unit of evidence follows the sampling and dependence structure, not file count."
+          },
+          "takeaway": "Count the cases that justify the conclusion, not simply the records available to count.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Choose which cases the claim should cover",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "the-case-mixture",
+          "title": "A mean answers a question about a chosen mixture",
+          "question": "What if most cases are easy chains and only a few contain ambiguity?",
+          "body": [
+            "An average dominated by easy chains mainly describes easy chains. A different mixture can favor a different system because the systems do well on different tasks.",
+            "Before inspecting results, state which kinds of case belong and how much each contributes to the average. Show useful groups separately too. Giving many files different names does not establish that they test different mechanisms or justify a broader conclusion."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Case stratum",
+              "Why it belongs",
+              "What needs justification"
+            ],
+            "rows": [
+              [
+                "Answerable positive",
+                "Tests useful delivery",
+                "Sufficient evidence really is available"
+              ],
+              [
+                "Wrong candidate",
+                "Tests error detection",
+                "A separate answer key decides this exact relationship"
+              ],
+              [
+                "Ambiguous evidence",
+                "Tests limits of inference",
+                "Allowed alternatives genuinely disagree"
+              ],
+              [
+                "Unavailable output",
+                "Tests incomplete observation",
+                "Original intended slot is retained"
+              ]
+            ],
+            "caption": "An illustrative case-mixture design, not adopted study proportions."
+          },
+          "takeaway": "Which cases enter, and how they are weighted, help determine what the reported average means.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Separate observed quality from confidence about a population",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "what-an-interval-needs",
+          "title": "A range is only as strong as its assumptions",
+          "question": "Can repeated model calls tell us how reliable the system is across a wider population?",
+          "body": [
+            "Not by themselves. Repeating calls on one input shows variation for that setup. To express uncertainty about a wider population, we must define the population, explain how cases are chosen and account for dependence between them.",
+            "The earlier missing-result range asks a different question: which averages remain possible for the fixed planned cases? Keep that separate from uncertainty caused by sampling cases.",
+            "Calibration asks whether events assigned a particular chance occur at that frequency across relevant cases. A good probability score on one selected example cannot show that population property."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Claim",
+              "Required basis"
+            ],
+            "rows": [
+              [
+                "This finite result",
+                "Checked observed cases and exact calculation"
+              ],
+              [
+                "Missing-outcome range",
+                "Defined outcome bounds and retained intended frame"
+              ],
+              [
+                "Population uncertainty",
+                "Target law, units, dependence and justified interval method"
+              ],
+              [
+                "Calibration",
+                "A justified population of probability/event pairs and a matching analysis"
+              ]
+            ],
+            "caption": "Different forms of uncertainty need different evidence. No interval is earned by count alone."
+          },
+          "takeaway": "Say which uncertainty is measured, and which assumptions still need evidence.",
+          "evidence": [
+            "native-policy"
+          ],
+          "next_label": "Target the next useful research challenge",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "expand-with-a-reason",
+          "title": "The next case should test an important boundary",
+          "question": "Where should the study grow next?",
+          "body": [
+            "Start with the conclusion we want to strengthen. Identify a plausible kind of source, information condition or error that could change it and is not covered by the evidence already checked. Design a case that distinguishes that concern.",
+            "Ask an expert: “Which missing case would most change your interpretation?” A useful answer leads to a new case group, a narrower conclusion or a testable design change. It does not merely request more runs of the same already explored input."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Current conclusion",
+                "detail": "Its actual target and bounds"
+              },
+              {
+                "title": "Material alternative",
+                "detail": "What could change the interpretation"
+              },
+              {
+                "title": "Discriminating case",
+                "detail": "New evidence with a clear purpose"
+              }
+            ],
+            "caption": "Expand evidence where it can change a decision, not merely increase activity."
+          },
+          "takeaway": "A broader claim is earned by a defensible expansion of evidence and assumptions.",
+          "evidence": [
+            "framework-map",
+            "native-policy"
+          ],
+          "next_label": "Return to the research atlas",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "atlas",
+        "label": "Return to the research atlas"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "Which mix of cases, and which way of choosing them, would make the next study more informative?",
+        "already_known": "One saved answer and scripted controls support limited descriptions, not a reliability claim over independent cases.",
+        "needed": "A versioned plan for eligible cases, weights and dependence, with expected calculations checked separately.",
+        "human_use": "Design and statistics reviewers should challenge who the result applies to, dependence and missing kinds of case—not approve a count alone.",
+        "paths": [
+          {
+            "label": "Finish a bounded case study",
+            "test": "Can the exact source and software route be checked?",
+            "yield": "An inspectable finding about that case."
+          },
+          {
+            "label": "Expand mechanisms and tasks",
+            "test": "Which missing kinds of case could change the interpretation?",
+            "yield": "A broader finite benchmark with a justified scope."
+          },
+          {
+            "label": "Plan population inference",
+            "test": "Can the population, case selection, independence and uncertainty method be defended?",
+            "yield": "A population claim limited to those conditions."
+          }
+        ]
+      },
+      "crosslinks": [
+        {
+          "slug": "validate-coverage",
+          "label": "See why case count is not auditor coverage"
+        }
+      ]
+    },
+    {
+      "slug": "retrace-finding",
+      "journey": "reconstruction",
+      "title": "Can a reader retrace the finding?",
+      "lead": "A conclusion is useful only if a reader can see what was checked, how it was judged and where its limits came from.",
+      "case_kind": "retained-native-product-account",
+      "case_label": "A reconstruction of the retained B0 expectation, not a newly issued auditor certificate.",
+      "steps": [
+        {
+          "id": "start-at-one-sentence",
+          "title": "Begin with one modest conclusion",
+          "question": "What would “this saved proposal missed a direct source arrow” mean?",
+          "body": [
+            "It means that one selected proposal lacks a direct arrow present in the controlled source, after checking how to read both. It does not mean the program never returned an answer or that every part of Crucis has passed.",
+            "A reader should be able to ask four ordinary questions: which answer, which source, which comparison and what shows that the checker actually used them? We can follow these questions before introducing database identifiers."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Claim",
+                "detail": "A selected candidate missed this source edge"
+              },
+              {
+                "title": "Question",
+                "detail": "Does V1 → V2 appear?"
+              },
+              {
+                "title": "Bound",
+                "detail": "This occurrence, meaning and source"
+              }
+            ],
+            "caption": "Start with the reader-facing statement, then reveal the record that licenses it."
+          },
+          "takeaway": "Make the claim small enough that its required evidence can be named.",
+          "evidence": [
+            "copilot-card",
+            "framework-map"
+          ],
+          "next_label": "Follow the two sides of the comparison",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "the-two-inputs",
+          "title": "The comparison has two independently bound inputs",
+          "question": "Where do “candidate no” and “source yes” come from?",
+          "body": [
+            "“Candidate no” comes from the original revised diagram, whose entries specify the system’s proposed arrows for every pair. “Source yes” comes from the separate controlled source. Both statements concern the direct V1 → V2 arrow.",
+            "The variable names, direction and kind of relationship must match. Reversing positions on one side would ask about another arrow, even if both files were valid and every calculation were correct."
+          ],
+          "visual": {
+            "type": "comparison",
+            "left": {
+              "title": "System answer",
+              "nodes": [
+                "V1",
+                "V2"
+              ],
+              "edges": []
+            },
+            "right": {
+              "title": "Reference side",
+              "nodes": [
+                "V1",
+                "V2"
+              ],
+              "edges": [
+                [
+                  "V1",
+                  "V2"
+                ]
+              ]
+            },
+            "caption": "The same named direct-arrow question must reach both sides."
+          },
+          "takeaway": "A comparison makes sense only if both sides answer the same question.",
+          "evidence": [
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Inspect what the actual checker consumed",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "not-just-a-prepared-answer",
+          "title": "Expected results and observed results are different records",
+          "question": "Does a worked answer key prove the implementation produced it?",
+          "body": [
+            "No. A separately derived answer key says what should happen on the stated inputs. A test record must show what this implementation actually read and returned. Its report then needs to carry that observed result without changing its meaning.",
+            "This page follows a saved expected result. To describe it as a demonstrated auditor finding, inspect the records linking these exact inputs to this calculation and report. Unrelated passing tests cannot supply those missing connections."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Independent expectation",
+                "detail": "What should happen"
+              },
+              {
+                "title": "Observed candidate result",
+                "detail": "What this version actually did"
+              },
+              {
+                "title": "Reader-facing report",
+                "detail": "What it communicates"
+              }
+            ],
+            "caption": "A worked answer key is not a record of the software producing that answer."
+          },
+          "takeaway": "Keep what should happen, what the software did and what the report claims as separate records.",
+          "evidence": [
+            "framework-map",
+            "copilot-card"
+          ],
+          "next_label": "Check whether the report says too much",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "keep-the-bound-in-the-report",
+          "title": "A faithful report preserves uncertainty",
+          "question": "What if the report says the system “proved there is no cause”?",
+          "body": [
+            "That would say more than the saved proposal does. The record supports “this output proposes no direct arrow,” not “no cause is possible” or “the system claimed certainty.”",
+            "Report its disagreement with the source separately from what remains unknown about its evidence. Identify the selected answer and the source it was checked against. Good formatting cannot rescue a report that strengthens the conclusion or hides an important limit."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Earned statement",
+              "items": [
+                "Selected candidate omitted this source edge",
+                "Evidence-support judgment remains unresolved"
+              ]
+            },
+            "right": {
+              "title": "Unsupported expansion",
+              "items": [
+                "The method proved no cause exists",
+                "The whole auditor is now correct"
+              ]
+            },
+            "caption": "Presentation fidelity is a separate obligation from calculation correctness."
+          },
+          "takeaway": "Every presentation must preserve what the evidence supports and where it stops.",
+          "evidence": [
+            "copilot-card",
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Follow what happens when a record changes",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "retrace-change",
+        "label": "What changes when evidence is corrected?"
+      },
+      "next_work": {
+        "kind": "Check the report",
+        "question": "Does the actual report preserve the selected answer, judgment, uncertainty and access limits?",
+        "already_known": "We can separately work through answer identity, meaning, reference and reporting requirements.",
+        "needed": "The actual report and records linking it to the exact inputs and calculation.",
+        "human_use": "A fresh reader can reconstruct the claim and expose a stronger unintended implication. That does not replace tests of what the software actually did."
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "retrace-change",
+      "journey": "reconstruction",
+      "title": "What happens when something changes?",
+      "lead": "Research should be able to improve without erasing what was known, shared or disputed before.",
+      "case_kind": "authored-change-scenario",
+      "case_label": "Illustrative correction and feedback paths; no real session or source change is asserted.",
+      "steps": [
+        {
+          "id": "a-correction-is-a-new-event",
+          "title": "A correction must leave the old record visible",
+          "question": "Suppose a variable mapping is found to be wrong. What happens to the old finding?",
+          "body": [
+            "Keep the original variable map, assessment and report. Add the corrected map and explain why it changed. Then identify which conclusions depended on it. Do not silently replace the old result with the corrected one.",
+            "The new assessment has its own version and may reach a different answer. A reader should see which is current and why, while still being able to reconstruct the earlier mistake."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Earlier assessment",
+                "detail": "Original inputs and result retained"
+              },
+              {
+                "title": "Correction",
+                "detail": "Changed mapping and reason"
+              },
+              {
+                "title": "Reassessment",
+                "detail": "New result with linked history"
+              }
+            ],
+            "caption": "An authored correction scenario. No claim is made that this mapping defect occurred."
+          },
+          "takeaway": "Correction changes the current judgment, not the past.",
+          "evidence": [
+            "framework-map",
+            "teaching-only"
+          ],
+          "next_label": "Trace which conclusions depend on the changed premise",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "affected-and-unaffected",
+          "title": "Reopen what changed; justify what did not",
+          "question": "Does one correction invalidate every result?",
+          "body": [
+            "Not necessarily. A corrected V1/V2 map affects conclusions that used it. A result about unchanged V4/V5 quantities might remain usable, but only after checking that it does not share another changed assumption or dependency.",
+            "Neither “everything is still current” nor “everything is invalid” should be automatic. Explain which results depend on the correction and rerun the checks those results need."
+          ],
+          "visual": {
+            "type": "graph",
+            "nodes": [
+              "Changed mapping",
+              "V1 → V2 finding",
+              "Its report",
+              "Independent unchanged question"
+            ],
+            "edges": [
+              [
+                "Changed mapping",
+                "V1 → V2 finding"
+              ],
+              [
+                "V1 → V2 finding",
+                "Its report"
+              ]
+            ],
+            "highlight_edges": [
+              [
+                "Changed mapping",
+                "V1 → V2 finding"
+              ],
+              [
+                "V1 → V2 finding",
+                "Its report"
+              ]
+            ],
+            "caption": "Authored dependency illustration. Independence must be justified, not inferred from distance on the drawing."
+          },
+          "takeaway": "After a change, check what each conclusion actually depended on.",
+          "evidence": [
+            "framework-map",
+            "teaching-only"
+          ],
+          "next_label": "Separate feedback from adopted changes",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "feedback-is-not-adoption",
+          "title": "A suggestion is a proposal, not an accepted result",
+          "question": "What if a reviewer says our rule for judging answers is wrong?",
+          "body": [
+            "Record what the reviewer saw, the objection, their reasoning and the evidence they offered. Retain both the original rule and the criticism. The responsible research owner can then decide to investigate, revise or reject the suggestion, giving reasons.",
+            "A meeting or agreement between reviewers is not proof. A proposed fix must become an actual code or design change, then be checked against the objection. The author saying “fixed” is not enough."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Feedback",
+                "detail": "Preserved with exposure and reasoning"
+              },
+              {
+                "title": "Owner decision",
+                "detail": "Adopt, investigate or reject with reasons"
+              },
+              {
+                "title": "Change and recheck",
+                "detail": "Actual evidence of the resolution"
+              }
+            ],
+            "caption": "No real person, session, consent or endorsement is invented by this illustration."
+          },
+          "takeaway": "Human criticism can change the investigation without automatically changing accepted status.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Refresh preparation without forgetting exposure",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "continue-the-thread",
+          "title": "The next session should begin where the evidence now stands",
+          "question": "How do we avoid explaining everything again or hiding earlier disagreement?",
+          "body": [
+            "Prepare the next discussion from the current accepted question, evidence and outstanding work. Show what changed since the person last saw it, which promises remain due and what disagreement is unresolved.",
+            "If a session produces no new supported finding, keep that outcome too. Private notes can suggest a public update, but attribution and publication need their own agreement. Automatically refreshing preparation must not manufacture progress."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Retain the thread",
+              "items": [
+                "What was shared",
+                "Questions and promises",
+                "Exposure and disagreement"
+              ]
+            },
+            "right": {
+              "title": "Refresh the next useful work",
+              "items": [
+                "Actual changes",
+                "Remaining deciding gap",
+                "Bounded requested contribution"
+              ]
+            },
+            "caption": "Private operating information and public scientific history are related, but separately governed."
+          },
+          "takeaway": "Continuity means remembering both progress and limits.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Decide what a public reader can inspect",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "retrace-boundary",
+        "label": "What can be public without exposing private history?"
+      },
+      "next_work": {
+        "kind": "Update checks and owner decisions",
+        "question": "Do corrections, rejected suggestions and no-new-finding outcomes appear faithfully in the current views?",
+        "already_known": "The distinctions and dependency reasoning have explicit designs. Real feedback still requires interpretation.",
+        "needed": "An update rehearsal covering accepted and unaccepted changes, affected and unchanged conclusions, prior exposure, disagreement and no new finding.",
+        "human_use": "Ask a reader to reconstruct what changed and why. The research owner decides scientific adoption and public attribution."
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "retrace-boundary",
+      "journey": "reconstruction",
+      "title": "What can a public reader really check?",
+      "lead": "Public explanation, public evidence and private research history have different jobs.",
+      "case_kind": "publication-design",
+      "case_label": "A publication boundary, not a disclosure decision about any particular person or private record.",
+      "steps": [
+        {
+          "id": "three-layers",
+          "title": "The explanation is not the entire record",
+          "question": "Does a readable page need to display every identifier and private note?",
+          "body": [
+            "No. The walkthrough should explain the reasoning through examples and useful visuals. Its evidence view can show exact public sources, versions, assumptions and derivations. Private correspondence and session coordination stay elsewhere.",
+            "These views must stay linked to the same research record. They should not become separate editable stories that gradually disagree about what happened or what the evidence established."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Walkthrough",
+                "detail": "The understandable argument"
+              },
+              {
+                "title": "Public evidence view",
+                "detail": "Exact sources, versions and derivations"
+              },
+              {
+                "title": "Private workbench",
+                "detail": "Restricted coordination and correspondence"
+              }
+            ],
+            "caption": "Readers choose detail; privacy boundaries are not navigational obstacles to bypass."
+          },
+          "takeaway": "Make public claims inspectable without making private relationships public.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "State access limits honestly",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "traceability-is-not-full-reproduction",
+          "title": "A link is useful only to the extent it can be checked",
+          "question": "What if some deciding material cannot be released?",
+          "body": [
+            "State what a public reader can and cannot inspect. An approved excerpt or summary can support a limited explanation. It does not give everyone access to the evidence needed to repeat the full private assessment.",
+            "If restricted material is essential, release a sufficient approved substitute, narrow the public claim or prominently state the access limit. A file fingerprint can show whether available bytes match. It cannot reveal a hidden document or prove its contents are true."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Available publicly",
+              "What it can support",
+              "Limit"
+            ],
+            "rows": [
+              [
+                "Pinned source and full procedure",
+                "Inspect or repeat the stated procedure",
+                "Environment and assumptions still matter"
+              ],
+              [
+                "Approved excerpt",
+                "The disclosed bounded statement",
+                "Omitted context can matter"
+              ],
+              [
+                "Digest only",
+                "Identity comparison if bytes are available",
+                "Not access to contents or proof of truth"
+              ]
+            ],
+            "caption": "Public traceability and independent reproduction are separate promises."
+          },
+          "takeaway": "Promise only the level of inspection or reproduction that the reader can actually perform.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Show progress without implying endorsement",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "attribute-only-what-is-approved",
+          "title": "A session can improve research without becoming a testimonial",
+          "question": "How should a conversation appear in public history?",
+          "body": [
+            "A public entry can explain what changed in the research and the evidence for it. Naming a person, quoting private feedback or suggesting endorsement requires appropriate agreement and faithful context.",
+            "The private thread can retain what was shared, unresolved objections and promised follow-up. The public research change should stand on its reasoning and evidence, rather than the prestige of the person who suggested it."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Public research change",
+              "items": [
+                "What changed and why",
+                "Evidence and unresolved limits",
+                "Approved attribution only"
+              ]
+            },
+            "right": {
+              "title": "Private relationship thread",
+              "items": [
+                "Correspondence and availability",
+                "Unreleased notes",
+                "Promises and coordination"
+              ]
+            },
+            "caption": "No attribution or consent is inferred from participation."
+          },
+          "takeaway": "A human contribution can be valuable without being public endorsement or proof.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Make the publication edition explicit",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "publish-an-edition",
+          "title": "The public map describes an evidence edition",
+          "question": "How do readers know whether a statement is still current?",
+          "body": [
+            "Each public release identifies the source and assessment versions it describes and the date of that account. A later correction may replace its current conclusion while keeping the earlier edition and explaining the change.",
+            "Updated local preparation is not automatically a public release. Review the exact outward text, diagrams and evidence together before publication. If an input that matters changes afterward, rerun affected checks and review the changed candidate."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Bound sources",
+                "detail": "A named evidence edition"
+              },
+              {
+                "title": "Generate and review",
+                "detail": "Exact outward content"
+              },
+              {
+                "title": "Publish when approved",
+                "detail": "Retain release and change history"
+              }
+            ],
+            "caption": "The site is a dated public research reference, not a live private-workbench mirror."
+          },
+          "takeaway": "Show the source versions and reasons for change; a recent timestamp alone does not make a statement current.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Return to the research atlas",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "atlas",
+        "label": "Return to the research atlas"
+      },
+      "next_work": {
+        "kind": "Public-content review and checks",
+        "question": "Does the approved public evidence let readers check the public claim at the level we promise?",
+        "already_known": "There is a design for separating private records from versioned public evidence views.",
+        "needed": "Review the exact public content, test evidence access and faithful presentation, and record the released files and versions.",
+        "human_use": "A fresh public reader can expose missing context or an inaccessible argument. Disclosure and attribution remain owner decisions."
+      },
+      "crosslinks": [
+        {
+          "slug": "validate-cases",
+          "label": "Test whether the auditor preserves these limits"
+        }
+      ]
+    },
+    {
+      "slug": "validate-cases",
+      "journey": "validation",
+      "title": "How do we test the checker?",
+      "lead": "The answer key for a test must be derived independently of the candidate auditor’s own output.",
+      "case_kind": "checks on the actual path-expectations",
+      "case_label": "Constructed tests plus the expected result for the saved B0 answer; no new result from the auditor-validation subsystem is claimed.",
+      "steps": [
+        {
+          "id": "a-positive-must-work",
+          "title": "First give the checker a result it should accept",
+          "question": "Could an auditor look safe simply by refusing every judgment?",
+          "body": [
+            "Yes, if the tests only reward withholding. Include a case where the answer, source and sufficient evidence have been independently checked. The auditor must return the useful supported result and preserve it in the report.",
+            "In our invented two-machine example, forcing X on while the switch is off, with Y then on, rules out machine two. Within those stated alternatives, the direction is supported. This is a constructed expected result, not a newly observed system response."
+          ],
+          "visual": {
+            "type": "worlds",
+            "worlds": [
+              {
+                "title": "Compatible: Y copies X",
+                "nodes": [
+                  "X = 1",
+                  "Y = 1"
+                ],
+                "edges": [
+                  [
+                    "X = 1",
+                    "Y = 1"
+                  ]
+                ]
+              },
+              {
+                "title": "Incompatible: Y follows off switch",
+                "nodes": [
+                  "Switch = 0",
+                  "Y = 0"
+                ],
+                "edges": [
+                  [
+                    "Switch = 0",
+                    "Y = 0"
+                  ]
+                ]
+              }
+            ],
+            "caption": "The positive is useful only within the stated machines and controlled-change conditions."
+          },
+          "takeaway": "Useful acceptance is part of correctness; universal withholding cannot pass this case.",
+          "evidence": [
+            "teaching-only",
+            "framework-map"
+          ],
+          "next_label": "Pair it with an actual wrong-candidate expectation",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "the-error-control",
+          "title": "A wrong candidate must remain wrong",
+          "question": "What should happen when the saved graph omits a known source arrow?",
+          "body": [
+            "For the saved Copilot answer, the proposed direct V1 → V2 arrow is absent, while the separate source contains it. Once we have checked that the two records concern the same arrow and how to read them, the expected result is a source disagreement.",
+            "We do not need to pretend that all questions about the system’s evidence are settled. Keep the decided error and the separate unresolved support question. Withholding both would lose a conclusion these particular inputs can decide."
+          ],
+          "visual": {
+            "type": "comparison",
+            "left": {
+              "title": "Saved candidate",
+              "nodes": [
+                "V1",
+                "V2"
+              ],
+              "edges": []
+            },
+            "right": {
+              "title": "Source",
+              "nodes": [
+                "V1",
+                "V2"
+              ],
+              "edges": [
+                [
+                  "V1",
+                  "V2"
+                ]
+              ]
+            },
+            "caption": "Expected disagreement with the source. Whether the actual auditor produced and reported it correctly needs a separate test record."
+          },
+          "takeaway": "Keep a decided result even when a different, stronger question remains unresolved.",
+          "evidence": [
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Test a true answer with insufficient evidence",
+          "case_kind": "retained-native-product-account",
+          "case_label": "Saved output and source account; an expected check result, not a new demonstrated auditor result."
+        },
+        {
+          "id": "the-ambiguity-control",
+          "title": "A true answer can still outrun its evidence",
+          "question": "What if a constructed answer says its observations uniquely establish X → Y?",
+          "body": [
+            "Suppose machine one is the true invented source, but the evidence contains only the ordinary X = Y table. Machine two fits that table too, while reversing the copying direction. Those observations therefore do not settle the direction between the two allowed machines.",
+            "This test deliberately adds the stronger claim “the observations uniquely establish X → Y.” We do not attribute that claim to the saved Copilot diagram. The checker should distinguish matching the true source from having enough evidence for the uniqueness claim."
+          ],
+          "visual": {
+            "type": "worlds",
+            "worlds": [
+              {
+                "title": "True invented source",
+                "nodes": [
+                  "X",
+                  "Y"
+                ],
+                "edges": [
+                  [
+                    "X",
+                    "Y"
+                  ]
+                ]
+              },
+              {
+                "title": "Allowed observational alternative",
+                "nodes": [
+                  "Y",
+                  "X"
+                ],
+                "edges": [
+                  [
+                    "Y",
+                    "X"
+                  ]
+                ]
+              }
+            ],
+            "caption": "Both allow the same ordinary observations. A compatible alternative is a witness to the limited support."
+          },
+          "takeaway": "A correct guess and a justified uniqueness claim are different things to test.",
+          "evidence": [
+            "teaching-only",
+            "framework-map",
+            "native-policy"
+          ],
+          "next_label": "Test a valid record that is the wrong subject",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "the-wrong-field-control",
+          "title": "An intact earlier field must not masquerade as the final one",
+          "question": "What if the supplied file is valid but the request asks for another stage?",
+          "body": [
+            "Keep the earlier answer and the fact that its contents are intact. Do not score it as the requested revised answer. Wait for the correctly selected record, or state that it is unavailable. Calling the earlier answer corrupt would describe a different problem.",
+            "Other tests remove the captured answer or the reference, alter a report, or provide a kind of answer the question cannot judge. Derive the expected behavior for each. Then compare those expectations with records of what the actual checker did."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Control",
+              "Expected distinction"
+            ],
+            "rows": [
+              [
+                "Valid earlier field for revised-field request",
+                "Wrong subject; not corrupt bytes"
+              ],
+              [
+                "Selected capture unavailable",
+                "Unknown answer; not an empty graph"
+              ],
+              [
+                "Reference unavailable",
+                "Keep the system’s answer; do not judge against a missing key"
+              ],
+              [
+                "Misleading report",
+                "Report-fidelity failure; calculation may be correct"
+              ]
+            ],
+            "caption": "Prepared expectations are not a claim that these controls have all run on the latest implementation."
+          },
+          "takeaway": "Tests should distinguish useful acceptance, an actual error, an unsettled inference and the different reasons a judgment cannot be made.",
+          "evidence": [
+            "framework-map",
+            "copilot-card",
+            "native-policy"
+          ],
+          "next_label": "Ask what space these controls cover",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "validate-coverage",
+        "label": "What do passing controls actually cover?"
+      },
+      "next_work": {
+        "kind": "Check the actual auditor",
+        "question": "Does this auditor version produce independently derived results for useful answers, errors, ambiguity and wrong-subject tests?",
+        "already_known": "Expected outcomes can be derived from stated sources or constructed rules without taking the auditor’s output as correct.",
+        "needed": "Records of actual inputs, results and reports, including companion tests and preserved original failures.",
+        "human_use": "Ask reviewers for a wrongly expected result, or a useful sound auditor that the test would unfairly reject."
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "validate-coverage",
+      "journey": "validation",
+      "title": "What does coverage mean here?",
+      "lead": "Coverage becomes meaningful only after we say what is being covered and what evidence would decide each duty.",
+      "case_kind": "assessment-design",
+      "case_label": "An illustrative obligation family and counterexample search, not an issued whole-framework percentage.",
+      "steps": [
+        {
+          "id": "name-the-duties",
+          "title": "List the promises this path has to keep",
+          "question": "What could go wrong between a returned graph and a reported finding?",
+          "body": [
+            "The checker could select the wrong answer, mislabel quantities, misunderstand the output, use the wrong answer key, calculate incorrectly or overstate the report. We need a way to check each promise separately.",
+            "Call each separately judgeable promise an obligation. Split it further if one part could pass while another fails for a different reason. State the assumptions it needs, instead of hiding every difficulty inside one large “correct” checkbox."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "Component duty",
+              "One deciding question"
+            ],
+            "rows": [
+              [
+                "Subject",
+                "Is this the requested occurrence and field?"
+              ],
+              [
+                "Variables",
+                "Do coordinates refer to the intended quantities?"
+              ],
+              [
+                "Meaning",
+                "What exact statement does the returned answer make?"
+              ],
+              [
+                "Reference",
+                "Can this source decide that exact statement?"
+              ],
+              [
+                "Comparison",
+                "Does the procedure compute the intended result?"
+              ],
+              [
+                "Report",
+                "Does the offered view preserve the earned conclusion?"
+              ]
+            ],
+            "caption": "A worked list of component promises, not an adopted total for all of Crucis."
+          },
+          "takeaway": "Before counting coverage, name the promises we can judge separately and the conditions each one needs.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Check the path between those components",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "components-do-not-entail-composition",
+          "title": "Passing parts can still be connected incorrectly",
+          "question": "Could every component pass its own test while the final finding is wrong?",
+          "body": [
+            "Yes. One part might correctly read a diagram from case one. Another might correctly read the answer key for case two. The arithmetic could be correct, yet the final comparison would concern mismatched cases.",
+            "So add a check of their connection whenever passing the parts does not guarantee the whole result. Follow the actual answer, names, meanings, source and versions through the calculation and into the report."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Output reader passes",
+                "detail": "Correctly reads case one"
+              },
+              {
+                "title": "Reference reader passes",
+                "detail": "Correctly reads case two"
+              },
+              {
+                "title": "Comparison passes arithmetic",
+                "detail": "Still judges mismatched cases"
+              }
+            ],
+            "caption": "Authored composition failure. Component checks cannot by themselves establish coherent actual use."
+          },
+          "takeaway": "The connections between tested parts need evidence too.",
+          "evidence": [
+            "framework-map",
+            "teaching-only"
+          ],
+          "next_label": "Report decided duties without inflating the score",
+          "case_kind": "authored-teaching-contrast",
+          "case_label": "Invented teaching example; no new experiment, historical event or system result."
+        },
+        {
+          "id": "a-denominator-with-bounds",
+          "title": "Show what is counted and what remains undecided",
+          "question": "What would a truthful coverage display need?",
+          "body": [
+            "First freeze the list being assessed: which obligations, versions and assumptions count? Then show the evidence and result for each, including undecided and inapplicable judgments. Include the checks of connections, not just of individual parts.",
+            "Passing test counts do not count every scientific duty. If the list may omit an important promise or interface, show that uncertainty separately. Finishing a stated finite list does not establish coverage of every future system or unknown error."
+          ],
+          "visual": {
+            "type": "coverage",
+            "dimensions": [
+              {
+                "title": "What the assessment covers",
+                "detail": "Which obligations and versions are eligible?"
+              },
+              {
+                "title": "Deciding evidence",
+                "detail": "What supports each actual disposition?"
+              },
+              {
+                "title": "Inventory adequacy",
+                "detail": "What might still be missing from the roster?"
+              }
+            ],
+            "caption": "No whole-framework percentage is assigned by this page."
+          },
+          "takeaway": "Coverage can be useful within a stated list without claiming the list contains every possible duty.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Search for an auditor that passes but still misleads",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "challenge-the-checks",
+          "title": "Try to beat the test suite",
+          "question": "Could a materially misleading auditor satisfy all these chosen checks?",
+          "body": [
+            "Try to construct one that does. It might memorize the test cases, always withhold, mishandle an unfamiliar notation, use another source with the same names, or change the conclusion only in one report format.",
+            "If it succeeds, identify the missing promise or test and derive what the new result should be. If the search fails, record what was tried. That is evidence about this search, not proof that no escaping example exists."
+          ],
+          "visual": {
+            "type": "split",
+            "left": {
+              "title": "Adversarial challenge",
+              "items": [
+                "Pass the current checks",
+                "Still mislead on a consequential use"
+              ]
+            },
+            "right": {
+              "title": "Useful consequence",
+              "items": [
+                "New obligation or control",
+                "Narrower claim or stronger rationale"
+              ]
+            },
+            "caption": "Counterexample search improves the bounds without claiming to exhaust the unknown."
+          },
+          "takeaway": "Even a passed test suite can be challenged by a consequential case it misses.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "See how the framework should grow",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "validate-extension",
+        "label": "How can this remain useful for future systems?"
+      },
+      "next_work": {
+        "kind": "Research choice",
+        "question": "Which important misleading behaviors could still pass the proposed duties and tests?",
+        "already_known": "Separately judgeable duties, explicit assumptions and checks of connections let us assess a stated scope.",
+        "needed": "Concrete escaping examples, separately derived expected outcomes and a record of the search limits.",
+        "human_use": "Give reviewers the bounded case space and ask for an important example outside its checks, rather than a general confidence rating.",
+        "paths": [
+          {
+            "label": "Challenge the duty list",
+            "test": "Could an important promise have no deciding check?",
+            "yield": "Add or correct a duty, explaining why it belongs."
+          },
+          {
+            "label": "Challenge a test",
+            "test": "Could a misleading auditor pass, or a sound useful one fail?",
+            "yield": "Correct the expected answer or add a test that separates them."
+          },
+          {
+            "label": "Reconstruct independently",
+            "test": "Can another reader recover the same conclusions and limits?",
+            "yield": "Expose hidden assumptions or overstatement."
+          }
+        ]
+      },
+      "crosslinks": []
+    },
+    {
+      "slug": "validate-extension",
+      "journey": "validation",
+      "title": "How can Crucis grow without inventing assurance?",
+      "lead": "Future systems may expose answers, internal stages and assumptions we have not seen. The framework must make those differences explicit.",
+      "case_kind": "extension-design",
+      "case_label": "A proposed way to check future extensions, not a guarantee about every future system.",
+      "steps": [
+        {
+          "id": "a-new-shape-of-answer",
+          "title": "A future answer may not be another ordinary graph",
+          "question": "What if a system returns an uncertain arrow, an order or only some relationships?",
+          "body": [
+            "Preserve the system’s own answer before judging it. An arrow with an uncertain endpoint may specify less than a direct causal claim. A proposed earlier-to-later order does not list all arrows. A relation omitted from a partial answer may mean “unreported,” rather than “absent.”",
+            "For a new answer format, explain what its symbols mean using the system’s instructions and implementation. Name the particular questions that interpretation supports. We may justify one narrow question before we can support every use of the new format."
+          ],
+          "visual": {
+            "type": "table",
+            "columns": [
+              "System’s returned answer",
+              "Question it might support",
+              "Do not silently add"
+            ],
+            "rows": [
+              [
+                "Complete candidate graph",
+                "Which direct arrows are proposed?",
+                "Deductive certainty"
+              ],
+              [
+                "Partial relation object",
+                "Which endpoints or relations are specified?",
+                "A completed direct graph"
+              ],
+              [
+                "Ordering",
+                "Which precedences are proposed?",
+                "All direct edges"
+              ],
+              [
+                "Probability product",
+                "Weight assigned to declared alternatives",
+                "An unreturned selected graph"
+              ]
+            ],
+            "caption": "Illustrative product families. Actual support requires source-specific checks on the actual path."
+          },
+          "takeaway": "A future answer needs a faithful interpretation before we force it into a familiar score.",
+          "evidence": [
+            "native-policy",
+            "framework-map"
+          ],
+          "next_label": "Qualify the whole new profile",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "new-profile-new-evidence",
+          "title": "Declare what the extension adds and trusts",
+          "question": "Is registering an adapter enough?",
+          "body": [
+            "No. State the system and software versions, inputs, returned answers, selection rules, meanings and answer keys. Derive test expectations without using the checker’s output as their answer key. Then show what the actual connected software did on them.",
+            "Check the installed package too. Testing source files does not show that the distributed build loaded the same code or respected the same data boundaries. Shared helpers, optional dependencies and packaging can change several apparently separate routes at once."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "System source and task",
+                "detail": "Actual version, interface and meaning"
+              },
+              {
+                "title": "Installed route",
+                "detail": "Loaded code, dependencies and consumed evidence"
+              },
+              {
+                "title": "Independent controls",
+                "detail": "Expected results and actual connected behavior"
+              },
+              {
+                "title": "Scoped report",
+                "detail": "Earned support and residual limits"
+              }
+            ],
+            "caption": "Declaring a connection says what it intends to support. Tests must show what the installed software actually does."
+          },
+          "takeaway": "A new connection earns support for its checked uses; registration alone does not make every use trustworthy.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "Keep existing conclusions applicable under change",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "growth-reopens-the-map",
+          "title": "New evidence can expose an old shared assumption",
+          "question": "What if a new system reveals that an older measurement rule was too narrow?",
+          "body": [
+            "Save the counterexample and trace which interpretations, calculations and reports depend on the challenged rule. Recheck the affected conclusions. Others may remain usable if the assumptions that decided them were narrower and did not change.",
+            "Retain the earlier record, the new limit and the unresolved work. Adding a system should improve our account of what is trustworthy, not merely lengthen a supported-systems list."
+          ],
+          "visual": {
+            "type": "graph",
+            "nodes": [
+              "New product or counterexample",
+              "Shared meaning rule",
+              "Affected findings",
+              "Unaffected bounded result"
+            ],
+            "edges": [
+              [
+                "New product or counterexample",
+                "Shared meaning rule"
+              ],
+              [
+                "Shared meaning rule",
+                "Affected findings"
+              ]
+            ],
+            "caption": "Dependency-based reassessment. Unaffected continuation requires a reason."
+          },
+          "takeaway": "Expand support by checking what changed, keeping the evidence and limits visible.",
+          "evidence": [
+            "framework-map"
+          ],
+          "next_label": "State what the long-term goal can honestly mean",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        },
+        {
+          "id": "the-gold-standard-direction",
+          "title": "Make confidence answerable to evidence",
+          "question": "What would make Crucis a durable standard rather than a one-off harness?",
+          "body": [
+            "A durable framework lets us ask what it supports, why, under which assumptions and versions, where its checks could fail and what evidence an extension needs. It should preserve useful answers and justified limits for both weak and strong discovery systems.",
+            "That is a continuing research standard, not a final proof about every possible future pipeline. We move toward it by demonstrating concrete uses, challenging important limits and updating the map when evidence changes what we know."
+          ],
+          "visual": {
+            "type": "sequence",
+            "items": [
+              {
+                "title": "Bound the promise",
+                "detail": "An explicit useful task"
+              },
+              {
+                "title": "Earn the judgment",
+                "detail": "Independent evidence and actual checks on the actual path"
+              },
+              {
+                "title": "Challenge the boundary",
+                "detail": "Counterexamples, omissions and new systems"
+              },
+              {
+                "title": "Revise visibly",
+                "detail": "Retained history and justified expansion"
+              }
+            ],
+            "caption": "A research process with inspectable progress, not a claim to have exhausted every unknown."
+          },
+          "takeaway": "The goal is reusable confidence with inspectable reasons, rather than one unexplained final correctness number.",
+          "evidence": [
+            "framework-map",
+            "native-policy"
+          ],
+          "next_label": "Return to the research atlas",
+          "case_kind": "assessment-design-or-policy",
+          "case_label": "Proposed assessment or policy reasoning; not a new demonstrated software result or adopted scientific rule."
+        }
+      ],
+      "next": {
+        "slug": "atlas",
+        "label": "Return to the research atlas"
+      },
+      "next_work": {
+        "kind": "Research and extension checks",
+        "question": "Which new answer format, causal assumption or combination most strongly challenges what we currently support?",
+        "already_known": "Explicit interpretations and versioned tests can make extensions inspectable. They do not establish compatibility with every future system.",
+        "needed": "A source-backed extension argument, checks of installed behavior and an explicit account of remaining uncertainty.",
+        "human_use": "Target expertise in the new answer format, causal assumptions or failure modes. Ask what existing tests would miss.",
+        "paths": [
+          {
+            "label": "Extend an existing interpretation",
+            "test": "Does the new use preserve the assumptions that decided the old result?",
+            "yield": "Reuse evidence that still applies, with new tests where needed."
+          },
+          {
+            "label": "Define a new interpretation",
+            "test": "Do meanings, answer keys or scientific questions differ?",
+            "yield": "Separate duties and separately derived expected results."
+          },
+          {
+            "label": "State the unsupported use",
+            "test": "Can no faithful useful interpretation currently be justified?",
+            "yield": "Preserve the system’s answer while showing the checking limit."
+          }
+        ]
+      },
+      "crosslinks": [
+        {
+          "slug": "retrace-change",
+          "label": "See how changed assumptions reopen findings"
+        },
+        {
+          "slug": "comparison-task",
+          "label": "Check whether a new comparison is scientifically fair"
+        }
+      ]
+    }
+  ]
+}

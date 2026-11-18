@@ -1,0 +1,83 @@
+name: Publish reviewed site
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/reviewed-site.yml'
+permissions:
+  contents: read
+concurrency:
+  group: reviewed-site-pages
+  cancel-in-progress: false
+jobs:
+  reviewed-site:
+    if: contains(github.event.head_commit.message, '[site-only publish]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Require a site-only change
+        env:
+          BASE_SHA: ${{ github.event.before }}
+        run: |
+          python -B - <<'PY'
+          import os, subprocess
+          paths=subprocess.check_output(['git','diff','--no-renames','--name-only',os.environ['BASE_SHA'],os.environ['GITHUB_SHA']],text=True).splitlines()
+          assert paths and all(p.startswith('site/') or p=='.github/workflows/reviewed-site.yml' for p in paths), paths
+          print('Site-only scope verified:', len(paths), 'files')
+          PY
+      - name: Privacy and publication boundary
+        run: |
+          python -B tools/secret_scan.py
+          python -B tools/publication_check.py
+      - name: Build the source-bound research views
+        run: python -B site/build.py
+      - name: Check all local links and fragments
+        run: |
+          python -B - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+          root=Path('site/_build').resolve()
+          class Page(HTMLParser):
+              def __init__(self, path):
+                  super().__init__(); self.ids=set(); self.refs=[]; self.feed(path.read_text(encoding='utf-8'))
+              def handle_starttag(self, tag, attrs):
+                  attrs=dict(attrs)
+                  if 'id' in attrs: self.ids.add(attrs['id'])
+                  for key in ('href','src'):
+                      if attrs.get(key): self.refs.append(attrs[key])
+          pages={p:Page(p) for p in root.rglob('*.html')}
+          count=0
+          for path,page in pages.items():
+              for ref in page.refs:
+                  url=urlsplit(ref)
+                  if url.scheme or url.netloc: continue
+                  assert not url.path.startswith('/'), (path,ref)
+                  target=(path.parent/unquote(url.path)).resolve() if url.path else path
+                  if target.is_dir(): target=target/'index.html'
+                  assert target.is_relative_to(root) and target.is_file(), (path,ref)
+                  if url.fragment and target in pages: assert unquote(url.fragment) in pages[target].ids, (path,ref)
+                  count+=1
+          print('Validated',len(pages),'pages and',count,'local references')
+          PY
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: site/_build
+      - id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

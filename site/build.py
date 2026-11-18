@@ -36,7 +36,20 @@ links={'README_LINK':a('README.md','Installation and development'),'CITATION_LIN
  'SOURCE_LINK':'<a href="'+repo+'/tree/'+sha+'"><code>'+sha[:12]+'</code></a>'}
 for key,value in links.items():page=page.replace(key,value)
 args.out.mkdir(parents=True,exist_ok=True)
-(args.out/'index.html').write_text(page,encoding='utf-8')
-(args.out/'deployment.json').write_text(json.dumps({'source_commit':sha,'repository':repo,'built_utc':datetime.now(timezone.utc).isoformat(),'workflow_run':os.environ.get('GITHUB_RUN_ID')},indent=2)+'\n')
+page=page.replace('<a href="#start">Get started</a>', '<a href="research/index.html">Start with a case</a><a href="research/atlas.html">Research atlas</a><a href="#start">Get started</a>')
+page=page.replace('General execution and collection coordination is in design. Measurement, finding decisions, reports and auditor validation have distinct responsibilities. Legacy recorded-audit routes remain available; they do not establish completion of every newer subsystem.', 'Execution, collection, measurement, finding decisions, reports and auditor validation have distinct versioned support profiles. The research atlas explains what their selected evidence establishes and which uses need further qualification. Legacy routes retain their own scope.')
+page=page.replace('<span class="pill">Development version · Apache-2.0</span>', '<p><a href="research/index.html">Why does checking a causal answer matter? Start with a hot apartment →</a></p><span class="pill">Development version · Apache-2.0</span>')
+if os.environ.get('CRUCIS_SITE_CANDIDATE'):page=page.replace('Built from SOURCE_LINK', 'Review candidate based on SOURCE_LINK').replace('Built from <a', 'Review candidate based on <a')
+(args.out/'software.html').write_text(page.replace('<a class="wordmark" href="#">','<a class="wordmark" href="index.html">'),encoding='utf-8',newline='\n')
+from research.build import build_research
+research_pages=build_research(args.out/'research',source_revision=sha)
+home=(args.out/'research/atlas.html').read_text(encoding='utf-8')
+# The main entry is the same bound research view, with links rebased for /crucis/.
+# Fragment links remain local; the product/install entry is retained separately.
+home=home.replace('href="./','href="./research/').replace('src="./','src="./research/')
+home=home.replace('href="../index.html"','href="./index.html"').replace('href="../software.html"','href="./software.html"')
+home=home.replace('href="./research/atlas.html"','href="./index.html"').replace('href="./research/atlas.html#study"','href="#study"')
+(args.out/'index.html').write_text(home,encoding='utf-8',newline='\n')
+(args.out/'deployment.json').write_text(json.dumps({'source_commit':sha,'repository':repo,'built_utc':datetime.now(timezone.utc).isoformat(),'workflow_run':os.environ.get('GITHUB_RUN_ID'),'source_state':'uncommitted review candidate based on this revision' if os.environ.get('CRUCIS_SITE_CANDIDATE') else 'deployment commit'},indent=2)+'\n',encoding='utf-8',newline='\n')
 assert all((ROOT/path).is_file() for path in ('README.md','CITATION.cff','THIRD_PARTY_NOTICES.md','crucis_causal/PROTOCOL.md'))
-print(json.dumps({'site':str(args.out),'source_commit':sha,'pages':1}))
+print(json.dumps({'site':str(args.out),'source_commit':sha,'pages':2+research_pages}))
