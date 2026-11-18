@@ -1,4 +1,5 @@
 name: Publish reviewed site
+# The temporary publication branch also requires the owner's exact Pages policy.
 on:
   push:
     branches: [main, publish/reviewed-site-2026-11-17]
