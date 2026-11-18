@@ -1,7 +1,7 @@
 name: Publish reviewed site
 on:
   push:
-    branches: [main]
+    branches: [main, publish/reviewed-site-2026-11-17]
     paths:
       - 'site/**'
       - '.github/workflows/reviewed-site.yml'
@@ -33,10 +33,14 @@ jobs:
       - name: Require a site-only change
         env:
           BASE_SHA: ${{ github.event.before }}
+          INITIAL_BASE_SHA: 441de5c0b52cdf60677b0a3050a32d15d5dfda69
         run: |
           python -B - <<'PY'
           import os, subprocess
-          paths=subprocess.check_output(['git','diff','--no-renames','--name-only',os.environ['BASE_SHA'],os.environ['GITHUB_SHA']],text=True).splitlines()
+          base=os.environ['BASE_SHA']
+          if base=='0'*40: base=os.environ['INITIAL_BASE_SHA']
+          subprocess.run(['git','merge-base','--is-ancestor',base,os.environ['GITHUB_SHA']],check=True)
+          paths=subprocess.check_output(['git','diff','--no-renames','--name-only',base,os.environ['GITHUB_SHA']],text=True).splitlines()
           assert paths and all(p.startswith('site/') or p=='.github/workflows/reviewed-site.yml' for p in paths), paths
           print('Site-only scope verified:', len(paths), 'files')
           PY
